@@ -243,6 +243,10 @@ def main():
             f"first runtime call returns into {emu.first_runtime_call[1]:X}")
         ep_off = emu.pe.OPTIONAL_HEADER.get_file_offset() + 16
         struct.pack_into("<I", out, ep_off, oep[0] - emu.base)
+    elif img[emu.ep - emu.base:emu.ep - emu.base + 5] == bytes.fromhex("4883EC28E8"):
+        # BO3: the PE entry already is the CRT entry. Arxan patched its tail (`add rsp,28h; jmp` became
+        # `nop; jmp <stub>`) and its call, instead of pointing the entry at a stub, so there is nothing to rewrite.
+        log(f"entry point {emu.ep:X} is the CRT entry (sub rsp,28h / call), its tail patched by Arxan; left as is")
     else:
         log("OEP not identified; entry point left as the stub's")
     # the image is no longer what was signed: drop the certificate directory entry and the checksum

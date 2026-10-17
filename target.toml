@@ -46,7 +46,7 @@ exe = { key = "bo3/DUMP/BlackOps3.exe", sha256 = "72c8a21763adbfac9e1b2bcd6f93b0
 [[build]]
 id = "BlackOps3_Steam"
 kind = "related"
-analyze = false
+analyze = true
 protection = "arxan"
 timestamp = "2023-02-25T01:02:52Z"
 original_name = "BlackOps3.exe"
@@ -54,3 +54,5 @@ pdb_path = 'Q:\t7\pc\game\pc\cod_Ship.pdb'
 pdb_guid = "97E5A5DF-999E-4983-B5DD-03ECE1D43B07"
 pdb_age = 215
 exe = { key = "bo3/t7_tor_exe/BlackOps3.exe", sha256 = "66b95eb4667bd5b3b3d230e7bed1d29ccd261d48ca2699f01216c863be24ff44" }
+# tools/unpack/arxan.py output (~7 min): both .text sections, .interpr, .rdata, .data and _RDATA decrypted
+unpacked_sha256 = "0e0536473742a5841ce09c48725c2fd039bffb717603c4c4ed0f8e511c5815b9"

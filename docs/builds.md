@@ -45,3 +45,21 @@ First pipeline run (Ghidra 12.1.4): analysis 34 min, decompile 6 shards of 5 to 
   parent. Only 3 plain entries are missed (142AE41D0, 142D96E80, 142D98CA0).
 - 238 functions have names from Ghidra (imports, CRT signatures); everything else is `FUN_` until matched.
 - Largest functions: 1414168F0 (363 KB), 141F45730 (221 KB), 1422649C0 (208 KB).
+
+## BlackOps3_Steam (related): final Steam build
+
+R2 `bo3/t7_tor_exe/BlackOps3.exe`, from a torrent copy of the Steam release.
+
+| | |
+|---|---|
+| Exe | 143,134,192 bytes, sha256 `66b95eb4…be24ff44` (target.toml) |
+| Link time | 2023-02-25 01:02:52 UTC |
+| PDB record | `Q:\t7\pc\game\pc\cod_Ship.pdb`, GUID 97E5A5DF-999E-4983-B5DD-03ECE1D43B07, age 215 (PDB not available) |
+| Compiler | VS2012 (linker 11.0; Rich header mostly build 50727 and 61030) |
+| Signature | Activision Authenticode; the signed sha256 image digest matches the file, so it is an unmodified original |
+| Protection | Arxan, see docs/arxan.md |
+| Platform | Steam (`steam_api64.dll`), D3D11, DirectSound, HID |
+
+Use: a helper, not the target. The community BO3 clients name addresses in the Steam build, and those names can be
+carried to the Store build by matching. The two builds use different compilers (VS2012 vs VS2019 with LTCG), so
+matching relies on strings, constants and the call graph, never on code bytes or position.
