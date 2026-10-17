@@ -63,3 +63,19 @@ R2 `bo3/t7_tor_exe/BlackOps3.exe`, from a torrent copy of the Steam release.
 Use: a helper, not the target. The community BO3 clients name addresses in the Steam build, and those names can be
 carried to the Store build by matching. The two builds use different compilers (VS2012 vs VS2019 with LTCG), so
 matching relies on strings, constants and the call graph, never on code bytes or position.
+
+### Ghidra analysis (Steam)
+
+First pipeline run (Ghidra 12.1.4) on the unpacked image: unpack 12 min in CI (hash matched the pinned
+`unpacked_sha256`), analysis 2 h, decompile 6 shards of 7 to 14 min. The pipeline's own commit failed on GitHub's
+100 MB file limit (the graph's function table was 123 MB), so this run was published from its artifacts with the
+fixed tools/graph/sync.py, which now splits big tables into parts.
+
+- Ghidra found 426,463 functions, 332,822 of them tiny fragments in Arxan's own `.text` section (15AAEA000).
+  Those are excluded from the published tables (`exclude` in target.toml, tools/ghidra/publish.py).
+- Game code: 93,641 functions (93,638 in `.text`, 3 in `.interpr`), covering 46.9 MB. Decompiled: 79,771 ok,
+  13,869 thunks, 1 failed.
+- Checked against `.pdata` in the game `.text`: 40,147 of 40,177 plain entries are Ghidra functions (30 missed);
+  the 28,535 chained entries are fragments of parent functions.
+- 2.5 times the Store build's function count: VS2012 without LTCG inlines far less than VS2019 with LTCG, and the
+  13,869 thunks include jumps Arxan inserted into game code.

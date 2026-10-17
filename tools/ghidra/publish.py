@@ -10,6 +10,10 @@ Pseudocode and disassembly are grouped by the ORIGINAL source file, taken from t
 (analysis/<build>/pdb/functions.tsv), falling back to the linker MAP's lib/obj. Inside a file,
 functions are ordered by their original line number, then address.
 
+A build's `exclude` list in target.toml ([{name, start, end}], hex VAs, end exclusive) keeps code that is not
+the game's out of everything written here (functions, call graph, pseudocode, disassembly), e.g. the section
+holding Arxan's own code. The saved Ghidra project still contains it.
+
 Generated output only: never hand-edit what this writes.
 """
 import csv
@@ -17,6 +21,7 @@ import json
 import re
 import shutil
 import sys
+import tomllib
 from collections import defaultdict
 from pathlib import Path
 
@@ -50,22 +55,55 @@ def group_of(va, pdb, mapobj):
     return f"_unattributed/{va[:4]}0000", p
 
 
+def excluded_ranges(build):
+    cfg = tomllib.loads((ROOT / "target.toml").read_text())
+    b = next((b for b in cfg.get("build", []) if b["id"] == build), {})
+    return [(e["name"], int(e["start"], 16), int(e["end"], 16)) for e in b.get("exclude", [])]
+
+
 def main():
     build, raw = sys.argv[1], Path(sys.argv[2])
     out = ROOT / "analysis" / build
+    ranges = excluded_ranges(build)
+    dropped = defaultdict(int)
+
+    def keep(va):
+        v = int(va, 16)
+        for name, lo, hi in ranges:
+            if lo <= v < hi:
+                dropped[name] += 1
+                return False
+        return True
+
+    def copy_filtered(src, dst, cols):
+        """Copy a Ghidra TSV, leaving out rows whose address columns fall in an excluded range."""
+        with open(src, newline="") as f, open(dst, "w", newline="\n") as o:
+            header = f.readline()
+            o.write(header)
+            idx = [header.rstrip("\n").split("\t").index(c) for c in cols if c in header.rstrip("\n").split("\t")]
+            for line in f:
+                parts = line.rstrip("\n").split("\t")
+                if all(not any(lo <= int(parts[i], 16) < hi for _, lo, hi in ranges) for i in idx if parts[i]):
+                    o.write(line)
     pdb = {r["va"]: r for r in read_tsv(out / "pdb" / "functions.tsv")}
     mapobj = {r["va"]: r for r in read_tsv(out / "map" / "publics.tsv") if "f" in r["flags"]}
 
     gdir = out / "ghidra"
     gdir.mkdir(parents=True, exist_ok=True)
     for name in ("functions.tsv", "callgraph.tsv", "symbols.tsv", "strings.tsv", "types.h"):
-        if (raw / name).exists():
+        if not (raw / name).exists():
+            continue
+        if ranges and name == "functions.tsv":
+            copy_filtered(raw / name, gdir / name, ["va"])
+        elif ranges and name == "callgraph.tsv":
+            copy_filtered(raw / name, gdir / name, ["caller", "callee"])
+        else:
             shutil.copyfile(raw / name, gdir / name)
     for log in raw.glob("*.log"):
         (out / "logs").mkdir(parents=True, exist_ok=True)
         shutil.copyfile(log, out / "logs" / log.name)
 
-    ghidra = read_tsv(raw / "functions.tsv")
+    ghidra = [g for g in read_tsv(raw / "functions.tsv") if keep(g["va"])]
     decomp = {}
     for shard in sorted(raw.glob("decomp-*.jsonl")):
         for line in open(shard):
@@ -121,7 +159,8 @@ def main():
             f.write("\t".join(str(x) for x in r) + "\n")
 
     ok = sum(1 for r in joined if r[-1] == "ok")
-    print(f"{build}: {len(joined)} functions, {len(groups)} source groups, {ok} decompiled")
+    print(f"{build}: {len(joined)} functions, {len(groups)} source groups, {ok} decompiled"
+          + "".join(f"; {n} excluded ({name})" for name, n in dropped.items()))
 
 
 if __name__ == "__main__":

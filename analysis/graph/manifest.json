@@ -10,8 +10,8 @@
   "imports": [
     {
       "file": "t7/builds.jsonl",
-      "sha256": "f9e9b856039549782af9c7d052f8a9ed0d22dc7cbca49153c3d91bcb8c10c5a6",
-      "rows": 1,
+      "sha256": "2b025e0c9c9bbed747ea4ff6c88c9122877b94f6def310c41a24e0559e6db02c",
+      "rows": 2,
       "cypher": "UNWIND {{ROWS}} AS r MERGE (b:Build {id:r.id}) SET b.timestamp=r.timestamp, b.exe_sha256=r.exe_sha256, b.pdb_guid=r.pdb_guid"
     },
     {
@@ -27,9 +27,21 @@
       "cypher": "UNWIND {{ROWS}} AS r MATCH (b:Build {id:r.build}) MERGE (fn:Function {key:r.key}) SET fn.name = coalesce(fn.name, r.name), fn.symbol = r.symbol MERGE (fi:FunctionInstance {id:r.id}) SET fi.build=r.build, fi.va=r.va, fi.size=r.size, fi.status=r.status, fi.type=r.type, fi.src=r.src, fi.bytes_sha256=r.sha MERGE (fi)-[:INSTANCE_OF]->(fn) MERGE (fi)-[:IN_BUILD]->(b) WITH fn, r WHERE r.source <> '' MATCH (sf:SourceFile {path:r.source}) MERGE (fn)-[d:DEFINED_IN]->(sf) SET d.line=r.line"
     },
     {
+      "file": "t7/functions-BlackOps3_Steam.jsonl",
+      "sha256": "512e660b8fd007de82cbabf6288bcba87699543bbc5e28ae62a7c0d4861212c4",
+      "rows": 93641,
+      "cypher": "UNWIND {{ROWS}} AS r MATCH (b:Build {id:r.build}) MERGE (fn:Function {key:r.key}) SET fn.name = coalesce(fn.name, r.name), fn.symbol = r.symbol MERGE (fi:FunctionInstance {id:r.id}) SET fi.build=r.build, fi.va=r.va, fi.size=r.size, fi.status=r.status, fi.type=r.type, fi.src=r.src, fi.bytes_sha256=r.sha MERGE (fi)-[:INSTANCE_OF]->(fn) MERGE (fi)-[:IN_BUILD]->(b) WITH fn, r WHERE r.source <> '' MATCH (sf:SourceFile {path:r.source}) MERGE (fn)-[d:DEFINED_IN]->(sf) SET d.line=r.line"
+    },
+    {
       "file": "t7/calls-BlackOps3_MSStore.jsonl",
       "sha256": "9b19494ba3e740e4f9faf01fe02502570fbacc1d41b31be32820132c88c1264a",
       "rows": 122988,
+      "cypher": "UNWIND {{ROWS}} AS r MATCH (a:FunctionInstance {id:r.caller}) MATCH (c:FunctionInstance {id:r.callee}) MERGE (a)-[e:CALLS]->(c) SET e.kind=r.kind"
+    },
+    {
+      "file": "t7/calls-BlackOps3_Steam.jsonl",
+      "sha256": "5bedbe7064989f44aef41b694f549d0f2aa89a8d64bd47b51199d9719c3d4da4",
+      "rows": 158311,
       "cypher": "UNWIND {{ROWS}} AS r MATCH (a:FunctionInstance {id:r.caller}) MATCH (c:FunctionInstance {id:r.callee}) MERGE (a)-[e:CALLS]->(c) SET e.kind=r.kind"
     }
   ]

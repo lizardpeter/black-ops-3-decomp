@@ -4,7 +4,7 @@
     python3 tools/graph/sync.py
 
 Writes analysis/graph/:
-  *.jsonl         one JSON object per row
+  *.jsonl         one JSON object per row; a table over 40 MB is split into <name>.part-NN.jsonl
   manifest.json   ordered list of {file, sha256, cypher}; each cypher has one {{ROWS}} placeholder
 
 To load: put the folder in the Graph DB server's import directory as t7/ and run every manifest entry,
@@ -58,13 +58,30 @@ CYPHER = {
 }
 
 
+PART_BYTES = 40 << 20  # GitHub rejects files over 100 MB; big tables are split into parts under this size
+
+
 def write_jsonl(name, rows):
-    path = OUT / f"{name}.jsonl"
-    with open(path, "w", newline="\n") as f:
-        for r in rows:
-            f.write(json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n")
-    return {"file": f"t7/{path.name}", "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
-            "rows": len(rows), "cypher": CYPHER[name.split("-")[0]]}
+    """Write rows as <name>.jsonl, or as <name>.part-NN.jsonl when they exceed PART_BYTES. Returns manifest
+    entries, one per file, all with the same cypher."""
+    lines = [json.dumps(r, ensure_ascii=False, sort_keys=True) + "\n" for r in rows]
+    parts, cur, size = [], [], 0
+    for line in lines:
+        n = len(line.encode())
+        if cur and size + n > PART_BYTES:
+            parts.append(cur)
+            cur, size = [], 0
+        cur.append(line)
+        size += n
+    parts.append(cur)
+    out = []
+    for i, part in enumerate(parts):
+        path = OUT / (f"{name}.jsonl" if len(parts) == 1 else f"{name}.part-{i:02d}.jsonl")
+        data = "".join(part).encode()
+        path.write_bytes(data)
+        out.append({"file": f"t7/{path.name}", "sha256": hashlib.sha256(data).hexdigest(),
+                    "rows": len(part), "cypher": CYPHER[name.split("-")[0]]})
+    return out
 
 
 def main():
@@ -83,19 +100,19 @@ def main():
         builds.append({"id": b["id"], "timestamp": b.get("timestamp", ""), "exe_sha256": b["exe"]["sha256"],
                        "pdb_guid": b.get("pdb_guid", "")})
         files |= {(f.source, f.subsystem) for f in fns.values() if f.source}
-    manifest["imports"].append(write_jsonl("builds", builds))
-    manifest["imports"].append(write_jsonl("sourcefiles", [{"path": p, "subsystem": s} for p, s in sorted(files)]))
+    manifest["imports"].extend(write_jsonl("builds", builds))
+    manifest["imports"].extend(write_jsonl("sourcefiles", [{"path": p, "subsystem": s} for p, s in sorted(files)]))
     for bid, fns in per_build.items():
         rows = [{"id": f"{bid}:{f.va}", "build": bid, "va": f.va, "size": f.size, "status": f.status,
                  "type": f.type, "src": f.src, "sha": f.extra.get("bytes_sha256", ""), "key": f.key,
                  "name": f.name, "symbol": f.symbol, "source": f.source, "line": f.line}
                 for f in sorted(fns.values(), key=lambda f: f.va)]
-        manifest["imports"].append(write_jsonl(f"functions-{bid}", rows))
+        manifest["imports"].extend(write_jsonl(f"functions-{bid}", rows))
     for bid in per_build:
         edges = read_tsv(ROOT / "analysis" / bid / "ghidra" / "callgraph.tsv")
         uniq = sorted({(e["caller"], e["callee"], e["kind"]) for e in edges})
         if uniq:
-            manifest["imports"].append(write_jsonl(f"calls-{bid}", [
+            manifest["imports"].extend(write_jsonl(f"calls-{bid}", [
                 {"caller": f"{bid}:{a}", "callee": f"{bid}:{c}", "kind": k} for a, c, k in uniq]))
     (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     for m in manifest["imports"]:

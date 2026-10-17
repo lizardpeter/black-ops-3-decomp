@@ -1,0 +1,136 @@
+2026-10-17 20:52:01 INFO  (LoggingInitialization) Using log config file: jar:file:/opt/ghidra/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-10-17 20:52:01 INFO  (LoggingInitialization) Using log file: /tmp/out/decompile-4.log  
+2026-10-17 20:52:01 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
+2026-10-17 20:52:01 INFO  (Preferences) Loading user preferences: /home/runner/.config/ghidra/ghidra_12.1.4_PUBLIC/preferences  
+2026-10-17 20:52:01 INFO  (ClassSearcher) Searching for classes...  
+2026-10-17 20:52:02 INFO  (ClassSearcher) Class search complete (1059 ms)  
+2026-10-17 20:52:03 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-10-17 20:52:03 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-10-17 20:52:03 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2026-10-17 20:52:03 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-10-17 20:52:03 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/runner-ghidra/fscache2  
+2026-10-17 20:52:03 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2026-10-17 20:52:04 INFO  (AnalyzeHeadless) Headless startup complete (4276 ms)  
+2026-10-17 20:52:04 INFO  (ClassSearcher) Class searcher loaded 59 extension points (20 false positives)  
+2026-10-17 20:52:04 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /opt/ghidra/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/runner/work/black-ops-3-decomp/black-ops-3-decomp/tools/ghidra
+    /opt/ghidra/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /opt/ghidra/Ghidra/Processors/DATA/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /opt/ghidra/Ghidra/Processors/JVM/ghidra_scripts
+    /opt/ghidra/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/VersionTracking/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/PyGhidra/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/Base/ghidra_scripts
+    /opt/ghidra/Ghidra/Processors/Atmel/ghidra_scripts
+    /opt/ghidra/Ghidra/Debug/Debugger/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/Decompiler/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/FunctionID/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/PDB/ghidra_scripts
+    /opt/ghidra/Ghidra/Processors/8051/ghidra_scripts
+    /opt/ghidra/Ghidra/Processors/PIC/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/FileFormats/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/BSim/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/BytePatterns/ghidra_scripts  
+2026-10-17 20:52:04 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-10-17 20:52:04 INFO  (HeadlessAnalyzer) Opening existing project: /tmp/proj/t7  
+2026-10-17 20:52:04 DEBUG (DefaultProjectManager) No tools found; Installing default tools  
+2026-10-17 20:52:04 DEBUG (DefaultProjectManager) 	no recent project directories found  
+2026-10-17 20:52:04 INFO  (HeadlessProject) Opening project: /tmp/proj/t7  
+2026-10-17 20:52:08 INFO  (HeadlessAnalyzer) REPORT: Processing read-only project file: /BlackOps3_Steam.exe  
+2026-10-17 20:52:08 INFO  (HeadlessAnalyzer) REPORT: Execute script: Decompile.java '/tmp/out/decomp-4.jsonl' '4' '6' '90'   
+2026-10-17 20:52:10 INFO  (HeadlessAnalyzer) SCRIPT: /home/runner/work/black-ops-3-decomp/black-ops-3-decomp/tools/ghidra/Decompile.java  
+2026-10-17 20:54:10 INFO  (GhidraScript) Decompile.java> shard 4: 1000 ok, 0 failed, 119s  
+2026-10-17 20:54:53 INFO  (GhidraScript) Decompile.java> shard 4: 2000 ok, 0 failed, 162s  
+2026-10-17 20:55:22 INFO  (GhidraScript) Decompile.java> shard 4: 3000 ok, 0 failed, 191s  
+2026-10-17 20:56:10 INFO  (GhidraScript) Decompile.java> shard 4: 4000 ok, 0 failed, 239s  
+2026-10-17 20:56:21 WARN  (DecompileCallback) Decompiling 1420f72d0, pcode error at 1420f72d0: Unable to resolve constructor at 1420f72d0  
+2026-10-17 20:56:24 INFO  (GhidraScript) Decompile.java> shard 4: 5000 ok, 0 failed, 253s  
+2026-10-17 20:56:26 INFO  (GhidraScript) Decompile.java> shard 4: 6000 ok, 0 failed, 255s  
+2026-10-17 20:56:30 WARN  (DecompileCallback) Decompiling 1422d6820, pcode error at 1422d6822: Unable to resolve constructor at 1422d6822  
+2026-10-17 20:56:31 WARN  (DecompileCallback) Decompiling 1422f4660, pcode error at 1422f4660: Unable to resolve constructor at 1422f4660  
+2026-10-17 20:56:31 INFO  (GhidraScript) Decompile.java> shard 4: 7000 ok, 0 failed, 260s  
+2026-10-17 20:56:54 INFO  (GhidraScript) Decompile.java> shard 4: 8000 ok, 0 failed, 283s  
+2026-10-17 20:57:14 INFO  (GhidraScript) Decompile.java> shard 4: 9000 ok, 0 failed, 303s  
+2026-10-17 20:57:21 INFO  (GhidraScript) Decompile.java> shard 4: 10000 ok, 0 failed, 310s  
+2026-10-17 20:57:38 INFO  (GhidraScript) Decompile.java> shard 4: 11000 ok, 0 failed, 327s  
+2026-10-17 20:57:57 INFO  (GhidraScript) Decompile.java> shard 4: 12000 ok, 0 failed, 346s  
+2026-10-17 20:58:28 INFO  (GhidraScript) Decompile.java> shard 4: 13000 ok, 0 failed, 377s  
+2026-10-17 20:58:30 WARN  (DecompileCallback) Decompiling 15acd5434: Unable to read bytes at ram:13fa33b95  
+2026-10-17 20:58:30 WARN  (DecompileCallback) Decompiling 15acd5434, pcode error at 142612125: Unable to resolve constructor at 142612125  
+2026-10-17 20:58:31 INFO  (GhidraScript) Decompile.java> shard 4: 14000 ok, 0 failed, 380s  
+2026-10-17 20:58:32 WARN  (DecompileCallback) Decompiling 15b08b862, pcode error at 15ab849c1: Unable to resolve constructor at 15ab849c1  
+2026-10-17 20:58:51 INFO  (GhidraScript) Decompile.java> shard 4: 14999 ok, 1 failed, 400s  
+2026-10-17 20:58:53 INFO  (GhidraScript) Decompile.java> shard 4: 15999 ok, 1 failed, 402s  
+2026-10-17 20:58:55 INFO  (GhidraScript) Decompile.java> shard 4: 16999 ok, 1 failed, 404s  
+2026-10-17 20:58:57 INFO  (GhidraScript) Decompile.java> shard 4: 17999 ok, 1 failed, 406s  
+2026-10-17 20:58:59 INFO  (GhidraScript) Decompile.java> shard 4: 18999 ok, 1 failed, 408s  
+2026-10-17 20:59:01 INFO  (GhidraScript) Decompile.java> shard 4: 19999 ok, 1 failed, 410s  
+2026-10-17 20:59:03 INFO  (GhidraScript) Decompile.java> shard 4: 20999 ok, 1 failed, 412s  
+2026-10-17 20:59:05 INFO  (GhidraScript) Decompile.java> shard 4: 21999 ok, 1 failed, 414s  
+2026-10-17 20:59:07 INFO  (GhidraScript) Decompile.java> shard 4: 22999 ok, 1 failed, 416s  
+2026-10-17 20:59:09 INFO  (GhidraScript) Decompile.java> shard 4: 23999 ok, 1 failed, 418s  
+2026-10-17 20:59:11 INFO  (GhidraScript) Decompile.java> shard 4: 24999 ok, 1 failed, 420s  
+2026-10-17 20:59:13 INFO  (GhidraScript) Decompile.java> shard 4: 25999 ok, 1 failed, 421s  
+2026-10-17 20:59:14 INFO  (GhidraScript) Decompile.java> shard 4: 26999 ok, 1 failed, 423s  
+2026-10-17 20:59:16 INFO  (GhidraScript) Decompile.java> shard 4: 27999 ok, 1 failed, 425s  
+2026-10-17 20:59:18 INFO  (GhidraScript) Decompile.java> shard 4: 28999 ok, 1 failed, 427s  
+2026-10-17 20:59:20 INFO  (GhidraScript) Decompile.java> shard 4: 29999 ok, 1 failed, 429s  
+2026-10-17 20:59:22 WARN  (DecompileCallback) Decompiling 15cda0301: Unable to read bytes at ram:13f112de8  
+2026-10-17 20:59:22 WARN  (DecompileCallback) Decompiling 15cda0301, pcode error at 13ff8b358: Could not follow disassembly flow into non-existing memory at 13ff8b358  
+2026-10-17 20:59:22 WARN  (DecompileCallback) Decompiling 15cda0301: Unable to read bytes at ram:13f112de8  
+2026-10-17 20:59:22 WARN  (DecompileCallback) Decompiling 15cda0301, pcode error at 13ff8b358: Could not follow disassembly flow into non-existing memory at 13ff8b358  
+2026-10-17 20:59:22 WARN  (DecompileCallback) Decompiling 15cda0301: Unable to read bytes at ram:13f112de8  
+2026-10-17 20:59:22 INFO  (GhidraScript) Decompile.java> shard 4: 30999 ok, 1 failed, 431s  
+2026-10-17 20:59:24 INFO  (GhidraScript) Decompile.java> shard 4: 31999 ok, 1 failed, 433s  
+2026-10-17 20:59:24 WARN  (DecompileCallback) Decompiling 15cec3fb2, pcode error at 15cec3fb8: Unable to resolve constructor at 15cec3fb8  
+2026-10-17 20:59:26 INFO  (GhidraScript) Decompile.java> shard 4: 32999 ok, 1 failed, 435s  
+2026-10-17 20:59:28 INFO  (GhidraScript) Decompile.java> shard 4: 33999 ok, 1 failed, 437s  
+2026-10-17 20:59:46 INFO  (GhidraScript) Decompile.java> shard 4: 34998 ok, 2 failed, 455s  
+2026-10-17 20:59:48 INFO  (GhidraScript) Decompile.java> shard 4: 35998 ok, 2 failed, 456s  
+2026-10-17 20:59:49 INFO  (GhidraScript) Decompile.java> shard 4: 36998 ok, 2 failed, 458s  
+2026-10-17 20:59:51 INFO  (GhidraScript) Decompile.java> shard 4: 37998 ok, 2 failed, 460s  
+2026-10-17 20:59:53 INFO  (GhidraScript) Decompile.java> shard 4: 38998 ok, 2 failed, 462s  
+2026-10-17 20:59:55 INFO  (GhidraScript) Decompile.java> shard 4: 39998 ok, 2 failed, 464s  
+2026-10-17 20:59:57 INFO  (GhidraScript) Decompile.java> shard 4: 40998 ok, 2 failed, 466s  
+2026-10-17 20:59:59 INFO  (GhidraScript) Decompile.java> shard 4: 41998 ok, 2 failed, 467s  
+2026-10-17 21:00:16 INFO  (GhidraScript) Decompile.java> shard 4: 42997 ok, 3 failed, 485s  
+2026-10-17 21:00:16 WARN  (DecompileCallback) Decompiling 15dab150a, pcode error at 15e3cf777: Unable to resolve constructor at 15e3cf777  
+2026-10-17 21:00:16 WARN  (DecompileCallback) Decompiling 15dab150a, pcode error at 15dbb3bda: Unable to resolve constructor at 15dbb3bda  
+2026-10-17 21:00:16 WARN  (DecompileCallback) Decompiling 15dab150a, pcode error at 15d7b5e77: Unable to resolve constructor at 15d7b5e77  
+2026-10-17 21:00:18 INFO  (GhidraScript) Decompile.java> shard 4: 43997 ok, 3 failed, 487s  
+2026-10-17 21:00:20 INFO  (GhidraScript) Decompile.java> shard 4: 44997 ok, 3 failed, 489s  
+2026-10-17 21:00:22 INFO  (GhidraScript) Decompile.java> shard 4: 45997 ok, 3 failed, 491s  
+2026-10-17 21:00:23 INFO  (GhidraScript) Decompile.java> shard 4: 46997 ok, 3 failed, 492s  
+2026-10-17 21:00:25 INFO  (GhidraScript) Decompile.java> shard 4: 47997 ok, 3 failed, 494s  
+2026-10-17 21:00:27 WARN  (DecompileCallback) Decompiling 15dfe6157, pcode error at 1425757e6: Unable to resolve constructor at 1425757e6  
+2026-10-17 21:00:27 INFO  (GhidraScript) Decompile.java> shard 4: 48997 ok, 3 failed, 496s  
+2026-10-17 21:00:29 INFO  (GhidraScript) Decompile.java> shard 4: 49997 ok, 3 failed, 498s  
+2026-10-17 21:00:31 INFO  (GhidraScript) Decompile.java> shard 4: 50997 ok, 3 failed, 500s  
+2026-10-17 21:00:33 INFO  (GhidraScript) Decompile.java> shard 4: 51997 ok, 3 failed, 502s  
+2026-10-17 21:00:35 INFO  (GhidraScript) Decompile.java> shard 4: 52997 ok, 3 failed, 504s  
+2026-10-17 21:00:37 INFO  (GhidraScript) Decompile.java> shard 4: 53997 ok, 3 failed, 505s  
+2026-10-17 21:00:38 INFO  (GhidraScript) Decompile.java> shard 4: 54997 ok, 3 failed, 507s  
+2026-10-17 21:00:41 INFO  (GhidraScript) Decompile.java> shard 4: 55997 ok, 3 failed, 510s  
+2026-10-17 21:00:43 INFO  (GhidraScript) Decompile.java> shard 4: 56997 ok, 3 failed, 512s  
+2026-10-17 21:00:44 INFO  (GhidraScript) Decompile.java> shard 4: 57997 ok, 3 failed, 513s  
+2026-10-17 21:01:18 INFO  (GhidraScript) Decompile.java> shard 4: 58995 ok, 5 failed, 547s  
+2026-10-17 21:01:20 INFO  (GhidraScript) Decompile.java> shard 4: 59995 ok, 5 failed, 549s  
+2026-10-17 21:01:20 WARN  (DecompileCallback) Decompiling 15ed4033b: Unable to read bytes at ram:13fb9ff76  
+2026-10-17 21:01:20 WARN  (DecompileCallback) Decompiling 15ed4033b, pcode error at 14224173d: Unable to resolve constructor at 14224173d  
+2026-10-17 21:01:20 WARN  (DecompileCallback) Decompiling 15ed4033b: Unable to read bytes at ram:13fb9ff76  
+2026-10-17 21:01:20 WARN  (DecompileCallback) Decompiling 15ed4033b, pcode error at 14224173d: Unable to resolve constructor at 14224173d  
+2026-10-17 21:01:20 WARN  (DecompileCallback) Decompiling 15ed4033b: Unable to read bytes at ram:13fb9ff76  
+2026-10-17 21:01:22 INFO  (GhidraScript) Decompile.java> shard 4: 60995 ok, 5 failed, 551s  
+2026-10-17 21:01:40 INFO  (GhidraScript) Decompile.java> shard 4: 61994 ok, 6 failed, 569s  
+2026-10-17 21:01:42 INFO  (GhidraScript) Decompile.java> shard 4: 62994 ok, 6 failed, 571s  
+2026-10-17 21:01:43 INFO  (GhidraScript) Decompile.java> shard 4: 63994 ok, 6 failed, 572s  
+2026-10-17 21:01:45 INFO  (GhidraScript) Decompile.java> shard 4: 64994 ok, 6 failed, 574s  
+2026-10-17 21:01:47 INFO  (GhidraScript) Decompile.java> shard 4: 65994 ok, 6 failed, 576s  
+2026-10-17 21:01:49 INFO  (GhidraScript) Decompile.java> shard 4: 66994 ok, 6 failed, 578s  
+2026-10-17 21:01:51 INFO  (GhidraScript) Decompile.java> shard 4: 67994 ok, 6 failed, 580s  
+2026-10-17 21:01:52 INFO  (GhidraScript) Decompile.java> shard 4 done: 68471 ok, 6 failed  

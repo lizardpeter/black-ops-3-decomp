@@ -1,0 +1,104 @@
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> JVM max heap: 13312 MB, processors: 4  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer = true  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: Stack.Max Threads = 2  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Min absolute reference = 4  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Function parameter/return Pointer analysis = true  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Create Data from pointer = false  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: Stack.Create Local Variables = true  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: Decompiler Switch Analysis.Analysis Decompiler Timeout (sec) = 60  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Trust values read from writable memory = true  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Require pointer param data type = false  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Stored Value Pointer analysis = true  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: Stack = true  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Speculative reference max = 256  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Max Threads = 2  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> set x86 Constant Reference Analyzer.Max Threads = 1  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: Decompiler Switch Analysis = true  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Speculative reference min = 1024  
+2026-10-17 19:03:53 INFO  PrepAnalysis.java> option: Stack.Create Param Variables = false  
+2026-10-17 20:45:00 INFO  ExportAll.java> exported 5000 functions  
+2026-10-17 20:45:21 INFO  ExportAll.java> exported 10000 functions  
+2026-10-17 20:46:06 INFO  ExportAll.java> exported 15000 functions  
+2026-10-17 20:46:15 INFO  ExportAll.java> exported 20000 functions  
+2026-10-17 20:46:26 INFO  ExportAll.java> exported 25000 functions  
+2026-10-17 20:46:35 INFO  ExportAll.java> exported 30000 functions  
+2026-10-17 20:46:36 INFO  ExportAll.java> exported 35000 functions  
+2026-10-17 20:46:36 INFO  ExportAll.java> exported 40000 functions  
+2026-10-17 20:46:37 INFO  ExportAll.java> exported 45000 functions  
+2026-10-17 20:46:41 INFO  ExportAll.java> exported 50000 functions  
+2026-10-17 20:46:42 INFO  ExportAll.java> exported 55000 functions  
+2026-10-17 20:47:05 INFO  ExportAll.java> exported 60000 functions  
+2026-10-17 20:47:17 INFO  ExportAll.java> exported 65000 functions  
+2026-10-17 20:47:20 INFO  ExportAll.java> exported 70000 functions  
+2026-10-17 20:47:27 INFO  ExportAll.java> exported 75000 functions  
+2026-10-17 20:47:38 INFO  ExportAll.java> exported 80000 functions  
+2026-10-17 20:47:42 INFO  ExportAll.java> exported 85000 functions  
+2026-10-17 20:47:55 INFO  ExportAll.java> exported 90000 functions  
+2026-10-17 20:47:58 INFO  ExportAll.java> exported 95000 functions  
+2026-10-17 20:48:00 INFO  ExportAll.java> exported 100000 functions  
+2026-10-17 20:48:01 INFO  ExportAll.java> exported 105000 functions  
+2026-10-17 20:48:02 INFO  ExportAll.java> exported 110000 functions  
+2026-10-17 20:48:03 INFO  ExportAll.java> exported 115000 functions  
+2026-10-17 20:48:04 INFO  ExportAll.java> exported 120000 functions  
+2026-10-17 20:48:05 INFO  ExportAll.java> exported 125000 functions  
+2026-10-17 20:48:06 INFO  ExportAll.java> exported 130000 functions  
+2026-10-17 20:48:07 INFO  ExportAll.java> exported 135000 functions  
+2026-10-17 20:48:08 INFO  ExportAll.java> exported 140000 functions  
+2026-10-17 20:48:09 INFO  ExportAll.java> exported 145000 functions  
+2026-10-17 20:48:10 INFO  ExportAll.java> exported 150000 functions  
+2026-10-17 20:48:11 INFO  ExportAll.java> exported 155000 functions  
+2026-10-17 20:48:12 INFO  ExportAll.java> exported 160000 functions  
+2026-10-17 20:48:13 INFO  ExportAll.java> exported 165000 functions  
+2026-10-17 20:48:14 INFO  ExportAll.java> exported 170000 functions  
+2026-10-17 20:48:15 INFO  ExportAll.java> exported 175000 functions  
+2026-10-17 20:48:16 INFO  ExportAll.java> exported 180000 functions  
+2026-10-17 20:48:17 INFO  ExportAll.java> exported 185000 functions  
+2026-10-17 20:48:18 INFO  ExportAll.java> exported 190000 functions  
+2026-10-17 20:48:19 INFO  ExportAll.java> exported 195000 functions  
+2026-10-17 20:48:20 INFO  ExportAll.java> exported 200000 functions  
+2026-10-17 20:48:21 INFO  ExportAll.java> exported 205000 functions  
+2026-10-17 20:48:22 INFO  ExportAll.java> exported 210000 functions  
+2026-10-17 20:48:23 INFO  ExportAll.java> exported 215000 functions  
+2026-10-17 20:48:24 INFO  ExportAll.java> exported 220000 functions  
+2026-10-17 20:48:25 INFO  ExportAll.java> exported 225000 functions  
+2026-10-17 20:48:26 INFO  ExportAll.java> exported 230000 functions  
+2026-10-17 20:48:27 INFO  ExportAll.java> exported 235000 functions  
+2026-10-17 20:48:28 INFO  ExportAll.java> exported 240000 functions  
+2026-10-17 20:48:29 INFO  ExportAll.java> exported 245000 functions  
+2026-10-17 20:48:30 INFO  ExportAll.java> exported 250000 functions  
+2026-10-17 20:48:31 INFO  ExportAll.java> exported 255000 functions  
+2026-10-17 20:48:32 INFO  ExportAll.java> exported 260000 functions  
+2026-10-17 20:48:33 INFO  ExportAll.java> exported 265000 functions  
+2026-10-17 20:48:34 INFO  ExportAll.java> exported 270000 functions  
+2026-10-17 20:48:35 INFO  ExportAll.java> exported 275000 functions  
+2026-10-17 20:48:36 INFO  ExportAll.java> exported 280000 functions  
+2026-10-17 20:48:37 INFO  ExportAll.java> exported 285000 functions  
+2026-10-17 20:48:38 INFO  ExportAll.java> exported 290000 functions  
+2026-10-17 20:48:39 INFO  ExportAll.java> exported 295000 functions  
+2026-10-17 20:48:40 INFO  ExportAll.java> exported 300000 functions  
+2026-10-17 20:48:41 INFO  ExportAll.java> exported 305000 functions  
+2026-10-17 20:48:42 INFO  ExportAll.java> exported 310000 functions  
+2026-10-17 20:48:43 INFO  ExportAll.java> exported 315000 functions  
+2026-10-17 20:48:44 INFO  ExportAll.java> exported 320000 functions  
+2026-10-17 20:48:45 INFO  ExportAll.java> exported 325000 functions  
+2026-10-17 20:48:46 INFO  ExportAll.java> exported 330000 functions  
+2026-10-17 20:48:47 INFO  ExportAll.java> exported 335000 functions  
+2026-10-17 20:48:48 INFO  ExportAll.java> exported 340000 functions  
+2026-10-17 20:48:48 INFO  ExportAll.java> exported 345000 functions  
+2026-10-17 20:48:50 INFO  ExportAll.java> exported 350000 functions  
+2026-10-17 20:48:50 INFO  ExportAll.java> exported 355000 functions  
+2026-10-17 20:48:51 INFO  ExportAll.java> exported 360000 functions  
+2026-10-17 20:48:52 INFO  ExportAll.java> exported 365000 functions  
+2026-10-17 20:48:53 INFO  ExportAll.java> exported 370000 functions  
+2026-10-17 20:48:54 INFO  ExportAll.java> exported 375000 functions  
+2026-10-17 20:48:55 INFO  ExportAll.java> exported 380000 functions  
+2026-10-17 20:48:56 INFO  ExportAll.java> exported 385000 functions  
+2026-10-17 20:48:57 INFO  ExportAll.java> exported 390000 functions  
+2026-10-17 20:48:58 INFO  ExportAll.java> exported 395000 functions  
+2026-10-17 20:48:59 INFO  ExportAll.java> exported 400000 functions  
+2026-10-17 20:49:00 INFO  ExportAll.java> exported 405000 functions  
+2026-10-17 20:49:01 INFO  ExportAll.java> exported 410000 functions  
+2026-10-17 20:49:02 INFO  ExportAll.java> exported 415000 functions  
+2026-10-17 20:49:03 INFO  ExportAll.java> exported 420000 functions  
+2026-10-17 20:49:04 INFO  ExportAll.java> exported 425000 functions  
+2026-10-17 20:49:04 INFO  ExportAll.java> functions: 426463  
