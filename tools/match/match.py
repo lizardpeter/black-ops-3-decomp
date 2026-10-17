@@ -84,17 +84,15 @@ class Build:
         pe = pefile.PE(str(exe), fast_load=True)
         base = pe.OPTIONAL_HEADER.ImageBase
         size = pe.OPTIONAL_HEADER.SizeOfImage
-        secs = {s.Name.rstrip(b"\0"): s for s in pe.sections}
+        # Sections by name can repeat (the Arxan-protected Steam build has two .text sections), so keep every one
+        # and read function bytes from the mapped image instead of from a section picked by name.
+        data_secs = [s for s in pe.sections if s.Name.rstrip(b"\0") in (b".rdata", b".data")]
         strs = {}
-        for name in (b".rdata", b".data"):
-            s = secs.get(name)
-            if not s:
-                continue
+        for s in data_secs:
             d, va = s.get_data(), base + s.VirtualAddress
             for m in re.finditer(rb"[\x20-\x7e\t\n\r]{5,}\x00", d):
                 strs[va + m.start()] = m.group()[:-1]
-        text = secs[b".text"]
-        tva, tdata = base + text.VirtualAddress, text.get_data()
+        tva, tdata = base, pe.get_memory_mapped_image()
         md = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_64)
         md.detail = True
         rip = capstone.x86.X86_REG_RIP
@@ -139,10 +137,7 @@ class Build:
                         self.const_refs[v].add(va)
                         self.fn_consts[va].add(v)
         # data tables of {const char *name; ...; function pointer} (script built-ins, command and callback tables)
-        for name in (b".rdata", b".data"):
-            sec = secs.get(name)
-            if not sec:
-                continue
+        for sec in data_secs:
             d = sec.get_data()
             for i in range(0, len(d) - 32, 8):
                 sv = struct.unpack_from("<Q", d, i)[0]
