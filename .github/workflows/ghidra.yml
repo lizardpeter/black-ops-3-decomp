@@ -1,5 +1,6 @@
 # Ghidra pipeline: fetch each build, unpack it if it is Arxan-protected (tools/unpack/arxan.py), import it
-# (with its original PDB when it has one), export everything, decompile in shards, then commit the results
+# (with its original PDB when it has one), create functions reached only from data tables
+# (tools/ghidra/CreateTableFunctions.java), export everything, decompile in shards, then commit the results
 # to analysis/<build>/. Runs when the pipeline itself or target.toml
 # changes, on the builds marked `analyze = true` in target.toml; a manual run can name any builds.
 name: ghidra
@@ -99,6 +100,7 @@ jobs:
             -scriptPath tools/ghidra \
             -preScript PrepAnalysis.java \
             "${pdbargs[@]}" \
+            -postScript CreateTableFunctions.java \
             -postScript ExportAll.java /tmp/raw \
             -analysisTimeoutPerFile 19000 \
             -log /tmp/raw/analyze.log -scriptlog /tmp/raw/analyze-scripts.log
