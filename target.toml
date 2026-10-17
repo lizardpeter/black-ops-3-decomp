@@ -31,7 +31,7 @@ source_roots = []
 [[build]]
 id = "BlackOps3_MSStore"
 kind = "retail"
-analyze = true
+analyze = false  # analysed (analysis/BlackOps3_MSStore); set true only to redo it
 timestamp = "2024-11-14T18:19:22Z"
 original_name = "BlackOps3.exe"
 pdb_path = 'd:\workspace\outrun\t7\game\pc\BlackOps3.pdb'
