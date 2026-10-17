@@ -23,8 +23,17 @@ and the other 186 decode as small functions without unwind entries (leaf functio
 expected for a different build. So the legacy addresses apply to our analysis without any matching step.
 
 How we use it: names and addresses are facts, and enter `records/names.tsv` as identifications for
-`BlackOps3_Steam` with method `boiii-free symbols` and the commit as evidence, checked against our own analysis
-(function start, strings, call graph). From there the matcher carries them to the Store build. Their *code* and
+`BlackOps3_Steam` with method `boiii-free symbols` and the commit as evidence, checked against our own analysis.
+From there the matcher carries them to the Store build.
+
+`tools/prior/boiii.py <checkout> --write` does this. At 5aa7fac: 3,479 declarations, 3,018 distinct legacy
+addresses. Recorded: **2,536 functions** (each a Ghidra function start in our analysis) and **218 data symbols**
+(each in a data section). Not recorded: 255 function addresses that are not Ghidra functions, 6 addresses the
+client gives two names, 3 outside code and data. Of the 255, 251 lie between Ghidra's functions and are real code
+Ghidra didn't find: mostly Lua C functions (`hks::lua_CFunction`, 238) and command handlers that are referenced
+only from registration tables, never called directly (e.g. `SV_MapRestart_f`: `xor ecx,ecx; jmp`). Finding
+functions from those tables is a pipeline improvement to make; the other 4 land inside a function and are wrong
+or stale addresses. Their *code* and
 struct definitions are not imported: that would make this repo GPL-3.0, which is the user's decision.
 
 Arxan: these clients let the stub decrypt the game at runtime (Ezz BOIII can dump the decrypted exe with `-dump`).

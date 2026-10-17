@@ -28,7 +28,7 @@
     },
     {
       "file": "t7/functions-BlackOps3_Steam.jsonl",
-      "sha256": "512e660b8fd007de82cbabf6288bcba87699543bbc5e28ae62a7c0d4861212c4",
+      "sha256": "8b0a62c30e59ce59858d4d53fa9dcf420e222aa87f802d1174e8ba680d02cd3e",
       "rows": 93641,
       "cypher": "UNWIND {{ROWS}} AS r MATCH (b:Build {id:r.build}) MERGE (fn:Function {key:r.key}) SET fn.name = coalesce(fn.name, r.name), fn.symbol = r.symbol MERGE (fi:FunctionInstance {id:r.id}) SET fi.build=r.build, fi.va=r.va, fi.size=r.size, fi.status=r.status, fi.type=r.type, fi.src=r.src, fi.bytes_sha256=r.sha MERGE (fi)-[:INSTANCE_OF]->(fn) MERGE (fi)-[:IN_BUILD]->(b) WITH fn, r WHERE r.source <> '' MATCH (sf:SourceFile {path:r.source}) MERGE (fn)-[d:DEFINED_IN]->(sf) SET d.line=r.line"
     },

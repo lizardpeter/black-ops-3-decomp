@@ -39,7 +39,7 @@ src/ include/        AUTHORED faithful reconstruction, mirroring the original so
 enhanced/            AUTHORED (once needed) overrides for the enhanced build, same layout as src/
 tests/differential/  differential tests (x64 Unicorn harness)
 docs/<topic>.md      method notes and per-build findings. Topic names, never dates.
-tools/               pipeline scripts (unpack/, ghidra/, pdb/, match/, graph/, recon/)
+tools/               pipeline scripts (unpack/, ghidra/, pdb/, match/, graph/, recon/, prior/ for community names)
 ```
 
 Folder and file names describe *what*, never *when*. Dates belong in commit messages.
