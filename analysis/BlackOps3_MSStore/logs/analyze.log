@@ -1,0 +1,369 @@
+2026-10-17 17:17:37 INFO  (LoggingInitialization) Using log config file: jar:file:/opt/ghidra/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-10-17 17:17:37 INFO  (LoggingInitialization) Using log file: /tmp/raw/analyze.log  
+2026-10-17 17:17:37 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
+2026-10-17 17:17:37 INFO  (Preferences) Loading user preferences: /home/runner/.config/ghidra/ghidra_12.1.4_PUBLIC/preferences  
+2026-10-17 17:17:37 INFO  (ClassSearcher) Searching for classes...  
+2026-10-17 17:17:38 INFO  (ClassSearcher) Class search complete (1053 ms)  
+2026-10-17 17:17:39 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-10-17 17:17:39 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-10-17 17:17:39 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2026-10-17 17:17:39 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-10-17 17:17:39 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/runner-ghidra/fscache2  
+2026-10-17 17:17:39 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2026-10-17 17:17:40 INFO  (AnalyzeHeadless) Headless startup complete (4143 ms)  
+2026-10-17 17:17:40 INFO  (ClassSearcher) Class searcher loaded 59 extension points (20 false positives)  
+2026-10-17 17:17:40 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /opt/ghidra/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/runner/work/black-ops-3-decomp/black-ops-3-decomp/tools/ghidra
+    /opt/ghidra/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /opt/ghidra/Ghidra/Processors/DATA/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /opt/ghidra/Ghidra/Processors/JVM/ghidra_scripts
+    /opt/ghidra/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/VersionTracking/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/PyGhidra/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/Base/ghidra_scripts
+    /opt/ghidra/Ghidra/Processors/Atmel/ghidra_scripts
+    /opt/ghidra/Ghidra/Debug/Debugger/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/Decompiler/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/FunctionID/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/PDB/ghidra_scripts
+    /opt/ghidra/Ghidra/Processors/8051/ghidra_scripts
+    /opt/ghidra/Ghidra/Processors/PIC/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/FileFormats/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/BSim/ghidra_scripts
+    /opt/ghidra/Ghidra/Features/BytePatterns/ghidra_scripts  
+2026-10-17 17:17:40 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-10-17 17:17:40 INFO  (HeadlessAnalyzer) Creating project: /tmp/proj/t7  
+2026-10-17 17:17:40 DEBUG (DefaultProjectManager) No tools found; Installing default tools  
+2026-10-17 17:17:40 DEBUG (DefaultProjectManager) 	no recent project directories found  
+2026-10-17 17:17:41 INFO  (DefaultProject) Creating project: /tmp/proj/t7  
+2026-10-17 17:17:41 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2026-10-17 17:17:41 INFO  (HeadlessAnalyzer)      project: /tmp/proj/t7  
+2026-10-17 17:17:41 INFO  (HeadlessAnalyzer) IMPORTING: file:///tmp/in/BlackOps3_MSStore.exe  
+2026-10-17 17:17:42 INFO  (ProgramLoader) Using Loader: Portable Executable (PE)  
+2026-10-17 17:17:42 INFO  (ProgramLoader) Using Language/Compiler: x86:LE:64:default:windows  
+2026-10-17 17:17:42 INFO  (ProgramLoader) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib64]  
+2026-10-17 17:17:43 INFO  (TLSDirectory) TLS callbacks at 142db4578  
+2026-10-17 17:17:52 INFO  (ProgramLoader) Additional info:
+Loading file:///tmp/in/BlackOps3_MSStore.exe?MD5=f0c883cbca2db52440e8b8ab79b8f162...
+------------------------------------------------
+
+Searching 8 paths for library ADVAPI32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CORE-PSM-APPNOTIFY-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-CONVERT-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-ENVIRONMENT-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-FILESYSTEM-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-HEAP-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-LOCALE-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-MATH-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-STDIO-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-STRING-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-TIME-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-UTILITY-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library BCRYPT.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library CRYPT32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library D3D11.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library DXGI.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library GAMECHAT2.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library GDI32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library IPHLPAPI.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library KERNEL32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library LIBSCEPAD.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library MFPLAT.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library MSVCP140.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library OLE32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library OLEAUT32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library SHELL32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library SHLWAPI.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library USER32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library VCRUNTIME140.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library VCRUNTIME140_1.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library WINDOWSCODECS.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library WINHTTP.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library WINMM.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library WLANAPI.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library WS2_32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library WTSAPI32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library XCURL.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library XINPUT9_1_0.DLL...
+Library not found.
+------------------------------------------------
+
+Linking the External Programs of 'BlackOps3_MSStore.exe' to imported libraries...
+  [MFPLAT.DLL] -> not found in project
+  [SHLWAPI.DLL] -> not found in project
+  [KERNEL32.DLL] -> not found in project
+  [USER32.DLL] -> not found in project
+  [GDI32.DLL] -> not found in project
+  [ADVAPI32.DLL] -> not found in project
+  [SHELL32.DLL] -> not found in project
+  [OLE32.DLL] -> not found in project
+  [DXGI.DLL] -> not found in project
+  [D3D11.DLL] -> not found in project
+  [WINMM.DLL] -> not found in project
+  [XCURL.DLL] -> not found in project
+  [LIBSCEPAD.DLL] -> not found in project
+  [GAMECHAT2.DLL] -> not found in project
+  [MSVCP140.DLL] -> not found in project
+  [WS2_32.DLL] -> not found in project
+  [WLANAPI.DLL] -> not found in project
+  [IPHLPAPI.DLL] -> not found in project
+  [WINDOWSCODECS.DLL] -> not found in project
+  [XINPUT9_1_0.DLL] -> not found in project
+  [WTSAPI32.DLL] -> not found in project
+  [VCRUNTIME140_1.DLL] -> not found in project
+  [VCRUNTIME140.DLL] -> not found in project
+  [API-MS-WIN-CRT-STRING-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-CONVERT-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-STDIO-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-UTILITY-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-TIME-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-HEAP-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-LOCALE-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-ENVIRONMENT-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-MATH-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-FILESYSTEM-L1-1-0.DLL] -> not found in project
+  [OLEAUT32.DLL] -> not found in project
+  [BCRYPT.DLL] -> not found in project
+  [API-MS-WIN-CORE-PSM-APPNOTIFY-L1-1-0.DLL] -> not found in project
+  [WINHTTP.DLL] -> not found in project
+  [CRYPT32.DLL] -> not found in project
+------------------------------------------------
+
+  
+2026-10-17 17:17:52 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2026-10-17 17:17:52 INFO  (HeadlessAnalyzer) REPORT: Execute script: PrepAnalysis.java   
+2026-10-17 17:17:54 INFO  (HeadlessAnalyzer) SCRIPT: /home/runner/work/black-ops-3-decomp/black-ops-3-decomp/tools/ghidra/PrepAnalysis.java  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> JVM max heap: 13312 MB, processors: 4  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: x86 Constant Reference Analyzer = true  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: Stack.Max Threads = 2  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: x86 Constant Reference Analyzer.Min absolute reference = 4  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: x86 Constant Reference Analyzer.Function parameter/return Pointer analysis = true  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: x86 Constant Reference Analyzer.Create Data from pointer = false  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: Stack.Create Local Variables = true  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: Decompiler Switch Analysis.Analysis Decompiler Timeout (sec) = 60  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: x86 Constant Reference Analyzer.Trust values read from writable memory = true  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: x86 Constant Reference Analyzer.Require pointer param data type = false  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: x86 Constant Reference Analyzer.Stored Value Pointer analysis = true  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: Stack = true  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: x86 Constant Reference Analyzer.Speculative reference max = 256  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: x86 Constant Reference Analyzer.Max Threads = 2  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> set x86 Constant Reference Analyzer.Max Threads = 1  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: Decompiler Switch Analysis = true  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: x86 Constant Reference Analyzer.Speculative reference min = 1024  
+2026-10-17 17:17:54 INFO  (GhidraScript) PrepAnalysis.java> option: Stack.Create Param Variables = false  
+2026-10-17 17:17:54 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///tmp/in/BlackOps3_MSStore.exe  
+2026-10-17 17:17:54 WARN  (NoReturnFunctionAnalyzer) Ignoring leading '_' chars on no-return name '___raise_securityfailure' specified in file: /opt/ghidra/Ghidra/Features/Base/data/PEFunctionsThatDoNotReturn  
+2026-10-17 17:17:54 WARN  (NoReturnFunctionAnalyzer) Ignoring leading '_' chars on no-return name '___report_rangecheckfailure' specified in file: /opt/ghidra/Ghidra/Features/Base/data/PEFunctionsThatDoNotReturn  
+2026-10-17 17:17:54 DEBUG (SymbolServerService) SymbolServerService: querying Program's Import Location - /tmp/in for BlackOps3.pdb, bfd3a67b-5182-473d-b955-12f61fdb5f43, 5, 0, ???  
+2026-10-17 17:17:54 DEBUG (SymbolServerService) SymbolServerService: got 0 results from Program's Import Location - /tmp/in  
+2026-10-17 17:17:54 DEBUG (SymbolServerService) SymbolServerService: found 0 matches  
+2026-10-17 17:17:54 INFO  (PdbUniversalAnalyzer) Skipping PDB processing: failed to locate PDB file in configured locations  
+2026-10-17 17:17:54 INFO  (PdbUniversalAnalyzer) Use a script to set the PDB file location. I.e.,
+    PdbAnalyzer.setPdbFileOption(currentProgram, new File("/path/to/pdb/file.pdb")); or
+    PdbUniversalAnalyzer.setPdbFileOption(currentProgram, new File("/path/to/pdb/file.pdb"));
+Or set the symbol server search configuration using:    PdbPlugin.saveSymbolServerServiceConfig(...);
+ This must be done using a pre-script (prior to analysis).  
+2026-10-17 17:17:54 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/runner-ghidra/packed-db-cache  
+2026-10-17 17:17:54 DEBUG (PackedDatabaseCache) Caching packed database: /opt/ghidra/Ghidra/Features/Base/data/typeinfo/win32/windows_vs12_64.gdt  
+2026-10-17 17:17:54 DEBUG (PackedDatabase) Unpacking database /opt/ghidra/Ghidra/Features/Base/data/typeinfo/win32/windows_vs12_64.gdt -> /var/tmp/runner-ghidra/packed-db-cache/pdb7CCB1850/db.1.gbf  
+2026-10-17 17:17:54 DEBUG (PackedDatabaseCache) Cache update completed: /opt/ghidra/Ghidra/Features/Base/data/typeinfo/win32/windows_vs12_64.gdt  
+2026-10-17 17:19:33 INFO  (DecompilerSwitchAnalyzer) hit non-returning function, restarting decompiler switch analyzer later  
+2026-10-17 17:22:38 WARN  (DecompileCallback) Decompiling 1414dc380: Unable to read bytes at ram:20ccccc00  
+2026-10-17 17:22:40 WARN  (DecompileCallback) Decompiling 1414dc380: Unable to read bytes at ram:20ccccc00  
+2026-10-17 17:27:26 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f838f8: Unable to resolve constructor at 142f838f8  
+2026-10-17 17:27:26 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142ef03c8: Unable to resolve constructor at 142ef03c8  
+2026-10-17 17:27:26 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f83687: Unable to resolve constructor at 142f83687  
+2026-10-17 17:27:27 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f8370a: Unable to resolve constructor at 142f8370a  
+2026-10-17 17:27:27 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f8377a: Unable to resolve constructor at 142f8377a  
+2026-10-17 17:27:27 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f83806: Unable to resolve constructor at 142f83806  
+2026-10-17 17:27:27 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f8376d: Unable to resolve constructor at 142f8376d  
+2026-10-17 17:27:27 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f837e3: Unable to resolve constructor at 142f837e3  
+2026-10-17 17:27:27 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f8376a: Unable to resolve constructor at 142f8376a  
+2026-10-17 17:27:27 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f82ebc: Unable to resolve constructor at 142f82ebc  
+2026-10-17 17:27:27 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f1895e: Unable to resolve constructor at 142f1895e  
+2026-10-17 17:27:27 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f189b7: Unable to resolve constructor at 142f189b7  
+2026-10-17 17:27:27 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f18a18: Unable to resolve constructor at 142f18a18  
+2026-10-17 17:27:27 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f189da: Unable to resolve constructor at 142f189da  
+2026-10-17 17:27:27 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f18a50: Unable to resolve constructor at 142f18a50  
+2026-10-17 17:27:27 WARN  (DecompileCallback) Decompiling 14275d9a0, pcode error at 142f189a8: Unable to resolve constructor at 142f189a8  
+2026-10-17 17:37:02 INFO  (TypeDescriptorModel) Unprocessed TypeDescriptor: long  
+2026-10-17 17:37:02 INFO  (TypeDescriptorModel) Unprocessed TypeDescriptor: long  
+2026-10-17 17:37:02 INFO  (TypeDescriptorModel) Unprocessed TypeDescriptor: void (__cdecl *)(struct ID3D11DeviceContext * __ptr64,unsigned int)  
+2026-10-17 17:37:02 INFO  (TypeDescriptorModel) Unprocessed TypeDescriptor: void (__cdecl *)(struct ID3D11DeviceContext * __ptr64,unsigned int)  
+2026-10-17 17:39:18 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: windows_vs12_64  
+2026-10-17 17:39:18 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: windows_vs12_64  
+2026-10-17 17:39:19 ERROR (DemangledVariable) Could not create Data at address 142d98350  
+2026-10-17 17:39:19 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: windows_vs12_64  
+2026-10-17 17:47:29 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                             16.869 secs
+    Apply Data Archives                        0.704 secs
+    Call Convention ID                         0.307 secs
+    Call-Fixup Installer                       0.837 secs
+    Create Address Tables                      9.449 secs
+    Create Address Tables - One Time          32.144 secs
+    Create Function                            0.938 secs
+    Data Reference                            12.373 secs
+    Decompiler Switch Analysis                18.684 secs
+    Decompiler Switch Analysis - One Time    661.355 secs
+    Demangler Microsoft                        0.304 secs
+    Disassemble                                0.031 secs
+    Disassemble Entry Points                  69.757 secs
+    Embedded Media                             1.656 secs
+    External Entry References                  0.000 secs
+    Function ID                               92.196 secs
+    Function Start Search                      0.546 secs
+    Non-Returning Functions - Discovered      16.986 secs
+    Non-Returning Functions - Known            0.127 secs
+    PDB Universal                              0.014 secs
+    Reference                                 10.974 secs
+    Scalar Operand References                124.825 secs
+    Shared Return Calls                       11.693 secs
+    Stack                                    418.900 secs
+    Subroutine References                      6.602 secs
+    Subroutine References - One Time           0.122 secs
+    Windows x86 PE Exception Handling          1.379 secs
+    Windows x86 PE RTTI Analyzer              19.903 secs
+    Windows x86 Thread Environment Block (TEB) Analyzer     0.020 secs
+    WindowsResourceReference                   3.938 secs
+    x86 Constant Reference Analyzer          241.357 secs
+-----------------------------------------------------
+     Total Time   1774 secs
+-----------------------------------------------------
+  
+2026-10-17 17:47:29 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///tmp/in/BlackOps3_MSStore.exe  
+2026-10-17 17:47:29 INFO  (HeadlessAnalyzer) REPORT: Execute script: ExportAll.java '/tmp/raw'   
+2026-10-17 17:47:29 INFO  (HeadlessAnalyzer) SCRIPT: /home/runner/work/black-ops-3-decomp/black-ops-3-decomp/tools/ghidra/ExportAll.java  
+2026-10-17 17:48:37 INFO  (GhidraScript) ExportAll.java> exported 5000 functions  
+2026-10-17 17:49:08 INFO  (GhidraScript) ExportAll.java> exported 10000 functions  
+2026-10-17 17:49:22 INFO  (GhidraScript) ExportAll.java> exported 15000 functions  
+2026-10-17 17:49:44 INFO  (GhidraScript) ExportAll.java> exported 20000 functions  
+2026-10-17 17:49:58 INFO  (GhidraScript) ExportAll.java> exported 25000 functions  
+2026-10-17 17:50:04 INFO  (GhidraScript) ExportAll.java> exported 30000 functions  
+2026-10-17 17:50:11 INFO  (GhidraScript) ExportAll.java> exported 35000 functions  
+2026-10-17 17:50:13 INFO  (GhidraScript) ExportAll.java> functions: 37154  
+2026-10-17 17:50:21 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///tmp/in/BlackOps3_MSStore.exe  
+2026-10-17 17:50:21 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///tmp/in/BlackOps3_MSStore.exe  
+2026-10-17 17:50:24 INFO  (LocalFileSystem) /BlackOps3_MSStore.exe: file created (runner)  
+2026-10-17 17:50:24 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /BlackOps3_MSStore.exe (t7:/BlackOps3_MSStore.exe)  
+2026-10-17 17:50:24 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  

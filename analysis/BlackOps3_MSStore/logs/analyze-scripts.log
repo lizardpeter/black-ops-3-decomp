@@ -1,0 +1,26 @@
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> JVM max heap: 13312 MB, processors: 4  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer = true  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: Stack.Max Threads = 2  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Min absolute reference = 4  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Function parameter/return Pointer analysis = true  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Create Data from pointer = false  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: Stack.Create Local Variables = true  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: Decompiler Switch Analysis.Analysis Decompiler Timeout (sec) = 60  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Trust values read from writable memory = true  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Require pointer param data type = false  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Stored Value Pointer analysis = true  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: Stack = true  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Speculative reference max = 256  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Max Threads = 2  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> set x86 Constant Reference Analyzer.Max Threads = 1  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: Decompiler Switch Analysis = true  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: x86 Constant Reference Analyzer.Speculative reference min = 1024  
+2026-10-17 17:17:54 INFO  PrepAnalysis.java> option: Stack.Create Param Variables = false  
+2026-10-17 17:48:37 INFO  ExportAll.java> exported 5000 functions  
+2026-10-17 17:49:08 INFO  ExportAll.java> exported 10000 functions  
+2026-10-17 17:49:22 INFO  ExportAll.java> exported 15000 functions  
+2026-10-17 17:49:44 INFO  ExportAll.java> exported 20000 functions  
+2026-10-17 17:49:58 INFO  ExportAll.java> exported 25000 functions  
+2026-10-17 17:50:04 INFO  ExportAll.java> exported 30000 functions  
+2026-10-17 17:50:11 INFO  ExportAll.java> exported 35000 functions  
+2026-10-17 17:50:13 INFO  ExportAll.java> functions: 37154  
