@@ -32,3 +32,16 @@ leftover, since the exe is an optimized LTCG build.
 
 Not committed or analysed: the zone/ fastfiles, sound banks and video (game data, not code), and the GDK DLLs
 beside the exe.
+
+### Ghidra analysis
+
+First pipeline run (Ghidra 12.1.4): analysis 34 min, decompile 6 shards of 5 to 11 min.
+
+- 37,154 functions (37,151 in `.text`, 3 in `.interpr`), covering 46.3 MB of the 47.8 MB `.text`.
+- Decompiled: 36,925 ok, 225 thunks, 4 failed (141D253D0, 1422649C0, 1422D6110, 1423C0110; all 36 KB or larger,
+  1422649C0 is 208 KB).
+- Checked against `.pdata` (58,968 entries): 26,968 entries that are not Ghidra functions are chained unwind
+  records, i.e. fragments of a parent function split out by LTCG/POGO, which Ghidra correctly folds into the
+  parent. Only 3 plain entries are missed (142AE41D0, 142D96E80, 142D98CA0).
+- 238 functions have names from Ghidra (imports, CRT signatures); everything else is `FUN_` until matched.
+- Largest functions: 1414168F0 (363 KB), 141F45730 (221 KB), 1422649C0 (208 KB).
