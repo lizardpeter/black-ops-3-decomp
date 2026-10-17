@@ -39,6 +39,7 @@ ROOT = Path(__file__).resolve().parents[2]
 STUB, STUB_SIZE = 0x7FF000000000, 0x100000      # one 16-byte 'ret' slot per imported/resolved API
 STACK = 0x7FFE00000000
 TEB = 0x7FFD0000
+KUSER = 0x7FFE0000                              # KUSER_SHARED_DATA, at its fixed user-mode address
 FAKE_DLL = 0x7FFA00000000
 RETURN = 0xDEAD0000
 TSC_STEP = 0x400                                # cycles per rdtsc: small, so timing checks always pass
@@ -84,6 +85,13 @@ class Emu:
         mu.mem_write(TEB + 0x60, struct.pack("<Q", TEB + 0x2000))
         mu.mem_write(TEB + 0x2000 + 0x10, struct.pack("<Q", self.base))   # PEB.ImageBaseAddress
         mu.msr_write(0xC0000101, TEB)                                        # IA32_GS_BASE
+        # KUSER_SHARED_DATA, which BO3's stub reads for the time. Frozen clock (InterruptTime, SystemTime and
+        # TickCount never advance) keeps the run deterministic and any elapsed-time check at zero.
+        mu.mem_map(KUSER, 0x1000)
+        mu.mem_write(KUSER + 0x08, struct.pack("<QI", 0x0000000100000000, 1))          # InterruptTime
+        mu.mem_write(KUSER + 0x14, struct.pack("<QI", 0x01DB000000000000, 0x01DB0000))  # SystemTime
+        mu.mem_write(KUSER + 0x26C, struct.pack("<II", 10, 0))                          # NtMajor/MinorVersion
+        mu.mem_write(KUSER + 0x320, struct.pack("<Q", 0x100000))                       # TickCountQuad
         self.tsc = 0x100000000
         self.rdtsc_calls = 0
         self.calls = collections.Counter()
