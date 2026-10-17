@@ -34401,6 +34401,40 @@ void FUN_142738320(longlong param_1)
 }
 
 
+// 1427383B0  FUN_1427383b0  (line unknown)
+
+void FUN_1427383b0(undefined8 *param_1)
+
+{
+  uint *puVar1;
+  int iVar2;
+  ulonglong uVar3;
+  longlong lVar4;
+  
+  if ((((*(byte *)((int *)*param_1 + 6) & 2) == 0) || (uVar3 = param_1[6], uVar3 == 0)) ||
+     ((uVar3 & 0x1ff) == 0)) {
+    uVar3 = param_1[5];
+  }
+  lVar4 = (longlong)*(int *)*param_1;
+  iVar2 = *(int *)(*(longlong *)((&DAT_149ad2360)[(uint)uVar3 & 0x1ff] + 0x18) + 0x68);
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x7fc + lVar4 * 0xed0) = 0;
+  puVar1 = (uint *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) +
+                    (lVar4 * 0x3b4 + ((longlong)iVar2 >> 5)) * 4 + 0x7fc);
+  *puVar1 = *puVar1 | 1 << ((byte)iVar2 & 0x1f);
+  return;
+}
+
+
+// 142738450  FUN_142738450  (line unknown)
+
+void FUN_142738450(void)
+
+{
+  return;
+}
+
+
 // 142738460  FUN_142738460  (line unknown)
 
 void FUN_142738460(undefined8 *param_1)
@@ -34459,6 +34493,40 @@ void FUN_142738530(longlong param_1)
 }
 
 
+// 1427385C0  FUN_1427385c0  (line unknown)
+
+void FUN_1427385c0(undefined8 *param_1)
+
+{
+  uint *puVar1;
+  int iVar2;
+  ulonglong uVar3;
+  longlong lVar4;
+  
+  if ((((*(byte *)((int *)*param_1 + 6) & 2) == 0) || (uVar3 = param_1[6], uVar3 == 0)) ||
+     ((uVar3 & 0x1ff) == 0)) {
+    uVar3 = param_1[5];
+  }
+  lVar4 = (longlong)*(int *)*param_1;
+  iVar2 = *(int *)(*(longlong *)((&DAT_149ad2360)[(uint)uVar3 & 0x1ff] + 0x18) + 0x70);
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x800 + lVar4 * 0xed0) = 0;
+  puVar1 = (uint *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) +
+                    (lVar4 * 0x3b4 + ((longlong)iVar2 >> 5)) * 4 + 0x800);
+  *puVar1 = *puVar1 | 1 << ((byte)iVar2 & 0x1f);
+  return;
+}
+
+
+// 142738660  FUN_142738660  (line unknown)
+
+void FUN_142738660(void)
+
+{
+  return;
+}
+
+
 // 142738670  FUN_142738670  (line unknown)
 
 void FUN_142738670(undefined8 *param_1)
@@ -34495,6 +34563,28 @@ void FUN_142738670(undefined8 *param_1)
 }
 
 
+// 142738740  FUN_142738740  (line unknown)
+
+void FUN_142738740(longlong param_1)
+
+{
+  uint *puVar1;
+  short sVar2;
+  int iVar3;
+  
+  sVar2 = *(short *)(param_1 + 0x1e8);
+  iVar3 = *(int *)(*(longlong *)((&DAT_149ad2360)[*(uint *)(param_1 + 0x1b8) & 0x1ff] + 0x18) + 0x6c
+                  );
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x7f8 + (longlong)sVar2 * 0xed0)
+       = 0;
+  puVar1 = (uint *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) +
+                    ((longlong)sVar2 * 0x3b4 + ((longlong)iVar3 >> 5)) * 4 + 0x7f8);
+  *puVar1 = *puVar1 | 1 << ((byte)iVar3 & 0x1f);
+  return;
+}
+
+
 // 1427387D0  FUN_1427387d0  (line unknown)
 
 void FUN_1427387d0(undefined8 *param_1)
@@ -34519,6 +34609,50 @@ void FUN_1427387d0(undefined8 *param_1)
   *(undefined4 *)
    (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x804 + (longlong)*piVar1 * 0xed0
    ) = *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[uVar2 & 0x1ff] + 0x18) + 0x1174);
+  return;
+}
+
+
+// 142738860  FUN_142738860  (line unknown)
+
+void FUN_142738860(longlong param_1)
+
+{
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x804 +
+   (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) =
+       *(undefined4 *)
+        (*(longlong *)((&DAT_149ad2360)[*(uint *)(param_1 + 0x1b8) & 0x1ff] + 0x18) + 0x1174);
+  return;
+}
+
+
+// 1427388C0  FUN_1427388c0  (line unknown)
+
+void FUN_1427388c0(undefined8 *param_1)
+
+{
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x808 +
+   (longlong)*(int *)*param_1 * 0xed0) = 0;
+  return;
+}
+
+
+// 1427388F0  FUN_1427388f0  (line unknown)
+
+void FUN_1427388f0(longlong param_1)
+
+{
+  if (((*(uint *)(param_1 + 8) & 0x4000) != 0) && ((byte)(*(char *)(param_1 + 0xb5) - 1U) < 4)) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x808 +
+     (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 1;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x808 +
+   (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 0;
   return;
 }
 
@@ -34708,6 +34842,15 @@ void FUN_142738e30(undefined8 *param_1)
     *(int *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x810 +
             (longlong)*(int *)*param_1 * 0xed0) = iVar1;
   }
+  return;
+}
+
+
+// 142738E90  FUN_142738e90  (line unknown)
+
+void FUN_142738e90(void)
+
+{
   return;
 }
 
@@ -34917,6 +35060,95 @@ void FUN_142739260(longlong param_1)
 }
 
 
+// 142739440  FUN_142739440  (line unknown)
+
+void FUN_142739440(undefined8 *param_1)
+
+{
+  int iVar1;
+  int *piVar2;
+  
+  piVar2 = (int *)*param_1;
+  iVar1 = piVar2[0x53];
+  if (iVar1 == 3) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x818 +
+     (longlong)*piVar2 * 0xed0) = 3;
+    return;
+  }
+  if (iVar1 == 4) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x818 +
+     (longlong)*piVar2 * 0xed0) = 4;
+    return;
+  }
+  if (iVar1 == 2) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x818 +
+     (longlong)*piVar2 * 0xed0) = 2;
+    return;
+  }
+  if (iVar1 == 1) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x818 +
+     (longlong)*piVar2 * 0xed0) = 1;
+    return;
+  }
+  if (iVar1 == 7) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x818 +
+     (longlong)*piVar2 * 0xed0) = 9;
+    return;
+  }
+  if (iVar1 == 8) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x818 +
+     (longlong)*piVar2 * 0xed0) = 10;
+    return;
+  }
+  if (iVar1 == 6) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x818 +
+     (longlong)*piVar2 * 0xed0) = 8;
+    return;
+  }
+  if (iVar1 == 5) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x818 +
+     (longlong)*piVar2 * 0xed0) = 7;
+    return;
+  }
+  if (iVar1 == 0xb) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x818 +
+     (longlong)*piVar2 * 0xed0) = 0xd;
+    return;
+  }
+  if (iVar1 == 0xc) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x818 +
+     (longlong)*piVar2 * 0xed0) = 0xe;
+    return;
+  }
+  if (iVar1 == 10) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x818 +
+     (longlong)*piVar2 * 0xed0) = 0xc;
+    return;
+  }
+  if (iVar1 == 9) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x818 +
+     (longlong)*piVar2 * 0xed0) = 0xb;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x818 + (longlong)*piVar2 * 0xed0
+   ) = 0;
+  return;
+}
+
+
 // 142739670  FUN_142739670  (line unknown)
 
 void FUN_142739670(longlong param_1)
@@ -35040,6 +35272,185 @@ void FUN_142739670(longlong param_1)
 }
 
 
+// 142739AD0  FUN_142739ad0  (line unknown)
+
+void FUN_142739ad0(undefined8 *param_1)
+
+{
+  int iVar1;
+  int *piVar2;
+  
+  piVar2 = (int *)*param_1;
+  iVar1 = piVar2[0x54];
+  if (iVar1 == 2) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 8;
+    return;
+  }
+  if (iVar1 == 8) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 2;
+    return;
+  }
+  if (iVar1 == 7) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 7;
+    return;
+  }
+  if (iVar1 == 3) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 3;
+    return;
+  }
+  if (iVar1 == 5) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 4;
+    return;
+  }
+  if (iVar1 == 4) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 5;
+    return;
+  }
+  if (iVar1 == 6) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 6;
+    return;
+  }
+  if (iVar1 == 9) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 9;
+    return;
+  }
+  if (iVar1 == 1) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 1;
+    return;
+  }
+  if (iVar1 == 10) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 0xb;
+    return;
+  }
+  if (iVar1 == 0xb) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 0xc;
+    return;
+  }
+  if (iVar1 == 0xe) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 0xe;
+    return;
+  }
+  if (iVar1 == 0xc) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 0xd;
+    return;
+  }
+  if (iVar1 == 0xd) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 0xf;
+    return;
+  }
+  if (iVar1 == 0xf) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 0x10;
+    return;
+  }
+  if (iVar1 == 0x10) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 0x11;
+    return;
+  }
+  if (iVar1 == 0x11) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 0x12;
+    return;
+  }
+  if (iVar1 == 0x12) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c +
+     (longlong)*piVar2 * 0xed0) = 0x13;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x81c + (longlong)*piVar2 * 0xed0
+   ) = 0;
+  return;
+}
+
+
+// 142739E00  FUN_142739e00  (line unknown)
+
+void FUN_142739e00(void)
+
+{
+  return;
+}
+
+
+// 142739E10  FUN_142739e10  (line unknown)
+
+void FUN_142739e10(void)
+
+{
+  return;
+}
+
+
+// 142739E20  FUN_142739e20  (line unknown)
+
+void FUN_142739e20(void)
+
+{
+  return;
+}
+
+
+// 142739E30  FUN_142739e30  (line unknown)
+
+void FUN_142739e30(undefined8 *param_1)
+
+{
+  int *piVar1;
+  
+  piVar1 = (int *)*param_1;
+  if ((*(ulonglong *)(piVar1 + 4) & 0x400000001) != 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x824 +
+     (longlong)*piVar1 * 0xed0) = 2;
+    return;
+  }
+  if ((*(ulonglong *)(piVar1 + 4) & 2) != 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x824 +
+     (longlong)*piVar1 * 0xed0) = 1;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x824 + (longlong)*piVar1 * 0xed0
+   ) = 0;
+  return;
+}
+
+
 // 142739EC0  FUN_142739ec0  (line unknown)
 
 void FUN_142739ec0(longlong param_1)
@@ -35076,6 +35487,217 @@ void FUN_142739ec0(longlong param_1)
 }
 
 
+// 142739FB0  FUN_142739fb0  (line unknown)
+
+void FUN_142739fb0(undefined8 *param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = ((int *)*param_1)[0x273];
+  *(int *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x870 +
+          (longlong)*(int *)*param_1 * 0xed0) =
+       iVar1 + (iVar1 / 3 + (iVar1 >> 0x1f) +
+               (int)(((longlong)iVar1 / 3 + ((longlong)iVar1 >> 0x3f) & 0xffffffffU) >> 0x1f)) * -3;
+  return;
+}
+
+
+// 14273A000  FUN_14273a000  (line unknown)
+
+void FUN_14273a000(longlong param_1)
+
+{
+  *(uint *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x870 +
+           (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) =
+       (uint)*(byte *)(param_1 + 0x1eb) + (*(byte *)(param_1 + 0x1eb) / 3) * -3;
+  return;
+}
+
+
+// 14273A050  FUN_14273a050  (line unknown)
+
+void FUN_14273a050(undefined8 *param_1)
+
+{
+  int *piVar1;
+  
+  piVar1 = (int *)*param_1;
+  if ((((char)piVar1[0x2ed] == '\0') && ((*(ulonglong *)(piVar1 + 4) & 0x80000000000004) == 0)) &&
+     (3 < piVar1[0x2ec])) {
+    if (piVar1[0x2ec] != 4) {
+      *(undefined4 *)
+       (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x874 +
+       (longlong)*piVar1 * 0xed0) = 2;
+      return;
+    }
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x874 +
+     (longlong)*piVar1 * 0xed0) = 1;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x874 + (longlong)*piVar1 * 0xed0
+   ) = 0;
+  return;
+}
+
+
+// 14273A0F0  FUN_14273a0f0  (line unknown)
+
+void FUN_14273a0f0(longlong param_1,longlong param_2)
+
+{
+  if (*(int *)(param_2 + 0x798) == 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x874 +
+     (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 0;
+    return;
+  }
+  if (*(int *)(param_2 + 0x798) != 1) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x874 +
+     (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 2;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x874 +
+   (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 1;
+  return;
+}
+
+
+// 14273A180  FUN_14273a180  (line unknown)
+
+void FUN_14273a180(undefined8 *param_1)
+
+{
+  int *piVar1;
+  longlong lVar2;
+  longlong lVar3;
+  
+  piVar1 = (int *)*param_1;
+  if (((uint)piVar1[4] >> 8 & 1) == 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x878 +
+     (longlong)*piVar1 * 0xed0) = 0;
+    return;
+  }
+  lVar3 = (longlong)*piVar1 * 0xed0;
+  lVar2 = *(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28);
+  if ((*(byte *)(piVar1 + 0x242) & 1) != 0) {
+    *(undefined4 *)(lVar2 + 0x878 + lVar3) = 1;
+    return;
+  }
+  *(undefined4 *)(lVar2 + 0x878 + lVar3) = 2;
+  return;
+}
+
+
+// 14273A1F0  FUN_14273a1f0  (line unknown)
+
+void FUN_14273a1f0(void)
+
+{
+  return;
+}
+
+
+// 14273A200  FUN_14273a200  (line unknown)
+
+void FUN_14273a200(longlong param_1,longlong param_2)
+
+{
+  int iVar1;
+  
+  iVar1 = *(int *)(param_2 + 0xf8);
+  if (iVar1 == 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x884 +
+     (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 0;
+  }
+  else if (*(int *)(param_2 + 0x6f4) == 0) {
+    if (iVar1 == 2) {
+      *(undefined4 *)
+       (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x884 +
+       (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 1;
+      return;
+    }
+    if (iVar1 == 1) {
+      *(undefined4 *)
+       (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x884 +
+       (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 2;
+      return;
+    }
+    if (iVar1 == 8) {
+      *(undefined4 *)
+       (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x884 +
+       (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 3;
+      return;
+    }
+    if (iVar1 == 4) {
+      *(undefined4 *)
+       (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x884 +
+       (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 4;
+      return;
+    }
+    if (iVar1 == 0xc) {
+      *(undefined4 *)
+       (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x884 +
+       (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 5;
+      return;
+    }
+  }
+  return;
+}
+
+
+// 14273A360  FUN_14273a360  (line unknown)
+
+void FUN_14273a360(void)
+
+{
+  return;
+}
+
+
+// 14273A370  FUN_14273a370  (line unknown)
+
+void FUN_14273a370(undefined8 *param_1)
+
+{
+  int *piVar1;
+  ulonglong uVar2;
+  longlong lVar3;
+  
+  piVar1 = (int *)*param_1;
+  if ((piVar1[0x58] & 0x4000U) != 0) {
+    return;
+  }
+  if ((uint)piVar1[0x267] < 0x3ff) {
+    uVar2 = *(ulonglong *)(piVar1 + 4);
+    if (((uVar2 & 1) != 0) || ((uVar2 >> 0x22 & 1) != 0)) {
+      *(undefined4 *)
+       (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x828 +
+       (longlong)*piVar1 * 0xed0) = 2;
+      return;
+    }
+    if ((uVar2 & 2) != 0) {
+      *(undefined4 *)
+       (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x828 +
+       (longlong)*piVar1 * 0xed0) = 1;
+      return;
+    }
+    lVar3 = *(longlong *)ThreadLocalStoragePointer;
+  }
+  else {
+    lVar3 = *(longlong *)ThreadLocalStoragePointer;
+  }
+  *(undefined4 *)(*(longlong *)(lVar3 + 0x28) + 0x828 + (longlong)*piVar1 * 0xed0) = 0;
+  return;
+}
+
+
 // 14273A430  FUN_14273a430  (line unknown)
 
 void FUN_14273a430(longlong param_1)
@@ -35106,6 +35728,15 @@ void FUN_14273a430(longlong param_1)
   else {
     *(undefined4 *)(plVar2 + (longlong)*(short *)(param_1 + 0x1e8) * 0x1da + 0x105) = 2;
   }
+  return;
+}
+
+
+// 14273A520  FUN_14273a520  (line unknown)
+
+void FUN_14273a520(void)
+
+{
   return;
 }
 
@@ -35169,6 +35800,175 @@ void FUN_14273a530(longlong param_1)
 }
 
 
+// 14273A710  FUN_14273a710  (line unknown)
+
+void FUN_14273a710(undefined8 *param_1)
+
+{
+  *(uint *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x830 +
+           (longlong)*(int *)*param_1 * 0xed0) = (uint)(0.0 < (float)((int *)*param_1)[0xc6]);
+  return;
+}
+
+
+// 14273A760  FUN_14273a760  (line unknown)
+
+void FUN_14273a760(longlong param_1,longlong param_2)
+
+{
+  *(uint *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x830 +
+           (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) =
+       (uint)(0.0 < *(float *)(param_2 + 0x584));
+  return;
+}
+
+
+// 14273A7B0  FUN_14273a7b0  (line unknown)
+
+void FUN_14273a7b0(undefined8 *param_1)
+
+{
+  if (*(int *)((longlong)param_1 + 0xc) < 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x834 +
+     (longlong)*(int *)*param_1 * 0xed0) = 1;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x834 +
+   (longlong)*(int *)*param_1 * 0xed0) = 0;
+  return;
+}
+
+
+// 14273A800  FUN_14273a800  (line unknown)
+
+void FUN_14273a800(longlong param_1)
+
+{
+  if ((*(uint *)(param_1 + 8) & 0x440) != 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x834 +
+     (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 1;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x834 +
+   (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 0;
+  return;
+}
+
+
+// 14273A860  FUN_14273a860  (line unknown)
+
+void FUN_14273a860(undefined8 *param_1)
+
+{
+  longlong lVar1;
+  
+  lVar1 = (longlong)*(int *)*param_1;
+  if (((uint)((int *)*param_1)[4] >> 0xd & 1) != 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x838 + lVar1 * 0xed0) = 1;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x838 + lVar1 * 0xed0) = 0;
+  return;
+}
+
+
+// 14273A8C0  FUN_14273a8c0  (line unknown)
+
+void FUN_14273a8c0(longlong param_1,longlong param_2)
+
+{
+  if ((*(uint *)(param_2 + 0x648) >> 0xd & 1) != 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x838 +
+     (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 1;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x838 +
+   (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 0;
+  return;
+}
+
+
+// 14273A920  FUN_14273a920  (line unknown)
+
+void FUN_14273a920(undefined8 *param_1)
+
+{
+  longlong lVar1;
+  
+  lVar1 = (longlong)*(int *)*param_1;
+  if ((*(ulonglong *)((int *)*param_1 + 4) & 0x400000000000000) != 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x83c + lVar1 * 0xed0) = 1;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x83c + lVar1 * 0xed0) = 0;
+  return;
+}
+
+
+// 14273A980  FUN_14273a980  (line unknown)
+
+void FUN_14273a980(longlong param_1,longlong param_2)
+
+{
+  if ((*(ulonglong *)(param_2 + 0x648) & 0x400000000000000) != 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x83c +
+     (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 1;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x83c +
+   (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 0;
+  return;
+}
+
+
+// 14273A9E0  FUN_14273a9e0  (line unknown)
+
+void FUN_14273a9e0(undefined8 *param_1)
+
+{
+  longlong lVar1;
+  
+  lVar1 = (longlong)*(int *)*param_1 * 0xed0;
+  if (((int *)*param_1)[0x40] == 0x3ff) {
+    *(undefined4 *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x87c + lVar1) =
+         1;
+    return;
+  }
+  *(undefined4 *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x87c + lVar1) = 0;
+  return;
+}
+
+
+// 14273AA30  FUN_14273aa30  (line unknown)
+
+void FUN_14273aa30(longlong param_1)
+
+{
+  if (*(short *)(param_1 + 0x1aa) == 0x3ff) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x87c +
+     (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 1;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x87c +
+   (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 0;
+  return;
+}
+
+
 // 14273AA90  FUN_14273aa90  (line unknown)
 
 void FUN_14273aa90(undefined8 *param_1)
@@ -35192,6 +35992,137 @@ void FUN_14273aa90(undefined8 *param_1)
   }
   *(uint *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x880 +
            (longlong)*piVar1 * 0xed0) = uVar2 & 0x1ff;
+  return;
+}
+
+
+// 14273AB10  FUN_14273ab10  (line unknown)
+
+void FUN_14273ab10(longlong param_1)
+
+{
+  *(uint *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x880 +
+           (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = *(uint *)(param_1 + 0x1b8) & 0x1ff;
+  return;
+}
+
+
+// 14273AB50  FUN_14273ab50  (line unknown)
+
+void FUN_14273ab50(undefined8 *param_1)
+
+{
+  int *piVar1;
+  ulonglong uVar2;
+  
+  piVar1 = (int *)*param_1;
+  uVar2 = *(ulonglong *)(piVar1 + 4);
+  if ((uVar2 >> 0x16 & 1) != 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x840 +
+     (longlong)*piVar1 * 0xed0) = 1;
+    return;
+  }
+  if (piVar1[0x17] == 0x31) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x840 +
+     (longlong)*piVar1 * 0xed0) = 2;
+    return;
+  }
+  if (((uVar2 >> 0x38 & 1) != 0) &&
+     ((((char)piVar1[0x2ed] != '\0' || ((uVar2 & 0x80000000000004) != 0)) || (piVar1[0x2ec] < 4))))
+  {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x840 +
+     (longlong)*piVar1 * 0xed0) = 3;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x840 + (longlong)*piVar1 * 0xed0
+   ) = 0;
+  return;
+}
+
+
+// 14273AC40  FUN_14273ac40  (line unknown)
+
+void FUN_14273ac40(longlong param_1)
+
+{
+  if ((*(uint *)(param_1 + 8) & 0x80000) != 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x840 +
+     (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 1;
+    return;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x840 +
+   (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 0;
+  return;
+}
+
+
+// 14273ACA0  FUN_14273aca0  (line unknown)
+
+void FUN_14273aca0(undefined8 *param_1)
+
+{
+  undefined4 uVar1;
+  
+  if (*(float *)(param_1 + 0x3a) <= 30.0) {
+    uVar1 = 0;
+    if (*(float *)(param_1 + 0x3a) < -30.0) {
+      uVar1 = 2;
+    }
+  }
+  else {
+    uVar1 = 1;
+  }
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x844 +
+   (longlong)*(int *)*param_1 * 0xed0) = uVar1;
+  return;
+}
+
+
+// 14273AD00  FUN_14273ad00  (line unknown)
+
+void FUN_14273ad00(longlong param_1)
+
+{
+  *(undefined4 *)
+   (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x844 +
+   (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 0;
+  return;
+}
+
+
+// 14273AD40  FUN_14273ad40  (line unknown)
+
+void FUN_14273ad40(undefined8 *param_1)
+
+{
+  int *piVar1;
+  uint uVar2;
+  
+  piVar1 = (int *)*param_1;
+  if (((uint)piVar1[4] >> 0x13 & 1) == 0) {
+    uVar2 = 0;
+  }
+  else {
+    uVar2 = (int)(short)piVar1[0x252] & 3;
+  }
+  *(uint *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x86c +
+           (longlong)*piVar1 * 0xed0) = uVar2;
+  return;
+}
+
+
+// 14273AD90  FUN_14273ad90  (line unknown)
+
+void FUN_14273ad90(void)
+
+{
   return;
 }
 
@@ -35277,6 +36208,40 @@ void FUN_14273ada0(undefined8 *param_1)
 }
 
 
+// 14273B030  FUN_14273b030  (line unknown)
+
+void FUN_14273b030(longlong param_1,longlong param_2)
+
+{
+  if ((*(byte *)(param_2 + 0x648) & 4) != 0) {
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x848 +
+     (longlong)*(short *)(param_1 + 0x1e8) * 0xed0) = 1;
+  }
+  return;
+}
+
+
+// 14273B070  FUN_14273b070  (line unknown)
+
+void FUN_14273b070(undefined8 *param_1)
+
+{
+  *(uint *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x84c +
+           (longlong)*(int *)*param_1 * 0xed0) = (uint)((int *)*param_1)[6] >> 0x15 & 1;
+  return;
+}
+
+
+// 14273B0B0  FUN_14273b0b0  (line unknown)
+
+void FUN_14273b0b0(void)
+
+{
+  return;
+}
+
+
 // 14273B0C0  FUN_14273b0c0  (line unknown)
 
 void FUN_14273b0c0(undefined8 *param_1)
@@ -35304,6 +36269,156 @@ void FUN_14273b0c0(undefined8 *param_1)
   *(undefined4 *)
    (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x850 + (longlong)*piVar1 * 0xed0
    ) = 0xff;
+  return;
+}
+
+
+// 14273B190  FUN_14273b190  (line unknown)
+
+void FUN_14273b190(void)
+
+{
+  return;
+}
+
+
+// 14273B1A0  FUN_14273b1a0  (line unknown)
+
+void FUN_14273b1a0(void)
+
+{
+  return;
+}
+
+
+// 14273B1B0  FUN_14273b1b0  (line unknown)
+
+void FUN_14273b1b0(void)
+
+{
+  return;
+}
+
+
+// 14273B1C0  FUN_14273b1c0  (line unknown)
+
+void FUN_14273b1c0(void)
+
+{
+  return;
+}
+
+
+// 14273B1D0  FUN_14273b1d0  (line unknown)
+
+void FUN_14273b1d0(void)
+
+{
+  return;
+}
+
+
+// 14273B1E0  FUN_14273b1e0  (line unknown)
+
+void FUN_14273b1e0(undefined8 *param_1)
+
+{
+  uint *puVar1;
+  int iVar2;
+  int iVar3;
+  int *piVar4;
+  
+  piVar4 = (int *)*param_1;
+  if (((((uint)piVar4[0x57] >> 0xe & 1) != 0) && (((uint)piVar4[0x57] >> 0x10 & 1) == 0)) &&
+     ((piVar4[0x58] & 0x10000000U) == 0)) {
+    iVar2 = *piVar4;
+    iVar3 = piVar4[0x1b5];
+    *(undefined4 *)
+     (*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x854 + (longlong)iVar2 * 0xed0
+     ) = 0;
+    puVar1 = (uint *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) +
+                      ((longlong)iVar2 * 0x3b4 + ((longlong)iVar3 >> 5)) * 4 + 0x854);
+    *puVar1 = *puVar1 | 1 << ((byte)iVar3 & 0x1f);
+  }
+  return;
+}
+
+
+// 14273B270  FUN_14273b270  (line unknown)
+
+void FUN_14273b270(void)
+
+{
+  return;
+}
+
+
+// 14273B280  FUN_14273b280  (line unknown)
+
+void FUN_14273b280(void)
+
+{
+  return;
+}
+
+
+// 14273B290  FUN_14273b290  (line unknown)
+
+void FUN_14273b290(void)
+
+{
+  return;
+}
+
+
+// 14273B2A0  FUN_14273b2a0  (line unknown)
+
+void FUN_14273b2a0(undefined8 *param_1)
+
+{
+  int *piVar1;
+  int iVar2;
+  
+  piVar1 = (int *)*param_1;
+  if (((uint)piVar1[4] >> 0xf & 1) != 0) {
+    iVar2 = piVar1[0x4c];
+    if (iVar2 == 0) {
+      *(uint *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x864 +
+               (longlong)*piVar1 * 0xed0) = (uint)*(ushort *)(piVar1 + 0x50);
+      iVar2 = piVar1[0x4c];
+    }
+    if (*(int *)(param_1 + 1) < iVar2) {
+      *(uint *)(*(longlong *)(*(longlong *)ThreadLocalStoragePointer + 0x28) + 0x864 +
+               (longlong)*piVar1 * 0xed0) = (uint)*(ushort *)(piVar1 + 0x50);
+    }
+  }
+  return;
+}
+
+
+// 14273B330  FUN_14273b330  (line unknown)
+
+void FUN_14273b330(void)
+
+{
+  return;
+}
+
+
+// 14273B340  FUN_14273b340  (line unknown)
+
+void FUN_14273b340(void)
+
+{
+  return;
+}
+
+
+// 14273B350  FUN_14273b350  (line unknown)
+
+void FUN_14273b350(void)
+
+{
   return;
 }
 
@@ -53179,7 +54294,7 @@ void FUN_14275d830(longlong param_1,longlong param_2,undefined8 *param_3,undefin
     local_b8 = param_5[1];
     local_b4 = param_5[2];
     local_5c = param_8;
-    (*(code *)(&PTR_LAB_143112a50)[(ulonglong)*(byte *)(param_1 + 0x2ac) * 0x12])(&local_c8,param_2)
+    (*(code *)(&PTR_FUN_143112a50)[(ulonglong)*(byte *)(param_1 + 0x2ac) * 0x12])(&local_c8,param_2)
     ;
   }
   return;
@@ -79949,7 +81064,7 @@ LAB_142788d55:
         pcVar12 = pcVar12 + 1;
         if (lVar25 == 0) break;
         if (*pcVar1 != cVar2) {
-          (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar16);
+          (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar16);
           goto LAB_142788ed4;
         }
         lVar25 = lVar25 + -1;
@@ -79984,7 +81099,7 @@ LAB_142788ed4:
         pcVar12 = pcVar12 + 1;
         if (lVar25 == 0) break;
         if (*pcVar1 != cVar2) {
-          (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar16);
+          (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar16);
           goto LAB_142788fe4;
         }
         lVar25 = lVar25 + -1;
@@ -80044,7 +81159,7 @@ LAB_142788fe4:
           return local_1118;
         }
         if (*pcVar1 != cVar2) {
-          (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar16);
+          (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar16);
           goto LAB_1427891a4;
         }
         lVar25 = lVar25 + -1;
@@ -85904,6 +87019,32 @@ LAB_142794005:
   FUN_141388c30(0,*puVar10,0,DAT_14310c648);
   FUN_14138fa60(0);
   return;
+}
+
+
+// 142794320  FUN_142794320  (line unknown)
+
+longlong FUN_142794320(int param_1,int param_2)
+
+{
+  longlong lVar1;
+  longlong lVar2;
+  longlong lVar3;
+  
+  if (((&DAT_159089b30)[param_1 * 0x702 + param_2] != 0) &&
+     (lVar1 = (longlong)(short)(&DAT_159089b30)[param_1 * 0x702 + param_2] * 0x128,
+     lVar1 != -0x158fabb30)) {
+    lVar3 = 0;
+    lVar2 = lVar3;
+    if ((&DAT_158fabc52)[lVar1] != '\0') {
+      lVar2 = **(longlong **)(&DAT_158fabb48 + lVar1);
+    }
+    if (*(char *)(lVar2 + 0x118) != '\0') {
+      lVar3 = **(longlong **)(lVar2 + 0x130);
+    }
+    return lVar3;
+  }
+  return 0;
 }
 
 
@@ -93483,7 +94624,7 @@ bool FUN_1427a2c20(longlong *param_1,undefined4 *param_2,longlong param_3,int pa
     }
     else {
       aiStack_1ac[1] = 1;
-      local_190 = (*(code *)(&PTR_LAB_14358f408)
+      local_190 = (*(code *)(&PTR_FUN_14358f408)
                             [(ulonglong)*(byte *)((longlong)param_1 + 0x2ac) * 5])
                             ((int)param_1[0x56]);
     }
@@ -124230,6 +125371,132 @@ longlong FUN_1427d30f0(uint param_1)
 }
 
 
+// 1427D31D0  FUN_1427d31d0  (line unknown)
+
+undefined4 FUN_1427d31d0(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xb8c);
+}
+
+
+// 1427D31F0  FUN_1427d31f0  (line unknown)
+
+undefined4 FUN_1427d31f0(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xb90);
+}
+
+
+// 1427D3210  FUN_1427d3210  (line unknown)
+
+undefined4 FUN_1427d3210(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xb94);
+}
+
+
+// 1427D3230  FUN_1427d3230  (line unknown)
+
+undefined4 FUN_1427d3230(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xb98);
+}
+
+
+// 1427D3250  FUN_1427d3250  (line unknown)
+
+undefined4 FUN_1427d3250(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xb9c);
+}
+
+
+// 1427D3270  FUN_1427d3270  (line unknown)
+
+undefined4 FUN_1427d3270(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xba0);
+}
+
+
+// 1427D3290  FUN_1427d3290  (line unknown)
+
+undefined4 FUN_1427d3290(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xba4);
+}
+
+
+// 1427D32B0  FUN_1427d32b0  (line unknown)
+
+undefined4 FUN_1427d32b0(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xba8);
+}
+
+
+// 1427D32D0  FUN_1427d32d0  (line unknown)
+
+undefined4 FUN_1427d32d0(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xbac);
+}
+
+
+// 1427D32F0  FUN_1427d32f0  (line unknown)
+
+undefined4 FUN_1427d32f0(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xbb0);
+}
+
+
+// 1427D3310  FUN_1427d3310  (line unknown)
+
+undefined4 FUN_1427d3310(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xc10);
+}
+
+
+// 1427D3330  FUN_1427d3330  (line unknown)
+
+undefined4 FUN_1427d3330(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xc14);
+}
+
+
+// 1427D3350  FUN_1427d3350  (line unknown)
+
+undefined4 FUN_1427d3350(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xc18);
+}
+
+
+// 1427D3370  FUN_1427d3370  (line unknown)
+
+undefined4 FUN_1427d3370(undefined8 param_1,uint param_2)
+
+{
+  return *(undefined4 *)(*(longlong *)((&DAT_149ad2360)[param_2 & 0x1ff] + 0x18) + 0xc1c);
+}
+
+
 // 1427D3390  FUN_1427d3390  (line unknown)
 
 void FUN_1427d3390(longlong param_1,uint param_2,undefined8 param_3)
@@ -130533,6 +131800,15 @@ LAB_1427defa9:
 LAB_1427defe6:
   FUN_1414e4050(param_1,0xfffffffd);
   *(longlong *)(param_1 + 0x48) = *(longlong *)(param_1 + 0x48) + -0x10;
+  return 0;
+}
+
+
+// 1427DF010  FUN_1427df010  (line unknown)
+
+undefined8 FUN_1427df010(void)
+
+{
   return 0;
 }
 

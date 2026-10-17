@@ -833,6 +833,8 @@
 {"callee": "BlackOps3_MSStore:140040840", "caller": "BlackOps3_MSStore:140041E10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140040960", "caller": "BlackOps3_MSStore:140041E10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000080", "caller": "BlackOps3_MSStore:140041F00", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140041F20", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140042030", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142975A10", "caller": "BlackOps3_MSStore:140042480", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140042480", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142975A10", "caller": "BlackOps3_MSStore:1400424A0", "kind": "call"}
@@ -885,13 +887,18 @@
 {"callee": "BlackOps3_MSStore:1414F7E80", "caller": "BlackOps3_MSStore:140050C30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140050C70", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE450", "caller": "BlackOps3_MSStore:140050C70", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140050CB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1414FBB00", "caller": "BlackOps3_MSStore:140050CC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140050D00", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE4C0", "caller": "BlackOps3_MSStore:140050D00", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1429A5EB0", "caller": "BlackOps3_MSStore:140050D40", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1429A5EB0", "caller": "BlackOps3_MSStore:140050D70", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1429A5EB0", "caller": "BlackOps3_MSStore:140050DA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429C3930", "caller": "BlackOps3_MSStore:140050DD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140050DD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14156BB10", "caller": "BlackOps3_MSStore:140050F00", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14156BCE0", "caller": "BlackOps3_MSStore:140050F40", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140050F80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1415B6370", "caller": "BlackOps3_MSStore:140050FD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1415B6370", "caller": "BlackOps3_MSStore:140051010", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400511D0", "kind": "call"}
@@ -905,12 +912,15 @@
 {"callee": "BlackOps3_MSStore:141A9CE30", "caller": "BlackOps3_MSStore:140055200", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005B620", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE450", "caller": "BlackOps3_MSStore:14005B620", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005B760", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141D5A050", "caller": "BlackOps3_MSStore:14005B770", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141D6DC40", "caller": "BlackOps3_MSStore:14005B7B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1400BF0D0", "caller": "BlackOps3_MSStore:14005B7F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141D6E5E0", "caller": "BlackOps3_MSStore:14005B7F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005B7F0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005B9E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141D8AA40", "caller": "BlackOps3_MSStore:14005BA10", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005BA50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141D9C070", "caller": "BlackOps3_MSStore:14005BAE0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005BAE0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141DA74A0", "caller": "BlackOps3_MSStore:14005BB20", "kind": "call"}
@@ -955,6 +965,8 @@
 {"callee": "BlackOps3_MSStore:142A23070", "caller": "BlackOps3_MSStore:14005D8D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A19AD0", "caller": "BlackOps3_MSStore:14005D9F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005D9F0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14297C5E0", "caller": "BlackOps3_MSStore:14005DB30", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1429C3EB0", "caller": "BlackOps3_MSStore:14005DB40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1401C5F00", "caller": "BlackOps3_MSStore:14005DB50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1401C5F00", "caller": "BlackOps3_MSStore:14005DB90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1401C5F00", "caller": "BlackOps3_MSStore:14005DBD0", "kind": "call"}
@@ -976,6 +988,7 @@
 {"callee": "BlackOps3_MSStore:142CFE4C0", "caller": "BlackOps3_MSStore:14005DDA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14297DEA0", "caller": "BlackOps3_MSStore:14005DE20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005DE20", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005DE50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429A8C50", "caller": "BlackOps3_MSStore:14005DE60", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429A8FD0", "caller": "BlackOps3_MSStore:14005DE60", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429A94A0", "caller": "BlackOps3_MSStore:14005DE60", "kind": "call"}
@@ -1025,6 +1038,7 @@
 {"callee": "BlackOps3_MSStore:142CFE4C0", "caller": "BlackOps3_MSStore:14005E4B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429AC500", "caller": "BlackOps3_MSStore:14005E4F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005E4F0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1429C8E90", "caller": "BlackOps3_MSStore:14005E520", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429C9040", "caller": "BlackOps3_MSStore:14005E530", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005E530", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429C9040", "caller": "BlackOps3_MSStore:14005E550", "kind": "call"}
@@ -1034,6 +1048,7 @@
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005E5F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE4C0", "caller": "BlackOps3_MSStore:14005E5F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141F14680", "caller": "BlackOps3_MSStore:14005E630", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141F16810", "caller": "BlackOps3_MSStore:14005E670", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005E680", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE450", "caller": "BlackOps3_MSStore:14005E680", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005E6C0", "kind": "call"}
@@ -1084,6 +1099,7 @@
 {"callee": "BlackOps3_MSStore:1429777A0", "caller": "BlackOps3_MSStore:14005EE10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429777F0", "caller": "BlackOps3_MSStore:14005EE10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141F985D0", "caller": "BlackOps3_MSStore:14005EE30", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1429777F0", "caller": "BlackOps3_MSStore:14005EE70", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141F99DF0", "caller": "BlackOps3_MSStore:14005EE80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1401C5F00", "caller": "BlackOps3_MSStore:14005EEC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14005EF00", "kind": "call"}
@@ -1210,11 +1226,16 @@
 {"callee": "BlackOps3_MSStore:1411F6200", "caller": "BlackOps3_MSStore:140080080", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140080110", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE4C0", "caller": "BlackOps3_MSStore:140080110", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140080150", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140080180", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE450", "caller": "BlackOps3_MSStore:140080180", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400801C0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400801D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400807F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE450", "caller": "BlackOps3_MSStore:1400807F0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:000000104", "caller": "BlackOps3_MSStore:140080830", "kind": "tailcall"}
 {"callee": "BlackOps3_MSStore:1413DF170", "caller": "BlackOps3_MSStore:140080840", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140081280", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141D44EE0", "caller": "BlackOps3_MSStore:140081290", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423BE190", "caller": "BlackOps3_MSStore:140081290", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423BE310", "caller": "BlackOps3_MSStore:140081290", "kind": "call"}
@@ -1225,9 +1246,21 @@
 {"callee": "BlackOps3_MSStore:1429777A0", "caller": "BlackOps3_MSStore:140081690", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429777F0", "caller": "BlackOps3_MSStore:140081690", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14241C2E0", "caller": "BlackOps3_MSStore:140081730", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400818B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF33E", "caller": "BlackOps3_MSStore:140081940", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF344", "caller": "BlackOps3_MSStore:140081940", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140081B40", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140081B50", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140081B60", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140081B70", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140081B80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1424D70F0", "caller": "BlackOps3_MSStore:140081BD0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140081C90", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140082010", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140082090", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140082190", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400821A0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140085F10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1400BF0D0", "caller": "BlackOps3_MSStore:140085F20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141D9C4E0", "caller": "BlackOps3_MSStore:140085F20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142658A80", "caller": "BlackOps3_MSStore:140085F20", "kind": "call"}
@@ -1244,17 +1277,26 @@
 {"callee": "BlackOps3_MSStore:142465E10", "caller": "BlackOps3_MSStore:140087F70", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000150", "caller": "BlackOps3_MSStore:140087FB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140087FB0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140087FE0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140088000", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140088020", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140088050", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142975A10", "caller": "BlackOps3_MSStore:140088080", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140088080", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000060", "caller": "BlackOps3_MSStore:1400880A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400880A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF3EC", "caller": "BlackOps3_MSStore:1400880A0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140088100", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140088110", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142975A10", "caller": "BlackOps3_MSStore:140088120", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140088120", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140088140", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE450", "caller": "BlackOps3_MSStore:140088140", "kind": "call"}
 {"callee": "BlackOps3_MSStore:00000001D", "caller": "BlackOps3_MSStore:1400882B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400882B0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400882D0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400882E0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400882F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1AB60", "caller": "BlackOps3_MSStore:140088300", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:140088380", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1C210", "caller": "BlackOps3_MSStore:1400883F0", "kind": "call"}
@@ -1338,6 +1380,7 @@
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:14008A300", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:14008A370", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:14008A3E0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14008A460", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A41FB0", "caller": "BlackOps3_MSStore:14008A470", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14008A470", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000241", "caller": "BlackOps3_MSStore:14008A490", "kind": "call"}
@@ -1360,6 +1403,9 @@
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:14008AA20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:14008AAA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:14008AB00", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14008AB70", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A895B0", "caller": "BlackOps3_MSStore:14008ABC0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:14008AC10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:14008AC60", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:14008ACC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:14008AD50", "kind": "call"}
@@ -1774,6 +1820,10 @@
 {"callee": "BlackOps3_MSStore:142CAE1F4", "caller": "BlackOps3_MSStore:140095640", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140095640", "kind": "call"}
 {"callee": "BlackOps3_MSStore:00000000A", "caller": "BlackOps3_MSStore:140095660", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140095680", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140095690", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400956A0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400956AC", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:1400956B8", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF148", "caller": "BlackOps3_MSStore:1400956B8", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142975A10", "caller": "BlackOps3_MSStore:1400956E0", "kind": "call"}
@@ -1792,6 +1842,7 @@
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:140095A50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:140095AB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:140095B10", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFE058", "caller": "BlackOps3_MSStore:140095B80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1ABD0", "caller": "BlackOps3_MSStore:140095B90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000210", "caller": "BlackOps3_MSStore:140095C60", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140095C50", "caller": "BlackOps3_MSStore:140095C60", "kind": "call"}
@@ -1944,6 +1995,8 @@
 {"callee": "BlackOps3_MSStore:142CFE920", "caller": "BlackOps3_MSStore:14009BB60", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:14009BBB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF26C", "caller": "BlackOps3_MSStore:14009BBB0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:00000023D", "caller": "BlackOps3_MSStore:14009BEB0", "kind": "tailcall"}
+{"callee": "BlackOps3_MSStore:00000023E", "caller": "BlackOps3_MSStore:14009BED0", "kind": "tailcall"}
 {"callee": "BlackOps3_MSStore:14009BEE0", "caller": "BlackOps3_MSStore:14009D550", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14009D4B0", "caller": "BlackOps3_MSStore:14009D550", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14009D4B0", "caller": "BlackOps3_MSStore:14009DC10", "kind": "call"}
@@ -3119,6 +3172,7 @@
 {"callee": "BlackOps3_MSStore:14220FA60", "caller": "BlackOps3_MSStore:14013AC90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142210B90", "caller": "BlackOps3_MSStore:14013AC90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1426D4E60", "caller": "BlackOps3_MSStore:14013AC90", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14013AC90", "caller": "BlackOps3_MSStore:14013AEB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14013C950", "caller": "BlackOps3_MSStore:14013AEC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:0000001C4", "caller": "BlackOps3_MSStore:14013AF20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1401367B0", "caller": "BlackOps3_MSStore:14013AF20", "kind": "call"}
@@ -3197,6 +3251,7 @@
 {"callee": "BlackOps3_MSStore:14013CF10", "caller": "BlackOps3_MSStore:14013BFB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1414DC380", "caller": "BlackOps3_MSStore:14013BFB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14220FA60", "caller": "BlackOps3_MSStore:14013BFB0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14013BFB0", "caller": "BlackOps3_MSStore:14013C050", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14013CE00", "caller": "BlackOps3_MSStore:14013C060", "kind": "call"}
 {"callee": "BlackOps3_MSStore:0000001C4", "caller": "BlackOps3_MSStore:14013C0C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1401367B0", "caller": "BlackOps3_MSStore:14013C0C0", "kind": "call"}
@@ -3206,6 +3261,7 @@
 {"callee": "BlackOps3_MSStore:14220FA60", "caller": "BlackOps3_MSStore:14013C0C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142210B90", "caller": "BlackOps3_MSStore:14013C0C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1426D4E60", "caller": "BlackOps3_MSStore:14013C0C0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14013C0C0", "caller": "BlackOps3_MSStore:14013C2A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14013D0D0", "caller": "BlackOps3_MSStore:14013C2B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14220FA60", "caller": "BlackOps3_MSStore:14013C300", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B48E0", "caller": "BlackOps3_MSStore:14013C300", "kind": "call"}
@@ -5481,6 +5537,7 @@
 {"callee": "BlackOps3_MSStore:1427CDFD0", "caller": "BlackOps3_MSStore:140203C80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:140203C80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141390370", "caller": "BlackOps3_MSStore:140203DB0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1413927F0", "caller": "BlackOps3_MSStore:140203E20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137DAF0", "caller": "BlackOps3_MSStore:140203E40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F340", "caller": "BlackOps3_MSStore:140203E40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F8E0", "caller": "BlackOps3_MSStore:140203E40", "kind": "call"}
@@ -7576,6 +7633,7 @@
 {"callee": "BlackOps3_MSStore:142135440", "caller": "BlackOps3_MSStore:1404BDD90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B4CF0", "caller": "BlackOps3_MSStore:1404BDD90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391240", "caller": "BlackOps3_MSStore:1404BE030", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14220FBD0", "caller": "BlackOps3_MSStore:1404BE060", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391240", "caller": "BlackOps3_MSStore:1404BE080", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413928A0", "caller": "BlackOps3_MSStore:1404BE080", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137DAF0", "caller": "BlackOps3_MSStore:1404BE0C0", "kind": "call"}
@@ -7623,6 +7681,7 @@
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:1404C4BB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141F0D4C0", "caller": "BlackOps3_MSStore:1404C4BB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B4CF0", "caller": "BlackOps3_MSStore:1404C4BB0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141392A60", "caller": "BlackOps3_MSStore:1404C4C10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:0000001C2", "caller": "BlackOps3_MSStore:1404C4C30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:1404C4C30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391970", "caller": "BlackOps3_MSStore:1404C4C30", "kind": "call"}
@@ -17353,6 +17412,7 @@
 {"callee": "BlackOps3_MSStore:14138A970", "caller": "BlackOps3_MSStore:141371950", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:141371950", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141371950", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141389970", "caller": "BlackOps3_MSStore:1413719F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141389970", "caller": "BlackOps3_MSStore:141371A00", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F6C0", "caller": "BlackOps3_MSStore:141371A30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:141371A30", "kind": "call"}
@@ -17522,6 +17582,7 @@
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:1413757F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:1413757F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B4CF0", "caller": "BlackOps3_MSStore:1413757F0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141389CC0", "caller": "BlackOps3_MSStore:1413758F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F050", "caller": "BlackOps3_MSStore:141375900", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F450", "caller": "BlackOps3_MSStore:141375900", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F850", "caller": "BlackOps3_MSStore:141375900", "kind": "call"}
@@ -17645,6 +17706,7 @@
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:1413799E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B4CF0", "caller": "BlackOps3_MSStore:1413799E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE0D8", "caller": "BlackOps3_MSStore:1413799E0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1413799E0", "caller": "BlackOps3_MSStore:141379E10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140163A10", "caller": "BlackOps3_MSStore:141379E20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140163C70", "caller": "BlackOps3_MSStore:141379E20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14136CCC0", "caller": "BlackOps3_MSStore:141379E20", "kind": "call"}
@@ -18737,6 +18799,7 @@
 {"callee": "BlackOps3_MSStore:141DF2900", "caller": "BlackOps3_MSStore:1413C62C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141DFDE20", "caller": "BlackOps3_MSStore:1413C62C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423A2AA0", "caller": "BlackOps3_MSStore:1413C62C0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1413C5F60", "caller": "BlackOps3_MSStore:1413C6490", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141361860", "caller": "BlackOps3_MSStore:1413C64B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413C59D0", "caller": "BlackOps3_MSStore:1413C6610", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413C64B0", "caller": "BlackOps3_MSStore:1413C6610", "kind": "call"}
@@ -22820,6 +22883,8 @@
 {"callee": "BlackOps3_MSStore:141DD3730", "caller": "BlackOps3_MSStore:1414D95F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1414DD6A0", "caller": "BlackOps3_MSStore:1414D9710", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141DC5640", "caller": "BlackOps3_MSStore:1414D9AC0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141DC5340", "caller": "BlackOps3_MSStore:1414D9AE0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141DC53D0", "caller": "BlackOps3_MSStore:1414D9AF0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141D7EB40", "caller": "BlackOps3_MSStore:1414D9B00", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000079", "caller": "BlackOps3_MSStore:1414D9BD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14234B370", "caller": "BlackOps3_MSStore:1414D9BD0", "kind": "call"}
@@ -26947,6 +27012,7 @@
 {"callee": "BlackOps3_MSStore:1425F8210", "caller": "BlackOps3_MSStore:1415D6080", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1425FFCA0", "caller": "BlackOps3_MSStore:1415D6080", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE0D8", "caller": "BlackOps3_MSStore:1415D6080", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1415D5F60", "caller": "BlackOps3_MSStore:1415D6300", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141388C30", "caller": "BlackOps3_MSStore:1415D6350", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14138FA60", "caller": "BlackOps3_MSStore:1415D6350", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141390370", "caller": "BlackOps3_MSStore:1415D6350", "kind": "call"}
@@ -28212,6 +28278,7 @@
 {"callee": "BlackOps3_MSStore:142CFF344", "caller": "BlackOps3_MSStore:14168C880", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF350", "caller": "BlackOps3_MSStore:14168C880", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D82A3F", "caller": "BlackOps3_MSStore:14168C880", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14168A6B0", "caller": "BlackOps3_MSStore:14168CFC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1425F1B00", "caller": "BlackOps3_MSStore:14168CFE0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14168A6B0", "caller": "BlackOps3_MSStore:14168D0E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:14168D0E0", "kind": "call"}
@@ -28304,6 +28371,7 @@
 {"callee": "BlackOps3_MSStore:142400190", "caller": "BlackOps3_MSStore:14168F520", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:14168F520", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14168A6B0", "caller": "BlackOps3_MSStore:14168F730", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14168A6B0", "caller": "BlackOps3_MSStore:14168F850", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14168A6B0", "caller": "BlackOps3_MSStore:14168F870", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14168A6B0", "caller": "BlackOps3_MSStore:14168F990", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137DEF0", "caller": "BlackOps3_MSStore:14168FB20", "kind": "call"}
@@ -28521,6 +28589,8 @@
 {"callee": "BlackOps3_MSStore:141C73980", "caller": "BlackOps3_MSStore:1416AAA80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141C806A0", "caller": "BlackOps3_MSStore:1416AAA80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:1416AAA80", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C74E60", "caller": "BlackOps3_MSStore:1416AAC70", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C74E60", "caller": "BlackOps3_MSStore:1416AACC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423FCDF0", "caller": "BlackOps3_MSStore:1416AAD10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:1416AAD10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141C87B60", "caller": "BlackOps3_MSStore:1416AB000", "kind": "call"}
@@ -30944,11 +31014,14 @@
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141723680", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B4C10", "caller": "BlackOps3_MSStore:141723680", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B4CF0", "caller": "BlackOps3_MSStore:141723680", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C13FF0", "caller": "BlackOps3_MSStore:141723700", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1413928A0", "caller": "BlackOps3_MSStore:141723730", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413927F0", "caller": "BlackOps3_MSStore:141723760", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1427CBFF0", "caller": "BlackOps3_MSStore:141723760", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140138FF0", "caller": "BlackOps3_MSStore:1417237A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391970", "caller": "BlackOps3_MSStore:1417237A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141C73D80", "caller": "BlackOps3_MSStore:1417237A0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1413928A0", "caller": "BlackOps3_MSStore:141723800", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141390370", "caller": "BlackOps3_MSStore:141723830", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141390370", "caller": "BlackOps3_MSStore:1417238D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141C86C90", "caller": "BlackOps3_MSStore:1417238D0", "kind": "call"}
@@ -31267,6 +31340,7 @@
 {"callee": "BlackOps3_MSStore:1423274F0", "caller": "BlackOps3_MSStore:141756080", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413928A0", "caller": "BlackOps3_MSStore:141756130", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142219990", "caller": "BlackOps3_MSStore:141756130", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14138E390", "caller": "BlackOps3_MSStore:1417561B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:1417561C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391970", "caller": "BlackOps3_MSStore:1417561C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:1417561C0", "kind": "call"}
@@ -34180,6 +34254,16 @@
 {"callee": "BlackOps3_MSStore:1413917E0", "caller": "BlackOps3_MSStore:141A6BB50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141A6BB50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B4CF0", "caller": "BlackOps3_MSStore:141A6BB50", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141A69B70", "caller": "BlackOps3_MSStore:141A6BBC0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1413928A0", "caller": "BlackOps3_MSStore:141A6BBF0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141A69B70", "caller": "BlackOps3_MSStore:141A6BC70", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1413928A0", "caller": "BlackOps3_MSStore:141A6BCA0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141A69B70", "caller": "BlackOps3_MSStore:141A6BD20", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1413928A0", "caller": "BlackOps3_MSStore:141A6BD50", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141A69B70", "caller": "BlackOps3_MSStore:141A6BDD0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1413928A0", "caller": "BlackOps3_MSStore:141A6BE00", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141A69B70", "caller": "BlackOps3_MSStore:141A6BE80", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1413928A0", "caller": "BlackOps3_MSStore:141A6BEB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:141A6BF30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141A6BF30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141A69900", "caller": "BlackOps3_MSStore:141A6BF30", "kind": "call"}
@@ -34383,6 +34467,7 @@
 {"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141A77120", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1427C5800", "caller": "BlackOps3_MSStore:141A77120", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1427D3F10", "caller": "BlackOps3_MSStore:141A77120", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141A7A940", "caller": "BlackOps3_MSStore:141A773B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14029BA50", "caller": "BlackOps3_MSStore:141A773C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142324280", "caller": "BlackOps3_MSStore:141A773C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423A2AA0", "caller": "BlackOps3_MSStore:141A773C0", "kind": "call"}
@@ -35583,6 +35668,7 @@
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:141B41C40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141B41C40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B4CF0", "caller": "BlackOps3_MSStore:141B41C40", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1413928A0", "caller": "BlackOps3_MSStore:141B41D80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391D20", "caller": "BlackOps3_MSStore:141B41DB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14220FA60", "caller": "BlackOps3_MSStore:141B41DB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391D20", "caller": "BlackOps3_MSStore:141B41E00", "kind": "call"}
@@ -36152,6 +36238,7 @@
 {"callee": "BlackOps3_MSStore:141390370", "caller": "BlackOps3_MSStore:141B4E160", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141390370", "caller": "BlackOps3_MSStore:141B4E1B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141390370", "caller": "BlackOps3_MSStore:141B4E200", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142311370", "caller": "BlackOps3_MSStore:141B4E2B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391970", "caller": "BlackOps3_MSStore:141B4E2F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1416A9390", "caller": "BlackOps3_MSStore:141B4E2F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142386D10", "caller": "BlackOps3_MSStore:141B4E340", "kind": "call"}
@@ -36160,6 +36247,8 @@
 {"callee": "BlackOps3_MSStore:1413928A0", "caller": "BlackOps3_MSStore:141B4E4C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1416A9D20", "caller": "BlackOps3_MSStore:141B4E4C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141390370", "caller": "BlackOps3_MSStore:141B4E4E0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C1E790", "caller": "BlackOps3_MSStore:141B4E570", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C1E790", "caller": "BlackOps3_MSStore:141B4E580", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F340", "caller": "BlackOps3_MSStore:141B4E590", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F8E0", "caller": "BlackOps3_MSStore:141B4E590", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413802A0", "caller": "BlackOps3_MSStore:141B4E590", "kind": "call"}
@@ -36207,6 +36296,8 @@
 {"callee": "BlackOps3_MSStore:141391970", "caller": "BlackOps3_MSStore:141B4EC80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392760", "caller": "BlackOps3_MSStore:141B4EC80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1425EBD20", "caller": "BlackOps3_MSStore:141B4EC80", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C1CB90", "caller": "BlackOps3_MSStore:141B4EE10", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C1CB90", "caller": "BlackOps3_MSStore:141B4EE20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F340", "caller": "BlackOps3_MSStore:141B4EE30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F8E0", "caller": "BlackOps3_MSStore:141B4EE30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413802A0", "caller": "BlackOps3_MSStore:141B4EE30", "kind": "call"}
@@ -36257,6 +36348,8 @@
 {"callee": "BlackOps3_MSStore:141390370", "caller": "BlackOps3_MSStore:141B4F640", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391970", "caller": "BlackOps3_MSStore:141B4F640", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141C824F0", "caller": "BlackOps3_MSStore:141B4F640", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C1CB90", "caller": "BlackOps3_MSStore:141B4F6E0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C1E920", "caller": "BlackOps3_MSStore:141B4F6F0", "kind": "tailcall"}
 {"callee": "BlackOps3_MSStore:14137F340", "caller": "BlackOps3_MSStore:141B4F700", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F8E0", "caller": "BlackOps3_MSStore:141B4F700", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413802A0", "caller": "BlackOps3_MSStore:141B4F700", "kind": "call"}
@@ -36281,6 +36374,7 @@
 {"callee": "BlackOps3_MSStore:1423B4CF0", "caller": "BlackOps3_MSStore:141B512B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:141B512B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF266", "caller": "BlackOps3_MSStore:141B512B0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141B512B0", "caller": "BlackOps3_MSStore:141B51750", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391240", "caller": "BlackOps3_MSStore:141B51780", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142324280", "caller": "BlackOps3_MSStore:141B51780", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B4CF0", "caller": "BlackOps3_MSStore:141B51780", "kind": "call"}
@@ -36610,6 +36704,9 @@
 {"callee": "BlackOps3_MSStore:141391240", "caller": "BlackOps3_MSStore:141B55CD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391970", "caller": "BlackOps3_MSStore:141B55CD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14230EE10", "caller": "BlackOps3_MSStore:141B55CD0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141B55CD0", "caller": "BlackOps3_MSStore:141B55DA0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141B55CD0", "caller": "BlackOps3_MSStore:141B55DB0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14230ECF0", "caller": "BlackOps3_MSStore:141B55DC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391970", "caller": "BlackOps3_MSStore:141B55DD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14230EB60", "caller": "BlackOps3_MSStore:141B55DD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:141B55E10", "kind": "call"}
@@ -36747,6 +36844,7 @@
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141B58E30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141D86DA0", "caller": "BlackOps3_MSStore:141B58E30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14220FA60", "caller": "BlackOps3_MSStore:141B58E30", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14220FBD0", "caller": "BlackOps3_MSStore:141B58F20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F6C0", "caller": "BlackOps3_MSStore:141B58F40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141388AE0", "caller": "BlackOps3_MSStore:141B58F40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E77850", "caller": "BlackOps3_MSStore:141B58F40", "kind": "call"}
@@ -37373,6 +37471,7 @@
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141B731A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:141B731D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141B731D0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14220FA60", "caller": "BlackOps3_MSStore:141B73200", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:141B73220", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141B73220", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391310", "caller": "BlackOps3_MSStore:141B73250", "kind": "call"}
@@ -38059,6 +38158,7 @@
 {"callee": "BlackOps3_MSStore:141A62E50", "caller": "BlackOps3_MSStore:141B8BEE0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141C15D10", "caller": "BlackOps3_MSStore:141B8BEE0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:141B8BEE0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141B8BEE0", "caller": "BlackOps3_MSStore:141B8DAC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1416AB030", "caller": "BlackOps3_MSStore:141B8DAD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141B8BEE0", "caller": "BlackOps3_MSStore:141B8DAD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413917E0", "caller": "BlackOps3_MSStore:141B8DB00", "kind": "call"}
@@ -38272,6 +38372,8 @@
 {"callee": "BlackOps3_MSStore:1413917E0", "caller": "BlackOps3_MSStore:141B93B80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141B93B80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141C15D10", "caller": "BlackOps3_MSStore:141B93B80", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142204960", "caller": "BlackOps3_MSStore:141B93C10", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142204960", "caller": "BlackOps3_MSStore:141B93C30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137DF20", "caller": "BlackOps3_MSStore:141B93C50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141388CD0", "caller": "BlackOps3_MSStore:141B93C50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391240", "caller": "BlackOps3_MSStore:141B93C50", "kind": "call"}
@@ -40151,6 +40253,7 @@
 {"callee": "BlackOps3_MSStore:142336950", "caller": "BlackOps3_MSStore:141BF3550", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142753860", "caller": "BlackOps3_MSStore:141BF3550", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF338", "caller": "BlackOps3_MSStore:141BF3550", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141713670", "caller": "BlackOps3_MSStore:141BF37A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142753860", "caller": "BlackOps3_MSStore:141BF37F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF350", "caller": "BlackOps3_MSStore:141BF37F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142753860", "caller": "BlackOps3_MSStore:141BF3C30", "kind": "call"}
@@ -40278,6 +40381,7 @@
 {"callee": "BlackOps3_MSStore:1423B48E0", "caller": "BlackOps3_MSStore:141C0B1B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:141C0B260", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141C0B260", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C6D6F0", "caller": "BlackOps3_MSStore:141C0B290", "kind": "call"}
 {"callee": "BlackOps3_MSStore:0000001DF", "caller": "BlackOps3_MSStore:141C0B2A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:0000001E3", "caller": "BlackOps3_MSStore:141C0B2A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140095C60", "caller": "BlackOps3_MSStore:141C0B2A0", "kind": "call"}
@@ -40513,6 +40617,7 @@
 {"callee": "BlackOps3_MSStore:141391240", "caller": "BlackOps3_MSStore:141C353A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413917E0", "caller": "BlackOps3_MSStore:141C353C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413917E0", "caller": "BlackOps3_MSStore:141C353E0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1413928A0", "caller": "BlackOps3_MSStore:141C35400", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141390370", "caller": "BlackOps3_MSStore:141C35440", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141390370", "caller": "BlackOps3_MSStore:141C354B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141390370", "caller": "BlackOps3_MSStore:141C35550", "kind": "call"}
@@ -40904,6 +41009,7 @@
 {"callee": "BlackOps3_MSStore:141C4F3A0", "caller": "BlackOps3_MSStore:141C4F650", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142210B90", "caller": "BlackOps3_MSStore:141C4F650", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:141C4F650", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C4F650", "caller": "BlackOps3_MSStore:141C4F920", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140163A10", "caller": "BlackOps3_MSStore:141C4F930", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140163C70", "caller": "BlackOps3_MSStore:141C4F930", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137E030", "caller": "BlackOps3_MSStore:141C4F930", "kind": "call"}
@@ -40923,6 +41029,7 @@
 {"callee": "BlackOps3_MSStore:141C4E5B0", "caller": "BlackOps3_MSStore:141C4FD80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142210B90", "caller": "BlackOps3_MSStore:141C4FD80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B48E0", "caller": "BlackOps3_MSStore:141C4FD80", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C4E950", "caller": "BlackOps3_MSStore:141C50030", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141C4E5B0", "caller": "BlackOps3_MSStore:141C50070", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141C4E5B0", "caller": "BlackOps3_MSStore:141C500C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F4F0", "caller": "BlackOps3_MSStore:141C50100", "kind": "call"}
@@ -40930,6 +41037,8 @@
 {"callee": "BlackOps3_MSStore:141C4E950", "caller": "BlackOps3_MSStore:141C50100", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137F4F0", "caller": "BlackOps3_MSStore:141C50290", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413907F0", "caller": "BlackOps3_MSStore:141C50290", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C50100", "caller": "BlackOps3_MSStore:141C50320", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C50100", "caller": "BlackOps3_MSStore:141C50330", "kind": "call"}
 {"callee": "BlackOps3_MSStore:0000001DF", "caller": "BlackOps3_MSStore:141C50350", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:141C50350", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413917E0", "caller": "BlackOps3_MSStore:141C50350", "kind": "call"}
@@ -40961,6 +41070,8 @@
 {"callee": "BlackOps3_MSStore:14013CC40", "caller": "BlackOps3_MSStore:141C564A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141C4E5B0", "caller": "BlackOps3_MSStore:141C564A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B48E0", "caller": "BlackOps3_MSStore:141C564A0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C564A0", "caller": "BlackOps3_MSStore:141C56760", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C564A0", "caller": "BlackOps3_MSStore:141C56770", "kind": "tailcall"}
 {"callee": "BlackOps3_MSStore:14137D850", "caller": "BlackOps3_MSStore:141C56780", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14137DA20", "caller": "BlackOps3_MSStore:141C56780", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14220FA60", "caller": "BlackOps3_MSStore:141C56780", "kind": "call"}
@@ -41667,6 +41778,7 @@
 {"callee": "BlackOps3_MSStore:141C96E00", "caller": "BlackOps3_MSStore:141C98020", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141C971A0", "caller": "BlackOps3_MSStore:141C98020", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:141C98020", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C96340", "caller": "BlackOps3_MSStore:141C98180", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:141C98190", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392100", "caller": "BlackOps3_MSStore:141C98190", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141C98190", "kind": "call"}
@@ -41800,6 +41912,7 @@
 {"callee": "BlackOps3_MSStore:141392100", "caller": "BlackOps3_MSStore:141C9C7C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141C9C7C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141C99020", "caller": "BlackOps3_MSStore:141C9C7C0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141C96340", "caller": "BlackOps3_MSStore:141C9C8D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14138E030", "caller": "BlackOps3_MSStore:141C9C8E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413917E0", "caller": "BlackOps3_MSStore:141C9C8E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141392DF0", "caller": "BlackOps3_MSStore:141C9C8E0", "kind": "call"}
@@ -43902,8 +44015,18 @@
 {"callee": "BlackOps3_MSStore:141DF1B10", "caller": "BlackOps3_MSStore:141D66110", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423A2AA0", "caller": "BlackOps3_MSStore:141D66110", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141D667F0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141D66890", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141D668B0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141D668E0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141D66900", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141D66920", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141D66AA0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141D66B20", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141D66B60", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141D66B70", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141D66BC0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141D66C90", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423A2790", "caller": "BlackOps3_MSStore:141D66CA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423A4E50", "caller": "BlackOps3_MSStore:141D66CC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141D50790", "caller": "BlackOps3_MSStore:141D66E00", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141D6BAA0", "caller": "BlackOps3_MSStore:141D66E00", "kind": "call"}
@@ -49075,6 +49198,7 @@
 {"callee": "BlackOps3_MSStore:141E52470", "caller": "BlackOps3_MSStore:141E456C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E54760", "caller": "BlackOps3_MSStore:141E456C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E553A0", "caller": "BlackOps3_MSStore:141E456C0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141E528E0", "caller": "BlackOps3_MSStore:141E45770", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1414F1360", "caller": "BlackOps3_MSStore:141E45830", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E18B20", "caller": "BlackOps3_MSStore:141E45830", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E18C90", "caller": "BlackOps3_MSStore:141E45830", "kind": "call"}
@@ -49309,6 +49433,8 @@
 {"callee": "BlackOps3_MSStore:141E47C70", "caller": "BlackOps3_MSStore:141E48910", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E52820", "caller": "BlackOps3_MSStore:141E48910", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E52970", "caller": "BlackOps3_MSStore:141E48910", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141E48910", "caller": "BlackOps3_MSStore:141E48AE0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141E48910", "caller": "BlackOps3_MSStore:141E48B00", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140AA2280", "caller": "BlackOps3_MSStore:141E48B20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1414F1360", "caller": "BlackOps3_MSStore:141E48B20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E18A60", "caller": "BlackOps3_MSStore:141E48B20", "kind": "call"}
@@ -49734,6 +49860,7 @@
 {"callee": "BlackOps3_MSStore:141E532A0", "caller": "BlackOps3_MSStore:141E4CF90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E53850", "caller": "BlackOps3_MSStore:141E4CF90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E553A0", "caller": "BlackOps3_MSStore:141E4CF90", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141E52970", "caller": "BlackOps3_MSStore:141E4D290", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E54850", "caller": "BlackOps3_MSStore:141E4D2A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1414F1360", "caller": "BlackOps3_MSStore:141E4D2B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E18B20", "caller": "BlackOps3_MSStore:141E4D2B0", "kind": "call"}
@@ -49844,6 +49971,8 @@
 {"callee": "BlackOps3_MSStore:141E554E0", "caller": "BlackOps3_MSStore:141E4F400", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E55EB0", "caller": "BlackOps3_MSStore:141E4F400", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:141E4F400", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141E4F400", "caller": "BlackOps3_MSStore:141E4F6F0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141E4F400", "caller": "BlackOps3_MSStore:141E4F700", "kind": "call"}
 {"callee": "BlackOps3_MSStore:0000001CB", "caller": "BlackOps3_MSStore:141E4F710", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14013D590", "caller": "BlackOps3_MSStore:141E4F710", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140AA2280", "caller": "BlackOps3_MSStore:141E4F710", "kind": "call"}
@@ -49908,6 +50037,8 @@
 {"callee": "BlackOps3_MSStore:141E554E0", "caller": "BlackOps3_MSStore:141E50480", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E55B80", "caller": "BlackOps3_MSStore:141E50480", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:141E50480", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141E50480", "caller": "BlackOps3_MSStore:141E505C0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141E50480", "caller": "BlackOps3_MSStore:141E505E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1414F1360", "caller": "BlackOps3_MSStore:141E505F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E18B20", "caller": "BlackOps3_MSStore:141E505F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141E521C0", "caller": "BlackOps3_MSStore:141E505F0", "kind": "call"}
@@ -55310,6 +55441,7 @@
 {"callee": "BlackOps3_MSStore:1429A1B60", "caller": "BlackOps3_MSStore:141F1D930", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429AE960", "caller": "BlackOps3_MSStore:141F1D930", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429AF810", "caller": "BlackOps3_MSStore:141F1D930", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141F1D9D0", "caller": "BlackOps3_MSStore:141F1D9C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140163C70", "caller": "BlackOps3_MSStore:141F1D9D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140AA2280", "caller": "BlackOps3_MSStore:141F1D9D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1414E3D50", "caller": "BlackOps3_MSStore:141F1D9D0", "kind": "call"}
@@ -57765,6 +57897,8 @@
 {"callee": "BlackOps3_MSStore:1425E71D0", "caller": "BlackOps3_MSStore:141FAD650", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1425E80F0", "caller": "BlackOps3_MSStore:141FAD650", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:141FAD650", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141FAD650", "caller": "BlackOps3_MSStore:141FADB90", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141FAD650", "caller": "BlackOps3_MSStore:141FADBA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141FD1DD0", "caller": "BlackOps3_MSStore:141FADBB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14220B3A0", "caller": "BlackOps3_MSStore:141FADBB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142396BB0", "caller": "BlackOps3_MSStore:141FADBB0", "kind": "call"}
@@ -57911,6 +58045,8 @@
 {"callee": "BlackOps3_MSStore:14234E810", "caller": "BlackOps3_MSStore:141FB1710", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423A2AA0", "caller": "BlackOps3_MSStore:141FB1710", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1425E80F0", "caller": "BlackOps3_MSStore:141FB1710", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141FB1710", "caller": "BlackOps3_MSStore:141FB1950", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141FB1710", "caller": "BlackOps3_MSStore:141FB1960", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1414E34D0", "caller": "BlackOps3_MSStore:141FB1980", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14234ECA0", "caller": "BlackOps3_MSStore:141FB1C40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413F5930", "caller": "BlackOps3_MSStore:141FB1D60", "kind": "call"}
@@ -66321,11 +66457,13 @@
 {"callee": "BlackOps3_MSStore:1423B4CF0", "caller": "BlackOps3_MSStore:1420FBA80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:1420FBA80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE920", "caller": "BlackOps3_MSStore:1420FBA80", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1420FBA80", "caller": "BlackOps3_MSStore:1420FBD20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14013D590", "caller": "BlackOps3_MSStore:1420FBD30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140AA2280", "caller": "BlackOps3_MSStore:1420FBD30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B4C10", "caller": "BlackOps3_MSStore:1420FBD30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140AA2280", "caller": "BlackOps3_MSStore:1420FBDA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423A2AA0", "caller": "BlackOps3_MSStore:1420FBDA0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1420FBA80", "caller": "BlackOps3_MSStore:1420FBE10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14013D590", "caller": "BlackOps3_MSStore:1420FBE20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1414DC380", "caller": "BlackOps3_MSStore:1420FBE20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423A2AA0", "caller": "BlackOps3_MSStore:1420FBEE0", "kind": "call"}
@@ -69989,6 +70127,7 @@
 {"callee": "BlackOps3_MSStore:14297EEF0", "caller": "BlackOps3_MSStore:1422C7AD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE0D8", "caller": "BlackOps3_MSStore:1422C7AD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF266", "caller": "BlackOps3_MSStore:1422C7AD0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFF266", "caller": "BlackOps3_MSStore:1422C7D10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140163A10", "caller": "BlackOps3_MSStore:1422C7D30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140163C70", "caller": "BlackOps3_MSStore:1422C7D30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1413C4910", "caller": "BlackOps3_MSStore:1422C7D30", "kind": "call"}
@@ -69999,6 +70138,7 @@
 {"callee": "BlackOps3_MSStore:14297EEF0", "caller": "BlackOps3_MSStore:1422C7D30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE0D8", "caller": "BlackOps3_MSStore:1422C7D30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF266", "caller": "BlackOps3_MSStore:1422C7D30", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFF266", "caller": "BlackOps3_MSStore:1422C7F70", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000048", "caller": "BlackOps3_MSStore:1422C7FE0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:00000006D", "caller": "BlackOps3_MSStore:1422C7FE0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:00000006E", "caller": "BlackOps3_MSStore:1422C7FE0", "kind": "call"}
@@ -70103,6 +70243,7 @@
 {"callee": "BlackOps3_MSStore:14230EB60", "caller": "BlackOps3_MSStore:14230EE10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423A2AA0", "caller": "BlackOps3_MSStore:14230EE10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE0D8", "caller": "BlackOps3_MSStore:14230EE10", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14230ECF0", "caller": "BlackOps3_MSStore:14230EF60", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14231FFB0", "caller": "BlackOps3_MSStore:14230EF90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423B4C10", "caller": "BlackOps3_MSStore:14230EF90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:14230EF90", "kind": "call"}
@@ -72092,7 +72233,11 @@
 {"callee": "BlackOps3_MSStore:141EA4800", "caller": "BlackOps3_MSStore:142361180", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141EA4960", "caller": "BlackOps3_MSStore:142361220", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423508F0", "caller": "BlackOps3_MSStore:142361220", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142361180", "caller": "BlackOps3_MSStore:1423612D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141EA4800", "caller": "BlackOps3_MSStore:142361300", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142361180", "caller": "BlackOps3_MSStore:142361360", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142361220", "caller": "BlackOps3_MSStore:142361390", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142361180", "caller": "BlackOps3_MSStore:1423613C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140AA2280", "caller": "BlackOps3_MSStore:1423613F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1414E3EB0", "caller": "BlackOps3_MSStore:1423613F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1414E4050", "caller": "BlackOps3_MSStore:1423613F0", "kind": "call"}
@@ -73566,6 +73711,8 @@
 {"callee": "BlackOps3_MSStore:00000007B", "caller": "BlackOps3_MSStore:1423AF200", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423AF7D0", "caller": "BlackOps3_MSStore:1423AF2A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF266", "caller": "BlackOps3_MSStore:1423AF2A0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423AF7D0", "caller": "BlackOps3_MSStore:1423AF350", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142CFF266", "caller": "BlackOps3_MSStore:1423AF360", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000079", "caller": "BlackOps3_MSStore:1423AF370", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423AF5E0", "caller": "BlackOps3_MSStore:1423AF370", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423AFAC0", "caller": "BlackOps3_MSStore:1423AF370", "kind": "call"}
@@ -73574,6 +73721,9 @@
 {"callee": "BlackOps3_MSStore:1423AF8D0", "caller": "BlackOps3_MSStore:1423AF4D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423AF5E0", "caller": "BlackOps3_MSStore:1423AF7D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142380730", "caller": "BlackOps3_MSStore:1423AFC70", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14238C5E0", "caller": "BlackOps3_MSStore:1423AFD70", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423AEAB0", "caller": "BlackOps3_MSStore:1423AFD80", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423AECA0", "caller": "BlackOps3_MSStore:1423AFD90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14238C5E0", "caller": "BlackOps3_MSStore:1423AFE00", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF266", "caller": "BlackOps3_MSStore:1423AFE00", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14238C5E0", "caller": "BlackOps3_MSStore:1423AFEB0", "kind": "call"}
@@ -73586,6 +73736,8 @@
 {"callee": "BlackOps3_MSStore:1423955A0", "caller": "BlackOps3_MSStore:1423B0270", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142395680", "caller": "BlackOps3_MSStore:1423B0270", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF266", "caller": "BlackOps3_MSStore:1423B0270", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142395FE0", "caller": "BlackOps3_MSStore:1423B0440", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1423965A0", "caller": "BlackOps3_MSStore:1423B0460", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14238C360", "caller": "BlackOps3_MSStore:1423B0470", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF266", "caller": "BlackOps3_MSStore:1423B0470", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14009BB60", "caller": "BlackOps3_MSStore:1423B05D0", "kind": "call"}
@@ -78739,6 +78891,8 @@
 {"callee": "BlackOps3_MSStore:142646ED0", "caller": "BlackOps3_MSStore:1426420C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:1426420C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE920", "caller": "BlackOps3_MSStore:1426420C0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1426420C0", "caller": "BlackOps3_MSStore:142642870", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1426420C0", "caller": "BlackOps3_MSStore:142642880", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141388CD0", "caller": "BlackOps3_MSStore:142642890", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141390370", "caller": "BlackOps3_MSStore:142642890", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141391E90", "caller": "BlackOps3_MSStore:142642890", "kind": "call"}
@@ -79362,9 +79516,12 @@
 {"callee": "BlackOps3_MSStore:142CFF362", "caller": "BlackOps3_MSStore:14265C2C8", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D82A63", "caller": "BlackOps3_MSStore:14265C2C8", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1423A9050", "caller": "BlackOps3_MSStore:14265C710", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142655BB0", "caller": "BlackOps3_MSStore:14265C9B0", "kind": "tailcall"}
 {"callee": "BlackOps3_MSStore:140163A10", "caller": "BlackOps3_MSStore:14265CAB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140163A80", "caller": "BlackOps3_MSStore:14265CAB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE0D8", "caller": "BlackOps3_MSStore:14265CAB0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14265CAB0", "caller": "BlackOps3_MSStore:14265CC30", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14265CAB0", "caller": "BlackOps3_MSStore:14265CC40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140163A10", "caller": "BlackOps3_MSStore:14265CC50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140163A80", "caller": "BlackOps3_MSStore:14265CC50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE0D8", "caller": "BlackOps3_MSStore:14265CC50", "kind": "call"}
@@ -79527,6 +79684,7 @@
 {"callee": "BlackOps3_MSStore:142670AD0", "caller": "BlackOps3_MSStore:142664700", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1427D3390", "caller": "BlackOps3_MSStore:142664700", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:142664700", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1426691A0", "caller": "BlackOps3_MSStore:142669180", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1421FA650", "caller": "BlackOps3_MSStore:1426691A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:1426691A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106E20", "caller": "BlackOps3_MSStore:142669520", "kind": "call"}
@@ -87356,6 +87514,10 @@
 {"callee": "BlackOps3_MSStore:142CFF326", "caller": "BlackOps3_MSStore:142929C10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14292F9F0", "caller": "BlackOps3_MSStore:142929CB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF326", "caller": "BlackOps3_MSStore:142929CB0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142928DD0", "caller": "BlackOps3_MSStore:142929D70", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14292F020", "caller": "BlackOps3_MSStore:142929D80", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14292EFE0", "caller": "BlackOps3_MSStore:142929D90", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14292F840", "caller": "BlackOps3_MSStore:142929DA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142926590", "caller": "BlackOps3_MSStore:142929DC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142926720", "caller": "BlackOps3_MSStore:142929DC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14292E450", "caller": "BlackOps3_MSStore:142929DC0", "kind": "call"}
@@ -87391,6 +87553,9 @@
 {"callee": "BlackOps3_MSStore:142926720", "caller": "BlackOps3_MSStore:14292A290", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14292B550", "caller": "BlackOps3_MSStore:14292A290", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14292B980", "caller": "BlackOps3_MSStore:14292A290", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142929F20", "caller": "BlackOps3_MSStore:14292A310", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142929F70", "caller": "BlackOps3_MSStore:14292A320", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142929FF0", "caller": "BlackOps3_MSStore:14292A330", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928A60", "caller": "BlackOps3_MSStore:14292A340", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928A60", "caller": "BlackOps3_MSStore:14292A4A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14292A6D0", "caller": "BlackOps3_MSStore:14292A680", "kind": "call"}
@@ -87528,6 +87693,7 @@
 {"callee": "BlackOps3_MSStore:14293A000", "caller": "BlackOps3_MSStore:142930140", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429359A0", "caller": "BlackOps3_MSStore:142930180", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429347F0", "caller": "BlackOps3_MSStore:1429301B0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142923FB0", "caller": "BlackOps3_MSStore:1429301E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928940", "caller": "BlackOps3_MSStore:142930320", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928A60", "caller": "BlackOps3_MSStore:142930320", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429306F0", "caller": "BlackOps3_MSStore:142930320", "kind": "call"}
@@ -87561,6 +87727,7 @@
 {"callee": "BlackOps3_MSStore:142926260", "caller": "BlackOps3_MSStore:142930DF0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142930D90", "caller": "BlackOps3_MSStore:142930DF0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14293A4A0", "caller": "BlackOps3_MSStore:142930DF0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142935260", "caller": "BlackOps3_MSStore:142930EA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429239A0", "caller": "BlackOps3_MSStore:142930F20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928DD0", "caller": "BlackOps3_MSStore:142930F20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142924A20", "caller": "BlackOps3_MSStore:142931100", "kind": "call"}
@@ -87845,6 +88012,7 @@
 {"callee": "BlackOps3_MSStore:142926A80", "caller": "BlackOps3_MSStore:14293A8C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928AF0", "caller": "BlackOps3_MSStore:14293A960", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF26C", "caller": "BlackOps3_MSStore:14293AB00", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142928DD0", "caller": "BlackOps3_MSStore:14293B770", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14293E590", "caller": "BlackOps3_MSStore:14293B780", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928880", "caller": "BlackOps3_MSStore:14293B820", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14293B7B0", "caller": "BlackOps3_MSStore:14293B820", "kind": "call"}
@@ -88349,6 +88517,7 @@
 {"callee": "BlackOps3_MSStore:142928E60", "caller": "BlackOps3_MSStore:142949BB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14294A360", "caller": "BlackOps3_MSStore:142949BB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:142949BB0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142928DD0", "caller": "BlackOps3_MSStore:142949FB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14294A900", "caller": "BlackOps3_MSStore:142949FC0", "kind": "tailcall"}
 {"callee": "BlackOps3_MSStore:142926CA0", "caller": "BlackOps3_MSStore:142949FD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928880", "caller": "BlackOps3_MSStore:142949FD0", "kind": "call"}
@@ -88411,6 +88580,7 @@
 {"callee": "BlackOps3_MSStore:142927390", "caller": "BlackOps3_MSStore:14294B4E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928690", "caller": "BlackOps3_MSStore:14294B4E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14294C7F0", "caller": "BlackOps3_MSStore:14294B740", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14294C770", "caller": "BlackOps3_MSStore:14294B770", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142924A20", "caller": "BlackOps3_MSStore:14294B780", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142924BF0", "caller": "BlackOps3_MSStore:14294B780", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142925770", "caller": "BlackOps3_MSStore:14294B780", "kind": "call"}
@@ -88426,6 +88596,7 @@
 {"callee": "BlackOps3_MSStore:142924A20", "caller": "BlackOps3_MSStore:14294C060", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14294B4E0", "caller": "BlackOps3_MSStore:14294C060", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142923060", "caller": "BlackOps3_MSStore:14294C100", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142928DD0", "caller": "BlackOps3_MSStore:14294C1A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928880", "caller": "BlackOps3_MSStore:14294C1B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF26C", "caller": "BlackOps3_MSStore:14294C1B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14294C550", "caller": "BlackOps3_MSStore:14294C620", "kind": "call"}
@@ -88506,6 +88677,7 @@
 {"callee": "BlackOps3_MSStore:142924260", "caller": "BlackOps3_MSStore:14294EAF0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142924C90", "caller": "BlackOps3_MSStore:14294EB30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14294FE40", "caller": "BlackOps3_MSStore:14294EB80", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1429231F0", "caller": "BlackOps3_MSStore:14294ECE0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429239A0", "caller": "BlackOps3_MSStore:14294ECF0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142923060", "caller": "BlackOps3_MSStore:14294ED40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:14294ED40", "kind": "call"}
@@ -88517,6 +88689,7 @@
 {"callee": "BlackOps3_MSStore:142928A60", "caller": "BlackOps3_MSStore:14294F5C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928AF0", "caller": "BlackOps3_MSStore:14294F980", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF32C", "caller": "BlackOps3_MSStore:14294F9B0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142928DD0", "caller": "BlackOps3_MSStore:14294FB40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928880", "caller": "BlackOps3_MSStore:14294FB50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14294FF70", "caller": "BlackOps3_MSStore:14294FB50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14294FFE0", "caller": "BlackOps3_MSStore:14294FB50", "kind": "call"}
@@ -88550,6 +88723,7 @@
 {"callee": "BlackOps3_MSStore:142950840", "caller": "BlackOps3_MSStore:142950890", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928A60", "caller": "BlackOps3_MSStore:142950930", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928E60", "caller": "BlackOps3_MSStore:142950930", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142928DD0", "caller": "BlackOps3_MSStore:142950BB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429268A0", "caller": "BlackOps3_MSStore:142950BC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142926990", "caller": "BlackOps3_MSStore:142950BC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142926B60", "caller": "BlackOps3_MSStore:142950BC0", "kind": "call"}
@@ -88582,6 +88756,7 @@
 {"callee": "BlackOps3_MSStore:142951C10", "caller": "BlackOps3_MSStore:142951920", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142951C50", "caller": "BlackOps3_MSStore:142951920", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142951C80", "caller": "BlackOps3_MSStore:142951B30", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142928DD0", "caller": "BlackOps3_MSStore:142951BA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142926DF0", "caller": "BlackOps3_MSStore:142951D30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142927100", "caller": "BlackOps3_MSStore:142951D30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142952350", "caller": "BlackOps3_MSStore:142951D30", "kind": "call"}
@@ -88709,6 +88884,7 @@
 {"callee": "BlackOps3_MSStore:142928B60", "caller": "BlackOps3_MSStore:142955470", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142953FD0", "caller": "BlackOps3_MSStore:142955470", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF266", "caller": "BlackOps3_MSStore:142955470", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1429540B0", "caller": "BlackOps3_MSStore:142955550", "kind": "tailcall"}
 {"callee": "BlackOps3_MSStore:142928880", "caller": "BlackOps3_MSStore:142955560", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928940", "caller": "BlackOps3_MSStore:1429555E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928940", "caller": "BlackOps3_MSStore:142955610", "kind": "call"}
@@ -88785,6 +88961,8 @@
 {"callee": "BlackOps3_MSStore:142957C70", "caller": "BlackOps3_MSStore:142957630", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:142957630", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF2C0", "caller": "BlackOps3_MSStore:142957630", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142928DD0", "caller": "BlackOps3_MSStore:142957A70", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142958420", "caller": "BlackOps3_MSStore:142957CA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142958460", "caller": "BlackOps3_MSStore:142957CC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142959680", "caller": "BlackOps3_MSStore:142957CC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14295B370", "caller": "BlackOps3_MSStore:142957CC0", "kind": "call"}
@@ -88897,8 +89075,11 @@
 {"callee": "BlackOps3_MSStore:1429584E0", "caller": "BlackOps3_MSStore:14295B490", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:14295B490", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928880", "caller": "BlackOps3_MSStore:14295B590", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142928940", "caller": "BlackOps3_MSStore:14295B5F0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:14295D2B0", "caller": "BlackOps3_MSStore:14295B650", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142925AD0", "caller": "BlackOps3_MSStore:14295B7C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142925B30", "caller": "BlackOps3_MSStore:14295B7C0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142925770", "caller": "BlackOps3_MSStore:14295B820", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142925770", "caller": "BlackOps3_MSStore:14295B840", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142925B30", "caller": "BlackOps3_MSStore:14295B840", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928940", "caller": "BlackOps3_MSStore:14295B840", "kind": "call"}
@@ -88991,6 +89172,7 @@
 {"callee": "BlackOps3_MSStore:1429269D0", "caller": "BlackOps3_MSStore:142960650", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142927350", "caller": "BlackOps3_MSStore:142960650", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142927350", "caller": "BlackOps3_MSStore:1429607E0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142924700", "caller": "BlackOps3_MSStore:142960810", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142964AA0", "caller": "BlackOps3_MSStore:142960890", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142965450", "caller": "BlackOps3_MSStore:142960890", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142962AE0", "caller": "BlackOps3_MSStore:1429608F0", "kind": "call"}
@@ -89005,6 +89187,7 @@
 {"callee": "BlackOps3_MSStore:142928880", "caller": "BlackOps3_MSStore:142960D70", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928940", "caller": "BlackOps3_MSStore:142960D70", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142960430", "caller": "BlackOps3_MSStore:142960FE0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142928DD0", "caller": "BlackOps3_MSStore:142961070", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142927390", "caller": "BlackOps3_MSStore:142961080", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429647E0", "caller": "BlackOps3_MSStore:142961080", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429268A0", "caller": "BlackOps3_MSStore:1429610C0", "kind": "call"}
@@ -89019,6 +89202,7 @@
 {"callee": "BlackOps3_MSStore:142CFDB30", "caller": "BlackOps3_MSStore:1429610C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142926CE0", "caller": "BlackOps3_MSStore:142961250", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429647E0", "caller": "BlackOps3_MSStore:142961250", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142964790", "caller": "BlackOps3_MSStore:1429612D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429269D0", "caller": "BlackOps3_MSStore:1429612E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142926DF0", "caller": "BlackOps3_MSStore:142961350", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429268A0", "caller": "BlackOps3_MSStore:142961400", "kind": "call"}
@@ -89034,6 +89218,7 @@
 {"callee": "BlackOps3_MSStore:142926990", "caller": "BlackOps3_MSStore:1429617D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142926B20", "caller": "BlackOps3_MSStore:1429617D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928A60", "caller": "BlackOps3_MSStore:1429617D0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142964790", "caller": "BlackOps3_MSStore:142961920", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142926DF0", "caller": "BlackOps3_MSStore:142961930", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142926CC0", "caller": "BlackOps3_MSStore:1429619B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142927230", "caller": "BlackOps3_MSStore:142961A40", "kind": "call"}
@@ -89122,8 +89307,10 @@
 {"callee": "BlackOps3_MSStore:1429662F0", "caller": "BlackOps3_MSStore:142965A20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142966920", "caller": "BlackOps3_MSStore:142965A20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928880", "caller": "BlackOps3_MSStore:142965C20", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142928940", "caller": "BlackOps3_MSStore:142965C80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142925AD0", "caller": "BlackOps3_MSStore:142965D30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142925B30", "caller": "BlackOps3_MSStore:142965D30", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142925770", "caller": "BlackOps3_MSStore:142965D90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142965E40", "caller": "BlackOps3_MSStore:142965DB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142965E40", "caller": "BlackOps3_MSStore:142965DE0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142965E40", "caller": "BlackOps3_MSStore:142965E10", "kind": "call"}
@@ -89169,6 +89356,7 @@
 {"callee": "BlackOps3_MSStore:142928660", "caller": "BlackOps3_MSStore:142967E70", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928E60", "caller": "BlackOps3_MSStore:142967E70", "kind": "call"}
 {"callee": "BlackOps3_MSStore:14296A960", "caller": "BlackOps3_MSStore:142967FD0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142928DD0", "caller": "BlackOps3_MSStore:142968070", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928A60", "caller": "BlackOps3_MSStore:142968080", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF26C", "caller": "BlackOps3_MSStore:142968080", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142928940", "caller": "BlackOps3_MSStore:142968120", "kind": "call"}
@@ -96737,14 +96925,17 @@
 {"callee": "BlackOps3_MSStore:1429F3730", "caller": "BlackOps3_MSStore:1429F3750", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429F3BF0", "caller": "BlackOps3_MSStore:1429F3790", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D17BD0", "caller": "BlackOps3_MSStore:1429F3790", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142D17C40", "caller": "BlackOps3_MSStore:1429F37B0", "kind": "tailcall"}
 {"callee": "BlackOps3_MSStore:142D17EA0", "caller": "BlackOps3_MSStore:1429F37F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D18650", "caller": "BlackOps3_MSStore:1429F3820", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142D19240", "caller": "BlackOps3_MSStore:1429F3850", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429F3BF0", "caller": "BlackOps3_MSStore:1429F3860", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D17DE0", "caller": "BlackOps3_MSStore:1429F3860", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429F3BF0", "caller": "BlackOps3_MSStore:1429F3880", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D193E0", "caller": "BlackOps3_MSStore:1429F3880", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429F3BF0", "caller": "BlackOps3_MSStore:1429F38A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D19510", "caller": "BlackOps3_MSStore:1429F38A0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142D19270", "caller": "BlackOps3_MSStore:1429F38C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429F3BF0", "caller": "BlackOps3_MSStore:1429F38D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D19330", "caller": "BlackOps3_MSStore:1429F38D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429F3BF0", "caller": "BlackOps3_MSStore:1429F38F0", "kind": "call"}
@@ -96785,6 +96976,7 @@
 {"callee": "BlackOps3_MSStore:142D18DA0", "caller": "BlackOps3_MSStore:1429F3B50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429F3BF0", "caller": "BlackOps3_MSStore:1429F3B70", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D18E60", "caller": "BlackOps3_MSStore:1429F3B70", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142975C20", "caller": "BlackOps3_MSStore:1429F3B90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429F3BF0", "caller": "BlackOps3_MSStore:1429F3BA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D18FC0", "caller": "BlackOps3_MSStore:1429F3BA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429F3BF0", "caller": "BlackOps3_MSStore:1429F3BC0", "kind": "call"}
@@ -96813,6 +97005,7 @@
 {"callee": "BlackOps3_MSStore:1429F7EE0", "caller": "BlackOps3_MSStore:1429F7C80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFF26C", "caller": "BlackOps3_MSStore:1429F7C80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429F7EE0", "caller": "BlackOps3_MSStore:1429F7D60", "kind": "call"}
+{"callee": "BlackOps3_MSStore:1429FCF50", "caller": "BlackOps3_MSStore:1429F88F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429FC860", "caller": "BlackOps3_MSStore:1429F8940", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429FCF80", "caller": "BlackOps3_MSStore:1429F8940", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429FCFB0", "caller": "BlackOps3_MSStore:1429F8940", "kind": "call"}
@@ -97545,6 +97738,13 @@
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142A25BD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142A25C50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142A25CD0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A1BE30", "caller": "BlackOps3_MSStore:142A25DA0", "kind": "tailcall"}
+{"callee": "BlackOps3_MSStore:142A1BE40", "caller": "BlackOps3_MSStore:142A25DB0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A1BE30", "caller": "BlackOps3_MSStore:142A25DF0", "kind": "tailcall"}
+{"callee": "BlackOps3_MSStore:142A1BE40", "caller": "BlackOps3_MSStore:142A25E00", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A31D30", "caller": "BlackOps3_MSStore:142A25E10", "kind": "tailcall"}
+{"callee": "BlackOps3_MSStore:142A1BE40", "caller": "BlackOps3_MSStore:142A25E20", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A25EE0", "caller": "BlackOps3_MSStore:142A25E40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142A25E50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1BE40", "caller": "BlackOps3_MSStore:142A25E50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142A25EE0", "kind": "call"}
@@ -97660,6 +97860,8 @@
 {"callee": "BlackOps3_MSStore:142A1BE30", "caller": "BlackOps3_MSStore:142A28F10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1BE30", "caller": "BlackOps3_MSStore:142A28F40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A3C420", "caller": "BlackOps3_MSStore:142A29060", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A290E0", "caller": "BlackOps3_MSStore:142A290B0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A3C6A0", "caller": "BlackOps3_MSStore:142A290D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142A290E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142A290E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A29200", "caller": "BlackOps3_MSStore:142A29190", "kind": "call"}
@@ -98866,7 +99068,11 @@
 {"callee": "BlackOps3_MSStore:142A738B0", "caller": "BlackOps3_MSStore:142A56060", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE210", "caller": "BlackOps3_MSStore:142A56060", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE270", "caller": "BlackOps3_MSStore:142A56060", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A599B0", "caller": "BlackOps3_MSStore:142A57550", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A59AB0", "caller": "BlackOps3_MSStore:142A57560", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A597F0", "caller": "BlackOps3_MSStore:142A57670", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A59AB0", "caller": "BlackOps3_MSStore:142A57BB0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A599B0", "caller": "BlackOps3_MSStore:142A57BC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A738B0", "caller": "BlackOps3_MSStore:142A57EB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE210", "caller": "BlackOps3_MSStore:142A57EB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE270", "caller": "BlackOps3_MSStore:142A57EB0", "kind": "call"}
@@ -98883,6 +99089,14 @@
 {"callee": "BlackOps3_MSStore:142A738B0", "caller": "BlackOps3_MSStore:142A5E3F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE210", "caller": "BlackOps3_MSStore:142A5E3F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE270", "caller": "BlackOps3_MSStore:142A5E3F0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A5F520", "caller": "BlackOps3_MSStore:142A5E680", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A5F520", "caller": "BlackOps3_MSStore:142A5E690", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A5F630", "caller": "BlackOps3_MSStore:142A5E6A0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A5F630", "caller": "BlackOps3_MSStore:142A5E6B0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A5F630", "caller": "BlackOps3_MSStore:142A5E6C0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A6DFE0", "caller": "BlackOps3_MSStore:142A5E740", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A6DFE0", "caller": "BlackOps3_MSStore:142A5E760", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A6DFE0", "caller": "BlackOps3_MSStore:142A5E780", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A738B0", "caller": "BlackOps3_MSStore:142A5E7A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE210", "caller": "BlackOps3_MSStore:142A5E7A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFE270", "caller": "BlackOps3_MSStore:142A5E7A0", "kind": "call"}
@@ -99228,6 +99442,9 @@
 {"callee": "BlackOps3_MSStore:142A774B0", "caller": "BlackOps3_MSStore:142A77E50", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1ACF0", "caller": "BlackOps3_MSStore:142A77E90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A77420", "caller": "BlackOps3_MSStore:142A77F40", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A86D10", "caller": "BlackOps3_MSStore:142A77FC0", "kind": "tailcall"}
+{"callee": "BlackOps3_MSStore:142A78000", "caller": "BlackOps3_MSStore:142A77FD0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A780D0", "caller": "BlackOps3_MSStore:142A77FF0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142A78000", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142A78000", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1BE40", "caller": "BlackOps3_MSStore:142A78000", "kind": "call"}
@@ -102835,16 +103052,20 @@
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142AF25E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142AF25E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142AF26B0", "caller": "BlackOps3_MSStore:142AF25E0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142AF2760", "caller": "BlackOps3_MSStore:142AF2750", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142AF2760", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142AF2760", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142AF2760", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142AF2870", "caller": "BlackOps3_MSStore:142AF2840", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142AF2870", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142AF96C0", "caller": "BlackOps3_MSStore:142AF2950", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142AF9CA0", "caller": "BlackOps3_MSStore:142AF29A0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142AF2A70", "caller": "BlackOps3_MSStore:142AF2A30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142AF2A70", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142AF2A70", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142AFB150", "caller": "BlackOps3_MSStore:142AF2B20", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142AFC540", "caller": "BlackOps3_MSStore:142AF2BA0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142AF2C60", "caller": "BlackOps3_MSStore:142AF2C10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142AF2C60", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142AF2C60", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142AFC830", "caller": "BlackOps3_MSStore:142AF2D10", "kind": "call"}
@@ -103314,6 +103535,8 @@
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142B083C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142B08440", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142B08770", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142B08880", "caller": "BlackOps3_MSStore:142B08830", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142B08940", "caller": "BlackOps3_MSStore:142B08850", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142B08880", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142B08940", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142B08AF0", "kind": "call"}
@@ -103336,7 +103559,9 @@
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142B09470", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142B094F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142B09570", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142B09620", "caller": "BlackOps3_MSStore:142B09610", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142B09620", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142B09740", "caller": "BlackOps3_MSStore:142B09730", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142B09740", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142B0D6B0", "caller": "BlackOps3_MSStore:142B09800", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142B10C60", "caller": "BlackOps3_MSStore:142B09850", "kind": "call"}
@@ -103595,6 +103820,7 @@
 {"callee": "BlackOps3_MSStore:142B237B0", "caller": "BlackOps3_MSStore:142B22550", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142B225B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142B225B0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142B250C0", "caller": "BlackOps3_MSStore:142B226B0", "kind": "tailcall"}
 {"callee": "BlackOps3_MSStore:142B25DF0", "caller": "BlackOps3_MSStore:142B22760", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142B22820", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142B228C0", "kind": "call"}
@@ -104508,6 +104734,7 @@
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142B6A360", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142B6A360", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142B69D70", "caller": "BlackOps3_MSStore:142B6A360", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142B6A460", "caller": "BlackOps3_MSStore:142B6A420", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142B6A460", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142B6A460", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142B69D50", "caller": "BlackOps3_MSStore:142B6A520", "kind": "call"}
@@ -105479,11 +105706,16 @@
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142B9FCD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142B9FCD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142B9FCD0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141E7EC50", "caller": "BlackOps3_MSStore:142B9FED0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142B8B4D0", "caller": "BlackOps3_MSStore:142B9FF40", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141EC52B0", "caller": "BlackOps3_MSStore:142BA0040", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142B84310", "caller": "BlackOps3_MSStore:142BA0060", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142B843E0", "caller": "BlackOps3_MSStore:142BA0080", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142BA0130", "caller": "BlackOps3_MSStore:142BA0120", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142BA0130", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142BB59B0", "caller": "BlackOps3_MSStore:142BA0220", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A1BD80", "caller": "BlackOps3_MSStore:142BA02A0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142A1BE40", "caller": "BlackOps3_MSStore:142BA02C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142BA02E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142BA02E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:141EA99F0", "caller": "BlackOps3_MSStore:142BA02E0", "kind": "call"}
@@ -105552,6 +105784,9 @@
 {"callee": "BlackOps3_MSStore:142B66350", "caller": "BlackOps3_MSStore:142BA1C10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142B5F9C0", "caller": "BlackOps3_MSStore:142BA1D30", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142BA2CE0", "caller": "BlackOps3_MSStore:142BA1D50", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142BA1DA0", "caller": "BlackOps3_MSStore:142BA1D90", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142BB6950", "caller": "BlackOps3_MSStore:142BA1E80", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142BA1EF0", "caller": "BlackOps3_MSStore:142BA1EA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142BA1EF0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142BA1EF0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142BA1EF0", "kind": "call"}
@@ -105683,6 +105918,8 @@
 {"callee": "BlackOps3_MSStore:142BAD050", "caller": "BlackOps3_MSStore:142BA63F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142BE53F0", "caller": "BlackOps3_MSStore:142BA6440", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142BE5590", "caller": "BlackOps3_MSStore:142BA6490", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142BE7910", "caller": "BlackOps3_MSStore:142BA64C0", "kind": "tailcall"}
+{"callee": "BlackOps3_MSStore:142BE7940", "caller": "BlackOps3_MSStore:142BA64D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142B87300", "caller": "BlackOps3_MSStore:142BA6510", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142BA6570", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142BA6640", "kind": "call"}
@@ -105703,6 +105940,7 @@
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142BA6B00", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142BA6B00", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142B8B430", "caller": "BlackOps3_MSStore:142BA6BA0", "kind": "tailcall"}
+{"callee": "BlackOps3_MSStore:142BBCB00", "caller": "BlackOps3_MSStore:142BA6CF0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142BA6D00", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142BA6D00", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142BA6D00", "kind": "call"}
@@ -105832,6 +106070,7 @@
 {"callee": "BlackOps3_MSStore:142BC1B00", "caller": "BlackOps3_MSStore:142BABA00", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A23670", "caller": "BlackOps3_MSStore:142BABA60", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142C199F0", "caller": "BlackOps3_MSStore:142BABA60", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142BE0E40", "caller": "BlackOps3_MSStore:142BABAA0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142BD7C00", "caller": "BlackOps3_MSStore:142BABAF0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142BABCB0", "caller": "BlackOps3_MSStore:142BABC80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A19C70", "caller": "BlackOps3_MSStore:142BABD00", "kind": "call"}
@@ -107711,7 +107950,10 @@
 {"callee": "BlackOps3_MSStore:142BFDE60", "caller": "BlackOps3_MSStore:142BFDF10", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142BFDFC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142BFDFC0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142BFE0B0", "caller": "BlackOps3_MSStore:142BFE0A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142BFE0B0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142BFE250", "caller": "BlackOps3_MSStore:142BFE1C0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142BFE4D0", "caller": "BlackOps3_MSStore:142BFE210", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142BFE250", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142BFE360", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142BFE250", "caller": "BlackOps3_MSStore:142BFE360", "kind": "call"}
@@ -108057,9 +108299,15 @@
 {"callee": "BlackOps3_MSStore:142C0B1A0", "caller": "BlackOps3_MSStore:142C0AEC0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A19D30", "caller": "BlackOps3_MSStore:142C0B3D0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142C39640", "caller": "BlackOps3_MSStore:142C0B3D0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142C19710", "caller": "BlackOps3_MSStore:142C0B960", "kind": "tailcall"}
+{"callee": "BlackOps3_MSStore:142C19740", "caller": "BlackOps3_MSStore:142C0B970", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142C0B9F0", "caller": "BlackOps3_MSStore:142C0B9A0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142C0B9F0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142C199F0", "caller": "BlackOps3_MSStore:142C0BA80", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142C1A860", "caller": "BlackOps3_MSStore:142C0BB60", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142C0BC50", "caller": "BlackOps3_MSStore:142C0BBB0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142C1CA10", "caller": "BlackOps3_MSStore:142C0BBC0", "kind": "tailcall"}
+{"callee": "BlackOps3_MSStore:142C0BBE0", "caller": "BlackOps3_MSStore:142C0BBD0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1A0C0", "caller": "BlackOps3_MSStore:142C0BBE0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A1BE40", "caller": "BlackOps3_MSStore:142C0BBE0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142C0BC50", "kind": "call"}
@@ -111216,6 +111464,7 @@
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142CA47E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142CA47E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CA3E70", "caller": "BlackOps3_MSStore:142CA47E0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141EAD910", "caller": "BlackOps3_MSStore:142CA48E0", "kind": "tailcall"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142CA4AE0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142CA4AE0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142CA4B70", "kind": "call"}
@@ -111229,8 +111478,11 @@
 {"callee": "BlackOps3_MSStore:142CAABE0", "caller": "BlackOps3_MSStore:142CA4D90", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CAADE0", "caller": "BlackOps3_MSStore:142CA4DB0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CAA970", "caller": "BlackOps3_MSStore:142CA4DE0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141EB1D60", "caller": "BlackOps3_MSStore:142CA4E30", "kind": "tailcall"}
+{"callee": "BlackOps3_MSStore:142CA4E60", "caller": "BlackOps3_MSStore:142CA4E40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142CA4E60", "kind": "call"}
 {"callee": "BlackOps3_MSStore:140106D60", "caller": "BlackOps3_MSStore:142CA4E60", "kind": "call"}
+{"callee": "BlackOps3_MSStore:141EAB860", "caller": "BlackOps3_MSStore:142CA4F30", "kind": "tailcall"}
 {"callee": "BlackOps3_MSStore:142A21FC0", "caller": "BlackOps3_MSStore:142CA4F40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A22B00", "caller": "BlackOps3_MSStore:142CA4F40", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A42670", "caller": "BlackOps3_MSStore:142CA4F40", "kind": "call"}
@@ -117663,6 +117915,7 @@
 {"callee": "BlackOps3_MSStore:1429FC860", "caller": "BlackOps3_MSStore:142D1E730", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429FCCF0", "caller": "BlackOps3_MSStore:142D1E7C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:1429FD4B0", "caller": "BlackOps3_MSStore:142D1E7C0", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142D1EE90", "caller": "BlackOps3_MSStore:142D1E810", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D1E7C0", "caller": "BlackOps3_MSStore:142D1E820", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D1E5F0", "caller": "BlackOps3_MSStore:142D1E870", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D1E650", "caller": "BlackOps3_MSStore:142D1E870", "kind": "call"}
@@ -117734,9 +117987,11 @@
 {"callee": "BlackOps3_MSStore:142CFDB50", "caller": "BlackOps3_MSStore:142D21950", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D21AC0", "caller": "BlackOps3_MSStore:142D22280", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D22050", "caller": "BlackOps3_MSStore:142D22280", "kind": "call"}
+{"callee": "BlackOps3_MSStore:142D22880", "caller": "BlackOps3_MSStore:142D227C0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142CFDB50", "caller": "BlackOps3_MSStore:142D227E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142D22850", "caller": "BlackOps3_MSStore:142D227E0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:00000020D", "caller": "BlackOps3_MSStore:142D22850", "kind": "call"}
+{"callee": "BlackOps3_MSStore:00000020B", "caller": "BlackOps3_MSStore:142D22880", "kind": "tailcall"}
 {"callee": "BlackOps3_MSStore:142A30090", "caller": "BlackOps3_MSStore:142D228B0", "kind": "call"}
 {"callee": "BlackOps3_MSStore:142A30090", "caller": "BlackOps3_MSStore:142D22930", "kind": "call"}
 {"callee": "BlackOps3_MSStore:000000068", "caller": "BlackOps3_MSStore:142D22A00", "kind": "call"}

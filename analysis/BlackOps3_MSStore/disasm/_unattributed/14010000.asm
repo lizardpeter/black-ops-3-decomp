@@ -60370,6 +60370,10 @@ LAB_14013ae93:
   14013AEA8  5B                   POP RBX
   14013AEA9  C3                   RET
 
+; 14013AEB0  thunk_FUN_14013ac90  (line unknown)
+  14013AEB0  41B001               MOV R8B,0x1
+  14013AEB3  E9D8FDFFFF           JMP 0x14013ac90
+
 ; 14013AEC0  FUN_14013aec0  (line unknown)
   14013AEC0  4053                 PUSH RBX
   14013AEC2  4883EC30             SUB RSP,0x30
@@ -61544,6 +61548,10 @@ LAB_14013c03b:
   14013C049  5F                   POP RDI
   14013C04A  C3                   RET
 
+; 14013C050  thunk_FUN_14013bfb0  (line unknown)
+  14013C050  41B001               MOV R8B,0x1
+  14013C053  E958FFFFFF           JMP 0x14013bfb0
+
 ; 14013C060  FUN_14013c060  (line unknown)
   14013C060  4053                 PUSH RBX
   14013C062  4883EC30             SUB RSP,0x30
@@ -61698,6 +61706,9 @@ LAB_14013c27f:
   14013C29C  5F                   POP RDI
   14013C29D  5B                   POP RBX
   14013C29E  C3                   RET
+
+; 14013C2A0  thunk_FUN_14013c0c0  (line unknown)
+  14013C2A0  E91BFEFFFF           JMP 0x14013c0c0
 
 ; 14013C2B0  FUN_14013c2b0  (line unknown)
   14013C2B0  4053                 PUSH RBX
@@ -243885,6 +243896,21 @@ LAB_1401ee69f:
   1401EE6B7  498BE3               MOV RSP,R11
   1401EE6BA  415E                 POP R14
   1401EE6BC  C3                   RET
+
+; 1401EE6C0  FUN_1401ee6c0  (line unknown)
+  1401EE6C0  488D0501243D03       LEA RAX,[0x1435c0ac8]
+  1401EE6C7  33D2                 XOR EDX,EDX
+  1401EE6C9  4C8D0550243D03       LEA R8,[0x1435c0b20]
+LAB_1401ee6d0:
+  1401EE6D0  48895008             MOV qword ptr [RAX + 0x8],RDX
+  1401EE6D4  C740F803000000       MOV dword ptr [RAX + -0x8],0x3
+  1401EE6DB  488910               MOV qword ptr [RAX],RDX
+  1401EE6DE  C740FC03000000       MOV dword ptr [RAX + -0x4],0x3
+  1401EE6E5  488D4018             LEA RAX,[RAX + 0x18]
+  1401EE6E9  488D48F8             LEA RCX,[RAX + -0x8]
+  1401EE6ED  493BC8               CMP RCX,R8
+  1401EE6F0  75DE                 JNZ 0x1401ee6d0
+  1401EE6F2  C3                   RET
 
 ; 1401EE700  FUN_1401ee700  (line unknown)
   1401EE700  48895C2408           MOV qword ptr [RSP + 0x8],RBX

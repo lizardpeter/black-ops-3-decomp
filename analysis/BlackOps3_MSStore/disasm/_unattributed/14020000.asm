@@ -3467,6 +3467,11 @@ LAB_140203da7:
   140203E12  5F                   POP RDI
   140203E13  C3                   RET
 
+; 140203E20  FUN_140203e20  (line unknown)
+  140203E20  448B052188F002       MOV R8D,dword ptr [0x14310c648]
+  140203E27  81E2FF010000         AND EDX,0x1ff
+  140203E2D  E9BEE91801           JMP 0x1413927f0
+
 ; 140203E40  FUN_140203e40  (line unknown)
   140203E40  48895C2418           MOV qword ptr [RSP + 0x18],RBX
   140203E45  48896C2420           MOV qword ptr [RSP + 0x20],RBP

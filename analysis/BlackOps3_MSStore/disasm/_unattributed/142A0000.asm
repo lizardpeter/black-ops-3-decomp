@@ -38039,6 +38039,12 @@ LAB_142a253ee:
   142A253F0  4883C428             ADD RSP,0x28
   142A253F4  C3                   RET
 
+; 142A25410  FUN_142a25410  (line unknown)
+  142A25410  C20000               RET 0x0
+
+; 142A25430  FUN_142a25430  (line unknown)
+  142A25430  C20000               RET 0x0
+
 ; 142A25440  thunk_FUN_142a31b70  (line unknown)
   142A25440  E92BC70000           JMP 0x142a31b70
 
@@ -38064,6 +38070,51 @@ LAB_142a253ee:
   142A254A0  F20F5EC8             DIVSD XMM1,XMM0
   142A254A4  660F5AC1             CVTPD2PS XMM0,XMM1
   142A254A8  C3                   RET
+
+; 142A25590  FUN_142a25590  (line unknown)
+  142A25590  C20000               RET 0x0
+
+; 142A255A0  FUN_142a255a0  (line unknown)
+  142A255A0  C20000               RET 0x0
+
+; 142A255B0  FUN_142a255b0  (line unknown)
+  142A255B0  C20000               RET 0x0
+
+; 142A255C0  FUN_142a255c0  (line unknown)
+  142A255C0  C20000               RET 0x0
+
+; 142A255D0  FUN_142a255d0  (line unknown)
+  142A255D0  C20000               RET 0x0
+
+; 142A255E0  FUN_142a255e0  (line unknown)
+  142A255E0  C20000               RET 0x0
+
+; 142A255F0  FUN_142a255f0  (line unknown)
+  142A255F0  C20000               RET 0x0
+
+; 142A25600  FUN_142a25600  (line unknown)
+  142A25600  C20000               RET 0x0
+
+; 142A25610  FUN_142a25610  (line unknown)
+  142A25610  C20000               RET 0x0
+
+; 142A25620  FUN_142a25620  (line unknown)
+  142A25620  C20000               RET 0x0
+
+; 142A25630  FUN_142a25630  (line unknown)
+  142A25630  C20000               RET 0x0
+
+; 142A25640  FUN_142a25640  (line unknown)
+  142A25640  C20000               RET 0x0
+
+; 142A25650  FUN_142a25650  (line unknown)
+  142A25650  C20000               RET 0x0
+
+; 142A25660  FUN_142a25660  (line unknown)
+  142A25660  C20000               RET 0x0
+
+; 142A25690  FUN_142a25690  (line unknown)
+  142A25690  C20000               RET 0x0
 
 ; 142A256A0  FUN_142a256a0  (line unknown)
   142A256A0  4053                 PUSH RBX
@@ -38091,6 +38142,9 @@ LAB_142a256ec:
   142A256FE  5B                   POP RBX
   142A256FF  C3                   RET
 
+; 142A25710  FUN_142a25710  (line unknown)
+  142A25710  C20000               RET 0x0
+
 ; 142A25720  FUN_142a25720  (line unknown)
   142A25720  4053                 PUSH RBX
   142A25722  4883EC20             SUB RSP,0x20
@@ -38116,6 +38170,9 @@ LAB_142a2576c:
   142A2577A  4883C420             ADD RSP,0x20
   142A2577E  5B                   POP RBX
   142A2577F  C3                   RET
+
+; 142A25790  FUN_142a25790  (line unknown)
+  142A25790  C20000               RET 0x0
 
 ; 142A257A0  FUN_142a257a0  (line unknown)
   142A257A0  4053                 PUSH RBX
@@ -38143,6 +38200,9 @@ LAB_142a257ec:
   142A257FE  5B                   POP RBX
   142A257FF  C3                   RET
 
+; 142A25810  FUN_142a25810  (line unknown)
+  142A25810  C20000               RET 0x0
+
 ; 142A25820  FUN_142a25820  (line unknown)
   142A25820  4053                 PUSH RBX
   142A25822  4883EC20             SUB RSP,0x20
@@ -38168,6 +38228,9 @@ LAB_142a2586c:
   142A2587A  4883C420             ADD RSP,0x20
   142A2587E  5B                   POP RBX
   142A2587F  C3                   RET
+
+; 142A25890  FUN_142a25890  (line unknown)
+  142A25890  C20000               RET 0x0
 
 ; 142A258A0  FUN_142a258a0  (line unknown)
   142A258A0  4053                 PUSH RBX
@@ -38195,6 +38258,9 @@ LAB_142a258ec:
   142A258FE  5B                   POP RBX
   142A258FF  C3                   RET
 
+; 142A25910  FUN_142a25910  (line unknown)
+  142A25910  C20000               RET 0x0
+
 ; 142A25920  FUN_142a25920  (line unknown)
   142A25920  4053                 PUSH RBX
   142A25922  4883EC20             SUB RSP,0x20
@@ -38220,6 +38286,24 @@ LAB_142a2596c:
   142A2597A  4883C420             ADD RSP,0x20
   142A2597E  5B                   POP RBX
   142A2597F  C3                   RET
+
+; 142A25990  FUN_142a25990  (line unknown)
+  142A25990  C20000               RET 0x0
+
+; 142A259B0  FUN_142a259b0  (line unknown)
+  142A259B0  C20000               RET 0x0
+
+; 142A259D0  FUN_142a259d0  (line unknown)
+  142A259D0  C20000               RET 0x0
+
+; 142A25A20  FUN_142a25a20  (line unknown)
+  142A25A20  C20000               RET 0x0
+
+; 142A25A30  FUN_142a25a30  (line unknown)
+  142A25A30  C20000               RET 0x0
+
+; 142A25A40  FUN_142a25a40  (line unknown)
+  142A25A40  C20000               RET 0x0
 
 ; 142A25A50  FUN_142a25a50  (line unknown)
   142A25A50  4053                 PUSH RBX
@@ -38247,6 +38331,9 @@ LAB_142a25a9c:
   142A25AAE  5B                   POP RBX
   142A25AAF  C3                   RET
 
+; 142A25AC0  FUN_142a25ac0  (line unknown)
+  142A25AC0  C20000               RET 0x0
+
 ; 142A25AD0  FUN_142a25ad0  (line unknown)
   142A25AD0  4053                 PUSH RBX
   142A25AD2  4883EC20             SUB RSP,0x20
@@ -38272,6 +38359,9 @@ LAB_142a25b1c:
   142A25B2A  4883C420             ADD RSP,0x20
   142A25B2E  5B                   POP RBX
   142A25B2F  C3                   RET
+
+; 142A25B40  FUN_142a25b40  (line unknown)
+  142A25B40  C20000               RET 0x0
 
 ; 142A25B50  FUN_142a25b50  (line unknown)
   142A25B50  4053                 PUSH RBX
@@ -38299,6 +38389,9 @@ LAB_142a25b9c:
   142A25BAE  5B                   POP RBX
   142A25BAF  C3                   RET
 
+; 142A25BC0  FUN_142a25bc0  (line unknown)
+  142A25BC0  C20000               RET 0x0
+
 ; 142A25BD0  FUN_142a25bd0  (line unknown)
   142A25BD0  4053                 PUSH RBX
   142A25BD2  4883EC20             SUB RSP,0x20
@@ -38324,6 +38417,9 @@ LAB_142a25c1c:
   142A25C2A  4883C420             ADD RSP,0x20
   142A25C2E  5B                   POP RBX
   142A25C2F  C3                   RET
+
+; 142A25C40  FUN_142a25c40  (line unknown)
+  142A25C40  C20000               RET 0x0
 
 ; 142A25C50  FUN_142a25c50  (line unknown)
   142A25C50  4053                 PUSH RBX
@@ -38351,6 +38447,9 @@ LAB_142a25c9c:
   142A25CAE  5B                   POP RBX
   142A25CAF  C3                   RET
 
+; 142A25CC0  FUN_142a25cc0  (line unknown)
+  142A25CC0  C20000               RET 0x0
+
 ; 142A25CD0  FUN_142a25cd0  (line unknown)
   142A25CD0  4053                 PUSH RBX
   142A25CD2  4883EC20             SUB RSP,0x20
@@ -38376,6 +38475,45 @@ LAB_142a25d1c:
   142A25D2A  4883C420             ADD RSP,0x20
   142A25D2E  5B                   POP RBX
   142A25D2F  C3                   RET
+
+; 142A25D40  FUN_142a25d40  (line unknown)
+  142A25D40  C20000               RET 0x0
+
+; 142A25DA0  FUN_142a25da0  (line unknown)
+  142A25DA0  4885C9               TEST RCX,RCX
+  142A25DA3  0F858760FFFF         JNZ 0x142a1be30
+  142A25DA9  C3                   RET
+
+; 142A25DB0  thunk_FUN_142a1be40  (line unknown)
+  142A25DB0  E98B60FFFF           JMP 0x142a1be40
+
+; 142A25DF0  FUN_142a25df0  (line unknown)
+  142A25DF0  4885C9               TEST RCX,RCX
+  142A25DF3  0F853760FFFF         JNZ 0x142a1be30
+  142A25DF9  C3                   RET
+
+; 142A25E00  thunk_FUN_142a1be40  (line unknown)
+  142A25E00  E93B60FFFF           JMP 0x142a1be40
+
+; 142A25E10  FUN_142a25e10  (line unknown)
+  142A25E10  4885C9               TEST RCX,RCX
+  142A25E13  0F8517BF0000         JNZ 0x142a31d30
+  142A25E19  C3                   RET
+
+; 142A25E20  FUN_142a25e20  (line unknown)
+  142A25E20  4883C108             ADD RCX,0x8
+  142A25E24  E91760FFFF           JMP 0x142a1be40
+
+; 142A25E30  FUN_142a25e30  (line unknown)
+  142A25E30  4885C9               TEST RCX,RCX
+  142A25E33  0F85B7BE0000         JNZ 0x142a31cf0
+  142A25E39  C3                   RET
+LAB_142a31cf0:
+  142A31CF0  488BC1               MOV RAX,RCX
+  142A31CF3  C3                   RET
+
+; 142A25E40  thunk_FUN_142a25ee0  (line unknown)
+  142A25E40  E99B000000           JMP 0x142a25ee0
 
 ; 142A25E50  FUN_142a25e50  (line unknown)
   142A25E50  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -40256,6 +40394,21 @@ LAB_142a2783a:
   142A2783A  33C0                 XOR EAX,EAX
   142A2783C  C3                   RET
 
+; 142A27860  FUN_142a27860  (line unknown)
+  142A27860  C20000               RET 0x0
+
+; 142A27870  FUN_142a27870  (line unknown)
+  142A27870  C20000               RET 0x0
+
+; 142A27890  FUN_142a27890  (line unknown)
+  142A27890  C20000               RET 0x0
+
+; 142A278A0  FUN_142a278a0  (line unknown)
+  142A278A0  C20000               RET 0x0
+
+; 142A278C0  FUN_142a278c0  (line unknown)
+  142A278C0  C20000               RET 0x0
+
 ; 142A278D0  FUN_142a278d0  (line unknown)
   142A278D0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   142A278D5  4889742410           MOV qword ptr [RSP + 0x10],RSI
@@ -41229,6 +41382,9 @@ LAB_142a2877b:
   142A28787  5F                   POP RDI
   142A28788  C3                   RET
 
+; 142A287A0  FUN_142a287a0  (line unknown)
+  142A287A0  C20000               RET 0x0
+
 ; 142A287F0  FUN_142a287f0  (line unknown)
   142A287F0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   142A287F5  57                   PUSH RDI
@@ -41285,6 +41441,33 @@ LAB_142a2886d:
   142A2889C  488B442420           MOV RAX,qword ptr [RSP + 0x20]
   142A288A1  4883C448             ADD RSP,0x48
   142A288A5  C3                   RET
+
+; 142A288D0  FUN_142a288d0  (line unknown)
+  142A288D0  C20000               RET 0x0
+
+; 142A288E0  FUN_142a288e0  (line unknown)
+  142A288E0  C20000               RET 0x0
+
+; 142A28910  FUN_142a28910  (line unknown)
+  142A28910  C20000               RET 0x0
+
+; 142A28920  FUN_142a28920  (line unknown)
+  142A28920  C20000               RET 0x0
+
+; 142A28930  FUN_142a28930  (line unknown)
+  142A28930  C20000               RET 0x0
+
+; 142A28950  FUN_142a28950  (line unknown)
+  142A28950  C20000               RET 0x0
+
+; 142A28970  FUN_142a28970  (line unknown)
+  142A28970  C20000               RET 0x0
+
+; 142A289A0  FUN_142a289a0  (line unknown)
+  142A289A0  C20000               RET 0x0
+
+; 142A289B0  FUN_142a289b0  (line unknown)
+  142A289B0  C20000               RET 0x0
 
 ; 142A289C0  FUN_142a289c0  (line unknown)
   142A289C0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -41439,6 +41622,12 @@ LAB_142a28c0f:
   142A28C3C  488BD9               MOV RBX,RCX
   142A28C3F  E83CFEFFFF           CALL 0x142a28a80
 
+; 142A28CC0  FUN_142a28cc0  (line unknown)
+  142A28CC0  C20000               RET 0x0
+
+; 142A28CF0  FUN_142a28cf0  (line unknown)
+  142A28CF0  C20000               RET 0x0
+
 ; 142A28D20  FUN_142a28d20  (line unknown)
   142A28D20  4883EC58             SUB RSP,0x58
   142A28D24  33D2                 XOR EDX,EDX
@@ -41576,6 +41765,29 @@ LAB_142a28ecf:
   142A28F70  48895160             MOV qword ptr [RCX + 0x60],RDX
   142A28F74  C3                   RET
 
+; 142A28F90  FUN_142a28f90  (line unknown)
+  142A28F90  C20000               RET 0x0
+
+; 142A28FC0  FUN_142a28fc0  (line unknown)
+  142A28FC0  C20000               RET 0x0
+
+; 142A28FD0  FUN_142a28fd0  (line unknown)
+  142A28FD0  C20000               RET 0x0
+
+; 142A28FF0  FUN_142a28ff0  (line unknown)
+  142A28FF0  C20000               RET 0x0
+
+; 142A29020  FUN_142a29020  (line unknown)
+  142A29020  4885C9               TEST RCX,RCX
+  142A29023  0F85972C0100         JNZ 0x142a3bcc0
+  142A29029  C3                   RET
+LAB_142a3bcc0:
+  142A3BCC0  488BC1               MOV RAX,RCX
+  142A3BCC3  C3                   RET
+
+; 142A29030  FUN_142a29030  (line unknown)
+  142A29030  C20000               RET 0x0
+
 ; 142A29060  FUN_142a29060  (line unknown)
   142A29060  4883EC48             SUB RSP,0x48
   142A29064  33D2                 XOR EDX,EDX
@@ -41584,6 +41796,24 @@ LAB_142a28ecf:
   142A29070  488B442420           MOV RAX,qword ptr [RSP + 0x20]
   142A29075  4883C448             ADD RSP,0x48
   142A29079  C3                   RET
+
+; 142A290A0  FUN_142a290a0  (line unknown)
+  142A290A0  C20000               RET 0x0
+
+; 142A290B0  FUN_142a290b0  (line unknown)
+  142A290B0  33D2                 XOR EDX,EDX
+  142A290B2  E929000000           JMP 0x142a290e0
+
+; 142A290C0  FUN_142a290c0  (line unknown)
+  142A290C0  4885C9               TEST RCX,RCX
+  142A290C3  0F85C7350100         JNZ 0x142a3c690
+  142A290C9  C3                   RET
+LAB_142a3c690:
+  142A3C690  488BC1               MOV RAX,RCX
+  142A3C693  C3                   RET
+
+; 142A290D0  thunk_FUN_142a3c6a0  (line unknown)
+  142A290D0  E9CB350100           JMP 0x142a3c6a0
 
 ; 142A290E0  FUN_142a290e0  (line unknown)
   142A290E0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -43444,6 +43674,21 @@ LAB_142a2aa2d:
 LAB_142a2aa78:
   142A2AA78  32C0                 XOR AL,AL
   142A2AA7A  C3                   RET
+
+; 142A2AA90  FUN_142a2aa90  (line unknown)
+  142A2AA90  C20000               RET 0x0
+
+; 142A2AAA0  FUN_142a2aaa0  (line unknown)
+  142A2AAA0  C20000               RET 0x0
+
+; 142A2AAC0  FUN_142a2aac0  (line unknown)
+  142A2AAC0  C20000               RET 0x0
+
+; 142A2AAE0  FUN_142a2aae0  (line unknown)
+  142A2AAE0  C20000               RET 0x0
+
+; 142A2AB00  FUN_142a2ab00  (line unknown)
+  142A2AB00  C20000               RET 0x0
 
 ; 142A2ABB0  FUN_142a2abb0  (line unknown)
   142A2ABB0  0F280569F16B00       MOVAPS XMM0,xmmword ptr [0x1430e9d20]
@@ -84271,6 +84516,9 @@ LAB_142a51d57:
   142A520A2  4883C438             ADD RSP,0x38
   142A520A6  C3                   RET
 
+; 142A520B0  FUN_142a520b0  (line unknown)
+  142A520B0  C20000               RET 0x0
+
 ; 142A520C0  FUN_142a520c0  (line unknown)
   142A520C0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   142A520C5  57                   PUSH RDI
@@ -88375,6 +88623,13 @@ LAB_142a57523:
   142A57544  5F                   POP RDI
   142A57545  E966C30100           JMP 0x142a738b0
 
+; 142A57550  thunk_FUN_142a599b0  (line unknown)
+  142A57550  E95B240000           JMP 0x142a599b0
+
+; 142A57560  thunk_FUN_142a59ab0  (line unknown)
+  142A57560  B201                 MOV DL,0x1
+  142A57562  E949250000           JMP 0x142a59ab0
+
 ; 142A57570  FUN_142a57570  (line unknown)
   142A57570  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   142A57575  57                   PUSH RDI
@@ -88805,6 +89060,13 @@ LAB_142a57b9c:
   142A57BA3  5B                   POP RBX
   142A57BA4  5D                   POP RBP
   142A57BA5  C3                   RET
+
+; 142A57BB0  FUN_142a57bb0  (line unknown)
+  142A57BB0  33D2                 XOR EDX,EDX
+  142A57BB2  E9F91E0000           JMP 0x142a59ab0
+
+; 142A57BC0  thunk_FUN_142a599b0  (line unknown)
+  142A57BC0  E9EB1D0000           JMP 0x142a599b0
 
 ; 142A57BD0  FUN_142a57bd0  (line unknown)
   142A57BD0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -94405,6 +94667,21 @@ LAB_142a5e65b:
   142A5E673  5F                   POP RDI
   142A5E674  E937520100           JMP 0x142a738b0
 
+; 142A5E680  thunk_FUN_142a5f520  (line unknown)
+  142A5E680  E99B0E0000           JMP 0x142a5f520
+
+; 142A5E690  thunk_FUN_142a5f520  (line unknown)
+  142A5E690  E98B0E0000           JMP 0x142a5f520
+
+; 142A5E6A0  thunk_FUN_142a5f630  (line unknown)
+  142A5E6A0  E98B0F0000           JMP 0x142a5f630
+
+; 142A5E6B0  thunk_FUN_142a5f630  (line unknown)
+  142A5E6B0  E97B0F0000           JMP 0x142a5f630
+
+; 142A5E6C0  thunk_FUN_142a5f630  (line unknown)
+  142A5E6C0  E96B0F0000           JMP 0x142a5f630
+
 ; 142A5E6D0  FUN_142a5e6d0  (line unknown)
   142A5E6D0  4053                 PUSH RBX
   142A5E6D2  4883EC30             SUB RSP,0x30
@@ -94434,6 +94711,21 @@ LAB_142a5e731:
   142A5E731  4883C430             ADD RSP,0x30
   142A5E735  5B                   POP RBX
   142A5E736  C3                   RET
+
+; 142A5E740  FUN_142a5e740  (line unknown)
+  142A5E740  4C8D05293D3B00       LEA R8,[0x142e12470]
+  142A5E747  488D15B23B3900       LEA RDX,[0x142df2300]
+  142A5E74E  E98DF80000           JMP 0x142a6dfe0
+
+; 142A5E760  FUN_142a5e760  (line unknown)
+  142A5E760  4C8D05193D3B00       LEA R8,[0x142e12480]
+  142A5E767  488D152A8F3A00       LEA RDX,[0x142e07698]
+  142A5E76E  E96DF80000           JMP 0x142a6dfe0
+
+; 142A5E780  FUN_142a5e780  (line unknown)
+  142A5E780  4C8D05113D3B00       LEA R8,[0x142e12498]
+  142A5E787  488D152A3D3B00       LEA RDX,[0x142e124b8]
+  142A5E78E  E94DF80000           JMP 0x142a6dfe0
 
 ; 142A5E7A0  FUN_142a5e7a0  (line unknown)
   142A5E7A0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -111273,6 +111565,12 @@ LAB_142a73406:
   142A73420  48895110             MOV qword ptr [RCX + 0x10],RDX
   142A73424  C3                   RET
 
+; 142A73440  FUN_142a73440  (line unknown)
+  142A73440  C20000               RET 0x0
+
+; 142A73460  FUN_142a73460  (line unknown)
+  142A73460  C20000               RET 0x0
+
 ; 142A734F0  FUN_142a734f0  (line unknown)
   142A734F0  4885C9               TEST RCX,RCX
   142A734F3  7429                 JZ 0x142a7351e
@@ -116524,6 +116822,27 @@ LAB_142a77f13:
   142A77F91  89410C               MOV dword ptr [RCX + 0xc],EAX
   142A77F94  4489420C             MOV dword ptr [RDX + 0xc],R8D
   142A77F98  C3                   RET
+
+; 142A77FC0  FUN_142a77fc0  (line unknown)
+  142A77FC0  4885C9               TEST RCX,RCX
+  142A77FC3  0F8547ED0000         JNZ 0x142a86d10
+  142A77FC9  C3                   RET
+
+; 142A77FD0  FUN_142a77fd0  (line unknown)
+  142A77FD0  33D2                 XOR EDX,EDX
+  142A77FD2  E929000000           JMP 0x142a78000
+
+; 142A77FE0  FUN_142a77fe0  (line unknown)
+  142A77FE0  4885C9               TEST RCX,RCX
+  142A77FE3  0F8507EB0000         JNZ 0x142a86af0
+  142A77FE9  C3                   RET
+LAB_142a86af0:
+  142A86AF0  488BC1               MOV RAX,RCX
+  142A86AF3  C3                   RET
+
+; 142A77FF0  FUN_142a77ff0  (line unknown)
+  142A77FF0  33D2                 XOR EDX,EDX
+  142A77FF2  E9D9000000           JMP 0x142a780d0
 
 ; 142A78000  FUN_142a78000  (line unknown)
   142A78000  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -137151,6 +137470,16 @@ LAB_142a89589:
   142A895A1  4883C430             ADD RSP,0x30
   142A895A5  415E                 POP R14
   142A895A7  C3                   RET
+
+; 142A895B0  FUN_142a895b0  (line unknown)
+  142A895B0  668911               MOV word ptr [RCX],DX
+  142A895B3  4C894108             MOV qword ptr [RCX + 0x8],R8
+  142A895B7  4C894910             MOV qword ptr [RCX + 0x10],R9
+  142A895BB  488B05B6E7B200       MOV RAX,qword ptr [0x1435b7d78]
+  142A895C2  48894118             MOV qword ptr [RCX + 0x18],RAX
+  142A895C6  488BC1               MOV RAX,RCX
+  142A895C9  48890DA8E7B200       MOV qword ptr [0x1435b7d78],RCX
+  142A895D0  C3                   RET
 
 ; 142A895E0  FUN_142a895e0  (line unknown)
   142A895E0  488B0591E7B200       MOV RAX,qword ptr [0x1435b7d78]
@@ -243071,6 +243400,12 @@ LAB_142aeade6:
   142AEADF6  5B                   POP RBX
   142AEADF7  C3                   RET
 
+; 142AEAE00  FUN_142aeae00  (line unknown)
+  142AEAE00  0FB64150             MOVZX EAX,byte ptr [RCX + 0x50]
+  142AEAE04  8802                 MOV byte ptr [RDX],AL
+  142AEAE06  488BC2               MOV RAX,RDX
+  142AEAE09  C3                   RET
+
 ; 142AEAE10  FUN_142aeae10  (line unknown)
   142AEAE10  48895C2410           MOV qword ptr [RSP + 0x10],RBX
   142AEAE15  48896C2418           MOV qword ptr [RSP + 0x18],RBP
@@ -250691,6 +251026,16 @@ LAB_142af26de:
   142AF26EC  5B                   POP RBX
   142AF26ED  C3                   RET
 
+; 142AF2730  FUN_142af2730  (line unknown)
+  142AF2730  C20000               RET 0x0
+
+; 142AF2740  FUN_142af2740  (line unknown)
+  142AF2740  C20000               RET 0x0
+
+; 142AF2750  FUN_142af2750  (line unknown)
+  142AF2750  33D2                 XOR EDX,EDX
+  142AF2752  E909000000           JMP 0x142af2760
+
 ; 142AF2760  FUN_142af2760  (line unknown)
   142AF2760  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   142AF2765  57                   PUSH RDI
@@ -250738,6 +251083,12 @@ LAB_142af27f8:
   142AF2800  4883C420             ADD RSP,0x20
   142AF2804  5F                   POP RDI
   142AF2805  C3                   RET
+
+; 142AF2830  FUN_142af2830  (line unknown)
+  142AF2830  C20000               RET 0x0
+
+; 142AF2840  thunk_FUN_142af2870  (line unknown)
+  142AF2840  E92B000000           JMP 0x142af2870
 
 ; 142AF2870  FUN_142af2870  (line unknown)
   142AF2870  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -250825,6 +251176,24 @@ LAB_142af2936:
   142AF29B5  4883C468             ADD RSP,0x68
   142AF29B9  C3                   RET
 
+; 142AF2A10  FUN_142af2a10  (line unknown)
+  142AF2A10  C20000               RET 0x0
+
+; 142AF2A20  FUN_142af2a20  (line unknown)
+  142AF2A20  4885C9               TEST RCX,RCX
+  142AF2A23  0F85C7760000         JNZ 0x142afa0f0
+  142AF2A29  C3                   RET
+LAB_142afa0f0:
+  142AFA0F0  488BC1               MOV RAX,RCX
+  142AFA0F3  C3                   RET
+
+; 142AF2A30  FUN_142af2a30  (line unknown)
+  142AF2A30  33D2                 XOR EDX,EDX
+  142AF2A32  E939000000           JMP 0x142af2a70
+
+; 142AF2A40  FUN_142af2a40  (line unknown)
+  142AF2A40  C20000               RET 0x0
+
 ; 142AF2A70  FUN_142af2a70  (line unknown)
   142AF2A70  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   142AF2A75  57                   PUSH RDI
@@ -250890,6 +251259,12 @@ LAB_142af2b11:
   142AF2B38  4881C488000000       ADD RSP,0x88
   142AF2B3F  C3                   RET
 
+; 142AF2B50  FUN_142af2b50  (line unknown)
+  142AF2B50  C20000               RET 0x0
+
+; 142AF2B60  FUN_142af2b60  (line unknown)
+  142AF2B60  C20000               RET 0x0
+
 ; 142AF2B70  FUN_142af2b70  (line unknown)
   142AF2B70  488D056957AC00       LEA RAX,[0x1435b82e0]
   142AF2B77  C3                   RET
@@ -250902,6 +251277,19 @@ LAB_142af2b11:
   142AF2BB3  488B442420           MOV RAX,qword ptr [RSP + 0x20]
   142AF2BB8  4881C4A8000000       ADD RSP,0xa8
   142AF2BBF  C3                   RET
+
+; 142AF2C00  FUN_142af2c00  (line unknown)
+  142AF2C00  C20000               RET 0x0
+
+; 142AF2C10  FUN_142af2c10  (line unknown)
+  142AF2C10  33D2                 XOR EDX,EDX
+  142AF2C12  E949000000           JMP 0x142af2c60
+
+; 142AF2C20  FUN_142af2c20  (line unknown)
+  142AF2C20  C20000               RET 0x0
+
+; 142AF2C30  FUN_142af2c30  (line unknown)
+  142AF2C30  C20000               RET 0x0
 
 ; 142AF2C60  FUN_142af2c60  (line unknown)
   142AF2C60  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -250968,6 +251356,12 @@ LAB_142af2d01:
   142AF2D28  4881C488010000       ADD RSP,0x188
   142AF2D2F  C3                   RET
 
+; 142AF2D50  FUN_142af2d50  (line unknown)
+  142AF2D50  C20000               RET 0x0
+
+; 142AF2D60  FUN_142af2d60  (line unknown)
+  142AF2D60  C20000               RET 0x0
+
 ; 142AF2D70  FUN_142af2d70  (line unknown)
   142AF2D70  488D05F957AC00       LEA RAX,[0x1435b8570]
   142AF2D77  C3                   RET
@@ -250993,6 +251387,15 @@ LAB_142af2d01:
   142AF2E03  488B442420           MOV RAX,qword ptr [RSP + 0x20]
   142AF2E08  4881C4E8010000       ADD RSP,0x1e8
   142AF2E0F  C3                   RET
+
+; 142AF2E40  FUN_142af2e40  (line unknown)
+  142AF2E40  C20000               RET 0x0
+
+; 142AF2E50  FUN_142af2e50  (line unknown)
+  142AF2E50  C20000               RET 0x0
+
+; 142AF2E60  FUN_142af2e60  (line unknown)
+  142AF2E60  C20000               RET 0x0
 
 ; 142AF2E70  FUN_142af2e70  (line unknown)
   142AF2E70  488D05E958AC00       LEA RAX,[0x1435b8760]
@@ -251071,6 +251474,9 @@ LAB_142af2f68:
   142AF2FB0  32C0                 XOR AL,AL
   142AF2FB2  C3                   RET
 
+; 142AF3000  FUN_142af3000  (line unknown)
+  142AF3000  C20000               RET 0x0
+
 ; 142AF3010  FUN_142af3010  (line unknown)
   142AF3010  4053                 PUSH RBX
   142AF3012  4883EC20             SUB RSP,0x20
@@ -251118,6 +251524,9 @@ LAB_142af305b:
   142AF30D3  488B442420           MOV RAX,qword ptr [RSP + 0x20]
   142AF30D8  4881C4A8000000       ADD RSP,0xa8
   142AF30DF  C3                   RET
+
+; 142AF30F0  FUN_142af30f0  (line unknown)
+  142AF30F0  C20000               RET 0x0
 
 ; 142AF3190  FUN_142af3190  (line unknown)
   142AF3190  48895C2410           MOV qword ptr [RSP + 0x10],RBX

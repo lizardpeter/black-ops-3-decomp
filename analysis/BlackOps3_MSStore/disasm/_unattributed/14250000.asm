@@ -29591,6 +29591,18 @@ LAB_14251fdfa:
   14251FE93  5F                   POP RDI
   14251FE94  C3                   RET
 
+; 14251FEA0  FUN_14251fea0  (line unknown)
+  14251FEA0  48634104             MOVSXD RAX,dword ptr [RCX + 0x4]
+  14251FEA4  4C8D053528EB06       LEA R8,[0x1493d26e0]
+  14251FEAB  4869D0D0100000       IMUL RDX,RAX,0x10d0
+  14251FEB2  428B440204           MOV EAX,dword ptr [RDX + R8*0x1 + 0x4]
+  14251FEB7  894168               MOV dword ptr [RCX + 0x68],EAX
+  14251FEBA  C7813002000000000000 MOV dword ptr [RCX + 0x230],0x0
+  14251FEC4  428B8402C4050000     MOV EAX,dword ptr [RDX + R8*0x1 + 0x5c4]
+  14251FECC  89817C020000         MOV dword ptr [RCX + 0x27c],EAX
+  14251FED2  B001                 MOV AL,0x1
+  14251FED4  C3                   RET
+
 ; 14251FEE0  FUN_14251fee0  (line unknown)
   14251FEE0  4056                 PUSH RSI
   14251FEE2  4883EC40             SUB RSP,0x40
@@ -237441,6 +237453,15 @@ LAB_1425ef792:
   1425EF7A1  4883C420             ADD RSP,0x20
   1425EF7A5  5B                   POP RBX
   1425EF7A6  C3                   RET
+
+; 1425EF7B0  FUN_1425ef7b0  (line unknown)
+  1425EF7B0  488B8958020000       MOV RCX,qword ptr [RCX + 0x258]
+  1425EF7B7  8B4134               MOV EAX,dword ptr [RCX + 0x34]
+  1425EF7BA  4C63448124           MOVSXD R8,dword ptr [RCX + RAX*0x4 + 0x24]
+  1425EF7BF  4B8D0440             LEA RAX,[R8 + R8*0x2]
+  1425EF7C3  4803C0               ADD RAX,RAX
+  1425EF7C6  4C8D056B5F8F00       LEA R8,[0x142ee5738]
+  1425EF7CD  49FF24C0             JMP qword ptr [R8 + RAX*0x8]
 
 ; 1425EF7E0  FUN_1425ef7e0  (line unknown)
   1425EF7E0  48895C2410           MOV qword ptr [RSP + 0x10],RBX

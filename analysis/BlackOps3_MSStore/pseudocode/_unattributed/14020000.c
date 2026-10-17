@@ -2201,6 +2201,16 @@ void FUN_140203db0(int param_1,uint param_2)
 }
 
 
+// 140203E20  FUN_140203e20  (line unknown)
+
+void FUN_140203e20(undefined8 param_1,uint param_2)
+
+{
+  FUN_1413927f0(param_1,param_2 & 0x1ff,DAT_14310c648);
+  return;
+}
+
+
 // 140203E40  FUN_140203e40  (line unknown)
 
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */

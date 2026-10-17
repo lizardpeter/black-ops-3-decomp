@@ -9982,6 +9982,66 @@ void FUN_142c0b830(longlong *param_1,int param_2,ulonglong param_3,undefined4 *p
 }
 
 
+// 142C0B950  FUN_142c0b950  (line unknown)
+
+void FUN_142c0b950(void)
+
+{
+  return;
+}
+
+
+// 142C0B960  FUN_142c0b960  (line unknown)
+
+longlong FUN_142c0b960(longlong param_1)
+
+{
+  longlong in_RAX;
+  
+  if (param_1 == 0) {
+    return in_RAX;
+  }
+  FUN_142c1ca10(param_1 + 0x50);
+  return param_1;
+}
+
+
+// 142C0B980  FUN_142c0b980  (line unknown)
+
+void FUN_142c0b980(void)
+
+{
+  return;
+}
+
+
+// 142C0B990  FUN_142c0b990  (line unknown)
+
+void FUN_142c0b990(void)
+
+{
+  return;
+}
+
+
+// 142C0B9B0  FUN_142c0b9b0  (line unknown)
+
+void FUN_142c0b9b0(void)
+
+{
+  return;
+}
+
+
+// 142C0B9C0  FUN_142c0b9c0  (line unknown)
+
+void FUN_142c0b9c0(void)
+
+{
+  return;
+}
+
+
 // 142C0B9F0  FUN_142c0b9f0  (line unknown)
 
 void FUN_142c0b9f0(longlong param_1)
@@ -10019,6 +10079,65 @@ undefined8 FUN_142c0ba80(void)
 }
 
 
+// 142C0BAE0  FUN_142c0bae0  (line unknown)
+
+longlong FUN_142c0bae0(longlong param_1)
+
+{
+  longlong in_RAX;
+  
+  if (param_1 == 0) {
+    return in_RAX;
+  }
+  return param_1;
+}
+
+
+// 142C0BAF0  FUN_142c0baf0  (line unknown)
+
+void FUN_142c0baf0(void)
+
+{
+  return;
+}
+
+
+// 142C0BB00  FUN_142c0bb00  (line unknown)
+
+void FUN_142c0bb00(void)
+
+{
+  return;
+}
+
+
+// 142C0BB10  FUN_142c0bb10  (line unknown)
+
+void FUN_142c0bb10(void)
+
+{
+  return;
+}
+
+
+// 142C0BB20  FUN_142c0bb20  (line unknown)
+
+void FUN_142c0bb20(void)
+
+{
+  return;
+}
+
+
+// 142C0BB30  FUN_142c0bb30  (line unknown)
+
+void FUN_142c0bb30(void)
+
+{
+  return;
+}
+
+
 // 142C0BB60  FUN_142c0bb60  (line unknown)
 
 undefined8 FUN_142c0bb60(void)
@@ -10028,6 +10147,40 @@ undefined8 FUN_142c0bb60(void)
   
   FUN_142c1a860(local_118,0);
   return local_118[0];
+}
+
+
+// 142C0BBA0  FUN_142c0bba0  (line unknown)
+
+void FUN_142c0bba0(void)
+
+{
+  return;
+}
+
+
+// 142C0BBB0  FUN_142c0bbb0  (line unknown)
+
+void FUN_142c0bbb0(undefined8 param_1)
+
+{
+  FUN_142c0bc50(param_1,0);
+  return;
+}
+
+
+// 142C0BBC0  FUN_142c0bbc0  (line unknown)
+
+longlong FUN_142c0bbc0(longlong param_1)
+
+{
+  longlong in_RAX;
+  
+  if (param_1 == 0) {
+    return in_RAX;
+  }
+  FUN_142a1be30(param_1 + 0x98);
+  return param_1;
 }
 
 
@@ -10078,6 +10231,33 @@ longlong FUN_142c0bc50(longlong param_1,uint param_2)
     }
   }
   return param_1;
+}
+
+
+// 142C0BD30  FUN_142c0bd30  (line unknown)
+
+void FUN_142c0bd30(void)
+
+{
+  return;
+}
+
+
+// 142C0BD40  FUN_142c0bd40  (line unknown)
+
+void FUN_142c0bd40(void)
+
+{
+  return;
+}
+
+
+// 142C0BD50  FUN_142c0bd50  (line unknown)
+
+void FUN_142c0bd50(void)
+
+{
+  return;
 }
 
 
@@ -10145,6 +10325,24 @@ undefined ** FUN_142c0bee0(void)
 
 {
   return hkaiEdgeGeometry::vftable;
+}
+
+
+// 142C0BF00  FUN_142c0bf00  (line unknown)
+
+void FUN_142c0bf00(void)
+
+{
+  return;
+}
+
+
+// 142C0BF10  FUN_142c0bf10  (line unknown)
+
+void FUN_142c0bf10(void)
+
+{
+  return;
 }
 
 
@@ -130077,6 +130275,33 @@ undefined * FUN_142ca4860(void)
 }
 
 
+// 142CA48B0  FUN_142ca48b0  (line unknown)
+
+void FUN_142ca48b0(void)
+
+{
+  return;
+}
+
+
+// 142CA48C0  FUN_142ca48c0  (line unknown)
+
+void FUN_142ca48c0(void)
+
+{
+  return;
+}
+
+
+// 142CA48D0  FUN_142ca48d0  (line unknown)
+
+void FUN_142ca48d0(void)
+
+{
+  return;
+}
+
+
 // 142CA4AE0  FUN_142ca4ae0  (line unknown)
 
 undefined8 * FUN_142ca4ae0(undefined8 *param_1,ulonglong param_2)
@@ -130278,6 +130503,25 @@ undefined8 FUN_142ca4de0(void)
   
   FUN_142caa970(local_28,0);
   return local_28[0];
+}
+
+
+// 142CA4E40  FUN_142ca4e40  (line unknown)
+
+void FUN_142ca4e40(undefined8 param_1)
+
+{
+  FUN_142ca4e60(param_1,0);
+  return;
+}
+
+
+// 142CA4E50  FUN_142ca4e50  (line unknown)
+
+void FUN_142ca4e50(void)
+
+{
+  return;
 }
 
 

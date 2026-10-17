@@ -54396,6 +54396,9 @@ LAB_140f34d57:
   140F34D78  5D                   POP RBP
   140F34D79  E9B2924500           JMP 0x14138e030
 
+; 140F34E70  FUN_140f34e70  (line unknown)
+  140F34E70  C20000               RET 0x0
+
 ; 140F34E80  FUN_140f34e80  (line unknown)
   140F34E80  4057                 PUSH RDI
   140F34E82  4883EC20             SUB RSP,0x20

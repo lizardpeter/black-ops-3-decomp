@@ -57558,6 +57558,9 @@ LAB_14033c7f9:
   14033C82B  4883C428             ADD RSP,0x28
   14033C82F  E92C32ED01           JMP 0x14220fa60
 
+; 14033C840  FUN_14033c840  (line unknown)
+  14033C840  C20000               RET 0x0
+
 ; 14033C850  FUN_14033c850  (line unknown)
   14033C850  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   14033C855  57                   PUSH RDI

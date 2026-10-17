@@ -19385,6 +19385,34 @@ LAB_1417236cb:
 }
 
 
+// 141723700  FUN_141723700  (line unknown)
+
+void FUN_141723700(longlong param_1,longlong param_2)
+
+{
+  FUN_141c13ff0((&DAT_149ad2150)[*(byte *)(param_1 + 300)],*(undefined4 *)(param_2 + 0xc),
+                *(undefined4 *)(param_2 + 4),*(undefined8 *)(param_2 + 0x10));
+  return;
+}
+
+
+// 141723730  FUN_141723730  (line unknown)
+
+void FUN_141723730(longlong param_1,longlong param_2)
+
+{
+  undefined8 *puVar1;
+  
+  puVar1 = *(undefined8 **)
+            ((longlong)*(int *)(param_2 + 4) + (&DAT_149ad2150)[*(byte *)(param_1 + 300)]);
+  if (puVar1 != (undefined8 *)0x0) {
+    FUN_1413928a0(0,*puVar1);
+    return;
+  }
+  return;
+}
+
+
 // 141723760  FUN_141723760  (line unknown)
 
 void FUN_141723760(longlong param_1)
@@ -19419,6 +19447,17 @@ void FUN_1417237a0(longlong param_1)
     FUN_141c73d80(param_1,uVar2);
     return;
   }
+  return;
+}
+
+
+// 141723800  FUN_141723800  (line unknown)
+
+void FUN_141723800(longlong param_1)
+
+{
+  FUN_1413928a0(0,(&PTR_s_4_wheel_142eea908)
+                  [*(short *)((&DAT_149ad2150)[*(byte *)(param_1 + 300)] + 8)]);
   return;
 }
 
@@ -45819,6 +45858,16 @@ void FUN_141756130(longlong param_1)
 }
 
 
+// 1417561B0  FUN_1417561b0  (line unknown)
+
+void FUN_1417561b0(longlong param_1)
+
+{
+  FUN_14138e390(0,*(undefined4 *)(param_1 + 0x16c00));
+  return;
+}
+
+
 // 1417561C0  FUN_1417561c0  (line unknown)
 
 void FUN_1417561c0(longlong param_1)
@@ -65069,6 +65118,15 @@ LAB_14177a8a9:
 }
 
 
+// 14177A9F0  FUN_14177a9f0  (line unknown)
+
+void FUN_14177a9f0(void)
+
+{
+  return;
+}
+
+
 // 14177AA00  FUN_14177aa00  (line unknown)
 
 /* WARNING: Function: __security_check_cookie replaced with injection: security_check_cookie */
@@ -65932,6 +65990,24 @@ LAB_14177c228:
   local_24 = (float)(int)*(char *)(lVar5 + 0x16b49) / 127.0;
   local_20 = 0;
   FUN_141392a60(0,&local_28);
+  return;
+}
+
+
+// 14177C520  FUN_14177c520  (line unknown)
+
+void FUN_14177c520(void)
+
+{
+  return;
+}
+
+
+// 14177C530  FUN_14177c530  (line unknown)
+
+void FUN_14177c530(void)
+
+{
   return;
 }
 

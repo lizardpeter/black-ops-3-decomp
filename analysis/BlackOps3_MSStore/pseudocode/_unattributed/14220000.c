@@ -9844,14 +9844,14 @@ void * FUN_14220ee60(undefined8 param_1,void *param_2,size_t param_3)
   }
   *(undefined4 **)(*(longlong *)ThreadLocalStoragePointer + 0x20) = &local_18;
   if ((param_3 == 0) && (param_2 != (void *)0x0)) {
-    (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_158baaaa0 * 5])(DAT_158baaaa0,param_2);
+    (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_158baaaa0 * 5])(DAT_158baaaa0,param_2);
   }
   else {
     pvVar2 = (void *)FUN_14220ece0(param_3);
     if (pvVar2 != (void *)0x0) {
       if (param_2 != (void *)0x0) {
         memcpy(pvVar2,param_2,param_3);
-        (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_158baaaa0 * 5])(DAT_158baaaa0,param_2);
+        (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_158baaaa0 * 5])(DAT_158baaaa0,param_2);
       }
       FUN_140163c70(&local_18);
       return pvVar2;
@@ -9886,7 +9886,7 @@ void FUN_14220ef80(undefined8 param_1,undefined8 param_2)
     __dyn_tls_on_demand_init();
   }
   *(undefined4 **)(*(longlong *)ThreadLocalStoragePointer + 0x20) = &local_18;
-  (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_158baaaa0 * 5])(DAT_158baaaa0,param_2);
+  (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_158baaaa0 * 5])(DAT_158baaaa0,param_2);
   FUN_140163c70(&local_18);
   return;
 }
@@ -71745,6 +71745,16 @@ void FUN_1422c7ad0(undefined4 param_1)
 }
 
 
+// 1422C7D10  FUN_1422c7d10  (line unknown)
+
+void FUN_1422c7d10(void)
+
+{
+  memset(&DAT_148eeb4e0,0,0x20009);
+  return;
+}
+
+
 // 1422C7D30  FUN_1422c7d30  (line unknown)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -71849,6 +71859,16 @@ void FUN_1422c7d30(undefined4 param_1)
     puVar7 = (undefined8 *)*puVar7;
   }
   DAT_148de3d3b = 1;
+  return;
+}
+
+
+// 1422C7F70  FUN_1422c7f70  (line unknown)
+
+void FUN_1422c7f70(void)
+
+{
+  memset(&DAT_149310770,0,0x20000);
   return;
 }
 

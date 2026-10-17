@@ -25562,6 +25562,12 @@ LAB_140c19ce4:
   140C19CFA  5F                   POP RDI
   140C19CFB  C3                   RET
 
+; 140C19D00  FUN_140c19d00  (line unknown)
+  140C19D00  C20000               RET 0x0
+
+; 140C19D10  FUN_140c19d10  (line unknown)
+  140C19D10  C20000               RET 0x0
+
 ; 140C19D20  FUN_140c19d20  (line unknown)
   140C19D20  48895C2410           MOV qword ptr [RSP + 0x10],RBX
   140C19D25  48896C2418           MOV qword ptr [RSP + 0x18],RBP
@@ -116220,6 +116226,9 @@ LAB_140c7008d:
   140C700AE  5E                   POP RSI
   140C700AF  5D                   POP RBP
   140C700B0  E97BDF7100           JMP 0x14138e030
+
+; 140C701B0  FUN_140c701b0  (line unknown)
+  140C701B0  C20000               RET 0x0
 
 ; 140C701C0  FUN_140c701c0  (line unknown)
   140C701C0  48895C2408           MOV qword ptr [RSP + 0x8],RBX

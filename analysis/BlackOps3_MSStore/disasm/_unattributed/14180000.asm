@@ -225005,6 +225005,9 @@ LAB_1418d7f56:
   1418D7F71  5D                   POP RBP
   1418D7F72  E9B960ABFF           JMP 0x14138e030
 
+; 1418D7FC0  FUN_1418d7fc0  (line unknown)
+  1418D7FC0  C20000               RET 0x0
+
 ; 1418D7FD0  FUN_1418d7fd0  (line unknown)
   1418D7FD0  4055                 PUSH RBP
   1418D7FD2  488BEC               MOV RBP,RSP
@@ -257714,6 +257717,13 @@ LAB_1418f716c:
   1418F7183  4883C420             ADD RSP,0x20
   1418F7187  5D                   POP RBP
   1418F7188  E9A36EA9FF           JMP 0x14138e030
+
+; 1418F71D0  FUN_1418f71d0  (line unknown)
+  1418F71D0  836108EF             AND dword ptr [RCX + 0x8],0xffffffef
+  1418F71D4  33C0                 XOR EAX,EAX
+  1418F71D6  668981F2010000       MOV word ptr [RCX + 0x1f2],AX
+  1418F71DD  C7811402000000000004 MOV dword ptr [RCX + 0x214],0x4000000
+  1418F71E7  C3                   RET
 
 ; 1418F71F0  FUN_1418f71f0  (line unknown)
   1418F71F0  488BC4               MOV RAX,RSP

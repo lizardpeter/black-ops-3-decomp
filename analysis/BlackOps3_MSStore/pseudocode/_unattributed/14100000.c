@@ -41757,7 +41757,7 @@ void FUN_141057ba0(int param_1,char *param_2)
       param_2[0x61f] = '\0';
     }
     if (*(longlong *)(param_2 + 0x640) != 0) {
-      (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_149206ad0 * 5])();
+      (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_149206ad0 * 5])();
       param_2[0x640] = '\0';
       param_2[0x641] = '\0';
       param_2[0x642] = '\0';
@@ -41768,7 +41768,7 @@ void FUN_141057ba0(int param_1,char *param_2)
       param_2[0x647] = '\0';
     }
     if (*(longlong *)(param_2 + 0x630) != 0) {
-      (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_1436df110 * 5])();
+      (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_1436df110 * 5])();
       param_2[0x630] = '\0';
       param_2[0x631] = '\0';
       param_2[0x632] = '\0';
@@ -41781,12 +41781,12 @@ void FUN_141057ba0(int param_1,char *param_2)
     lVar13 = *(longlong *)(param_2 + 0x620);
     if (lVar13 != 0) {
       if (*(longlong *)(lVar13 + 0x40) != 0) {
-        (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_149206ac0 * 5])
+        (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_149206ac0 * 5])
                   (DAT_149206ac0,*(longlong *)(lVar13 + 0x40));
         *(undefined8 *)(*(longlong *)(param_2 + 0x620) + 0x40) = 0;
         lVar13 = *(longlong *)(param_2 + 0x620);
       }
-      (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_149206ac0 * 5])(DAT_149206ac0,lVar13);
+      (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_149206ac0 * 5])(DAT_149206ac0,lVar13);
       param_2[0x620] = '\0';
       param_2[0x621] = '\0';
       param_2[0x622] = '\0';
@@ -41797,7 +41797,7 @@ void FUN_141057ba0(int param_1,char *param_2)
       param_2[0x627] = '\0';
     }
     if (*(longlong *)(param_2 + 0x628) != 0) {
-      (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_149206ad8 * 5])();
+      (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_149206ad8 * 5])();
       param_2[0x628] = '\0';
       param_2[0x629] = '\0';
       param_2[0x62a] = '\0';
@@ -41808,7 +41808,7 @@ void FUN_141057ba0(int param_1,char *param_2)
       param_2[0x62f] = '\0';
     }
     if (*(longlong *)(param_2 + 0x638) != 0) {
-      (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_149206ad8 * 5])();
+      (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_149206ad8 * 5])();
       param_2[0x638] = '\0';
       param_2[0x639] = '\0';
       param_2[0x63a] = '\0';

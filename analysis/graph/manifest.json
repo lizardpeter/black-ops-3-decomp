@@ -22,8 +22,8 @@
     },
     {
       "file": "t7/functions-BlackOps3_MSStore.jsonl",
-      "sha256": "22f6c38f73eb52a4d0f2e51326b0b9ce32c00757bcc7e6fc9ffd98de62217247",
-      "rows": 37154,
+      "sha256": "318f8c1b02c54ccd4bcee04ad1aec8b030ccd0a4bd75834eee738802c5d01484",
+      "rows": 42221,
       "cypher": "UNWIND {{ROWS}} AS r MATCH (b:Build {id:r.build}) MERGE (fn:Function {key:r.key}) SET fn.name = coalesce(fn.name, r.name), fn.symbol = r.symbol MERGE (fi:FunctionInstance {id:r.id}) SET fi.build=r.build, fi.va=r.va, fi.size=r.size, fi.status=r.status, fi.type=r.type, fi.src=r.src, fi.bytes_sha256=r.sha MERGE (fi)-[:INSTANCE_OF]->(fn) MERGE (fi)-[:IN_BUILD]->(b) WITH fn, r WHERE r.source <> '' MATCH (sf:SourceFile {path:r.source}) MERGE (fn)-[d:DEFINED_IN]->(sf) SET d.line=r.line"
     },
     {
@@ -34,8 +34,8 @@
     },
     {
       "file": "t7/calls-BlackOps3_MSStore.jsonl",
-      "sha256": "9b19494ba3e740e4f9faf01fe02502570fbacc1d41b31be32820132c88c1264a",
-      "rows": 122988,
+      "sha256": "0af89fec556ff79e9aa86ffc6f6cfd4431a19245baf59db9ca5b765a5f638ef9",
+      "rows": 123243,
       "cypher": "UNWIND {{ROWS}} AS r MATCH (a:FunctionInstance {id:r.caller}) MATCH (c:FunctionInstance {id:r.callee}) MERGE (a)-[e:CALLS]->(c) SET e.kind=r.kind"
     },
     {

@@ -84017,7 +84017,7 @@ LAB_140aab89f:
         pcVar20 = pcVar20 + 1;
         if (lVar23 == 0) break;
         if (*pcVar1 != cVar2) {
-          (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar21);
+          (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar21);
           goto LAB_140aabb7f;
         }
         lVar23 = lVar23 + -1;
@@ -84053,7 +84053,7 @@ LAB_140aabb7f:
         pcVar20 = pcVar20 + 1;
         if (lVar23 == 0) break;
         if (*pcVar1 != cVar2) {
-          (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar21);
+          (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar21);
           goto LAB_140aabc93;
         }
         lVar23 = lVar23 + -1;
@@ -84089,7 +84089,7 @@ LAB_140aabc93:
         pcVar20 = pcVar20 + 1;
         if (lVar23 == 0) break;
         if (*pcVar1 != cVar2) {
-          (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar21);
+          (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar21);
           goto LAB_140aabdb3;
         }
         lVar23 = lVar23 + -1;
@@ -84133,7 +84133,7 @@ LAB_140aabdb3:
         pcVar20 = pcVar20 + 1;
         if (lVar21 == 0) break;
         if (*pcVar1 != cVar2) {
-          (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar17);
+          (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar17);
           goto LAB_140aabf23;
         }
         lVar21 = lVar21 + -1;
@@ -84169,7 +84169,7 @@ LAB_140aabf23:
         pcVar20 = pcVar20 + 1;
         if (lVar21 == 0) break;
         if (*pcVar1 != cVar2) {
-          (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar17);
+          (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar17);
           goto LAB_140aac126;
         }
         lVar21 = lVar21 + -1;
@@ -90339,6 +90339,51 @@ void FUN_140ab7220(int param_1)
   FUN_141390370(param_1);
   *(undefined4 *)((&DAT_143f66b70)[(longlong)param_1 * 0x1148] + 8) = 7;
   *(undefined4 *)(&DAT_143f66b70)[(longlong)param_1 * 0x1148] = 0;
+  return;
+}
+
+
+// 140AB7260  FUN_140ab7260  (line unknown)
+
+void FUN_140ab7260(void)
+
+{
+  return;
+}
+
+
+// 140AB7270  FUN_140ab7270  (line unknown)
+
+void FUN_140ab7270(void)
+
+{
+  return;
+}
+
+
+// 140AB7280  FUN_140ab7280  (line unknown)
+
+void FUN_140ab7280(void)
+
+{
+  return;
+}
+
+
+// 140AB7290  FUN_140ab7290  (line unknown)
+
+void FUN_140ab7290(void)
+
+{
+  return;
+}
+
+
+// 140AB72A0  FUN_140ab72a0  (line unknown)
+
+void FUN_140ab72a0(void)
+
+{
   return;
 }
 

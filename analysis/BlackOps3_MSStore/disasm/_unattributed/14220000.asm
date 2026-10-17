@@ -173530,6 +173530,12 @@ LAB_1422c7cfb:
   1422C7D07  5E                   POP RSI
   1422C7D08  C3                   RET
 
+; 1422C7D10  FUN_1422c7d10  (line unknown)
+  1422C7D10  33D2                 XOR EDX,EDX
+  1422C7D12  488D0DC737C206       LEA RCX,[0x148eeb4e0]
+  1422C7D19  41B809000200         MOV R8D,0x20009
+  1422C7D1F  E94275A300           JMP 0x142cff266
+
 ; 1422C7D30  FUN_1422c7d30  (line unknown)
   1422C7D30  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1422C7D35  56                   PUSH RSI
@@ -173688,6 +173694,12 @@ LAB_1422c7f58:
   1422C7F6A  5F                   POP RDI
   1422C7F6B  5E                   POP RSI
   1422C7F6C  C3                   RET
+
+; 1422C7F70  FUN_1422c7f70  (line unknown)
+  1422C7F70  33D2                 XOR EDX,EDX
+  1422C7F72  488D0DF7870407       LEA RCX,[0x149310770]
+  1422C7F79  41B800000200         MOV R8D,0x20000
+  1422C7F7F  E9E272A300           JMP 0x142cff266
 
 ; 1422C7FB0  FUN_1422c7fb0  (line unknown)
   1422C7FB0  4883EC28             SUB RSP,0x28

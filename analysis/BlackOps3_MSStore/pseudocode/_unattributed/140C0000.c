@@ -12561,6 +12561,24 @@ LAB_140c19cc6:
 }
 
 
+// 140C19D00  FUN_140c19d00  (line unknown)
+
+void FUN_140c19d00(void)
+
+{
+  return;
+}
+
+
+// 140C19D10  FUN_140c19d10  (line unknown)
+
+void FUN_140c19d10(void)
+
+{
+  return;
+}
+
+
 // 140C19D20  FUN_140c19d20  (line unknown)
 
 void FUN_140c19d20(int param_1)
@@ -19484,8 +19502,8 @@ undefined * FUN_140c25850(int param_1,undefined4 *param_2,undefined4 *param_3,un
       *param_2 = *(undefined4 *)(&DAT_143114218 + lVar5);
       *param_3 = *(undefined4 *)(&DAT_143114204 + lVar5);
       *param_4 = *(undefined4 *)(&DAT_143114208 + lVar5);
-      if ((&PTR_LAB_143114210)[uVar3 * 4] != (undefined *)0x0) {
-        return (&PTR_LAB_143114210)[uVar3 * 4];
+      if ((&PTR_FUN_143114210)[uVar3 * 4] != (undefined *)0x0) {
+        return (&PTR_FUN_143114210)[uVar3 * 4];
       }
       break;
     }
@@ -19608,8 +19626,8 @@ undefined * FUN_140c25850(int param_1,undefined4 *param_2,undefined4 *param_3,un
   *param_2 = *(undefined4 *)(&DAT_1431191c8 + lVar5);
   *param_3 = *(undefined4 *)(&DAT_1431191b4 + lVar5);
   *param_4 = *(undefined4 *)(&DAT_1431191b8 + lVar5);
-  if ((&PTR_LAB_1431191c0)[uVar6 * 4] != (undefined *)0x0) {
-    return (&PTR_LAB_1431191c0)[uVar6 * 4];
+  if ((&PTR_FUN_1431191c0)[uVar6 * 4] != (undefined *)0x0) {
+    return (&PTR_FUN_1431191c0)[uVar6 * 4];
   }
   return (undefined *)0x0;
 }
@@ -19649,7 +19667,7 @@ int FUN_140c25b40(undefined *param_1)
     uVar2 = (ulonglong)uVar1;
     ppuVar4 = ppuVar4 + 4;
   } while (uVar1 < 0x31);
-  ppuVar4 = &PTR_LAB_143114210;
+  ppuVar4 = &PTR_FUN_143114210;
   uVar2 = uVar3;
   do {
     if (param_1 == *ppuVar4) {
@@ -19740,7 +19758,7 @@ int FUN_140c25b40(undefined *param_1)
     uVar2 = (ulonglong)uVar1;
     ppuVar4 = ppuVar4 + 4;
   } while (uVar1 < 0x14);
-  ppuVar4 = &PTR_LAB_1431191c0;
+  ppuVar4 = &PTR_FUN_1431191c0;
   while (param_1 != *ppuVar4) {
     uVar1 = (int)uVar3 + 1;
     uVar3 = (ulonglong)uVar1;
@@ -56201,6 +56219,15 @@ LAB_140c6e2fe:
   }
   uVar8 = FUN_1414dc380(0x47,lVar13,1);
   FUN_140aa1a00(uVar4,iVar1,uVar8);
+  return;
+}
+
+
+// 140C701B0  FUN_140c701b0  (line unknown)
+
+void FUN_140c701b0(void)
+
+{
   return;
 }
 

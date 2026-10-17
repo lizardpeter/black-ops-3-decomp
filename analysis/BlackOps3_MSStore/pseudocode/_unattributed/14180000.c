@@ -110012,6 +110012,15 @@ LAB_1418d7cf8:
 }
 
 
+// 1418D7FC0  FUN_1418d7fc0  (line unknown)
+
+void FUN_1418d7fc0(void)
+
+{
+  return;
+}
+
+
 // 1418D7FD0  FUN_1418d7fd0  (line unknown)
 
 void FUN_1418d7fd0(undefined8 param_1,int *param_2)
@@ -126097,6 +126106,18 @@ LAB_1418f6f28:
   }
   uVar3 = FUN_141391240(0,0);
   *(undefined4 *)(*(longlong *)(lVar7 + 0x250) + 0x16bdc) = uVar3;
+  return;
+}
+
+
+// 1418F71D0  FUN_1418f71d0  (line unknown)
+
+void FUN_1418f71d0(longlong param_1)
+
+{
+  *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) & 0xffffffef;
+  *(undefined2 *)(param_1 + 0x1f2) = 0;
+  *(undefined4 *)(param_1 + 0x214) = 0x4000000;
   return;
 }
 

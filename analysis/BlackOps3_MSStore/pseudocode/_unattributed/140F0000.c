@@ -24923,6 +24923,15 @@ LAB_140f34b4b:
 }
 
 
+// 140F34E70  FUN_140f34e70  (line unknown)
+
+void FUN_140f34e70(void)
+
+{
+  return;
+}
+
+
 // 140F34E80  FUN_140f34e80  (line unknown)
 
 void FUN_140f34e80(undefined8 param_1,int *param_2)

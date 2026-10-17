@@ -11560,7 +11560,7 @@ void FUN_140918830(int param_1,longlong param_2)
         pcVar11 = pcVar11 + 1;
         if (lVar12 == 0) break;
         if (*pcVar1 != cVar2) {
-          (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar3);
+          (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_1586cd210 * 5])(DAT_1586cd210,lVar3);
           goto LAB_1409192cd;
         }
         lVar12 = lVar12 + -1;

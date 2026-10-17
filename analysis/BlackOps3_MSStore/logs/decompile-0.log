@@ -1,18 +1,18 @@
-2026-10-17 17:51:57 INFO  (LoggingInitialization) Using log config file: jar:file:/opt/ghidra/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
-2026-10-17 17:51:57 INFO  (LoggingInitialization) Using log file: /tmp/out/decompile-0.log  
-2026-10-17 17:51:57 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
-2026-10-17 17:51:57 INFO  (Preferences) Loading user preferences: /home/runner/.config/ghidra/ghidra_12.1.4_PUBLIC/preferences  
-2026-10-17 17:51:57 INFO  (ClassSearcher) Searching for classes...  
-2026-10-17 17:51:57 INFO  (ClassSearcher) Class search complete (391 ms)  
-2026-10-17 17:51:57 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
-2026-10-17 17:51:58 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
-2026-10-17 17:51:58 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
-2026-10-17 17:51:58 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
-2026-10-17 17:51:58 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/runner-ghidra/fscache2  
-2026-10-17 17:51:58 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
-2026-10-17 17:51:58 INFO  (AnalyzeHeadless) Headless startup complete (1696 ms)  
-2026-10-17 17:51:58 INFO  (ClassSearcher) Class searcher loaded 59 extension points (20 false positives)  
-2026-10-17 17:51:58 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+2026-10-17 23:44:21 INFO  (LoggingInitialization) Using log config file: jar:file:/opt/ghidra/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-10-17 23:44:21 INFO  (LoggingInitialization) Using log file: /tmp/out/decompile-0.log  
+2026-10-17 23:44:21 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
+2026-10-17 23:44:21 INFO  (Preferences) Loading user preferences: /home/runner/.config/ghidra/ghidra_12.1.4_PUBLIC/preferences  
+2026-10-17 23:44:21 INFO  (ClassSearcher) Searching for classes...  
+2026-10-17 23:44:22 INFO  (ClassSearcher) Class search complete (942 ms)  
+2026-10-17 23:44:22 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-10-17 23:44:23 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-10-17 23:44:23 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2026-10-17 23:44:23 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-10-17 23:44:23 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/runner-ghidra/fscache2  
+2026-10-17 23:44:23 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2026-10-17 23:44:23 INFO  (AnalyzeHeadless) Headless startup complete (3061 ms)  
+2026-10-17 23:44:23 INFO  (ClassSearcher) Class searcher loaded 59 extension points (20 false positives)  
+2026-10-17 23:44:24 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
     /opt/ghidra/Ghidra/Features/SystemEmulation/ghidra_scripts
     /opt/ghidra/Ghidra/Features/GnuDemangler/ghidra_scripts
     /home/runner/work/black-ops-3-decomp/black-ops-3-decomp/tools/ghidra
@@ -36,18 +36,18 @@
     /opt/ghidra/Ghidra/Features/FileFormats/ghidra_scripts
     /opt/ghidra/Ghidra/Features/BSim/ghidra_scripts
     /opt/ghidra/Ghidra/Features/BytePatterns/ghidra_scripts  
-2026-10-17 17:51:58 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
-2026-10-17 17:51:58 INFO  (HeadlessAnalyzer) Opening existing project: /tmp/proj/t7  
-2026-10-17 17:51:58 DEBUG (DefaultProjectManager) No tools found; Installing default tools  
-2026-10-17 17:51:58 DEBUG (DefaultProjectManager) 	no recent project directories found  
-2026-10-17 17:51:58 INFO  (HeadlessProject) Opening project: /tmp/proj/t7  
-2026-10-17 17:52:00 INFO  (HeadlessAnalyzer) REPORT: Processing read-only project file: /BlackOps3_MSStore.exe  
-2026-10-17 17:52:00 INFO  (HeadlessAnalyzer) REPORT: Execute script: Decompile.java '/tmp/out/decomp-0.jsonl' '0' '6' '90'   
-2026-10-17 17:52:01 INFO  (HeadlessAnalyzer) SCRIPT: /home/runner/work/black-ops-3-decomp/black-ops-3-decomp/tools/ghidra/Decompile.java  
-2026-10-17 17:53:27 INFO  (GhidraScript) Decompile.java> shard 0: 1000 ok, 0 failed, 85s  
-2026-10-17 17:54:16 INFO  (GhidraScript) Decompile.java> shard 0: 2000 ok, 0 failed, 134s  
-2026-10-17 17:55:02 INFO  (GhidraScript) Decompile.java> shard 0: 3000 ok, 0 failed, 180s  
-2026-10-17 17:55:30 INFO  (GhidraScript) Decompile.java> shard 0: 4000 ok, 0 failed, 208s  
-2026-10-17 17:55:46 INFO  (GhidraScript) Decompile.java> shard 0: 5000 ok, 0 failed, 224s  
-2026-10-17 17:55:57 INFO  (GhidraScript) Decompile.java> shard 0: 6000 ok, 0 failed, 235s  
-2026-10-17 17:55:57 INFO  (GhidraScript) Decompile.java> shard 0 done: 6155 ok, 0 failed  
+2026-10-17 23:44:24 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-10-17 23:44:24 INFO  (HeadlessAnalyzer) Opening existing project: /tmp/proj/t7  
+2026-10-17 23:44:24 DEBUG (DefaultProjectManager) No tools found; Installing default tools  
+2026-10-17 23:44:24 DEBUG (DefaultProjectManager) 	no recent project directories found  
+2026-10-17 23:44:24 INFO  (HeadlessProject) Opening project: /tmp/proj/t7  
+2026-10-17 23:44:27 INFO  (HeadlessAnalyzer) REPORT: Processing read-only project file: /BlackOps3_MSStore.exe  
+2026-10-17 23:44:27 INFO  (HeadlessAnalyzer) REPORT: Execute script: Decompile.java '/tmp/out/decomp-0.jsonl' '0' '6' '90'   
+2026-10-17 23:44:28 INFO  (HeadlessAnalyzer) SCRIPT: /home/runner/work/black-ops-3-decomp/black-ops-3-decomp/tools/ghidra/Decompile.java  
+2026-10-17 23:44:48 INFO  (GhidraScript) Decompile.java> shard 0: 1000 ok, 0 failed, 19s  
+2026-10-17 23:47:02 INFO  (GhidraScript) Decompile.java> shard 0: 2000 ok, 0 failed, 153s  
+2026-10-17 23:47:44 INFO  (GhidraScript) Decompile.java> shard 0: 3000 ok, 0 failed, 195s  
+2026-10-17 23:49:47 INFO  (GhidraScript) Decompile.java> shard 0: 3999 ok, 1 failed, 318s  
+2026-10-17 23:50:16 INFO  (GhidraScript) Decompile.java> shard 0: 4999 ok, 1 failed, 347s  
+2026-10-17 23:50:36 INFO  (GhidraScript) Decompile.java> shard 0: 5999 ok, 1 failed, 367s  
+2026-10-17 23:50:53 INFO  (GhidraScript) Decompile.java> shard 0 done: 6988 ok, 1 failed  

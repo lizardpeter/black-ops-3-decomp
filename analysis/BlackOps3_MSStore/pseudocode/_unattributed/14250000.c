@@ -14877,6 +14877,23 @@ undefined8 FUN_14251fe10(undefined4 *param_1)
 }
 
 
+// 14251FEA0  FUN_14251fea0  (line unknown)
+
+undefined8 FUN_14251fea0(longlong param_1)
+
+{
+  undefined4 uVar1;
+  longlong lVar2;
+  
+  lVar2 = (longlong)*(int *)(param_1 + 4) * 0x10d0;
+  *(undefined4 *)(param_1 + 0x68) = *(undefined4 *)(&DAT_1493d26e4 + lVar2);
+  *(undefined4 *)(param_1 + 0x230) = 0;
+  uVar1 = *(undefined4 *)(&DAT_1493d2ca4 + lVar2);
+  *(undefined4 *)(param_1 + 0x27c) = uVar1;
+  return CONCAT71((uint7)(uint3)((uint)uVar1 >> 8),1);
+}
+
+
 // 14251FEE0  FUN_14251fee0  (line unknown)
 
 undefined8 FUN_14251fee0(longlong param_1,undefined8 param_2,int param_3)
@@ -21448,7 +21465,7 @@ undefined8 FUN_14252d600(longlong param_1,int param_2)
   if (iVar1 == param_2) {
     return 1;
   }
-  if ((code *)(&PTR_LAB_1433b4e08)[(longlong)iVar1 * 3] == (code *)0x0) {
+  if ((code *)(&PTR_FUN_1433b4e08)[(longlong)iVar1 * 3] == (code *)0x0) {
 LAB_14252d657:
     *(int *)(param_1 + 0x30) = param_2;
     if ((code *)(&PTR_FUN_1433b4e00)[(longlong)param_2 * 3] != (code *)0x0) {
@@ -21465,7 +21482,7 @@ LAB_14252d657:
     uVar3 = 1;
   }
   else {
-    cVar2 = (*(code *)(&PTR_LAB_1433b4e08)[(longlong)iVar1 * 3])(param_1,iVar1,param_2);
+    cVar2 = (*(code *)(&PTR_FUN_1433b4e08)[(longlong)iVar1 * 3])(param_1,iVar1,param_2);
     if (cVar2 != '\0') goto LAB_14252d657;
 LAB_14252d67d:
     uVar3 = 0;
@@ -122495,6 +122512,21 @@ void FUN_1425ef760(longlong param_1,undefined8 param_2,undefined8 param_3)
     return;
   }
   *(int *)(param_1 + 0x2c4) = DAT_147f13474 + 100;
+  return;
+}
+
+
+// 1425EF7B0  FUN_1425ef7b0  (line unknown)
+
+void FUN_1425ef7b0(longlong param_1)
+
+{
+                    /* WARNING: Could not recover jumptable at 0x0001425ef7cd. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (**(code **)(&DAT_142ee5738 +
+              (longlong)
+              *(int *)(*(longlong *)(param_1 + 600) + 0x24 +
+                      (ulonglong)*(uint *)(*(longlong *)(param_1 + 600) + 0x34) * 4) * 0x30))();
   return;
 }
 

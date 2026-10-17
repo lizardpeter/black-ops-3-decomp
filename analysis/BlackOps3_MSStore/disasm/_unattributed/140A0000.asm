@@ -182889,6 +182889,21 @@ LAB_140ab70c4:
   140AB7257  5B                   POP RBX
   140AB7258  C3                   RET
 
+; 140AB7260  FUN_140ab7260  (line unknown)
+  140AB7260  C20000               RET 0x0
+
+; 140AB7270  FUN_140ab7270  (line unknown)
+  140AB7270  C20000               RET 0x0
+
+; 140AB7280  FUN_140ab7280  (line unknown)
+  140AB7280  C20000               RET 0x0
+
+; 140AB7290  FUN_140ab7290  (line unknown)
+  140AB7290  C20000               RET 0x0
+
+; 140AB72A0  FUN_140ab72a0  (line unknown)
+  140AB72A0  C20000               RET 0x0
+
 ; 140AB72B0  FUN_140ab72b0  (line unknown)
   140AB72B0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   140AB72B5  4889742418           MOV qword ptr [RSP + 0x18],RSI

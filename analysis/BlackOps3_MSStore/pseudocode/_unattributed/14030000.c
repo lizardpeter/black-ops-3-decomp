@@ -28324,6 +28324,15 @@ void FUN_14033c810(void)
 }
 
 
+// 14033C840  FUN_14033c840  (line unknown)
+
+void FUN_14033c840(void)
+
+{
+  return;
+}
+
+
 // 14033C850  FUN_14033c850  (line unknown)
 
 void FUN_14033c850(undefined8 param_1)

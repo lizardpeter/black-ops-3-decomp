@@ -15678,6 +15678,9 @@ LAB_1414115cc:
   1414115D5  5F                   POP RDI
   1414115D6  C3                   RET
 
+; 1414115E0  FUN_1414115e0  (line unknown)
+  1414115E0  C20000               RET 0x0
+
 ; 1414115F0  FUN_1414115f0  (line unknown)
   1414115F0  85C9                 TEST ECX,ECX
   1414115F2  7504                 JNZ 0x1414115f8
@@ -149716,6 +149719,66 @@ LAB_1414970a3:
 LAB_1414970b8:
   1414970B8  C3                   RET
 
+; 1414970C0  FUN_1414970c0  (line unknown)
+  1414970C0  488B01               MOV RAX,qword ptr [RCX]
+  1414970C3  488B00               MOV RAX,qword ptr [RAX]
+  1414970C6  C3                   RET
+
+; 1414970D0  FUN_1414970d0  (line unknown)
+  1414970D0  488B01               MOV RAX,qword ptr [RCX]
+  1414970D3  488910               MOV qword ptr [RAX],RDX
+  1414970D6  C3                   RET
+
+; 1414970E0  FUN_1414970e0  (line unknown)
+  1414970E0  488B01               MOV RAX,qword ptr [RCX]
+  1414970E3  488B00               MOV RAX,qword ptr [RAX]
+  1414970E6  C3                   RET
+
+; 1414970F0  FUN_1414970f0  (line unknown)
+  1414970F0  488B01               MOV RAX,qword ptr [RCX]
+  1414970F3  488910               MOV qword ptr [RAX],RDX
+  1414970F6  C3                   RET
+
+; 141497100  FUN_141497100  (line unknown)
+  141497100  488B01               MOV RAX,qword ptr [RCX]
+  141497103  488B00               MOV RAX,qword ptr [RAX]
+  141497106  C3                   RET
+
+; 141497110  FUN_141497110  (line unknown)
+  141497110  488B01               MOV RAX,qword ptr [RCX]
+  141497113  488910               MOV qword ptr [RAX],RDX
+  141497116  C3                   RET
+
+; 141497120  FUN_141497120  (line unknown)
+  141497120  488B01               MOV RAX,qword ptr [RCX]
+  141497123  488B00               MOV RAX,qword ptr [RAX]
+  141497126  C3                   RET
+
+; 141497130  FUN_141497130  (line unknown)
+  141497130  488B01               MOV RAX,qword ptr [RCX]
+  141497133  488910               MOV qword ptr [RAX],RDX
+  141497136  C3                   RET
+
+; 141497140  FUN_141497140  (line unknown)
+  141497140  488B01               MOV RAX,qword ptr [RCX]
+  141497143  488B00               MOV RAX,qword ptr [RAX]
+  141497146  C3                   RET
+
+; 141497150  FUN_141497150  (line unknown)
+  141497150  488B01               MOV RAX,qword ptr [RCX]
+  141497153  488910               MOV qword ptr [RAX],RDX
+  141497156  C3                   RET
+
+; 141497160  FUN_141497160  (line unknown)
+  141497160  488B01               MOV RAX,qword ptr [RCX]
+  141497163  488B00               MOV RAX,qword ptr [RAX]
+  141497166  C3                   RET
+
+; 141497170  FUN_141497170  (line unknown)
+  141497170  488B01               MOV RAX,qword ptr [RCX]
+  141497173  488910               MOV qword ptr [RAX],RDX
+  141497176  C3                   RET
+
 ; 141497180  FUN_141497180  (line unknown)
   141497180  486301               MOVSXD RAX,dword ptr [RCX]
   141497183  488D1516D9A201       LEA RDX,[0x142ec4aa0]
@@ -149729,10 +149792,1317 @@ LAB_1414970b8:
   1414971AA  488B04C1             MOV RAX,qword ptr [RCX + RAX*0x8]
   1414971AE  C3                   RET
 
+; 1414971B0  FUN_1414971b0  (line unknown)
+  1414971B0  488B01               MOV RAX,qword ptr [RCX]
+  1414971B3  488B00               MOV RAX,qword ptr [RAX]
+  1414971B6  C3                   RET
+
+; 1414971C0  FUN_1414971c0  (line unknown)
+  1414971C0  488B01               MOV RAX,qword ptr [RCX]
+  1414971C3  488B00               MOV RAX,qword ptr [RAX]
+  1414971C6  C3                   RET
+
+; 1414971D0  FUN_1414971d0  (line unknown)
+  1414971D0  488B01               MOV RAX,qword ptr [RCX]
+  1414971D3  488B00               MOV RAX,qword ptr [RAX]
+  1414971D6  C3                   RET
+
+; 1414971E0  FUN_1414971e0  (line unknown)
+  1414971E0  488B01               MOV RAX,qword ptr [RCX]
+  1414971E3  488B00               MOV RAX,qword ptr [RAX]
+  1414971E6  C3                   RET
+
+; 1414971F0  FUN_1414971f0  (line unknown)
+  1414971F0  488B01               MOV RAX,qword ptr [RCX]
+  1414971F3  488B00               MOV RAX,qword ptr [RAX]
+  1414971F6  C3                   RET
+
+; 141497200  FUN_141497200  (line unknown)
+  141497200  488B01               MOV RAX,qword ptr [RCX]
+  141497203  488B00               MOV RAX,qword ptr [RAX]
+  141497206  C3                   RET
+
+; 141497210  FUN_141497210  (line unknown)
+  141497210  488B01               MOV RAX,qword ptr [RCX]
+  141497213  488B00               MOV RAX,qword ptr [RAX]
+  141497216  C3                   RET
+
+; 141497220  FUN_141497220  (line unknown)
+  141497220  488B01               MOV RAX,qword ptr [RCX]
+  141497223  488B00               MOV RAX,qword ptr [RAX]
+  141497226  C3                   RET
+
+; 141497230  FUN_141497230  (line unknown)
+  141497230  488B01               MOV RAX,qword ptr [RCX]
+  141497233  488B80F8000000       MOV RAX,qword ptr [RAX + 0xf8]
+  14149723A  C3                   RET
+
+; 141497240  FUN_141497240  (line unknown)
+  141497240  488B01               MOV RAX,qword ptr [RCX]
+  141497243  488B00               MOV RAX,qword ptr [RAX]
+  141497246  C3                   RET
+
+; 141497250  FUN_141497250  (line unknown)
+  141497250  488B01               MOV RAX,qword ptr [RCX]
+  141497253  488B00               MOV RAX,qword ptr [RAX]
+  141497256  C3                   RET
+
+; 141497260  FUN_141497260  (line unknown)
+  141497260  488B01               MOV RAX,qword ptr [RCX]
+  141497263  488B00               MOV RAX,qword ptr [RAX]
+  141497266  C3                   RET
+
+; 141497270  FUN_141497270  (line unknown)
+  141497270  488B01               MOV RAX,qword ptr [RCX]
+  141497273  488B00               MOV RAX,qword ptr [RAX]
+  141497276  C3                   RET
+
+; 141497280  FUN_141497280  (line unknown)
+  141497280  488B01               MOV RAX,qword ptr [RCX]
+  141497283  488B00               MOV RAX,qword ptr [RAX]
+  141497286  C3                   RET
+
+; 141497290  FUN_141497290  (line unknown)
+  141497290  488B01               MOV RAX,qword ptr [RCX]
+  141497293  488B00               MOV RAX,qword ptr [RAX]
+  141497296  C3                   RET
+
+; 1414972A0  FUN_1414972a0  (line unknown)
+  1414972A0  488B01               MOV RAX,qword ptr [RCX]
+  1414972A3  488B00               MOV RAX,qword ptr [RAX]
+  1414972A6  C3                   RET
+
+; 1414972B0  FUN_1414972b0  (line unknown)
+  1414972B0  488B01               MOV RAX,qword ptr [RCX]
+  1414972B3  488B00               MOV RAX,qword ptr [RAX]
+  1414972B6  C3                   RET
+
+; 1414972C0  FUN_1414972c0  (line unknown)
+  1414972C0  488B01               MOV RAX,qword ptr [RCX]
+  1414972C3  488B00               MOV RAX,qword ptr [RAX]
+  1414972C6  C3                   RET
+
+; 1414972D0  FUN_1414972d0  (line unknown)
+  1414972D0  488B01               MOV RAX,qword ptr [RCX]
+  1414972D3  488B00               MOV RAX,qword ptr [RAX]
+  1414972D6  C3                   RET
+
+; 1414972E0  FUN_1414972e0  (line unknown)
+  1414972E0  488B01               MOV RAX,qword ptr [RCX]
+  1414972E3  488B4008             MOV RAX,qword ptr [RAX + 0x8]
+  1414972E7  C3                   RET
+
+; 1414972F0  FUN_1414972f0  (line unknown)
+  1414972F0  488B01               MOV RAX,qword ptr [RCX]
+  1414972F3  488B00               MOV RAX,qword ptr [RAX]
+  1414972F6  C3                   RET
+
+; 141497300  FUN_141497300  (line unknown)
+  141497300  488B01               MOV RAX,qword ptr [RCX]
+  141497303  488B00               MOV RAX,qword ptr [RAX]
+  141497306  C3                   RET
+
+; 141497310  FUN_141497310  (line unknown)
+  141497310  488B01               MOV RAX,qword ptr [RCX]
+  141497313  488B00               MOV RAX,qword ptr [RAX]
+  141497316  C3                   RET
+
+; 141497320  FUN_141497320  (line unknown)
+  141497320  488B01               MOV RAX,qword ptr [RCX]
+  141497323  488B00               MOV RAX,qword ptr [RAX]
+  141497326  C3                   RET
+
+; 141497330  FUN_141497330  (line unknown)
+  141497330  488B01               MOV RAX,qword ptr [RCX]
+  141497333  488B00               MOV RAX,qword ptr [RAX]
+  141497336  C3                   RET
+
+; 141497340  FUN_141497340  (line unknown)
+  141497340  488B01               MOV RAX,qword ptr [RCX]
+  141497343  488B00               MOV RAX,qword ptr [RAX]
+  141497346  C3                   RET
+
+; 141497350  FUN_141497350  (line unknown)
+  141497350  488B01               MOV RAX,qword ptr [RCX]
+  141497353  488B00               MOV RAX,qword ptr [RAX]
+  141497356  C3                   RET
+
+; 141497360  FUN_141497360  (line unknown)
+  141497360  488B01               MOV RAX,qword ptr [RCX]
+  141497363  488B00               MOV RAX,qword ptr [RAX]
+  141497366  C3                   RET
+
+; 141497370  FUN_141497370  (line unknown)
+  141497370  488B01               MOV RAX,qword ptr [RCX]
+  141497373  488B00               MOV RAX,qword ptr [RAX]
+  141497376  C3                   RET
+
+; 141497380  FUN_141497380  (line unknown)
+  141497380  488B01               MOV RAX,qword ptr [RCX]
+  141497383  488B00               MOV RAX,qword ptr [RAX]
+  141497386  C3                   RET
+
+; 141497390  FUN_141497390  (line unknown)
+  141497390  488B01               MOV RAX,qword ptr [RCX]
+  141497393  488B00               MOV RAX,qword ptr [RAX]
+  141497396  C3                   RET
+
+; 1414973A0  FUN_1414973a0  (line unknown)
+  1414973A0  488B01               MOV RAX,qword ptr [RCX]
+  1414973A3  488B00               MOV RAX,qword ptr [RAX]
+  1414973A6  C3                   RET
+
+; 1414973B0  FUN_1414973b0  (line unknown)
+  1414973B0  488B01               MOV RAX,qword ptr [RCX]
+  1414973B3  488B00               MOV RAX,qword ptr [RAX]
+  1414973B6  C3                   RET
+
+; 1414973C0  FUN_1414973c0  (line unknown)
+  1414973C0  488B01               MOV RAX,qword ptr [RCX]
+  1414973C3  488B00               MOV RAX,qword ptr [RAX]
+  1414973C6  C3                   RET
+
+; 1414973D0  FUN_1414973d0  (line unknown)
+  1414973D0  488B01               MOV RAX,qword ptr [RCX]
+  1414973D3  488B00               MOV RAX,qword ptr [RAX]
+  1414973D6  C3                   RET
+
+; 1414973E0  FUN_1414973e0  (line unknown)
+  1414973E0  488B01               MOV RAX,qword ptr [RCX]
+  1414973E3  488B00               MOV RAX,qword ptr [RAX]
+  1414973E6  C3                   RET
+
+; 1414973F0  FUN_1414973f0  (line unknown)
+  1414973F0  488B01               MOV RAX,qword ptr [RCX]
+  1414973F3  488B00               MOV RAX,qword ptr [RAX]
+  1414973F6  C3                   RET
+
 ; 141497400  FUN_141497400  (line unknown)
   141497400  488B01               MOV RAX,qword ptr [RCX]
   141497403  488B00               MOV RAX,qword ptr [RAX]
   141497406  C3                   RET
+
+; 141497410  FUN_141497410  (line unknown)
+  141497410  488B01               MOV RAX,qword ptr [RCX]
+  141497413  488B00               MOV RAX,qword ptr [RAX]
+  141497416  C3                   RET
+
+; 141497420  FUN_141497420  (line unknown)
+  141497420  488B01               MOV RAX,qword ptr [RCX]
+  141497423  488B00               MOV RAX,qword ptr [RAX]
+  141497426  C3                   RET
+
+; 141497430  FUN_141497430  (line unknown)
+  141497430  488B01               MOV RAX,qword ptr [RCX]
+  141497433  488B00               MOV RAX,qword ptr [RAX]
+  141497436  C3                   RET
+
+; 141497440  FUN_141497440  (line unknown)
+  141497440  488B01               MOV RAX,qword ptr [RCX]
+  141497443  488B00               MOV RAX,qword ptr [RAX]
+  141497446  C3                   RET
+
+; 141497450  FUN_141497450  (line unknown)
+  141497450  488B01               MOV RAX,qword ptr [RCX]
+  141497453  488B00               MOV RAX,qword ptr [RAX]
+  141497456  C3                   RET
+
+; 141497460  FUN_141497460  (line unknown)
+  141497460  488B01               MOV RAX,qword ptr [RCX]
+  141497463  488B00               MOV RAX,qword ptr [RAX]
+  141497466  C3                   RET
+
+; 141497470  FUN_141497470  (line unknown)
+  141497470  488B01               MOV RAX,qword ptr [RCX]
+  141497473  488B00               MOV RAX,qword ptr [RAX]
+  141497476  C3                   RET
+
+; 141497480  FUN_141497480  (line unknown)
+  141497480  488B01               MOV RAX,qword ptr [RCX]
+  141497483  488B00               MOV RAX,qword ptr [RAX]
+  141497486  C3                   RET
+
+; 141497490  FUN_141497490  (line unknown)
+  141497490  488B01               MOV RAX,qword ptr [RCX]
+  141497493  488B00               MOV RAX,qword ptr [RAX]
+  141497496  C3                   RET
+
+; 1414974A0  FUN_1414974a0  (line unknown)
+  1414974A0  488B01               MOV RAX,qword ptr [RCX]
+  1414974A3  488B00               MOV RAX,qword ptr [RAX]
+  1414974A6  C3                   RET
+
+; 1414974B0  FUN_1414974b0  (line unknown)
+  1414974B0  488B01               MOV RAX,qword ptr [RCX]
+  1414974B3  488B00               MOV RAX,qword ptr [RAX]
+  1414974B6  C3                   RET
+
+; 1414974C0  FUN_1414974c0  (line unknown)
+  1414974C0  488B01               MOV RAX,qword ptr [RCX]
+  1414974C3  488B00               MOV RAX,qword ptr [RAX]
+  1414974C6  C3                   RET
+
+; 1414974D0  FUN_1414974d0  (line unknown)
+  1414974D0  488B01               MOV RAX,qword ptr [RCX]
+  1414974D3  488B00               MOV RAX,qword ptr [RAX]
+  1414974D6  C3                   RET
+
+; 1414974E0  FUN_1414974e0  (line unknown)
+  1414974E0  488B01               MOV RAX,qword ptr [RCX]
+  1414974E3  488B00               MOV RAX,qword ptr [RAX]
+  1414974E6  C3                   RET
+
+; 1414974F0  FUN_1414974f0  (line unknown)
+  1414974F0  488B01               MOV RAX,qword ptr [RCX]
+  1414974F3  488B00               MOV RAX,qword ptr [RAX]
+  1414974F6  C3                   RET
+
+; 141497500  FUN_141497500  (line unknown)
+  141497500  488B01               MOV RAX,qword ptr [RCX]
+  141497503  488B00               MOV RAX,qword ptr [RAX]
+  141497506  C3                   RET
+
+; 141497510  FUN_141497510  (line unknown)
+  141497510  488B01               MOV RAX,qword ptr [RCX]
+  141497513  488B00               MOV RAX,qword ptr [RAX]
+  141497516  C3                   RET
+
+; 141497520  FUN_141497520  (line unknown)
+  141497520  488B01               MOV RAX,qword ptr [RCX]
+  141497523  488B00               MOV RAX,qword ptr [RAX]
+  141497526  C3                   RET
+
+; 141497530  FUN_141497530  (line unknown)
+  141497530  488B01               MOV RAX,qword ptr [RCX]
+  141497533  488B00               MOV RAX,qword ptr [RAX]
+  141497536  C3                   RET
+
+; 141497540  FUN_141497540  (line unknown)
+  141497540  488B01               MOV RAX,qword ptr [RCX]
+  141497543  488B00               MOV RAX,qword ptr [RAX]
+  141497546  C3                   RET
+
+; 141497550  FUN_141497550  (line unknown)
+  141497550  488B01               MOV RAX,qword ptr [RCX]
+  141497553  488B00               MOV RAX,qword ptr [RAX]
+  141497556  C3                   RET
+
+; 141497560  FUN_141497560  (line unknown)
+  141497560  488B01               MOV RAX,qword ptr [RCX]
+  141497563  488B00               MOV RAX,qword ptr [RAX]
+  141497566  C3                   RET
+
+; 141497570  FUN_141497570  (line unknown)
+  141497570  488B01               MOV RAX,qword ptr [RCX]
+  141497573  488B00               MOV RAX,qword ptr [RAX]
+  141497576  C3                   RET
+
+; 141497580  FUN_141497580  (line unknown)
+  141497580  488B01               MOV RAX,qword ptr [RCX]
+  141497583  488B00               MOV RAX,qword ptr [RAX]
+  141497586  C3                   RET
+
+; 141497590  FUN_141497590  (line unknown)
+  141497590  488B01               MOV RAX,qword ptr [RCX]
+  141497593  488B00               MOV RAX,qword ptr [RAX]
+  141497596  C3                   RET
+
+; 1414975A0  FUN_1414975a0  (line unknown)
+  1414975A0  488B01               MOV RAX,qword ptr [RCX]
+  1414975A3  488B00               MOV RAX,qword ptr [RAX]
+  1414975A6  C3                   RET
+
+; 1414975B0  FUN_1414975b0  (line unknown)
+  1414975B0  488B01               MOV RAX,qword ptr [RCX]
+  1414975B3  488B00               MOV RAX,qword ptr [RAX]
+  1414975B6  C3                   RET
+
+; 1414975C0  FUN_1414975c0  (line unknown)
+  1414975C0  488B01               MOV RAX,qword ptr [RCX]
+  1414975C3  488B00               MOV RAX,qword ptr [RAX]
+  1414975C6  C3                   RET
+
+; 1414975D0  FUN_1414975d0  (line unknown)
+  1414975D0  488B01               MOV RAX,qword ptr [RCX]
+  1414975D3  488B00               MOV RAX,qword ptr [RAX]
+  1414975D6  C3                   RET
+
+; 1414975E0  FUN_1414975e0  (line unknown)
+  1414975E0  488B01               MOV RAX,qword ptr [RCX]
+  1414975E3  488B00               MOV RAX,qword ptr [RAX]
+  1414975E6  C3                   RET
+
+; 1414975F0  FUN_1414975f0  (line unknown)
+  1414975F0  488B01               MOV RAX,qword ptr [RCX]
+  1414975F3  488B00               MOV RAX,qword ptr [RAX]
+  1414975F6  C3                   RET
+
+; 141497600  FUN_141497600  (line unknown)
+  141497600  488B01               MOV RAX,qword ptr [RCX]
+  141497603  488B00               MOV RAX,qword ptr [RAX]
+  141497606  C3                   RET
+
+; 141497610  FUN_141497610  (line unknown)
+  141497610  488B01               MOV RAX,qword ptr [RCX]
+  141497613  488B00               MOV RAX,qword ptr [RAX]
+  141497616  C3                   RET
+
+; 141497620  FUN_141497620  (line unknown)
+  141497620  488B01               MOV RAX,qword ptr [RCX]
+  141497623  488B00               MOV RAX,qword ptr [RAX]
+  141497626  C3                   RET
+
+; 141497630  FUN_141497630  (line unknown)
+  141497630  488B01               MOV RAX,qword ptr [RCX]
+  141497633  488B00               MOV RAX,qword ptr [RAX]
+  141497636  C3                   RET
+
+; 141497640  FUN_141497640  (line unknown)
+  141497640  488B01               MOV RAX,qword ptr [RCX]
+  141497643  488B00               MOV RAX,qword ptr [RAX]
+  141497646  C3                   RET
+
+; 141497650  FUN_141497650  (line unknown)
+  141497650  488B01               MOV RAX,qword ptr [RCX]
+  141497653  488B00               MOV RAX,qword ptr [RAX]
+  141497656  C3                   RET
+
+; 141497660  FUN_141497660  (line unknown)
+  141497660  488B01               MOV RAX,qword ptr [RCX]
+  141497663  488B00               MOV RAX,qword ptr [RAX]
+  141497666  C3                   RET
+
+; 141497670  FUN_141497670  (line unknown)
+  141497670  488B01               MOV RAX,qword ptr [RCX]
+  141497673  488B00               MOV RAX,qword ptr [RAX]
+  141497676  C3                   RET
+
+; 141497680  FUN_141497680  (line unknown)
+  141497680  488B01               MOV RAX,qword ptr [RCX]
+  141497683  488B80B0010000       MOV RAX,qword ptr [RAX + 0x1b0]
+  14149768A  C3                   RET
+
+; 141497690  FUN_141497690  (line unknown)
+  141497690  488B01               MOV RAX,qword ptr [RCX]
+  141497693  488B00               MOV RAX,qword ptr [RAX]
+  141497696  C3                   RET
+
+; 1414976A0  FUN_1414976a0  (line unknown)
+  1414976A0  488B01               MOV RAX,qword ptr [RCX]
+  1414976A3  488B00               MOV RAX,qword ptr [RAX]
+  1414976A6  C3                   RET
+
+; 1414976B0  FUN_1414976b0  (line unknown)
+  1414976B0  488B01               MOV RAX,qword ptr [RCX]
+  1414976B3  488B00               MOV RAX,qword ptr [RAX]
+  1414976B6  C3                   RET
+
+; 1414976C0  FUN_1414976c0  (line unknown)
+  1414976C0  488B01               MOV RAX,qword ptr [RCX]
+  1414976C3  488B00               MOV RAX,qword ptr [RAX]
+  1414976C6  C3                   RET
+
+; 1414976D0  FUN_1414976d0  (line unknown)
+  1414976D0  488B01               MOV RAX,qword ptr [RCX]
+  1414976D3  488B00               MOV RAX,qword ptr [RAX]
+  1414976D6  C3                   RET
+
+; 1414976E0  FUN_1414976e0  (line unknown)
+  1414976E0  488B01               MOV RAX,qword ptr [RCX]
+  1414976E3  488B00               MOV RAX,qword ptr [RAX]
+  1414976E6  C3                   RET
+
+; 1414976F0  FUN_1414976f0  (line unknown)
+  1414976F0  488B01               MOV RAX,qword ptr [RCX]
+  1414976F3  488B00               MOV RAX,qword ptr [RAX]
+  1414976F6  C3                   RET
+
+; 141497700  FUN_141497700  (line unknown)
+  141497700  488B01               MOV RAX,qword ptr [RCX]
+  141497703  488B00               MOV RAX,qword ptr [RAX]
+  141497706  C3                   RET
+
+; 141497710  FUN_141497710  (line unknown)
+  141497710  488B01               MOV RAX,qword ptr [RCX]
+  141497713  488B00               MOV RAX,qword ptr [RAX]
+  141497716  C3                   RET
+
+; 141497720  FUN_141497720  (line unknown)
+  141497720  488B01               MOV RAX,qword ptr [RCX]
+  141497723  488B00               MOV RAX,qword ptr [RAX]
+  141497726  C3                   RET
+
+; 141497730  FUN_141497730  (line unknown)
+  141497730  488B01               MOV RAX,qword ptr [RCX]
+  141497733  488B00               MOV RAX,qword ptr [RAX]
+  141497736  C3                   RET
+
+; 141497740  FUN_141497740  (line unknown)
+  141497740  488B01               MOV RAX,qword ptr [RCX]
+  141497743  488B00               MOV RAX,qword ptr [RAX]
+  141497746  C3                   RET
+
+; 141497750  FUN_141497750  (line unknown)
+  141497750  488B01               MOV RAX,qword ptr [RCX]
+  141497753  488B00               MOV RAX,qword ptr [RAX]
+  141497756  C3                   RET
+
+; 141497760  FUN_141497760  (line unknown)
+  141497760  488B01               MOV RAX,qword ptr [RCX]
+  141497763  488B00               MOV RAX,qword ptr [RAX]
+  141497766  C3                   RET
+
+; 141497770  FUN_141497770  (line unknown)
+  141497770  488B01               MOV RAX,qword ptr [RCX]
+  141497773  488910               MOV qword ptr [RAX],RDX
+  141497776  C3                   RET
+
+; 141497780  FUN_141497780  (line unknown)
+  141497780  488B01               MOV RAX,qword ptr [RCX]
+  141497783  488910               MOV qword ptr [RAX],RDX
+  141497786  C3                   RET
+
+; 141497790  FUN_141497790  (line unknown)
+  141497790  488B01               MOV RAX,qword ptr [RCX]
+  141497793  488910               MOV qword ptr [RAX],RDX
+  141497796  C3                   RET
+
+; 1414977A0  FUN_1414977a0  (line unknown)
+  1414977A0  488B01               MOV RAX,qword ptr [RCX]
+  1414977A3  488910               MOV qword ptr [RAX],RDX
+  1414977A6  C3                   RET
+
+; 1414977B0  FUN_1414977b0  (line unknown)
+  1414977B0  488B01               MOV RAX,qword ptr [RCX]
+  1414977B3  488910               MOV qword ptr [RAX],RDX
+  1414977B6  C3                   RET
+
+; 1414977C0  FUN_1414977c0  (line unknown)
+  1414977C0  488B01               MOV RAX,qword ptr [RCX]
+  1414977C3  488910               MOV qword ptr [RAX],RDX
+  1414977C6  C3                   RET
+
+; 1414977D0  FUN_1414977d0  (line unknown)
+  1414977D0  488B01               MOV RAX,qword ptr [RCX]
+  1414977D3  488910               MOV qword ptr [RAX],RDX
+  1414977D6  C3                   RET
+
+; 1414977E0  FUN_1414977e0  (line unknown)
+  1414977E0  488B01               MOV RAX,qword ptr [RCX]
+  1414977E3  488910               MOV qword ptr [RAX],RDX
+  1414977E6  C3                   RET
+
+; 1414977F0  FUN_1414977f0  (line unknown)
+  1414977F0  488B01               MOV RAX,qword ptr [RCX]
+  1414977F3  488990F8000000       MOV qword ptr [RAX + 0xf8],RDX
+  1414977FA  C3                   RET
+
+; 141497800  FUN_141497800  (line unknown)
+  141497800  488B01               MOV RAX,qword ptr [RCX]
+  141497803  488910               MOV qword ptr [RAX],RDX
+  141497806  C3                   RET
+
+; 141497810  FUN_141497810  (line unknown)
+  141497810  488B01               MOV RAX,qword ptr [RCX]
+  141497813  488910               MOV qword ptr [RAX],RDX
+  141497816  C3                   RET
+
+; 141497820  FUN_141497820  (line unknown)
+  141497820  488B01               MOV RAX,qword ptr [RCX]
+  141497823  488910               MOV qword ptr [RAX],RDX
+  141497826  C3                   RET
+
+; 141497830  FUN_141497830  (line unknown)
+  141497830  488B01               MOV RAX,qword ptr [RCX]
+  141497833  488910               MOV qword ptr [RAX],RDX
+  141497836  C3                   RET
+
+; 141497840  FUN_141497840  (line unknown)
+  141497840  488B01               MOV RAX,qword ptr [RCX]
+  141497843  488910               MOV qword ptr [RAX],RDX
+  141497846  C3                   RET
+
+; 141497850  FUN_141497850  (line unknown)
+  141497850  488B01               MOV RAX,qword ptr [RCX]
+  141497853  488910               MOV qword ptr [RAX],RDX
+  141497856  C3                   RET
+
+; 141497860  FUN_141497860  (line unknown)
+  141497860  488B01               MOV RAX,qword ptr [RCX]
+  141497863  488910               MOV qword ptr [RAX],RDX
+  141497866  C3                   RET
+
+; 141497870  FUN_141497870  (line unknown)
+  141497870  488B01               MOV RAX,qword ptr [RCX]
+  141497873  488910               MOV qword ptr [RAX],RDX
+  141497876  C3                   RET
+
+; 141497880  FUN_141497880  (line unknown)
+  141497880  488B01               MOV RAX,qword ptr [RCX]
+  141497883  488910               MOV qword ptr [RAX],RDX
+  141497886  C3                   RET
+
+; 141497890  FUN_141497890  (line unknown)
+  141497890  488B01               MOV RAX,qword ptr [RCX]
+  141497893  488910               MOV qword ptr [RAX],RDX
+  141497896  C3                   RET
+
+; 1414978A0  FUN_1414978a0  (line unknown)
+  1414978A0  488B01               MOV RAX,qword ptr [RCX]
+  1414978A3  48895008             MOV qword ptr [RAX + 0x8],RDX
+  1414978A7  C3                   RET
+
+; 1414978B0  FUN_1414978b0  (line unknown)
+  1414978B0  488B01               MOV RAX,qword ptr [RCX]
+  1414978B3  488910               MOV qword ptr [RAX],RDX
+  1414978B6  C3                   RET
+
+; 1414978C0  FUN_1414978c0  (line unknown)
+  1414978C0  488B01               MOV RAX,qword ptr [RCX]
+  1414978C3  488910               MOV qword ptr [RAX],RDX
+  1414978C6  C3                   RET
+
+; 1414978D0  FUN_1414978d0  (line unknown)
+  1414978D0  488B01               MOV RAX,qword ptr [RCX]
+  1414978D3  488910               MOV qword ptr [RAX],RDX
+  1414978D6  C3                   RET
+
+; 1414978E0  FUN_1414978e0  (line unknown)
+  1414978E0  488B01               MOV RAX,qword ptr [RCX]
+  1414978E3  488910               MOV qword ptr [RAX],RDX
+  1414978E6  C3                   RET
+
+; 1414978F0  FUN_1414978f0  (line unknown)
+  1414978F0  488B01               MOV RAX,qword ptr [RCX]
+  1414978F3  488910               MOV qword ptr [RAX],RDX
+  1414978F6  C3                   RET
+
+; 141497900  FUN_141497900  (line unknown)
+  141497900  488B01               MOV RAX,qword ptr [RCX]
+  141497903  488910               MOV qword ptr [RAX],RDX
+  141497906  C3                   RET
+
+; 141497910  FUN_141497910  (line unknown)
+  141497910  488B01               MOV RAX,qword ptr [RCX]
+  141497913  488910               MOV qword ptr [RAX],RDX
+  141497916  C3                   RET
+
+; 141497920  FUN_141497920  (line unknown)
+  141497920  488B01               MOV RAX,qword ptr [RCX]
+  141497923  488910               MOV qword ptr [RAX],RDX
+  141497926  C3                   RET
+
+; 141497930  FUN_141497930  (line unknown)
+  141497930  488B01               MOV RAX,qword ptr [RCX]
+  141497933  488910               MOV qword ptr [RAX],RDX
+  141497936  C3                   RET
+
+; 141497940  FUN_141497940  (line unknown)
+  141497940  488B01               MOV RAX,qword ptr [RCX]
+  141497943  488910               MOV qword ptr [RAX],RDX
+  141497946  C3                   RET
+
+; 141497950  FUN_141497950  (line unknown)
+  141497950  488B01               MOV RAX,qword ptr [RCX]
+  141497953  488910               MOV qword ptr [RAX],RDX
+  141497956  C3                   RET
+
+; 141497960  FUN_141497960  (line unknown)
+  141497960  488B01               MOV RAX,qword ptr [RCX]
+  141497963  488910               MOV qword ptr [RAX],RDX
+  141497966  C3                   RET
+
+; 141497970  FUN_141497970  (line unknown)
+  141497970  488B01               MOV RAX,qword ptr [RCX]
+  141497973  488910               MOV qword ptr [RAX],RDX
+  141497976  C3                   RET
+
+; 141497980  FUN_141497980  (line unknown)
+  141497980  488B01               MOV RAX,qword ptr [RCX]
+  141497983  488910               MOV qword ptr [RAX],RDX
+  141497986  C3                   RET
+
+; 141497990  FUN_141497990  (line unknown)
+  141497990  488B01               MOV RAX,qword ptr [RCX]
+  141497993  488910               MOV qword ptr [RAX],RDX
+  141497996  C3                   RET
+
+; 1414979A0  FUN_1414979a0  (line unknown)
+  1414979A0  488B01               MOV RAX,qword ptr [RCX]
+  1414979A3  488910               MOV qword ptr [RAX],RDX
+  1414979A6  C3                   RET
+
+; 1414979B0  FUN_1414979b0  (line unknown)
+  1414979B0  488B01               MOV RAX,qword ptr [RCX]
+  1414979B3  488910               MOV qword ptr [RAX],RDX
+  1414979B6  C3                   RET
+
+; 1414979C0  FUN_1414979c0  (line unknown)
+  1414979C0  488B01               MOV RAX,qword ptr [RCX]
+  1414979C3  488910               MOV qword ptr [RAX],RDX
+  1414979C6  C3                   RET
+
+; 1414979D0  FUN_1414979d0  (line unknown)
+  1414979D0  488B01               MOV RAX,qword ptr [RCX]
+  1414979D3  488910               MOV qword ptr [RAX],RDX
+  1414979D6  C3                   RET
+
+; 1414979E0  FUN_1414979e0  (line unknown)
+  1414979E0  488B01               MOV RAX,qword ptr [RCX]
+  1414979E3  488910               MOV qword ptr [RAX],RDX
+  1414979E6  C3                   RET
+
+; 1414979F0  FUN_1414979f0  (line unknown)
+  1414979F0  488B01               MOV RAX,qword ptr [RCX]
+  1414979F3  488910               MOV qword ptr [RAX],RDX
+  1414979F6  C3                   RET
+
+; 141497A00  FUN_141497a00  (line unknown)
+  141497A00  488B01               MOV RAX,qword ptr [RCX]
+  141497A03  488910               MOV qword ptr [RAX],RDX
+  141497A06  C3                   RET
+
+; 141497A10  FUN_141497a10  (line unknown)
+  141497A10  488B01               MOV RAX,qword ptr [RCX]
+  141497A13  488910               MOV qword ptr [RAX],RDX
+  141497A16  C3                   RET
+
+; 141497A20  FUN_141497a20  (line unknown)
+  141497A20  488B01               MOV RAX,qword ptr [RCX]
+  141497A23  488910               MOV qword ptr [RAX],RDX
+  141497A26  C3                   RET
+
+; 141497A30  FUN_141497a30  (line unknown)
+  141497A30  488B01               MOV RAX,qword ptr [RCX]
+  141497A33  488910               MOV qword ptr [RAX],RDX
+  141497A36  C3                   RET
+
+; 141497A40  FUN_141497a40  (line unknown)
+  141497A40  488B01               MOV RAX,qword ptr [RCX]
+  141497A43  488910               MOV qword ptr [RAX],RDX
+  141497A46  C3                   RET
+
+; 141497A50  FUN_141497a50  (line unknown)
+  141497A50  488B01               MOV RAX,qword ptr [RCX]
+  141497A53  488910               MOV qword ptr [RAX],RDX
+  141497A56  C3                   RET
+
+; 141497A60  FUN_141497a60  (line unknown)
+  141497A60  488B01               MOV RAX,qword ptr [RCX]
+  141497A63  488910               MOV qword ptr [RAX],RDX
+  141497A66  C3                   RET
+
+; 141497A70  FUN_141497a70  (line unknown)
+  141497A70  488B01               MOV RAX,qword ptr [RCX]
+  141497A73  488910               MOV qword ptr [RAX],RDX
+  141497A76  C3                   RET
+
+; 141497A80  FUN_141497a80  (line unknown)
+  141497A80  488B01               MOV RAX,qword ptr [RCX]
+  141497A83  488910               MOV qword ptr [RAX],RDX
+  141497A86  C3                   RET
+
+; 141497A90  FUN_141497a90  (line unknown)
+  141497A90  488B01               MOV RAX,qword ptr [RCX]
+  141497A93  488910               MOV qword ptr [RAX],RDX
+  141497A96  C3                   RET
+
+; 141497AA0  FUN_141497aa0  (line unknown)
+  141497AA0  488B01               MOV RAX,qword ptr [RCX]
+  141497AA3  488910               MOV qword ptr [RAX],RDX
+  141497AA6  C3                   RET
+
+; 141497AB0  FUN_141497ab0  (line unknown)
+  141497AB0  488B01               MOV RAX,qword ptr [RCX]
+  141497AB3  488910               MOV qword ptr [RAX],RDX
+  141497AB6  C3                   RET
+
+; 141497AC0  FUN_141497ac0  (line unknown)
+  141497AC0  488B01               MOV RAX,qword ptr [RCX]
+  141497AC3  488910               MOV qword ptr [RAX],RDX
+  141497AC6  C3                   RET
+
+; 141497AD0  FUN_141497ad0  (line unknown)
+  141497AD0  488B01               MOV RAX,qword ptr [RCX]
+  141497AD3  488910               MOV qword ptr [RAX],RDX
+  141497AD6  C3                   RET
+
+; 141497AE0  FUN_141497ae0  (line unknown)
+  141497AE0  488B01               MOV RAX,qword ptr [RCX]
+  141497AE3  488910               MOV qword ptr [RAX],RDX
+  141497AE6  C3                   RET
+
+; 141497AF0  FUN_141497af0  (line unknown)
+  141497AF0  488B01               MOV RAX,qword ptr [RCX]
+  141497AF3  488910               MOV qword ptr [RAX],RDX
+  141497AF6  C3                   RET
+
+; 141497B00  FUN_141497b00  (line unknown)
+  141497B00  488B01               MOV RAX,qword ptr [RCX]
+  141497B03  488910               MOV qword ptr [RAX],RDX
+  141497B06  C3                   RET
+
+; 141497B10  FUN_141497b10  (line unknown)
+  141497B10  488B01               MOV RAX,qword ptr [RCX]
+  141497B13  488910               MOV qword ptr [RAX],RDX
+  141497B16  C3                   RET
+
+; 141497B20  FUN_141497b20  (line unknown)
+  141497B20  488B01               MOV RAX,qword ptr [RCX]
+  141497B23  488910               MOV qword ptr [RAX],RDX
+  141497B26  C3                   RET
+
+; 141497B30  FUN_141497b30  (line unknown)
+  141497B30  488B01               MOV RAX,qword ptr [RCX]
+  141497B33  488910               MOV qword ptr [RAX],RDX
+  141497B36  C3                   RET
+
+; 141497B40  FUN_141497b40  (line unknown)
+  141497B40  488B01               MOV RAX,qword ptr [RCX]
+  141497B43  488910               MOV qword ptr [RAX],RDX
+  141497B46  C3                   RET
+
+; 141497B50  FUN_141497b50  (line unknown)
+  141497B50  488B01               MOV RAX,qword ptr [RCX]
+  141497B53  488910               MOV qword ptr [RAX],RDX
+  141497B56  C3                   RET
+
+; 141497B60  FUN_141497b60  (line unknown)
+  141497B60  488B01               MOV RAX,qword ptr [RCX]
+  141497B63  488910               MOV qword ptr [RAX],RDX
+  141497B66  C3                   RET
+
+; 141497B70  FUN_141497b70  (line unknown)
+  141497B70  488B01               MOV RAX,qword ptr [RCX]
+  141497B73  488910               MOV qword ptr [RAX],RDX
+  141497B76  C3                   RET
+
+; 141497B80  FUN_141497b80  (line unknown)
+  141497B80  488B01               MOV RAX,qword ptr [RCX]
+  141497B83  488910               MOV qword ptr [RAX],RDX
+  141497B86  C3                   RET
+
+; 141497B90  FUN_141497b90  (line unknown)
+  141497B90  488B01               MOV RAX,qword ptr [RCX]
+  141497B93  488910               MOV qword ptr [RAX],RDX
+  141497B96  C3                   RET
+
+; 141497BA0  FUN_141497ba0  (line unknown)
+  141497BA0  488B01               MOV RAX,qword ptr [RCX]
+  141497BA3  488910               MOV qword ptr [RAX],RDX
+  141497BA6  C3                   RET
+
+; 141497BB0  FUN_141497bb0  (line unknown)
+  141497BB0  488B01               MOV RAX,qword ptr [RCX]
+  141497BB3  488910               MOV qword ptr [RAX],RDX
+  141497BB6  C3                   RET
+
+; 141497BC0  FUN_141497bc0  (line unknown)
+  141497BC0  488B01               MOV RAX,qword ptr [RCX]
+  141497BC3  488910               MOV qword ptr [RAX],RDX
+  141497BC6  C3                   RET
+
+; 141497BD0  FUN_141497bd0  (line unknown)
+  141497BD0  488B01               MOV RAX,qword ptr [RCX]
+  141497BD3  488910               MOV qword ptr [RAX],RDX
+  141497BD6  C3                   RET
+
+; 141497BE0  FUN_141497be0  (line unknown)
+  141497BE0  488B01               MOV RAX,qword ptr [RCX]
+  141497BE3  488910               MOV qword ptr [RAX],RDX
+  141497BE6  C3                   RET
+
+; 141497BF0  FUN_141497bf0  (line unknown)
+  141497BF0  488B01               MOV RAX,qword ptr [RCX]
+  141497BF3  488910               MOV qword ptr [RAX],RDX
+  141497BF6  C3                   RET
+
+; 141497C00  FUN_141497c00  (line unknown)
+  141497C00  488B01               MOV RAX,qword ptr [RCX]
+  141497C03  488910               MOV qword ptr [RAX],RDX
+  141497C06  C3                   RET
+
+; 141497C10  FUN_141497c10  (line unknown)
+  141497C10  488B01               MOV RAX,qword ptr [RCX]
+  141497C13  488910               MOV qword ptr [RAX],RDX
+  141497C16  C3                   RET
+
+; 141497C20  FUN_141497c20  (line unknown)
+  141497C20  488B01               MOV RAX,qword ptr [RCX]
+  141497C23  488910               MOV qword ptr [RAX],RDX
+  141497C26  C3                   RET
+
+; 141497C30  FUN_141497c30  (line unknown)
+  141497C30  488B01               MOV RAX,qword ptr [RCX]
+  141497C33  488910               MOV qword ptr [RAX],RDX
+  141497C36  C3                   RET
+
+; 141497C40  FUN_141497c40  (line unknown)
+  141497C40  488B01               MOV RAX,qword ptr [RCX]
+  141497C43  488990B0010000       MOV qword ptr [RAX + 0x1b0],RDX
+  141497C4A  C3                   RET
+
+; 141497C50  FUN_141497c50  (line unknown)
+  141497C50  488B01               MOV RAX,qword ptr [RCX]
+  141497C53  488910               MOV qword ptr [RAX],RDX
+  141497C56  C3                   RET
+
+; 141497C60  FUN_141497c60  (line unknown)
+  141497C60  488B01               MOV RAX,qword ptr [RCX]
+  141497C63  488910               MOV qword ptr [RAX],RDX
+  141497C66  C3                   RET
+
+; 141497C70  FUN_141497c70  (line unknown)
+  141497C70  488B01               MOV RAX,qword ptr [RCX]
+  141497C73  488910               MOV qword ptr [RAX],RDX
+  141497C76  C3                   RET
+
+; 141497C80  FUN_141497c80  (line unknown)
+  141497C80  488B01               MOV RAX,qword ptr [RCX]
+  141497C83  488910               MOV qword ptr [RAX],RDX
+  141497C86  C3                   RET
+
+; 141497C90  FUN_141497c90  (line unknown)
+  141497C90  488B01               MOV RAX,qword ptr [RCX]
+  141497C93  488910               MOV qword ptr [RAX],RDX
+  141497C96  C3                   RET
+
+; 141497CA0  FUN_141497ca0  (line unknown)
+  141497CA0  488B01               MOV RAX,qword ptr [RCX]
+  141497CA3  488910               MOV qword ptr [RAX],RDX
+  141497CA6  C3                   RET
+
+; 141497CB0  FUN_141497cb0  (line unknown)
+  141497CB0  488B01               MOV RAX,qword ptr [RCX]
+  141497CB3  488910               MOV qword ptr [RAX],RDX
+  141497CB6  C3                   RET
+
+; 141497CC0  FUN_141497cc0  (line unknown)
+  141497CC0  488B01               MOV RAX,qword ptr [RCX]
+  141497CC3  488910               MOV qword ptr [RAX],RDX
+  141497CC6  C3                   RET
+
+; 141497CD0  FUN_141497cd0  (line unknown)
+  141497CD0  488B01               MOV RAX,qword ptr [RCX]
+  141497CD3  488910               MOV qword ptr [RAX],RDX
+  141497CD6  C3                   RET
+
+; 141497CE0  FUN_141497ce0  (line unknown)
+  141497CE0  488B01               MOV RAX,qword ptr [RCX]
+  141497CE3  488910               MOV qword ptr [RAX],RDX
+  141497CE6  C3                   RET
+
+; 141497CF0  FUN_141497cf0  (line unknown)
+  141497CF0  488B01               MOV RAX,qword ptr [RCX]
+  141497CF3  488910               MOV qword ptr [RAX],RDX
+  141497CF6  C3                   RET
+
+; 141497D00  FUN_141497d00  (line unknown)
+  141497D00  488B01               MOV RAX,qword ptr [RCX]
+  141497D03  488910               MOV qword ptr [RAX],RDX
+  141497D06  C3                   RET
+
+; 141497D10  FUN_141497d10  (line unknown)
+  141497D10  488B01               MOV RAX,qword ptr [RCX]
+  141497D13  488910               MOV qword ptr [RAX],RDX
+  141497D16  C3                   RET
+
+; 141497D20  FUN_141497d20  (line unknown)
+  141497D20  488B01               MOV RAX,qword ptr [RCX]
+  141497D23  488910               MOV qword ptr [RAX],RDX
+  141497D26  C3                   RET
+
+; 141497D30  FUN_141497d30  (line unknown)
+  141497D30  B878000000           MOV EAX,0x78
+  141497D35  C3                   RET
+
+; 141497D40  FUN_141497d40  (line unknown)
+  141497D40  B890060000           MOV EAX,0x690
+  141497D45  C3                   RET
+
+; 141497D50  FUN_141497d50  (line unknown)
+  141497D50  B830000000           MOV EAX,0x30
+  141497D55  C3                   RET
+
+; 141497D60  FUN_141497d60  (line unknown)
+  141497D60  B8F8000000           MOV EAX,0xf8
+  141497D65  C3                   RET
+
+; 141497D70  FUN_141497d70  (line unknown)
+  141497D70  B888010000           MOV EAX,0x188
+  141497D75  C3                   RET
+
+; 141497D80  FUN_141497d80  (line unknown)
+  141497D80  B878000000           MOV EAX,0x78
+  141497D85  C3                   RET
+
+; 141497D90  FUN_141497d90  (line unknown)
+  141497D90  B8A0020000           MOV EAX,0x2a0
+  141497D95  C3                   RET
+
+; 141497DA0  FUN_141497da0  (line unknown)
+  141497DA0  B818000000           MOV EAX,0x18
+  141497DA5  C3                   RET
+
+; 141497DB0  FUN_141497db0  (line unknown)
+  141497DB0  B870000000           MOV EAX,0x70
+  141497DB5  C3                   RET
+
+; 141497DC0  FUN_141497dc0  (line unknown)
+  141497DC0  B808010000           MOV EAX,0x108
+  141497DC5  C3                   RET
+
+; 141497DD0  FUN_141497dd0  (line unknown)
+  141497DD0  B8B0200200           MOV EAX,0x220b0
+  141497DD5  C3                   RET
+
+; 141497DE0  FUN_141497de0  (line unknown)
+  141497DE0  B818000000           MOV EAX,0x18
+  141497DE5  C3                   RET
+
+; 141497DF0  FUN_141497df0  (line unknown)
+  141497DF0  B8D0020000           MOV EAX,0x2d0
+  141497DF5  C3                   RET
+
+; 141497E00  FUN_141497e00  (line unknown)
+  141497E00  B888000000           MOV EAX,0x88
+  141497E05  C3                   RET
+
+; 141497E10  FUN_141497e10  (line unknown)
+  141497E10  B850000000           MOV EAX,0x50
+  141497E15  C3                   RET
+
+; 141497E20  FUN_141497e20  (line unknown)
+  141497E20  B848000000           MOV EAX,0x48
+  141497E25  C3                   RET
+
+; 141497E30  FUN_141497e30  (line unknown)
+  141497E30  B840200000           MOV EAX,0x2040
+  141497E35  C3                   RET
+
+; 141497E40  FUN_141497e40  (line unknown)
+  141497E40  B828000000           MOV EAX,0x28
+  141497E45  C3                   RET
+
+; 141497E50  FUN_141497e50  (line unknown)
+  141497E50  B818020000           MOV EAX,0x218
+  141497E55  C3                   RET
+
+; 141497E60  FUN_141497e60  (line unknown)
+  141497E60  B838000000           MOV EAX,0x38
+  141497E65  C3                   RET
+
+; 141497E70  FUN_141497e70  (line unknown)
+  141497E70  B820000000           MOV EAX,0x20
+  141497E75  C3                   RET
+
+; 141497E80  FUN_141497e80  (line unknown)
+  141497E80  B810000000           MOV EAX,0x10
+  141497E85  C3                   RET
+
+; 141497E90  FUN_141497e90  (line unknown)
+  141497E90  B800030000           MOV EAX,0x300
+  141497E95  C3                   RET
+
+; 141497EA0  FUN_141497ea0  (line unknown)
+  141497EA0  B820040000           MOV EAX,0x420
+  141497EA5  C3                   RET
+
+; 141497EB0  FUN_141497eb0  (line unknown)
+  141497EB0  B848040000           MOV EAX,0x448
+  141497EB5  C3                   RET
+
+; 141497EC0  FUN_141497ec0  (line unknown)
+  141497EC0  B898000000           MOV EAX,0x98
+  141497EC5  C3                   RET
+
+; 141497ED0  FUN_141497ed0  (line unknown)
+  141497ED0  B8F0000000           MOV EAX,0xf0
+  141497ED5  C3                   RET
+
+; 141497EE0  FUN_141497ee0  (line unknown)
+  141497EE0  B820020000           MOV EAX,0x220
+  141497EE5  C3                   RET
+
+; 141497EF0  FUN_141497ef0  (line unknown)
+  141497EF0  B840080000           MOV EAX,0x840
+  141497EF5  C3                   RET
+
+; 141497F00  FUN_141497f00  (line unknown)
+  141497F00  B818000000           MOV EAX,0x18
+  141497F05  C3                   RET
+
+; 141497F10  FUN_141497f10  (line unknown)
+  141497F10  B828000000           MOV EAX,0x28
+  141497F15  C3                   RET
+
+; 141497F20  FUN_141497f20  (line unknown)
+  141497F20  B818000000           MOV EAX,0x18
+  141497F25  C3                   RET
+
+; 141497F30  FUN_141497f30  (line unknown)
+  141497F30  B830000000           MOV EAX,0x30
+  141497F35  C3                   RET
+
+; 141497F40  FUN_141497f40  (line unknown)
+  141497F40  B878000000           MOV EAX,0x78
+  141497F45  C3                   RET
+
+; 141497F50  FUN_141497f50  (line unknown)
+  141497F50  B890000000           MOV EAX,0x90
+  141497F55  C3                   RET
+
+; 141497F60  FUN_141497f60  (line unknown)
+  141497F60  B818000000           MOV EAX,0x18
+  141497F65  C3                   RET
+
+; 141497F70  FUN_141497f70  (line unknown)
+  141497F70  B8A8000000           MOV EAX,0xa8
+  141497F75  C3                   RET
+
+; 141497F80  FUN_141497f80  (line unknown)
+  141497F80  B818000000           MOV EAX,0x18
+  141497F85  C3                   RET
+
+; 141497F90  FUN_141497f90  (line unknown)
+  141497F90  B820000000           MOV EAX,0x20
+  141497F95  C3                   RET
+
+; 141497FA0  FUN_141497fa0  (line unknown)
+  141497FA0  B890000000           MOV EAX,0x90
+  141497FA5  C3                   RET
+
+; 141497FB0  FUN_141497fb0  (line unknown)
+  141497FB0  B830090000           MOV EAX,0x930
+  141497FB5  C3                   RET
+
+; 141497FC0  FUN_141497fc0  (line unknown)
+  141497FC0  B870020000           MOV EAX,0x270
+  141497FC5  C3                   RET
+
+; 141497FD0  FUN_141497fd0  (line unknown)
+  141497FD0  B898010000           MOV EAX,0x198
+  141497FD5  C3                   RET
+
+; 141497FE0  FUN_141497fe0  (line unknown)
+  141497FE0  B818000000           MOV EAX,0x18
+  141497FE5  C3                   RET
+
+; 141497FF0  FUN_141497ff0  (line unknown)
+  141497FF0  B820000000           MOV EAX,0x20
+  141497FF5  C3                   RET
+
+; 141498000  FUN_141498000  (line unknown)
+  141498000  B838000000           MOV EAX,0x38
+  141498005  C3                   RET
+
+; 141498010  FUN_141498010  (line unknown)
+  141498010  B830000000           MOV EAX,0x30
+  141498015  C3                   RET
+
+; 141498020  FUN_141498020  (line unknown)
+  141498020  B810000000           MOV EAX,0x10
+  141498025  C3                   RET
+
+; 141498030  FUN_141498030  (line unknown)
+  141498030  B858000000           MOV EAX,0x58
+  141498035  C3                   RET
+
+; 141498040  FUN_141498040  (line unknown)
+  141498040  B848000000           MOV EAX,0x48
+  141498045  C3                   RET
+
+; 141498050  FUN_141498050  (line unknown)
+  141498050  B818000000           MOV EAX,0x18
+  141498055  C3                   RET
+
+; 141498060  FUN_141498060  (line unknown)
+  141498060  B818000000           MOV EAX,0x18
+  141498065  C3                   RET
+
+; 141498070  FUN_141498070  (line unknown)
+  141498070  B8A80A0000           MOV EAX,0xaa8
+  141498075  C3                   RET
+
+; 141498080  FUN_141498080  (line unknown)
+  141498080  B868000000           MOV EAX,0x68
+  141498085  C3                   RET
+
+; 141498090  FUN_141498090  (line unknown)
+  141498090  B898000000           MOV EAX,0x98
+  141498095  C3                   RET
+
+; 1414980A0  FUN_1414980a0  (line unknown)
+  1414980A0  B818000000           MOV EAX,0x18
+  1414980A5  C3                   RET
+
+; 1414980B0  FUN_1414980b0  (line unknown)
+  1414980B0  B848010000           MOV EAX,0x148
+  1414980B5  C3                   RET
+
+; 1414980C0  FUN_1414980c0  (line unknown)
+  1414980C0  B8A8000000           MOV EAX,0xa8
+  1414980C5  C3                   RET
+
+; 1414980D0  FUN_1414980d0  (line unknown)
+  1414980D0  B840000000           MOV EAX,0x40
+  1414980D5  C3                   RET
+
+; 1414980E0  FUN_1414980e0  (line unknown)
+  1414980E0  B818020000           MOV EAX,0x218
+  1414980E5  C3                   RET
+
+; 1414980F0  FUN_1414980f0  (line unknown)
+  1414980F0  B810010000           MOV EAX,0x110
+  1414980F5  C3                   RET
+
+; 141498100  FUN_141498100  (line unknown)
+  141498100  B800030000           MOV EAX,0x300
+  141498105  C3                   RET
+
+; 141498110  FUN_141498110  (line unknown)
+  141498110  B8D8030000           MOV EAX,0x3d8
+  141498115  C3                   RET
+
+; 141498120  FUN_141498120  (line unknown)
+  141498120  B800100000           MOV EAX,0x1000
+  141498125  C3                   RET
+
+; 141498130  FUN_141498130  (line unknown)
+  141498130  B810200000           MOV EAX,0x2010
+  141498135  C3                   RET
+
+; 141498140  FUN_141498140  (line unknown)
+  141498140  B830000000           MOV EAX,0x30
+  141498145  C3                   RET
+
+; 141498150  FUN_141498150  (line unknown)
+  141498150  B820000000           MOV EAX,0x20
+  141498155  C3                   RET
+
+; 141498160  FUN_141498160  (line unknown)
+  141498160  B840000000           MOV EAX,0x40
+  141498165  C3                   RET
+
+; 141498170  FUN_141498170  (line unknown)
+  141498170  B8E8010000           MOV EAX,0x1e8
+  141498175  C3                   RET
+
+; 141498180  FUN_141498180  (line unknown)
+  141498180  B860000000           MOV EAX,0x60
+  141498185  C3                   RET
+
+; 141498190  FUN_141498190  (line unknown)
+  141498190  B830030000           MOV EAX,0x330
+  141498195  C3                   RET
+
+; 1414981A0  FUN_1414981a0  (line unknown)
+  1414981A0  B818000000           MOV EAX,0x18
+  1414981A5  C3                   RET
+
+; 1414981B0  FUN_1414981b0  (line unknown)
+  1414981B0  B818000000           MOV EAX,0x18
+  1414981B5  C3                   RET
+
+; 1414981C0  FUN_1414981c0  (line unknown)
+  1414981C0  B838000000           MOV EAX,0x38
+  1414981C5  C3                   RET
+
+; 1414981D0  FUN_1414981d0  (line unknown)
+  1414981D0  B828000000           MOV EAX,0x28
+  1414981D5  C3                   RET
+
+; 1414981E0  FUN_1414981e0  (line unknown)
+  1414981E0  B820000000           MOV EAX,0x20
+  1414981E5  C3                   RET
+
+; 1414981F0  FUN_1414981f0  (line unknown)
+  1414981F0  B820000200           MOV EAX,0x20020
+  1414981F5  C3                   RET
+
+; 141498200  FUN_141498200  (line unknown)
+  141498200  B870000000           MOV EAX,0x70
+  141498205  C3                   RET
+
+; 141498210  FUN_141498210  (line unknown)
+  141498210  B840020000           MOV EAX,0x240
+  141498215  C3                   RET
+
+; 141498220  FUN_141498220  (line unknown)
+  141498220  B8B0000000           MOV EAX,0xb0
+  141498225  C3                   RET
+
+; 141498230  FUN_141498230  (line unknown)
+  141498230  B8A8000000           MOV EAX,0xa8
+  141498235  C3                   RET
+
+; 141498240  FUN_141498240  (line unknown)
+  141498240  B818000000           MOV EAX,0x18
+  141498245  C3                   RET
+
+; 141498250  FUN_141498250  (line unknown)
+  141498250  B880000000           MOV EAX,0x80
+  141498255  C3                   RET
+
+; 141498260  FUN_141498260  (line unknown)
+  141498260  B818020000           MOV EAX,0x218
+  141498265  C3                   RET
+
+; 141498270  FUN_141498270  (line unknown)
+  141498270  B820000000           MOV EAX,0x20
+  141498275  C3                   RET
+
+; 141498280  FUN_141498280  (line unknown)
+  141498280  B818000000           MOV EAX,0x18
+  141498285  C3                   RET
+
+; 141498290  FUN_141498290  (line unknown)
+  141498290  B828000000           MOV EAX,0x28
+  141498295  C3                   RET
+
+; 1414982A0  FUN_1414982a0  (line unknown)
+  1414982A0  B818000000           MOV EAX,0x18
+  1414982A5  C3                   RET
+
+; 1414982B0  FUN_1414982b0  (line unknown)
+  1414982B0  B830000000           MOV EAX,0x30
+  1414982B5  C3                   RET
+
+; 1414982C0  FUN_1414982c0  (line unknown)
+  1414982C0  B818000000           MOV EAX,0x18
+  1414982C5  C3                   RET
+
+; 1414982D0  FUN_1414982d0  (line unknown)
+  1414982D0  B870000000           MOV EAX,0x70
+  1414982D5  C3                   RET
+
+; 1414982E0  FUN_1414982e0  (line unknown)
+  1414982E0  B818000000           MOV EAX,0x18
+  1414982E5  C3                   RET
+
+; 1414982F0  FUN_1414982f0  (line unknown)
+  1414982F0  B868000000           MOV EAX,0x68
+  1414982F5  C3                   RET
+
+; 141498300  FUN_141498300  (line unknown)
+  141498300  B848000000           MOV EAX,0x48
+  141498305  C3                   RET
+
+; 141498310  FUN_141498310  (line unknown)
+  141498310  B818000000           MOV EAX,0x18
+  141498315  C3                   RET
+
+; 141498320  FUN_141498320  (line unknown)
+  141498320  B870000000           MOV EAX,0x70
+  141498325  C3                   RET
+
+; 141498330  FUN_141498330  (line unknown)
+  141498330  B8B0020000           MOV EAX,0x2b0
+  141498335  C3                   RET
+
+; 141498340  FUN_141498340  (line unknown)
+  141498340  B828000000           MOV EAX,0x28
+  141498345  C3                   RET
 
 ; 141498350  FUN_141498350  (line unknown)
   141498350  33C0                 XOR EAX,EAX
@@ -212257,6 +213627,23 @@ LAB_1414d96ad:
   1414D96B1  5B                   POP RBX
   1414D96B2  C3                   RET
 
+; 1414D96C0  FUN_1414d96c0  (line unknown)
+  1414D96C0  C20000               RET 0x0
+
+; 1414D96D0  FUN_1414d96d0  (line unknown)
+  1414D96D0  4885C9               TEST RCX,RCX
+  1414D96D3  742C                 JZ 0x1414d9701
+  1414D96D5  80797800             CMP byte ptr [RCX + 0x78],0x0
+  1414D96D9  7426                 JZ 0x1414d9701
+  1414D96DB  0F57C0               XORPS XMM0,XMM0
+  1414D96DE  0F1105BBFF6B0E       MOVUPS xmmword ptr [0x14fb996a0],XMM0
+  1414D96E5  0F1105C4FF6B0E       MOVUPS xmmword ptr [0x14fb996b0],XMM0
+  1414D96EC  0F1105CDFF6B0E       MOVUPS xmmword ptr [0x14fb996c0],XMM0
+  1414D96F3  0F1105D6FF6B0E       MOVUPS xmmword ptr [0x14fb996d0],XMM0
+  1414D96FA  0F1105DFFF6B0E       MOVUPS xmmword ptr [0x14fb996e0],XMM0
+LAB_1414d9701:
+  1414D9701  C3                   RET
+
 ; 1414D9710  FUN_1414d9710  (line unknown)
   1414D9710  4053                 PUSH RBX
   1414D9712  4883EC20             SUB RSP,0x20
@@ -212498,6 +213885,12 @@ LAB_1414d9aa1:
   1414D9AD0  4883C428             ADD RSP,0x28
   1414D9AD4  C3                   RET
 
+; 1414D9AE0  thunk_FUN_141dc5340  (line unknown)
+  1414D9AE0  E95BB88E00           JMP 0x141dc5340
+
+; 1414D9AF0  thunk_FUN_141dc53d0  (line unknown)
+  1414D9AF0  E9DBB88E00           JMP 0x141dc53d0
+
 ; 1414D9B00  FUN_1414d9b00  (line unknown)
   1414D9B00  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1414D9B05  4889742410           MOV qword ptr [RSP + 0x10],RSI
@@ -212543,6 +213936,9 @@ LAB_1414d9b68:
   1414D9BB1  4883C420             ADD RSP,0x20
   1414D9BB5  415F                 POP R15
   1414D9BB7  C3                   RET
+
+; 1414D9BC0  FUN_1414d9bc0  (line unknown)
+  1414D9BC0  C20000               RET 0x0
 
 ; 1414D9BD0  FUN_1414d9bd0  (line unknown)
   1414D9BD0  4053                 PUSH RBX
@@ -212608,6 +214004,12 @@ LAB_1414d9cb5:
   1414D9CB5  4883C428             ADD RSP,0x28
   1414D9CB9  C3                   RET
 
+; 1414D9CC0  FUN_1414d9cc0  (line unknown)
+  1414D9CC0  C20000               RET 0x0
+
+; 1414D9CD0  FUN_1414d9cd0  (line unknown)
+  1414D9CD0  C20000               RET 0x0
+
 ; 1414D9CE0  FUN_1414d9ce0  (line unknown)
   1414D9CE0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1414D9CE5  57                   PUSH RDI
@@ -212665,6 +214067,24 @@ LAB_1414d9d89:
   1414D9DA0  4883C420             ADD RSP,0x20
   1414D9DA4  5F                   POP RDI
   1414D9DA5  C3                   RET
+
+; 1414D9DB0  FUN_1414d9db0  (line unknown)
+  1414D9DB0  4C8D05A969BD17       LEA R8,[0x1590b0760]
+  1414D9DB7  33D2                 XOR EDX,EDX
+  1414D9DB9  498BC0               MOV RAX,R8
+  1414D9DBC  0F1F4000             NOP dword ptr [RAX]
+LAB_1414d9dc0:
+  1414D9DC0  483908               CMP qword ptr [RAX],RCX
+  1414D9DC3  740C                 JZ 0x1414d9dd1
+  1414D9DC5  FFC2                 INC EDX
+  1414D9DC7  4883C008             ADD RAX,0x8
+  1414D9DCB  83FA41               CMP EDX,0x41
+  1414D9DCE  72F0                 JC 0x1414d9dc0
+  1414D9DD0  C3                   RET
+LAB_1414d9dd1:
+  1414D9DD1  4863C2               MOVSXD RAX,EDX
+  1414D9DD4  49C704C000000000     MOV qword ptr [R8 + RAX*0x8],0x0
+  1414D9DDC  C3                   RET
 
 ; 1414D9DE0  FUN_1414d9de0  (line unknown)
   1414D9DE0  4488442418           MOV byte ptr [RSP + 0x18],R8B
@@ -245427,6 +246847,10 @@ LAB_1414f7c7d:
   1414F7C88  5F                   POP RDI
   1414F7C89  C3                   RET
 
+; 1414F7C90  FUN_1414f7c90  (line unknown)
+  1414F7C90  B001                 MOV AL,0x1
+  1414F7C92  C3                   RET
+
 ; 1414F7CA0  FUN_1414f7ca0  (line unknown)
   1414F7CA0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1414F7CA5  4889742410           MOV qword ptr [RSP + 0x10],RSI
@@ -251758,6 +253182,16 @@ LAB_1414fd88e:
   1414FD8AB  5B                   POP RBX
   1414FD8AC  C3                   RET
 
+; 1414FD8B0  FUN_1414fd8b0  (line unknown)
+  1414FD8B0  488B4148             MOV RAX,qword ptr [RCX + 0x48]
+  1414FD8B4  C6804801000001       MOV byte ptr [RAX + 0x148],0x1
+  1414FD8BB  B001                 MOV AL,0x1
+  1414FD8BD  C3                   RET
+
+; 1414FD8C0  FUN_1414fd8c0  (line unknown)
+  1414FD8C0  B001                 MOV AL,0x1
+  1414FD8C2  C3                   RET
+
 ; 1414FD8D0  FUN_1414fd8d0  (line unknown)
   1414FD8D0  4883EC28             SUB RSP,0x28
   1414FD8D4  4885C9               TEST RCX,RCX
@@ -252329,6 +253763,22 @@ LAB_1414fe064:
   1414FE068  E8035CC6FE           CALL 0x140163c70
   1414FE06D  488BC7               MOV RAX,RDI
   1414FE070  E937FFFFFF           JMP 0x1414fdfac
+
+; 1414FE080  FUN_1414fe080  (line unknown)
+  1414FE080  B001                 MOV AL,0x1
+  1414FE082  C3                   RET
+
+; 1414FE090  FUN_1414fe090  (line unknown)
+  1414FE090  B001                 MOV AL,0x1
+  1414FE092  C3                   RET
+
+; 1414FE0A0  FUN_1414fe0a0  (line unknown)
+  1414FE0A0  B001                 MOV AL,0x1
+  1414FE0A2  C3                   RET
+
+; 1414FE0B0  FUN_1414fe0b0  (line unknown)
+  1414FE0B0  B001                 MOV AL,0x1
+  1414FE0B2  C3                   RET
 
 ; 1414FE0C0  FUN_1414fe0c0  (line unknown)
   1414FE0C0  4053                 PUSH RBX

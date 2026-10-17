@@ -152073,6 +152073,24 @@ LAB_140b9a604:
   140B9A629  5B                   POP RBX
   140B9A62A  C3                   RET
 
+; 140B9A630  FUN_140b9a630  (line unknown)
+  140B9A630  C605205DA20200       MOV byte ptr [0x1435c0357],0x0
+  140B9A637  C605185DA20200       MOV byte ptr [0x1435c0356],0x0
+  140B9A63E  C3                   RET
+
+; 140B9A640  FUN_140b9a640  (line unknown)
+  140B9A640  C605105DA20201       MOV byte ptr [0x1435c0357],0x1
+  140B9A647  C605085DA20201       MOV byte ptr [0x1435c0356],0x1
+  140B9A64E  C3                   RET
+
+; 140B9A650  FUN_140b9a650  (line unknown)
+  140B9A650  C605005DA20201       MOV byte ptr [0x1435c0357],0x1
+  140B9A657  C3                   RET
+
+; 140B9A660  FUN_140b9a660  (line unknown)
+  140B9A660  C605EF5CA20201       MOV byte ptr [0x1435c0356],0x1
+  140B9A667  C3                   RET
+
 ; 140B9A670  FUN_140b9a670  (line unknown)
   140B9A670  4053                 PUSH RBX
   140B9A672  4883EC70             SUB RSP,0x70
@@ -158485,6 +158503,12 @@ LAB_140ba082b:
   140BA083C  4883C420             ADD RSP,0x20
   140BA0840  5D                   POP RBP
   140BA0841  E91A227F00           JMP 0x141392a60
+
+; 140BA0890  FUN_140ba0890  (line unknown)
+  140BA0890  C20000               RET 0x0
+
+; 140BA08A0  FUN_140ba08a0  (line unknown)
+  140BA08A0  C20000               RET 0x0
 
 ; 140BA08B0  FUN_140ba08b0  (line unknown)
   140BA08B0  4053                 PUSH RBX
@@ -238145,6 +238169,9 @@ LAB_140becae5:
   140BECAFF  4883C420             ADD RSP,0x20
   140BECB03  5B                   POP RBX
   140BECB04  C3                   RET
+
+; 140BECB10  FUN_140becb10  (line unknown)
+  140BECB10  C20000               RET 0x0
 
 ; 140BECB20  FUN_140becb20  (line unknown)
   140BECB20  48895C2408           MOV qword ptr [RSP + 0x8],RBX

@@ -58399,7 +58399,7 @@ void FUN_1404832b0(void)
 {
   if (DAT_14f295a58 != (int *)0x0) {
     DAT_14f295a54 = 0;
-    (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_14f295a58 * 5])(DAT_14f295a58,DAT_14f295a68);
+    (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_14f295a58 * 5])(DAT_14f295a58,DAT_14f295a68);
     DAT_14f295a60 = 0;
     DAT_14f295a68 = 0;
     (*(code *)(&PTR_FUN_14310fe80)[(longlong)*DAT_14f295a58 * 5])();
@@ -87958,6 +87958,16 @@ void FUN_1404be030(undefined8 param_1)
 }
 
 
+// 1404BE060  FUN_1404be060  (line unknown)
+
+void FUN_1404be060(void)
+
+{
+  FUN_14220fbd0("ERROR!  Unimplemented %s script function called!\n","client");
+  return;
+}
+
+
 // 1404BE080  FUN_1404be080  (line unknown)
 
 void FUN_1404be080(void)
@@ -88936,6 +88946,15 @@ void FUN_1404bfec0(void)
     return;
   }
   FUN_1423b4cf0("CSCRIPT: %s",0);
+  return;
+}
+
+
+// 1404BFF10  FUN_1404bff10  (line unknown)
+
+void FUN_1404bff10(void)
+
+{
   return;
 }
 
@@ -91227,6 +91246,16 @@ void FUN_1404c4bb0(void)
     FUN_14138e030(1);
   }
   FUN_141f0d4c0(uVar1,&DAT_149f01e08 + DAT_149efe538);
+  return;
+}
+
+
+// 1404C4C10  FUN_1404c4c10  (line unknown)
+
+void FUN_1404c4c10(void)
+
+{
+  FUN_141392a60(1,&DAT_149bb4748);
   return;
 }
 

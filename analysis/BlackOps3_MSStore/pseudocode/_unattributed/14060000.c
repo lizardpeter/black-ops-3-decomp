@@ -72371,7 +72371,7 @@ LAB_14068f8be:
                 iVar14 = local_78;
                 if (lVar19 == 0) break;
                 if (*pcVar13 != cVar1) {
-                  (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_1586cd210 * 5])
+                  (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_1586cd210 * 5])
                             (DAT_1586cd210,lVar21);
                   goto LAB_14068f9fa;
                 }

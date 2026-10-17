@@ -68385,7 +68385,7 @@ LAB_1408d8b61:
           } while (uVar5 != 0x993e2837);
         }
       }
-      (*(code *)(&PTR_LAB_14310fe90)[(longlong)*param_1 * 5])(param_1,local_res18);
+      (*(code *)(&PTR_FUN_14310fe90)[(longlong)*param_1 * 5])(param_1,local_res18);
       lVar6 = lVar6 + -1;
     } while (-1 < lVar6);
   }
@@ -70025,20 +70025,20 @@ void FUN_1408dc0e0(void)
   else {
     lVar7 = lVar8 * 8;
     do {
-      (*(code *)(&PTR_LAB_14310fe90)[(longlong)*piVar2 * 5])
+      (*(code *)(&PTR_FUN_14310fe90)[(longlong)*piVar2 * 5])
                 (piVar2,*(undefined8 *)((longlong)&DAT_1437c87e8 + lVar7));
       iVar1 = *piVar2;
       *(undefined8 *)((longlong)&DAT_1493d4888 + lVar7) = 0;
-      (*(code *)(&PTR_LAB_14310fe90)[(longlong)iVar1 * 5])
+      (*(code *)(&PTR_FUN_14310fe90)[(longlong)iVar1 * 5])
                 (piVar2,*(undefined8 *)((longlong)&DAT_14933d0a0 + lVar7));
-      (*(code *)(&PTR_LAB_14310fe90)[(longlong)*piVar2 * 5])
+      (*(code *)(&PTR_FUN_14310fe90)[(longlong)*piVar2 * 5])
                 (piVar2,*(undefined8 *)((longlong)&DAT_1438209d8 + lVar7));
       lVar8 = lVar8 + -1;
       lVar7 = lVar7 + -8;
     } while (-1 < lVar8);
   }
-  (*(code *)(&PTR_LAB_14310fe90)[(longlong)*piVar2 * 5])(piVar2,DAT_1438209b0);
-  (*(code *)(&PTR_LAB_14310fe90)[(longlong)*piVar2 * 5])(piVar2,DAT_143820a10);
+  (*(code *)(&PTR_FUN_14310fe90)[(longlong)*piVar2 * 5])(piVar2,DAT_1438209b0);
+  (*(code *)(&PTR_FUN_14310fe90)[(longlong)*piVar2 * 5])(piVar2,DAT_143820a10);
   local_res8 = DAT_149b25a28;
   if (DAT_149b25a28 != 0) {
     local_res20 = (ulonglong)((uint)((ulonglong)ProcessEnvironmentBlock >> 0xc) & 0xf);
@@ -70828,7 +70828,7 @@ LAB_1408ddaa7:
       } while (uVar6 != 0x69e090f0);
     }
   }
-  (*(code *)(&PTR_LAB_14310fe90)[(longlong)*piVar2 * 5])(piVar2,local_res8);
+  (*(code *)(&PTR_FUN_14310fe90)[(longlong)*piVar2 * 5])(piVar2,local_res8);
   local_res8 = DAT_149b25a20;
   if (DAT_149b25a20 != 0) {
     local_res20 = (ulonglong)((uint)((ulonglong)ProcessEnvironmentBlock >> 0xc) & 0xf);
@@ -71568,7 +71568,7 @@ LAB_1408df248:
       } while (uVar6 != 0x5b6d2f91);
     }
   }
-  (*(code *)(&PTR_LAB_14310fe90)[(longlong)*piVar2 * 5])(piVar2,local_res8);
+  (*(code *)(&PTR_FUN_14310fe90)[(longlong)*piVar2 * 5])(piVar2,local_res8);
   DAT_149b25a20 = 0;
   DAT_1438209d8 = 0;
   uRam00000001438209e0 = 0;

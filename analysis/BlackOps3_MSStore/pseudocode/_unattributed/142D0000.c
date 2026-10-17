@@ -18864,6 +18864,39 @@ undefined8 FUN_142d17bd0(int *param_1,ulonglong param_2)
 }
 
 
+// 142D17C40  FUN_142d17c40  (line unknown)
+
+uint FUN_142d17c40(int *param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+  int iVar3;
+  uint *puVar4;
+  longlong lVar5;
+  
+  iVar1 = *param_1;
+  if (iVar1 == 0) {
+    return 0;
+  }
+  iVar3 = 2;
+  if (iVar1 < 2) {
+    iVar3 = iVar1;
+  }
+  lVar5 = (longlong)(iVar3 + -2);
+  uVar2 = *(uint *)(*(longlong *)(param_1 + 4) + (longlong)(iVar3 + -1) * 4);
+  if (-1 < iVar3 + -2) {
+    puVar4 = (uint *)(*(longlong *)(param_1 + 4) + lVar5 * 4);
+    do {
+      uVar2 = uVar2 << 0x1c | *puVar4;
+      puVar4 = puVar4 + -1;
+      lVar5 = lVar5 + -1;
+    } while (-1 < lVar5);
+  }
+  return uVar2;
+}
+
+
 // 142D17C80  FUN_142d17c80  (line unknown)
 
 undefined8 FUN_142d17c80(int *param_1,int *param_2)
@@ -24379,6 +24412,16 @@ undefined4 FUN_142d1e7c0(undefined8 param_1,undefined4 param_2,longlong param_3)
 }
 
 
+// 142D1E810  FUN_142d1e810  (line unknown)
+
+void FUN_142d1e810(longlong param_1)
+
+{
+  FUN_142d1ee90(param_1 + 0x88);
+  return;
+}
+
+
 // 142D1E820  FUN_142d1e820  (line unknown)
 
 undefined8 FUN_142d1e820(undefined8 param_1,uint *param_2)
@@ -24413,6 +24456,15 @@ undefined8 FUN_142d1e870(undefined8 param_1,int param_2,undefined8 param_3)
     uVar1 = FUN_142d1e650(param_1,0x40,param_3);
   }
   return uVar1;
+}
+
+
+// 142D1E8C0  FUN_142d1e8c0  (line unknown)
+
+undefined8 FUN_142d1e8c0(void)
+
+{
+  return 2;
 }
 
 
@@ -26661,6 +26713,21 @@ undefined8 FUN_142d22280(float *param_1,float *param_2)
 }
 
 
+// 142D227C0  FUN_142d227c0  (line unknown)
+
+undefined8 FUN_142d227c0(longlong param_1,longlong param_2,undefined4 param_3)
+
+{
+  undefined8 uVar1;
+  
+  if (param_2 == 0) {
+    return 0;
+  }
+  uVar1 = FUN_142d22880(param_1 + 8,param_2,1,param_3);
+  return uVar1;
+}
+
+
 // 142D227E0  FUN_142d227e0  (line unknown)
 
 undefined8 * FUN_142d227e0(undefined8 *param_1,ulonglong param_2)
@@ -26703,6 +26770,23 @@ void FUN_142d22850(undefined8 *param_1)
   }
   *(undefined1 *)((longlong)param_1 + 0x26) = 0;
   return;
+}
+
+
+// 142D22880  FUN_142d22880  (line unknown)
+
+size_t FUN_142d22880(undefined8 *param_1,void *param_2,size_t param_3,size_t param_4)
+
+{
+  size_t sVar1;
+  
+  if ((FILE *)*param_1 == (FILE *)0x0) {
+    return 0;
+  }
+                    /* WARNING: Could not recover jumptable at 0x000142d2289d. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  sVar1 = fwrite(param_2,param_3,param_4,(FILE *)*param_1);
+  return sVar1;
 }
 
 

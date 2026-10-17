@@ -33085,7 +33085,7 @@ void FUN_142420f70(int *param_1)
         uVar5 = (ulonglong)uVar4;
       } while ((int)uVar4 < (int)puVar2[6]);
     }
-    (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_1493643a0 * 5])
+    (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_1493643a0 * 5])
               (DAT_1493643a0,*(undefined8 *)(puVar2 + 2));
     DAT_149360368 = DAT_149360368 + -1;
     *(undefined8 *)(puVar2 + 2) = 0;
@@ -33212,7 +33212,7 @@ void FUN_1424211b0(int param_1,int *param_2)
         uVar3 = (ulonglong)uVar2;
       } while ((int)uVar2 < param_2[6]);
     }
-    (*(code *)(&PTR_LAB_14310fe90)[(longlong)*DAT_14933d0b8 * 5])
+    (*(code *)(&PTR_FUN_14310fe90)[(longlong)*DAT_14933d0b8 * 5])
               (DAT_14933d0b8,*(undefined8 *)(param_2 + 2));
     *(int *)(&DAT_149377df0 + (longlong)param_1 * 4) =
          *(int *)(&DAT_149377df0 + (longlong)param_1 * 4) + -1;
