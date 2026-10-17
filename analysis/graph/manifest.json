@@ -1,0 +1,24 @@
+{
+  "graph": "re_t7",
+  "schema": [
+    "CREATE INDEX FOR (n:Build) ON (n.id)",
+    "CREATE INDEX FOR (n:Subsystem) ON (n.name)",
+    "CREATE INDEX FOR (n:SourceFile) ON (n.path)",
+    "CREATE INDEX FOR (n:Function) ON (n.key)",
+    "CREATE INDEX FOR (n:FunctionInstance) ON (n.id)"
+  ],
+  "imports": [
+    {
+      "file": "t7/builds.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rows": 0,
+      "cypher": "UNWIND {{ROWS}} AS r MERGE (b:Build {id:r.id}) SET b.timestamp=r.timestamp, b.exe_sha256=r.exe_sha256, b.pdb_guid=r.pdb_guid"
+    },
+    {
+      "file": "t7/sourcefiles.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rows": 0,
+      "cypher": "UNWIND {{ROWS}} AS r MERGE (s:Subsystem {name:r.subsystem}) MERGE (f:SourceFile {path:r.path}) MERGE (f)-[:PART_OF]->(s)"
+    }
+  ]
+}

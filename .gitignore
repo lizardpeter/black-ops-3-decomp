@@ -1,0 +1,14 @@
+# Original game files are never committed (they live in R2, see target.toml)
+*.exe
+*.dll
+*.pdb
+*.gzf
+
+# local scratch
+/build/
+/.work/
+__pycache__/
+*.pyc
+
+# agent worktrees and local Claude state
+/.claude/

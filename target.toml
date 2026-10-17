@@ -1,0 +1,26 @@
+# What this repo reverses. Originals are never committed; they live in R2 under these keys
+# and every tool verifies the sha256 before use.
+
+project = "t7"
+title = "Call of Duty: Black Ops III (PC, x64)"
+graph = "re_t7"
+r2_public = "https://r2.houseofkublai.com/"
+ghidra = "12.1.4"
+# Compiler: confirm from each exe's Rich header and debug directory during the build inventory.
+compiler = "unknown until the inventory"
+# Original source roots, for turning PDB/MAP paths into repo paths (tools/pdb/extract.py). Filled in from the
+# reference build's PDB.
+source_roots = []
+
+# kind: "retail"    = the final target (the build the user names; usually the final retail exe).
+#       "reference" = has symbols (PDB and/or MAP): the build reconstructed first and matched to the target.
+#       "related"   = no symbols, but helpful (other platforms or versions, community-named builds).
+# `analyze = true` puts a build in the next Ghidra pipeline run (.github/workflows/ghidra.yml); a manual run can
+# name any builds instead.
+#
+# `protection = "arxan"`: the code is encrypted on disk and decrypted by the entry stub at startup.
+# tools/unpack/arxan.py (from ghosts-decomp) emulates that stub; it may need adapting for this game's stub.
+# `unpacked_sha256` pins the result, so the unpacked image is reproducible from the original.
+#
+# No builds yet: the game files are being uploaded to R2. Each one gets a [[build]] entry here once it is hashed
+# and its provenance recorded (docs/builds.md).
