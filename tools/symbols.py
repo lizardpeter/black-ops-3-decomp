@@ -72,7 +72,8 @@ def table(build: str) -> dict:
                 out[name] = (vas.pop(), "function")
     for r in read_tsv(ROOT / "records" / "names.tsv"):
         if r["build"] == build:
-            out[r["symbol"]] = (int(r["va"], 16), r["kind"])
+            # a row without a decorated name (identified by name only) is keyed by its plain name
+            out[r["symbol"] or r["name"]] = (int(r["va"], 16), r["kind"])
     return out
 
 

@@ -42,4 +42,12 @@ There is no ground truth for this pair (neither build has symbols), so precision
   "Error loading fastfile" string, `ClientCommand` on its command strings.
 
 On Ghosts, the same matcher was validated on two symbol builds (docs/matching.md there). Before relying on a
-match here, check its evidence; names carried to the Store build go into records/names.tsv with that evidence.
+match here, check its evidence.
+
+## Names carried to the Store build
+
+`tools/match/carry_names.py BlackOps3_MSStore --write` turns the pairs whose Steam function has a name in
+records/names.tsv into names.tsv rows for the Store build: 1,623 functions, each with method
+`boiii-free symbols+match:<method>`, the lower of the two confidences, and evidence naming the Steam function and
+the match. A Store function named by any other method keeps that name. Re-run it after re-matching or after new
+Steam names.
