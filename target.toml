@@ -31,7 +31,7 @@ source_roots = []
 [[build]]
 id = "BlackOps3_MSStore"
 kind = "retail"
-analyze = true  # redo with tools/ghidra/CreateTableFunctions.java
+analyze = false  # analysed (analysis/BlackOps3_MSStore); set true only to redo it
 timestamp = "2024-11-14T18:19:22Z"
 original_name = "BlackOps3.exe"
 pdb_path = 'd:\workspace\outrun\t7\game\pc\BlackOps3.pdb'
@@ -46,7 +46,7 @@ exe = { key = "bo3/DUMP/BlackOps3.exe", sha256 = "72c8a21763adbfac9e1b2bcd6f93b0
 [[build]]
 id = "BlackOps3_Steam"
 kind = "related"
-analyze = false  # analysed (analysis/BlackOps3_Steam); set true only to redo it
+analyze = true  # redo with tools/ghidra/CreateTableFunctions.java
 protection = "arxan"
 timestamp = "2023-02-25T01:02:52Z"
 original_name = "BlackOps3.exe"

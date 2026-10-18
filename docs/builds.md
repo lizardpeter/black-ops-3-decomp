@@ -46,6 +46,11 @@ First pipeline run (Ghidra 12.1.4): analysis 34 min, decompile 6 shards of 5 to 
 - 238 functions have names from Ghidra (imports, CRT signatures); everything else is `FUN_` until matched.
 - Largest functions: 1414168F0 (363 KB), 141F45730 (221 KB), 1422649C0 (208 KB).
 
+Second run, with tools/ghidra/CreateTableFunctions.java: 5,064 pointers in `.rdata`/`.data` led into code where no
+function existed (11 more pointed inside a function and were left alone); 5,063 became functions, 1 was not code.
+Now **42,221 functions**, 41,928 decompiled, 289 thunks, the same 4 failures. These are functions reached only
+through tables: vtables, Lua and command registration, callbacks.
+
 ## BlackOps3_Steam (related): final Steam build
 
 R2 `bo3/t7_tor_exe/BlackOps3.exe`, from a torrent copy of the Steam release.
