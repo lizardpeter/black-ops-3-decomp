@@ -91462,7 +91462,7 @@ FUN_140cbc9e0(ulonglong param_1,undefined4 *param_2,undefined4 *param_3,undefine
       *param_2 = *(undefined4 *)(&DAT_1432e16c8 + lVar4);
       *param_3 = *(undefined4 *)(lVar4 + 0x1432e16b4);
       *param_4 = *(undefined4 *)(lVar4 + 0x1432e16b8);
-      return (&PTR_LAB_1432e16c0)[uVar2 * 4];
+      return (&PTR_FUN_1432e16c0)[uVar2 * 4];
     }
     uVar1 = (int)uVar2 + 1;
     uVar2 = (ulonglong)uVar1;
@@ -91500,7 +91500,7 @@ ulonglong FUN_140cbcb20(undefined *param_1)
   undefined **ppuVar3;
   
   uVar2 = 0;
-  ppuVar3 = &PTR_LAB_1432e16c0;
+  ppuVar3 = &PTR_FUN_1432e16c0;
   do {
     if (param_1 == *ppuVar3) {
       return (ulonglong)(uint)(&DAT_1432e16b0)[uVar2 * 8];

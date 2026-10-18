@@ -244254,6 +244254,12 @@ LAB_1411f1f16:
   1411F2022  5B                   POP RBX
   1411F2023  C3                   RET
 
+; 1411F2024  FUN_1411f2024  (line unknown)
+  1411F2024  50                   PUSH RAX
+  1411F2025  51                   PUSH RCX
+  1411F2026  488B442410           MOV RAX,qword ptr [RSP + 0x10]
+  1411F202B  E9A3A74E1C           JMP 0x15d6dc7d3
+
 ; 1411F2030  FUN_1411f2030  (line unknown)
   1411F2030  4C894C2420           MOV qword ptr [RSP + 0x20],R9
   1411F2035  4C89442418           MOV qword ptr [RSP + 0x18],R8

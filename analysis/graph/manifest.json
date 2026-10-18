@@ -28,8 +28,8 @@
     },
     {
       "file": "t7/functions-BlackOps3_Steam.jsonl",
-      "sha256": "8b0a62c30e59ce59858d4d53fa9dcf420e222aa87f802d1174e8ba680d02cd3e",
-      "rows": 93641,
+      "sha256": "3e42ff4cc32eeb9ada49a3cfa12af6acb409aa8d889d89d3d876646a241ea9a7",
+      "rows": 98792,
       "cypher": "UNWIND {{ROWS}} AS r MATCH (b:Build {id:r.build}) MERGE (fn:Function {key:r.key}) SET fn.name = coalesce(fn.name, r.name), fn.symbol = r.symbol MERGE (fi:FunctionInstance {id:r.id}) SET fi.build=r.build, fi.va=r.va, fi.size=r.size, fi.status=r.status, fi.type=r.type, fi.src=r.src, fi.bytes_sha256=r.sha MERGE (fi)-[:INSTANCE_OF]->(fn) MERGE (fi)-[:IN_BUILD]->(b) WITH fn, r WHERE r.source <> '' MATCH (sf:SourceFile {path:r.source}) MERGE (fn)-[d:DEFINED_IN]->(sf) SET d.line=r.line"
     },
     {
@@ -40,8 +40,8 @@
     },
     {
       "file": "t7/calls-BlackOps3_Steam.jsonl",
-      "sha256": "5bedbe7064989f44aef41b694f549d0f2aa89a8d64bd47b51199d9719c3d4da4",
-      "rows": 158311,
+      "sha256": "93931a952c94e2626b249af4ad377d8cbeabc848b1d8a043fdc1e01dda2f5327",
+      "rows": 158626,
       "cypher": "UNWIND {{ROWS}} AS r MATCH (a:FunctionInstance {id:r.caller}) MATCH (c:FunctionInstance {id:r.callee}) MERGE (a)-[e:CALLS]->(c) SET e.kind=r.kind"
     }
   ]

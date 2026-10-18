@@ -1,18 +1,18 @@
-2026-10-17 20:52:19 INFO  (LoggingInitialization) Using log config file: jar:file:/opt/ghidra/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
-2026-10-17 20:52:19 INFO  (LoggingInitialization) Using log file: /tmp/out/decompile-0.log  
-2026-10-17 20:52:19 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
-2026-10-17 20:52:19 INFO  (Preferences) Loading user preferences: /home/runner/.config/ghidra/ghidra_12.1.4_PUBLIC/preferences  
-2026-10-17 20:52:19 INFO  (ClassSearcher) Searching for classes...  
-2026-10-17 20:52:20 INFO  (ClassSearcher) Class search complete (1062 ms)  
-2026-10-17 20:52:20 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
-2026-10-17 20:52:21 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
-2026-10-17 20:52:21 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
-2026-10-17 20:52:21 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
-2026-10-17 20:52:21 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/runner-ghidra/fscache2  
-2026-10-17 20:52:21 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
-2026-10-17 20:52:22 INFO  (AnalyzeHeadless) Headless startup complete (4526 ms)  
-2026-10-17 20:52:22 INFO  (ClassSearcher) Class searcher loaded 59 extension points (20 false positives)  
-2026-10-17 20:52:22 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+2026-10-18 02:23:39 INFO  (LoggingInitialization) Using log config file: jar:file:/opt/ghidra/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-10-18 02:23:39 INFO  (LoggingInitialization) Using log file: /tmp/out/decompile-0.log  
+2026-10-18 02:23:39 DEBUG (GhidraObjectInputFilter) Including serial input filter: FileSystem/data/client.rmi.serial.filter  
+2026-10-18 02:23:39 INFO  (Preferences) Loading user preferences: /home/runner/.config/ghidra/ghidra_12.1.4_PUBLIC/preferences  
+2026-10-18 02:23:39 INFO  (ClassSearcher) Searching for classes...  
+2026-10-18 02:23:40 INFO  (ClassSearcher) Class search complete (1078 ms)  
+2026-10-18 02:23:41 INFO  (DefaultSSLContextInitializer) Initializing SSL Context  
+2026-10-18 02:23:41 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-10-18 02:23:41 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2026-10-18 02:23:41 INFO  (DefaultTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-10-18 02:23:41 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/runner-ghidra/fscache2  
+2026-10-18 02:23:41 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2026-10-18 02:23:42 INFO  (AnalyzeHeadless) Headless startup complete (4809 ms)  
+2026-10-18 02:23:42 INFO  (ClassSearcher) Class searcher loaded 59 extension points (20 false positives)  
+2026-10-18 02:23:42 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
     /opt/ghidra/Ghidra/Features/SystemEmulation/ghidra_scripts
     /opt/ghidra/Ghidra/Features/GnuDemangler/ghidra_scripts
     /home/runner/work/black-ops-3-decomp/black-ops-3-decomp/tools/ghidra
@@ -36,116 +36,299 @@
     /opt/ghidra/Ghidra/Features/FileFormats/ghidra_scripts
     /opt/ghidra/Ghidra/Features/BSim/ghidra_scripts
     /opt/ghidra/Ghidra/Features/BytePatterns/ghidra_scripts  
-2026-10-17 20:52:22 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
-2026-10-17 20:52:22 INFO  (HeadlessAnalyzer) Opening existing project: /tmp/proj/t7  
-2026-10-17 20:52:22 DEBUG (DefaultProjectManager) No tools found; Installing default tools  
-2026-10-17 20:52:22 DEBUG (DefaultProjectManager) 	no recent project directories found  
-2026-10-17 20:52:22 INFO  (HeadlessProject) Opening project: /tmp/proj/t7  
-2026-10-17 20:52:25 INFO  (HeadlessAnalyzer) REPORT: Processing read-only project file: /BlackOps3_Steam.exe  
-2026-10-17 20:52:25 INFO  (HeadlessAnalyzer) REPORT: Execute script: Decompile.java '/tmp/out/decomp-0.jsonl' '0' '6' '90'   
-2026-10-17 20:52:27 INFO  (HeadlessAnalyzer) SCRIPT: /home/runner/work/black-ops-3-decomp/black-ops-3-decomp/tools/ghidra/Decompile.java  
-2026-10-17 20:54:37 INFO  (GhidraScript) Decompile.java> shard 0: 1000 ok, 0 failed, 129s  
-2026-10-17 20:56:23 INFO  (GhidraScript) Decompile.java> shard 0: 2000 ok, 0 failed, 235s  
-2026-10-17 20:58:14 INFO  (GhidraScript) Decompile.java> shard 0: 2999 ok, 1 failed, 347s  
-2026-10-17 20:58:27 INFO  (GhidraScript) Decompile.java> shard 0: 3999 ok, 1 failed, 359s  
-2026-10-17 20:58:45 INFO  (GhidraScript) Decompile.java> shard 0: 4999 ok, 1 failed, 377s  
-2026-10-17 20:58:45 WARN  (DecompileCallback) Decompiling 1421bf22b: Unable to read bytes at ram:126af8cc3  
-2026-10-17 20:58:45 WARN  (DecompileCallback) Decompiling 1421bf22b, pcode error at 128c0a553: Could not follow disassembly flow into non-existing memory at 128c0a553  
-2026-10-17 20:58:45 WARN  (DecompileCallback) Decompiling 1421bf22b: Unable to read bytes at ram:126af8cc3  
-2026-10-17 20:58:45 WARN  (DecompileCallback) Decompiling 1421bf22b, pcode error at 128c0a553: Could not follow disassembly flow into non-existing memory at 128c0a553  
-2026-10-17 20:58:45 WARN  (DecompileCallback) Decompiling 1421bf22b: Unable to read bytes at ram:126af8cc3  
-2026-10-17 20:58:46 WARN  (DecompileCallback) Decompiling 1421d3d1b: Unable to read bytes at ram:12663cca6  
-2026-10-17 20:58:46 WARN  (DecompileCallback) Decompiling 1421d3d1b, pcode error at 1259084e6: Could not follow disassembly flow into non-existing memory at 1259084e6  
-2026-10-17 20:58:46 WARN  (DecompileCallback) Decompiling 1421d3d1b: Unable to read bytes at ram:12663cca6  
-2026-10-17 20:58:46 WARN  (DecompileCallback) Decompiling 1421d3d1b, pcode error at 1259084e6: Could not follow disassembly flow into non-existing memory at 1259084e6  
-2026-10-17 20:58:46 WARN  (DecompileCallback) Decompiling 1421d3d1b: Unable to read bytes at ram:12663cca6  
-2026-10-17 20:58:47 INFO  (GhidraScript) Decompile.java> shard 0: 5999 ok, 1 failed, 379s  
-2026-10-17 20:58:55 WARN  (DecompileCallback) Decompiling 1422ea130, pcode error at 1422ea130: Unable to resolve constructor at 1422ea130  
-2026-10-17 20:58:56 INFO  (GhidraScript) Decompile.java> shard 0: 6999 ok, 1 failed, 388s  
-2026-10-17 20:58:56 WARN  (DecompileCallback) Decompiling 142306ee3: Unable to read bytes at ram:126a092ca  
-2026-10-17 20:58:56 WARN  (DecompileCallback) Decompiling 142306ee3, pcode error at 1266232ea: Could not follow disassembly flow into non-existing memory at 1266232ea  
-2026-10-17 20:58:56 WARN  (DecompileCallback) Decompiling 142306ee3: Unable to read bytes at ram:126a092ca  
-2026-10-17 20:58:56 WARN  (DecompileCallback) Decompiling 142306ee3, pcode error at 1266232ea: Could not follow disassembly flow into non-existing memory at 1266232ea  
-2026-10-17 20:58:56 WARN  (DecompileCallback) Decompiling 142306ee3: Unable to read bytes at ram:126a092ca  
-2026-10-17 20:58:56 WARN  (DecompileCallback) Decompiling 14231f284, pcode error at 14231f291: Unable to resolve constructor at 14231f291  
-2026-10-17 20:59:17 WARN  (DecompileCallback) Decompiling 142584e20, pcode error at 142584e20: Unable to resolve constructor at 142584e20  
-2026-10-17 20:59:17 WARN  (DecompileCallback) Decompiling 14258af10, pcode error at 14258af10: Unable to resolve constructor at 14258af10  
-2026-10-17 20:59:17 WARN  (DecompileCallback) Decompiling 142594c60, pcode error at 142594c60: Unable to resolve constructor at 142594c60  
-2026-10-17 20:59:20 INFO  (GhidraScript) Decompile.java> shard 0: 7999 ok, 1 failed, 412s  
-2026-10-17 20:59:41 INFO  (GhidraScript) Decompile.java> shard 0: 8999 ok, 1 failed, 433s  
-2026-10-17 20:59:48 INFO  (GhidraScript) Decompile.java> shard 0: 9999 ok, 1 failed, 440s  
-2026-10-17 21:00:05 INFO  (GhidraScript) Decompile.java> shard 0: 10999 ok, 1 failed, 457s  
-2026-10-17 21:00:18 INFO  (GhidraScript) Decompile.java> shard 0: 11999 ok, 1 failed, 470s  
-2026-10-17 21:00:47 INFO  (GhidraScript) Decompile.java> shard 0: 12999 ok, 1 failed, 499s  
-2026-10-17 21:00:51 WARN  (DecompileCallback) Decompiling 15ad7be48, pcode error at 1413c3141: Unable to resolve constructor at 1413c3141  
-2026-10-17 21:00:52 WARN  (DecompileCallback) Decompiling 15ad9b41b: Unable to read bytes at ram:13fb36c64  
-2026-10-17 21:00:52 WARN  (DecompileCallback) Decompiling 15ad9b41b, pcode error at 13d81cab4: Could not follow disassembly flow into non-existing memory at 13d81cab4  
-2026-10-17 21:00:52 WARN  (DecompileCallback) Decompiling 15ad9b41b: Unable to read bytes at ram:13fb36c64  
-2026-10-17 21:00:52 WARN  (DecompileCallback) Decompiling 15ad9b41b, pcode error at 13d81cab4: Could not follow disassembly flow into non-existing memory at 13d81cab4  
-2026-10-17 21:00:52 WARN  (DecompileCallback) Decompiling 15ad9b41b: Unable to read bytes at ram:13fb36c64  
-2026-10-17 21:00:53 INFO  (GhidraScript) Decompile.java> shard 0: 13999 ok, 1 failed, 505s  
-2026-10-17 21:00:55 INFO  (GhidraScript) Decompile.java> shard 0: 14999 ok, 1 failed, 507s  
-2026-10-17 21:00:57 INFO  (GhidraScript) Decompile.java> shard 0: 15999 ok, 1 failed, 509s  
-2026-10-17 21:00:59 INFO  (GhidraScript) Decompile.java> shard 0: 16999 ok, 1 failed, 511s  
-2026-10-17 21:01:01 INFO  (GhidraScript) Decompile.java> shard 0: 17999 ok, 1 failed, 513s  
-2026-10-17 21:01:02 WARN  (DecompileCallback) Decompiling 15b4ff37e: Unable to read bytes at ram:13e7879b3  
-2026-10-17 21:01:02 WARN  (DecompileCallback) Decompiling 15b4ff37e, pcode error at 13eff9bf3: Could not follow disassembly flow into non-existing memory at 13eff9bf3  
-2026-10-17 21:01:02 WARN  (DecompileCallback) Decompiling 15b4ff37e: Unable to read bytes at ram:13e7879b3  
-2026-10-17 21:01:02 WARN  (DecompileCallback) Decompiling 15b4ff37e, pcode error at 13eff9bf3: Could not follow disassembly flow into non-existing memory at 13eff9bf3  
-2026-10-17 21:01:02 WARN  (DecompileCallback) Decompiling 15b4ff37e: Unable to read bytes at ram:13e7879b3  
-2026-10-17 21:01:03 INFO  (GhidraScript) Decompile.java> shard 0: 18999 ok, 1 failed, 515s  
-2026-10-17 21:01:05 INFO  (GhidraScript) Decompile.java> shard 0: 19999 ok, 1 failed, 517s  
-2026-10-17 21:01:06 INFO  (GhidraScript) Decompile.java> shard 0: 20999 ok, 1 failed, 519s  
-2026-10-17 21:01:08 INFO  (GhidraScript) Decompile.java> shard 0: 21999 ok, 1 failed, 520s  
-2026-10-17 21:01:08 WARN  (DecompileCallback) Decompiling 15bdb873b, pcode error at 140d8aeac: Unable to resolve constructor at 140d8aeac  
-2026-10-17 21:01:10 INFO  (GhidraScript) Decompile.java> shard 0: 22999 ok, 1 failed, 523s  
-2026-10-17 21:01:12 INFO  (GhidraScript) Decompile.java> shard 0: 23999 ok, 1 failed, 525s  
-2026-10-17 21:01:14 INFO  (GhidraScript) Decompile.java> shard 0: 24999 ok, 1 failed, 526s  
-2026-10-17 21:01:16 INFO  (GhidraScript) Decompile.java> shard 0: 25999 ok, 1 failed, 528s  
-2026-10-17 21:01:17 WARN  (DecompileCallback) Decompiling 15c4ba208, pcode error at 1434605f0: Unable to resolve constructor at 1434605f0  
-2026-10-17 21:01:20 WARN  (DecompileCallback) Decompiling 15c4ba208, pcode error at 14346c602: Unable to resolve constructor at 14346c602  
-2026-10-17 21:01:20 WARN  (DecompileCallback) Decompiling 15c4ba208, pcode error at 14061e27c: Unable to resolve constructor at 14061e27c  
-2026-10-17 21:02:48 INFO  (GhidraScript) Decompile.java> shard 0: 26998 ok, 2 failed, 620s  
-2026-10-17 21:02:50 INFO  (GhidraScript) Decompile.java> shard 0: 27998 ok, 2 failed, 622s  
-2026-10-17 21:02:52 WARN  (DecompileCallback) Decompiling 15c7542ab, pcode error at 13fd61541: Could not follow disassembly flow into non-existing memory at 13fd61541  
-2026-10-17 21:02:52 INFO  (GhidraScript) Decompile.java> shard 0: 28998 ok, 2 failed, 624s  
-2026-10-17 21:02:54 INFO  (GhidraScript) Decompile.java> shard 0: 29998 ok, 2 failed, 626s  
-2026-10-17 21:02:56 INFO  (GhidraScript) Decompile.java> shard 0: 30998 ok, 2 failed, 628s  
-2026-10-17 21:02:58 INFO  (GhidraScript) Decompile.java> shard 0: 31998 ok, 2 failed, 630s  
-2026-10-17 21:02:59 INFO  (GhidraScript) Decompile.java> shard 0: 32998 ok, 2 failed, 632s  
-2026-10-17 21:03:01 INFO  (GhidraScript) Decompile.java> shard 0: 33998 ok, 2 failed, 633s  
-2026-10-17 21:03:03 INFO  (GhidraScript) Decompile.java> shard 0: 34998 ok, 2 failed, 635s  
-2026-10-17 21:03:05 INFO  (GhidraScript) Decompile.java> shard 0: 35998 ok, 2 failed, 637s  
-2026-10-17 21:03:07 INFO  (GhidraScript) Decompile.java> shard 0: 36998 ok, 2 failed, 639s  
-2026-10-17 21:03:09 INFO  (GhidraScript) Decompile.java> shard 0: 37998 ok, 2 failed, 641s  
-2026-10-17 21:03:10 INFO  (GhidraScript) Decompile.java> shard 0: 38998 ok, 2 failed, 643s  
-2026-10-17 21:03:12 INFO  (GhidraScript) Decompile.java> shard 0: 39998 ok, 2 failed, 644s  
-2026-10-17 21:03:14 INFO  (GhidraScript) Decompile.java> shard 0: 40998 ok, 2 failed, 646s  
-2026-10-17 21:03:16 INFO  (GhidraScript) Decompile.java> shard 0: 41998 ok, 2 failed, 648s  
-2026-10-17 21:03:18 INFO  (GhidraScript) Decompile.java> shard 0: 42998 ok, 2 failed, 650s  
-2026-10-17 21:03:37 INFO  (GhidraScript) Decompile.java> shard 0: 43997 ok, 3 failed, 669s  
-2026-10-17 21:03:39 INFO  (GhidraScript) Decompile.java> shard 0: 44997 ok, 3 failed, 671s  
-2026-10-17 21:03:41 INFO  (GhidraScript) Decompile.java> shard 0: 45997 ok, 3 failed, 673s  
-2026-10-17 21:03:42 INFO  (GhidraScript) Decompile.java> shard 0: 46997 ok, 3 failed, 675s  
-2026-10-17 21:03:44 INFO  (GhidraScript) Decompile.java> shard 0: 47997 ok, 3 failed, 677s  
-2026-10-17 21:03:46 INFO  (GhidraScript) Decompile.java> shard 0: 48997 ok, 3 failed, 678s  
-2026-10-17 21:03:48 INFO  (GhidraScript) Decompile.java> shard 0: 49997 ok, 3 failed, 680s  
-2026-10-17 21:03:50 INFO  (GhidraScript) Decompile.java> shard 0: 50997 ok, 3 failed, 682s  
-2026-10-17 21:03:51 INFO  (GhidraScript) Decompile.java> shard 0: 51997 ok, 3 failed, 684s  
-2026-10-17 21:03:53 INFO  (GhidraScript) Decompile.java> shard 0: 52997 ok, 3 failed, 685s  
-2026-10-17 21:03:55 INFO  (GhidraScript) Decompile.java> shard 0: 53997 ok, 3 failed, 687s  
-2026-10-17 21:03:57 INFO  (GhidraScript) Decompile.java> shard 0: 54997 ok, 3 failed, 689s  
-2026-10-17 21:03:58 INFO  (GhidraScript) Decompile.java> shard 0: 55997 ok, 3 failed, 691s  
-2026-10-17 21:04:00 INFO  (GhidraScript) Decompile.java> shard 0: 56997 ok, 3 failed, 692s  
-2026-10-17 21:04:02 INFO  (GhidraScript) Decompile.java> shard 0: 57997 ok, 3 failed, 694s  
-2026-10-17 21:04:04 INFO  (GhidraScript) Decompile.java> shard 0: 58997 ok, 3 failed, 696s  
-2026-10-17 21:04:06 INFO  (GhidraScript) Decompile.java> shard 0: 59997 ok, 3 failed, 698s  
-2026-10-17 21:04:07 INFO  (GhidraScript) Decompile.java> shard 0: 60997 ok, 3 failed, 699s  
-2026-10-17 21:04:26 INFO  (GhidraScript) Decompile.java> shard 0: 61996 ok, 4 failed, 718s  
-2026-10-17 21:04:27 INFO  (GhidraScript) Decompile.java> shard 0: 62996 ok, 4 failed, 720s  
-2026-10-17 21:04:29 INFO  (GhidraScript) Decompile.java> shard 0: 63996 ok, 4 failed, 721s  
-2026-10-17 21:04:31 INFO  (GhidraScript) Decompile.java> shard 0: 64996 ok, 4 failed, 723s  
-2026-10-17 21:04:33 INFO  (GhidraScript) Decompile.java> shard 0: 65996 ok, 4 failed, 725s  
-2026-10-17 21:04:35 INFO  (GhidraScript) Decompile.java> shard 0: 66996 ok, 4 failed, 727s  
-2026-10-17 21:04:53 INFO  (GhidraScript) Decompile.java> shard 0: 67995 ok, 5 failed, 745s  
-2026-10-17 21:04:54 INFO  (GhidraScript) Decompile.java> shard 0 done: 68472 ok, 5 failed  
+2026-10-18 02:23:42 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-10-18 02:23:42 INFO  (HeadlessAnalyzer) Opening existing project: /tmp/proj/t7  
+2026-10-18 02:23:42 DEBUG (DefaultProjectManager) No tools found; Installing default tools  
+2026-10-18 02:23:42 DEBUG (DefaultProjectManager) 	no recent project directories found  
+2026-10-18 02:23:43 INFO  (HeadlessProject) Opening project: /tmp/proj/t7  
+2026-10-18 02:23:46 INFO  (HeadlessAnalyzer) REPORT: Processing read-only project file: /BlackOps3_Steam.exe  
+2026-10-18 02:23:46 INFO  (HeadlessAnalyzer) REPORT: Execute script: Decompile.java '/tmp/out/decomp-0.jsonl' '0' '6' '90'   
+2026-10-18 02:23:48 INFO  (HeadlessAnalyzer) SCRIPT: /home/runner/work/black-ops-3-decomp/black-ops-3-decomp/tools/ghidra/Decompile.java  
+2026-10-18 02:26:06 INFO  (GhidraScript) Decompile.java> shard 0: 1000 ok, 0 failed, 137s  
+2026-10-18 02:26:40 INFO  (GhidraScript) Decompile.java> shard 0: 2000 ok, 0 failed, 171s  
+2026-10-18 02:27:17 INFO  (GhidraScript) Decompile.java> shard 0: 3000 ok, 0 failed, 208s  
+2026-10-18 02:27:29 INFO  (GhidraScript) Decompile.java> shard 0: 4000 ok, 0 failed, 220s  
+2026-10-18 02:27:43 WARN  (DecompileCallback) Decompiling 142183870, pcode error at 142183881: Unable to resolve constructor at 142183881  
+2026-10-18 02:27:44 INFO  (GhidraScript) Decompile.java> shard 0: 5000 ok, 0 failed, 235s  
+2026-10-18 02:27:46 INFO  (GhidraScript) Decompile.java> shard 0: 6000 ok, 0 failed, 237s  
+2026-10-18 02:28:08 WARN  (DecompileCallback) Decompiling 1422c20e0, pcode error at 1422c20e2: Unable to resolve constructor at 1422c20e2  
+2026-10-18 02:28:09 INFO  (GhidraScript) Decompile.java> shard 0: 7000 ok, 0 failed, 260s  
+2026-10-18 02:28:09 WARN  (DecompileCallback) Decompiling 1422ea970, pcode error at 1422ea970: Unable to resolve constructor at 1422ea970  
+2026-10-18 02:28:32 INFO  (GhidraScript) Decompile.java> shard 0: 8000 ok, 0 failed, 283s  
+2026-10-18 02:28:33 WARN  (DecompileCallback) Decompiling 142594c60, pcode error at 142594c60: Unable to resolve constructor at 142594c60  
+2026-10-18 02:29:01 INFO  (GhidraScript) Decompile.java> shard 0: 9000 ok, 0 failed, 312s  
+2026-10-18 02:29:08 INFO  (GhidraScript) Decompile.java> shard 0: 10000 ok, 0 failed, 319s  
+2026-10-18 02:29:30 INFO  (GhidraScript) Decompile.java> shard 0: 11000 ok, 0 failed, 341s  
+2026-10-18 02:29:48 INFO  (GhidraScript) Decompile.java> shard 0: 12000 ok, 0 failed, 359s  
+2026-10-18 02:30:08 INFO  (GhidraScript) Decompile.java> shard 0: 13000 ok, 0 failed, 378s  
+2026-10-18 02:30:30 INFO  (GhidraScript) Decompile.java> shard 0: 14000 ok, 0 failed, 400s  
+2026-10-18 02:30:31 WARN  (DecompileCallback) Decompiling 15ad51bf9: Unable to read bytes at ram:13ee029ad  
+2026-10-18 02:30:31 WARN  (DecompileCallback) Decompiling 15ad51bf9, pcode error at 13fd2cf4d: Could not follow disassembly flow into non-existing memory at 13fd2cf4d  
+2026-10-18 02:30:31 WARN  (DecompileCallback) Decompiling 15ad51bf9: Unable to read bytes at ram:13ee029ad  
+2026-10-18 02:30:31 WARN  (DecompileCallback) Decompiling 15ad51bf9, pcode error at 13fd2cf4d: Could not follow disassembly flow into non-existing memory at 13fd2cf4d  
+2026-10-18 02:30:31 WARN  (DecompileCallback) Decompiling 15ad51bf9: Unable to read bytes at ram:13ee029ad  
+2026-10-18 02:30:31 WARN  (DecompileCallback) Decompiling 15ad7be48, pcode error at 1413c3141: Unable to resolve constructor at 1413c3141  
+2026-10-18 02:30:33 INFO  (GhidraScript) Decompile.java> shard 0: 15000 ok, 0 failed, 404s  
+2026-10-18 02:30:35 WARN  (DecompileCallback) Decompiling 15b1239e9: Unable to read bytes at ram:13fa39a28  
+2026-10-18 02:30:35 WARN  (DecompileCallback) Decompiling 15b1239e9, pcode error at 13eca36e8: Could not follow disassembly flow into non-existing memory at 13eca36e8  
+2026-10-18 02:30:35 WARN  (DecompileCallback) Decompiling 15b1239e9: Unable to read bytes at ram:13fa39a28  
+2026-10-18 02:30:35 WARN  (DecompileCallback) Decompiling 15b1239e9, pcode error at 13eca36e8: Could not follow disassembly flow into non-existing memory at 13eca36e8  
+2026-10-18 02:30:35 WARN  (DecompileCallback) Decompiling 15b1239e9: Unable to read bytes at ram:13fa39a28  
+2026-10-18 02:30:35 INFO  (GhidraScript) Decompile.java> shard 0: 16000 ok, 0 failed, 406s  
+2026-10-18 02:30:36 WARN  (DecompileCallback) Decompiling 15b189219: Unable to read bytes at ram:13bcb410c  
+2026-10-18 02:30:36 WARN  (DecompileCallback) Decompiling 15b189219, pcode error at 13db1a17c: Could not follow disassembly flow into non-existing memory at 13db1a17c  
+2026-10-18 02:30:36 WARN  (DecompileCallback) Decompiling 15b189219: Unable to read bytes at ram:13bcb410c  
+2026-10-18 02:30:36 WARN  (DecompileCallback) Decompiling 15b189219, pcode error at 13db1a17c: Could not follow disassembly flow into non-existing memory at 13db1a17c  
+2026-10-18 02:30:36 WARN  (DecompileCallback) Decompiling 15b189219: Unable to read bytes at ram:13bcb410c  
+2026-10-18 02:30:37 INFO  (GhidraScript) Decompile.java> shard 0: 17000 ok, 0 failed, 408s  
+2026-10-18 02:30:39 INFO  (GhidraScript) Decompile.java> shard 0: 18000 ok, 0 failed, 410s  
+2026-10-18 02:30:41 INFO  (GhidraScript) Decompile.java> shard 0: 19000 ok, 0 failed, 412s  
+2026-10-18 02:30:42 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142f999c1: Unable to resolve constructor at 142f999c1  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa63af: Unable to resolve constructor at 142fa63af  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6429: Unable to resolve constructor at 142fa6429  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa64bb: Unable to resolve constructor at 142fa64bb  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa655b: Unable to resolve constructor at 142fa655b  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65d7: Unable to resolve constructor at 142fa65d7  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65c5: Unable to resolve constructor at 142fa65c5  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa664e: Unable to resolve constructor at 142fa664e  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa66f0: Unable to resolve constructor at 142fa66f0  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa676a: Unable to resolve constructor at 142fa676a  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa67d8: Unable to resolve constructor at 142fa67d8  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa685a: Unable to resolve constructor at 142fa685a  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa68d1: Unable to resolve constructor at 142fa68d1  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa68fa: Unable to resolve constructor at 142fa68fa  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa694d: Unable to resolve constructor at 142fa694d  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa692e: Unable to resolve constructor at 142fa692e  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6926: Unable to resolve constructor at 142fa6926  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6999: Unable to resolve constructor at 142fa6999  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6a04: Unable to resolve constructor at 142fa6a04  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6a8e: Unable to resolve constructor at 142fa6a8e  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6ab2: Unable to resolve constructor at 142fa6ab2  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6af9: Unable to resolve constructor at 142fa6af9  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6b28: Unable to resolve constructor at 142fa6b28  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6b8e: Unable to resolve constructor at 142fa6b8e  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6bac: Unable to resolve constructor at 142fa6bac  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6c23: Unable to resolve constructor at 142fa6c23  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6ca7: Unable to resolve constructor at 142fa6ca7  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6d3b: Unable to resolve constructor at 142fa6d3b  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6dc2: Unable to resolve constructor at 142fa6dc2  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6e1f: Unable to resolve constructor at 142fa6e1f  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6e5a: Unable to resolve constructor at 142fa6e5a  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6ee8: Failed to resolve varnode <Sreg>, index=7  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6f36: Unable to resolve constructor at 142fa6f36  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6fc1: Unable to resolve constructor at 142fa6fc1  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa7018: Unable to resolve constructor at 142fa7018  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa7073: Unable to resolve constructor at 142fa7073  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6f47: Unable to resolve constructor at 142fa6f47  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6f6e: Unable to resolve constructor at 142fa6f6e  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6fde: Unable to resolve constructor at 142fa6fde  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6da2: Unable to resolve constructor at 142fa6da2  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6da6: Unable to resolve constructor at 142fa6da6  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6e08: Unable to resolve constructor at 142fa6e08  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6d8a: Unable to resolve constructor at 142fa6d8a  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6e14: Unable to resolve constructor at 142fa6e14  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6ef4: Unable to resolve constructor at 142fa6ef4  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6d0f: Unable to resolve constructor at 142fa6d0f  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6d74: Unable to resolve constructor at 142fa6d74  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6de2: Unable to resolve constructor at 142fa6de2  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6c1c: Unable to resolve constructor at 142fa6c1c  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6e3e: Unable to resolve constructor at 142fa6e3e  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6bf6: Unable to resolve constructor at 142fa6bf6  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6d5a: Unable to resolve constructor at 142fa6d5a  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6c57: Unable to resolve constructor at 142fa6c57  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6bf7: Unable to resolve constructor at 142fa6bf7  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6be2: Unable to resolve constructor at 142fa6be2  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6d40: Unable to resolve constructor at 142fa6d40  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6c3e: Unable to resolve constructor at 142fa6c3e  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6c38: Unable to resolve constructor at 142fa6c38  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6bbf: Unable to resolve constructor at 142fa6bbf  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6ad2: Unable to resolve constructor at 142fa6ad2  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6a30: Unable to resolve constructor at 142fa6a30  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa67c9: Unable to resolve constructor at 142fa67c9  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa68a1: Unable to resolve constructor at 142fa68a1  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa67b6: Unable to resolve constructor at 142fa67b6  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa68b4: Unable to resolve constructor at 142fa68b4  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa68da: Unable to resolve constructor at 142fa68da  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6889: Unable to resolve constructor at 142fa6889  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa687f: Unable to resolve constructor at 142fa687f  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa679c: Unable to resolve constructor at 142fa679c  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa678e: Unable to resolve constructor at 142fa678e  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6720: Unable to resolve constructor at 142fa6720  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6788: Unable to resolve constructor at 142fa6788  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa67fc: Unable to resolve constructor at 142fa67fc  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa686c: Unable to resolve constructor at 142fa686c  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa67fb: Unable to resolve constructor at 142fa67fb  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65c4: Unable to resolve constructor at 142fa65c4  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65ba: Unable to resolve constructor at 142fa65ba  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65ae: Unable to resolve constructor at 142fa65ae  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa660f: Unable to resolve constructor at 142fa660f  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa659c: Unable to resolve constructor at 142fa659c  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa659d: Unable to resolve constructor at 142fa659d  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65f1: Unable to resolve constructor at 142fa65f1  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6708: Unable to resolve constructor at 142fa6708  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6770: Unable to resolve constructor at 142fa6770  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6776: Unable to resolve constructor at 142fa6776  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa666e: Unable to resolve constructor at 142fa666e  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa657b: Unable to resolve constructor at 142fa657b  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65e4: Unable to resolve constructor at 142fa65e4  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6469: Unable to resolve constructor at 142fa6469  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65f0: Unable to resolve constructor at 142fa65f0  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6554: Unable to resolve constructor at 142fa6554  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa63ee: Unable to resolve constructor at 142fa63ee  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6416: Unable to resolve constructor at 142fa6416  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa645d: Unable to resolve constructor at 142fa645d  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa64d1: Unable to resolve constructor at 142fa64d1  
+2026-10-18 02:30:44 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65a9: Unable to resolve constructor at 142fa65a9  
+2026-10-18 02:31:33 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142f999c1: Unable to resolve constructor at 142f999c1  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa63af: Unable to resolve constructor at 142fa63af  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6429: Unable to resolve constructor at 142fa6429  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa64bb: Unable to resolve constructor at 142fa64bb  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa655b: Unable to resolve constructor at 142fa655b  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65d7: Unable to resolve constructor at 142fa65d7  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65c5: Unable to resolve constructor at 142fa65c5  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa664e: Unable to resolve constructor at 142fa664e  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa66f0: Unable to resolve constructor at 142fa66f0  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa676a: Unable to resolve constructor at 142fa676a  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa67d8: Unable to resolve constructor at 142fa67d8  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa685a: Unable to resolve constructor at 142fa685a  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa68d1: Unable to resolve constructor at 142fa68d1  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa68fa: Unable to resolve constructor at 142fa68fa  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa694d: Unable to resolve constructor at 142fa694d  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa692e: Unable to resolve constructor at 142fa692e  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6926: Unable to resolve constructor at 142fa6926  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6999: Unable to resolve constructor at 142fa6999  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6a04: Unable to resolve constructor at 142fa6a04  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6a8e: Unable to resolve constructor at 142fa6a8e  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6ab2: Unable to resolve constructor at 142fa6ab2  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6af9: Unable to resolve constructor at 142fa6af9  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6b28: Unable to resolve constructor at 142fa6b28  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6b8e: Unable to resolve constructor at 142fa6b8e  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6bac: Unable to resolve constructor at 142fa6bac  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6c23: Unable to resolve constructor at 142fa6c23  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6ca7: Unable to resolve constructor at 142fa6ca7  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6d3b: Unable to resolve constructor at 142fa6d3b  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6dc2: Unable to resolve constructor at 142fa6dc2  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6e1f: Unable to resolve constructor at 142fa6e1f  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6e5a: Unable to resolve constructor at 142fa6e5a  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6ee8: Failed to resolve varnode <Sreg>, index=7  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6f36: Unable to resolve constructor at 142fa6f36  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6fc1: Unable to resolve constructor at 142fa6fc1  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa7018: Unable to resolve constructor at 142fa7018  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa7073: Unable to resolve constructor at 142fa7073  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6f47: Unable to resolve constructor at 142fa6f47  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6f6e: Unable to resolve constructor at 142fa6f6e  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6fde: Unable to resolve constructor at 142fa6fde  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6da2: Unable to resolve constructor at 142fa6da2  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6da6: Unable to resolve constructor at 142fa6da6  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6e08: Unable to resolve constructor at 142fa6e08  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6d8a: Unable to resolve constructor at 142fa6d8a  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6e14: Unable to resolve constructor at 142fa6e14  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6ef4: Unable to resolve constructor at 142fa6ef4  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6d0f: Unable to resolve constructor at 142fa6d0f  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6d74: Unable to resolve constructor at 142fa6d74  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6de2: Unable to resolve constructor at 142fa6de2  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6c1c: Unable to resolve constructor at 142fa6c1c  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6e3e: Unable to resolve constructor at 142fa6e3e  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6bf6: Unable to resolve constructor at 142fa6bf6  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6d5a: Unable to resolve constructor at 142fa6d5a  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6c57: Unable to resolve constructor at 142fa6c57  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6bf7: Unable to resolve constructor at 142fa6bf7  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6be2: Unable to resolve constructor at 142fa6be2  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6d40: Unable to resolve constructor at 142fa6d40  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6c3e: Unable to resolve constructor at 142fa6c3e  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6c38: Unable to resolve constructor at 142fa6c38  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6bbf: Unable to resolve constructor at 142fa6bbf  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6ad2: Unable to resolve constructor at 142fa6ad2  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6a30: Unable to resolve constructor at 142fa6a30  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa67c9: Unable to resolve constructor at 142fa67c9  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa68a1: Unable to resolve constructor at 142fa68a1  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa67b6: Unable to resolve constructor at 142fa67b6  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa68b4: Unable to resolve constructor at 142fa68b4  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa68da: Unable to resolve constructor at 142fa68da  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6889: Unable to resolve constructor at 142fa6889  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa687f: Unable to resolve constructor at 142fa687f  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa679c: Unable to resolve constructor at 142fa679c  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa678e: Unable to resolve constructor at 142fa678e  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6720: Unable to resolve constructor at 142fa6720  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6788: Unable to resolve constructor at 142fa6788  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa67fc: Unable to resolve constructor at 142fa67fc  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa686c: Unable to resolve constructor at 142fa686c  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa67fb: Unable to resolve constructor at 142fa67fb  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65c4: Unable to resolve constructor at 142fa65c4  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65ba: Unable to resolve constructor at 142fa65ba  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65ae: Unable to resolve constructor at 142fa65ae  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa660f: Unable to resolve constructor at 142fa660f  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa659c: Unable to resolve constructor at 142fa659c  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa659d: Unable to resolve constructor at 142fa659d  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65f1: Unable to resolve constructor at 142fa65f1  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6708: Unable to resolve constructor at 142fa6708  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6770: Unable to resolve constructor at 142fa6770  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6776: Unable to resolve constructor at 142fa6776  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa666e: Unable to resolve constructor at 142fa666e  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa657b: Unable to resolve constructor at 142fa657b  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65e4: Unable to resolve constructor at 142fa65e4  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6469: Unable to resolve constructor at 142fa6469  
+2026-10-18 02:31:35 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65f0: Unable to resolve constructor at 142fa65f0  
+2026-10-18 02:31:36 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6554: Unable to resolve constructor at 142fa6554  
+2026-10-18 02:31:36 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa63ee: Unable to resolve constructor at 142fa63ee  
+2026-10-18 02:31:36 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa6416: Unable to resolve constructor at 142fa6416  
+2026-10-18 02:31:36 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa645d: Unable to resolve constructor at 142fa645d  
+2026-10-18 02:31:36 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa64d1: Unable to resolve constructor at 142fa64d1  
+2026-10-18 02:31:36 WARN  (DecompileCallback) Decompiling 15b64661f, pcode error at 142fa65a9: Unable to resolve constructor at 142fa65a9  
+2026-10-18 02:32:13 INFO  (GhidraScript) Decompile.java> shard 0: 19999 ok, 1 failed, 504s  
+2026-10-18 02:32:15 INFO  (GhidraScript) Decompile.java> shard 0: 20999 ok, 1 failed, 506s  
+2026-10-18 02:32:17 INFO  (GhidraScript) Decompile.java> shard 0: 21999 ok, 1 failed, 508s  
+2026-10-18 02:32:19 INFO  (GhidraScript) Decompile.java> shard 0: 22999 ok, 1 failed, 510s  
+2026-10-18 02:32:21 INFO  (GhidraScript) Decompile.java> shard 0: 23999 ok, 1 failed, 512s  
+2026-10-18 02:32:22 INFO  (GhidraScript) Decompile.java> shard 0: 24999 ok, 1 failed, 513s  
+2026-10-18 02:32:24 INFO  (GhidraScript) Decompile.java> shard 0: 25999 ok, 1 failed, 515s  
+2026-10-18 02:32:26 INFO  (GhidraScript) Decompile.java> shard 0: 26999 ok, 1 failed, 517s  
+2026-10-18 02:32:28 INFO  (GhidraScript) Decompile.java> shard 0: 27999 ok, 1 failed, 519s  
+2026-10-18 02:32:30 INFO  (GhidraScript) Decompile.java> shard 0: 28999 ok, 1 failed, 521s  
+2026-10-18 02:32:32 INFO  (GhidraScript) Decompile.java> shard 0: 29999 ok, 1 failed, 522s  
+2026-10-18 02:32:33 WARN  (DecompileCallback) Decompiling 15c7fc1ee: Unable to read bytes at ram:13ff05b34  
+2026-10-18 02:32:33 WARN  (DecompileCallback) Decompiling 15c7fc1ee, pcode error at 13fa57964: Could not follow disassembly flow into non-existing memory at 13fa57964  
+2026-10-18 02:32:33 WARN  (DecompileCallback) Decompiling 15c7fc1ee: Unable to read bytes at ram:13ff05b34  
+2026-10-18 02:32:33 WARN  (DecompileCallback) Decompiling 15c7fc1ee, pcode error at 13fa57964: Could not follow disassembly flow into non-existing memory at 13fa57964  
+2026-10-18 02:32:33 WARN  (DecompileCallback) Decompiling 15c7fc1ee: Unable to read bytes at ram:13ff05b34  
+2026-10-18 02:32:33 INFO  (GhidraScript) Decompile.java> shard 0: 30999 ok, 1 failed, 524s  
+2026-10-18 02:32:35 WARN  (DecompileCallback) Decompiling 15cbf999b: Unable to read bytes at ram:13d8eeb06  
+2026-10-18 02:32:36 INFO  (GhidraScript) Decompile.java> shard 0: 31999 ok, 1 failed, 527s  
+2026-10-18 02:32:37 INFO  (GhidraScript) Decompile.java> shard 0: 32999 ok, 1 failed, 528s  
+2026-10-18 02:32:39 INFO  (GhidraScript) Decompile.java> shard 0: 33999 ok, 1 failed, 530s  
+2026-10-18 02:32:41 INFO  (GhidraScript) Decompile.java> shard 0: 34999 ok, 1 failed, 532s  
+2026-10-18 02:32:43 INFO  (GhidraScript) Decompile.java> shard 0: 35999 ok, 1 failed, 534s  
+2026-10-18 02:32:45 INFO  (GhidraScript) Decompile.java> shard 0: 36999 ok, 1 failed, 536s  
+2026-10-18 02:33:04 INFO  (GhidraScript) Decompile.java> shard 0: 37998 ok, 2 failed, 555s  
+2026-10-18 02:33:06 INFO  (GhidraScript) Decompile.java> shard 0: 38998 ok, 2 failed, 557s  
+2026-10-18 02:33:08 INFO  (GhidraScript) Decompile.java> shard 0: 39998 ok, 2 failed, 559s  
+2026-10-18 02:33:10 INFO  (GhidraScript) Decompile.java> shard 0: 40998 ok, 2 failed, 561s  
+2026-10-18 02:33:12 INFO  (GhidraScript) Decompile.java> shard 0: 41998 ok, 2 failed, 563s  
+2026-10-18 02:33:13 INFO  (GhidraScript) Decompile.java> shard 0: 42998 ok, 2 failed, 564s  
+2026-10-18 02:33:31 INFO  (GhidraScript) Decompile.java> shard 0: 43997 ok, 3 failed, 582s  
+2026-10-18 02:33:33 INFO  (GhidraScript) Decompile.java> shard 0: 44997 ok, 3 failed, 584s  
+2026-10-18 02:33:35 INFO  (GhidraScript) Decompile.java> shard 0: 45997 ok, 3 failed, 586s  
+2026-10-18 02:33:37 INFO  (GhidraScript) Decompile.java> shard 0: 46997 ok, 3 failed, 587s  
+2026-10-18 02:33:38 INFO  (GhidraScript) Decompile.java> shard 0: 47997 ok, 3 failed, 589s  
+2026-10-18 02:33:40 INFO  (GhidraScript) Decompile.java> shard 0: 48997 ok, 3 failed, 591s  
+2026-10-18 02:33:42 INFO  (GhidraScript) Decompile.java> shard 0: 49997 ok, 3 failed, 593s  
+2026-10-18 02:33:44 INFO  (GhidraScript) Decompile.java> shard 0: 50997 ok, 3 failed, 595s  
+2026-10-18 02:33:46 INFO  (GhidraScript) Decompile.java> shard 0: 51997 ok, 3 failed, 597s  
+2026-10-18 02:33:48 INFO  (GhidraScript) Decompile.java> shard 0: 52997 ok, 3 failed, 598s  
+2026-10-18 02:33:49 INFO  (GhidraScript) Decompile.java> shard 0: 53997 ok, 3 failed, 600s  
+2026-10-18 02:33:51 INFO  (GhidraScript) Decompile.java> shard 0: 54997 ok, 3 failed, 602s  
+2026-10-18 02:33:53 INFO  (GhidraScript) Decompile.java> shard 0: 55997 ok, 3 failed, 604s  
+2026-10-18 02:33:55 INFO  (GhidraScript) Decompile.java> shard 0: 56997 ok, 3 failed, 606s  
+2026-10-18 02:33:57 INFO  (GhidraScript) Decompile.java> shard 0: 57997 ok, 3 failed, 608s  
+2026-10-18 02:33:59 INFO  (GhidraScript) Decompile.java> shard 0: 58997 ok, 3 failed, 610s  
+2026-10-18 02:34:17 INFO  (GhidraScript) Decompile.java> shard 0: 59996 ok, 4 failed, 628s  
+2026-10-18 02:34:19 INFO  (GhidraScript) Decompile.java> shard 0: 60996 ok, 4 failed, 630s  
+2026-10-18 02:34:21 INFO  (GhidraScript) Decompile.java> shard 0: 61996 ok, 4 failed, 632s  
+2026-10-18 02:34:23 INFO  (GhidraScript) Decompile.java> shard 0: 62996 ok, 4 failed, 633s  
+2026-10-18 02:34:24 INFO  (GhidraScript) Decompile.java> shard 0: 63996 ok, 4 failed, 635s  
+2026-10-18 02:34:26 INFO  (GhidraScript) Decompile.java> shard 0: 64996 ok, 4 failed, 637s  
+2026-10-18 02:34:28 INFO  (GhidraScript) Decompile.java> shard 0: 65996 ok, 4 failed, 639s  
+2026-10-18 02:34:30 INFO  (GhidraScript) Decompile.java> shard 0: 66996 ok, 4 failed, 641s  
+2026-10-18 02:34:49 INFO  (GhidraScript) Decompile.java> shard 0: 67995 ok, 5 failed, 660s  
+2026-10-18 02:34:51 INFO  (GhidraScript) Decompile.java> shard 0: 68995 ok, 5 failed, 661s  
+2026-10-18 02:34:51 INFO  (GhidraScript) Decompile.java> shard 0 done: 69437 ok, 5 failed  

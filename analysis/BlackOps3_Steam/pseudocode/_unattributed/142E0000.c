@@ -1229,6 +1229,25 @@ void FUN_142e49b10(void)
 }
 
 
+// 142E49B30  FUN_142e49b30  (line unknown)
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_142e49b30(void)
+
+{
+  _DAT_14a5f25b0 = _DAT_1433455b0;
+  uRam000000014a5f25b8 = uRam00000001433455b8;
+  _DAT_14a5f25c0 = _DAT_1433455c0;
+  uRam000000014a5f25c8 = uRam00000001433455c8;
+  _DAT_14a5f25d0 = _DAT_1433455d0;
+  uRam000000014a5f25d8 = uRam00000001433455d8;
+  _DAT_14a5f25e0 = _DAT_14a5f3380;
+  uRam000000014a5f25e8 = uRam000000014a5f3388;
+  return;
+}
+
+
 // 142E49B70  FUN_142e49b70  (line unknown)
 
 void FUN_142e49b70(void)
@@ -1238,6 +1257,28 @@ void FUN_142e49b70(void)
             (&DAT_14a56e1b0,0x2110,0x40,(_func_void_void_ptr *)&LAB_1419bff60,
              (_func_void_void_ptr *)&LAB_1419c0010);
   atexit((_func_5014 *)&LAB_142f788e0);
+  return;
+}
+
+
+// 142E49BB0  FUN_142e49bb0  (line unknown)
+
+void FUN_142e49bb0(void)
+
+{
+  undefined8 *puVar1;
+  int iVar2;
+  
+  iVar2 = 0x11;
+  puVar1 = &DAT_14a5f269c;
+  do {
+    iVar2 = iVar2 + -1;
+    *(undefined8 *)((longlong)puVar1 + -0xc) = 0;
+    *(undefined4 *)((longlong)puVar1 + -4) = 0;
+    *puVar1 = 0;
+    *(undefined4 *)(puVar1 + 1) = 0;
+    puVar1 = puVar1 + 0x18;
+  } while (-1 < iVar2);
   return;
 }
 
@@ -1266,6 +1307,25 @@ void FUN_142e49c00(void)
 }
 
 
+// 142E49C20  FUN_142e49c20  (line unknown)
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_142e49c20(void)
+
+{
+  _DAT_14a5f33d0 = _DAT_143345600;
+  uRam000000014a5f33d8 = uRam0000000143345608;
+  _DAT_14a5f33e0 = _DAT_143345610;
+  uRam000000014a5f33e8 = uRam0000000143345618;
+  _DAT_14a5f33f0 = _DAT_143345620;
+  uRam000000014a5f33f8 = uRam0000000143345628;
+  _DAT_14a5f3400 = _DAT_14a5f3410;
+  uRam000000014a5f3408 = uRam000000014a5f3418;
+  return;
+}
+
+
 // 142E49C60  FUN_142e49c60  (line unknown)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -1286,6 +1346,25 @@ void FUN_142e49c80(void)
 
 {
   _DAT_14a5f3708 = FUN_142c3e7f0(0x3f490fdb);
+  return;
+}
+
+
+// 142E49CA0  FUN_142e49ca0  (line unknown)
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_142e49ca0(void)
+
+{
+  _DAT_14a5f3710 = _DAT_143345660;
+  uRam000000014a5f3718 = uRam0000000143345668;
+  _DAT_14a5f3720 = _DAT_143345670;
+  uRam000000014a5f3728 = uRam0000000143345678;
+  _DAT_14a5f3730 = _DAT_143345680;
+  uRam000000014a5f3738 = uRam0000000143345688;
+  _DAT_14a5f3740 = _DAT_14a5f3750;
+  uRam000000014a5f3748 = uRam000000014a5f3758;
   return;
 }
 
@@ -1314,6 +1393,25 @@ void FUN_142e49d00(void)
 }
 
 
+// 142E49D20  FUN_142e49d20  (line unknown)
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_142e49d20(void)
+
+{
+  _DAT_14a5f3b80 = _DAT_1433456c0;
+  uRam000000014a5f3b88 = uRam00000001433456c8;
+  _DAT_14a5f3b90 = _DAT_1433456d0;
+  uRam000000014a5f3b98 = uRam00000001433456d8;
+  _DAT_14a5f3ba0 = _DAT_1433456e0;
+  uRam000000014a5f3ba8 = uRam00000001433456e8;
+  _DAT_14a5f3bb0 = _DAT_14a5f3bc0;
+  uRam000000014a5f3bb8 = _DAT_14a5f3bc8;
+  return;
+}
+
+
 // 142E49D60  FUN_142e49d60  (line unknown)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -1338,6 +1436,25 @@ void FUN_142e49d80(void)
 }
 
 
+// 142E49DA0  FUN_142e49da0  (line unknown)
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_142e49da0(void)
+
+{
+  _DAT_14a5f3be0 = _DAT_143345710;
+  uRam000000014a5f3be8 = uRam0000000143345718;
+  _DAT_14a5f3bf0 = _DAT_143345720;
+  uRam000000014a5f3bf8 = uRam0000000143345728;
+  _DAT_14a5f3c00 = _DAT_143345730;
+  uRam000000014a5f3c08 = uRam0000000143345738;
+  _DAT_14a5f3c10 = _DAT_14a5f3c20;
+  uRam000000014a5f3c18 = uRam000000014a5f3c28;
+  return;
+}
+
+
 // 142E49DE0  FUN_142e49de0  (line unknown)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -1358,6 +1475,25 @@ void FUN_142e49e00(void)
 
 {
   _DAT_14a5f5494 = FUN_142c3e7f0(0x3f490fdb);
+  return;
+}
+
+
+// 142E49E20  FUN_142e49e20  (line unknown)
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_142e49e20(void)
+
+{
+  _DAT_14a5f5450 = _DAT_143345760;
+  uRam000000014a5f5458 = uRam0000000143345768;
+  _DAT_14a5f5460 = _DAT_143345770;
+  uRam000000014a5f5468 = uRam0000000143345778;
+  _DAT_14a5f5470 = _DAT_143345780;
+  uRam000000014a5f5478 = uRam0000000143345788;
+  _DAT_14a5f5480 = _DAT_14a5f54a0;
+  uRam000000014a5f5488 = uRam000000014a5f54a8;
   return;
 }
 
@@ -7938,6 +8074,25 @@ void FUN_142e79680(void)
 
 {
   _DAT_14a625894 = FUN_142c3e7f0(0x3f490fdb);
+  return;
+}
+
+
+// 142E796A0  FUN_142e796a0  (line unknown)
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_142e796a0(void)
+
+{
+  _DAT_14a625850 = _DAT_143347bc0;
+  uRam000000014a625858 = uRam0000000143347bc8;
+  _DAT_14a625860 = _DAT_143347bd0;
+  uRam000000014a625868 = uRam0000000143347bd8;
+  _DAT_14a625870 = _DAT_143347be0;
+  uRam000000014a625878 = uRam0000000143347be8;
+  _DAT_14a625880 = _DAT_14a6258a0;
+  uRam000000014a625888 = uRam000000014a6258a8;
   return;
 }
 
@@ -24355,6 +24510,25 @@ void FUN_142eede60(void)
 }
 
 
+// 142EEDE80  FUN_142eede80  (line unknown)
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_142eede80(void)
+
+{
+  _DAT_14a670640 = _DAT_14334d770;
+  uRam000000014a670648 = uRam000000014334d778;
+  _DAT_14a670650 = _DAT_14334d780;
+  uRam000000014a670658 = uRam000000014334d788;
+  _DAT_14a670660 = _DAT_14334d790;
+  uRam000000014a670668 = uRam000000014334d798;
+  _DAT_14a670670 = _DAT_14a670680;
+  uRam000000014a670678 = uRam000000014a670688;
+  return;
+}
+
+
 // 142EEDEC0  FUN_142eedec0  (line unknown)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -24451,6 +24625,25 @@ void FUN_142eedfa0(void)
 }
 
 
+// 142EEDFC0  FUN_142eedfc0  (line unknown)
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_142eedfc0(void)
+
+{
+  _DAT_14a6737e0 = _DAT_14334d890;
+  uRam000000014a6737e8 = uRam000000014334d898;
+  _DAT_14a6737f0 = _DAT_14334d8a0;
+  uRam000000014a6737f8 = uRam000000014334d8a8;
+  _DAT_14a673800 = _DAT_14334d8b0;
+  uRam000000014a673808 = uRam000000014334d8b8;
+  _DAT_14a673810 = _DAT_14a673830;
+  uRam000000014a673818 = uRam000000014a673838;
+  return;
+}
+
+
 // 142EEE000  FUN_142eee000  (line unknown)
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -24471,6 +24664,25 @@ void FUN_142eee020(void)
 
 {
   _DAT_14a6fa0b4 = FUN_142c3e7f0(0x3f490fdb);
+  return;
+}
+
+
+// 142EEE040  FUN_142eee040  (line unknown)
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_142eee040(void)
+
+{
+  _DAT_14a6fa070 = _DAT_14334da20;
+  uRam000000014a6fa078 = uRam000000014334da28;
+  _DAT_14a6fa080 = _DAT_14334da30;
+  uRam000000014a6fa088 = uRam000000014334da38;
+  _DAT_14a6fa090 = _DAT_14334da40;
+  uRam000000014a6fa098 = uRam000000014334da48;
+  _DAT_14a6fa0a0 = _DAT_14a6fa0c0;
+  uRam000000014a6fa0a8 = uRam000000014a6fa0c8;
   return;
 }
 
@@ -24508,6 +24720,25 @@ void FUN_142eee0e0(void)
 
 {
   _DAT_14a6fc054 = FUN_142c3e7f0(0x3f490fdb);
+  return;
+}
+
+
+// 142EEE100  FUN_142eee100  (line unknown)
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_142eee100(void)
+
+{
+  _DAT_14a6fc010 = _DAT_14334daa0;
+  uRam000000014a6fc018 = uRam000000014334daa8;
+  _DAT_14a6fc020 = _DAT_14334dab0;
+  uRam000000014a6fc028 = uRam000000014334dab8;
+  _DAT_14a6fc030 = _DAT_14334dac0;
+  uRam000000014a6fc038 = uRam000000014334dac8;
+  _DAT_14a6fc040 = _DAT_14a6fc060;
+  uRam000000014a6fc048 = uRam000000014a6fc068;
   return;
 }
 
@@ -24774,6 +25005,25 @@ void FUN_142eef490(void)
 
 {
   _DAT_14a728fc4 = FUN_142c3e7f0(0x3f490fdb);
+  return;
+}
+
+
+// 142EEF4B0  FUN_142eef4b0  (line unknown)
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_142eef4b0(void)
+
+{
+  _DAT_14a728f80 = _DAT_14334dc70;
+  uRam000000014a728f88 = uRam000000014334dc78;
+  _DAT_14a728f90 = _DAT_14334dc80;
+  uRam000000014a728f98 = uRam000000014334dc88;
+  _DAT_14a728fa0 = _DAT_14334dc90;
+  uRam000000014a728fa8 = uRam000000014334dc98;
+  _DAT_14a728fb0 = _DAT_14a728fd0;
+  uRam000000014a728fb8 = uRam000000014a728fd8;
   return;
 }
 

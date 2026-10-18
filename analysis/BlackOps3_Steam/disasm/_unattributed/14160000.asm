@@ -138796,6 +138796,11 @@ LAB_141687596:
   141687601  4883C428             ADD RSP,0x28
   141687605  E92624C6FF           JMP 0x1412e9a30
 
+; 141687670  FUN_141687670  (line unknown)
+  141687670  8B91006C0100         MOV EDX,dword ptr [RCX + 0x16c00]
+  141687676  33C9                 XOR ECX,ECX
+  141687678  E98324C6FF           JMP 0x1412e9b00
+
 ; 141687690  FUN_141687690  (line unknown)
   141687690  4883EC28             SUB RSP,0x28
   141687694  8B917C6E0100         MOV EDX,dword ptr [RCX + 0x16e7c]
@@ -164544,6 +164549,13 @@ LAB_14169fa5d:
   14169FA61  49FFC8               DEC R8
   14169FA64  75DA                 JNZ 0x14169fa40
   14169FA66  F3C3                 RET
+
+; 14169FA70  FUN_14169fa70  (line unknown)
+  14169FA70  836108EF             AND dword ptr [RCX + 0x8],0xffffffef
+  14169FA74  33C0                 XOR EAX,EAX
+  14169FA76  C7811402000000000004 MOV dword ptr [RCX + 0x214],0x4000000
+  14169FA80  668981F2010000       MOV word ptr [RCX + 0x1f2],AX
+  14169FA87  C3                   RET
 
 ; 14169FA90  FUN_14169fa90  (line unknown)
   14169FA90  488BC4               MOV RAX,RSP

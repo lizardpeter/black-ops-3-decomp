@@ -32882,6 +32882,10 @@ LAB_140133e51:
   140133F46  5B                   POP RBX
   140133F47  C3                   RET
 
+; 140133F48  FUN_140133f48  (line unknown)
+  140133F48  89048A               MOV dword ptr [RDX + RCX*0x4],EAX
+  140133F4B  E9687D991C           JMP 0x15cacbcb8
+
 ; 140133F50  FUN_140133f50  (line unknown)
   140133F50  3B0DDE5B5F0A         CMP ECX,dword ptr [0x14a729b34]
   140133F56  7503                 JNZ 0x140133f5b
@@ -80781,6 +80785,9 @@ LAB_140161745:
   140161754  4883C420             ADD RSP,0x20
   140161758  5F                   POP RDI
   140161759  C3                   RET
+
+; 140161760  thunk_FUN_1400acfa0  (line unknown)
+  140161760  E93BB8F4FF           JMP 0x1400acfa0
 
 ; 140161770  FUN_140161770  (line unknown)
   140161770  4889742410           MOV qword ptr [RSP + 0x10],RSI

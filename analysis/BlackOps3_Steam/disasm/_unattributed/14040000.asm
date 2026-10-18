@@ -50322,6 +50322,10 @@ LAB_140435d55:
   140435D68  5D                   POP RBP
   140435D69  C3                   RET
 
+; 140435E60  FUN_140435e60  (line unknown)
+  140435E60  33D2                 XOR EDX,EDX
+  140435E62  E9093AEB00           JMP 0x1412e9870
+
 ; 140435E70  FUN_140435e70  (line unknown)
   140435E70  4053                 PUSH RBX
   140435E72  4883EC20             SUB RSP,0x20
@@ -50566,6 +50570,10 @@ LAB_1404361df:
   1404361F7  4881C430040000       ADD RSP,0x430
   1404361FE  5F                   POP RDI
   1404361FF  C3                   RET
+
+; 140436200  FUN_140436200  (line unknown)
+  140436200  B901000000           MOV ECX,0x1
+  140436205  E91668E900           JMP 0x1412cca20
 
 ; 140436210  FUN_140436210  (line unknown)
   140436210  488B01               MOV RAX,qword ptr [RCX]

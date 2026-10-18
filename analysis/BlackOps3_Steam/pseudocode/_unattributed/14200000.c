@@ -11575,6 +11575,33 @@ bool FUN_14201a200(void)
 }
 
 
+// 14201A220  FUN_14201a220  (line unknown)
+
+undefined1 FUN_14201a220(void)
+
+{
+  return 1;
+}
+
+
+// 14201A230  FUN_14201a230  (line unknown)
+
+undefined1 FUN_14201a230(void)
+
+{
+  return 1;
+}
+
+
+// 14201A240  FUN_14201a240  (line unknown)
+
+undefined1 FUN_14201a240(void)
+
+{
+  return 1;
+}
+
+
 // 14201A250  FUN_14201a250  (line unknown)
 
 undefined1 FUN_14201a250(undefined4 param_1)
@@ -99486,6 +99513,15 @@ LAB_1420ce002:
 }
 
 
+// 1420CE290  FUN_1420ce290  (line unknown)
+
+undefined8 FUN_1420ce290(void)
+
+{
+  return 0;
+}
+
+
 // 1420CE2A0  FUN_1420ce2a0  (line unknown)
 
 undefined8 FUN_1420ce2a0(undefined8 param_1)
@@ -99806,6 +99842,39 @@ undefined8 FUN_1420ce6f0(longlong param_1)
   FUN_142019d10(uVar1,1);
   FUN_142019140(uVar1);
   FUN_142c3de60(&DAT_156550db8 + lVar2,0,0xf3c);
+  return 1;
+}
+
+
+// 1420CE780  FUN_1420ce780  (line unknown)
+
+undefined8 FUN_1420ce780(longlong param_1)
+
+{
+  longlong lVar1;
+  
+  lVar1 = (longlong)*(int *)(param_1 + 0x14) * 0x17ba8;
+  if (0 < *(int *)(&DAT_156551d08 + lVar1)) {
+    (&DAT_156551d04)[lVar1] = 0;
+  }
+  return CONCAT71((int7)((ulonglong)(&DAT_15653a170 + lVar1) >> 8),1);
+}
+
+
+// 1420CE7B0  FUN_1420ce7b0  (line unknown)
+
+undefined1 FUN_1420ce7b0(void)
+
+{
+  return 1;
+}
+
+
+// 1420CE7C0  FUN_1420ce7c0  (line unknown)
+
+undefined1 FUN_1420ce7c0(void)
+
+{
   return 1;
 }
 
@@ -120575,6 +120644,16 @@ void FUN_1420ee404(void)
 
 {
   FUN_15e1c5ade();
+  return;
+}
+
+
+// 1420EE490  FUN_1420ee490  (line unknown)
+
+void FUN_1420ee490(undefined8 param_1,int param_2)
+
+{
+  FUN_15ddbe26a(param_1,(longlong)param_2);
   return;
 }
 

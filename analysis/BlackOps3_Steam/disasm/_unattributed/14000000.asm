@@ -4097,6 +4097,9 @@ LAB_14000468f:
 ; 1400046B0  malloc  (line unknown)
   1400046B0  E9F798C302           JMP 0x142c3dfac
 
+; 1400046C0  free  (line unknown)
+  1400046C0  E9A798C302           JMP 0x142c3df6c
+
 ; 1400046D0  FUN_1400046d0  (line unknown)
   1400046D0  4885C9               TEST RCX,RCX
   1400046D3  7407                 JZ 0x1400046dc
@@ -7525,6 +7528,41 @@ LAB_140006fb1:
   140006FCE  5D                   POP RBP
   140006FCF  5B                   POP RBX
   140006FD0  C3                   RET
+
+; 140006FE0  FUN_140006fe0  (line unknown)
+  140006FE0  4885D2               TEST RDX,RDX
+  140006FE3  7503                 JNZ 0x140006fe8
+  140006FE5  33C0                 XOR EAX,EAX
+  140006FE7  C3                   RET
+LAB_140006fe8:
+  140006FE8  488BCA               MOV RCX,RDX
+  140006FEB  E9BC6FC302           JMP 0x142c3dfac
+
+; 140006FF0  FUN_140006ff0  (line unknown)
+  140006FF0  488BCA               MOV RCX,RDX
+  140006FF3  E9746FC302           JMP 0x142c3df6c
+
+; 140007000  FUN_140007000  (line unknown)
+  140007000  4885D2               TEST RDX,RDX
+  140007003  7503                 JNZ 0x140007008
+  140007005  33C0                 XOR EAX,EAX
+  140007007  C3                   RET
+LAB_140007008:
+  140007008  33C9                 XOR ECX,ECX
+  14000700A  41B800100000         MOV R8D,0x1000
+  140007010  448D4904             LEA R9D,[RCX + 0x4]
+  140007014  48FF25411DAE1A       JMP qword ptr [0x15aae8d5c]
+
+; 140007020  FUN_140007020  (line unknown)
+  140007020  488BC2               MOV RAX,RDX
+  140007023  4885D2               TEST RDX,RDX
+  140007026  7412                 JZ 0x14000703a
+  140007028  33D2                 XOR EDX,EDX
+  14000702A  41B800800000         MOV R8D,0x8000
+  140007030  488BC8               MOV RCX,RAX
+  140007033  48FF251A1DAE1A       JMP qword ptr [0x15aae8d54]
+LAB_14000703a:
+  14000703A  F3C3                 RET
 
 ; 140007040  FUN_140007040  (line unknown)
   140007040  4053                 PUSH RBX
@@ -168717,6 +168755,10 @@ LAB_1400a3630:
   1400A365A  52                   PUSH RDX
   1400A365B  E95ADFC11D           JMP 0x15dcc15ba
 
+; 1400A3660  thunk_FUN_1400aa060  (line unknown)
+  1400A3660  41B001               MOV R8B,0x1
+  1400A3663  E9F8690000           JMP 0x1400aa060
+
 ; 1400A3670  FUN_1400a3670  (line unknown)
   1400A3670  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1400A3675  4889742410           MOV qword ptr [RSP + 0x10],RSI
@@ -168890,6 +168932,10 @@ LAB_1400a38ce:
   1400A38CE  4883C430             ADD RSP,0x30
   1400A38D2  5B                   POP RBX
   1400A38D3  C3                   RET
+
+; 1400A38E0  thunk_FUN_1400aa1d0  (line unknown)
+  1400A38E0  41B001               MOV R8B,0x1
+  1400A38E3  E9E8680000           JMP 0x1400aa1d0
 
 ; 1400A38F0  FUN_1400a38f0  (line unknown)
   1400A38F0  4053                 PUSH RBX
@@ -169549,6 +169595,10 @@ LAB_1400a424e:
   1400A4254  4881EC08000000       SUB RSP,0x8
   1400A425B  E9AC41C51B           JMP 0x15bcf840c
 
+; 1400A4260  thunk_FUN_1400aa130  (line unknown)
+  1400A4260  41B001               MOV R8B,0x1
+  1400A4263  E9C85E0000           JMP 0x1400aa130
+
 ; 1400A4270  FUN_1400a4270  (line unknown)
   1400A4270  4053                 PUSH RBX
   1400A4272  4883EC30             SUB RSP,0x30
@@ -169742,6 +169792,10 @@ LAB_1400a452d:
   1400A453B  48872C24             XCHG qword ptr [RSP],RBP
   1400A453F  C3                   RET
 
+; 1400A4540  thunk_FUN_1400a9f20  (line unknown)
+  1400A4540  41B001               MOV R8B,0x1
+  1400A4543  E9D8590000           JMP 0x1400a9f20
+
 ; 1400A4548  FUN_1400a4548  (line unknown)
   1400A4548  8B0482               MOV EAX,dword ptr [RDX + RAX*0x4]
   1400A454B  E9E89CC01D           JMP 0x15dcae238
@@ -169770,6 +169824,10 @@ LAB_1400a459f:
   1400A459F  4883C430             ADD RSP,0x30
   1400A45A3  5B                   POP RBX
   1400A45A4  C3                   RET
+
+; 1400A45B0  thunk_FUN_1400a9fc0  (line unknown)
+  1400A45B0  41B001               MOV R8B,0x1
+  1400A45B3  E9085A0000           JMP 0x1400a9fc0
 
 ; 1400A45B8  FUN_1400a45b8  (line unknown)
   1400A45B8  4889C4               MOV RSP,RAX

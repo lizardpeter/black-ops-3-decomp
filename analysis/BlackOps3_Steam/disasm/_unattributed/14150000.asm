@@ -16131,6 +16131,20 @@ LAB_141512b52:
   141512B62  5F                   POP RDI
   141512B63  C3                   RET
 
+; 141512B70  FUN_141512b70  (line unknown)
+  141512B70  4863C2               MOVSXD RAX,EDX
+  141512B73  4C8D04C0             LEA R8,[RAX + RAX*0x8]
+  141512B77  488B4108             MOV RAX,qword ptr [RCX + 0x8]
+  141512B7B  488B5008             MOV RDX,qword ptr [RAX + 0x8]
+  141512B7F  428B44C208           MOV EAX,dword ptr [RDX + R8*0x8 + 0x8]
+  141512B84  894114               MOV dword ptr [RCX + 0x14],EAX
+  141512B87  B804000000           MOV EAX,0x4
+  141512B8C  C3                   RET
+
+; 141512B90  FUN_141512b90  (line unknown)
+  141512B90  B804000000           MOV EAX,0x4
+  141512B95  C3                   RET
+
 ; 141512BA0  FUN_141512ba0  (line unknown)
   141512BA0  4053                 PUSH RBX
   141512BA2  4883EC20             SUB RSP,0x20
@@ -16297,6 +16311,48 @@ LAB_141512da2:
   141512DB5  5F                   POP RDI
   141512DB6  C3                   RET
 
+; 141512DC0  FUN_141512dc0  (line unknown)
+  141512DC0  B804000000           MOV EAX,0x4
+  141512DC5  C3                   RET
+
+; 141512DD0  FUN_141512dd0  (line unknown)
+  141512DD0  4863C2               MOVSXD RAX,EDX
+  141512DD3  4C8BD1               MOV R10,RCX
+  141512DD6  4C8D0CC0             LEA R9,[RAX + RAX*0x8]
+  141512DDA  488B4108             MOV RAX,qword ptr [RCX + 0x8]
+  141512DDE  4C8B4008             MOV R8,qword ptr [RAX + 0x8]
+  141512DE2  33C0                 XOR EAX,EAX
+  141512DE4  4F8D1CC8             LEA R11,[R8 + R9*0x8]
+  141512DE8  448B811C040000       MOV R8D,dword ptr [RCX + 0x41c]
+  141512DEF  4585C0               TEST R8D,R8D
+  141512DF2  740D                 JZ 0x141512e01
+LAB_141512df4:
+  141512DF4  3954C11C             CMP dword ptr [RCX + RAX*0x8 + 0x1c],EDX
+  141512DF8  7438                 JZ 0x141512e32
+  141512DFA  FFC0                 INC EAX
+  141512DFC  413BC0               CMP EAX,R8D
+  141512DFF  72F3                 JC 0x141512df4
+LAB_141512e01:
+  141512E01  428954C11C           MOV dword ptr [RCX + R8*0x8 + 0x1c],EDX
+  141512E06  FF811C040000         INC dword ptr [RCX + 0x41c]
+LAB_141512e0c:
+  141512E0C  498B4310             MOV RAX,qword ptr [R11 + 0x10]
+  141512E10  486310               MOVSXD RDX,dword ptr [RAX]
+  141512E13  498B4208             MOV RAX,qword ptr [R10 + 0x8]
+  141512E17  488B4808             MOV RCX,qword ptr [RAX + 0x8]
+  141512E1B  4C8D04D2             LEA R8,[RDX + RDX*0x8]
+  141512E1F  4A6344C104           MOVSXD RAX,dword ptr [RCX + R8*0x8 + 0x4]
+  141512E24  4C8D056578AB01       LEA R8,[0x142fca690]
+  141512E2B  498BCA               MOV RCX,R10
+  141512E2E  49FF24C0             JMP qword ptr [R8 + RAX*0x8]
+LAB_141512e32:
+  141512E32  8BC8                 MOV ECX,EAX
+  141512E34  8B058AD40309         MOV EAX,dword ptr [0x14a5502c4]
+  141512E3A  413944CA20           CMP dword ptr [R10 + RCX*0x8 + 0x20],EAX
+  141512E3F  7ECB                 JLE 0x141512e0c
+  141512E41  B803000000           MOV EAX,0x3
+  141512E46  C3                   RET
+
 ; 141512E50  FUN_141512e50  (line unknown)
   141512E50  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   141512E55  48896C2410           MOV qword ptr [RSP + 0x10],RBP
@@ -16391,6 +16447,16 @@ LAB_141512f6c:
   141512F73  83F804               CMP EAX,0x4
   141512F76  488D6424F8           LEA RSP,[RSP + -0x8]
   141512F7B  E9CF22121B           JMP 0x15c63524f
+
+; 141512F80  FUN_141512f80  (line unknown)
+  141512F80  4863C2               MOVSXD RAX,EDX
+  141512F83  4C8D04C0             LEA R8,[RAX + RAX*0x8]
+  141512F87  488B4108             MOV RAX,qword ptr [RCX + 0x8]
+  141512F8B  488B5008             MOV RDX,qword ptr [RAX + 0x8]
+  141512F8F  428B44C208           MOV EAX,dword ptr [RDX + R8*0x8 + 0x8]
+  141512F94  894114               MOV dword ptr [RCX + 0x14],EAX
+  141512F97  B804000000           MOV EAX,0x4
+  141512F9C  C3                   RET
 
 ; 141512FA0  FUN_141512fa0  (line unknown)
   141512FA0  4889742410           MOV qword ptr [RSP + 0x10],RSI
@@ -203688,6 +203754,13 @@ LAB_1415c5bc4:
   1415C5BE4  5B                   POP RBX
   1415C5BE5  C3                   RET
 
+; 1415C5BF0  FUN_1415c5bf0  (line unknown)
+  1415C5BF0  488B8158020000       MOV RAX,qword ptr [RCX + 0x258]
+  1415C5BF7  C6803D01000000       MOV byte ptr [RAX + 0x13d],0x0
+  1415C5BFE  488B8158020000       MOV RAX,qword ptr [RCX + 0x258]
+  1415C5C05  C6806104000000       MOV byte ptr [RAX + 0x461],0x0
+  1415C5C0C  C3                   RET
+
 ; 1415C5C10  FUN_1415c5c10  (line unknown)
   1415C5C10  4053                 PUSH RBX
   1415C5C12  4883EC20             SUB RSP,0x20
@@ -203741,6 +203814,13 @@ LAB_1415c5cc4:
   1415C5CE0  4883C420             ADD RSP,0x20
   1415C5CE4  5B                   POP RBX
   1415C5CE5  C3                   RET
+
+; 1415C5CF0  FUN_1415c5cf0  (line unknown)
+  1415C5CF0  488B8158020000       MOV RAX,qword ptr [RCX + 0x258]
+  1415C5CF7  C6803D01000000       MOV byte ptr [RAX + 0x13d],0x0
+  1415C5CFE  488B8158020000       MOV RAX,qword ptr [RCX + 0x258]
+  1415C5D05  C6806104000000       MOV byte ptr [RAX + 0x461],0x0
+  1415C5D0C  C3                   RET
 
 ; 1415C5D10  FUN_1415c5d10  (line unknown)
   1415C5D10  4053                 PUSH RBX
@@ -203951,6 +204031,11 @@ LAB_1415c60b0:
   1415C60BE  4883C420             ADD RSP,0x20
   1415C60C2  5B                   POP RBX
   1415C60C3  C3                   RET
+
+; 1415C60D0  FUN_1415c60d0  (line unknown)
+  1415C60D0  488B8158020000       MOV RAX,qword ptr [RCX + 0x258]
+  1415C60D7  C680B402000000       MOV byte ptr [RAX + 0x2b4],0x0
+  1415C60DE  C3                   RET
 
 ; 1415C60E0  FUN_1415c60e0  (line unknown)
   1415C60E0  4053                 PUSH RBX
@@ -204226,6 +204311,9 @@ LAB_1415c65cd:
   1415C65DA  4883C450             ADD RSP,0x50
   1415C65DE  5B                   POP RBX
   1415C65DF  C3                   RET
+
+; 1415C65E0  FUN_1415c65e0  (line unknown)
+  1415C65E0  C20000               RET 0x0
 
 ; 1415C65F0  FUN_1415c65f0  (line unknown)
   1415C65F0  4053                 PUSH RBX
@@ -205023,6 +205111,13 @@ LAB_1415c73e4:
   1415C7404  5B                   POP RBX
   1415C7405  C3                   RET
 
+; 1415C7410  FUN_1415c7410  (line unknown)
+  1415C7410  488B8158020000       MOV RAX,qword ptr [RCX + 0x258]
+  1415C7417  C6803D01000000       MOV byte ptr [RAX + 0x13d],0x0
+  1415C741E  488B8158020000       MOV RAX,qword ptr [RCX + 0x258]
+  1415C7425  C6806104000000       MOV byte ptr [RAX + 0x461],0x0
+  1415C742C  C3                   RET
+
 ; 1415C7430  FUN_1415c7430  (line unknown)
   1415C7430  4053                 PUSH RBX
   1415C7432  4883EC20             SUB RSP,0x20
@@ -205049,6 +205144,11 @@ LAB_1415c7484:
   1415C7492  4883C420             ADD RSP,0x20
   1415C7496  5B                   POP RBX
   1415C7497  C3                   RET
+
+; 1415C74A0  FUN_1415c74a0  (line unknown)
+  1415C74A0  488B8158020000       MOV RAX,qword ptr [RCX + 0x258]
+  1415C74A7  C6803D01000000       MOV byte ptr [RAX + 0x13d],0x0
+  1415C74AE  C3                   RET
 
 ; 1415C74B0  FUN_1415c74b0  (line unknown)
   1415C74B0  4053                 PUSH RBX
@@ -206204,6 +206304,11 @@ LAB_1415c87c6:
   1415C87DC  5E                   POP RSI
   1415C87DD  C3                   RET
 
+; 1415C87E0  FUN_1415c87e0  (line unknown)
+  1415C87E0  488B8158020000       MOV RAX,qword ptr [RCX + 0x258]
+  1415C87E7  C6803D01000000       MOV byte ptr [RAX + 0x13d],0x0
+  1415C87EE  C3                   RET
+
 ; 1415C87F0  FUN_1415c87f0  (line unknown)
   1415C87F0  4053                 PUSH RBX
   1415C87F2  4883EC20             SUB RSP,0x20
@@ -206289,6 +206394,11 @@ LAB_1415c8946:
   1415C8958  4883C450             ADD RSP,0x50
   1415C895C  5E                   POP RSI
   1415C895D  C3                   RET
+
+; 1415C8960  FUN_1415c8960  (line unknown)
+  1415C8960  488B8158020000       MOV RAX,qword ptr [RCX + 0x258]
+  1415C8967  C6803D01000000       MOV byte ptr [RAX + 0x13d],0x0
+  1415C896E  C3                   RET
 
 ; 1415C8970  FUN_1415c8970  (line unknown)
   1415C8970  48895C2418           MOV qword ptr [RSP + 0x18],RBX

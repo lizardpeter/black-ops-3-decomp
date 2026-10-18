@@ -23939,6 +23939,14 @@ LAB_1428176c8:
   1428176D8  5F                   POP RDI
   1428176D9  C3                   RET
 
+; 1428176E0  FUN_1428176e0  (line unknown)
+  1428176E0  33C0                 XOR EAX,EAX
+  1428176E2  C3                   RET
+
+; 1428176F0  FUN_1428176f0  (line unknown)
+  1428176F0  33C0                 XOR EAX,EAX
+  1428176F2  C3                   RET
+
 ; 142817700  FUN_142817700  (line unknown)
   142817700  4883EC28             SUB RSP,0x28
   142817704  BA01000000           MOV EDX,0x1
@@ -25848,6 +25856,10 @@ LAB_142819261:
   142819268  4883C430             ADD RSP,0x30
   14281926C  5F                   POP RDI
   14281926D  C3                   RET
+
+; 142819270  FUN_142819270  (line unknown)
+  142819270  33C0                 XOR EAX,EAX
+  142819272  C3                   RET
 
 ; 142819280  FUN_142819280  (line unknown)
   142819280  4883EC28             SUB RSP,0x28
@@ -126106,6 +126118,21 @@ LAB_142880d60:
 ; 142880E20  thunk_FUN_15b65621c  (line unknown)
   142880E20  EB80                 JMP 0x142880da2
 
+; 142880E24  FUN_142880e24  (line unknown)
+  142880E24  FF15727D2618         CALL qword ptr [0x15aae8b9c]
+  142880E2A  8BC8                 MOV ECX,EAX
+  142880E2C  B8D34D6210           MOV EAX,0x10624dd3
+  142880E31  F7E1                 MUL ECX
+  142880E33  C1EA06               SHR EDX,0x6
+  142880E36  89542430             MOV dword ptr [RSP + 0x30],EDX
+  142880E3A  69D2E8030000         IMUL EDX,EDX,0x3e8
+  142880E40  2BCA                 SUB ECX,EDX
+  142880E42  69C9E8030000         IMUL ECX,ECX,0x3e8
+  142880E48  894C2434             MOV dword ptr [RSP + 0x34],ECX
+  142880E4C  488B442430           MOV RAX,qword ptr [RSP + 0x30]
+  142880E51  4883C428             ADD RSP,0x28
+  142880E55  C3                   RET
+
 ; 142880E60  FUN_142880e60  (line unknown)
   142880E60  4881C1E0060000       ADD RCX,0x6e0
   142880E67  E9A4030000           JMP 0x142881210
@@ -134325,6 +134352,12 @@ LAB_14288c84c:
   14288C85A  5E                   POP RSI
   14288C85B  C3                   RET
 
+; 14288C860  FUN_14288c860  (line unknown)
+  14288C860  488B81A8010000       MOV RAX,qword ptr [RCX + 0x1a8]
+  14288C867  488902               MOV qword ptr [RDX],RAX
+  14288C86A  B800000100           MOV EAX,0x10000
+  14288C86F  C3                   RET
+
 ; 14288C870  thunk_FUN_1421d95bf  (line unknown)
   14288C870  E94ACD94FF           JMP 0x1421d95bf
 
@@ -134337,6 +134370,30 @@ LAB_14288c891:
   14288C891  4883C420             ADD RSP,0x20
   14288C895  5B                   POP RBX
   14288C896  C3                   RET
+
+; 14288C8A0  FUN_14288c8a0  (line unknown)
+  14288C8A0  488B81A0030000       MOV RAX,qword ptr [RCX + 0x3a0]
+  14288C8A7  F6407801             TEST byte ptr [RAX + 0x78],0x1
+  14288C8AB  7435                 JZ 0x14288c8e2
+  14288C8AD  4585C0               TEST R8D,R8D
+  14288C8B0  7430                 JZ 0x14288c8e2
+  14288C8B2  8B811C020000         MOV EAX,dword ptr [RCX + 0x21c]
+  14288C8B8  83F803               CMP EAX,0x3
+  14288C8BB  7510                 JNZ 0x14288c8cd
+  14288C8BD  488B81A8010000       MOV RAX,qword ptr [RCX + 0x1a8]
+  14288C8C4  488902               MOV qword ptr [RDX],RAX
+  14288C8C7  B800000100           MOV EAX,0x10000
+  14288C8CC  C3                   RET
+LAB_14288c8cd:
+  14288C8CD  83F802               CMP EAX,0x2
+  14288C8D0  7510                 JNZ 0x14288c8e2
+  14288C8D2  488B81A8010000       MOV RAX,qword ptr [RCX + 0x1a8]
+  14288C8D9  488902               MOV qword ptr [RDX],RAX
+  14288C8DC  B801000000           MOV EAX,0x1
+  14288C8E1  C3                   RET
+LAB_14288c8e2:
+  14288C8E2  33C0                 XOR EAX,EAX
+  14288C8E4  C3                   RET
 
 ; 14288C8F0  thunk_FUN_15bdf88cd  (line unknown)
   14288C8F0  E9D8BF5619           JMP 0x15bdf88cd
@@ -144669,6 +144726,10 @@ LAB_142899064:
   142899072  5F                   POP RDI
   142899073  C3                   RET
 
+; 142899080  FUN_142899080  (line unknown)
+  142899080  4881C118070000       ADD RCX,0x718
+  142899087  E924E80000           JMP 0x1428a78b0
+
 ; 142899090  FUN_142899090  (line unknown)
   142899090  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   142899095  57                   PUSH RDI
@@ -148521,6 +148582,10 @@ LAB_14289c4c4:
   14289C4D2  5F                   POP RDI
   14289C4D3  C3                   RET
 
+; 14289C4E0  FUN_14289c4e0  (line unknown)
+  14289C4E0  4881C118070000       ADD RCX,0x718
+  14289C4E7  E9C4B30000           JMP 0x1428a78b0
+
 ; 14289C4F0  FUN_14289c4f0  (line unknown)
   14289C4F0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   14289C4F5  57                   PUSH RDI
@@ -151315,6 +151380,10 @@ LAB_14289ec74:
   14289EC7E  4883C420             ADD RSP,0x20
   14289EC82  5F                   POP RDI
   14289EC83  C3                   RET
+
+; 14289EC90  FUN_14289ec90  (line unknown)
+  14289EC90  4881C118070000       ADD RCX,0x718
+  14289EC97  E9148C0000           JMP 0x1428a78b0
 
 ; 14289ECA0  FUN_14289eca0  (line unknown)
   14289ECA0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -155469,6 +155538,12 @@ LAB_1428a26e6:
   1428A26E8  4883C420             ADD RSP,0x20
   1428A26EC  5B                   POP RBX
   1428A26ED  C3                   RET
+
+; 1428A26F0  FUN_1428a26f0  (line unknown)
+  1428A26F0  488B81A8010000       MOV RAX,qword ptr [RCX + 0x1a8]
+  1428A26F7  488902               MOV qword ptr [RDX],RAX
+  1428A26FA  B800000100           MOV EAX,0x10000
+  1428A26FF  C3                   RET
 
 ; 1428A2700  FUN_1428a2700  (line unknown)
   1428A2700  48895C2418           MOV qword ptr [RSP + 0x18],RBX
@@ -161187,6 +161262,22 @@ LAB_1428a78a6:
   1428A78AA  5B                   POP RBX
   1428A78AB  C3                   RET
 
+; 1428A78B0  FUN_1428a78b0  (line unknown)
+  1428A78B0  4C8BC9               MOV R9,RCX
+  1428A78B3  4585C0               TEST R8D,R8D
+  1428A78B6  7503                 JNZ 0x1428a78bb
+  1428A78B8  33C0                 XOR EAX,EAX
+  1428A78BA  C3                   RET
+LAB_1428a78bb:
+  1428A78BB  488B4150             MOV RAX,qword ptr [RCX + 0x50]
+  1428A78BF  488B88A8010000       MOV RCX,qword ptr [RAX + 0x1a8]
+  1428A78C6  B801000000           MOV EAX,0x1
+  1428A78CB  48890A               MOV qword ptr [RDX],RCX
+  1428A78CE  4983793000           CMP qword ptr [R9 + 0x30],0x0
+  1428A78D3  B900000100           MOV ECX,0x10000
+  1428A78D8  0F45C1               CMOVNZ EAX,ECX
+  1428A78DB  C3                   RET
+
 ; 1428A78E0  FUN_1428a78e0  (line unknown)
   1428A78E0  4053                 PUSH RBX
   1428A78E2  4883EC20             SUB RSP,0x20
@@ -161999,6 +162090,11 @@ LAB_1428a83d7:
 LAB_1428a83f4:
   1428A83F4  418BC1               MOV EAX,R9D
   1428A83F7  C3                   RET
+
+; 1428A83F8  FUN_1428a83f8  (line unknown)
+  1428A83F8  5A                   POP RDX
+  1428A83F9  59                   POP RCX
+  1428A83FA  C3                   RET
 
 ; 1428A8400  thunk_FUN_1428a95a0  (line unknown)
   1428A8400  E99B110000           JMP 0x1428a95a0
@@ -175546,6 +175642,22 @@ LAB_1428b3d8b:
   1428B3D91  5B                   POP RBX
   1428B3D92  C3                   RET
 
+; 1428B3DA0  FUN_1428b3da0  (line unknown)
+  1428B3DA0  4C8B01               MOV R8,qword ptr [RCX]
+  1428B3DA3  498B80E8000000       MOV RAX,qword ptr [R8 + 0xe8]
+  1428B3DAA  8B5038               MOV EDX,dword ptr [RAX + 0x38]
+  1428B3DAD  895118               MOV dword ptr [RCX + 0x18],EDX
+  1428B3DB0  498B80F0000000       MOV RAX,qword ptr [R8 + 0xf0]
+  1428B3DB7  48894120             MOV qword ptr [RCX + 0x20],RAX
+  1428B3DBB  33C0                 XOR EAX,EAX
+  1428B3DBD  C3                   RET
+
+; 1428B3DC0  FUN_1428b3dc0  (line unknown)
+  1428B3DC0  33C0                 XOR EAX,EAX
+  1428B3DC2  48894120             MOV qword ptr [RCX + 0x20],RAX
+  1428B3DC6  894118               MOV dword ptr [RCX + 0x18],EAX
+  1428B3DC9  C3                   RET
+
 ; 1428B3DD0  FUN_1428b3dd0  (line unknown)
   1428B3DD0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1428B3DD5  448B4118             MOV R8D,dword ptr [RCX + 0x18]
@@ -176119,6 +176231,18 @@ LAB_1428b4517:
   1428B451C  4883C420             ADD RSP,0x20
   1428B4520  5B                   POP RBX
   1428B4521  C3                   RET
+
+; 1428B4530  FUN_1428b4530  (line unknown)
+  1428B4530  488B81D8000000       MOV RAX,qword ptr [RCX + 0xd8]
+  1428B4537  488902               MOV qword ptr [RDX],RAX
+  1428B453A  488B81E0000000       MOV RAX,qword ptr [RCX + 0xe0]
+  1428B4541  498900               MOV qword ptr [R8],RAX
+  1428B4544  33C0                 XOR EAX,EAX
+  1428B4546  C3                   RET
+
+; 1428B4550  FUN_1428b4550  (line unknown)
+  1428B4550  488D0D99417E00       LEA RCX,[0x1430986f0]
+  1428B4557  E9A469FFFF           JMP 0x1428aaf00
 
 ; 1428B4560  FUN_1428b4560  (line unknown)
   1428B4560  48895C2418           MOV qword ptr [RSP + 0x18],RBX
@@ -179126,6 +179250,12 @@ LAB_1428b6d76:
   1428B6D82  5F                   POP RDI
   1428B6D83  C3                   RET
 
+; 1428B6D90  thunk_FUN_15c6ff5cb  (line unknown)
+  1428B6D90  E93688E419           JMP 0x15c6ff5cb
+
+; 1428B6DA0  thunk_FUN_15e0a15cf  (line unknown)
+  1428B6DA0  E92AA87E1B           JMP 0x15e0a15cf
+
 ; 1428B6E00  thunk_FUN_15b182cf4  (line unknown)
   1428B6E00  E9EFBE8C18           JMP 0x15b182cf4
 
@@ -179134,6 +179264,12 @@ LAB_1428b6d76:
   1428B6E26  33C0                 XOR EAX,EAX
   1428B6E28  4883C428             ADD RSP,0x28
   1428B6E2C  C3                   RET
+
+; 1428B6E30  FUN_1428b6e30  (line unknown)
+  1428B6E30  488B4118             MOV RAX,qword ptr [RCX + 0x18]
+  1428B6E34  488B4960             MOV RCX,qword ptr [RCX + 0x60]
+  1428B6E38  4C8B4860             MOV R9,qword ptr [RAX + 0x60]
+  1428B6E3C  49FF6118             JMP qword ptr [R9 + 0x18]
 
 ; 1428B6E40  FUN_1428b6e40  (line unknown)
   1428B6E40  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -179834,6 +179970,14 @@ LAB_1428b779b:
   1428B77A4  5F                   POP RDI
   1428B77A5  C3                   RET
 
+; 1428B77B0  FUN_1428b77b0  (line unknown)
+  1428B77B0  41B864616568         MOV R8D,0x68656164
+  1428B77B6  E9A5FFFFFF           JMP 0x1428b7760
+
+; 1428B77C0  FUN_1428b77c0  (line unknown)
+  1428B77C0  41B864656862         MOV R8D,0x62686564
+  1428B77C6  E995FFFFFF           JMP 0x1428b7760
+
 ; 1428B77D0  thunk_FUN_15cdd5027  (line unknown)
   1428B77D0  E952D8511A           JMP 0x15cdd5027
 
@@ -180375,6 +180519,9 @@ LAB_1428b8037:
   1428B804B  5B                   POP RBX
   1428B804C  C3                   RET
 
+; 1428B8050  thunk_FUN_15d163a4a  (line unknown)
+  1428B8050  E9F5B98A1A           JMP 0x15d163a4a
+
 ; 1428B8060  thunk_FUN_15ee97de2  (line unknown)
   1428B8060  E97DFD5D1C           JMP 0x15ee97de2
 
@@ -180418,6 +180565,60 @@ LAB_1428b80e5:
   1428B80EC  4883C420             ADD RSP,0x20
   1428B80F0  5F                   POP RDI
   1428B80F1  C3                   RET
+
+; 1428B8100  FUN_1428b8100  (line unknown)
+  1428B8100  81FA00010000         CMP EDX,0x100
+  1428B8106  730C                 JNC 0x1428b8114
+  1428B8108  488B4118             MOV RAX,qword ptr [RCX + 0x18]
+  1428B810C  83C206               ADD EDX,0x6
+  1428B810F  0FB60402             MOVZX EAX,byte ptr [RDX + RAX*0x1]
+  1428B8113  C3                   RET
+LAB_1428b8114:
+  1428B8114  33C0                 XOR EAX,EAX
+  1428B8116  C3                   RET
+
+; 1428B8120  FUN_1428b8120  (line unknown)
+  1428B8120  4C8BC2               MOV R8,RDX
+  1428B8123  488B5118             MOV RDX,qword ptr [RCX + 0x18]
+  1428B8127  4533C9               XOR R9D,R9D
+  1428B812A  418B00               MOV EAX,dword ptr [R8]
+  1428B812D  4883C206             ADD RDX,0x6
+  1428B8131  FFC0                 INC EAX
+  1428B8133  4863C8               MOVSXD RCX,EAX
+  1428B8136  3D00010000           CMP EAX,0x100
+  1428B813B  7322                 JNC 0x1428b815f
+  1428B813D  4803CA               ADD RCX,RDX
+LAB_1428b8140:
+  1428B8140  0FB611               MOVZX EDX,byte ptr [RCX]
+  1428B8143  85D2                 TEST EDX,EDX
+  1428B8145  7512                 JNZ 0x1428b8159
+  1428B8147  FFC0                 INC EAX
+  1428B8149  48FFC1               INC RCX
+  1428B814C  3D00010000           CMP EAX,0x100
+  1428B8151  72ED                 JC 0x1428b8140
+  1428B8153  8BC2                 MOV EAX,EDX
+  1428B8155  458908               MOV dword ptr [R8],R9D
+  1428B8158  C3                   RET
+LAB_1428b8159:
+  1428B8159  418900               MOV dword ptr [R8],EAX
+  1428B815C  8BC2                 MOV EAX,EDX
+  1428B815E  C3                   RET
+LAB_1428b815f:
+  1428B815F  418BC1               MOV EAX,R9D
+  1428B8162  458908               MOV dword ptr [R8],R9D
+  1428B8165  C3                   RET
+
+; 1428B8170  FUN_1428b8170  (line unknown)
+  1428B8170  4C8B4118             MOV R8,qword ptr [RCX + 0x18]
+  1428B8174  C7420400000000       MOV dword ptr [RDX + 0x4],0x0
+  1428B817B  410FB64004           MOVZX EAX,byte ptr [R8 + 0x4]
+  1428B8180  66C1E008             SHL AX,0x8
+  1428B8184  0FB7C8               MOVZX ECX,AX
+  1428B8187  410FB64005           MOVZX EAX,byte ptr [R8 + 0x5]
+  1428B818C  0BC8                 OR ECX,EAX
+  1428B818E  33C0                 XOR EAX,EAX
+  1428B8190  890A                 MOV dword ptr [RDX],ECX
+  1428B8192  C3                   RET
 
 ; 1428B81A0  FUN_1428b81a0  (line unknown)
   1428B81A0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -180766,6 +180967,21 @@ LAB_1428b85e4:
   1428B85EF  4883C420             ADD RSP,0x20
   1428B85F3  415C                 POP R12
   1428B85F5  C3                   RET
+
+; 1428B8600  FUN_1428b8600  (line unknown)
+  1428B8600  4C8B4118             MOV R8,qword ptr [RCX + 0x18]
+  1428B8604  C7420402000000       MOV dword ptr [RDX + 0x4],0x2
+  1428B860B  410FB64004           MOVZX EAX,byte ptr [R8 + 0x4]
+  1428B8610  66C1E008             SHL AX,0x8
+  1428B8614  0FB7C8               MOVZX ECX,AX
+  1428B8617  410FB64005           MOVZX EAX,byte ptr [R8 + 0x5]
+  1428B861C  0BC8                 OR ECX,EAX
+  1428B861E  33C0                 XOR EAX,EAX
+  1428B8620  890A                 MOV dword ptr [RDX],ECX
+  1428B8622  C3                   RET
+
+; 1428B8630  thunk_FUN_15bd63631  (line unknown)
+  1428B8630  E9FCAF4A19           JMP 0x15bd63631
 
 ; 1428B8660  thunk_FUN_15e77d867  (line unknown)
   1428B8660  E90252EC1B           JMP 0x15e77d867
@@ -181867,6 +182083,9 @@ LAB_1428b9493:
   1428B949F  5F                   POP RDI
   1428B94A0  C3                   RET
 
+; 1428B94B0  thunk_FUN_15dff96a7  (line unknown)
+  1428B94B0  E9F201741B           JMP 0x15dff96a7
+
 ; 1428B94E0  thunk_FUN_15da44b41  (line unknown)
   1428B94E0  E95CB6181B           JMP 0x15da44b41
 
@@ -181937,6 +182156,100 @@ LAB_1428b959d:
   1428B95AE  4883C420             ADD RSP,0x20
   1428B95B2  5F                   POP RDI
   1428B95B3  C3                   RET
+
+; 1428B95C0  FUN_1428b95c0  (line unknown)
+  1428B95C0  4C8B4118             MOV R8,qword ptr [RCX + 0x18]
+  1428B95C4  4983C00A             ADD R8,0xa
+  1428B95C8  410FB640FC           MOVZX EAX,byte ptr [R8 + -0x4]
+  1428B95CD  66C1E008             SHL AX,0x8
+  1428B95D1  0FB7C8               MOVZX ECX,AX
+  1428B95D4  410FB640FD           MOVZX EAX,byte ptr [R8 + -0x3]
+  1428B95D9  0BC8                 OR ECX,EAX
+  1428B95DB  410FB640FE           MOVZX EAX,byte ptr [R8 + -0x2]
+  1428B95E0  66C1E008             SHL AX,0x8
+  1428B95E4  2BD1                 SUB EDX,ECX
+  1428B95E6  0FB7C8               MOVZX ECX,AX
+  1428B95E9  410FB640FF           MOVZX EAX,byte ptr [R8 + -0x1]
+  1428B95EE  0BC8                 OR ECX,EAX
+  1428B95F0  3BD1                 CMP EDX,ECX
+  1428B95F2  7319                 JNC 0x1428b960d
+  1428B95F4  8D0C12               LEA ECX,[RDX + RDX*0x1]
+  1428B95F7  4C03C1               ADD R8,RCX
+  1428B95FA  410FB600             MOVZX EAX,byte ptr [R8]
+  1428B95FE  66C1E008             SHL AX,0x8
+  1428B9602  0FB7C8               MOVZX ECX,AX
+  1428B9605  410FB64001           MOVZX EAX,byte ptr [R8 + 0x1]
+  1428B960A  0BC1                 OR EAX,ECX
+  1428B960C  C3                   RET
+LAB_1428b960d:
+  1428B960D  33C0                 XOR EAX,EAX
+  1428B960F  C3                   RET
+
+; 1428B9610  FUN_1428b9610  (line unknown)
+  1428B9610  4C8B4118             MOV R8,qword ptr [RCX + 0x18]
+  1428B9614  448B0A               MOV R9D,dword ptr [RDX]
+  1428B9617  4C8BD2               MOV R10,RDX
+  1428B961A  410FB64006           MOVZX EAX,byte ptr [R8 + 0x6]
+  1428B961F  41FFC1               INC R9D
+  1428B9622  66C1E008             SHL AX,0x8
+  1428B9626  0FB7C8               MOVZX ECX,AX
+  1428B9629  410FB64007           MOVZX EAX,byte ptr [R8 + 0x7]
+  1428B962E  0BC8                 OR ECX,EAX
+  1428B9630  410FB64008           MOVZX EAX,byte ptr [R8 + 0x8]
+  1428B9635  66C1E008             SHL AX,0x8
+  1428B9639  440FB7D8             MOVZX R11D,AX
+  1428B963D  410FB64009           MOVZX EAX,byte ptr [R8 + 0x9]
+  1428B9642  440BD8               OR R11D,EAX
+  1428B9645  4181F900000100       CMP R9D,0x10000
+  1428B964C  735C                 JNC 0x1428b96aa
+  1428B964E  443BC9               CMP R9D,ECX
+  1428B9651  440F42C9             CMOVC R9D,ECX
+  1428B9655  418BD1               MOV EDX,R9D
+  1428B9658  2BD1                 SUB EDX,ECX
+  1428B965A  8D0412               LEA EAX,[RDX + RDX*0x1]
+  1428B965D  413BD3               CMP EDX,R11D
+  1428B9660  733E                 JNC 0x1428b96a0
+  1428B9662  498D4C0009           LEA RCX,[R8 + RAX*0x1 + 0x9]
+  1428B9667  660F1F840000000000   NOP word ptr [RAX + RAX*0x1]
+LAB_1428b9670:
+  1428B9670  0FB64101             MOVZX EAX,byte ptr [RCX + 0x1]
+  1428B9674  4883C102             ADD RCX,0x2
+  1428B9678  66C1E008             SHL AX,0x8
+  1428B967C  440FB7C0             MOVZX R8D,AX
+  1428B9680  0FB601               MOVZX EAX,byte ptr [RCX]
+  1428B9683  440BC0               OR R8D,EAX
+  1428B9686  7511                 JNZ 0x1428b9699
+  1428B9688  FFC2                 INC EDX
+  1428B968A  41FFC1               INC R9D
+  1428B968D  413BD3               CMP EDX,R11D
+  1428B9690  72DE                 JC 0x1428b9670
+  1428B9692  458902               MOV dword ptr [R10],R8D
+  1428B9695  418BC0               MOV EAX,R8D
+  1428B9698  C3                   RET
+LAB_1428b9699:
+  1428B9699  45890A               MOV dword ptr [R10],R9D
+  1428B969C  418BC0               MOV EAX,R8D
+  1428B969F  C3                   RET
+LAB_1428b96a0:
+  1428B96A0  41C70200000000       MOV dword ptr [R10],0x0
+  1428B96A7  33C0                 XOR EAX,EAX
+  1428B96A9  C3                   RET
+LAB_1428b96aa:
+  1428B96AA  C70200000000         MOV dword ptr [RDX],0x0
+  1428B96B0  33C0                 XOR EAX,EAX
+  1428B96B2  C3                   RET
+
+; 1428B96C0  FUN_1428b96c0  (line unknown)
+  1428B96C0  4C8B4118             MOV R8,qword ptr [RCX + 0x18]
+  1428B96C4  C7420406000000       MOV dword ptr [RDX + 0x4],0x6
+  1428B96CB  410FB64004           MOVZX EAX,byte ptr [R8 + 0x4]
+  1428B96D0  66C1E008             SHL AX,0x8
+  1428B96D4  0FB7C8               MOVZX ECX,AX
+  1428B96D7  410FB64005           MOVZX EAX,byte ptr [R8 + 0x5]
+  1428B96DC  0BC8                 OR ECX,EAX
+  1428B96DE  33C0                 XOR EAX,EAX
+  1428B96E0  890A                 MOV dword ptr [RDX],ECX
+  1428B96E2  C3                   RET
 
 ; 1428B96F0  FUN_1428b96f0  (line unknown)
   1428B96F0  4053                 PUSH RBX
@@ -182340,6 +182653,23 @@ LAB_1428b9c68:
   1428B9C6E  5B                   POP RBX
   1428B9C6F  C3                   RET
 
+; 1428B9C70  FUN_1428b9c70  (line unknown)
+  1428B9C70  4C8B4118             MOV R8,qword ptr [RCX + 0x18]
+  1428B9C74  C7420408000000       MOV dword ptr [RDX + 0x4],0x8
+  1428B9C7B  410FB64009           MOVZX EAX,byte ptr [R8 + 0x9]
+  1428B9C80  410FB64808           MOVZX ECX,byte ptr [R8 + 0x8]
+  1428B9C85  C1E108               SHL ECX,0x8
+  1428B9C88  0BC8                 OR ECX,EAX
+  1428B9C8A  410FB6400A           MOVZX EAX,byte ptr [R8 + 0xa]
+  1428B9C8F  C1E108               SHL ECX,0x8
+  1428B9C92  0BC8                 OR ECX,EAX
+  1428B9C94  410FB6400B           MOVZX EAX,byte ptr [R8 + 0xb]
+  1428B9C99  C1E108               SHL ECX,0x8
+  1428B9C9C  0BC8                 OR ECX,EAX
+  1428B9C9E  33C0                 XOR EAX,EAX
+  1428B9CA0  890A                 MOV dword ptr [RDX],ECX
+  1428B9CA2  C3                   RET
+
 ; 1428B9CB0  FUN_1428b9cb0  (line unknown)
   1428B9CB0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1428B9CB5  48896C2410           MOV qword ptr [RSP + 0x10],RBP
@@ -182420,6 +182750,133 @@ LAB_1428b9d8d:
   1428B9DA3  4883C420             ADD RSP,0x20
   1428B9DA7  415C                 POP R12
   1428B9DA9  C3                   RET
+
+; 1428B9DB0  FUN_1428b9db0  (line unknown)
+  1428B9DB0  4C8B4118             MOV R8,qword ptr [RCX + 0x18]
+  1428B9DB4  4983C014             ADD R8,0x14
+  1428B9DB8  410FB640F9           MOVZX EAX,byte ptr [R8 + -0x7]
+  1428B9DBD  410FB648F8           MOVZX ECX,byte ptr [R8 + -0x8]
+  1428B9DC2  C1E108               SHL ECX,0x8
+  1428B9DC5  0BC8                 OR ECX,EAX
+  1428B9DC7  410FB640FA           MOVZX EAX,byte ptr [R8 + -0x6]
+  1428B9DCC  C1E108               SHL ECX,0x8
+  1428B9DCF  0BC8                 OR ECX,EAX
+  1428B9DD1  410FB640FB           MOVZX EAX,byte ptr [R8 + -0x5]
+  1428B9DD6  C1E108               SHL ECX,0x8
+  1428B9DD9  0BC8                 OR ECX,EAX
+  1428B9DDB  410FB640FD           MOVZX EAX,byte ptr [R8 + -0x3]
+  1428B9DE0  2BD1                 SUB EDX,ECX
+  1428B9DE2  410FB648FC           MOVZX ECX,byte ptr [R8 + -0x4]
+  1428B9DE7  C1E108               SHL ECX,0x8
+  1428B9DEA  0BC8                 OR ECX,EAX
+  1428B9DEC  410FB640FE           MOVZX EAX,byte ptr [R8 + -0x2]
+  1428B9DF1  C1E108               SHL ECX,0x8
+  1428B9DF4  0BC8                 OR ECX,EAX
+  1428B9DF6  410FB640FF           MOVZX EAX,byte ptr [R8 + -0x1]
+  1428B9DFB  C1E108               SHL ECX,0x8
+  1428B9DFE  0BC8                 OR ECX,EAX
+  1428B9E00  3BD1                 CMP EDX,ECX
+  1428B9E02  7319                 JNC 0x1428b9e1d
+  1428B9E04  8D0C12               LEA ECX,[RDX + RDX*0x1]
+  1428B9E07  4C03C1               ADD R8,RCX
+  1428B9E0A  410FB600             MOVZX EAX,byte ptr [R8]
+  1428B9E0E  66C1E008             SHL AX,0x8
+  1428B9E12  0FB7C8               MOVZX ECX,AX
+  1428B9E15  410FB64001           MOVZX EAX,byte ptr [R8 + 0x1]
+  1428B9E1A  0BC1                 OR EAX,ECX
+  1428B9E1C  C3                   RET
+LAB_1428b9e1d:
+  1428B9E1D  33C0                 XOR EAX,EAX
+  1428B9E1F  C3                   RET
+
+; 1428B9E20  FUN_1428b9e20  (line unknown)
+  1428B9E20  448B0A               MOV R9D,dword ptr [RDX]
+  1428B9E23  4C8BDA               MOV R11,RDX
+  1428B9E26  488B5118             MOV RDX,qword ptr [RCX + 0x18]
+  1428B9E2A  0FB6420D             MOVZX EAX,byte ptr [RDX + 0xd]
+  1428B9E2E  0FB64A0C             MOVZX ECX,byte ptr [RDX + 0xc]
+  1428B9E32  440FB65210           MOVZX R10D,byte ptr [RDX + 0x10]
+  1428B9E37  C1E108               SHL ECX,0x8
+  1428B9E3A  41C1E208             SHL R10D,0x8
+  1428B9E3E  41FFC1               INC R9D
+  1428B9E41  0BC8                 OR ECX,EAX
+  1428B9E43  0FB6420E             MOVZX EAX,byte ptr [RDX + 0xe]
+  1428B9E47  C1E108               SHL ECX,0x8
+  1428B9E4A  0BC8                 OR ECX,EAX
+  1428B9E4C  0FB6420F             MOVZX EAX,byte ptr [RDX + 0xf]
+  1428B9E50  C1E108               SHL ECX,0x8
+  1428B9E53  0BC8                 OR ECX,EAX
+  1428B9E55  0FB64211             MOVZX EAX,byte ptr [RDX + 0x11]
+  1428B9E59  440BD0               OR R10D,EAX
+  1428B9E5C  0FB64212             MOVZX EAX,byte ptr [RDX + 0x12]
+  1428B9E60  41C1E208             SHL R10D,0x8
+  1428B9E64  440BD0               OR R10D,EAX
+  1428B9E67  0FB64213             MOVZX EAX,byte ptr [RDX + 0x13]
+  1428B9E6B  41C1E208             SHL R10D,0x8
+  1428B9E6F  440BD0               OR R10D,EAX
+  1428B9E72  443BC9               CMP R9D,ECX
+  1428B9E75  440F42C9             CMOVC R9D,ECX
+  1428B9E79  458BC1               MOV R8D,R9D
+  1428B9E7C  442BC1               SUB R8D,ECX
+  1428B9E7F  438D0400             LEA EAX,[R8 + R8*0x1]
+  1428B9E83  453BC2               CMP R8D,R10D
+  1428B9E86  732F                 JNC 0x1428b9eb7
+  1428B9E88  488D4C0213           LEA RCX,[RDX + RAX*0x1 + 0x13]
+  1428B9E8D  0F1F00               NOP dword ptr [RAX]
+LAB_1428b9e90:
+  1428B9E90  0FB64101             MOVZX EAX,byte ptr [RCX + 0x1]
+  1428B9E94  4883C102             ADD RCX,0x2
+  1428B9E98  66C1E008             SHL AX,0x8
+  1428B9E9C  0FB7D0               MOVZX EDX,AX
+  1428B9E9F  0FB601               MOVZX EAX,byte ptr [RCX]
+  1428B9EA2  0BD0                 OR EDX,EAX
+  1428B9EA4  750B                 JNZ 0x1428b9eb1
+  1428B9EA6  41FFC0               INC R8D
+  1428B9EA9  41FFC1               INC R9D
+  1428B9EAC  453BC2               CMP R8D,R10D
+  1428B9EAF  72DF                 JC 0x1428b9e90
+LAB_1428b9eb1:
+  1428B9EB1  8BC2                 MOV EAX,EDX
+  1428B9EB3  45890B               MOV dword ptr [R11],R9D
+  1428B9EB6  C3                   RET
+LAB_1428b9eb7:
+  1428B9EB7  33C0                 XOR EAX,EAX
+  1428B9EB9  45890B               MOV dword ptr [R11],R9D
+  1428B9EBC  C3                   RET
+
+; 1428B9EC0  FUN_1428b9ec0  (line unknown)
+  1428B9EC0  4C8B4118             MOV R8,qword ptr [RCX + 0x18]
+  1428B9EC4  C742040A000000       MOV dword ptr [RDX + 0x4],0xa
+  1428B9ECB  410FB64009           MOVZX EAX,byte ptr [R8 + 0x9]
+  1428B9ED0  410FB64808           MOVZX ECX,byte ptr [R8 + 0x8]
+  1428B9ED5  C1E108               SHL ECX,0x8
+  1428B9ED8  0BC8                 OR ECX,EAX
+  1428B9EDA  410FB6400A           MOVZX EAX,byte ptr [R8 + 0xa]
+  1428B9EDF  C1E108               SHL ECX,0x8
+  1428B9EE2  0BC8                 OR ECX,EAX
+  1428B9EE4  410FB6400B           MOVZX EAX,byte ptr [R8 + 0xb]
+  1428B9EE9  C1E108               SHL ECX,0x8
+  1428B9EEC  0BC8                 OR ECX,EAX
+  1428B9EEE  33C0                 XOR EAX,EAX
+  1428B9EF0  890A                 MOV dword ptr [RDX],ECX
+  1428B9EF2  C3                   RET
+
+; 1428B9F00  FUN_1428b9f00  (line unknown)
+  1428B9F00  48895118             MOV qword ptr [RCX + 0x18],RDX
+  1428B9F04  0FB6420D             MOVZX EAX,byte ptr [RDX + 0xd]
+  1428B9F08  440FB6420C           MOVZX R8D,byte ptr [RDX + 0xc]
+  1428B9F0D  41C1E008             SHL R8D,0x8
+  1428B9F11  440BC0               OR R8D,EAX
+  1428B9F14  0FB6420E             MOVZX EAX,byte ptr [RDX + 0xe]
+  1428B9F18  41C1E008             SHL R8D,0x8
+  1428B9F1C  440BC0               OR R8D,EAX
+  1428B9F1F  0FB6420F             MOVZX EAX,byte ptr [RDX + 0xf]
+  1428B9F23  C6412800             MOV byte ptr [RCX + 0x28],0x0
+  1428B9F27  41C1E008             SHL R8D,0x8
+  1428B9F2B  440BC0               OR R8D,EAX
+  1428B9F2E  33C0                 XOR EAX,EAX
+  1428B9F30  44894138             MOV dword ptr [RCX + 0x38],R8D
+  1428B9F34  C3                   RET
 
 ; 1428B9F40  FUN_1428b9f40  (line unknown)
   1428B9F40  4053                 PUSH RBX
@@ -182845,6 +183302,40 @@ LAB_1428ba45c:
   1428BA467  5F                   POP RDI
   1428BA468  C3                   RET
 
+; 1428BA470  FUN_1428ba470  (line unknown)
+  1428BA470  4C8B4118             MOV R8,qword ptr [RCX + 0x18]
+  1428BA474  C742040C000000       MOV dword ptr [RDX + 0x4],0xc
+  1428BA47B  410FB64009           MOVZX EAX,byte ptr [R8 + 0x9]
+  1428BA480  410FB64808           MOVZX ECX,byte ptr [R8 + 0x8]
+  1428BA485  C1E108               SHL ECX,0x8
+  1428BA488  0BC8                 OR ECX,EAX
+  1428BA48A  410FB6400A           MOVZX EAX,byte ptr [R8 + 0xa]
+  1428BA48F  C1E108               SHL ECX,0x8
+  1428BA492  0BC8                 OR ECX,EAX
+  1428BA494  410FB6400B           MOVZX EAX,byte ptr [R8 + 0xb]
+  1428BA499  C1E108               SHL ECX,0x8
+  1428BA49C  0BC8                 OR ECX,EAX
+  1428BA49E  33C0                 XOR EAX,EAX
+  1428BA4A0  890A                 MOV dword ptr [RDX],ECX
+  1428BA4A2  C3                   RET
+
+; 1428BA4B0  FUN_1428ba4b0  (line unknown)
+  1428BA4B0  48895118             MOV qword ptr [RCX + 0x18],RDX
+  1428BA4B4  0FB6420D             MOVZX EAX,byte ptr [RDX + 0xd]
+  1428BA4B8  440FB6420C           MOVZX R8D,byte ptr [RDX + 0xc]
+  1428BA4BD  41C1E008             SHL R8D,0x8
+  1428BA4C1  440BC0               OR R8D,EAX
+  1428BA4C4  0FB6420E             MOVZX EAX,byte ptr [RDX + 0xe]
+  1428BA4C8  41C1E008             SHL R8D,0x8
+  1428BA4CC  440BC0               OR R8D,EAX
+  1428BA4CF  0FB6420F             MOVZX EAX,byte ptr [RDX + 0xf]
+  1428BA4D3  C6412800             MOV byte ptr [RCX + 0x28],0x0
+  1428BA4D7  41C1E008             SHL R8D,0x8
+  1428BA4DB  440BC0               OR R8D,EAX
+  1428BA4DE  33C0                 XOR EAX,EAX
+  1428BA4E0  44894138             MOV dword ptr [RCX + 0x38],R8D
+  1428BA4E4  C3                   RET
+
 ; 1428BA4F0  FUN_1428ba4f0  (line unknown)
   1428BA4F0  4053                 PUSH RBX
   1428BA4F2  55                   PUSH RBP
@@ -183261,6 +183752,23 @@ LAB_1428baa0c:
   1428BAA17  5F                   POP RDI
   1428BAA18  C3                   RET
 
+; 1428BAA20  FUN_1428baa20  (line unknown)
+  1428BAA20  4C8B4118             MOV R8,qword ptr [RCX + 0x18]
+  1428BAA24  C742040D000000       MOV dword ptr [RDX + 0x4],0xd
+  1428BAA2B  410FB64009           MOVZX EAX,byte ptr [R8 + 0x9]
+  1428BAA30  410FB64808           MOVZX ECX,byte ptr [R8 + 0x8]
+  1428BAA35  C1E108               SHL ECX,0x8
+  1428BAA38  0BC8                 OR ECX,EAX
+  1428BAA3A  410FB6400A           MOVZX EAX,byte ptr [R8 + 0xa]
+  1428BAA3F  C1E108               SHL ECX,0x8
+  1428BAA42  0BC8                 OR ECX,EAX
+  1428BAA44  410FB6400B           MOVZX EAX,byte ptr [R8 + 0xb]
+  1428BAA49  C1E108               SHL ECX,0x8
+  1428BAA4C  0BC8                 OR ECX,EAX
+  1428BAA4E  33C0                 XOR EAX,EAX
+  1428BAA50  890A                 MOV dword ptr [RDX],ECX
+  1428BAA52  C3                   RET
+
 ; 1428BAA60  FUN_1428baa60  (line unknown)
   1428BAA60  4053                 PUSH RBX
   1428BAA62  4883EC20             SUB RSP,0x20
@@ -183311,6 +183819,24 @@ LAB_1428baafb:
   1428BAB00  4883C430             ADD RSP,0x30
   1428BAB04  5F                   POP RDI
   1428BAB05  C3                   RET
+
+; 1428BAB10  FUN_1428bab10  (line unknown)
+  1428BAB10  48895118             MOV qword ptr [RCX + 0x18],RDX
+  1428BAB14  0FB64207             MOVZX EAX,byte ptr [RDX + 0x7]
+  1428BAB18  440FB64206           MOVZX R8D,byte ptr [RDX + 0x6]
+  1428BAB1D  41C1E008             SHL R8D,0x8
+  1428BAB21  440BC0               OR R8D,EAX
+  1428BAB24  0FB64208             MOVZX EAX,byte ptr [RDX + 0x8]
+  1428BAB28  41C1E008             SHL R8D,0x8
+  1428BAB2C  440BC0               OR R8D,EAX
+  1428BAB2F  0FB64209             MOVZX EAX,byte ptr [RDX + 0x9]
+  1428BAB33  41C1E008             SHL R8D,0x8
+  1428BAB37  440BC0               OR R8D,EAX
+  1428BAB3A  33C0                 XOR EAX,EAX
+  1428BAB3C  89412C               MOV dword ptr [RCX + 0x2c],EAX
+  1428BAB3F  48894130             MOV qword ptr [RCX + 0x30],RAX
+  1428BAB43  44894128             MOV dword ptr [RCX + 0x28],R8D
+  1428BAB47  C3                   RET
 
 ; 1428BAB50  FUN_1428bab50  (line unknown)
   1428BAB50  48894C2408           MOV qword ptr [RSP + 0x8],RCX
@@ -183580,6 +184106,21 @@ LAB_1428baee4:
   1428BAEED  5D                   POP RBP
   1428BAEEE  5B                   POP RBX
   1428BAEEF  C3                   RET
+
+; 1428BAEF0  FUN_1428baef0  (line unknown)
+  1428BAEF0  33C0                 XOR EAX,EAX
+  1428BAEF2  C3                   RET
+
+; 1428BAF00  FUN_1428baf00  (line unknown)
+  1428BAF00  C70200000000         MOV dword ptr [RDX],0x0
+  1428BAF06  33C0                 XOR EAX,EAX
+  1428BAF08  C3                   RET
+
+; 1428BAF10  FUN_1428baf10  (line unknown)
+  1428BAF10  C742040E000000       MOV dword ptr [RDX + 0x4],0xe
+  1428BAF17  C702FFFFFFFF         MOV dword ptr [RDX],0xffffffff
+  1428BAF1D  33C0                 XOR EAX,EAX
+  1428BAF1F  C3                   RET
 
 ; 1428BAF20  FUN_1428baf20  (line unknown)
   1428BAF20  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -184634,6 +185175,9 @@ LAB_1428bbcd4:
   1428BBCD4  33C0                 XOR EAX,EAX
   1428BBCD6  E9D9FDFFFF           JMP 0x1428bbab4
 
+; 1428BBCE0  thunk_FUN_15f9cc8fb  (line unknown)
+  1428BBCE0  E9160C111D           JMP 0x15f9cc8fb
+
 ; 1428BBCF0  thunk_FUN_15e7871e4  (line unknown)
   1428BBCF0  E9EFB4EC1B           JMP 0x15e7871e4
 
@@ -185510,6 +186054,93 @@ LAB_1428bc874:
   1428BC8BC  0F8562EF49FF         JNZ 0x141d5b824
   1428BC8C2  E9DA34811C           JMP 0x15f0cfda1
 
+; 1428BD010  FUN_1428bd010  (line unknown)
+  1428BD010  83FA06               CMP EDX,0x6
+  1428BD013  0F8783000000         JA 0x1428bd09c
+  1428BD019  4C8D05E02F74FD       LEA R8,[0x140000000]
+  1428BD020  4863C2               MOVSXD RAX,EDX
+  1428BD023  418B9480A4D08B02     MOV EDX,dword ptr [R8 + RAX*0x4 + 0x28bd0a4]
+  1428BD02B  4903D0               ADD RDX,R8
+switchD:
+  1428BD02E  FFE2                 JMP RDX
+caseD_0:
+  1428BD030  4881C100010000       ADD RCX,0x100
+  1428BD037  488BC1               MOV RAX,RCX
+  1428BD03A  C3                   RET
+caseD_3:
+  1428BD03B  4881C138010000       ADD RCX,0x138
+  1428BD042  488BC1               MOV RAX,RCX
+  1428BD045  C3                   RET
+caseD_4:
+  1428BD046  80B99001000000       CMP byte ptr [RCX + 0x190],0x0
+  1428BD04D  744D                 JZ 0x1428bd09c
+  1428BD04F  4881C198010000       ADD RCX,0x198
+  1428BD056  488BC1               MOV RAX,RCX
+  1428BD059  C3                   RET
+caseD_2:
+  1428BD05A  488D81F8010000       LEA RAX,[RCX + 0x1f8]
+  1428BD061  33C9                 XOR ECX,ECX
+  1428BD063  BAFFFF0000           MOV EDX,0xffff
+  1428BD068  663910               CMP word ptr [RAX],DX
+  1428BD06B  480F44C1             CMOVZ RAX,RCX
+  1428BD06F  488BC8               MOV RCX,RAX
+  1428BD072  C3                   RET
+caseD_5:
+  1428BD073  4881C15C020000       ADD RCX,0x25c
+  1428BD07A  488BC1               MOV RAX,RCX
+  1428BD07D  C3                   RET
+caseD_1:
+  1428BD07E  4881C170010000       ADD RCX,0x170
+  1428BD085  488BC1               MOV RAX,RCX
+  1428BD088  C3                   RET
+caseD_6:
+  1428BD089  488D81E0020000       LEA RAX,[RCX + 0x2e0]
+  1428BD090  33C9                 XOR ECX,ECX
+  1428BD092  3908                 CMP dword ptr [RAX],ECX
+  1428BD094  480F45C8             CMOVNZ RCX,RAX
+  1428BD098  488BC1               MOV RAX,RCX
+  1428BD09B  C3                   RET
+default:
+  1428BD09C  33C9                 XOR ECX,ECX
+  1428BD09E  8BC1                 MOV EAX,ECX
+  1428BD0A0  C3                   RET
+
+; 1428BD0C0  FUN_1428bd0c0  (line unknown)
+  1428BD0C0  4C8BD9               MOV R11,RCX
+  1428BD0C3  4D85C9               TEST R9,R9
+  1428BD0C6  7457                 JZ 0x1428bd11f
+  1428BD0C8  4C8B542428           MOV R10,qword ptr [RSP + 0x28]
+  1428BD0CD  4D85D2               TEST R10,R10
+  1428BD0D0  744D                 JZ 0x1428bd11f
+  1428BD0D2  0FB781F4000000       MOVZX EAX,word ptr [RCX + 0xf4]
+  1428BD0D9  4D85C0               TEST R8,R8
+  1428BD0DC  7506                 JNZ 0x1428bd0e4
+  1428BD0DE  418902               MOV dword ptr [R10],EAX
+  1428BD0E1  33C0                 XOR EAX,EAX
+  1428BD0E3  C3                   RET
+LAB_1428bd0e4:
+  1428BD0E4  3BD0                 CMP EDX,EAX
+  1428BD0E6  7206                 JC 0x1428bd0ee
+  1428BD0E8  B88E000000           MOV EAX,0x8e
+  1428BD0ED  C3                   RET
+LAB_1428bd0ee:
+  1428BD0EE  488B81F8000000       MOV RAX,qword ptr [RCX + 0xf8]
+  1428BD0F5  8BD2                 MOV EDX,EDX
+  1428BD0F7  4803D2               ADD RDX,RDX
+  1428BD0FA  8B0CD0               MOV ECX,dword ptr [RAX + RDX*0x8]
+  1428BD0FD  418908               MOV dword ptr [R8],ECX
+  1428BD100  498B83F8000000       MOV RAX,qword ptr [R11 + 0xf8]
+  1428BD107  8B4CD008             MOV ECX,dword ptr [RAX + RDX*0x8 + 0x8]
+  1428BD10B  418909               MOV dword ptr [R9],ECX
+  1428BD10E  498B83F8000000       MOV RAX,qword ptr [R11 + 0xf8]
+  1428BD115  8B4CD00C             MOV ECX,dword ptr [RAX + RDX*0x8 + 0xc]
+  1428BD119  33C0                 XOR EAX,EAX
+  1428BD11B  41890A               MOV dword ptr [R10],ECX
+  1428BD11E  C3                   RET
+LAB_1428bd11f:
+  1428BD11F  B806000000           MOV EAX,0x6
+  1428BD124  C3                   RET
+
 ; 1428BD130  FUN_1428bd130  (line unknown)
   1428BD130  4155                 PUSH R13
   1428BD132  4156                 PUSH R14
@@ -185684,6 +186315,9 @@ LAB_1428bd395:
   1428BD39D  415D                 POP R13
   1428BD39F  C3                   RET
 
+; 1428BD3A0  thunk_FUN_15d932aec  (line unknown)
+  1428BD3A0  E94757071B           JMP 0x15d932aec
+
 ; 1428BD3B0  thunk_FUN_15b113269  (line unknown)
   1428BD3B0  E9B45E8518           JMP 0x15b113269
 
@@ -185807,6 +186441,44 @@ LAB_1428bd52c:
   1428BD566  4883C420             ADD RSP,0x20
   1428BD56A  5B                   POP RBX
   1428BD56B  C3                   RET
+
+; 1428BD570  FUN_1428bd570  (line unknown)
+  1428BD570  4D8BC8               MOV R9,R8
+  1428BD573  4533C0               XOR R8D,R8D
+  1428BD576  E975DBFEFF           JMP 0x1428ab0f0
+
+; 1428BD580  FUN_1428bd580  (line unknown)
+  1428BD580  4D8BC8               MOV R9,R8
+  1428BD583  3B91FC030000         CMP EDX,dword ptr [RCX + 0x3fc]
+  1428BD589  7206                 JC 0x1428bd591
+  1428BD58B  B806000000           MOV EAX,0x6
+  1428BD590  C3                   RET
+LAB_1428bd591:
+  1428BD591  8D0452               LEA EAX,[RDX + RDX*0x2]
+  1428BD594  488B91F0030000       MOV RDX,qword ptr [RCX + 0x3f0]
+  1428BD59B  C1E004               SHL EAX,0x4
+  1428BD59E  448BC0               MOV R8D,EAX
+  1428BD5A1  0FB6441034           MOVZX EAX,byte ptr [RAX + RDX*0x1 + 0x34]
+  1428BD5A6  66418901             MOV word ptr [R9],AX
+  1428BD5AA  410FB6441035         MOVZX EAX,byte ptr [R8 + RDX*0x1 + 0x35]
+  1428BD5B0  6641894102           MOV word ptr [R9 + 0x2],AX
+  1428BD5B5  410FBE4C1018         MOVSX ECX,byte ptr [R8 + RDX*0x1 + 0x18]
+  1428BD5BB  C1E106               SHL ECX,0x6
+  1428BD5BE  4189490C             MOV dword ptr [R9 + 0xc],ECX
+  1428BD5C2  410FBE441019         MOVSX EAX,byte ptr [R8 + RDX*0x1 + 0x19]
+  1428BD5C8  C1E006               SHL EAX,0x6
+  1428BD5CB  2BC8                 SUB ECX,EAX
+  1428BD5CD  41894110             MOV dword ptr [R9 + 0x10],EAX
+  1428BD5D1  41894914             MOV dword ptr [R9 + 0x14],ECX
+  1428BD5D5  410FBE44101E         MOVSX EAX,byte ptr [R8 + RDX*0x1 + 0x1e]
+  1428BD5DB  410FBE4C101F         MOVSX ECX,byte ptr [R8 + RDX*0x1 + 0x1f]
+  1428BD5E1  03C8                 ADD ECX,EAX
+  1428BD5E3  410FB644101A         MOVZX EAX,byte ptr [R8 + RDX*0x1 + 0x1a]
+  1428BD5E9  03C8                 ADD ECX,EAX
+  1428BD5EB  33C0                 XOR EAX,EAX
+  1428BD5ED  C1E106               SHL ECX,0x6
+  1428BD5F0  41894918             MOV dword ptr [R9 + 0x18],ECX
+  1428BD5F4  C3                   RET
 
 ; 1428BD600  FUN_1428bd600  (line unknown)
   1428BD600  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -190704,6 +191376,12 @@ LAB_1428c1586:
   1428C1592  5F                   POP RDI
   1428C1593  C3                   RET
 
+; 1428C15A0  thunk_FUN_15ec5705a  (line unknown)
+  1428C15A0  E9B55A391C           JMP 0x15ec5705a
+
+; 1428C15B0  thunk_FUN_15e8c24bc  (line unknown)
+  1428C15B0  E9070F001C           JMP 0x15e8c24bc
+
 ; 1428C15B5  FUN_1428c15b5  (line unknown)
   1428C15B5  4885D2               TEST RDX,RDX
   1428C15B8  7422                 JZ 0x1428c15dc
@@ -190724,6 +191402,12 @@ LAB_1428c15dc:
   1428C15E5  894108               MOV dword ptr [RCX + 0x8],EAX
 LAB_1428c15e8:
   1428C15E8  F3C3                 RET
+
+; 1428C15F0  FUN_1428c15f0  (line unknown)
+  1428C15F0  C20000               RET 0x0
+
+; 1428C1600  thunk_FUN_15d60f5cd  (line unknown)
+  1428C1600  E9C8DFD41A           JMP 0x15d60f5cd
 
 ; 1428C1605  FUN_1428c1605  (line unknown)
   1428C1605  488B1424             MOV RDX,qword ptr [RSP]
@@ -190819,6 +191503,12 @@ LAB_1428c173b:
   1428C1776  33C0                 XOR EAX,EAX
   1428C1778  4883C428             ADD RSP,0x28
   1428C177C  C3                   RET
+
+; 1428C1780  FUN_1428c1780  (line unknown)
+  1428C1780  488B4118             MOV RAX,qword ptr [RCX + 0x18]
+  1428C1784  488B4960             MOV RCX,qword ptr [RCX + 0x60]
+  1428C1788  4C8B4860             MOV R9,qword ptr [RAX + 0x60]
+  1428C178C  49FF6118             JMP qword ptr [R9 + 0x18]
 
 ; 1428C1790  FUN_1428c1790  (line unknown)
   1428C1790  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -195493,10 +196183,23 @@ LAB_1428c5198:
   1428C51B1  5B                   POP RBX
   1428C51B2  C3                   RET
 
+; 1428C51C0  thunk_FUN_15b4f4b67  (line unknown)
+  1428C51C0  E9A2F9C218           JMP 0x15b4f4b67
+
 ; 1428C51C5  FUN_1428c51c5  (line unknown)
   1428C51C5  488B4C2410           MOV RCX,qword ptr [RSP + 0x10]
   1428C51CA  48BA5118925D01000000 MOV RDX,0x15d921851
   1428C51D4  E9A76DEC19           JMP 0x15c78bf80
+
+; 1428C51E0  thunk_FUN_15bb94c86  (line unknown)
+  1428C51E0  E9A1FA2C19           JMP 0x15bb94c86
+
+; 1428C51F0  FUN_1428c51f0  (line unknown)
+  1428C51F0  488D81A8000000       LEA RAX,[RCX + 0xa8]
+  1428C51F7  C3                   RET
+
+; 1428C5200  thunk_FUN_15f99feaa  (line unknown)
+  1428C5200  E9A5AC0D1D           JMP 0x15f99feaa
 
 ; 1428C5210  thunk_FUN_142f2576f  (line unknown)
   1428C5210  E95A056600           JMP 0x142f2576f
@@ -195969,6 +196672,48 @@ LAB_1428c580e:
   1428C5830  5B                   POP RBX
   1428C5831  C3                   RET
 
+; 1428C5840  FUN_1428c5840  (line unknown)
+  1428C5840  4C8B4120             MOV R8,qword ptr [RCX + 0x20]
+  1428C5844  8B4118               MOV EAX,dword ptr [RCX + 0x18]
+  1428C5847  4533D2               XOR R10D,R10D
+  1428C584A  4D8D4CC0F8           LEA R9,[R8 + RAX*0x8 + -0x8]
+  1428C584F  4D3BC1               CMP R8,R9
+  1428C5852  7753                 JA 0x1428c58a7
+  1428C5854  666666660F1F840000000000 NOP dword ptr [RAX + RAX*0x1]
+LAB_1428c5860:
+  1428C5860  498BC1               MOV RAX,R9
+  1428C5863  492BC0               SUB RAX,R8
+  1428C5866  48C1F804             SAR RAX,0x4
+  1428C586A  498D0CC0             LEA RCX,[R8 + RAX*0x8]
+  1428C586E  418B04C0             MOV EAX,dword ptr [R8 + RAX*0x8]
+  1428C5872  3BC2                 CMP EAX,EDX
+  1428C5874  7424                 JZ 0x1428c589a
+  1428C5876  0FBAF01F             BTR EAX,0x1f
+  1428C587A  3BC2                 CMP EAX,EDX
+  1428C587C  4C0F44D1             CMOVZ R10,RCX
+  1428C5880  4D3BC1               CMP R8,R9
+  1428C5883  7418                 JZ 0x1428c589d
+  1428C5885  3BC2                 CMP EAX,EDX
+  1428C5887  7306                 JNC 0x1428c588f
+  1428C5889  4C8D4108             LEA R8,[RCX + 0x8]
+  1428C588D  EB04                 JMP 0x1428c5893
+LAB_1428c588f:
+  1428C588F  4C8D49F8             LEA R9,[RCX + -0x8]
+LAB_1428c5893:
+  1428C5893  4D3BC1               CMP R8,R9
+  1428C5896  76C8                 JBE 0x1428c5860
+  1428C5898  EB03                 JMP 0x1428c589d
+LAB_1428c589a:
+  1428C589A  4C8BD1               MOV R10,RCX
+LAB_1428c589d:
+  1428C589D  4D85D2               TEST R10,R10
+  1428C58A0  7405                 JZ 0x1428c58a7
+  1428C58A2  418B4204             MOV EAX,dword ptr [R10 + 0x4]
+  1428C58A6  C3                   RET
+LAB_1428c58a7:
+  1428C58A7  33C0                 XOR EAX,EAX
+  1428C58A9  C3                   RET
+
 ; 1428C58B0  FUN_1428c58b0  (line unknown)
   1428C58B0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1428C58B5  4889742410           MOV qword ptr [RSP + 0x10],RSI
@@ -196039,6 +196784,33 @@ LAB_1428c596c:
   1428C597B  C70200000000         MOV dword ptr [RDX],0x0
   1428C5981  418BC3               MOV EAX,R11D
   1428C5984  C3                   RET
+
+; 1428C5990  FUN_1428c5990  (line unknown)
+  1428C5990  33C0                 XOR EAX,EAX
+  1428C5992  81F902010000         CMP ECX,0x102
+  1428C5998  0F43C8               CMOVNC ECX,EAX
+  1428C599B  8BC1                 MOV EAX,ECX
+  1428C599D  488D0D2C4A7D00       LEA RCX,[0x14309a3d0]
+  1428C59A4  480FBF0441           MOVSX RAX,word ptr [RCX + RAX*0x2]
+  1428C59A9  488D0DB03B7D00       LEA RCX,[0x143099560]
+  1428C59B0  4803C1               ADD RAX,RCX
+  1428C59B3  C3                   RET
+
+; 1428C59C0  FUN_1428c59c0  (line unknown)
+  1428C59C0  81F987010000         CMP ECX,0x187
+  1428C59C6  7203                 JC 0x1428c59cb
+  1428C59C8  33C0                 XOR EAX,EAX
+  1428C59CA  C3                   RET
+LAB_1428c59cb:
+  1428C59CB  8BC1                 MOV EAX,ECX
+  1428C59CD  488D0D0C4C7D00       LEA RCX,[0x14309a5e0]
+  1428C59D4  480FBF0441           MOVSX RAX,word ptr [RCX + RAX*0x2]
+  1428C59D9  488D0D803B7D00       LEA RCX,[0x143099560]
+  1428C59E0  4803C1               ADD RAX,RCX
+  1428C59E3  C3                   RET
+
+; 1428C59F0  thunk_FUN_15d8d09f5  (line unknown)
+  1428C59F0  E900B0001B           JMP 0x15d8d09f5
 
 ; 1428C5A00  FUN_1428c5a00  (line unknown)
   1428C5A00  48895C2410           MOV qword ptr [RSP + 0x10],RBX
@@ -196933,6 +197705,9 @@ LAB_1428c64b4:
   1428C64B7  410FB6C0             MOVZX EAX,R8B
   1428C64BB  C3                   RET
 
+; 1428C64C0  thunk_FUN_15db0082a  (line unknown)
+  1428C64C0  E965A3231B           JMP 0x15db0082a
+
 ; 1428C64C5  FUN_1428c64c5  (line unknown)
   1428C64C5  48896C24F8           MOV qword ptr [RSP + -0x8],RBP
   1428C64CA  488D6424F8           LEA RSP,[RSP + -0x8]
@@ -196952,6 +197727,9 @@ LAB_1428c64b4:
   1428C6516  488B5424F8           MOV RDX,qword ptr [RSP + -0x8]
   1428C651B  488D642408           LEA RSP,[RSP + 0x8]
   1428C6520  FF6424F8             JMP qword ptr [RSP + -0x8]
+
+; 1428C6530  FUN_1428c6530  (line unknown)
+  1428C6530  C20000               RET 0x0
 
 ; 1428C6540  FUN_1428c6540  (line unknown)
   1428C6540  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -197005,6 +197783,24 @@ LAB_1428c65c2:
   1428C6612  4883C420             ADD RSP,0x20
   1428C6616  5F                   POP RDI
   1428C6617  C3                   RET
+
+; 1428C6620  FUN_1428c6620  (line unknown)
+  1428C6620  488B5110             MOV RDX,qword ptr [RCX + 0x10]
+  1428C6624  4885D2               TEST RDX,RDX
+  1428C6627  743A                 JZ 0x1428c6663
+  1428C6629  488B4920             MOV RCX,qword ptr [RCX + 0x20]
+  1428C662D  488B01               MOV RAX,qword ptr [RCX]
+  1428C6630  48898298000000       MOV qword ptr [RDX + 0x98],RAX
+  1428C6637  488B4108             MOV RAX,qword ptr [RCX + 0x8]
+  1428C663B  488982A0000000       MOV qword ptr [RDX + 0xa0],RAX
+  1428C6642  488B4110             MOV RAX,qword ptr [RCX + 0x10]
+  1428C6646  488982A8000000       MOV qword ptr [RDX + 0xa8],RAX
+  1428C664D  488B4118             MOV RAX,qword ptr [RCX + 0x18]
+  1428C6651  488982B0000000       MOV qword ptr [RDX + 0xb0],RAX
+  1428C6658  488B4120             MOV RAX,qword ptr [RCX + 0x20]
+  1428C665C  488982B8000000       MOV qword ptr [RDX + 0xb8],RAX
+LAB_1428c6663:
+  1428C6663  F3C3                 RET
 
 ; 1428C6670  FUN_1428c6670  (line unknown)
   1428C6670  85D2                 TEST EDX,EDX
@@ -197354,6 +198150,9 @@ LAB_1428c6ab8:
   1428C6ACB  5F                   POP RDI
   1428C6ACC  C3                   RET
 
+; 1428C6AD0  thunk_FUN_1428c6620  (line unknown)
+  1428C6AD0  E94BFBFFFF           JMP 0x1428c6620
+
 ; 1428C6AE0  FUN_1428c6ae0  (line unknown)
   1428C6AE0  4C8B01               MOV R8,qword ptr [RCX]
   1428C6AE3  418B8038020000       MOV EAX,dword ptr [R8 + 0x238]
@@ -197372,6 +198171,14 @@ LAB_1428c6b14:
   1428C6B14  498B4130             MOV RAX,qword ptr [R9 + 0x30]
   1428C6B18  48894118             MOV qword ptr [RCX + 0x18],RAX
   1428C6B1C  C3                   RET
+
+; 1428C6B20  FUN_1428c6b20  (line unknown)
+  1428C6B20  33C0                 XOR EAX,EAX
+  1428C6B22  894128               MOV dword ptr [RCX + 0x28],EAX
+  1428C6B25  48894130             MOV qword ptr [RCX + 0x30],RAX
+  1428C6B29  48894120             MOV qword ptr [RCX + 0x20],RAX
+  1428C6B2D  48894118             MOV qword ptr [RCX + 0x18],RAX
+  1428C6B31  C3                   RET
 
 ; 1428C6B40  FUN_1428c6b40  (line unknown)
   1428C6B40  4053                 PUSH RBX
@@ -197487,6 +198294,39 @@ LAB_1428c6c31:
   1428C6C80  4883C428             ADD RSP,0x28
   1428C6C84  C3                   RET
 
+; 1428C6C90  FUN_1428c6c90  (line unknown)
+  1428C6C90  4C8B01               MOV R8,qword ptr [RCX]
+  1428C6C93  418B90EC010000       MOV EDX,dword ptr [R8 + 0x1ec]
+  1428C6C9A  895118               MOV dword ptr [RCX + 0x18],EDX
+  1428C6C9D  418B80F0010000       MOV EAX,dword ptr [R8 + 0x1f0]
+  1428C6CA4  2BC2                 SUB EAX,EDX
+  1428C6CA6  89411C               MOV dword ptr [RCX + 0x1c],EAX
+  1428C6CA9  498B80F8010000       MOV RAX,qword ptr [R8 + 0x1f8]
+  1428C6CB0  48894120             MOV qword ptr [RCX + 0x20],RAX
+  1428C6CB4  33C0                 XOR EAX,EAX
+  1428C6CB6  C3                   RET
+
+; 1428C6CC0  FUN_1428c6cc0  (line unknown)
+  1428C6CC0  33C0                 XOR EAX,EAX
+  1428C6CC2  48894120             MOV qword ptr [RCX + 0x20],RAX
+  1428C6CC6  48894118             MOV qword ptr [RCX + 0x18],RAX
+  1428C6CCA  C3                   RET
+
+; 1428C6CD0  FUN_1428c6cd0  (line unknown)
+  1428C6CD0  448B4118             MOV R8D,dword ptr [RCX + 0x18]
+  1428C6CD4  413BD0               CMP EDX,R8D
+  1428C6CD7  7214                 JC 0x1428c6ced
+  1428C6CD9  4403411C             ADD R8D,dword ptr [RCX + 0x1c]
+  1428C6CDD  413BD0               CMP EDX,R8D
+  1428C6CE0  730B                 JNC 0x1428c6ced
+  1428C6CE2  488B4120             MOV RAX,qword ptr [RCX + 0x20]
+  1428C6CE6  8BD2                 MOV EDX,EDX
+  1428C6CE8  0FB70450             MOVZX EAX,word ptr [RAX + RDX*0x2]
+  1428C6CEC  C3                   RET
+LAB_1428c6ced:
+  1428C6CED  33C0                 XOR EAX,EAX
+  1428C6CEF  C3                   RET
+
 ; 1428C6CF0  FUN_1428c6cf0  (line unknown)
   1428C6CF0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1428C6CF5  448B4118             MOV R8D,dword ptr [RCX + 0x18]
@@ -197550,6 +198390,16 @@ LAB_1428c6d48:
   1428C6DD7  4883C420             ADD RSP,0x20
   1428C6DDB  5B                   POP RBX
   1428C6DDC  C3                   RET
+
+; 1428C6DE0  FUN_1428c6de0  (line unknown)
+  1428C6DE0  488B01               MOV RAX,qword ptr [RCX]
+  1428C6DE3  4C8B8090020000       MOV R8,qword ptr [RAX + 0x290]
+  1428C6DEA  49FF6010             JMP qword ptr [R8 + 0x10]
+
+; 1428C6DF0  FUN_1428c6df0  (line unknown)
+  1428C6DF0  488B01               MOV RAX,qword ptr [RCX]
+  1428C6DF3  4C8B8090020000       MOV R8,qword ptr [RAX + 0x290]
+  1428C6DFA  49FF6018             JMP qword ptr [R8 + 0x18]
 
 ; 1428C6E00  FUN_1428c6e00  (line unknown)
   1428C6E00  83791801             CMP dword ptr [RCX + 0x18],0x1
@@ -202688,6 +203538,51 @@ LAB_1428cb468:
   1428CB479  5E                   POP RSI
   1428CB47A  C3                   RET
 
+; 1428CB480  FUN_1428cb480  (line unknown)
+  1428CB480  488B11               MOV RDX,qword ptr [RCX]
+  1428CB483  8B82B8010000         MOV EAX,dword ptr [RDX + 0x1b8]
+  1428CB489  894118               MOV dword ptr [RCX + 0x18],EAX
+  1428CB48C  488B82C0010000       MOV RAX,qword ptr [RDX + 0x1c0]
+  1428CB493  48894120             MOV qword ptr [RCX + 0x20],RAX
+  1428CB497  33C0                 XOR EAX,EAX
+  1428CB499  C3                   RET
+
+; 1428CB4A0  FUN_1428cb4a0  (line unknown)
+  1428CB4A0  33C0                 XOR EAX,EAX
+  1428CB4A2  48894120             MOV qword ptr [RCX + 0x20],RAX
+  1428CB4A6  894118               MOV dword ptr [RCX + 0x18],EAX
+  1428CB4A9  C3                   RET
+
+; 1428CB4B0  FUN_1428cb4b0  (line unknown)
+  1428CB4B0  448B4118             MOV R8D,dword ptr [RCX + 0x18]
+  1428CB4B4  4C8B5920             MOV R11,qword ptr [RCX + 0x20]
+  1428CB4B8  4533C9               XOR R9D,R9D
+  1428CB4BB  448BD2               MOV R10D,EDX
+  1428CB4BE  4585C0               TEST R8D,R8D
+  1428CB4C1  742C                 JZ 0x1428cb4ef
+  1428CB4C3  66666666660F1F840000000000 NOP word ptr [RAX + RAX*0x1]
+LAB_1428cb4d0:
+  1428CB4D0  438D0C08             LEA ECX,[R8 + R9*0x1]
+  1428CB4D4  D1E9                 SHR ECX,0x1
+  1428CB4D6  418B14CB             MOV EDX,dword ptr [R11 + RCX*0x8]
+  1428CB4DA  443BD2               CMP R10D,EDX
+  1428CB4DD  7413                 JZ 0x1428cb4f2
+  1428CB4DF  7305                 JNC 0x1428cb4e6
+  1428CB4E1  448BC1               MOV R8D,ECX
+  1428CB4E4  EB04                 JMP 0x1428cb4ea
+LAB_1428cb4e6:
+  1428CB4E6  448D4901             LEA R9D,[RCX + 0x1]
+LAB_1428cb4ea:
+  1428CB4EA  453BC8               CMP R9D,R8D
+  1428CB4ED  72E1                 JC 0x1428cb4d0
+LAB_1428cb4ef:
+  1428CB4EF  33C0                 XOR EAX,EAX
+  1428CB4F1  C3                   RET
+LAB_1428cb4f2:
+  1428CB4F2  410FB744CB04         MOVZX EAX,word ptr [R11 + RCX*0x8 + 0x4]
+  1428CB4F8  FFC0                 INC EAX
+  1428CB4FA  C3                   RET
+
 ; 1428CB500  FUN_1428cb500  (line unknown)
   1428CB500  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1428CB505  4889742410           MOV qword ptr [RSP + 0x10],RSI
@@ -203233,6 +204128,17 @@ LAB_1428cbbf3:
   1428CBBF8  4883C420             ADD RSP,0x20
   1428CBBFC  5B                   POP RBX
   1428CBBFD  C3                   RET
+
+; 1428CBC00  FUN_1428cbc00  (line unknown)
+  1428CBC00  488B8128010000       MOV RAX,qword ptr [RCX + 0x128]
+  1428CBC07  488902               MOV qword ptr [RDX],RAX
+  1428CBC0A  488B8130010000       MOV RAX,qword ptr [RCX + 0x130]
+  1428CBC11  498900               MOV qword ptr [R8],RAX
+  1428CBC14  33C0                 XOR EAX,EAX
+  1428CBC16  C3                   RET
+
+; 1428CBC20  thunk_FUN_15e00f16e  (line unknown)
+  1428CBC20  E94935741B           JMP 0x15e00f16e
 
 ; 1428CBC25  FUN_1428cbc25  (line unknown)
   1428CBC25  55                   PUSH RBP
@@ -203809,6 +204715,51 @@ LAB_1428cc491:
   1428CC4AD  5D                   POP RBP
   1428CC4AE  C3                   RET
 
+; 1428CC4B0  FUN_1428cc4b0  (line unknown)
+  1428CC4B0  488B01               MOV RAX,qword ptr [RCX]
+  1428CC4B3  488B90D8000000       MOV RDX,qword ptr [RAX + 0xd8]
+  1428CC4BA  0FB64268             MOVZX EAX,byte ptr [RDX + 0x68]
+  1428CC4BE  894118               MOV dword ptr [RCX + 0x18],EAX
+  1428CC4C1  440FB64269           MOVZX R8D,byte ptr [RDX + 0x69]
+  1428CC4C6  442BC0               SUB R8D,EAX
+  1428CC4C9  33C0                 XOR EAX,EAX
+  1428CC4CB  41FFC0               INC R8D
+  1428CC4CE  4489411C             MOV dword ptr [RCX + 0x1c],R8D
+  1428CC4D2  C3                   RET
+
+; 1428CC4E0  FUN_1428cc4e0  (line unknown)
+  1428CC4E0  2B5118               SUB EDX,dword ptr [RCX + 0x18]
+  1428CC4E3  3B511C               CMP EDX,dword ptr [RCX + 0x1c]
+  1428CC4E6  7304                 JNC 0x1428cc4ec
+  1428CC4E8  8D4201               LEA EAX,[RDX + 0x1]
+  1428CC4EB  C3                   RET
+LAB_1428cc4ec:
+  1428CC4EC  33C0                 XOR EAX,EAX
+  1428CC4EE  C3                   RET
+
+; 1428CC4F0  FUN_1428cc4f0  (line unknown)
+  1428CC4F0  4C8BC1               MOV R8,RCX
+  1428CC4F3  8B0A                 MOV ECX,dword ptr [RDX]
+  1428CC4F5  418B4018             MOV EAX,dword ptr [R8 + 0x18]
+  1428CC4F9  FFC1                 INC ECX
+  1428CC4FB  3BC8                 CMP ECX,EAX
+  1428CC4FD  7708                 JA 0x1428cc507
+  1428CC4FF  8902                 MOV dword ptr [RDX],EAX
+  1428CC501  B801000000           MOV EAX,0x1
+  1428CC506  C3                   RET
+LAB_1428cc507:
+  1428CC507  2BC8                 SUB ECX,EAX
+  1428CC509  413B481C             CMP ECX,dword ptr [R8 + 0x1c]
+  1428CC50D  7308                 JNC 0x1428cc517
+  1428CC50F  03C1                 ADD EAX,ECX
+  1428CC511  8902                 MOV dword ptr [RDX],EAX
+  1428CC513  8D4101               LEA EAX,[RCX + 0x1]
+  1428CC516  C3                   RET
+LAB_1428cc517:
+  1428CC517  C70200000000         MOV dword ptr [RDX],0x0
+  1428CC51D  33C0                 XOR EAX,EAX
+  1428CC51F  C3                   RET
+
 ; 1428CC520  FUN_1428cc520  (line unknown)
   1428CC520  4885C9               TEST RCX,RCX
   1428CC523  743A                 JZ 0x1428cc55f
@@ -204347,6 +205298,9 @@ LAB_1428ccc0f:
   1428CCC52  4883C428             ADD RSP,0x28
   1428CCC56  C3                   RET
 
+; 1428CCC60  thunk_FUN_15db3f987  (line unknown)
+  1428CCC60  E9222D271B           JMP 0x15db3f987
+
 ; 1428CCC70  FUN_1428ccc70  (line unknown)
   1428CCC70  4885C9               TEST RCX,RCX
   1428CCC73  0F8493010000         JZ 0x1428cce0c
@@ -204451,6 +205405,9 @@ LAB_1428cce39:
   1428CCE42  4883C420             ADD RSP,0x20
   1428CCE46  5B                   POP RBX
   1428CCE47  C3                   RET
+
+; 1428CCE50  FUN_1428cce50  (line unknown)
+  1428CCE50  C20000               RET 0x0
 
 ; 1428CCE60  FUN_1428cce60  (line unknown)
   1428CCE60  48895C2410           MOV qword ptr [RSP + 0x10],RBX
@@ -204593,6 +205550,10 @@ LAB_1428cd02e:
   1428CD04B  4883C420             ADD RSP,0x20
   1428CD04F  5B                   POP RBX
   1428CD050  C3                   RET
+
+; 1428CD060  FUN_1428cd060  (line unknown)
+  1428CD060  488B89F8000000       MOV RCX,qword ptr [RCX + 0xf8]
+  1428CD067  E98403FEFF           JMP 0x1428ad3f0
 
 ; 1428CD070  FUN_1428cd070  (line unknown)
   1428CD070  4053                 PUSH RBX
@@ -206141,6 +207102,38 @@ LAB_1428ce635:
   1428CE651  5F                   POP RDI
   1428CE652  E9C1D33600           JMP 0x142c3ba18
 
+; 1428CE660  FUN_1428ce660  (line unknown)
+  1428CE660  488B81D8010000       MOV RAX,qword ptr [RCX + 0x1d8]
+  1428CE667  C3                   RET
+
+; 1428CE670  FUN_1428ce670  (line unknown)
+  1428CE670  488B81D8000000       MOV RAX,qword ptr [RCX + 0xd8]
+  1428CE677  488902               MOV qword ptr [RDX],RAX
+  1428CE67A  488B81E0000000       MOV RAX,qword ptr [RCX + 0xe0]
+  1428CE681  48894208             MOV qword ptr [RDX + 0x8],RAX
+  1428CE685  488B81E8000000       MOV RAX,qword ptr [RCX + 0xe8]
+  1428CE68C  48894210             MOV qword ptr [RDX + 0x10],RAX
+  1428CE690  488B81F0000000       MOV RAX,qword ptr [RCX + 0xf0]
+  1428CE697  48894218             MOV qword ptr [RDX + 0x18],RAX
+  1428CE69B  488B81F8000000       MOV RAX,qword ptr [RCX + 0xf8]
+  1428CE6A2  48894220             MOV qword ptr [RDX + 0x20],RAX
+  1428CE6A6  488B8100010000       MOV RAX,qword ptr [RCX + 0x100]
+  1428CE6AD  48894228             MOV qword ptr [RDX + 0x28],RAX
+  1428CE6B1  488B8108010000       MOV RAX,qword ptr [RCX + 0x108]
+  1428CE6B8  48894230             MOV qword ptr [RDX + 0x30],RAX
+  1428CE6BC  33C0                 XOR EAX,EAX
+  1428CE6BE  C3                   RET
+
+; 1428CE6C0  FUN_1428ce6c0  (line unknown)
+  1428CE6C0  0FB78110010000       MOVZX EAX,word ptr [RCX + 0x110]
+  1428CE6C7  668902               MOV word ptr [RDX],AX
+  1428CE6CA  33C0                 XOR EAX,EAX
+  1428CE6CC  C3                   RET
+
+; 1428CE6D0  FUN_1428ce6d0  (line unknown)
+  1428CE6D0  B801000000           MOV EAX,0x1
+  1428CE6D5  C3                   RET
+
 ; 1428CE6E0  FUN_1428ce6e0  (line unknown)
   1428CE6E0  4883EC28             SUB RSP,0x28
   1428CE6E4  488BC1               MOV RAX,RCX
@@ -206151,6 +207144,9 @@ LAB_1428ce635:
   1428CE6FC  33C0                 XOR EAX,EAX
   1428CE6FE  4883C428             ADD RSP,0x28
   1428CE702  C3                   RET
+
+; 1428CE710  thunk_FUN_15f7d5331  (line unknown)
+  1428CE710  E91C6CF01C           JMP 0x15f7d5331
 
 ; 1428CE715  FUN_1428ce715  (line unknown)
   1428CE715  8B11                 MOV EDX,dword ptr [RCX]
@@ -207899,6 +208895,71 @@ LAB_1428cfe88:
   1428CFEB6  5B                   POP RBX
   1428CFEB7  E9E4AFFDFF           JMP 0x1428aaea0
 
+; 1428CFEC0  FUN_1428cfec0  (line unknown)
+  1428CFEC0  488B01               MOV RAX,qword ptr [RCX]
+  1428CFEC3  41B801000000         MOV R8D,0x1
+  1428CFEC9  4C8BD1               MOV R10,RCX
+  1428CFECC  8B9018020000         MOV EDX,dword ptr [RAX + 0x218]
+  1428CFED2  895118               MOV dword ptr [RCX + 0x18],EDX
+  1428CFED5  4C8B8828020000       MOV R9,qword ptr [RAX + 0x228]
+  1428CFEDC  4C894920             MOV qword ptr [RCX + 0x20],R9
+  1428CFEE0  413BD0               CMP EDX,R8D
+  1428CFEE3  7623                 JBE 0x1428cff08
+  1428CFEE5  BA10000000           MOV EDX,0x10
+  1428CFEEA  660F1F440000         NOP word ptr [RAX + RAX*0x1]
+LAB_1428cfef0:
+  1428CFEF0  428B0C0A             MOV ECX,dword ptr [RDX + R9*0x1]
+  1428CFEF4  42394C0AF0           CMP dword ptr [RDX + R9*0x1 + -0x10],ECX
+  1428CFEF9  7310                 JNC 0x1428cff0b
+  1428CFEFB  41FFC0               INC R8D
+  1428CFEFE  4883C210             ADD RDX,0x10
+  1428CFF02  453B4218             CMP R8D,dword ptr [R10 + 0x18]
+  1428CFF06  72E8                 JC 0x1428cfef0
+LAB_1428cff08:
+  1428CFF08  33C0                 XOR EAX,EAX
+  1428CFF0A  C3                   RET
+LAB_1428cff0b:
+  1428CFF0B  B808000000           MOV EAX,0x8
+  1428CFF10  C3                   RET
+
+; 1428CFF20  FUN_1428cff20  (line unknown)
+  1428CFF20  33C0                 XOR EAX,EAX
+  1428CFF22  48894120             MOV qword ptr [RCX + 0x20],RAX
+  1428CFF26  894118               MOV dword ptr [RCX + 0x18],EAX
+  1428CFF29  C3                   RET
+
+; 1428CFF30  FUN_1428cff30  (line unknown)
+  1428CFF30  448B4118             MOV R8D,dword ptr [RCX + 0x18]
+  1428CFF34  4533C9               XOR R9D,R9D
+  1428CFF37  448BD2               MOV R10D,EDX
+  1428CFF3A  4585C0               TEST R8D,R8D
+  1428CFF3D  742D                 JZ 0x1428cff6c
+  1428CFF3F  4C8B5920             MOV R11,qword ptr [RCX + 0x20]
+LAB_1428cff43:
+  1428CFF43  418BC8               MOV ECX,R8D
+  1428CFF46  412BC9               SUB ECX,R9D
+  1428CFF49  D1E9                 SHR ECX,0x1
+  1428CFF4B  4103C9               ADD ECX,R9D
+  1428CFF4E  8BC1                 MOV EAX,ECX
+  1428CFF50  4803C0               ADD RAX,RAX
+  1428CFF53  418B14C3             MOV EDX,dword ptr [R11 + RAX*0x8]
+  1428CFF57  413BD2               CMP EDX,R10D
+  1428CFF5A  7413                 JZ 0x1428cff6f
+  1428CFF5C  7306                 JNC 0x1428cff64
+  1428CFF5E  448D4901             LEA R9D,[RCX + 0x1]
+  1428CFF62  EB03                 JMP 0x1428cff67
+LAB_1428cff64:
+  1428CFF64  448BC1               MOV R8D,ECX
+LAB_1428cff67:
+  1428CFF67  453BC8               CMP R9D,R8D
+  1428CFF6A  72D7                 JC 0x1428cff43
+LAB_1428cff6c:
+  1428CFF6C  33C0                 XOR EAX,EAX
+  1428CFF6E  C3                   RET
+LAB_1428cff6f:
+  1428CFF6F  8D4101               LEA EAX,[RCX + 0x1]
+  1428CFF72  C3                   RET
+
 ; 1428CFF80  FUN_1428cff80  (line unknown)
   1428CFF80  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1428CFF85  4889742410           MOV qword ptr [RSP + 0x10],RSI
@@ -208002,6 +209063,10 @@ LAB_1428d009e:
   1428D00BA  33C0                 XOR EAX,EAX
   1428D00BC  4883C428             ADD RSP,0x28
   1428D00C0  C3                   RET
+
+; 1428D00D0  FUN_1428d00d0  (line unknown)
+  1428D00D0  4881C1F8000000       ADD RCX,0xf8
+  1428D00D7  E9F4FAFFFF           JMP 0x1428cfbd0
 
 ; 1428D00E0  FUN_1428d00e0  (line unknown)
   1428D00E0  4157                 PUSH R15
@@ -208241,6 +209306,27 @@ LAB_1428d0381:
   1428D038C  5F                   POP RDI
   1428D038D  C3                   RET
 
+; 1428D0390  FUN_1428d0390  (line unknown)
+  1428D0390  488BC1               MOV RAX,RCX
+  1428D0393  41C70000000000       MOV dword ptr [R8],0x0
+  1428D039A  85D2                 TEST EDX,EDX
+  1428D039C  7425                 JZ 0x1428d03c3
+  1428D039E  FFCA                 DEC EDX
+  1428D03A0  4885C9               TEST RCX,RCX
+  1428D03A3  741E                 JZ 0x1428d03c3
+  1428D03A5  3B9118020000         CMP EDX,dword ptr [RCX + 0x218]
+  1428D03AB  7316                 JNC 0x1428d03c3
+  1428D03AD  488B8028020000       MOV RAX,qword ptr [RAX + 0x228]
+  1428D03B4  8BCA                 MOV ECX,EDX
+  1428D03B6  4803C9               ADD RCX,RCX
+  1428D03B9  8B4CC804             MOV ECX,dword ptr [RAX + RCX*0x8 + 0x4]
+  1428D03BD  33C0                 XOR EAX,EAX
+  1428D03BF  418908               MOV dword ptr [R8],ECX
+  1428D03C2  C3                   RET
+LAB_1428d03c3:
+  1428D03C3  B806000000           MOV EAX,0x6
+  1428D03C8  C3                   RET
+
 ; 1428D03D0  FUN_1428d03d0  (line unknown)
   1428D03D0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1428D03D5  48896C2410           MOV qword ptr [RSP + 0x10],RBP
@@ -208290,6 +209376,9 @@ LAB_1428d0451:
   1428D0462  4883C420             ADD RSP,0x20
   1428D0466  5F                   POP RDI
   1428D0467  C3                   RET
+
+; 1428D0470  thunk_FUN_15ededf1f  (line unknown)
+  1428D0470  E9AADA511C           JMP 0x15ededf1f
 
 ; 1428D0480  FUN_1428d0480  (line unknown)
   1428D0480  488B4210             MOV RAX,qword ptr [RDX + 0x10]
@@ -211743,6 +212832,11 @@ LAB_1428d3253:
   1428D3277  5F                   POP RDI
   1428D3278  C3                   RET
 
+; 1428D3280  FUN_1428d3280  (line unknown)
+  1428D3280  488B81F0000000       MOV RAX,qword ptr [RCX + 0xf0]
+  1428D3287  48C7402800000000     MOV qword ptr [RAX + 0x28],0x0
+  1428D328F  C3                   RET
+
 ; 1428D3290  FUN_1428d3290  (line unknown)
   1428D3290  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1428D3295  57                   PUSH RDI
@@ -212154,6 +213248,85 @@ LAB_1428d384f:
   1428D3859  4883C420             ADD RSP,0x20
   1428D385D  5F                   POP RDI
   1428D385E  C3                   RET
+
+; 1428D3860  FUN_1428d3860  (line unknown)
+  1428D3860  33C0                 XOR EAX,EAX
+  1428D3862  C3                   RET
+
+; 1428D3870  FUN_1428d3870  (line unknown)
+  1428D3870  C20000               RET 0x0
+
+; 1428D3880  FUN_1428d3880  (line unknown)
+  1428D3880  488B81E8000000       MOV RAX,qword ptr [RCX + 0xe8]
+  1428D3887  4885C0               TEST RAX,RAX
+  1428D388A  7408                 JZ 0x1428d3894
+  1428D388C  80382F               CMP byte ptr [RAX],0x2f
+  1428D388F  7503                 JNZ 0x1428d3894
+  1428D3891  48FFC0               INC RAX
+LAB_1428d3894:
+  1428D3894  F3C3                 RET
+
+; 1428D38A0  FUN_1428d38a0  (line unknown)
+  1428D38A0  488B8110010000       MOV RAX,qword ptr [RCX + 0x110]
+  1428D38A7  488902               MOV qword ptr [RDX],RAX
+  1428D38AA  488B8118010000       MOV RAX,qword ptr [RCX + 0x118]
+  1428D38B1  48894208             MOV qword ptr [RDX + 0x8],RAX
+  1428D38B5  488B8120010000       MOV RAX,qword ptr [RCX + 0x120]
+  1428D38BC  48894210             MOV qword ptr [RDX + 0x10],RAX
+  1428D38C0  488B8128010000       MOV RAX,qword ptr [RCX + 0x128]
+  1428D38C7  48894218             MOV qword ptr [RDX + 0x18],RAX
+  1428D38CB  488B8130010000       MOV RAX,qword ptr [RCX + 0x130]
+  1428D38D2  48894220             MOV qword ptr [RDX + 0x20],RAX
+  1428D38D6  488B8138010000       MOV RAX,qword ptr [RCX + 0x138]
+  1428D38DD  48894228             MOV qword ptr [RDX + 0x28],RAX
+  1428D38E1  488B8140010000       MOV RAX,qword ptr [RCX + 0x140]
+  1428D38E8  48894230             MOV qword ptr [RDX + 0x30],RAX
+  1428D38EC  33C0                 XOR EAX,EAX
+  1428D38EE  C3                   RET
+
+; 1428D38F0  FUN_1428d38f0  (line unknown)
+  1428D38F0  0FB781C8010000       MOVZX EAX,word ptr [RCX + 0x1c8]
+  1428D38F7  668902               MOV word ptr [RDX],AX
+  1428D38FA  33C0                 XOR EAX,EAX
+  1428D38FC  C3                   RET
+
+; 1428D3900  FUN_1428d3900  (line unknown)
+  1428D3900  4885D2               TEST RDX,RDX
+  1428D3903  740A                 JZ 0x1428d390f
+  1428D3905  488B81F8000000       MOV RAX,qword ptr [RCX + 0xf8]
+  1428D390C  488902               MOV qword ptr [RDX],RAX
+LAB_1428d390f:
+  1428D390F  4D85C0               TEST R8,R8
+  1428D3912  740A                 JZ 0x1428d391e
+  1428D3914  488B8100010000       MOV RAX,qword ptr [RCX + 0x100]
+  1428D391B  498900               MOV qword ptr [R8],RAX
+LAB_1428d391e:
+  1428D391E  4D85C9               TEST R9,R9
+  1428D3921  7409                 JZ 0x1428d392c
+  1428D3923  8B8108010000         MOV EAX,dword ptr [RCX + 0x108]
+  1428D3929  418901               MOV dword ptr [R9],EAX
+LAB_1428d392c:
+  1428D392C  33C0                 XOR EAX,EAX
+  1428D392E  C3                   RET
+
+; 1428D3930  FUN_1428d3930  (line unknown)
+  1428D3930  33C0                 XOR EAX,EAX
+  1428D3932  4885D2               TEST RDX,RDX
+  1428D3935  7403                 JZ 0x1428d393a
+  1428D3937  C60201               MOV byte ptr [RDX],0x1
+LAB_1428d393a:
+  1428D393A  F3C3                 RET
+
+; 1428D3940  FUN_1428d3940  (line unknown)
+  1428D3940  33C0                 XOR EAX,EAX
+  1428D3942  4D85C0               TEST R8,R8
+  1428D3945  7403                 JZ 0x1428d394a
+  1428D3947  418910               MOV dword ptr [R8],EDX
+LAB_1428d394a:
+  1428D394A  F3C3                 RET
+
+; 1428D3950  thunk_FUN_15bdad0ff  (line unknown)
+  1428D3950  E9AA974D19           JMP 0x15bdad0ff
 
 ; 1428D3960  FUN_1428d3960  (line unknown)
   1428D3960  48895C2418           MOV qword ptr [RSP + 0x18],RBX
@@ -212644,6 +213817,17 @@ LAB_1428d40a3:
   1428D40A9  5B                   POP RBX
   1428D40AA  C3                   RET
 
+; 1428D40B0  FUN_1428d40b0  (line unknown)
+  1428D40B0  F7410800020000       TEST dword ptr [RCX + 0x8],0x200
+  1428D40B7  B800000000           MOV EAX,0x0
+  1428D40BC  0F9FC0               SETG AL
+  1428D40BF  C3                   RET
+
+; 1428D40C0  FUN_1428d40c0  (line unknown)
+  1428D40C0  488B8180030000       MOV RAX,qword ptr [RCX + 0x380]
+  1428D40C7  488B80A0050000       MOV RAX,qword ptr [RAX + 0x5a0]
+  1428D40CE  C3                   RET
+
 ; 1428D40D0  FUN_1428d40d0  (line unknown)
   1428D40D0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1428D40D5  57                   PUSH RDI
@@ -212683,6 +213867,45 @@ LAB_1428d414c:
   1428D4153  4883C420             ADD RSP,0x20
   1428D4157  5F                   POP RDI
   1428D4158  C3                   RET
+
+; 1428D4160  FUN_1428d4160  (line unknown)
+  1428D4160  4C8B8180030000       MOV R8,qword ptr [RCX + 0x380]
+  1428D4167  C60200               MOV byte ptr [RDX],0x0
+  1428D416A  4D85C0               TEST R8,R8
+  1428D416D  7418                 JZ 0x1428d4187
+  1428D416F  0FB602               MOVZX EAX,byte ptr [RDX]
+  1428D4172  4181B84C060000FFFF0000 CMP dword ptr [R8 + 0x64c],0xffff
+  1428D417D  B901000000           MOV ECX,0x1
+  1428D4182  0F45C1               CMOVNZ EAX,ECX
+  1428D4185  8802                 MOV byte ptr [RDX],AL
+LAB_1428d4187:
+  1428D4187  33C0                 XOR EAX,EAX
+  1428D4189  C3                   RET
+
+; 1428D4190  FUN_1428d4190  (line unknown)
+  1428D4190  488B8980030000       MOV RCX,qword ptr [RCX + 0x380]
+  1428D4197  4885C9               TEST RCX,RCX
+  1428D419A  742F                 JZ 0x1428d41cb
+  1428D419C  81B94C060000FFFF0000 CMP dword ptr [RCX + 0x64c],0xffff
+  1428D41A6  7506                 JNZ 0x1428d41ae
+LAB_1428d41a8:
+  1428D41A8  B806000000           MOV EAX,0x6
+  1428D41AD  C3                   RET
+LAB_1428d41ae:
+  1428D41AE  3B5114               CMP EDX,dword ptr [RCX + 0x14]
+  1428D41B1  77F5                 JA 0x1428d41a8
+  1428D41B3  33C0                 XOR EAX,EAX
+  1428D41B5  4D85C0               TEST R8,R8
+  1428D41B8  7413                 JZ 0x1428d41cd
+  1428D41BA  488B89C8040000       MOV RCX,qword ptr [RCX + 0x4c8]
+  1428D41C1  8BD2                 MOV EDX,EDX
+  1428D41C3  0FB71451             MOVZX EDX,word ptr [RCX + RDX*0x2]
+  1428D41C7  418910               MOV dword ptr [R8],EDX
+  1428D41CA  C3                   RET
+LAB_1428d41cb:
+  1428D41CB  33C0                 XOR EAX,EAX
+LAB_1428d41cd:
+  1428D41CD  F3C3                 RET
 
 ; 1428D41D0  FUN_1428d41d0  (line unknown)
   1428D41D0  4889742408           MOV qword ptr [RSP + 0x8],RSI
@@ -215755,6 +216978,9 @@ LAB_1428d6f42:
   1428D6F4E  5B                   POP RBX
   1428D6F4F  C3                   RET
 
+; 1428D6F50  thunk_FUN_15dfa911e  (line unknown)
+  1428D6F50  E9C9216D1B           JMP 0x15dfa911e
+
 ; 1428D6F60  thunk_FUN_15d23bf4d  (line unknown)
   1428D6F60  E9E84F961A           JMP 0x15d23bf4d
 
@@ -216513,6 +217739,12 @@ LAB_1428d7a03:
 LAB_1428d7a0d:
   1428D7A0D  F3C3                 RET
 
+; 1428D7A10  thunk_FUN_15c4c1c7d  (line unknown)
+  1428D7A10  E968A2BE19           JMP 0x15c4c1c7d
+
+; 1428D7A20  FUN_1428d7a20  (line unknown)
+  1428D7A20  C20000               RET 0x0
+
 ; 1428D7A30  thunk_FUN_15ab2037c  (line unknown)
   1428D7A30  E947892418           JMP 0x15ab2037c
 
@@ -216890,10 +218122,55 @@ LAB_1428d7fc3:
   1428D8079  4883C438             ADD RSP,0x38
   1428D807D  C3                   RET
 
+; 1428D80A0  thunk_FUN_15ed58cb0  (line unknown)
+  1428D80A0  E90B0C481C           JMP 0x15ed58cb0
+
 ; 1428D80A5  FUN_1428d80a5  (line unknown)
   1428D80A5  48BD3D4E8F5B01000000 MOV RBP,0x15b8f4e3d
   1428D80AF  48872C24             XCHG qword ptr [RSP],RBP
   1428D80B3  E940B7B31A           JMP 0x15d4137f8
+
+; 1428D80C0  thunk_FUN_15f99f401  (line unknown)
+  1428D80C0  E93C730C1D           JMP 0x15f99f401
+
+; 1428D80D0  FUN_1428d80d0  (line unknown)
+  1428D80D0  81FA00010000         CMP EDX,0x100
+  1428D80D6  730B                 JNC 0x1428d80e3
+  1428D80D8  488B4118             MOV RAX,qword ptr [RCX + 0x18]
+  1428D80DC  8BD2                 MOV EDX,EDX
+  1428D80DE  0FB70450             MOVZX EAX,word ptr [RAX + RDX*0x2]
+  1428D80E2  C3                   RET
+LAB_1428d80e3:
+  1428D80E3  33C0                 XOR EAX,EAX
+  1428D80E5  C3                   RET
+
+; 1428D80F0  FUN_1428d80f0  (line unknown)
+  1428D80F0  448B02               MOV R8D,dword ptr [RDX]
+  1428D80F3  C70200000000         MOV dword ptr [RDX],0x0
+  1428D80F9  4181F8FF000000       CMP R8D,0xff
+  1428D8100  733B                 JNC 0x1428d813d
+  1428D8102  41FFC0               INC R8D
+  1428D8105  4D63C8               MOVSXD R9,R8D
+  1428D8108  4181F800010000       CMP R8D,0x100
+  1428D810F  732C                 JNC 0x1428d813d
+  1428D8111  488B4118             MOV RAX,qword ptr [RCX + 0x18]
+  1428D8115  4A8D0C48             LEA RCX,[RAX + R9*0x2]
+  1428D8119  0F1F8000000000       NOP dword ptr [RAX]
+LAB_1428d8120:
+  1428D8120  0FB701               MOVZX EAX,word ptr [RCX]
+  1428D8123  85C0                 TEST EAX,EAX
+  1428D8125  7512                 JNZ 0x1428d8139
+  1428D8127  41FFC0               INC R8D
+  1428D812A  4883C102             ADD RCX,0x2
+  1428D812E  4181F800010000       CMP R8D,0x100
+  1428D8135  72E9                 JC 0x1428d8120
+  1428D8137  F3C3                 RET
+LAB_1428d8139:
+  1428D8139  448902               MOV dword ptr [RDX],R8D
+  1428D813C  C3                   RET
+LAB_1428d813d:
+  1428D813D  33C0                 XOR EAX,EAX
+  1428D813F  C3                   RET
 
 ; 1428D8160  FUN_1428d8160  (line unknown)
   1428D8160  4883EC38             SUB RSP,0x38
@@ -216930,6 +218207,18 @@ LAB_1428d8189:
   1428D81E7  4883C420             ADD RSP,0x20
   1428D81EB  5B                   POP RBX
   1428D81EC  C3                   RET
+
+; 1428D81F0  FUN_1428d81f0  (line unknown)
+  1428D81F0  488B01               MOV RAX,qword ptr [RCX]
+  1428D81F3  4C8B8080030000       MOV R8,qword ptr [RAX + 0x380]
+  1428D81FA  498B8048100000       MOV RAX,qword ptr [R8 + 0x1048]
+  1428D8201  48FF6010             JMP qword ptr [RAX + 0x10]
+
+; 1428D8210  FUN_1428d8210  (line unknown)
+  1428D8210  488B01               MOV RAX,qword ptr [RCX]
+  1428D8213  4C8B8080030000       MOV R8,qword ptr [RAX + 0x380]
+  1428D821A  498B8048100000       MOV RAX,qword ptr [R8 + 0x1048]
+  1428D8221  48FF6018             JMP qword ptr [RAX + 0x18]
 
 ; 1428D8230  FUN_1428d8230  (line unknown)
   1428D8230  33C0                 XOR EAX,EAX
@@ -223073,6 +224362,10 @@ LAB_1428df1b1:
   1428DF1C1  5F                   POP RDI
   1428DF1C2  C3                   RET
 
+; 1428DF1E0  FUN_1428df1e0  (line unknown)
+  1428DF1E0  838AB402000001       OR dword ptr [RDX + 0x2b4],0x1
+  1428DF1E7  C3                   RET
+
 ; 1428DF1F0  FUN_1428df1f0  (line unknown)
   1428DF1F0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1428DF1F5  48896C2410           MOV qword ptr [RSP + 0x10],RBP
@@ -224855,6 +226148,11 @@ LAB_1428e0a86:
   1428E0A96  5F                   POP RDI
   1428E0A97  C3                   RET
 
+; 1428E0AA0  FUN_1428e0aa0  (line unknown)
+  1428E0AA0  488B81F0000000       MOV RAX,qword ptr [RCX + 0xf0]
+  1428E0AA7  48C7402800000000     MOV qword ptr [RAX + 0x28],0x0
+  1428E0AAF  C3                   RET
+
 ; 1428E0AB0  FUN_1428e0ab0  (line unknown)
   1428E0AB0  48895C2408           MOV qword ptr [RSP + 0x8],RBX
   1428E0AB5  57                   PUSH RDI
@@ -224880,6 +226178,13 @@ LAB_1428e0afa:
   1428E0B01  4883C420             ADD RSP,0x20
   1428E0B05  5F                   POP RDI
   1428E0B06  C3                   RET
+
+; 1428E0B10  FUN_1428e0b10  (line unknown)
+  1428E0B10  33C0                 XOR EAX,EAX
+  1428E0B12  C3                   RET
+
+; 1428E0B20  FUN_1428e0b20  (line unknown)
+  1428E0B20  C20000               RET 0x0
 
 ; 1428E0B30  FUN_1428e0b30  (line unknown)
   1428E0B30  4883EC28             SUB RSP,0x28
@@ -224931,6 +226236,38 @@ LAB_1428e0bbb:
   1428E0BBB  488B5C2408           MOV RBX,qword ptr [RSP + 0x8]
   1428E0BC0  418BC0               MOV EAX,R8D
   1428E0BC3  C3                   RET
+
+; 1428E0BD0  FUN_1428e0bd0  (line unknown)
+  1428E0BD0  488B81D8010000       MOV RAX,qword ptr [RCX + 0x1d8]
+  1428E0BD7  C3                   RET
+
+; 1428E0BE0  FUN_1428e0be0  (line unknown)
+  1428E0BE0  488B81D8000000       MOV RAX,qword ptr [RCX + 0xd8]
+  1428E0BE7  488902               MOV qword ptr [RDX],RAX
+  1428E0BEA  488B81E0000000       MOV RAX,qword ptr [RCX + 0xe0]
+  1428E0BF1  48894208             MOV qword ptr [RDX + 0x8],RAX
+  1428E0BF5  488B81E8000000       MOV RAX,qword ptr [RCX + 0xe8]
+  1428E0BFC  48894210             MOV qword ptr [RDX + 0x10],RAX
+  1428E0C00  488B81F0000000       MOV RAX,qword ptr [RCX + 0xf0]
+  1428E0C07  48894218             MOV qword ptr [RDX + 0x18],RAX
+  1428E0C0B  488B81F8000000       MOV RAX,qword ptr [RCX + 0xf8]
+  1428E0C12  48894220             MOV qword ptr [RDX + 0x20],RAX
+  1428E0C16  488B8100010000       MOV RAX,qword ptr [RCX + 0x100]
+  1428E0C1D  48894228             MOV qword ptr [RDX + 0x28],RAX
+  1428E0C21  488B8108010000       MOV RAX,qword ptr [RCX + 0x108]
+  1428E0C28  48894230             MOV qword ptr [RDX + 0x30],RAX
+  1428E0C2C  33C0                 XOR EAX,EAX
+  1428E0C2E  C3                   RET
+
+; 1428E0C30  FUN_1428e0c30  (line unknown)
+  1428E0C30  0FB78110010000       MOVZX EAX,word ptr [RCX + 0x110]
+  1428E0C37  668902               MOV word ptr [RDX],AX
+  1428E0C3A  33C0                 XOR EAX,EAX
+  1428E0C3C  C3                   RET
+
+; 1428E0C40  FUN_1428e0c40  (line unknown)
+  1428E0C40  B801000000           MOV EAX,0x1
+  1428E0C45  C3                   RET
 
 ; 1428E0C50  FUN_1428e0c50  (line unknown)
   1428E0C50  4883EC28             SUB RSP,0x28
@@ -225595,6 +226932,9 @@ default:
   1428E162C  4883C420             ADD RSP,0x20
   1428E1630  5F                   POP RDI
   1428E1631  C3                   RET
+
+; 1428E16F0  thunk_FUN_15e297fe6  (line unknown)
+  1428E16F0  E9F1689B1B           JMP 0x15e297fe6
 
 ; 1428E1700  FUN_1428e1700  (line unknown)
   1428E1700  48895C2420           MOV qword ptr [RSP + 0x20],RBX
@@ -229201,6 +230541,9 @@ LAB_1428e49e5:
   1428E4A80  5F                   POP RDI
   1428E4A81  C3                   RET
 
+; 1428E4A90  thunk_FUN_15b3011b7  (line unknown)
+  1428E4A90  E922C7A118           JMP 0x15b3011b7
+
 ; 1428E4A95  FUN_1428e4a95  (line unknown)
   1428E4A95  488B1C24             MOV RBX,qword ptr [RSP]
   1428E4A99  488D642408           LEA RSP,[RSP + 0x8]
@@ -229318,6 +230661,11 @@ LAB_1428e4c3c:
   1428E4C46  4883C420             ADD RSP,0x20
   1428E4C4A  5F                   POP RDI
   1428E4C4B  C3                   RET
+
+; 1428E4C50  FUN_1428e4c50  (line unknown)
+  1428E4C50  488B89F0000000       MOV RCX,qword ptr [RCX + 0xf0]
+  1428E4C57  488B09               MOV RCX,qword ptr [RCX]
+  1428E4C5A  E9B1B5FCFF           JMP 0x1428b0210
 
 ; 1428E4C60  FUN_1428e4c60  (line unknown)
   1428E4C60  8D42FF               LEA EAX,[RDX + -0x1]
@@ -238825,6 +240173,48 @@ LAB_1428edd22:
   1428EDD3D  5B                   POP RBX
   1428EDD3E  C3                   RET
 
+; 1428EDD40  FUN_1428edd40  (line unknown)
+  1428EDD40  4C8B5108             MOV R10,qword ptr [RCX + 0x8]
+  1428EDD44  4C8BDA               MOV R11,RDX
+  1428EDD47  4885D2               TEST RDX,RDX
+  1428EDD4A  7504                 JNZ 0x1428edd50
+  1428EDD4C  8D4224               LEA EAX,[RDX + 0x24]
+  1428EDD4F  C3                   RET
+LAB_1428edd50:
+  1428EDD50  4D85D2               TEST R10,R10
+  1428EDD53  7506                 JNZ 0x1428edd5b
+LAB_1428edd55:
+  1428EDD55  B806000000           MOV EAX,0x6
+  1428EDD5A  C3                   RET
+LAB_1428edd5b:
+  1428EDD5B  453B4210             CMP R8D,dword ptr [R10 + 0x10]
+  1428EDD5F  720E                 JC 0x1428edd6f
+  1428EDD61  498B82D0000000       MOV RAX,qword ptr [R10 + 0xd0]
+  1428EDD68  4883784800           CMP qword ptr [RAX + 0x48],0x0
+  1428EDD6D  74E6                 JZ 0x1428edd55
+LAB_1428edd6f:
+  1428EDD6F  41F6C102             TEST R9B,0x2
+  1428EDD73  7419                 JZ 0x1428edd8e
+LAB_1428edd75:
+  1428EDD75  41F7420800200000     TEST dword ptr [R10 + 0x8],0x2000
+  1428EDD7D  7404                 JZ 0x1428edd83
+  1428EDD7F  4183E1FD             AND R9D,0xfffffffd
+LAB_1428edd83:
+  1428EDD83  410FBAE10F           BT R9D,0xf
+  1428EDD88  7304                 JNC 0x1428edd8e
+  1428EDD8A  4183C902             OR R9D,0x2
+LAB_1428edd8e:
+  1428EDD8E  41F7C101040000       TEST R9D,0x401
+  1428EDD95  7412                 JZ 0x1428edda9
+  1428EDD97  4183C909             OR R9D,0x9
+  1428EDD9B  41F7420800200000     TEST dword ptr [R10 + 0x8],0x2000
+  1428EDDA3  7504                 JNZ 0x1428edda9
+  1428EDDA5  4183C902             OR R9D,0x2
+LAB_1428edda9:
+  1428EDDA9  488BD1               MOV RDX,RCX
+  1428EDDAC  498BCB               MOV RCX,R11
+  1428EDDAF  E93CFDFFFF           JMP 0x1428edaf0
+
 ; 1428EDDC0  thunk_FUN_15e6f7990  (line unknown)
   1428EDDC0  E9CB9BE01B           JMP 0x15e6f7990
 
@@ -240582,6 +241972,10 @@ LAB_1428ef30f:
   1428EF329  33C0                 XOR EAX,EAX
   1428EF32B  4883C428             ADD RSP,0x28
   1428EF32F  C3                   RET
+
+; 1428EF330  FUN_1428ef330  (line unknown)
+  1428EF330  33C0                 XOR EAX,EAX
+  1428EF332  C3                   RET
 
 ; 1428EF340  thunk_FUN_15e1aa9db  (line unknown)
   1428EF340  E996B68B1B           JMP 0x15e1aa9db
@@ -244468,6 +245862,15 @@ LAB_1428f2be7:
   1428F2C02  5F                   POP RDI
   1428F2C03  C3                   RET
 
+; 1428F2C10  thunk_FUN_15ef3e244  (line unknown)
+  1428F2C10  E9BBEBFFFF           JMP 0x1428f17d0
+
+; 1428F2C20  thunk_FUN_15f7645cc  (line unknown)
+  1428F2C20  E91BF5FFFF           JMP 0x1428f2140
+
+; 1428F2C30  thunk_FUN_1428f2a90  (line unknown)
+  1428F2C30  E95BFEFFFF           JMP 0x1428f2a90
+
 ; 1428F2C40  thunk_FUN_15e00ecbd  (line unknown)
   1428F2C40  E978C0711B           JMP 0x15e00ecbd
 
@@ -245038,6 +246441,15 @@ LAB_1428f3511:
   1428F3521  488987DC000000       MOV qword ptr [RDI + 0xdc],RAX
   1428F3528  E936FFFFFF           JMP 0x1428f3463
 
+; 1428F3530  thunk_FUN_15d5cf5f2  (line unknown)
+  1428F3530  E9BDC0CD1A           JMP 0x15d5cf5f2
+
+; 1428F3540  thunk_FUN_15d907f5f  (line unknown)
+  1428F3540  E91A4A011B           JMP 0x15d907f5f
+
+; 1428F3550  thunk_FUN_15dce7483  (line unknown)
+  1428F3550  E92E3F3F1B           JMP 0x15dce7483
+
 ; 1428F3560  thunk_FUN_15d42010c  (line unknown)
   1428F3560  E9A7CBB21A           JMP 0x15d42010c
 
@@ -245409,6 +246821,12 @@ LAB_1428f3ce8:
   1428F3CF2  4883C420             ADD RSP,0x20
   1428F3CF6  5F                   POP RDI
   1428F3CF7  C3                   RET
+
+; 1428F3D00  FUN_1428f3d00  (line unknown)
+  1428F3D00  488B5208             MOV RDX,qword ptr [RDX + 0x8]
+  1428F3D04  458BC1               MOV R8D,R9D
+  1428F3D07  448B4C2428           MOV R9D,dword ptr [RSP + 0x28]
+  1428F3D0C  E99FFCFFFF           JMP 0x1428f39b0
 
 ; 1428F3D20  FUN_1428f3d20  (line unknown)
   1428F3D20  488B05B99B7B00       MOV RAX,qword ptr [0x1430ad8e0]

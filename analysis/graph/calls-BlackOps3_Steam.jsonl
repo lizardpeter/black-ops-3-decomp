@@ -145,6 +145,8 @@
 {"callee": "BlackOps3_Steam:1400054A0", "caller": "BlackOps3_Steam:140004590", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:140004590", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3DFAC", "caller": "BlackOps3_Steam:1400046B0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DF6C", "caller": "BlackOps3_Steam:1400046C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1400046C0", "caller": "BlackOps3_Steam:1400046D0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1400046B0", "caller": "BlackOps3_Steam:1400046E0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1400046B0", "caller": "BlackOps3_Steam:1400046F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:140002C70", "caller": "BlackOps3_Steam:140004760", "kind": "call"}
@@ -233,6 +235,10 @@
 {"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:140006BC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:140006CC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3D960", "caller": "BlackOps3_Steam:140006CC0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DFAC", "caller": "BlackOps3_Steam:140006FE0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DF6C", "caller": "BlackOps3_Steam:140006FF0", "kind": "call"}
+{"callee": "BlackOps3_Steam:00000006F", "caller": "BlackOps3_Steam:140007000", "kind": "tailcall"}
+{"callee": "BlackOps3_Steam:00000006E", "caller": "BlackOps3_Steam:140007020", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1400071E0", "caller": "BlackOps3_Steam:140008800", "kind": "call"}
 {"callee": "BlackOps3_Steam:140008800", "caller": "BlackOps3_Steam:140008930", "kind": "call"}
 {"callee": "BlackOps3_Steam:140008E70", "caller": "BlackOps3_Steam:140008930", "kind": "call"}
@@ -1573,6 +1579,7 @@
 {"callee": "BlackOps3_Steam:141420ED0", "caller": "BlackOps3_Steam:1400A3560", "kind": "call"}
 {"callee": "BlackOps3_Steam:142148F60", "caller": "BlackOps3_Steam:1400A3560", "kind": "call"}
 {"callee": "BlackOps3_Steam:14264D530", "caller": "BlackOps3_Steam:1400A3560", "kind": "call"}
+{"callee": "BlackOps3_Steam:1400AA060", "caller": "BlackOps3_Steam:1400A3660", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A4A80", "caller": "BlackOps3_Steam:1400A3670", "kind": "call"}
 {"callee": "BlackOps3_Steam:14264D530", "caller": "BlackOps3_Steam:1400A3670", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A5F20", "caller": "BlackOps3_Steam:1400A3700", "kind": "call"}
@@ -1583,6 +1590,7 @@
 {"callee": "BlackOps3_Steam:141420ED0", "caller": "BlackOps3_Steam:1400A37F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142148F60", "caller": "BlackOps3_Steam:1400A37F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A4CA0", "caller": "BlackOps3_Steam:1400A3880", "kind": "call"}
+{"callee": "BlackOps3_Steam:1400AA1D0", "caller": "BlackOps3_Steam:1400A38E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A4FD0", "caller": "BlackOps3_Steam:1400A38F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A5C80", "caller": "BlackOps3_Steam:1400A3950", "kind": "call"}
 {"callee": "BlackOps3_Steam:141420ED0", "caller": "BlackOps3_Steam:1400A3950", "kind": "call"}
@@ -1629,6 +1637,7 @@
 {"callee": "BlackOps3_Steam:142148F60", "caller": "BlackOps3_Steam:1400A4190", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A4970", "caller": "BlackOps3_Steam:1400A41F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:1400A41F0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1400AA130", "caller": "BlackOps3_Steam:1400A4260", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A4860", "caller": "BlackOps3_Steam:1400A4270", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A6E00", "caller": "BlackOps3_Steam:1400A42D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142148F60", "caller": "BlackOps3_Steam:1400A42D0", "kind": "call"}
@@ -1638,7 +1647,9 @@
 {"callee": "BlackOps3_Steam:142148F60", "caller": "BlackOps3_Steam:1400A4470", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A4970", "caller": "BlackOps3_Steam:1400A44D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:1400A44D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1400A9F20", "caller": "BlackOps3_Steam:1400A4540", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A4860", "caller": "BlackOps3_Steam:1400A4550", "kind": "call"}
+{"callee": "BlackOps3_Steam:1400A9FC0", "caller": "BlackOps3_Steam:1400A45B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A4EC0", "caller": "BlackOps3_Steam:1400A45C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A6E00", "caller": "BlackOps3_Steam:1400A4620", "kind": "call"}
 {"callee": "BlackOps3_Steam:141CD4B90", "caller": "BlackOps3_Steam:1400A4620", "kind": "call"}
@@ -3740,6 +3751,7 @@
 {"callee": "BlackOps3_Steam:141420ED0", "caller": "BlackOps3_Steam:1401616E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:140160CC0", "caller": "BlackOps3_Steam:140161700", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E9AC0", "caller": "BlackOps3_Steam:140161700", "kind": "call"}
+{"callee": "BlackOps3_Steam:1400ACFA0", "caller": "BlackOps3_Steam:140161760", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400ADD80", "caller": "BlackOps3_Steam:140161770", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E9560", "caller": "BlackOps3_Steam:140161770", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E9870", "caller": "BlackOps3_Steam:140161770", "kind": "call"}
@@ -7333,6 +7345,7 @@
 {"callee": "BlackOps3_Steam:1412EC840", "caller": "BlackOps3_Steam:14042FA80", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412FA0B0", "caller": "BlackOps3_Steam:14042FA80", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:14042FA80", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412E9870", "caller": "BlackOps3_Steam:140435E60", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412EA430", "caller": "BlackOps3_Steam:140435E70", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412EB7F0", "caller": "BlackOps3_Steam:140435E70", "kind": "call"}
 {"callee": "BlackOps3_Steam:141321110", "caller": "BlackOps3_Steam:140435E70", "kind": "call"}
@@ -7365,6 +7378,7 @@
 {"callee": "BlackOps3_Steam:1422E9410", "caller": "BlackOps3_Steam:140436120", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:140436120", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C40FE4", "caller": "BlackOps3_Steam:140436120", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412CCA20", "caller": "BlackOps3_Steam:140436200", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000064", "caller": "BlackOps3_Steam:140436220", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412D7160", "caller": "BlackOps3_Steam:140436220", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412EA430", "caller": "BlackOps3_Steam:140436220", "kind": "call"}
@@ -12582,6 +12596,7 @@
 {"callee": "BlackOps3_Steam:1412EB7F0", "caller": "BlackOps3_Steam:140BC5220", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412EBF90", "caller": "BlackOps3_Steam:140BC5220", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:140BC5220", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412E9AC0", "caller": "BlackOps3_Steam:140BC5290", "kind": "call"}
 {"callee": "BlackOps3_Steam:14105D140", "caller": "BlackOps3_Steam:140BC52A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412EAF00", "caller": "BlackOps3_Steam:140BC52A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412EBAA0", "caller": "BlackOps3_Steam:140BC52A0", "kind": "call"}
@@ -13523,6 +13538,8 @@
 {"callee": "BlackOps3_Steam:141650750", "caller": "BlackOps3_Steam:140D333A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1420EF930", "caller": "BlackOps3_Steam:140D333A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422E9B70", "caller": "BlackOps3_Steam:140D333A0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412E9A30", "caller": "BlackOps3_Steam:140D33430", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412EA430", "caller": "BlackOps3_Steam:140D33430", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E96B0", "caller": "BlackOps3_Steam:140D334C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412EA430", "caller": "BlackOps3_Steam:140D334C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412C7160", "caller": "BlackOps3_Steam:140D398B0", "kind": "call"}
@@ -19069,6 +19086,7 @@
 {"callee": "BlackOps3_Steam:142149020", "caller": "BlackOps3_Steam:1412CC750", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422E8ED0", "caller": "BlackOps3_Steam:1412CC750", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:1412CC750", "kind": "call"}
+{"callee": "BlackOps3_Steam:142149020", "caller": "BlackOps3_Steam:1412CCA20", "kind": "call"}
 {"callee": "BlackOps3_Steam:00000003C", "caller": "BlackOps3_Steam:1412CCA60", "kind": "call"}
 {"callee": "BlackOps3_Steam:00000003D", "caller": "BlackOps3_Steam:1412CCA60", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412C6C90", "caller": "BlackOps3_Steam:1412CCA60", "kind": "call"}
@@ -19084,6 +19102,9 @@
 {"callee": "BlackOps3_Steam:1412DC7F0", "caller": "BlackOps3_Steam:1412CCEA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412DC810", "caller": "BlackOps3_Steam:1412CCEE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412DC830", "caller": "BlackOps3_Steam:1412CCF20", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412DC850", "caller": "BlackOps3_Steam:1412CCF60", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412DC8B0", "caller": "BlackOps3_Steam:1412CCF80", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412DACD0", "caller": "BlackOps3_Steam:1412CCFA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412DDF30", "caller": "BlackOps3_Steam:1412CCFC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E0010", "caller": "BlackOps3_Steam:1412CCFC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E0920", "caller": "BlackOps3_Steam:1412CCFC0", "kind": "call"}
@@ -19133,6 +19154,7 @@
 {"callee": "BlackOps3_Steam:1412EA430", "caller": "BlackOps3_Steam:1412CE050", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422E9B70", "caller": "BlackOps3_Steam:1412CE050", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:1412CE050", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412DAFA0", "caller": "BlackOps3_Steam:1412CE180", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412CFC40", "caller": "BlackOps3_Steam:1412CE190", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412CFC40", "caller": "BlackOps3_Steam:1412CE200", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412DE740", "caller": "BlackOps3_Steam:1412CE200", "kind": "call"}
@@ -19146,6 +19168,7 @@
 {"callee": "BlackOps3_Steam:1412EA390", "caller": "BlackOps3_Steam:1412CE3F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412CFC40", "caller": "BlackOps3_Steam:1412CE460", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E0010", "caller": "BlackOps3_Steam:1412CE4F0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412EA430", "caller": "BlackOps3_Steam:1412CE540", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E0010", "caller": "BlackOps3_Steam:1412CE580", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412CFD20", "caller": "BlackOps3_Steam:1412CE5E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412DFA70", "caller": "BlackOps3_Steam:1412CE5E0", "kind": "call"}
@@ -19238,6 +19261,7 @@
 {"callee": "BlackOps3_Steam:1412DD010", "caller": "BlackOps3_Steam:1412D0100", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E0010", "caller": "BlackOps3_Steam:1412D0140", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412DB170", "caller": "BlackOps3_Steam:1412D0160", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412DB4D0", "caller": "BlackOps3_Steam:1412D01A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E0010", "caller": "BlackOps3_Steam:1412D01E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412D9480", "caller": "BlackOps3_Steam:1412D0210", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E0010", "caller": "BlackOps3_Steam:1412D0240", "kind": "call"}
@@ -19326,6 +19350,7 @@
 {"callee": "BlackOps3_Steam:1412E0580", "caller": "BlackOps3_Steam:1412D2F70", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E0920", "caller": "BlackOps3_Steam:1412D2F70", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E0B70", "caller": "BlackOps3_Steam:1412D2F70", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412DDCD0", "caller": "BlackOps3_Steam:1412D3000", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412C8A70", "caller": "BlackOps3_Steam:1412D34B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412D93C0", "caller": "BlackOps3_Steam:1412D34B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412DFA70", "caller": "BlackOps3_Steam:1412D34B0", "kind": "call"}
@@ -19432,6 +19457,7 @@
 {"callee": "BlackOps3_Steam:1412EA430", "caller": "BlackOps3_Steam:1412D44F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422E9B70", "caller": "BlackOps3_Steam:1412D44F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E0010", "caller": "BlackOps3_Steam:1412D4810", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412D44F0", "caller": "BlackOps3_Steam:1412D4850", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E0010", "caller": "BlackOps3_Steam:1412D4860", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412CFD10", "caller": "BlackOps3_Steam:1412D4880", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412D34B0", "caller": "BlackOps3_Steam:1412D4880", "kind": "call"}
@@ -20959,6 +20985,7 @@
 {"callee": "BlackOps3_Steam:1422E93B0", "caller": "BlackOps3_Steam:14131E670", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422E9410", "caller": "BlackOps3_Steam:14131E670", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422E99F0", "caller": "BlackOps3_Steam:14131E670", "kind": "call"}
+{"callee": "BlackOps3_Steam:141D0A770", "caller": "BlackOps3_Steam:14131E760", "kind": "call"}
 {"callee": "BlackOps3_Steam:14131EF70", "caller": "BlackOps3_Steam:14131E770", "kind": "call"}
 {"callee": "BlackOps3_Steam:14131EFF0", "caller": "BlackOps3_Steam:14131E770", "kind": "call"}
 {"callee": "BlackOps3_Steam:141321110", "caller": "BlackOps3_Steam:14131E770", "kind": "call"}
@@ -22329,6 +22356,11 @@
 {"callee": "BlackOps3_Steam:1422E87B0", "caller": "BlackOps3_Steam:14134D641", "kind": "call"}
 {"callee": "BlackOps3_Steam:14134D5E5", "caller": "BlackOps3_Steam:14134D65D", "kind": "call"}
 {"callee": "BlackOps3_Steam:14214C180", "caller": "BlackOps3_Steam:14134D65D", "kind": "call"}
+{"callee": "BlackOps3_Steam:1413596F0", "caller": "BlackOps3_Steam:14134D689", "kind": "call"}
+{"callee": "BlackOps3_Steam:14135CFC0", "caller": "BlackOps3_Steam:14134D689", "kind": "call"}
+{"callee": "BlackOps3_Steam:1413E1550", "caller": "BlackOps3_Steam:14134D689", "kind": "call"}
+{"callee": "BlackOps3_Steam:142149580", "caller": "BlackOps3_Steam:14134D689", "kind": "call"}
+{"callee": "BlackOps3_Steam:142290450", "caller": "BlackOps3_Steam:14134D689", "kind": "call"}
 {"callee": "BlackOps3_Steam:1413E3290", "caller": "BlackOps3_Steam:14134D6CF", "kind": "call"}
 {"callee": "BlackOps3_Steam:14134D666", "caller": "BlackOps3_Steam:14134D6DE", "kind": "call"}
 {"callee": "BlackOps3_Steam:1413E1550", "caller": "BlackOps3_Steam:14134D6DE", "kind": "call"}
@@ -29420,6 +29452,7 @@
 {"callee": "BlackOps3_Steam:14144B940", "caller": "BlackOps3_Steam:1414456C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422B0A90", "caller": "BlackOps3_Steam:1414456C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142920800", "caller": "BlackOps3_Steam:1414456C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1421C4E4A", "caller": "BlackOps3_Steam:141445859", "kind": "call"}
 {"callee": "BlackOps3_Steam:00000003D", "caller": "BlackOps3_Steam:141445860", "kind": "call"}
 {"callee": "BlackOps3_Steam:140119190", "caller": "BlackOps3_Steam:141445860", "kind": "call"}
 {"callee": "BlackOps3_Steam:1401191E0", "caller": "BlackOps3_Steam:141445860", "kind": "call"}
@@ -38334,6 +38367,7 @@
 {"callee": "BlackOps3_Steam:1412E9A30", "caller": "BlackOps3_Steam:141685B20", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E9A30", "caller": "BlackOps3_Steam:1416875E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1420F7680", "caller": "BlackOps3_Steam:1416875E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412E9B00", "caller": "BlackOps3_Steam:141687670", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A7F40", "caller": "BlackOps3_Steam:141687690", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E9A30", "caller": "BlackOps3_Steam:141687690", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E9870", "caller": "BlackOps3_Steam:1416876D0", "kind": "call"}
@@ -41526,6 +41560,7 @@
 {"callee": "BlackOps3_Steam:142679670", "caller": "BlackOps3_Steam:1419A6010", "kind": "call"}
 {"callee": "BlackOps3_Steam:1426796F0", "caller": "BlackOps3_Steam:1419A6010", "kind": "call"}
 {"callee": "BlackOps3_Steam:142679900", "caller": "BlackOps3_Steam:1419A6010", "kind": "call"}
+{"callee": "BlackOps3_Steam:1419A6010", "caller": "BlackOps3_Steam:1419A6160", "kind": "call"}
 {"callee": "BlackOps3_Steam:1426E6750", "caller": "BlackOps3_Steam:1419A6170", "kind": "call"}
 {"callee": "BlackOps3_Steam:1426E6830", "caller": "BlackOps3_Steam:1419A6170", "kind": "call"}
 {"callee": "BlackOps3_Steam:1426E6880", "caller": "BlackOps3_Steam:1419A6170", "kind": "call"}
@@ -42005,6 +42040,7 @@
 {"callee": "BlackOps3_Steam:1422BE860", "caller": "BlackOps3_Steam:141A0C8D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3EE70", "caller": "BlackOps3_Steam:141A0C8D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3FE38", "caller": "BlackOps3_Steam:141A0C8D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:141B812C0", "caller": "BlackOps3_Steam:141A0CA70", "kind": "call"}
 {"callee": "BlackOps3_Steam:141B77950", "caller": "BlackOps3_Steam:141A0CA80", "kind": "call"}
 {"callee": "BlackOps3_Steam:14224F930", "caller": "BlackOps3_Steam:141A0CA80", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422633E0", "caller": "BlackOps3_Steam:141A0CA80", "kind": "call"}
@@ -43662,6 +43698,7 @@
 {"callee": "BlackOps3_Steam:1412EBF90", "caller": "BlackOps3_Steam:141A72390", "kind": "call"}
 {"callee": "BlackOps3_Steam:14198F080", "caller": "BlackOps3_Steam:141A72390", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:141A72390", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412CCA20", "caller": "BlackOps3_Steam:141A72530", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412EBAA0", "caller": "BlackOps3_Steam:141A72540", "kind": "call"}
 {"callee": "BlackOps3_Steam:142243240", "caller": "BlackOps3_Steam:141A72540", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412EAF00", "caller": "BlackOps3_Steam:141A72590", "kind": "call"}
@@ -47743,6 +47780,7 @@
 {"callee": "BlackOps3_Steam:142C3BCB4", "caller": "BlackOps3_Steam:141B20B40", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:141B20B40", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3EE70", "caller": "BlackOps3_Steam:141B20B40", "kind": "call"}
+{"callee": "BlackOps3_Steam:141B77950", "caller": "BlackOps3_Steam:141B20D60", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412DE290", "caller": "BlackOps3_Steam:141B20D70", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412DE680", "caller": "BlackOps3_Steam:141B20D70", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E0E00", "caller": "BlackOps3_Steam:141B20D70", "kind": "call"}
@@ -48548,6 +48586,7 @@
 {"callee": "BlackOps3_Steam:1422633E0", "caller": "BlackOps3_Steam:141B69B00", "kind": "call"}
 {"callee": "BlackOps3_Steam:141B639D0", "caller": "BlackOps3_Steam:141B69D10", "kind": "call"}
 {"callee": "BlackOps3_Steam:141B257B0", "caller": "BlackOps3_Steam:141B69DB0", "kind": "call"}
+{"callee": "BlackOps3_Steam:141B69ED0", "caller": "BlackOps3_Steam:141B69EC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412EA430", "caller": "BlackOps3_Steam:141B69ED0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412EB5C0", "caller": "BlackOps3_Steam:141B69ED0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412EB930", "caller": "BlackOps3_Steam:141B69ED0", "kind": "call"}
@@ -48602,11 +48641,15 @@
 {"callee": "BlackOps3_Steam:141B25770", "caller": "BlackOps3_Steam:141B6AC50", "kind": "call"}
 {"callee": "BlackOps3_Steam:141B69B00", "caller": "BlackOps3_Steam:141B6AC50", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422BD620", "caller": "BlackOps3_Steam:141B6AC50", "kind": "call"}
+{"callee": "BlackOps3_Steam:141B6B050", "caller": "BlackOps3_Steam:141B6ADE0", "kind": "tailcall"}
+{"callee": "BlackOps3_Steam:141B6B050", "caller": "BlackOps3_Steam:141B6ADF0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:141B699D0", "caller": "BlackOps3_Steam:141B6AE00", "kind": "call"}
 {"callee": "BlackOps3_Steam:141B77D20", "caller": "BlackOps3_Steam:141B6AE00", "kind": "call"}
+{"callee": "BlackOps3_Steam:141B77D20", "caller": "BlackOps3_Steam:141B6AE30", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:141980960", "caller": "BlackOps3_Steam:141B6AE80", "kind": "call"}
 {"callee": "BlackOps3_Steam:141B699D0", "caller": "BlackOps3_Steam:141B6AE80", "kind": "call"}
 {"callee": "BlackOps3_Steam:1420F7370", "caller": "BlackOps3_Steam:141B6AE80", "kind": "call"}
+{"callee": "BlackOps3_Steam:141B699D0", "caller": "BlackOps3_Steam:141B6AFE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A8030", "caller": "BlackOps3_Steam:141B6B050", "kind": "call"}
 {"callee": "BlackOps3_Steam:1419AB240", "caller": "BlackOps3_Steam:141B6B050", "kind": "call"}
 {"callee": "BlackOps3_Steam:141B69B00", "caller": "BlackOps3_Steam:141B6B050", "kind": "call"}
@@ -52390,8 +52433,18 @@
 {"callee": "BlackOps3_Steam:1422BD620", "caller": "BlackOps3_Steam:141C72EE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422BCED0", "caller": "BlackOps3_Steam:141C73020", "kind": "call"}
 {"callee": "BlackOps3_Steam:141CD4AA0", "caller": "BlackOps3_Steam:141C73080", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422BCED0", "caller": "BlackOps3_Steam:141C730E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422BCED0", "caller": "BlackOps3_Steam:141C73100", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422BCED0", "caller": "BlackOps3_Steam:141C73130", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422BCED0", "caller": "BlackOps3_Steam:141C73150", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422BCED0", "caller": "BlackOps3_Steam:141C73170", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422BCED0", "caller": "BlackOps3_Steam:141C732F0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422BCED0", "caller": "BlackOps3_Steam:141C73370", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422BCED0", "caller": "BlackOps3_Steam:141C733B0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422BCED0", "caller": "BlackOps3_Steam:141C733C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422BCED0", "caller": "BlackOps3_Steam:141C73410", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422BCED0", "caller": "BlackOps3_Steam:141C734E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422BCED0", "caller": "BlackOps3_Steam:141C734F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422BD620", "caller": "BlackOps3_Steam:141C73510", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422A6BE0", "caller": "BlackOps3_Steam:141C735A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422BD620", "caller": "BlackOps3_Steam:141C735A0", "kind": "call"}
@@ -57882,8 +57935,10 @@
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:141D28EF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C40FC4", "caller": "BlackOps3_Steam:141D28EF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C41374", "caller": "BlackOps3_Steam:141D28EF0", "kind": "call"}
+{"callee": "BlackOps3_Steam:141D6CAB0", "caller": "BlackOps3_Steam:141D292B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D52CF0", "caller": "BlackOps3_Steam:141D292C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C40640", "caller": "BlackOps3_Steam:141D292C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:141D6CAB0", "caller": "BlackOps3_Steam:141D29320", "kind": "call"}
 {"callee": "BlackOps3_Steam:1414292D0", "caller": "BlackOps3_Steam:141D29330", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D3EF10", "caller": "BlackOps3_Steam:141D29330", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4CE50", "caller": "BlackOps3_Steam:141D29330", "kind": "call"}
@@ -57923,6 +57978,7 @@
 {"callee": "BlackOps3_Steam:141D6A600", "caller": "BlackOps3_Steam:141D29C10", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D52CF0", "caller": "BlackOps3_Steam:141D29D50", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3FE38", "caller": "BlackOps3_Steam:141D29D50", "kind": "call"}
+{"callee": "BlackOps3_Steam:141D4F210", "caller": "BlackOps3_Steam:141D29D90", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4B6C0", "caller": "BlackOps3_Steam:141D29DB0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4C5E0", "caller": "BlackOps3_Steam:141D29DB0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4CE50", "caller": "BlackOps3_Steam:141D29DB0", "kind": "call"}
@@ -57950,6 +58006,7 @@
 {"callee": "BlackOps3_Steam:141D4B550", "caller": "BlackOps3_Steam:141D2A580", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4CE50", "caller": "BlackOps3_Steam:141D2A580", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4E570", "caller": "BlackOps3_Steam:141D2A580", "kind": "call"}
+{"callee": "BlackOps3_Steam:141D52FC0", "caller": "BlackOps3_Steam:141D2A650", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4BF50", "caller": "BlackOps3_Steam:141D2A660", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4B6C0", "caller": "BlackOps3_Steam:141D2A670", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4C4E0", "caller": "BlackOps3_Steam:141D2A670", "kind": "call"}
@@ -58066,6 +58123,8 @@
 {"callee": "BlackOps3_Steam:141D4DB90", "caller": "BlackOps3_Steam:141D2C3D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4EBB0", "caller": "BlackOps3_Steam:141D2C3D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D52C70", "caller": "BlackOps3_Steam:141D2C3D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:141D6C880", "caller": "BlackOps3_Steam:141D2C530", "kind": "call"}
+{"callee": "BlackOps3_Steam:141D6C880", "caller": "BlackOps3_Steam:141D2C540", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4B6C0", "caller": "BlackOps3_Steam:141D2C550", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4BCA0", "caller": "BlackOps3_Steam:141D2C550", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4CE50", "caller": "BlackOps3_Steam:141D2C550", "kind": "call"}
@@ -58320,6 +58379,8 @@
 {"callee": "BlackOps3_Steam:141D4E390", "caller": "BlackOps3_Steam:141D31990", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4CE50", "caller": "BlackOps3_Steam:141D31A80", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4E390", "caller": "BlackOps3_Steam:141D31A80", "kind": "call"}
+{"callee": "BlackOps3_Steam:141D52330", "caller": "BlackOps3_Steam:141D31BA0", "kind": "call"}
+{"callee": "BlackOps3_Steam:141D52330", "caller": "BlackOps3_Steam:141D31BC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:140A18430", "caller": "BlackOps3_Steam:141D31BE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4AAA0", "caller": "BlackOps3_Steam:141D31BE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4B2C0", "caller": "BlackOps3_Steam:141D31BE0", "kind": "call"}
@@ -60613,6 +60674,7 @@
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:141D71EA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142996010", "caller": "BlackOps3_Steam:141D71EA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142996010", "caller": "BlackOps3_Steam:141D71F70", "kind": "call"}
+{"callee": "BlackOps3_Steam:141D71EA0", "caller": "BlackOps3_Steam:141D71FC0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:142995A00", "caller": "BlackOps3_Steam:141D72030", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:141D72090", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995B70", "caller": "BlackOps3_Steam:141D72180", "kind": "call"}
@@ -65810,6 +65872,7 @@
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:141E184F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3D960", "caller": "BlackOps3_Steam:141E184F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:141E184F0", "kind": "call"}
+{"callee": "BlackOps3_Steam:141E1B500", "caller": "BlackOps3_Steam:141E186D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE6E0", "caller": "BlackOps3_Steam:141E187E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142930750", "caller": "BlackOps3_Steam:141E187E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:141E18800", "kind": "call"}
@@ -66579,6 +66642,7 @@
 {"callee": "BlackOps3_Steam:1426FE9C0", "caller": "BlackOps3_Steam:141E23F30", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:141E23F30", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:141E23F30", "kind": "call"}
+{"callee": "BlackOps3_Steam:141E23C80", "caller": "BlackOps3_Steam:141E24050", "kind": "call"}
 {"callee": "BlackOps3_Steam:141F28940", "caller": "BlackOps3_Steam:141E24060", "kind": "call"}
 {"callee": "BlackOps3_Steam:1426FE790", "caller": "BlackOps3_Steam:141E24060", "kind": "call"}
 {"callee": "BlackOps3_Steam:1426FE9C0", "caller": "BlackOps3_Steam:141E24060", "kind": "call"}
@@ -67026,6 +67090,7 @@
 {"callee": "BlackOps3_Steam:1422C8720", "caller": "BlackOps3_Steam:141E7F130", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422E9410", "caller": "BlackOps3_Steam:141E7F130", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:141E7F130", "kind": "call"}
+{"callee": "BlackOps3_Steam:141E7F1C5", "caller": "BlackOps3_Steam:141E7F1E0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:141E810F3", "caller": "BlackOps3_Steam:141E7F1F5", "kind": "call"}
 {"callee": "BlackOps3_Steam:141E0B940", "caller": "BlackOps3_Steam:141E7F1FA", "kind": "call"}
 {"callee": "BlackOps3_Steam:141E7F1F5", "caller": "BlackOps3_Steam:141E7F1FA", "kind": "call"}
@@ -69851,6 +69916,8 @@
 {"callee": "BlackOps3_Steam:142276C80", "caller": "BlackOps3_Steam:141EA9470", "kind": "call"}
 {"callee": "BlackOps3_Steam:142276E30", "caller": "BlackOps3_Steam:141EA9470", "kind": "call"}
 {"callee": "BlackOps3_Steam:142277960", "caller": "BlackOps3_Steam:141EA9470", "kind": "call"}
+{"callee": "BlackOps3_Steam:141EA9EC0", "caller": "BlackOps3_Steam:141EA94C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:141EA9EC0", "caller": "BlackOps3_Steam:141EA94D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141ED4210", "caller": "BlackOps3_Steam:141EA94E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1420F3CA0", "caller": "BlackOps3_Steam:141EA94E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1420F7370", "caller": "BlackOps3_Steam:141EA94E0", "kind": "call"}
@@ -70273,6 +70340,9 @@
 {"callee": "BlackOps3_Steam:142522460", "caller": "BlackOps3_Steam:141EAECD0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142522540", "caller": "BlackOps3_Steam:141EAECD0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142522AE0", "caller": "BlackOps3_Steam:141EAECD0", "kind": "call"}
+{"callee": "BlackOps3_Steam:141EAF650", "caller": "BlackOps3_Steam:141EAEE40", "kind": "call"}
+{"callee": "BlackOps3_Steam:141EAF650", "caller": "BlackOps3_Steam:141EAEE50", "kind": "call"}
+{"callee": "BlackOps3_Steam:142276C80", "caller": "BlackOps3_Steam:141EAEE60", "kind": "call"}
 {"callee": "BlackOps3_Steam:142276B80", "caller": "BlackOps3_Steam:141EAEE70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142522460", "caller": "BlackOps3_Steam:141EAEE70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142276AB0", "caller": "BlackOps3_Steam:141EAEFA0", "kind": "call"}
@@ -74097,6 +74167,7 @@
 {"callee": "BlackOps3_Steam:141EE46B0", "caller": "BlackOps3_Steam:141EDF460", "kind": "call"}
 {"callee": "BlackOps3_Steam:141EE4640", "caller": "BlackOps3_Steam:141EDF480", "kind": "call"}
 {"callee": "BlackOps3_Steam:141EE4690", "caller": "BlackOps3_Steam:141EDF4A0", "kind": "call"}
+{"callee": "BlackOps3_Steam:141F02470", "caller": "BlackOps3_Steam:141EDF4C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141ED9C60", "caller": "BlackOps3_Steam:141EDF4D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141EDCDD0", "caller": "BlackOps3_Steam:141EDF4D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141EDDB60", "caller": "BlackOps3_Steam:141EDF4D0", "kind": "call"}
@@ -82806,8 +82877,10 @@
 {"callee": "BlackOps3_Steam:141D4BA10", "caller": "BlackOps3_Steam:141FE90C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141EC05C0", "caller": "BlackOps3_Steam:141FE90C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1415E3300", "caller": "BlackOps3_Steam:141FE9100", "kind": "call"}
+{"callee": "BlackOps3_Steam:141FE1030", "caller": "BlackOps3_Steam:141FE9110", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4B6C0", "caller": "BlackOps3_Steam:141FE9120", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422796E0", "caller": "BlackOps3_Steam:141FE9120", "kind": "call"}
+{"callee": "BlackOps3_Steam:141FE1030", "caller": "BlackOps3_Steam:141FE91C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D4BA10", "caller": "BlackOps3_Steam:141FE91D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141F2BDC0", "caller": "BlackOps3_Steam:141FE91D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:140A18430", "caller": "BlackOps3_Steam:141FE9240", "kind": "call"}
@@ -87443,6 +87516,7 @@
 {"callee": "BlackOps3_Steam:1401191E0", "caller": "BlackOps3_Steam:142184AB0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422D3800", "caller": "BlackOps3_Steam:142184AB0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422DDD78", "caller": "BlackOps3_Steam:142184C00", "kind": "tailcall"}
+{"callee": "BlackOps3_Steam:142F289DE", "caller": "BlackOps3_Steam:142184C05", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:142C3E250", "caller": "BlackOps3_Steam:142184C25", "kind": "call"}
 {"callee": "BlackOps3_Steam:142184C90", "caller": "BlackOps3_Steam:142184D0E", "kind": "call"}
 {"callee": "BlackOps3_Steam:141858624", "caller": "BlackOps3_Steam:142184D12", "kind": "tailcall"}
@@ -87573,6 +87647,7 @@
 {"callee": "BlackOps3_Steam:1429271CF", "caller": "BlackOps3_Steam:1421899A5", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421DF296", "caller": "BlackOps3_Steam:142189A27", "kind": "call"}
 {"callee": "BlackOps3_Steam:142187393", "caller": "BlackOps3_Steam:142189B63", "kind": "call"}
+{"callee": "BlackOps3_Steam:142906D20", "caller": "BlackOps3_Steam:142189CE2", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422BF618", "caller": "BlackOps3_Steam:142189EE9", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429BD2C5", "caller": "BlackOps3_Steam:142189F58", "kind": "call"}
 {"callee": "BlackOps3_Steam:14218A211", "caller": "BlackOps3_Steam:14218A1BB", "kind": "call"}
@@ -88104,6 +88179,7 @@
 {"callee": "BlackOps3_Steam:14219D391", "caller": "BlackOps3_Steam:14219D386", "kind": "call"}
 {"callee": "BlackOps3_Steam:14219D313", "caller": "BlackOps3_Steam:14219D391", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1421F9CD5", "caller": "BlackOps3_Steam:14219D475", "kind": "call"}
+{"callee": "BlackOps3_Steam:14293AE08", "caller": "BlackOps3_Steam:14219D4F4", "kind": "call"}
 {"callee": "BlackOps3_Steam:14219D786", "caller": "BlackOps3_Steam:14219D7F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14219FFED", "caller": "BlackOps3_Steam:14219D8E2", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:142A74329", "caller": "BlackOps3_Steam:14219D965", "kind": "call"}
@@ -89369,6 +89445,7 @@
 {"callee": "BlackOps3_Steam:1421D6D52", "caller": "BlackOps3_Steam:1421D6DD0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:142C3BA0C", "caller": "BlackOps3_Steam:1421D6E8F", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000039", "caller": "BlackOps3_Steam:1421D6E9E", "kind": "call"}
+{"callee": "BlackOps3_Steam:000000039", "caller": "BlackOps3_Steam:1421D6EBC", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421D6E65", "caller": "BlackOps3_Steam:1421D6EDB", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428645F4", "caller": "BlackOps3_Steam:1421D6EE0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:141361E53", "caller": "BlackOps3_Steam:1421D7016", "kind": "call"}
@@ -90220,6 +90297,7 @@
 {"callee": "BlackOps3_Steam:141ED43E4", "caller": "BlackOps3_Steam:1421F57D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421A78E0", "caller": "BlackOps3_Steam:1421F586A", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:141419242", "caller": "BlackOps3_Steam:1421F5AE2", "kind": "call"}
+{"callee": "BlackOps3_Steam:14221261B", "caller": "BlackOps3_Steam:1421F5AFB", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421F95FB", "caller": "BlackOps3_Steam:1421F5B51", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421F9674", "caller": "BlackOps3_Steam:1421F5B51", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421C4872", "caller": "BlackOps3_Steam:1421F5D37", "kind": "call"}
@@ -90952,6 +91030,7 @@
 {"callee": "BlackOps3_Steam:14283A8F0", "caller": "BlackOps3_Steam:142242A40", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:142242A40", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422BE860", "caller": "BlackOps3_Steam:142242B60", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422430F0", "caller": "BlackOps3_Steam:142242BF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422BE860", "caller": "BlackOps3_Steam:142242C10", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422C7EC0", "caller": "BlackOps3_Steam:142242C10", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422430F0", "caller": "BlackOps3_Steam:142242C40", "kind": "call"}
@@ -92231,6 +92310,7 @@
 {"callee": "BlackOps3_Steam:1422BE860", "caller": "BlackOps3_Steam:142255D90", "kind": "call"}
 {"callee": "BlackOps3_Steam:142156F30", "caller": "BlackOps3_Steam:142255E80", "kind": "call"}
 {"callee": "BlackOps3_Steam:142256000", "caller": "BlackOps3_Steam:142255E80", "kind": "call"}
+{"callee": "BlackOps3_Steam:142256E20", "caller": "BlackOps3_Steam:142255F10", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:142256F80", "caller": "BlackOps3_Steam:142255F70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142332870", "caller": "BlackOps3_Steam:142255F70", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400A7860", "caller": "BlackOps3_Steam:142256060", "kind": "call"}
@@ -93105,6 +93185,7 @@
 {"callee": "BlackOps3_Steam:141EC3950", "caller": "BlackOps3_Steam:142274900", "kind": "call"}
 {"callee": "BlackOps3_Steam:141EC4AB0", "caller": "BlackOps3_Steam:142274900", "kind": "call"}
 {"callee": "BlackOps3_Steam:141EC6FC0", "caller": "BlackOps3_Steam:142274900", "kind": "call"}
+{"callee": "BlackOps3_Steam:141EC0F70", "caller": "BlackOps3_Steam:142274940", "kind": "call"}
 {"callee": "BlackOps3_Steam:141EBFE60", "caller": "BlackOps3_Steam:142274950", "kind": "call"}
 {"callee": "BlackOps3_Steam:141EC0F70", "caller": "BlackOps3_Steam:142274950", "kind": "call"}
 {"callee": "BlackOps3_Steam:141EC1320", "caller": "BlackOps3_Steam:142274950", "kind": "call"}
@@ -93122,6 +93203,7 @@
 {"callee": "BlackOps3_Steam:1422B0C60", "caller": "BlackOps3_Steam:142274BC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422B0D20", "caller": "BlackOps3_Steam:142274BC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3D960", "caller": "BlackOps3_Steam:142274BC0", "kind": "call"}
+{"callee": "BlackOps3_Steam:141EC7030", "caller": "BlackOps3_Steam:142274D20", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422B0D20", "caller": "BlackOps3_Steam:142274D30", "kind": "call"}
 {"callee": "BlackOps3_Steam:142274BC0", "caller": "BlackOps3_Steam:142274D50", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3D960", "caller": "BlackOps3_Steam:142274D50", "kind": "call"}
@@ -96045,6 +96127,7 @@
 {"callee": "BlackOps3_Steam:000000062", "caller": "BlackOps3_Steam:1422B7EE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422B7080", "caller": "BlackOps3_Steam:1422B7EE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422B7550", "caller": "BlackOps3_Steam:1422B7EE0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422B6E20", "caller": "BlackOps3_Steam:1422B8250", "kind": "call"}
 {"callee": "BlackOps3_Steam:1420F6D30", "caller": "BlackOps3_Steam:1422B8260", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422BF500", "caller": "BlackOps3_Steam:1422B8260", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422AC220", "caller": "BlackOps3_Steam:1422B82C0", "kind": "call"}
@@ -96491,10 +96574,12 @@
 {"callee": "BlackOps3_Steam:000000064", "caller": "BlackOps3_Steam:1422D2710", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421848B0", "caller": "BlackOps3_Steam:1422D2710", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422D2BA0", "caller": "BlackOps3_Steam:1422D2710", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:1422D27A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400D3000", "caller": "BlackOps3_Steam:1422D27B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422D2C90", "caller": "BlackOps3_Steam:1422D27B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422D29A0", "caller": "BlackOps3_Steam:1422D2820", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:1422D2820", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422D2D20", "caller": "BlackOps3_Steam:1422D2990", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422D29A0", "caller": "BlackOps3_Steam:1422D2BA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422D2E10", "caller": "BlackOps3_Steam:1422D2BA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422D29A0", "caller": "BlackOps3_Steam:1422D2C90", "kind": "call"}
@@ -96509,9 +96594,15 @@
 {"callee": "BlackOps3_Steam:1422ACA60", "caller": "BlackOps3_Steam:1422D3380", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422ACBB0", "caller": "BlackOps3_Steam:1422D3380", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422D2320", "caller": "BlackOps3_Steam:1422D3520", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422D23B0", "caller": "BlackOps3_Steam:1422D35B0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422ACAA0", "caller": "BlackOps3_Steam:1422D35C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422D1F30", "caller": "BlackOps3_Steam:1422D35D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422D2180", "caller": "BlackOps3_Steam:1422D35E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422B77D0", "caller": "BlackOps3_Steam:1422D3680", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422B77D0", "caller": "BlackOps3_Steam:1422D36E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422B7890", "caller": "BlackOps3_Steam:1422D36E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422B8250", "caller": "BlackOps3_Steam:1422D3760", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422B78B0", "caller": "BlackOps3_Steam:1422D3780", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422E9410", "caller": "BlackOps3_Steam:1422D3790", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422ACA60", "caller": "BlackOps3_Steam:1422D3820", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422ACBB0", "caller": "BlackOps3_Steam:1422D3820", "kind": "call"}
@@ -96571,6 +96662,7 @@
 {"callee": "BlackOps3_Steam:141D72B59", "caller": "BlackOps3_Steam:1422D6ECE", "kind": "call"}
 {"callee": "BlackOps3_Steam:14231159F", "caller": "BlackOps3_Steam:1422D6F7F", "kind": "call"}
 {"callee": "BlackOps3_Steam:142F25692", "caller": "BlackOps3_Steam:1422D7024", "kind": "call"}
+{"callee": "BlackOps3_Steam:142189CE2", "caller": "BlackOps3_Steam:1422D7272", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422E55F8", "caller": "BlackOps3_Steam:1422D7705", "kind": "call"}
 {"callee": "BlackOps3_Steam:142F7B34A", "caller": "BlackOps3_Steam:1422D776B", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421D64BB", "caller": "BlackOps3_Steam:1422D782C", "kind": "call"}
@@ -97118,6 +97210,7 @@
 {"callee": "BlackOps3_Steam:1422F0550", "caller": "BlackOps3_Steam:1422F02C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3B404", "caller": "BlackOps3_Steam:1422F02C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3B98C", "caller": "BlackOps3_Steam:1422F02C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1421D253C", "caller": "BlackOps3_Steam:1422F0346", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3D264", "caller": "BlackOps3_Steam:1422F03F0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1422F0550", "caller": "BlackOps3_Steam:1422F0420", "kind": "call"}
 {"callee": "BlackOps3_Steam:142F1D5A5", "caller": "BlackOps3_Steam:1422F0497", "kind": "call"}
@@ -97498,6 +97591,7 @@
 {"callee": "BlackOps3_Steam:1421F18BE", "caller": "BlackOps3_Steam:1422F724C", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421F037C", "caller": "BlackOps3_Steam:1422F73E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142327673", "caller": "BlackOps3_Steam:1422F7756", "kind": "call"}
+{"callee": "BlackOps3_Steam:141449726", "caller": "BlackOps3_Steam:1422F7B8A", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422F8455", "caller": "BlackOps3_Steam:1422F7D0F", "kind": "call"}
 {"callee": "BlackOps3_Steam:1423097F1", "caller": "BlackOps3_Steam:1422F7DC8", "kind": "call"}
 {"callee": "BlackOps3_Steam:142F21968", "caller": "BlackOps3_Steam:1422F7F12", "kind": "call"}
@@ -97674,6 +97768,7 @@
 {"callee": "BlackOps3_Steam:142906A99", "caller": "BlackOps3_Steam:14230BE9E", "kind": "call"}
 {"callee": "BlackOps3_Steam:142192425", "caller": "BlackOps3_Steam:14230BFE6", "kind": "call"}
 {"callee": "BlackOps3_Steam:141E06249", "caller": "BlackOps3_Steam:14230C0D4", "kind": "call"}
+{"callee": "BlackOps3_Steam:142321941", "caller": "BlackOps3_Steam:14230C52C", "kind": "call"}
 {"callee": "BlackOps3_Steam:142926E26", "caller": "BlackOps3_Steam:14230C5EF", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421A8EC6", "caller": "BlackOps3_Steam:14230C636", "kind": "call"}
 {"callee": "BlackOps3_Steam:142326B8F", "caller": "BlackOps3_Steam:14230CDA3", "kind": "call"}
@@ -97701,7 +97796,6 @@
 {"callee": "BlackOps3_Steam:1421D0F1A", "caller": "BlackOps3_Steam:1423104D7", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422E097F", "caller": "BlackOps3_Steam:142310D2F", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422F8BF9", "caller": "BlackOps3_Steam:142310DC7", "kind": "call"}
-{"callee": "BlackOps3_Steam:1421AFA20", "caller": "BlackOps3_Steam:142310E4A", "kind": "call"}
 {"callee": "BlackOps3_Steam:14220B276", "caller": "BlackOps3_Steam:142310E4A", "kind": "call"}
 {"callee": "BlackOps3_Steam:14218602D", "caller": "BlackOps3_Steam:142310EC7", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421D70B4", "caller": "BlackOps3_Steam:142310FF7", "kind": "tailcall"}
@@ -97876,6 +97970,7 @@
 {"callee": "BlackOps3_Steam:142F2EFC5", "caller": "BlackOps3_Steam:1423218CC", "kind": "call"}
 {"callee": "BlackOps3_Steam:142909794", "caller": "BlackOps3_Steam:14232190E", "kind": "call"}
 {"callee": "BlackOps3_Steam:142A5DC15", "caller": "BlackOps3_Steam:142321926", "kind": "call"}
+{"callee": "BlackOps3_Steam:1423595C4", "caller": "BlackOps3_Steam:142321941", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421F5D85", "caller": "BlackOps3_Steam:1423219AB", "kind": "call"}
 {"callee": "BlackOps3_Steam:142321B13", "caller": "BlackOps3_Steam:142321A9D", "kind": "call"}
 {"callee": "BlackOps3_Steam:142300180", "caller": "BlackOps3_Steam:142321FBE", "kind": "call"}
@@ -102814,12 +102909,14 @@
 {"callee": "BlackOps3_Steam:1415180C0", "caller": "BlackOps3_Steam:14253DB70", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E9630", "caller": "BlackOps3_Steam:14253DB90", "kind": "call"}
 {"callee": "BlackOps3_Steam:141B7B7C0", "caller": "BlackOps3_Steam:14253DB90", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412E9630", "caller": "BlackOps3_Steam:14253DBE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E9E90", "caller": "BlackOps3_Steam:14253DC70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142529690", "caller": "BlackOps3_Steam:14253DC70", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E9E90", "caller": "BlackOps3_Steam:14253DCC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142529690", "caller": "BlackOps3_Steam:14253DCC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412E9870", "caller": "BlackOps3_Steam:14253DCF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141DDACA0", "caller": "BlackOps3_Steam:14253DCF0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1412E96B0", "caller": "BlackOps3_Steam:14253DD30", "kind": "call"}
 {"callee": "BlackOps3_Steam:142578190", "caller": "BlackOps3_Steam:14253DD50", "kind": "call"}
 {"callee": "BlackOps3_Steam:14257B060", "caller": "BlackOps3_Steam:14253DD50", "kind": "call"}
 {"callee": "BlackOps3_Steam:1412CBB90", "caller": "BlackOps3_Steam:14253DD80", "kind": "call"}
@@ -105020,8 +105117,11 @@
 {"callee": "BlackOps3_Steam:142595EB0", "caller": "BlackOps3_Steam:142591639", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422D0A30", "caller": "BlackOps3_Steam:142591667", "kind": "call"}
 {"callee": "BlackOps3_Steam:142587770", "caller": "BlackOps3_Steam:142591680", "kind": "call"}
+{"callee": "BlackOps3_Steam:14258B830", "caller": "BlackOps3_Steam:1425916E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:00000003C", "caller": "BlackOps3_Steam:142591730", "kind": "call"}
 {"callee": "BlackOps3_Steam:00000003D", "caller": "BlackOps3_Steam:142591730", "kind": "call"}
+{"callee": "BlackOps3_Steam:142591730", "caller": "BlackOps3_Steam:142591890", "kind": "call"}
+{"callee": "BlackOps3_Steam:142591730", "caller": "BlackOps3_Steam:1425918A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:00000003C", "caller": "BlackOps3_Steam:142591980", "kind": "call"}
 {"callee": "BlackOps3_Steam:00000003D", "caller": "BlackOps3_Steam:142591980", "kind": "call"}
 {"callee": "BlackOps3_Steam:142587770", "caller": "BlackOps3_Steam:142591AD0", "kind": "call"}
@@ -108391,31 +108491,64 @@
 {"callee": "BlackOps3_Steam:1426E9FC0", "caller": "BlackOps3_Steam:142665500", "kind": "call"}
 {"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142665530", "kind": "call"}
 {"callee": "BlackOps3_Steam:1426E9FC0", "caller": "BlackOps3_Steam:142665530", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142665570", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142665590", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422BD620", "caller": "BlackOps3_Steam:1426655D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142661D10", "caller": "BlackOps3_Steam:1426655D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142665710", "kind": "call"}
 {"callee": "BlackOps3_Steam:142655870", "caller": "BlackOps3_Steam:1426657C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:1426657C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:140139E10", "caller": "BlackOps3_Steam:142665840", "kind": "call"}
 {"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142665840", "kind": "call"}
 {"callee": "BlackOps3_Steam:1426668E0", "caller": "BlackOps3_Steam:142665840", "kind": "call"}
 {"callee": "BlackOps3_Steam:142666A40", "caller": "BlackOps3_Steam:142665840", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142665910", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:1426659C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142665AD0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142665C20", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142665DD0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142665E20", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142665E90", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142665F10", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142665F90", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666030", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666060", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421C218E", "caller": "BlackOps3_Steam:142666086", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666090", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:1426660C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:1426660F0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666120", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666150", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666180", "kind": "call"}
 {"callee": "BlackOps3_Steam:140169760", "caller": "BlackOps3_Steam:1426661B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:1426661B0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666230", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666260", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:1426662A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14013DAB0", "caller": "BlackOps3_Steam:1426662C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142661D10", "caller": "BlackOps3_Steam:1426662C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142682A20", "caller": "BlackOps3_Steam:1426662C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:1426663B0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:1426663D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142657B90", "caller": "BlackOps3_Steam:142666400", "kind": "call"}
 {"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666400", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D10", "caller": "BlackOps3_Steam:1426664B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421F26DC", "caller": "BlackOps3_Steam:142666503", "kind": "call"}
 {"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666560", "kind": "call"}
 {"callee": "BlackOps3_Steam:140137A10", "caller": "BlackOps3_Steam:142666600", "kind": "call"}
 {"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666600", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666640", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666670", "kind": "call"}
 {"callee": "BlackOps3_Steam:140169760", "caller": "BlackOps3_Steam:1426666B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1401697F0", "caller": "BlackOps3_Steam:1426666B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:1426666B0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666700", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666740", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666790", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:1426667C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142656210", "caller": "BlackOps3_Steam:1426667F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:1426667F0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666820", "kind": "call"}
 {"callee": "BlackOps3_Steam:142655870", "caller": "BlackOps3_Steam:142666850", "kind": "call"}
 {"callee": "BlackOps3_Steam:142661D80", "caller": "BlackOps3_Steam:142666850", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422A4DA0", "caller": "BlackOps3_Steam:1426668E0", "kind": "call"}
@@ -117041,6 +117174,7 @@
 {"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142880C40", "kind": "call"}
 {"callee": "BlackOps3_Steam:142880D7A", "caller": "BlackOps3_Steam:142880DD0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:142880DA2", "caller": "BlackOps3_Steam:142880E20", "kind": "tailcall"}
+{"callee": "BlackOps3_Steam:000000037", "caller": "BlackOps3_Steam:142880E24", "kind": "call"}
 {"callee": "BlackOps3_Steam:142881210", "caller": "BlackOps3_Steam:142880E60", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000033", "caller": "BlackOps3_Steam:142880E80", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000133", "caller": "BlackOps3_Steam:142880E80", "kind": "call"}
@@ -117867,6 +118001,7 @@
 {"callee": "BlackOps3_Steam:142C3DF6C", "caller": "BlackOps3_Steam:142898F80", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428824B0", "caller": "BlackOps3_Steam:142899010", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428A7CC0", "caller": "BlackOps3_Steam:142899010", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428A78B0", "caller": "BlackOps3_Steam:142899080", "kind": "call"}
 {"callee": "BlackOps3_Steam:142899010", "caller": "BlackOps3_Steam:142899090", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428995D0", "caller": "BlackOps3_Steam:142899090", "kind": "call"}
 {"callee": "BlackOps3_Steam:14288E0C0", "caller": "BlackOps3_Steam:1428990D0", "kind": "tailcall"}
@@ -118106,6 +118241,7 @@
 {"callee": "BlackOps3_Steam:142C3DF6C", "caller": "BlackOps3_Steam:14289C3F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428824B0", "caller": "BlackOps3_Steam:14289C470", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428A7CC0", "caller": "BlackOps3_Steam:14289C470", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428A78B0", "caller": "BlackOps3_Steam:14289C4E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14289C470", "caller": "BlackOps3_Steam:14289C4F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14289CAD0", "caller": "BlackOps3_Steam:14289C4F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14288E0C0", "caller": "BlackOps3_Steam:14289C530", "kind": "tailcall"}
@@ -118301,6 +118437,7 @@
 {"callee": "BlackOps3_Steam:142C3DF6C", "caller": "BlackOps3_Steam:14289EBA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428824B0", "caller": "BlackOps3_Steam:14289EC20", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428A7CC0", "caller": "BlackOps3_Steam:14289EC20", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428A78B0", "caller": "BlackOps3_Steam:14289EC90", "kind": "call"}
 {"callee": "BlackOps3_Steam:14289EC20", "caller": "BlackOps3_Steam:14289ECA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14289F210", "caller": "BlackOps3_Steam:14289ECA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14288E0C0", "caller": "BlackOps3_Steam:14289ECE0", "kind": "tailcall"}
@@ -119231,6 +119368,7 @@
 {"callee": "BlackOps3_Steam:1428AB240", "caller": "BlackOps3_Steam:1428B4340", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AD2A0", "caller": "BlackOps3_Steam:1428B4340", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428B3D40", "caller": "BlackOps3_Steam:1428B44B0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428AAF00", "caller": "BlackOps3_Steam:1428B4550", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428B1D50", "caller": "BlackOps3_Steam:1428B4560", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428B1DC0", "caller": "BlackOps3_Steam:1428B4560", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428B1E70", "caller": "BlackOps3_Steam:1428B4560", "kind": "call"}
@@ -119333,6 +119471,8 @@
 {"callee": "BlackOps3_Steam:1428AC5C0", "caller": "BlackOps3_Steam:1428B76E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428B7350", "caller": "BlackOps3_Steam:1428B76E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428ADFB0", "caller": "BlackOps3_Steam:1428B777B", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428B7760", "caller": "BlackOps3_Steam:1428B77B0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428B7760", "caller": "BlackOps3_Steam:1428B77C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14230BF9B", "caller": "BlackOps3_Steam:1428B789D", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AC5B0", "caller": "BlackOps3_Steam:1428B78B3", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428ADE50", "caller": "BlackOps3_Steam:1428B78B3", "kind": "call"}
@@ -119436,6 +119576,7 @@
 {"callee": "BlackOps3_Steam:1428ADE10", "caller": "BlackOps3_Steam:1428BD3D7", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AFFD0", "caller": "BlackOps3_Steam:1428BD3D7", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428ADE10", "caller": "BlackOps3_Steam:1428BD557", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428AB0F0", "caller": "BlackOps3_Steam:1428BD570", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AC5B0", "caller": "BlackOps3_Steam:1428BD600", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AE550", "caller": "BlackOps3_Steam:1428BD770", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428BE0F0", "caller": "BlackOps3_Steam:1428BDCB0", "kind": "call"}
@@ -119696,6 +119837,7 @@
 {"callee": "BlackOps3_Steam:1428ABC20", "caller": "BlackOps3_Steam:1428C69E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428C6540", "caller": "BlackOps3_Steam:1428C69E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:1428C69E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428C6620", "caller": "BlackOps3_Steam:1428C6AD0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1428C6B40", "caller": "BlackOps3_Steam:1428C6BE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428C6AE0", "caller": "BlackOps3_Steam:1428C6C50", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428C6AE0", "caller": "BlackOps3_Steam:1428C6C70", "kind": "call"}
@@ -119912,6 +120054,7 @@
 {"callee": "BlackOps3_Steam:1428ACF10", "caller": "BlackOps3_Steam:1428CCFC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AD6B0", "caller": "BlackOps3_Steam:1428CCFC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AE5C0", "caller": "BlackOps3_Steam:1428CD000", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428AD3F0", "caller": "BlackOps3_Steam:1428CD060", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AD240", "caller": "BlackOps3_Steam:1428CD070", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428CD070", "caller": "BlackOps3_Steam:1428CD110", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AC540", "caller": "BlackOps3_Steam:1428CD2D0", "kind": "call"}
@@ -119981,6 +120124,7 @@
 {"callee": "BlackOps3_Steam:1428ACE10", "caller": "BlackOps3_Steam:1428D0040", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428CF500", "caller": "BlackOps3_Steam:1428D0040", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428CFBA0", "caller": "BlackOps3_Steam:1428D00A0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428CFBD0", "caller": "BlackOps3_Steam:1428D00D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AC540", "caller": "BlackOps3_Steam:1428D00E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AD060", "caller": "BlackOps3_Steam:1428D00E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428ADE50", "caller": "BlackOps3_Steam:1428D00E0", "kind": "call"}
@@ -120613,6 +120757,7 @@
 {"callee": "BlackOps3_Steam:1428E49B0", "caller": "BlackOps3_Steam:1428E4AC2", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AA850", "caller": "BlackOps3_Steam:1428E4AF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AA8E0", "caller": "BlackOps3_Steam:1428E4AF0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428B0210", "caller": "BlackOps3_Steam:1428E4C50", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428ACE10", "caller": "BlackOps3_Steam:1428E4D05", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428B0010", "caller": "BlackOps3_Steam:1428E4DAC", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428E4CE0", "caller": "BlackOps3_Steam:1428E4DAC", "kind": "call"}
@@ -120886,6 +121031,7 @@
 {"callee": "BlackOps3_Steam:1428EC3D0", "caller": "BlackOps3_Steam:1428EDAF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428ED890", "caller": "BlackOps3_Steam:1428EDAF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:1428EDAF0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428EDAF0", "caller": "BlackOps3_Steam:1428EDD40", "kind": "call"}
 {"callee": "BlackOps3_Steam:142A10CBC", "caller": "BlackOps3_Steam:1428EDE15", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AB850", "caller": "BlackOps3_Steam:1428EE06A", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AB8C0", "caller": "BlackOps3_Steam:1428EE06A", "kind": "call"}
@@ -120974,6 +121120,9 @@
 {"callee": "BlackOps3_Steam:1428AD7B0", "caller": "BlackOps3_Steam:1428F2B90", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428F0ED0", "caller": "BlackOps3_Steam:1428F2B90", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428F1560", "caller": "BlackOps3_Steam:1428F2B90", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428F17D0", "caller": "BlackOps3_Steam:1428F2C10", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428F2140", "caller": "BlackOps3_Steam:1428F2C20", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428F2A90", "caller": "BlackOps3_Steam:1428F2C30", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AD1B0", "caller": "BlackOps3_Steam:1428F2C9D", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428EE6D0", "caller": "BlackOps3_Steam:1428F2C9D", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AA850", "caller": "BlackOps3_Steam:1428F2CD0", "kind": "call"}
@@ -121008,6 +121157,7 @@
 {"callee": "BlackOps3_Steam:1428F3560", "caller": "BlackOps3_Steam:1428F3B00", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428F3B00", "caller": "BlackOps3_Steam:1428F3B80", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428F3B00", "caller": "BlackOps3_Steam:1428F3C20", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428F39B0", "caller": "BlackOps3_Steam:1428F3D00", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AA6C0", "caller": "BlackOps3_Steam:1428F3D60", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AA850", "caller": "BlackOps3_Steam:1428F3D60", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428AE2A0", "caller": "BlackOps3_Steam:1428F3E40", "kind": "call"}
@@ -121655,6 +121805,7 @@
 {"callee": "BlackOps3_Steam:142948190", "caller": "BlackOps3_Steam:142904020", "kind": "call"}
 {"callee": "BlackOps3_Steam:142904020", "caller": "BlackOps3_Steam:142904048", "kind": "call"}
 {"callee": "BlackOps3_Steam:142904020", "caller": "BlackOps3_Steam:142904060", "kind": "call"}
+{"callee": "BlackOps3_Steam:14290402B", "caller": "BlackOps3_Steam:142904090", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1428FE540", "caller": "BlackOps3_Steam:142904110", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429046F0", "caller": "BlackOps3_Steam:142904110", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429043B0", "caller": "BlackOps3_Steam:14290420A", "kind": "call"}
@@ -122086,6 +122237,7 @@
 {"callee": "BlackOps3_Steam:142905790", "caller": "BlackOps3_Steam:14290A3C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142906D20", "caller": "BlackOps3_Steam:14290A3C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FEC10", "caller": "BlackOps3_Steam:14290A430", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428FF3C0", "caller": "BlackOps3_Steam:14290A4A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429479B0", "caller": "BlackOps3_Steam:14290A4D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE540", "caller": "BlackOps3_Steam:14290A510", "kind": "call"}
 {"callee": "BlackOps3_Steam:142906BA0", "caller": "BlackOps3_Steam:14290A510", "kind": "call"}
@@ -122888,18 +123040,22 @@
 {"callee": "BlackOps3_Steam:1428FF8E0", "caller": "BlackOps3_Steam:142916820", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:1429168C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429168B0", "caller": "BlackOps3_Steam:1429168C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142916540", "caller": "BlackOps3_Steam:1429168F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:142916960", "kind": "call"}
 {"callee": "BlackOps3_Steam:142916540", "caller": "BlackOps3_Steam:142916A20", "kind": "call"}
 {"callee": "BlackOps3_Steam:142916540", "caller": "BlackOps3_Steam:142916A40", "kind": "call"}
 {"callee": "BlackOps3_Steam:142916540", "caller": "BlackOps3_Steam:142916A50", "kind": "call"}
 {"callee": "BlackOps3_Steam:142916540", "caller": "BlackOps3_Steam:142916AB0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142916540", "caller": "BlackOps3_Steam:142916AC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142916540", "caller": "BlackOps3_Steam:142916AD0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142916540", "caller": "BlackOps3_Steam:142916AE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142916540", "caller": "BlackOps3_Steam:142916B00", "kind": "call"}
+{"callee": "BlackOps3_Steam:142916540", "caller": "BlackOps3_Steam:142916B10", "kind": "call"}
 {"callee": "BlackOps3_Steam:142916540", "caller": "BlackOps3_Steam:142916B20", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE6E0", "caller": "BlackOps3_Steam:142916B70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142905790", "caller": "BlackOps3_Steam:142916B70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142906D20", "caller": "BlackOps3_Steam:142916B70", "kind": "call"}
+{"callee": "BlackOps3_Steam:142916540", "caller": "BlackOps3_Steam:142916C10", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE540", "caller": "BlackOps3_Steam:142916D10", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FF430", "caller": "BlackOps3_Steam:142916D10", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FF870", "caller": "BlackOps3_Steam:142916D10", "kind": "call"}
@@ -123819,6 +123975,7 @@
 {"callee": "BlackOps3_Steam:142923C40", "caller": "BlackOps3_Steam:142923CEF", "kind": "call"}
 {"callee": "BlackOps3_Steam:142923C96", "caller": "BlackOps3_Steam:142923CEF", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:142923CFC", "kind": "call"}
+{"callee": "BlackOps3_Steam:142923CB5", "caller": "BlackOps3_Steam:142923D30", "kind": "call"}
 {"callee": "BlackOps3_Steam:142924700", "caller": "BlackOps3_Steam:142923D4F", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE540", "caller": "BlackOps3_Steam:142923D5C", "kind": "call"}
 {"callee": "BlackOps3_Steam:141D37B43", "caller": "BlackOps3_Steam:142923DC0", "kind": "tailcall"}
@@ -123841,6 +123998,7 @@
 {"callee": "BlackOps3_Steam:142924297", "caller": "BlackOps3_Steam:14292423C", "kind": "call"}
 {"callee": "BlackOps3_Steam:14296E180", "caller": "BlackOps3_Steam:14292423C", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:14292425F", "kind": "call"}
+{"callee": "BlackOps3_Steam:14292426A", "caller": "BlackOps3_Steam:142924280", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E250", "caller": "BlackOps3_Steam:1429242B3", "kind": "call"}
 {"callee": "BlackOps3_Steam:142924283", "caller": "BlackOps3_Steam:1429242FA", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142924328", "kind": "call"}
@@ -123875,6 +124033,8 @@
 {"callee": "BlackOps3_Steam:142924609", "caller": "BlackOps3_Steam:14292467C", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421BEDB2", "caller": "BlackOps3_Steam:1429246B8", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:1429246B8", "kind": "call"}
+{"callee": "BlackOps3_Steam:14292466E", "caller": "BlackOps3_Steam:1429246E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142924684", "caller": "BlackOps3_Steam:1429246F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:142924715", "kind": "call"}
 {"callee": "BlackOps3_Steam:142667577", "caller": "BlackOps3_Steam:14292473F", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:14226A607", "caller": "BlackOps3_Steam:142924770", "kind": "tailcall"}
@@ -124395,6 +124555,7 @@
 {"callee": "BlackOps3_Steam:1428FE6E0", "caller": "BlackOps3_Steam:14292BAE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14292BA80", "caller": "BlackOps3_Steam:14292BAE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FF1F0", "caller": "BlackOps3_Steam:14292BB30", "kind": "call"}
+{"callee": "BlackOps3_Steam:142330467", "caller": "BlackOps3_Steam:14292BB93", "kind": "call"}
 {"callee": "BlackOps3_Steam:142905740", "caller": "BlackOps3_Steam:14292BBB0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142906CD0", "caller": "BlackOps3_Steam:14292BBB0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142905790", "caller": "BlackOps3_Steam:14292BC60", "kind": "call"}
@@ -124464,6 +124625,7 @@
 {"callee": "BlackOps3_Steam:1428FE6E0", "caller": "BlackOps3_Steam:14292C910", "kind": "call"}
 {"callee": "BlackOps3_Steam:14292C8B0", "caller": "BlackOps3_Steam:14292C910", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FF040", "caller": "BlackOps3_Steam:14292C960", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428FF6E0", "caller": "BlackOps3_Steam:14292C9D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421D4A97", "caller": "BlackOps3_Steam:14292CA46", "kind": "call"}
 {"callee": "BlackOps3_Steam:142906CD0", "caller": "BlackOps3_Steam:14292CA46", "kind": "call"}
 {"callee": "BlackOps3_Steam:142F1DC7E", "caller": "BlackOps3_Steam:14292CA8A", "kind": "call"}
@@ -124654,6 +124816,7 @@
 {"callee": "BlackOps3_Steam:1428FEC10", "caller": "BlackOps3_Steam:14292F330", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FECA0", "caller": "BlackOps3_Steam:14292F330", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422249E0", "caller": "BlackOps3_Steam:14292F3C5", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428FF3C0", "caller": "BlackOps3_Steam:14292F3D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142905740", "caller": "BlackOps3_Steam:14292F400", "kind": "call"}
 {"callee": "BlackOps3_Steam:142906CD0", "caller": "BlackOps3_Steam:14292F400", "kind": "call"}
 {"callee": "BlackOps3_Steam:142916510", "caller": "BlackOps3_Steam:14292F400", "kind": "call"}
@@ -124767,6 +124930,7 @@
 {"callee": "BlackOps3_Steam:142906D20", "caller": "BlackOps3_Steam:1429308C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FF190", "caller": "BlackOps3_Steam:142930930", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FF870", "caller": "BlackOps3_Steam:1429309B0", "kind": "call"}
+{"callee": "BlackOps3_Steam:14296ECA5", "caller": "BlackOps3_Steam:142930A00", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1428FF870", "caller": "BlackOps3_Steam:142930A88", "kind": "call"}
 {"callee": "BlackOps3_Steam:14292AF70", "caller": "BlackOps3_Steam:142930A88", "kind": "call"}
 {"callee": "BlackOps3_Steam:142936820", "caller": "BlackOps3_Steam:142930A88", "kind": "call"}
@@ -125240,6 +125404,7 @@
 {"callee": "BlackOps3_Steam:142916660", "caller": "BlackOps3_Steam:142936C20", "kind": "call"}
 {"callee": "BlackOps3_Steam:142916820", "caller": "BlackOps3_Steam:142936C20", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429479B0", "caller": "BlackOps3_Steam:142936C20", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429368F0", "caller": "BlackOps3_Steam:142936CC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14218D396", "caller": "BlackOps3_Steam:142936CD0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1428FE540", "caller": "BlackOps3_Steam:142936D24", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3D960", "caller": "BlackOps3_Steam:142936D24", "kind": "call"}
@@ -125249,6 +125414,8 @@
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:142936E30", "kind": "call"}
 {"callee": "BlackOps3_Steam:142936DE0", "caller": "BlackOps3_Steam:142936E30", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429479B0", "caller": "BlackOps3_Steam:142936E60", "kind": "call"}
+{"callee": "BlackOps3_Steam:142937140", "caller": "BlackOps3_Steam:142936EE0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429479B0", "caller": "BlackOps3_Steam:142936EE0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:142936F00", "kind": "call"}
 {"callee": "BlackOps3_Steam:142937140", "caller": "BlackOps3_Steam:142936F00", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429479B0", "caller": "BlackOps3_Steam:142936F00", "kind": "call"}
@@ -125501,6 +125668,7 @@
 {"callee": "BlackOps3_Steam:14293AE75", "caller": "BlackOps3_Steam:14293AEE5", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FF190", "caller": "BlackOps3_Steam:14293AEF5", "kind": "call"}
 {"callee": "BlackOps3_Steam:14293AE7D", "caller": "BlackOps3_Steam:14293AEF5", "kind": "call"}
+{"callee": "BlackOps3_Steam:1421B5318", "caller": "BlackOps3_Steam:14293AF40", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:142906CD0", "caller": "BlackOps3_Steam:14293AF50", "kind": "call"}
 {"callee": "BlackOps3_Steam:142906D20", "caller": "BlackOps3_Steam:14293AFE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14293B010", "kind": "call"}
@@ -125599,6 +125767,7 @@
 {"callee": "BlackOps3_Steam:142200CD6", "caller": "BlackOps3_Steam:14293C566", "kind": "call"}
 {"callee": "BlackOps3_Steam:14292D7D0", "caller": "BlackOps3_Steam:14293C600", "kind": "call"}
 {"callee": "BlackOps3_Steam:14292D820", "caller": "BlackOps3_Steam:14293C600", "kind": "call"}
+{"callee": "BlackOps3_Steam:14293C650", "caller": "BlackOps3_Steam:14293C644", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14293C650", "kind": "call"}
 {"callee": "BlackOps3_Steam:14293C600", "caller": "BlackOps3_Steam:14293C650", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429479B0", "caller": "BlackOps3_Steam:14293C680", "kind": "call"}
@@ -125647,6 +125816,7 @@
 {"callee": "BlackOps3_Steam:142C78B30", "caller": "BlackOps3_Steam:14293D4F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14293D5B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14293D5C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:14293D610", "caller": "BlackOps3_Steam:14293D5C8", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14293D5E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14293D610", "kind": "call"}
 {"callee": "BlackOps3_Steam:14293D4F0", "caller": "BlackOps3_Steam:14293D610", "kind": "call"}
@@ -125746,6 +125916,7 @@
 {"callee": "BlackOps3_Steam:1429416A0", "caller": "BlackOps3_Steam:14293EE60", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C77DD0", "caller": "BlackOps3_Steam:14293EE60", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14293EF20", "kind": "call"}
+{"callee": "BlackOps3_Steam:14293EFC0", "caller": "BlackOps3_Steam:14293EFAC", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14293EFC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14293EF20", "caller": "BlackOps3_Steam:14293EFC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14287C4D0", "caller": "BlackOps3_Steam:14293EFF0", "kind": "call"}
@@ -125819,6 +125990,7 @@
 {"callee": "BlackOps3_Steam:14287CA60", "caller": "BlackOps3_Steam:1429400E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14293FE50", "caller": "BlackOps3_Steam:142940170", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C78B70", "caller": "BlackOps3_Steam:142940170", "kind": "call"}
+{"callee": "BlackOps3_Steam:142940170", "caller": "BlackOps3_Steam:1429401B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14287C430", "caller": "BlackOps3_Steam:1429401C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14287C4D0", "caller": "BlackOps3_Steam:1429401C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14287CA00", "caller": "BlackOps3_Steam:1429401C0", "kind": "call"}
@@ -125922,8 +126094,15 @@
 {"callee": "BlackOps3_Steam:1429055B0", "caller": "BlackOps3_Steam:142941750", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C78A60", "caller": "BlackOps3_Steam:142941750", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C78B30", "caller": "BlackOps3_Steam:142941750", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429417D0", "caller": "BlackOps3_Steam:1429417BC", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:1429417D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142941750", "caller": "BlackOps3_Steam:1429417D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429055C0", "caller": "BlackOps3_Steam:142941800", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429055D0", "caller": "BlackOps3_Steam:142941800", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C78B60", "caller": "BlackOps3_Steam:142941800", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C78BF0", "caller": "BlackOps3_Steam:142941800", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C78C30", "caller": "BlackOps3_Steam:142941800", "kind": "call"}
+{"callee": "BlackOps3_Steam:142941873", "caller": "BlackOps3_Steam:142941880", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1414490B0", "caller": "BlackOps3_Steam:1429418A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429479B0", "caller": "BlackOps3_Steam:1429418A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3BA0C", "caller": "BlackOps3_Steam:1429418A0", "kind": "call"}
@@ -125952,6 +126131,7 @@
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:142941C5C", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE960", "caller": "BlackOps3_Steam:142941C7B", "kind": "call"}
 {"callee": "BlackOps3_Steam:142941C05", "caller": "BlackOps3_Steam:142941C7B", "kind": "call"}
+{"callee": "BlackOps3_Steam:142941C42", "caller": "BlackOps3_Steam:142941CC0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:142944340", "caller": "BlackOps3_Steam:142941CF9", "kind": "call"}
 {"callee": "BlackOps3_Steam:142944A00", "caller": "BlackOps3_Steam:142941CF9", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C6D250", "caller": "BlackOps3_Steam:142941CF9", "kind": "call"}
@@ -126883,6 +127063,7 @@
 {"callee": "BlackOps3_Steam:142902A40", "caller": "BlackOps3_Steam:14294EF50", "kind": "call"}
 {"callee": "BlackOps3_Steam:14294B6D0", "caller": "BlackOps3_Steam:14294EF50", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:14294EF50", "kind": "call"}
+{"callee": "BlackOps3_Steam:14294B6E0", "caller": "BlackOps3_Steam:14294EFD0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142904A80", "caller": "BlackOps3_Steam:14294F050", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429479B0", "caller": "BlackOps3_Steam:14294F050", "kind": "call"}
 {"callee": "BlackOps3_Steam:14294F1E0", "caller": "BlackOps3_Steam:14294F180", "kind": "call"}
@@ -126924,6 +127105,7 @@
 {"callee": "BlackOps3_Steam:142902A40", "caller": "BlackOps3_Steam:14294FDF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14294F410", "caller": "BlackOps3_Steam:14294FDF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14294FEA0", "kind": "call"}
+{"callee": "BlackOps3_Steam:14294FEC0", "caller": "BlackOps3_Steam:14294FEA8", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14294FEC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE6E0", "caller": "BlackOps3_Steam:14294FEC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C78680", "caller": "BlackOps3_Steam:14294FEC0", "kind": "call"}
@@ -127663,6 +127845,7 @@
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14295A820", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14295A830", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14295A840", "kind": "call"}
+{"callee": "BlackOps3_Steam:14295A890", "caller": "BlackOps3_Steam:14295A848", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14295A860", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14295A890", "kind": "call"}
 {"callee": "BlackOps3_Steam:14295A6C0", "caller": "BlackOps3_Steam:14295A890", "kind": "call"}
@@ -127984,6 +128167,7 @@
 {"callee": "BlackOps3_Steam:14295FAE0", "caller": "BlackOps3_Steam:14295EAA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14295FB70", "caller": "BlackOps3_Steam:14295EAA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3D960", "caller": "BlackOps3_Steam:14295EBE0", "kind": "call"}
+{"callee": "BlackOps3_Steam:14295ED80", "caller": "BlackOps3_Steam:14295ED74", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:14295ED80", "kind": "call"}
 {"callee": "BlackOps3_Steam:14295E910", "caller": "BlackOps3_Steam:14295ED80", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FFF50", "caller": "BlackOps3_Steam:14295EDB0", "kind": "call"}
@@ -129205,6 +129389,7 @@
 {"callee": "BlackOps3_Steam:1429741C0", "caller": "BlackOps3_Steam:1429741E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429740E0", "caller": "BlackOps3_Steam:142974220", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C7ABC0", "caller": "BlackOps3_Steam:142974220", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C7AC30", "caller": "BlackOps3_Steam:142974240", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:142C7AC80", "caller": "BlackOps3_Steam:142974280", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C7ACB0", "caller": "BlackOps3_Steam:1429742C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429740E0", "caller": "BlackOps3_Steam:142974310", "kind": "call"}
@@ -129251,6 +129436,7 @@
 {"callee": "BlackOps3_Steam:142C7C040", "caller": "BlackOps3_Steam:142974600", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429740E0", "caller": "BlackOps3_Steam:142974620", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C7C110", "caller": "BlackOps3_Steam:142974620", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428FE690", "caller": "BlackOps3_Steam:142974640", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429740E0", "caller": "BlackOps3_Steam:142974650", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429740E0", "caller": "BlackOps3_Steam:142974670", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C7C3E0", "caller": "BlackOps3_Steam:142974670", "kind": "call"}
@@ -129277,6 +129463,8 @@
 {"callee": "BlackOps3_Steam:142975680", "caller": "BlackOps3_Steam:142975B80", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3D960", "caller": "BlackOps3_Steam:142975B80", "kind": "call"}
 {"callee": "BlackOps3_Steam:142975680", "caller": "BlackOps3_Steam:142975C60", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429796A0", "caller": "BlackOps3_Steam:142975E10", "kind": "call"}
+{"callee": "BlackOps3_Steam:14232BC42", "caller": "BlackOps3_Steam:142975E43", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE690", "caller": "BlackOps3_Steam:142975E60", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE6A0", "caller": "BlackOps3_Steam:142975E60", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429776A0", "caller": "BlackOps3_Steam:142975E60", "kind": "call"}
@@ -130034,8 +130222,16 @@
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:1429A2520", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:1429A25A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421E82C3", "caller": "BlackOps3_Steam:1429A2663", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429AEEB0", "caller": "BlackOps3_Steam:1429A2860", "kind": "call"}
 {"callee": "BlackOps3_Steam:142F1CF8C", "caller": "BlackOps3_Steam:1429A2948", "kind": "call"}
+{"callee": "BlackOps3_Steam:142996000", "caller": "BlackOps3_Steam:1429A2950", "kind": "tailcall"}
+{"callee": "BlackOps3_Steam:142996010", "caller": "BlackOps3_Steam:1429A2970", "kind": "call"}
+{"callee": "BlackOps3_Steam:142996000", "caller": "BlackOps3_Steam:1429A29C0", "kind": "tailcall"}
+{"callee": "BlackOps3_Steam:142996010", "caller": "BlackOps3_Steam:1429A29E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429AF580", "caller": "BlackOps3_Steam:1429A29F0", "kind": "tailcall"}
+{"callee": "BlackOps3_Steam:142996010", "caller": "BlackOps3_Steam:1429A2A10", "kind": "call"}
 {"callee": "BlackOps3_Steam:1421EB9B4", "caller": "BlackOps3_Steam:1429A2A2B", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429A2AE0", "caller": "BlackOps3_Steam:1429A2A40", "kind": "call"}
 {"callee": "BlackOps3_Steam:141ECD4B2", "caller": "BlackOps3_Steam:1429A2A45", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:1429A2A50", "kind": "call"}
 {"callee": "BlackOps3_Steam:142996010", "caller": "BlackOps3_Steam:1429A2A50", "kind": "call"}
@@ -131338,8 +131534,12 @@
 {"callee": "BlackOps3_Steam:1429ED5E0", "caller": "BlackOps3_Steam:1429DB970", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429ED5E0", "caller": "BlackOps3_Steam:1429DD090", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429ED5E0", "caller": "BlackOps3_Steam:1429DD6D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429DD980", "caller": "BlackOps3_Steam:1429DDA90", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429DDAA0", "caller": "BlackOps3_Steam:1429DDC60", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429DDC60", "caller": "BlackOps3_Steam:1429DE470", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429DDAA0", "caller": "BlackOps3_Steam:1429DE580", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429DDC60", "caller": "BlackOps3_Steam:1429DEAA0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429DD980", "caller": "BlackOps3_Steam:1429DEAB0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429ED5E0", "caller": "BlackOps3_Steam:1429DEDA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429ED5E0", "caller": "BlackOps3_Steam:1429E0520", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429ED5E0", "caller": "BlackOps3_Steam:1429E0790", "kind": "call"}
@@ -131365,7 +131565,15 @@
 {"callee": "BlackOps3_Steam:142F2D8BA", "caller": "BlackOps3_Steam:1429E7C47", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1429ED5E0", "caller": "BlackOps3_Steam:1429E7C50", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429ED5E0", "caller": "BlackOps3_Steam:1429E7FE0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429E8480", "caller": "BlackOps3_Steam:1429E85A0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429E8480", "caller": "BlackOps3_Steam:1429E85B0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429E85C0", "caller": "BlackOps3_Steam:1429E87E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429E85C0", "caller": "BlackOps3_Steam:1429E87F0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429E85C0", "caller": "BlackOps3_Steam:1429E8800", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429E78E0", "caller": "BlackOps3_Steam:1429E8880", "kind": "call"}
 {"callee": "BlackOps3_Steam:142222D8B", "caller": "BlackOps3_Steam:1429E8893", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429E78E0", "caller": "BlackOps3_Steam:1429E88A0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429E78E0", "caller": "BlackOps3_Steam:1429E88C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429ED5E0", "caller": "BlackOps3_Steam:1429E88E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429AE5D0", "caller": "BlackOps3_Steam:1429E94A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429AE700", "caller": "BlackOps3_Steam:1429E94A0", "kind": "call"}
@@ -131422,7 +131630,9 @@
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:1429EB770", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429BE700", "caller": "BlackOps3_Steam:1429EB770", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429EB450", "caller": "BlackOps3_Steam:1429EB770", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429F0B90", "caller": "BlackOps3_Steam:1429EB9B0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:142996010", "caller": "BlackOps3_Steam:1429EB9D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429EBA70", "caller": "BlackOps3_Steam:1429EBA60", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:1429EBA70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:1429EBA70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142996010", "caller": "BlackOps3_Steam:1429EBA70", "kind": "call"}
@@ -135176,6 +135386,7 @@
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142A6C550", "kind": "call"}
 {"callee": "BlackOps3_Steam:142A76A30", "caller": "BlackOps3_Steam:142A6C5F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142A76C70", "caller": "BlackOps3_Steam:142A6C650", "kind": "call"}
+{"callee": "BlackOps3_Steam:142A6C700", "caller": "BlackOps3_Steam:142A6C6A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142A77C70", "caller": "BlackOps3_Steam:142A6C6E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142A6C700", "kind": "call"}
 {"callee": "BlackOps3_Steam:142996000", "caller": "BlackOps3_Steam:142A6C830", "kind": "call"}
@@ -135634,6 +135845,7 @@
 {"callee": "BlackOps3_Steam:142A86D20", "caller": "BlackOps3_Steam:142A81830", "kind": "call"}
 {"callee": "BlackOps3_Steam:142A8A8C0", "caller": "BlackOps3_Steam:142A81890", "kind": "call"}
 {"callee": "BlackOps3_Steam:142A8DD80", "caller": "BlackOps3_Steam:142A81920", "kind": "call"}
+{"callee": "BlackOps3_Steam:142A81970", "caller": "BlackOps3_Steam:142A81960", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142A81970", "kind": "call"}
 {"callee": "BlackOps3_Steam:14218CB78", "caller": "BlackOps3_Steam:142A81B23", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142A81C30", "kind": "call"}
@@ -135665,8 +135877,11 @@
 {"callee": "BlackOps3_Steam:142F7AB59", "caller": "BlackOps3_Steam:142A826E3", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422E16F0", "caller": "BlackOps3_Steam:142A82768", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142A827E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142A82900", "caller": "BlackOps3_Steam:142A828A0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142A829C0", "caller": "BlackOps3_Steam:142A828D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142A82900", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142A829C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142A82B70", "caller": "BlackOps3_Steam:142A82B60", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142A82B70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142A82D50", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142A82DD0", "kind": "call"}
@@ -135947,6 +136162,7 @@
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142A9CBC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142A9CB20", "caller": "BlackOps3_Steam:142A9CBC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142AC4600", "caller": "BlackOps3_Steam:142A9CC90", "kind": "call"}
+{"callee": "BlackOps3_Steam:142AC4A30", "caller": "BlackOps3_Steam:142A9CCF0", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:142F2D2DD", "caller": "BlackOps3_Steam:142A9D54B", "kind": "call"}
 {"callee": "BlackOps3_Steam:142A9DA70", "caller": "BlackOps3_Steam:142A9DA30", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142A9DCA0", "kind": "call"}
@@ -137834,6 +138050,7 @@
 {"callee": "BlackOps3_Steam:142B60530", "caller": "BlackOps3_Steam:142B1E540", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B61340", "caller": "BlackOps3_Steam:142B1E540", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B62450", "caller": "BlackOps3_Steam:142B1EC90", "kind": "call"}
+{"callee": "BlackOps3_Steam:1421D6EBC", "caller": "BlackOps3_Steam:142B1ECD3", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B2EC80", "caller": "BlackOps3_Steam:142B1ED50", "kind": "call"}
 {"callee": "BlackOps3_Steam:14230D33F", "caller": "BlackOps3_Steam:142B1EDB8", "kind": "call"}
 {"callee": "BlackOps3_Steam:142F30A02", "caller": "BlackOps3_Steam:142B1EDC3", "kind": "call"}
@@ -137845,6 +138062,8 @@
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142B1F1D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B630A0", "caller": "BlackOps3_Steam:142B1F270", "kind": "call"}
 {"callee": "BlackOps3_Steam:14299F4E0", "caller": "BlackOps3_Steam:142B1F300", "kind": "call"}
+{"callee": "BlackOps3_Steam:142995F50", "caller": "BlackOps3_Steam:142B1F340", "kind": "call"}
+{"callee": "BlackOps3_Steam:142996010", "caller": "BlackOps3_Steam:142B1F360", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142B1F380", "kind": "call"}
 {"callee": "BlackOps3_Steam:141DC0920", "caller": "BlackOps3_Steam:142B1F380", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142B1F380", "kind": "call"}
@@ -137867,6 +138086,7 @@
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142B1FBA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141DC0920", "caller": "BlackOps3_Steam:142B1FBA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B2C4D0", "caller": "BlackOps3_Steam:142B1FC90", "kind": "call"}
+{"callee": "BlackOps3_Steam:142B35D30", "caller": "BlackOps3_Steam:142B1FD10", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142B1FD30", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B36340", "caller": "BlackOps3_Steam:142B1FDD0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B227C0", "caller": "BlackOps3_Steam:142B1FF10", "kind": "call"}
@@ -137878,12 +138098,14 @@
 {"callee": "BlackOps3_Steam:1423168DB", "caller": "BlackOps3_Steam:142B200FB", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B34890", "caller": "BlackOps3_Steam:142B20120", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B3D4F0", "caller": "BlackOps3_Steam:142B201D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142B3C160", "caller": "BlackOps3_Steam:142B20260", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142B202E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142B202E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B20270", "caller": "BlackOps3_Steam:142B202E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B65840", "caller": "BlackOps3_Steam:142B204F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142AFDE30", "caller": "BlackOps3_Steam:142B205D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142AFDF00", "caller": "BlackOps3_Steam:142B20630", "kind": "call"}
+{"callee": "BlackOps3_Steam:141DD4740", "caller": "BlackOps3_Steam:142B20670", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B33530", "caller": "BlackOps3_Steam:142B206D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B34D10", "caller": "BlackOps3_Steam:142B20730", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142B207A0", "kind": "call"}
@@ -137905,18 +138127,24 @@
 {"callee": "BlackOps3_Steam:142B18AA0", "caller": "BlackOps3_Steam:142B20E60", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B18B00", "caller": "BlackOps3_Steam:142B20EC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142923DFF", "caller": "BlackOps3_Steam:142B20F13", "kind": "call"}
+{"callee": "BlackOps3_Steam:141D94940", "caller": "BlackOps3_Steam:142B21190", "kind": "call"}
 {"callee": "BlackOps3_Steam:14299F4E0", "caller": "BlackOps3_Steam:142B211F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B90630", "caller": "BlackOps3_Steam:142B211F0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142B67D00", "caller": "BlackOps3_Steam:142B21230", "kind": "call"}
+{"callee": "BlackOps3_Steam:142B68B70", "caller": "BlackOps3_Steam:142B21280", "kind": "tailcall"}
+{"callee": "BlackOps3_Steam:142B68BA0", "caller": "BlackOps3_Steam:142B212A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14299F4E0", "caller": "BlackOps3_Steam:142B212C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B9EFE0", "caller": "BlackOps3_Steam:142B212C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C7F1E5", "caller": "BlackOps3_Steam:142B212F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141DC0920", "caller": "BlackOps3_Steam:142B21300", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B9F020", "caller": "BlackOps3_Steam:142B21300", "kind": "call"}
+{"callee": "BlackOps3_Steam:142B20270", "caller": "BlackOps3_Steam:142B21440", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995F50", "caller": "BlackOps3_Steam:142B21490", "kind": "call"}
 {"callee": "BlackOps3_Steam:14299F4E0", "caller": "BlackOps3_Steam:142B21490", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B90630", "caller": "BlackOps3_Steam:142B21490", "kind": "call"}
 {"callee": "BlackOps3_Steam:142996010", "caller": "BlackOps3_Steam:142B214E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B67D00", "caller": "BlackOps3_Steam:142B214E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142B215E0", "caller": "BlackOps3_Steam:142B215D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142B215E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142994F50", "caller": "BlackOps3_Steam:142B21740", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B3D930", "caller": "BlackOps3_Steam:142B21740", "kind": "call"}
@@ -140086,6 +140314,7 @@
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142B80400", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142B804B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B863C0", "caller": "BlackOps3_Steam:142B80590", "kind": "call"}
+{"callee": "BlackOps3_Steam:142B806D0", "caller": "BlackOps3_Steam:142B805C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142B806D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142B807E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B806D0", "caller": "BlackOps3_Steam:142B807E0", "kind": "call"}
@@ -140102,6 +140331,7 @@
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142B80C50", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B80B70", "caller": "BlackOps3_Steam:142B80C50", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142B80D00", "kind": "call"}
+{"callee": "BlackOps3_Steam:142B80AE0", "caller": "BlackOps3_Steam:142B80DA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142994E90", "caller": "BlackOps3_Steam:142B81470", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995A00", "caller": "BlackOps3_Steam:142B81470", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142B81470", "kind": "call"}
@@ -140421,12 +140651,17 @@
 {"callee": "BlackOps3_Steam:142994F50", "caller": "BlackOps3_Steam:142B8F590", "kind": "call"}
 {"callee": "BlackOps3_Steam:142BBEFB0", "caller": "BlackOps3_Steam:142B8F590", "kind": "call"}
 {"callee": "BlackOps3_Steam:142996594", "caller": "BlackOps3_Steam:142B8FAF8", "kind": "call"}
+{"callee": "BlackOps3_Steam:142B90310", "caller": "BlackOps3_Steam:142B8FB20", "kind": "tailcall"}
+{"callee": "BlackOps3_Steam:142B90340", "caller": "BlackOps3_Steam:142B8FB40", "kind": "call"}
+{"callee": "BlackOps3_Steam:142B8FBF0", "caller": "BlackOps3_Steam:142B8FB70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B90630", "caller": "BlackOps3_Steam:142B8FBD0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142B8FBF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422058B3", "caller": "BlackOps3_Steam:142B8FC98", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B9EFE0", "caller": "BlackOps3_Steam:142B8FD60", "kind": "call"}
 {"callee": "BlackOps3_Steam:142196B1F", "caller": "BlackOps3_Steam:142B8FD88", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142B8FDB0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142BA1640", "caller": "BlackOps3_Steam:142B8FE20", "kind": "tailcall"}
+{"callee": "BlackOps3_Steam:142B67EC0", "caller": "BlackOps3_Steam:142B8FE40", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142B8FEF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142B8FFC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B8FEF0", "caller": "BlackOps3_Steam:142B8FFC0", "kind": "call"}
@@ -141414,6 +141649,7 @@
 {"callee": "BlackOps3_Steam:142A87CD0", "caller": "BlackOps3_Steam:142BC4480", "kind": "call"}
 {"callee": "BlackOps3_Steam:142BBEC40", "caller": "BlackOps3_Steam:142BC4480", "kind": "call"}
 {"callee": "BlackOps3_Steam:142BBFEA0", "caller": "BlackOps3_Steam:142BC4480", "kind": "call"}
+{"callee": "BlackOps3_Steam:1422003F6", "caller": "BlackOps3_Steam:142BC465B", "kind": "call"}
 {"callee": "BlackOps3_Steam:142995BA0", "caller": "BlackOps3_Steam:142BC4670", "kind": "call"}
 {"callee": "BlackOps3_Steam:142A87CD0", "caller": "BlackOps3_Steam:142BC4670", "kind": "call"}
 {"callee": "BlackOps3_Steam:142BBEC40", "caller": "BlackOps3_Steam:142BC4670", "kind": "call"}
@@ -143565,7 +143801,11 @@
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142C2CC40", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142C2CCA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142C2CD00", "kind": "call"}
+{"callee": "BlackOps3_Steam:141DC0600", "caller": "BlackOps3_Steam:142C2CD70", "kind": "tailcall"}
+{"callee": "BlackOps3_Steam:1421AFFDD", "caller": "BlackOps3_Steam:142C2CDD3", "kind": "call"}
 {"callee": "BlackOps3_Steam:142A6C363", "caller": "BlackOps3_Steam:142C2CDE3", "kind": "call"}
+{"callee": "BlackOps3_Steam:141DC06B0", "caller": "BlackOps3_Steam:142C2CDF0", "kind": "tailcall"}
+{"callee": "BlackOps3_Steam:141DC0730", "caller": "BlackOps3_Steam:142C2CE30", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:14299E300", "caller": "BlackOps3_Steam:142C2CEC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14299EE70", "caller": "BlackOps3_Steam:142C2CEC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429BE700", "caller": "BlackOps3_Steam:142C2CEC0", "kind": "call"}
@@ -143894,6 +144134,7 @@
 {"callee": "BlackOps3_Steam:142A5E490", "caller": "BlackOps3_Steam:142C344E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142C34510", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C34710", "caller": "BlackOps3_Steam:142C34510", "kind": "call"}
+{"callee": "BlackOps3_Steam:142321B13", "caller": "BlackOps3_Steam:142C3455B", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142C34620", "kind": "call"}
 {"callee": "BlackOps3_Steam:142ADE410", "caller": "BlackOps3_Steam:142C34690", "kind": "call"}
 {"callee": "BlackOps3_Steam:142ADE470", "caller": "BlackOps3_Steam:142C346C0", "kind": "call"}
@@ -146544,6 +146785,7 @@
 {"callee": "BlackOps3_Steam:142C538EC", "caller": "BlackOps3_Steam:142C696A8", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C695D8", "caller": "BlackOps3_Steam:142C696A8", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C6C118", "caller": "BlackOps3_Steam:142C696A8", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C46914", "caller": "BlackOps3_Steam:142C69760", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:142C6976C", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142C6976C", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C550", "caller": "BlackOps3_Steam:142C69D1C", "kind": "call"}
@@ -146843,6 +147085,7 @@
 {"callee": "BlackOps3_Steam:1429479B0", "caller": "BlackOps3_Steam:142C6FB30", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C6F010", "caller": "BlackOps3_Steam:142C6FB30", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C71A60", "caller": "BlackOps3_Steam:142C6FB30", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C77E30", "caller": "BlackOps3_Steam:142C6FB80", "kind": "call"}
 {"callee": "BlackOps3_Steam:142202806", "caller": "BlackOps3_Steam:142C6FBB3", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE540", "caller": "BlackOps3_Steam:142C6FBC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE570", "caller": "BlackOps3_Steam:142C6FBC0", "kind": "call"}
@@ -147941,6 +148184,7 @@
 {"callee": "BlackOps3_Steam:1429776A0", "caller": "BlackOps3_Steam:142C81360", "kind": "call"}
 {"callee": "BlackOps3_Steam:142977060", "caller": "BlackOps3_Steam:142C813F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142979160", "caller": "BlackOps3_Steam:142C813F0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C82740", "caller": "BlackOps3_Steam:142C81440", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C813F0", "caller": "BlackOps3_Steam:142C81450", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C81220", "caller": "BlackOps3_Steam:142C814A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C81280", "caller": "BlackOps3_Steam:142C814A0", "kind": "call"}
@@ -148026,7 +148270,9 @@
 {"callee": "BlackOps3_Steam:142C85A00", "caller": "BlackOps3_Steam:142C85C60", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3B9F8", "caller": "BlackOps3_Steam:142C86240", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C862D0", "caller": "BlackOps3_Steam:142C86240", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C862F0", "caller": "BlackOps3_Steam:142C86290", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3C5EC", "caller": "BlackOps3_Steam:142C862D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3C91C", "caller": "BlackOps3_Steam:142C862F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429AC540", "caller": "BlackOps3_Steam:142C86320", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429AC540", "caller": "BlackOps3_Steam:142C863A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000034", "caller": "BlackOps3_Steam:142C86470", "kind": "call"}
@@ -154986,6 +155232,11 @@
 {"callee": "BlackOps3_Steam:142C79EE0", "caller": "BlackOps3_Steam:142CE36C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142905550", "caller": "BlackOps3_Steam:142CE36D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000069", "caller": "BlackOps3_Steam:142CE36E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142CE3780", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142CE38E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142CE3D30", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142CE3D40", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142CE3D50", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142CE3D60", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142CE3D80", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142CE3DD0", "kind": "call"}
@@ -155429,6 +155680,7 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB3280", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB32A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB32C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142DB32E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB3300", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB3320", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142DB3340", "kind": "call"}
@@ -155443,8 +155695,11 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB3460", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB3480", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB34A0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142928530", "caller": "BlackOps3_Steam:142DB34C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142947880", "caller": "BlackOps3_Steam:142DB34F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142DB34F0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142928530", "caller": "BlackOps3_Steam:142DB3520", "kind": "call"}
+{"callee": "BlackOps3_Steam:142928530", "caller": "BlackOps3_Steam:142DB3550", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB3580", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB35A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB35C0", "kind": "call"}
@@ -155467,6 +155722,7 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB3A00", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB3A20", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB3A40", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142DB3A60", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB3A70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB3A90", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142DB3AB0", "kind": "call"}
@@ -155665,12 +155921,18 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F02CD0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F02CF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F02D10", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F02D30", "kind": "call"}
 {"callee": "BlackOps3_Steam:141C794F0", "caller": "BlackOps3_Steam:142F02DE0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F02E40", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F02F90", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F02FB0", "kind": "call"}
+{"callee": "BlackOps3_Steam:141C8E290", "caller": "BlackOps3_Steam:142F02FD0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F03080", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F030A0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F03160", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F03170", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142F031A0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F03200", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400011E0", "caller": "BlackOps3_Steam:142F03210", "kind": "call"}
 {"callee": "BlackOps3_Steam:141CB8750", "caller": "BlackOps3_Steam:142F03210", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F03280", "kind": "call"}
@@ -155686,6 +155948,7 @@
 {"callee": "BlackOps3_Steam:1400011E0", "caller": "BlackOps3_Steam:142F03950", "kind": "call"}
 {"callee": "BlackOps3_Steam:141C4B530", "caller": "BlackOps3_Steam:142F03950", "kind": "call"}
 {"callee": "BlackOps3_Steam:141CD8A40", "caller": "BlackOps3_Steam:142F03950", "kind": "call"}
+{"callee": "BlackOps3_Steam:141CE5EC0", "caller": "BlackOps3_Steam:142F03B20", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F03B30", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F03B50", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F03B70", "kind": "call"}
@@ -155759,6 +156022,8 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F05C20", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F05C80", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F05CA0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142947AC0", "caller": "BlackOps3_Steam:142F05CC0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142904090", "caller": "BlackOps3_Steam:142F05CD0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F05CE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F05D00", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F05D20", "kind": "call"}
@@ -155852,6 +156117,7 @@
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F06950", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F06970", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F06990", "kind": "call"}
+{"callee": "BlackOps3_Steam:141E065D0", "caller": "BlackOps3_Steam:142F06A60", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F06A70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F06A90", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F06AB0", "kind": "call"}
@@ -155902,6 +156168,7 @@
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F07000", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429486A0", "caller": "BlackOps3_Steam:142F07020", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F07020", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429484D0", "caller": "BlackOps3_Steam:142F07040", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F07050", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F07070", "kind": "call"}
 {"callee": "BlackOps3_Steam:141E186E0", "caller": "BlackOps3_Steam:142F07160", "kind": "call"}
@@ -155911,6 +156178,7 @@
 {"callee": "BlackOps3_Steam:142C43CAC", "caller": "BlackOps3_Steam:142F071E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F07220", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F07240", "kind": "call"}
+{"callee": "BlackOps3_Steam:141E1D8B0", "caller": "BlackOps3_Steam:142F07260", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F07270", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C42944", "caller": "BlackOps3_Steam:142F07270", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F072B0", "kind": "call"}
@@ -155972,6 +156240,7 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F079C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141154510", "caller": "BlackOps3_Steam:142F079E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141E846A0", "caller": "BlackOps3_Steam:142F07A30", "kind": "call"}
+{"callee": "BlackOps3_Steam:141E847E0", "caller": "BlackOps3_Steam:142F07A70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F07A80", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F07AA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:14292D050", "caller": "BlackOps3_Steam:142F07AC0", "kind": "call"}
@@ -156028,6 +156297,7 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F083B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F083D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F083F0", "kind": "call"}
+{"callee": "BlackOps3_Steam:1428FFA10", "caller": "BlackOps3_Steam:142F08410", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F08420", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F08440", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F08460", "kind": "call"}
@@ -156068,6 +156338,7 @@
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F08AA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F08AC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F08AE0", "kind": "call"}
+{"callee": "BlackOps3_Steam:141EB8EB0", "caller": "BlackOps3_Steam:142F08B00", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F08B10", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F08B30", "kind": "call"}
 {"callee": "BlackOps3_Steam:141EBAFE0", "caller": "BlackOps3_Steam:142F08B50", "kind": "call"}
@@ -156642,6 +156913,8 @@
 {"callee": "BlackOps3_Steam:142F287C5", "caller": "BlackOps3_Steam:142F2883D", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1421E521A", "caller": "BlackOps3_Steam:142F2887E", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1421BDD52", "caller": "BlackOps3_Steam:142F288F2", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3BA0C", "caller": "BlackOps3_Steam:142F2890E", "kind": "call"}
+{"callee": "BlackOps3_Steam:142F288DB", "caller": "BlackOps3_Steam:142F28959", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000039", "caller": "BlackOps3_Steam:142F289F6", "kind": "call"}
 {"callee": "BlackOps3_Steam:000000038", "caller": "BlackOps3_Steam:142F28A02", "kind": "call"}
 {"callee": "BlackOps3_Steam:142F28A27", "caller": "BlackOps3_Steam:142F28A02", "kind": "call"}
@@ -156770,6 +157043,7 @@
 {"callee": "BlackOps3_Steam:1422DBDB8", "caller": "BlackOps3_Steam:142F2C1D5", "kind": "call"}
 {"callee": "BlackOps3_Steam:142F2C1D5", "caller": "BlackOps3_Steam:142F2C24C", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:1421E6395", "caller": "BlackOps3_Steam:142F2C2AD", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3BA0C", "caller": "BlackOps3_Steam:142F2C2CE", "kind": "call"}
 {"callee": "BlackOps3_Steam:142B71E14", "caller": "BlackOps3_Steam:142F2C2DF", "kind": "call"}
 {"callee": "BlackOps3_Steam:142316472", "caller": "BlackOps3_Steam:142F2C313", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:142F2C2F1", "caller": "BlackOps3_Steam:142F2C32B", "kind": "call"}
@@ -156945,12 +157219,14 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F312F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F31310", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F31330", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142F31390", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F313B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F313D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F313F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F31410", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F31470", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F31490", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142F314F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F31510", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F31530", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F31550", "kind": "call"}
@@ -157008,6 +157284,7 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F32B40", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F32B60", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F32B80", "kind": "call"}
+{"callee": "BlackOps3_Steam:141154510", "caller": "BlackOps3_Steam:142F32BA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141154510", "caller": "BlackOps3_Steam:142F32BB0", "kind": "call"}
 {"callee": "BlackOps3_Steam:141154510", "caller": "BlackOps3_Steam:142F32BF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F32C30", "kind": "call"}
@@ -157050,6 +157327,7 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F330D0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F330F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F33110", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F33130", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F33160", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F33180", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F331A0", "kind": "call"}
@@ -157062,6 +157340,8 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F33280", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F332A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F332C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F332E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F332F0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F33300", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C42944", "caller": "BlackOps3_Steam:142F33300", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F33340", "kind": "call"}
@@ -157078,6 +157358,14 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F33FF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F34010", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F34030", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142F34050", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142F34070", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142F34090", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142F340B0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142F340D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142F340F0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142F34110", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142F34130", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F34150", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F34170", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F34190", "kind": "call"}
@@ -157141,8 +157429,10 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F36E40", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F36EA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F36EC0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F36F20", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F36F50", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F36F70", "kind": "call"}
+{"callee": "BlackOps3_Steam:1423A5B60", "caller": "BlackOps3_Steam:142F36FD0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F36FE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F37000", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F370B0", "kind": "call"}
@@ -157153,6 +157443,11 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F371E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F37240", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F37260", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F372C0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F372D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F372E0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F372F0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F37300", "kind": "call"}
 {"callee": "BlackOps3_Steam:142410B20", "caller": "BlackOps3_Steam:142F374A0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F374E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F37500", "kind": "call"}
@@ -157192,12 +157487,17 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F37CA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F37D00", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F37D20", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F37D80", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F37E00", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F37E80", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F37EA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F37F00", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F37F20", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F37F80", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F37F90", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F37FA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F37FC0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3DE60", "caller": "BlackOps3_Steam:142F38020", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F38040", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F38060", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F38080", "kind": "call"}
@@ -157256,6 +157556,7 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F60AE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F67B90", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F67BB0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F67BD0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F67BE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F67C00", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F67C20", "kind": "call"}
@@ -157387,6 +157688,8 @@
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F6A9C0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F6A9E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E7F0", "caller": "BlackOps3_Steam:142F6AA00", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F6AA20", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F6AA40", "kind": "call"}
 {"callee": "BlackOps3_Steam:142905170", "caller": "BlackOps3_Steam:142F6AA60", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F6AA60", "kind": "call"}
 {"callee": "BlackOps3_Steam:142905170", "caller": "BlackOps3_Steam:142F6AA90", "kind": "call"}
@@ -157402,9 +157705,13 @@
 {"callee": "BlackOps3_Steam:142C42944", "caller": "BlackOps3_Steam:142F6AB97", "kind": "call"}
 {"callee": "BlackOps3_Steam:1422E2A47", "caller": "BlackOps3_Steam:142F6ABB5", "kind": "call"}
 {"callee": "BlackOps3_Steam:142191120", "caller": "BlackOps3_Steam:142F6AC85", "kind": "call"}
+{"callee": "BlackOps3_Steam:14230B517", "caller": "BlackOps3_Steam:142F6AC90", "kind": "tailcall"}
 {"callee": "BlackOps3_Steam:0000000AC", "caller": "BlackOps3_Steam:142F6ACC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F6ACC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142994D40", "caller": "BlackOps3_Steam:142F6ACE0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F6AD80", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F6AD90", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F6ADA0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F6ADB0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142997ED0", "caller": "BlackOps3_Steam:142F6AE20", "kind": "call"}
 {"callee": "BlackOps3_Steam:0000000AC", "caller": "BlackOps3_Steam:142F6AE80", "kind": "call"}
@@ -157489,6 +157796,7 @@
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F6CDF0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429BDB20", "caller": "BlackOps3_Steam:142F6CE70", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F6CE70", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F6CEB0", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C4E794", "caller": "BlackOps3_Steam:142F6CEC0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F6CEE0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F6CF40", "kind": "call"}
@@ -157509,6 +157817,9 @@
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F6D450", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F6D4B0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F6D510", "kind": "call"}
+{"callee": "BlackOps3_Steam:1429FF040", "caller": "BlackOps3_Steam:142F6D5A0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F6D5D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F6D630", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F6D680", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F6D6E0", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F6D740", "kind": "call"}
@@ -157925,6 +158236,9 @@
 {"callee": "BlackOps3_Steam:00000009C", "caller": "BlackOps3_Steam:142F78070", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3AEFC", "caller": "BlackOps3_Steam:142F78090", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F78090", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F780B0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F780BC", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F780C8", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3AEFC", "caller": "BlackOps3_Steam:142F780D4", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F780D4", "kind": "call"}
 {"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F78100", "kind": "call"}
@@ -157936,6 +158250,7 @@
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F78410", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F78470", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F784D0", "kind": "call"}
+{"callee": "BlackOps3_Steam:142C3E5EC", "caller": "BlackOps3_Steam:142F78540", "kind": "call"}
 {"callee": "BlackOps3_Steam:1429963A0", "caller": "BlackOps3_Steam:142F78550", "kind": "call"}
 {"callee": "BlackOps3_Steam:1400095C0", "caller": "BlackOps3_Steam:142F78600", "kind": "call"}
 {"callee": "BlackOps3_Steam:1428FE6E0", "caller": "BlackOps3_Steam:142F786F0", "kind": "call"}

@@ -32439,6 +32439,9 @@ LAB_141b20d42:
   141B20D5D  5D                   POP RBP
   141B20D5E  C3                   RET
 
+; 141B20D60  thunk_FUN_141b77950  (line unknown)
+  141B20D60  E9EB6B0500           JMP 0x141b77950
+
 ; 141B20D70  FUN_141b20d70  (line unknown)
   141B20D70  4053                 PUSH RBX
   141B20D72  4883EC30             SUB RSP,0x30
@@ -108589,6 +108592,10 @@ LAB_141b69eb3:
 LAB_141b69ebd:
   141B69EBD  F3C3                 RET
 
+; 141B69EC0  FUN_141b69ec0  (line unknown)
+  141B69EC0  41B804000000         MOV R8D,0x4
+  141B69EC6  E905000000           JMP 0x141b69ed0
+
 ; 141B69ED0  FUN_141b69ed0  (line unknown)
   141B69ED0  48895C2418           MOV qword ptr [RSP + 0x18],RBX
   141B69ED5  4889742420           MOV qword ptr [RSP + 0x20],RSI
@@ -109492,6 +109499,12 @@ LAB_141b6ad64:
   141B6ADD5  5F                   POP RDI
   141B6ADD6  C3                   RET
 
+; 141B6ADE0  thunk_FUN_141b6b050  (line unknown)
+  141B6ADE0  E96B020000           JMP 0x141b6b050
+
+; 141B6ADF0  thunk_FUN_141b6b050  (line unknown)
+  141B6ADF0  E95B020000           JMP 0x141b6b050
+
 ; 141B6ADF5  FUN_141b6adf5  (line unknown)
   141B6ADF5  8B055808DE1D         MOV EAX,dword ptr [0x15f94b653]
   141B6ADFB  E9FFA5DD1B           JMP 0x15d9453ff
@@ -109511,6 +109524,29 @@ LAB_141b6ae24:
   141B6AE24  4883C420             ADD RSP,0x20
   141B6AE28  5B                   POP RBX
   141B6AE29  C3                   RET
+
+; 141B6AE30  FUN_141b6ae30  (line unknown)
+  141B6AE30  8B916C030000         MOV EDX,dword ptr [RCX + 0x36c]
+  141B6AE36  448B8168030000       MOV R8D,dword ptr [RCX + 0x368]
+  141B6AE3D  8D4201               LEA EAX,[RDX + 0x1]
+  141B6AE40  4585C0               TEST R8D,R8D
+  141B6AE43  7E05                 JLE 0x141b6ae4a
+  141B6AE45  413BC0               CMP EAX,R8D
+  141B6AE48  7C33                 JL 0x141b6ae7d
+LAB_141b6ae4a:
+  141B6AE4A  2981C8020000         SUB dword ptr [RCX + 0x2c8],EAX
+  141B6AE50  85D2                 TEST EDX,EDX
+  141B6AE52  740F                 JZ 0x141b6ae63
+  141B6AE54  B8007D0000           MOV EAX,0x7d00
+  141B6AE59  2B81C8020000         SUB EAX,dword ptr [RCX + 0x2c8]
+  141B6AE5F  3BC2                 CMP EAX,EDX
+  141B6AE61  7C1A                 JL 0x141b6ae7d
+LAB_141b6ae63:
+  141B6AE63  F781A402000000020000 TEST dword ptr [RCX + 0x2a4],0x200
+  141B6AE6D  C781C8020000007D0000 MOV dword ptr [RCX + 0x2c8],0x7d00
+  141B6AE77  0F85A3CE0000         JNZ 0x141b77d20
+LAB_141b6ae7d:
+  141B6AE7D  F3C3                 RET
 
 ; 141B6AE80  FUN_141b6ae80  (line unknown)
   141B6AE80  48895C2408           MOV qword ptr [RSP + 0x8],RBX
@@ -109592,15 +109628,51 @@ LAB_141b6afa2:
   141B6AFB9  5F                   POP RDI
   141B6AFBA  C3                   RET
 
+; 141B6AFC0  FUN_141b6afc0  (line unknown)
+  141B6AFC0  80B98602000006       CMP byte ptr [RCX + 0x286],0x6
+  141B6AFC7  0F95C0               SETNZ AL
+  141B6AFCA  0405                 ADD AL,0x5
+  141B6AFCC  888186020000         MOV byte ptr [RCX + 0x286],AL
+  141B6AFD2  C3                   RET
+
 ; 141B6AFD3  FUN_141b6afd3  (line unknown)
   141B6AFD3  488D2D070CB51B       LEA RBP,[0x15d6bbbe1]
   141B6AFDA  48872C24             XCHG qword ptr [RSP],RBP
   141B6AFDE  50                   PUSH RAX
   141B6AFDF  C3                   RET
 
+; 141B6AFE0  FUN_141b6afe0  (line unknown)
+  141B6AFE0  80BA8302000000       CMP byte ptr [RDX + 0x283],0x0
+  141B6AFE7  750A                 JNZ 0x141b6aff3
+  141B6AFE9  4883BA7002000000     CMP qword ptr [RDX + 0x270],0x0
+  141B6AFF1  7422                 JZ 0x141b6b015
+LAB_141b6aff3:
+  141B6AFF3  4883BA5002000000     CMP qword ptr [RDX + 0x250],0x0
+  141B6AFFB  7513                 JNZ 0x141b6b010
+  141B6AFFD  4883BA7002000000     CMP qword ptr [RDX + 0x270],0x0
+  141B6B005  740E                 JZ 0x141b6b015
+  141B6B007  F7420C00000010       TEST dword ptr [RDX + 0xc],0x10000000
+  141B6B00E  7405                 JZ 0x141b6b015
+LAB_141b6b010:
+  141B6B010  E9BBE9FFFF           JMP 0x141b699d0
+LAB_141b6b015:
+  141B6B015  F3C3                 RET
+
 ; 141B6B017  FUN_141b6b017  (line unknown)
   141B6B017  48891C24             MOV qword ptr [RSP],RBX
   141B6B01B  E951987A19           JMP 0x15b314871
+
+; 141B6B020  FUN_141b6b020  (line unknown)
+  141B6B020  4883BA5002000000     CMP qword ptr [RDX + 0x250],0x0
+  141B6B028  750A                 JNZ 0x141b6b034
+  141B6B02A  4883BA5802000000     CMP qword ptr [RDX + 0x258],0x0
+  141B6B032  7413                 JZ 0x141b6b047
+LAB_141b6b034:
+  141B6B034  814A0C00000100       OR dword ptr [RDX + 0xc],0x10000
+  141B6B03B  8B0583529E08         MOV EAX,dword ptr [0x14a5502c4]
+  141B6B041  8982BC040000         MOV dword ptr [RDX + 0x4bc],EAX
+LAB_141b6b047:
+  141B6B047  F3C3                 RET
 
 ; 141B6B050  FUN_141b6b050  (line unknown)
   141B6B050  4057                 PUSH RDI
@@ -109684,6 +109756,9 @@ LAB_141b6b17e:
   141B6B17E  4883C430             ADD RSP,0x30
   141B6B182  5F                   POP RDI
   141B6B183  C3                   RET
+
+; 141B6B190  FUN_141b6b190  (line unknown)
+  141B6B190  C20000               RET 0x0
 
 ; 141B6B193  FUN_141b6b193  (line unknown)
   141B6B193  4889542410           MOV qword ptr [RSP + 0x10],RDX

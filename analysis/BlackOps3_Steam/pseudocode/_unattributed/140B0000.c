@@ -93657,6 +93657,16 @@ void FUN_140bc5220(undefined8 param_1,undefined8 *param_2)
 }
 
 
+// 140BC5290  FUN_140bc5290  (line unknown)
+
+void FUN_140bc5290(void)
+
+{
+  FUN_1412e9ac0(1);
+  return;
+}
+
+
 // 140BC52A0  FUN_140bc52a0  (line unknown)
 
 void FUN_140bc52a0(void)

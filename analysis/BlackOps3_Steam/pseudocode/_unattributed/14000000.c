@@ -2485,7 +2485,7 @@ void FUN_1400046d0(longlong param_1)
   if (param_1 != 0) {
                     /* WARNING: Could not recover jumptable at 0x0001400046d5. Too many branches */
                     /* WARNING: Treating indirect jump as call */
-    (*(code *)PTR_LAB_1432d12e0)();
+    (*(code *)PTR_free_1432d12e0)();
     return;
   }
   return;
@@ -2545,7 +2545,7 @@ void FUN_140004750(undefined *param_1,undefined *param_2)
 
 {
   PTR_malloc_1432d12d8 = param_1;
-  PTR_LAB_1432d12e0 = param_2;
+  PTR_free_1432d12e0 = param_2;
   return;
 }
 
@@ -4947,6 +4947,63 @@ LAB_140006f9a:
       } while (puVar8 < _Dst);
     }
   } while( true );
+}
+
+
+// 140006FE0  FUN_140006fe0  (line unknown)
+
+void * FUN_140006fe0(undefined8 param_1,size_t param_2)
+
+{
+  void *pvVar1;
+  
+  if (param_2 == 0) {
+    return (void *)0x0;
+  }
+  pvVar1 = malloc(param_2);
+  return pvVar1;
+}
+
+
+// 140006FF0  FUN_140006ff0  (line unknown)
+
+void FUN_140006ff0(undefined8 param_1,void *param_2)
+
+{
+  free(param_2);
+  return;
+}
+
+
+// 140007000  FUN_140007000  (line unknown)
+
+LPVOID FUN_140007000(undefined8 param_1,SIZE_T param_2)
+
+{
+  LPVOID pvVar1;
+  
+  if (param_2 == 0) {
+    return (LPVOID)0x0;
+  }
+                    /* WARNING: Could not recover jumptable at 0x000140007014. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  pvVar1 = VirtualAlloc((LPVOID)0x0,param_2,0x1000,4);
+  return pvVar1;
+}
+
+
+// 140007020  FUN_140007020  (line unknown)
+
+void FUN_140007020(undefined8 param_1,LPVOID param_2)
+
+{
+  if (param_2 != (LPVOID)0x0) {
+                    /* WARNING: Could not recover jumptable at 0x000140007033. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    VirtualFree(param_2,0,0x8000);
+    return;
+  }
+  return;
 }
 
 
@@ -90309,7 +90366,7 @@ void FUN_1400a2f90(undefined4 param_1,undefined8 param_2)
     FUN_142148f60(7,0x17,"Couldn\'t find asset \'%s\'\n",param_2);
     return;
   }
-  FUN_1400a9930(param_1,lVar1,&LAB_1400a3660,FUN_1400a34e0);
+  FUN_1400a9930(param_1,lVar1,thunk_FUN_1400aa060,FUN_1400a34e0);
   return;
 }
 
@@ -90470,7 +90527,7 @@ void FUN_1400a3360(undefined4 param_1,undefined8 param_2)
     FUN_142148f60(7,0x17,"Couldn\'t find asset \'%s\'\n",param_2);
     return;
   }
-  FUN_1400a9e30(param_1,lVar1,&LAB_1400a3660);
+  FUN_1400a9e30(param_1,lVar1,thunk_FUN_1400aa060);
   return;
 }
 

@@ -22823,6 +22823,18 @@ LAB_14201a1c8:
   14201A213  4883C428             ADD RSP,0x28
   14201A217  C3                   RET
 
+; 14201A220  FUN_14201a220  (line unknown)
+  14201A220  B001                 MOV AL,0x1
+  14201A222  C3                   RET
+
+; 14201A230  FUN_14201a230  (line unknown)
+  14201A230  B001                 MOV AL,0x1
+  14201A232  C3                   RET
+
+; 14201A240  FUN_14201a240  (line unknown)
+  14201A240  B001                 MOV AL,0x1
+  14201A242  C3                   RET
+
 ; 14201A250  FUN_14201a250  (line unknown)
   14201A250  4053                 PUSH RBX
   14201A252  4883EC20             SUB RSP,0x20
@@ -203144,6 +203156,10 @@ LAB_1420ce1c0:
   1420CE1CF  5D                   POP RBP
   1420CE1D0  C3                   RET
 
+; 1420CE290  FUN_1420ce290  (line unknown)
+  1420CE290  33C0                 XOR EAX,EAX
+  1420CE292  C3                   RET
+
 ; 1420CE2A0  FUN_1420ce2a0  (line unknown)
   1420CE2A0  4883EC28             SUB RSP,0x28
   1420CE2A4  BA01000000           MOV EDX,0x1
@@ -203424,6 +203440,26 @@ LAB_1420ce305:
   1420CE778  4883C420             ADD RSP,0x20
   1420CE77C  5F                   POP RDI
   1420CE77D  C3                   RET
+
+; 1420CE780  FUN_1420ce780  (line unknown)
+  1420CE780  48634114             MOVSXD RAX,dword ptr [RCX + 0x14]
+  1420CE784  488D0DE5B94614       LEA RCX,[0x15653a170]
+  1420CE78B  4869C0A87B0100       IMUL RAX,RAX,0x17ba8
+  1420CE792  4803C1               ADD RAX,RCX
+  1420CE795  83B8987B010001       CMP dword ptr [RAX + 0x17b98],0x1
+  1420CE79C  7C07                 JL 0x1420ce7a5
+  1420CE79E  C680947B010000       MOV byte ptr [RAX + 0x17b94],0x0
+LAB_1420ce7a5:
+  1420CE7A5  B001                 MOV AL,0x1
+  1420CE7A7  C3                   RET
+
+; 1420CE7B0  FUN_1420ce7b0  (line unknown)
+  1420CE7B0  B001                 MOV AL,0x1
+  1420CE7B2  C3                   RET
+
+; 1420CE7C0  FUN_1420ce7c0  (line unknown)
+  1420CE7C0  B001                 MOV AL,0x1
+  1420CE7C2  C3                   RET
 
 ; 1420CE7D0  FUN_1420ce7d0  (line unknown)
   1420CE7D0  4053                 PUSH RBX
@@ -235179,6 +235215,10 @@ LAB_1420ed862:
   1420EE404  488B4540             MOV RAX,qword ptr [RBP + 0x40]
   1420EE408  8B00                 MOV EAX,dword ptr [RAX]
   1420EE40A  E9CF760D1C           JMP 0x15e1c5ade
+
+; 1420EE490  FUN_1420ee490  (line unknown)
+  1420EE490  4863D2               MOVSXD RDX,EDX
+  1420EE493  E9D2FDCC1B           JMP 0x15ddbe26a
 
 ; 1420EE585  FUN_1420ee585  (line unknown)
   1420EE585  83E01F               AND EAX,0x1f

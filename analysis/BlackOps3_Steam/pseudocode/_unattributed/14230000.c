@@ -5033,6 +5033,16 @@ void FUN_1423060e8(void)
 }
 
 
+// 142306158  FUN_142306158  (line unknown)
+
+void FUN_142306158(void)
+
+{
+  FUN_15b8bec90();
+  return;
+}
+
+
 // 142306177  FUN_142306177  (line unknown)
 
 void FUN_142306177(undefined8 param_1,longlong param_2)
@@ -9058,6 +9068,16 @@ void FUN_14230b4e5(void)
 }
 
 
+// 14230B517  FUN_14230b517  (line unknown)
+
+void FUN_14230b517(void)
+
+{
+  FUN_15d9499e0();
+  return;
+}
+
+
 // 14230B528  FUN_14230b528  (line unknown)
 
 void FUN_14230b528(void)
@@ -10165,6 +10185,18 @@ void FUN_14230c4f0(void)
   LOCK();
   UNLOCK();
   FUN_15b31ec9d();
+  return;
+}
+
+
+// 14230C52C  FUN_14230c52c  (line unknown)
+
+void FUN_14230c52c(void)
+
+{
+  undefined8 in_stack_00000038;
+  
+  thunk_FUN_1423595c4(in_stack_00000038);
   return;
 }
 
@@ -16232,6 +16264,17 @@ void FUN_1423145a3(void)
 }
 
 
+// 1423145C5  FUN_1423145c5  (line unknown)
+
+void FUN_1423145c5(void)
+
+{
+  LOCK();
+  UNLOCK();
+  return;
+}
+
+
 // 142314675  FUN_142314675  (line unknown)
 
 void FUN_142314675(void)
@@ -16876,6 +16919,17 @@ void FUN_1423155e5(undefined8 param_1)
   longlong unaff_RBP;
   
   FUN_15b11aad5(param_1,*(int *)(unaff_RBP + 0x50) << 7);
+  return;
+}
+
+
+// 142315617  FUN_142315617  (line unknown)
+
+void FUN_142315617(void)
+
+{
+  LOCK();
+  UNLOCK();
   return;
 }
 
@@ -24203,6 +24257,16 @@ void FUN_1423243a9(ulonglong param_1)
 }
 
 
+// 1423243C8  FUN_1423243c8  (line unknown)
+
+void FUN_1423243c8(void)
+
+{
+  FUN_15eccfbd7();
+  return;
+}
+
+
 // 1423243F1  FUN_1423243f1  (line unknown)
 
 void FUN_1423243f1(ulonglong param_1)
@@ -28203,6 +28267,16 @@ void FUN_14232bc1d(undefined4 param_1)
 }
 
 
+// 14232BC42  FUN_14232bc42  (line unknown)
+
+void FUN_14232bc42(void)
+
+{
+  FUN_15d8da26c();
+  return;
+}
+
+
 // 14232BC55  FUN_14232bc55  (line unknown)
 
 void FUN_14232bc55(ulonglong param_1)
@@ -29501,6 +29575,16 @@ void FUN_14233044a(void)
   
   (*in_R10)();
   FUN_15ee20668();
+  return;
+}
+
+
+// 142330467  FUN_142330467  (line unknown)
+
+void FUN_142330467(void)
+
+{
+  FUN_15f7bdbae();
   return;
 }
 
@@ -64923,6 +65007,18 @@ longlong FUN_1423595b0(longlong param_1)
     return CONCAT71(uVar2,1);
   }
   return (ulonglong)uVar2 << 8;
+}
+
+
+// 1423595C4  FUN_1423595c4  (line unknown)
+
+void FUN_1423595c4(ulonglong param_1)
+
+{
+  ulonglong in_stack_00000030;
+  
+  FUN_15bffb290(param_1 ^ in_stack_00000030);
+  return;
 }
 
 

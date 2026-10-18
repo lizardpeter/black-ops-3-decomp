@@ -16704,6 +16704,19 @@ uint FUN_140133f20(undefined8 param_1,undefined8 param_2,longlong param_3)
 }
 
 
+// 140133F48  FUN_140133f48  (line unknown)
+
+void FUN_140133f48(longlong param_1,longlong param_2)
+
+{
+  undefined4 in_EAX;
+  
+  *(undefined4 *)(param_2 + param_1 * 4) = in_EAX;
+  FUN_15cacbcb8();
+  return;
+}
+
+
 // 140133F50  FUN_140133f50  (line unknown)
 
 int FUN_140133f50(int param_1)
@@ -43606,7 +43619,7 @@ undefined * FUN_140162210(int param_1,undefined4 *param_2,undefined4 *param_3,un
       *param_2 = *(undefined4 *)(&DAT_1432d6ac8 + lVar3);
       *param_3 = *(undefined4 *)(lVar3 + 0x1432d6ab4);
       *param_4 = *(undefined4 *)(lVar3 + 0x1432d6ab8);
-      return (&PTR_LAB_1432d6ac0)[uVar2 * 4];
+      return (&PTR_thunk_FUN_1400acfa0_1432d6ac0)[uVar2 * 4];
     }
     uVar1 = (int)uVar2 + 1;
     uVar2 = (ulonglong)uVar1;
@@ -43625,7 +43638,7 @@ undefined4 FUN_140162260(undefined *param_1)
   undefined **ppuVar2;
   
   uVar1 = 0;
-  ppuVar2 = &PTR_LAB_1432d6ac0;
+  ppuVar2 = &PTR_thunk_FUN_1400acfa0_1432d6ac0;
   do {
     if (param_1 == *ppuVar2) {
       return (&DAT_1432d6ab0)[(ulonglong)uVar1 * 8];

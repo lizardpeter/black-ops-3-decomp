@@ -73152,6 +73152,16 @@ void FUN_1416875e0(longlong param_1)
 }
 
 
+// 141687670  FUN_141687670  (line unknown)
+
+void FUN_141687670(longlong param_1)
+
+{
+  FUN_1412e9b00(0,*(undefined4 *)(param_1 + 0x16c00));
+  return;
+}
+
+
 // 141687690  FUN_141687690  (line unknown)
 
 void FUN_141687690(longlong param_1)
@@ -86704,6 +86714,18 @@ void FUN_14169fa30(longlong param_1,byte param_2)
     pbVar1 = pbVar1 + 0x30;
     lVar2 = lVar2 + -1;
   } while (lVar2 != 0);
+  return;
+}
+
+
+// 14169FA70  FUN_14169fa70  (line unknown)
+
+void FUN_14169fa70(longlong param_1)
+
+{
+  *(uint *)(param_1 + 8) = *(uint *)(param_1 + 8) & 0xffffffef;
+  *(undefined4 *)(param_1 + 0x214) = 0x4000000;
+  *(undefined2 *)(param_1 + 0x1f2) = 0;
   return;
 }
 

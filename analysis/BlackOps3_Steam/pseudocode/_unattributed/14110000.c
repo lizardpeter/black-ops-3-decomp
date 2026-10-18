@@ -119882,6 +119882,16 @@ undefined8 FUN_1411f1ee0(ulonglong param_1,ulonglong param_2)
 }
 
 
+// 1411F2024  FUN_1411f2024  (line unknown)
+
+void FUN_1411f2024(void)
+
+{
+  FUN_15d6dc7d3();
+  return;
+}
+
+
 // 1411F2030  FUN_1411f2030  (line unknown)
 
 void FUN_1411f2030(int param_1,int param_2,undefined8 param_3,undefined8 param_4,undefined8 param_5)

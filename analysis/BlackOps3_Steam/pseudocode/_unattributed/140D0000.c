@@ -23423,6 +23423,43 @@ void FUN_140d333a0(void)
 }
 
 
+// 140D33430  FUN_140d33430  (line unknown)
+
+void FUN_140d33430(longlong param_1)
+
+{
+  short sVar1;
+  int iVar2;
+  
+  sVar1 = *(short *)(param_1 + 0x598);
+  if (0 < sVar1) {
+    if (sVar1 < 3) {
+      FUN_1412e9a30(1,"human");
+      return;
+    }
+    if (((int)sVar1 - 0x12U & 0xfffffffd) == 0) {
+      iVar2 = *(int *)(param_1 + 0x458);
+      if (iVar2 == 1) {
+        FUN_1412e9a30(1,&DAT_142f94ca0);
+        return;
+      }
+      if (iVar2 != 2) {
+        if (iVar2 != 3) {
+          FUN_1412e9a30(1,"unknown");
+          return;
+        }
+        FUN_1412e9a30(1,"zombie_dog");
+        return;
+      }
+      FUN_1412e9a30(1,"zombie");
+      return;
+    }
+  }
+  FUN_1412ea430(1,".species call on invalid ent type.");
+  return;
+}
+
+
 // 140D334C0  FUN_140d334c0  (line unknown)
 
 void FUN_140d334c0(undefined8 param_1,int *param_2)
