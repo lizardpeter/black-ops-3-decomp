@@ -46,7 +46,7 @@ exe = { key = "bo3/DUMP/BlackOps3.exe", sha256 = "72c8a21763adbfac9e1b2bcd6f93b0
 [[build]]
 id = "BlackOps3_Steam"
 kind = "related"
-analyze = true  # redo with tools/ghidra/CreateTableFunctions.java
+analyze = false  # analysed (analysis/BlackOps3_Steam); set true only to redo it
 protection = "arxan"
 timestamp = "2023-02-25T01:02:52Z"
 original_name = "BlackOps3.exe"

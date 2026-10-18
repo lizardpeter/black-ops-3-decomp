@@ -27,13 +27,13 @@ How we use it: names and addresses are facts, and enter `records/names.tsv` as i
 From there the matcher carries them to the Store build.
 
 `tools/prior/boiii.py <checkout> --write` does this. At 5aa7fac: 3,479 declarations, 3,018 distinct legacy
-addresses. Recorded: **2,536 functions** (each a Ghidra function start in our analysis) and **218 data symbols**
-(each in a data section). Not recorded: 255 function addresses that are not Ghidra functions, 6 addresses the
-client gives two names, 3 outside code and data. Of the 255, 251 lie between Ghidra's functions and are real code
-Ghidra didn't find: mostly Lua C functions (`hks::lua_CFunction`, 238) and command handlers that are referenced
-only from registration tables, never called directly (e.g. `SV_MapRestart_f`: `xor ecx,ecx; jmp`). Finding
-functions from those tables is a pipeline improvement to make; the other 4 land inside a function and are wrong
-or stale addresses. Their *code* and
+addresses. Recorded: **2,779 functions** (each a Ghidra function start in our analysis) and **218 data symbols**
+(each in a data section). Not recorded: 12 function addresses that are not Ghidra functions, 6 addresses the
+client gives two names, 3 outside code and data.
+
+The first import recorded 2,536 functions: 255 addresses had no Ghidra function, 251 of them real code reached
+only from registration tables (Lua C functions, command handlers). tools/ghidra/CreateTableFunctions.java now
+creates functions at data pointers into code, which recovered 243 of them. Their *code* and
 struct definitions are not imported: that would make this repo GPL-3.0, which is the user's decision.
 
 Arxan: these clients let the stub decrypt the game at runtime (Ezz BOIII can dump the decrypted exe with `-dump`).

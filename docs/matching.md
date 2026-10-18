@@ -17,26 +17,28 @@ image and scans every `.rdata`/`.data` section.
 
 ## Result
 
-12,224 of the Store build's 36,929 non-thunk functions matched (33.1%), each to a different Steam function.
+After both builds were re-analysed with tools/ghidra/CreateTableFunctions.java: **12,835 of the Store build's
+41,932 non-thunk functions matched** (30.6%), each to a different Steam function.
 
-| method | pairs |
-|---|---:|
-| string | 2,911 |
-| constant | 201 |
-| named (registrations, data tables) | 1,804 |
-| callee propagation | 3,466 |
-| caller propagation | 3,842 |
+| method | pairs | first run (before table functions) |
+|---|---:|---:|
+| string | 2,920 | 2,911 |
+| constant | 204 | 201 |
+| named (registrations, data tables) | 2,394 | 1,804 |
+| callee propagation | 3,478 | 3,466 |
+| caller propagation | 3,839 | 3,842 |
+| total | 12,835 | 12,224 |
 
-1,623 of the pairs give a Store function a BOIII name (1,267 of them through `named`, mostly Lua `LuaCall`
-functions registered under their script name).
+The percentage fell because the Store build gained 5,000 functions; most of the new ones are reached only through
+tables, and the named stage pairs 590 more of them.
 
 ## How good it is
 
 There is no ground truth for this pair (neither build has symbols), so precision is unmeasured. Two checks:
 
 - **Call-graph consistency.** For a matched pair, a matched callee on the Store side should map to a callee of
-  the Steam function. It does for 77.3% of 39,709 such edges (caller 87.6%, callee 83.6%, constant 74.7%,
-  string 67.9%, named 62.4%). This is a lower bound on agreement, not an error rate: LTCG inlines many callees in
+  the Steam function. It does for 77.2% of 39,732 such edges (caller 87.6%, callee 83.5%, constant 74.7%,
+  string 67.9%, named 61.6%). This is a lower bound on agreement, not an error rate: LTCG inlines many callees in
   the Store build, so a correct pair can still have edges that don't line up.
 - **Spot checks** of named pairs read right: Lua functions match on their registered names, `DB_LoadXFile` on its
   "Error loading fastfile" string, `ClientCommand` on its command strings.
@@ -47,7 +49,7 @@ match here, check its evidence.
 ## Names carried to the Store build
 
 `tools/match/carry_names.py BlackOps3_MSStore --write` turns the pairs whose Steam function has a name in
-records/names.tsv into names.tsv rows for the Store build: 1,623 functions, each with method
+records/names.tsv into names.tsv rows for the Store build: 1,956 functions (1,623 before the table functions), each with method
 `boiii-free symbols+match:<method>`, the lower of the two confidences, and evidence naming the Steam function and
 the match. A Store function named by any other method keeps that name. Re-run it after re-matching or after new
 Steam names.

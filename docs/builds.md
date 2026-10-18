@@ -84,3 +84,7 @@ fixed tools/graph/sync.py, which now splits big tables into parts.
   the 28,535 chained entries are fragments of parent functions.
 - 2.5 times the Store build's function count: VS2012 without LTCG inlines far less than VS2019 with LTCG, and the
   13,869 thunks include jumps Arxan inserted into game code.
+
+Second run, with tools/ghidra/CreateTableFunctions.java: 5,033 data pointers led into game code with no function
+(3 more pointed inside a function); all 5,033 became functions. Now **98,792 game functions**, 84,748 decompiled,
+14,043 thunks, 1 failure.
