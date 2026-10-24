@@ -127,6 +127,9 @@ to talk to. Low priority, but the DLL ships only with the GDK, so the stubs also
    decompiled (`src/win32/crash_report.cpp`, matches) and overridden to report nothing (P0003). The senders
    themselves stay undecompiled until something else needs them. 142360D50 is still to do.
 2. **Demonware leaves** (the 25 functions in section 1): cuts lobby, auth, storage, NAT, UPnP and relays at once.
+   **UDP layer done:** the seven `bdPlatformSocket` methods are decompiled
+   (`src/libs/DemonWareGDK/bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp`, all match) and overridden
+   (P0004): no socket is created and no name is looked up. Still to do: the TCP stream socket and HTTP leaves.
    Decompile the faithful versions first (the socket wrappers are short), then the enhanced overrides return the
    network-down result. Startup must then take the "Demonware unavailable" path rather than wait for it; that is
    what `Live_BlockUntilSignedInToDemonware`, `LiveConnect_DisableDemonwareConnect` and `Live_IsDemonwareFetchingDone`

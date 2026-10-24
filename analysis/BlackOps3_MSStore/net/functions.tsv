@@ -367,15 +367,15 @@ va	size	name	callers	sockets	http	voice	netinfo	host	dw_file	dw_class
 1429C34E0	316	FUN_1429c34e0	1						bdNet/bdUPnP/bdUPnPDevice.cpp	bdUPnPDevice
 1429C3620	290	FUN_1429c3620	1						bdNet/bdUPnP/bdUPnPDevice.cpp	bdUPnPDevice
 1429C3750	312	FUN_1429c3750	1						bdNet/bdUPnP/bdUPnPDevice.cpp	bdUPnPDevice
-1429C3A20	858	FUN_1429c3a20	589						bdPlatform/bdPlatformLog/bdPlatformLog.cpp	
+1429C3A20	858	bdLogMessage	589						bdPlatform/bdPlatformLog/bdPlatformLog.cpp	
 1429C3E70	50	FUN_1429c3e70	2	inet_pton						
 1429C3ED0	47	FUN_1429c3ed0	3	inet_pton						
-1429C3F60	616	FUN_1429c3f60	2	WSAGetLastError,bind,htons					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
-1429C4290	59	FUN_1429c4290	3	closesocket						
-1429C4320	471	FUN_1429c4320	1	WSAGetLastError,WSASocketA,ioctlsocket,setsockopt,socket					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
-1429C4620	357	FUN_1429c4620	2	WSAGetLastError,freeaddrinfo,getaddrinfo					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
-1429C4790	620	FUN_1429c4790	1	WSAGetLastError,WSARecvFrom,ntohs					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
-1429C4AC0	734	FUN_1429c4ac0	1	WSAGetLastError,WSASendTo,htons,sendto					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
+1429C3F60	616	bdPlatformSocket::bind	2	WSAGetLastError,bind,htons					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
+1429C4290	59	bdPlatformSocket::close	3	closesocket						
+1429C4320	471	bdPlatformSocket::create	1	WSAGetLastError,WSASocketA,ioctlsocket,setsockopt,socket					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
+1429C4620	357	bdPlatformSocket::getHostByName	2	WSAGetLastError,freeaddrinfo,getaddrinfo					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
+1429C4790	620	bdPlatformSocket::receiveFrom	1	WSAGetLastError,WSARecvFrom,ntohs					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
+1429C4AC0	734	bdPlatformSocket::sendTo	1	WSAGetLastError,WSASendTo,htons,sendto					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
 1429C4FE0	211	FUN_1429c4fe0	1						bdPlatform/bdPlatformInfo/bdPlatformInfo-xboxone.cpp	bdPlatformInfo
 1429C6670	533	FUN_1429c6670	1						bdMessageRelay/bdMessageRelay.cpp	bdMessageRelayImpl
 1429C6890	872	FUN_1429c6890	1						bdMessageRelay/bdMessageRelay.cpp	bdMessageRelayImpl

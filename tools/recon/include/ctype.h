@@ -10,6 +10,7 @@ extern "C" {
 
 int toupper(int);
 int tolower(int);
+int isalpha(int);
 
 #ifdef __cplusplus
 }

@@ -208,6 +208,7 @@ CTYPE_IMPORTS = {
     "tolower": _ctype(lambda c: c + 32 if 65 <= c <= 90 else c),
     "toupper": _ctype(lambda c: c - 32 if 97 <= c <= 122 else c),
     "isdigit": _ctype(lambda c: 4 if 48 <= c <= 57 else 0),  # the UCRT's _DIGIT mask
+    "isalpha": _ctype(lambda c: 0x101 if 65 <= c <= 90 else 0x102 if 97 <= c <= 122 else 0),  # _UPPER|_ALPHA, _LOWER|_ALPHA
 }
 
 
@@ -392,14 +393,21 @@ class Machine:
         if spec is not None:
             # spec: one letter per argument: b = bool/char (low byte; the rest of the register is undefined),
             # i = 32-bit integer, q = 64-bit, f = float, s = C string pointer
+            # arguments past the fourth are read from the stack: at the entry [rsp] is the return address, then
+            # 32 bytes of shadow space (a float there is read as its 32-bit pattern too)
             got = []
-            for i, kind in enumerate(spec[:4]):
-                if kind == "f":
-                    got.append(mu.reg_read(XMM_REGS[i]) & 0xFFFFFFFF)
-                elif kind == "s":
-                    got.append(self.read_cstr(mu.reg_read(INT_REGS[i])))
+            rsp = mu.reg_read(UC_X86_REG_RSP)
+            for i, kind in enumerate(spec):
+                if i < 4:
+                    raw = mu.reg_read(XMM_REGS[i]) if kind == "f" else mu.reg_read(INT_REGS[i])
                 else:
-                    got.append(mu.reg_read(INT_REGS[i]) & {"q": MASK64, "b": 0xFF}.get(kind, 0xFFFFFFFF))
+                    raw = struct.unpack("<Q", bytes(mu.mem_read(rsp + 8 + 8 * i, 8)))[0]
+                if kind == "f":
+                    got.append(raw & 0xFFFFFFFF)
+                elif kind == "s":
+                    got.append(self.read_cstr(raw))
+                else:
+                    got.append(raw & {"q": MASK64, "b": 0xFF}.get(kind, 0xFFFFFFFF))
             self.observed.append((address, *got))
         fn = self._fakes.get(address)
         if fn:

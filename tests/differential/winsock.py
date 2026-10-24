@@ -57,12 +57,16 @@ class Winsock:
     setsockopt: list = field(default_factory=list)
     bind: list = field(default_factory=list)
     connect: list = field(default_factory=list)
+    close: list = field(default_factory=list)          # closesocket results; then 0
     send: list = field(default_factory=list)          # send results (None: all bytes); then all bytes
     sendto: list = field(default_factory=list)
     recv: list = field(default_factory=list)          # replies: bytes, or an int result; then SOCKET_ERROR
     recvfrom: list = field(default_factory=list)      # (data, 16-byte sockaddr) or an int result; then SOCKET_ERROR
     hostname: bytes = b"gamepc"                       # gethostname's name, None: SOCKET_ERROR
     hosts: dict = field(default_factory=dict)         # name -> (h_addrtype, [4-byte addresses])
+    wsasendto: list = field(default_factory=list)     # WSASendTo: None (all sent), or (result, bytes reported)
+    wsarecvfrom: list = field(default_factory=list)   # WSARecvFrom: (data, sockaddr), an int result, or (int, sockaddr)
+    addrinfo: dict = field(default_factory=dict)      # getaddrinfo: name -> int error, or [(addrlen, sockaddr bytes)]
 
     def copy(self):
         return Winsock(**{k: (list(v) if isinstance(v, list) else dict(v) if isinstance(v, dict) else v)
@@ -120,7 +124,7 @@ class Winsock:
 
         def closesocket(mu):
             log("closesocket", arg(mu, 0))
-            ret(mu, 0)
+            ret(mu, take(s.close, 0))
 
         def ioctlsocket(mu):
             sock, cmd, argp = arg(mu, 0), arg(mu, 1) & 0xFFFFFFFF, arg(mu, 2)
@@ -137,7 +141,8 @@ class Winsock:
                 # sin_family, sin_port and sin_addr: sin_zero is not looked at by AF_INET bind/connect, and the
                 # original leaves it uninitialized
                 sock, addr, n = arg(mu, 0), arg(mu, 1), _i32(arg(mu, 2))
-                log(name, sock, read(mu, addr, 8), n)
+                # an AF_INET6 address is compared whole (28 bytes: family, port, flow, address, scope)
+                log(name, sock, read(mu, addr, 8 if n <= 16 else 28), n)
                 ret(mu, take(results, 0))
             return run
 
@@ -181,6 +186,84 @@ class Winsock:
                 write(frm, source[:max(min(have, 16), 0)])
                 write(fromlen, struct.pack("<i", 16))
             ret(mu, len(data))
+
+        def wsasocket(mu):
+            log("WSASocketA", _i32(arg(mu, 0)), _i32(arg(mu, 1)), _i32(arg(mu, 2)), arg(mu, 3), arg(mu, 4) & 0xFFFFFFFF,
+                arg(mu, 5) & 0xFFFFFFFF)
+            h = take(s.sockets, None)
+            if h is None:
+                h, s.next_socket = s.next_socket, s.next_socket + 4
+            ret(mu, h)
+
+        def wsabuf(mu, p):
+            n, buf = struct.unpack("<IxxxxQ", read(mu, p, 16))
+            return n, buf
+
+        def wsasendto(mu):
+            sock, bufs, count, sentp, flags, to, tolen = (arg(mu, i) for i in range(7))
+            n, buf = wsabuf(mu, bufs)
+            tolen = _i32(tolen)
+            log("WSASendTo", sock, count & 0xFFFFFFFF, read(mu, buf, min(n, 0x1000)), n, flags & 0xFFFFFFFF,
+                read(mu, to, min(tolen, 28)), tolen, arg(mu, 7), arg(mu, 8))
+            r = take(s.wsasendto, None)
+            result, sent = (0, n) if r is None else r
+            if result == 0 and sentp:
+                write(sentp, struct.pack("<I", sent))
+            ret(mu, result)
+
+        def wsarecvfrom(mu):
+            sock, bufs, count, recvp, flagsp, frm, fromlen = (arg(mu, i) for i in range(7))
+            n, buf = wsabuf(mu, bufs)
+            have = _i32(struct.unpack("<I", read(mu, fromlen, 4))[0]) if fromlen else None
+            log("WSARecvFrom", sock, count & 0xFFFFFFFF, n, struct.unpack("<I", read(mu, flagsp, 4))[0], have,
+                arg(mu, 7), arg(mu, 8))
+            item = take(s.wsarecvfrom, SOCKET_ERROR)
+            if isinstance(item, int):
+                ret(mu, item)
+                return
+            if isinstance(item[0], int):  # (result, source): a failure that still reports the sender (a reset
+                result, source = item     # connection: the ICMP port-unreachable reply names the peer)
+                if frm and fromlen:
+                    write(frm, source[:max(min(have, len(source)), 0)])
+                ret(mu, result)
+                return
+            data, source = item
+            data = data[:n]
+            write(buf, data)
+            write(recvp, struct.pack("<I", len(data)))
+            if frm and fromlen:
+                write(frm, source[:max(min(have, len(source)), 0)])
+                write(fromlen, struct.pack("<i", len(source)))
+            ret(mu, 0)
+
+        def getaddrinfo(mu):
+            name = m.read_cstr(arg(mu, 0))
+            hints = read(mu, arg(mu, 2), 16) if arg(mu, 2) else None
+            log("getaddrinfo", name, arg(mu, 1), hints)
+            entry = s.addrinfo.get(name, 11001)  # WSAHOST_NOT_FOUND
+            if isinstance(entry, int):
+                ret(mu, entry)
+                return
+            nxt = 0
+            for addrlen, sa in reversed(entry):  # struct addrinfo, x64: 0x30 bytes, ai_addr at 0x20, ai_next 0x28
+                sa_at = alloc(sa)
+                nxt = alloc(struct.pack("<iiiiQQQQ", 0, 2, 2, 17, addrlen, 0, sa_at, nxt))
+            write(arg(mu, 3), struct.pack("<Q", nxt))
+            ret(mu, 0)
+
+        def freeaddrinfo(mu):
+            log("freeaddrinfo", arg(mu, 0))
+            ret(mu, 0)
+
+        def ntohs(mu):
+            v = arg(mu, 0) & 0xFFFF
+            log("ntohs", v)
+            ret(mu, ((v & 0xFF) << 8) | (v >> 8))
+
+        def htonl(mu):
+            v = arg(mu, 0) & 0xFFFFFFFF
+            log("htonl", v)
+            ret(mu, int.from_bytes(v.to_bytes(4, "little"), "big"))
 
         def htons(mu):
             v = arg(mu, 0) & 0xFFFF
@@ -232,11 +315,13 @@ class Winsock:
             "bind": addr_call("bind", s.bind), "connect": addr_call("connect", s.connect), "send": send,
             "sendto": sendto, "recv": recv, "recvfrom": recvfrom, "htons": htons, "ntohl": ntohl,
             "inet_addr": inet_addr, "gethostname": gethostname, "gethostbyname": gethostbyname,
+            "WSASocketA": wsasocket, "WSASendTo": wsasendto, "WSARecvFrom": wsarecvfrom, "getaddrinfo": getaddrinfo,
+            "freeaddrinfo": freeaddrinfo, "ntohs": ntohs, "htonl": htonl,
         }
         # imports this file does not use yet (the Store build's and the PS4 server's): refuse them, so no test silently gets the harness's `return 0`
         for name in ("select", "getaddrinfo", "freeaddrinfo", "WSAIoctl", "inet_pton", "inet_ntop", "__WSAFDIsSet",
                      "ntohs", "WSARecvFrom", "WSASendTo", "WSASocketA", "WSACleanup", "getsockname", "getsockopt",
-                     "WSASetLastError", "shutdown", "inet_ntoa"):
+                     "WSASetLastError", "shutdown", "inet_ntoa", "accept", "listen", "WSASocketW"):
             fns.setdefault(name, _unmodelled(name))
         for name, fn in fns.items():
             m.on_import("ws2_32.dll!" + name, fn)
