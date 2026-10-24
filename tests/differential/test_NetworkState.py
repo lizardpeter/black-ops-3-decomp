@@ -65,4 +65,53 @@ def inputs():
     return out
 
 
-CASES = [{"symbol": PERFORM, "ret": "int", "inputs": inputs()}]
+CONNECT = ("?WebSocketConnectAsync@NetworkState@httpclient@xbox@@QEAAJ$$QEAUhttp_internal_string@23@0PEAUHC_WEBSOCKET_"
+           "OBSERVER@23@PEAUXAsyncBlock@@@Z")
+COUNT = SCRATCH + 0x50000  # the shared_ptr's control block
+
+
+def string(r, text):
+    """An http_internal_string: in the small buffer (capacity 15), or on the heap (a pointer; the buffer itself is
+    never read here, only moved and, when the context is destroyed, freed)."""
+    if len(text) < 16 and r.random() < 0.7:
+        return text.ljust(16, b"\0") + struct.pack("<QQ", len(text), 15)
+    return struct.pack("<QQQQ", 0x7FF0_0020_0000 + r.getrandbits(12) * 16, 0, len(text), max(len(text), 16) | 0x1F)
+
+
+def connect_fakes(hr, queue, uses):
+    base = fakes(hr, queue)
+
+    def alloc(mu):
+        record(mu, "alloc", arg(mu, 0))
+        mu.mem_write(CONTEXT, b"\xcd" * 0xB0)
+        return CONTEXT
+
+    def begin(mu):
+        ctx = arg(mu, 1)
+        record(mu, "XAsyncBegin", arg(mu, 0), ctx, arg(mu, 2), arg(mu, 3), arg(mu, 4),
+               *struct.unpack("<22Q", bytes(mu.mem_read(ctx, 0xB0))), bytes(mu.mem_read(COUNT, 16)))
+        if queue:
+            program_write(mu, ctx + 0x68, struct.pack("<Q", queue))
+        return hr
+
+    def setup(w):
+        # the control block: no vtable calls happen while the use count stays above one
+        w.m.mu.mem_write(COUNT, struct.pack("<Qii", 0, uses, 1))
+    return {**base, ALLOC: alloc, BEGIN: begin}, setup
+
+
+def connect_inputs():
+    r = random.Random(402)
+    out = []
+    for _ in range(160):
+        hr = r.choice([0, 1, -0x7FFFBFFB, -1])
+        f, setup = connect_fakes(hr, r.choice([0, 0, 0x7FF0_0000_1000]), r.choice([1, 2, 7]))
+        handle = struct.pack("<QQQ", r.getrandbits(48), r.getrandbits(48), r.choice([0, COUNT, COUNT]))
+        out.append({"args": [r.getrandbits(48), string(r, b"wss://rta.xboxlive.com/connect"),
+                             string(r, r.choice([b"", b"rta.xboxlive.com.V2"])), handle, r.getrandbits(48)],
+                    "setup": setup, "fakes": f})
+    return out
+
+
+CASES = [{"symbol": PERFORM, "ret": "int", "inputs": inputs()},
+         {"symbol": CONNECT, "ret": "int", "inputs": connect_inputs()}]

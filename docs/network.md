@@ -71,10 +71,9 @@ WinHTTP wrappers 142D75F20–142D81860 (the WebSocket provider).
 Every operation starts with `XAsyncBegin` (14291FD40, a GDK runtime thunk), so with the offline package's
 `xgameruntime` stub none can start at all, and the Xbox services API has no signed-in user to make requests for.
 In code: **HTTP is cut** at `NetworkState::HttpCallPerformAsync` (142D6DEB0, the single entry every request takes:
-decompiled, matches; P0007 refuses it with HRESULT_FROM_WIN32(ERROR_NETWORK_UNREACHABLE)). **The WebSocket is
-not cut in code yet:** its entry is `NetworkState::WebSocketConnectAsync` (142D6E3C0, called only by the public
-`HCWebSocketConnectAsync` 142D6B670), which moves two std::strings and a shared_ptr into its context; until it is
-reconstructed, the RTA WebSocket depends on the GDK stub.
+decompiled, matches; P0007 refuses it with HRESULT_FROM_WIN32(ERROR_NETWORK_UNREACHABLE)). **The WebSocket is cut
+too:** every connection begins in `NetworkState::WebSocketConnectAsync` (142D6E3C0, called only by the public
+`HCWebSocketConnectAsync` 142D6B670): decompiled (matches) and refused the same way in P0007.
 
 ### 3. Telemetry: the Store port's crash reporter
 
@@ -157,7 +156,7 @@ to talk to. Low priority, but the DLL ships only with the GDK, so the stubs also
    network-down result. Startup must then take the "Demonware unavailable" path rather than wait for it; that is
    what `Live_BlockUntilSignedInToDemonware`, `LiveConnect_DisableDemonwareConnect` and `Live_IsDemonwareFetchingDone`
    (records/names.tsv) decide, so they follow.
-3. **Xbox services HTTP client** (section 2): HTTP done (P0007); the WebSocket entry (142D6E3C0) is still to do.
+3. **Xbox services HTTP client** (section 2): done, HTTP and WebSocket (P0007).
 4. **Havok VDB socket** (B0004): find whether the server is created; cut it either way.
 5. **Engine networking** stays (section 4). **Voice** (section 5) only carries traffic to remote players.
 

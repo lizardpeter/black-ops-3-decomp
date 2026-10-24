@@ -21,10 +21,58 @@ namespace xbox
 {
 namespace httpclient
 {
+// libHttpClient's http_internal_string: std::basic_string with its own allocator. The reconstruction is freestanding,
+// so the MSVC layout (16-byte small buffer or heap pointer, size, capacity) is spelled out and moves are written as
+// the inlined code does them.
+struct http_internal_string
+{
+	union
+	{
+		char buffer[16];
+		char *pointer;
+	};
+	unsigned long long size;
+	unsigned long long capacity;
+};
+
+class WebSocket;
+
+// std::shared_ptr's control block: the use and weak counts follow the vtable pointer
+struct SharedCount
+{
+	void **vtable;
+	volatile int uses;
+	volatile int weaks;
+};
+
+// HC_WEBSOCKET_OBSERVER (an HCWebsocketHandle): the shared_ptr<WebSocket> it holds is at +8
+struct HC_WEBSOCKET_OBSERVER
+{
+	void *unknown0;
+	WebSocket *websocket;
+	SharedCount *websocketCount;
+};
+
 class NetworkState
 {
 public:
 	HRESULT HttpCallPerformAsync(HC_CALL *call, XAsyncBlock *async);
+	HRESULT WebSocketConnectAsync(http_internal_string &&uri, http_internal_string &&subProtocol,
+	                              HC_WEBSOCKET_OBSERVER *handle, XAsyncBlock *async);
+};
+
+// What WebSocketConnectAsync hands to XAsyncBegin (0xB0 bytes)
+struct WebSocketConnectContext
+{
+	NetworkState *state;
+	http_internal_string uri;
+	http_internal_string subProtocol;
+	HC_WEBSOCKET_OBSERVER *handle;
+	WebSocket *websocket; // a shared_ptr<WebSocket> copied from the handle
+	SharedCount *websocketCount;
+	XAsyncBlock *clientAsyncBlock;
+	XAsyncBlock internalAsyncBlock;
+	unsigned char result[16];
 };
 
 // What HttpCallPerformAsync hands to XAsyncBegin (0x50 bytes)
