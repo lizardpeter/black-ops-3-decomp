@@ -23,6 +23,8 @@ double tan(double);
 
 // fabs is a compiler intrinsic in VC11 x64 (andpd with a sign mask on the double), never a CRT call.
 static inline double fabs(double x) { return __builtin_fabs(x); }
+// fabsf likewise (andps with a sign mask), in the Store build's VS2019 code too.
+static inline float fabsf(float x) { return __builtin_fabsf(x); }
 
 #ifdef __cplusplus
 }
