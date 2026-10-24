@@ -1,3 +1,4 @@
 {"path": "libs/DemonWareGDK/bdCore/bdLogMessage.cpp", "subsystem": "libs"}
 {"path": "libs/DemonWareGDK/bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp", "subsystem": "libs"}
+{"path": "libs/DemonWareGDK/bdPlatform/bdPlatformSocket/bdPlatformStreamSocket-xboxone.cpp", "subsystem": "libs"}
 {"path": "universal/q_shared.cpp", "subsystem": "universal"}

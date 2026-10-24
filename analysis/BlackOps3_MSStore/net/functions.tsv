@@ -649,14 +649,14 @@ va	size	name	callers	sockets	http	voice	netinfo	host	dw_file	dw_class
 142D162A0	139	FUN_142d162a0	1						bdHTTP/bdUploadInterceptorWrapper.cpp	bdUploadInterceptorWrapper
 142D16330	1085	FUN_142d16330	0						bdHTTP/bdUploadInterceptorWrapper.cpp	bdUploadInterceptorWrapper
 142D16880	1047	FUN_142d16880	0						bdHTTP/bdUploadInterceptorWrapper.cpp	bdUploadInterceptorWrapper
-142D16EC0	127	FUN_142d16ec0	2	select						
-142D16F40	172	FUN_142d16f40	1	WSAGetLastError,closesocket					bdPlatform/bdPlatformSocket/bdPlatformStreamSocket-xboxone.cpp	bdPlatformStreamSocket
-142D17050	240	FUN_142d17050	1	WSAGetLastError,connect,htons						
-142D171E0	135	FUN_142d171e0	1	ioctlsocket,socket						
-142D172D0	198	FUN_142d172d0	1	WSAGetLastError,select						
-142D173A0	302	FUN_142d173a0	1	WSAGetLastError,select						
-142D17530	273	FUN_142d17530	1	WSAGetLastError,recv						
-142D176F0	305	FUN_142d176f0	1	WSAGetLastError,send						
+142D16EC0	127	bdPlatformStreamSocket::checkSocketException	2	select						
+142D16F40	172	bdPlatformStreamSocket::close	1	WSAGetLastError,closesocket					bdPlatform/bdPlatformSocket/bdPlatformStreamSocket-xboxone.cpp	bdPlatformStreamSocket
+142D17050	240	bdPlatformStreamSocket::connect	1	WSAGetLastError,connect,htons						
+142D171E0	135	bdPlatformStreamSocket::create	1	ioctlsocket,socket						
+142D172D0	198	bdPlatformStreamSocket::isWritable	1	WSAGetLastError,select						
+142D173A0	302	bdPlatformStreamSocket::isWritable	1	WSAGetLastError,select						
+142D17530	273	bdPlatformStreamSocket::receive	1	WSAGetLastError,recv						
+142D176F0	305	bdPlatformStreamSocket::send	1	WSAGetLastError,send						
 142D17A50	99	FUN_142d17a50	3						bdSocket/bdAddrHandleRefWrapper.cpp	bdAddrHandleRefWrapper
 142D749B0	210	FUN_142d749b0	0		curl_global_cleanup					
 142D74F20	328	FUN_142d74f20	1		curl_global_init					

@@ -58,6 +58,7 @@ class Winsock:
     bind: list = field(default_factory=list)
     connect: list = field(default_factory=list)
     close: list = field(default_factory=list)          # closesocket results; then 0
+    select: list = field(default_factory=list)         # (result, sets kept): which of read/write/except stay set
     send: list = field(default_factory=list)          # send results (None: all bytes); then all bytes
     sendto: list = field(default_factory=list)
     recv: list = field(default_factory=list)          # replies: bytes, or an int result; then SOCKET_ERROR
@@ -255,6 +256,29 @@ class Winsock:
             log("freeaddrinfo", arg(mu, 0))
             ret(mu, 0)
 
+        def fd_set(mu, a):
+            """(count, first sockets) of an fd_set (x64: u_int fd_count, then SOCKET fd_array[64] at +8)."""
+            if not a:
+                return None
+            n = struct.unpack("<I", read(mu, a, 4))[0]
+            return (n, *struct.unpack(f"<{min(n, 4)}Q", read(mu, a + 8, 8 * min(n, 4))))
+
+        def select(mu):
+            sets = [arg(mu, 1), arg(mu, 2), arg(mu, 3)]
+            log("select", _i32(arg(mu, 0)), *(fd_set(mu, a) for a in sets), read(mu, arg(mu, 4), 8) if arg(mu, 4) else None)
+            result, kept = take(s.select, (0, "rwe"))
+            for a, which in zip(sets, "rwe"):
+                if a and which not in kept:
+                    write(a, struct.pack("<I", 0))
+            ret(mu, result)
+
+        def fd_isset(mu):
+            sock, a = arg(mu, 0), arg(mu, 1)
+            n = struct.unpack("<I", read(mu, a, 4))[0]
+            members = struct.unpack(f"<{min(n, 64)}Q", read(mu, a + 8, 8 * min(n, 64)))
+            log("__WSAFDIsSet", sock)
+            ret(mu, 1 if sock in members else 0)
+
         def ntohs(mu):
             v = arg(mu, 0) & 0xFFFF
             log("ntohs", v)
@@ -316,10 +340,11 @@ class Winsock:
             "sendto": sendto, "recv": recv, "recvfrom": recvfrom, "htons": htons, "ntohl": ntohl,
             "inet_addr": inet_addr, "gethostname": gethostname, "gethostbyname": gethostbyname,
             "WSASocketA": wsasocket, "WSASendTo": wsasendto, "WSARecvFrom": wsarecvfrom, "getaddrinfo": getaddrinfo,
-            "freeaddrinfo": freeaddrinfo, "ntohs": ntohs, "htonl": htonl,
+            "freeaddrinfo": freeaddrinfo, "ntohs": ntohs, "htonl": htonl, "select": select,
+            "__WSAFDIsSet": fd_isset,
         }
         # imports this file does not use yet (the Store build's and the PS4 server's): refuse them, so no test silently gets the harness's `return 0`
-        for name in ("select", "getaddrinfo", "freeaddrinfo", "WSAIoctl", "inet_pton", "inet_ntop", "__WSAFDIsSet",
+        for name in ("getaddrinfo", "freeaddrinfo", "WSAIoctl", "inet_pton", "inet_ntop", "__WSAFDIsSet",
                      "ntohs", "WSARecvFrom", "WSASendTo", "WSASocketA", "WSACleanup", "getsockname", "getsockopt",
                      "WSASetLastError", "shutdown", "inet_ntoa", "accept", "listen", "WSASocketW"):
             fns.setdefault(name, _unmodelled(name))

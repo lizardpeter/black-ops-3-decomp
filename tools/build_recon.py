@@ -193,7 +193,9 @@ def main():
     # A stray symbol whose plain name matches an original function is a prototype mismatch (wrong parameter
     # or return type, constness, calling convention): the function would silently drop out of testing.
     def base_name(sym):
-        return sym[1:].split("@", 1)[0] if sym.startswith("?") else sym
+        # the name with its class scope (`?create@bdPlatformSocket@@...` -> `create@bdPlatformSocket`), so methods
+        # of different classes don't look like one function with two prototypes
+        return sym[1:].split("@@", 1)[0] if sym.startswith("?") else sym
     orig_names = {}
     for o in orig:
         orig_names.setdefault(base_name(o), []).append(o)

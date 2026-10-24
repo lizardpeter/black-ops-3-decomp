@@ -100,6 +100,18 @@ struct addrinfo
 	struct addrinfo *ai_next;
 };
 
+typedef struct fd_set
+{
+	unsigned int fd_count;
+	SOCKET fd_array[64];
+} fd_set;
+
+struct timeval
+{
+	long tv_sec;
+	long tv_usec;
+};
+
 typedef struct _WSABUF
 {
 	u_long len;
@@ -145,6 +157,8 @@ int sendto(SOCKET s, const char *buf, int len, int flags, const struct sockaddr 
 int recvfrom(SOCKET s, char *buf, int len, int flags, struct sockaddr *from, int *fromlen);
 u_short htons(u_short hostshort);
 u_short ntohs(u_short netshort);
+int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, const struct timeval *timeout);
+int __WSAFDIsSet(SOCKET fd, fd_set *set);
 SOCKET WSASocketA(int af, int type, int protocol, WSAPROTOCOL_INFOA *lpProtocolInfo, unsigned int g, unsigned long dwFlags);
 int WSARecvFrom(SOCKET s, WSABUF *lpBuffers, unsigned long dwBufferCount, unsigned long *lpNumberOfBytesRecvd,
                 unsigned long *lpFlags, struct sockaddr *lpFrom, int *lpFromlen, OVERLAPPED *lpOverlapped,
