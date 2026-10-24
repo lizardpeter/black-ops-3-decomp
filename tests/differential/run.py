@@ -105,6 +105,11 @@ def read_tsv(path):
 def main():
     only = sys.argv[sys.argv.index("-k") + 1] if "-k" in sys.argv else None
     mapsyms = {name: va for name, (va, kind) in symbols.table(BUILD).items()}
+    # a build without decorated names (BO3) resolves the reconstruction's decorated names by plain name; the
+    # build wrote the address it resolved to
+    for r in read_tsv(OUT / "recon.symbols.tsv"):
+        if r["symbol"] not in mapsyms and r.get("va"):
+            mapsyms[r["symbol"]] = int(r["va"], 16)
     recon = Image(OUT / "recon.dll")
     m = Machine(Image(original_exe(BUILD)), recon)
 
@@ -196,7 +201,7 @@ def main():
                 failed -= 1
                 known += 1
     unclaimed = 0
-    if BUILD != reference_build():
+    if BUILD != reference_build() or not symbols.has_map(BUILD):
         # A build without a MAP exports every function it has a name for, claimed or not. Only functions that
         # records/ claims for this build must pass; for the rest a failure is information (the function may
         # differ in this build, or need inputs and identifications nobody has written yet).

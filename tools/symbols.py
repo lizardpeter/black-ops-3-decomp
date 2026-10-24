@@ -32,8 +32,30 @@ def config():
 
 
 def reference_build() -> str:
-    """The first reference build with a MAP: tests and the default hybrid link use it."""
-    return next(b["id"] for b in config()["build"] if b.get("kind") == "reference" and "map" in b)
+    """The build tests and the default hybrid link use: the first reference build with a MAP, or, for a game with no
+    symbol build (BO3), the first retail build."""
+    builds = config().get("build", [])
+    ref = next((b["id"] for b in builds if b.get("kind") == "reference" and "map" in b), None)
+    return ref or next(b["id"] for b in builds if b.get("kind") == "retail")
+
+
+def base_name(sym: str) -> str:
+    """A decorated name's leading identifier (`?I_stricmp@@YAHPEBD0@Z` -> `I_stricmp`); a plain name unchanged."""
+    return sym[1:].split("@", 1)[0] if sym.startswith("?") else sym
+
+
+def resolve(build: str, sym: str):
+    """(va, kind) of a symbol in a build, or None. Exact first; in a build without a MAP, whose identifications
+    carry plain names only (BO3), a decorated name the reconstruction emits resolves through its plain name when
+    exactly one address has that name. The prototype is then the reconstruction's, unchecked against the
+    original: there is no original decorated name to check it with."""
+    t = table(build)
+    if sym in t:
+        return t[sym]
+    if has_map(build):
+        return None
+    hits = {v for k, v in t.items() if base_name(k) == base_name(sym)}
+    return hits.pop() if len(hits) == 1 else None
 
 
 def build_spec(build: str) -> dict:

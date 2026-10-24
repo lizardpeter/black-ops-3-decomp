@@ -119,6 +119,14 @@ def main():
 
     table = symbols.table(build)
     orig = {k: (va, kind == "function") for k, (va, kind) in table.items() if not k.startswith("t7s@")}
+    if not reference:
+        # identifications without decorated names (BO3): a decorated name the reconstruction defines or uses
+        # resolves through its plain name (tools/symbols.py resolve)
+        for sym in set(exports) | set(undefined):
+            if sym not in orig:
+                hit = symbols.resolve(build, sym)
+                if hit:
+                    orig[sym] = (hit[0], hit[1] == "function")
     statics = {k: va for k, (va, kind) in table.items() if k.startswith("t7s@")}
     # Only functions that exist in the original are exported (and tested). Anything else defined in src/
     # is an inline helper from a header; flag it so new names do not slip in unnoticed.
@@ -147,7 +155,8 @@ def main():
               ", ".join(sorted(other_file)))
     stray = [e for e in stray if e not in other_file]
     exports = [e for e in exports if e in orig and e not in other_file]
-    rows = [r for r in rows if r.split("\t")[0] in orig and r.split("\t")[0] not in other_file]
+    rows = [r + f"\t{orig[r.split(chr(9))[0]][0]:09X}" for r in rows
+            if r.split("\t")[0] in orig and r.split("\t")[0] not in other_file]
     # A stray symbol whose plain name matches an original function is a prototype mismatch (wrong parameter
     # or return type, constness, calling convention): the function would silently drop out of testing.
     def base_name(sym):
@@ -217,7 +226,7 @@ def main():
     run("lld-link", "/dll", "/noentry", "/nodefaultlib", "/base:0x180000000", "/fixed", f"/out:{dll}",
         *[f"/export:{e}" for e in exports],  # x64: no leading underscore on C names
         *objs, *env_objs, BUILD / "hybrid.obj")
-    (BUILD / "recon.symbols.tsv").write_text("symbol\tsource\n" + "\n".join(rows) + "\n")
+    (BUILD / "recon.symbols.tsv").write_text("symbol\tsource\tva\n" + "\n".join(rows) + "\n")
     unresolved = sum(1 for h in hybrid if "\tunresolved" in h)
     if unresolved and reference:
         print(f"note: {unresolved} symbol(s) not in {build} (trap; build/hybrid.tsv):",

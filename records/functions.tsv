@@ -1,1 +1,9 @@
 build	va	status	src	note
+BlackOps3_MSStore	1423B46B0	compiles	src/universal/q_shared.cpp	auto-generated differential cases pass (300); held below matches until hand-written string cases and mutation checks are done
+BlackOps3_MSStore	1423B4750	compiles	src/universal/q_shared.cpp	auto-generated differential cases pass (300); held below matches until hand-written string cases and mutation checks are done
+BlackOps3_MSStore	1423B47D0	compiles	src/universal/q_shared.cpp	auto-generated differential cases pass (300); held below matches until hand-written string cases and mutation checks are done
+BlackOps3_MSStore	1423B4830	compiles	src/universal/q_shared.cpp	auto-generated differential cases pass (300); held below matches until hand-written string cases and mutation checks are done
+BlackOps3_MSStore	1423B48E0	compiles	src/universal/q_shared.cpp	auto-generated differential cases pass (300); held below matches until hand-written string cases and mutation checks are done
+BlackOps3_MSStore	1423B4960	compiles	src/universal/q_shared.cpp	auto-generated differential cases pass (300); held below matches until hand-written string cases and mutation checks are done
+BlackOps3_MSStore	1423B4B30	compiles	src/universal/q_shared.cpp	auto-generated differential cases pass (300); held below matches until hand-written string cases and mutation checks are done
+BlackOps3_MSStore	1423B4BA0	compiles	src/universal/q_shared.cpp	auto-generated differential cases pass (300); held below matches until hand-written string cases and mutation checks are done

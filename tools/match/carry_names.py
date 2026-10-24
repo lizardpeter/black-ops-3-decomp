@@ -47,6 +47,9 @@ def main():
         if r["kind"] == "function" and not r["name"].startswith("sub_"):
             ref_name[(r["build"], r["va"])] = r
     already = {r["va"] for r in names if r["build"] == target and not carried(r)}
+    # a name an authored identification gives to another address in the target wins over a carried one: the
+    # match behind the carried name is then wrong (e.g. callee propagation pairing a neighbour)
+    authored_names = {r["name"] for r in names if r["build"] == target and not carried(r)}
 
     rows, stats = [], Counter()
     for p in pairs:
@@ -55,6 +58,9 @@ def main():
             continue
         if p["target_va"] in already:
             stats["target already named"] += 1
+            continue
+        if n["name"] in authored_names:
+            stats["name given elsewhere by an authored identification"] += 1
             continue
         stats[p["method"]] += 1
         conf = min(float(n["confidence"] or 0), float(p["confidence"] or 0))

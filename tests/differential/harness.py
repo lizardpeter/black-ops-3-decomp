@@ -90,9 +90,12 @@ class Image:
 
 
 def reference_build() -> str:
-    """The build tests run against: the first reference build with a MAP in target.toml."""
+    """The build tests run against: the first reference build with a MAP in target.toml, or the first retail build
+    when there is none (BO3)."""
     cfg = tomllib.loads((ROOT / "target.toml").read_text())
-    return next(b["id"] for b in cfg["build"] if b.get("kind") == "reference" and "map" in b)
+    builds = cfg.get("build", [])
+    ref = next((b["id"] for b in builds if b.get("kind") == "reference" and "map" in b), None)
+    return ref or next(b["id"] for b in builds if b.get("kind") == "retail")
 
 
 def original_exe(build: str | None = None) -> Path:
@@ -191,6 +194,23 @@ CRT_IMPORTS = {
 }
 
 
+def _ctype(fn):
+    """A <ctype.h> routine in the C locale (the game never calls setlocale): fn(c) for 0..255, the argument
+    unchanged otherwise (EOF, and the sign-extended chars that are undefined behaviour to pass)."""
+    def run(mu):
+        c = mu.reg_read(UC_X86_REG_RCX) & 0xFFFFFFFF
+        c = c - (1 << 32) if c & 0x80000000 else c
+        mu.reg_write(UC_X86_REG_RAX, (fn(c) if 0 <= c <= 255 else c) & 0xFFFFFFFF)
+    return run
+
+
+CTYPE_IMPORTS = {
+    "tolower": _ctype(lambda c: c + 32 if 65 <= c <= 90 else c),
+    "toupper": _ctype(lambda c: c - 32 if 97 <= c <= 122 else c),
+    "isdigit": _ctype(lambda c: 4 if 48 <= c <= 57 else 0),  # the UCRT's _DIGIT mask
+}
+
+
 class Writer:
     """Sets up state for one call: writes into the images are undone afterwards, and scratch memory
     (strings, argv arrays) is handed out from a region cleared before every call."""
@@ -255,6 +275,8 @@ class Machine:
         for name in self._stub_names.values():
             if name.split("!", 1)[1] in CRT_IMPORTS and name.startswith("api-ms-win-crt-math"):
                 self._import_fns[name.lower()] = CRT_IMPORTS[name.split("!", 1)[1]]
+            elif name.split("!", 1)[1] in CTYPE_IMPORTS and name.startswith("api-ms-win-crt-string"):
+                self._import_fns[name.lower()] = CTYPE_IMPORTS[name.split("!", 1)[1]]
             # memory routines (VCRUNTIME140.dll in the Store build) really copy and fill, with their writes journaled
             # like an instruction's, so they are compared and rolled back
             elif name.split("!", 1)[1] in ("memcpy", "memmove"):

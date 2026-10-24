@@ -16,13 +16,13 @@
     },
     {
       "file": "t7/sourcefiles.jsonl",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "rows": 0,
+      "sha256": "f88d7711169cb085872b1b5885a408add588cc5d5afd5d882eae6c6420b883d9",
+      "rows": 1,
       "cypher": "UNWIND {{ROWS}} AS r MERGE (s:Subsystem {name:r.subsystem}) MERGE (f:SourceFile {path:r.path}) MERGE (f)-[:PART_OF]->(s)"
     },
     {
       "file": "t7/functions-BlackOps3_MSStore.jsonl",
-      "sha256": "bf8562a3f9f7b104fbc3598306b28816549961a8f5e8b53750a1a0428ad8bfed",
+      "sha256": "8170950598e01a82760383bc5324e2b83ec18504632852039c5c0658e425e066",
       "rows": 42221,
       "cypher": "UNWIND {{ROWS}} AS r MATCH (b:Build {id:r.build}) MERGE (fn:Function {key:r.key}) SET fn.name = coalesce(fn.name, r.name), fn.symbol = r.symbol MERGE (fi:FunctionInstance {id:r.id}) SET fi.build=r.build, fi.va=r.va, fi.size=r.size, fi.status=r.status, fi.type=r.type, fi.src=r.src, fi.bytes_sha256=r.sha MERGE (fi)-[:INSTANCE_OF]->(fn) MERGE (fi)-[:IN_BUILD]->(b) WITH fn, r WHERE r.source <> '' MATCH (sf:SourceFile {path:r.source}) MERGE (fn)-[d:DEFINED_IN]->(sf) SET d.line=r.line"
     },

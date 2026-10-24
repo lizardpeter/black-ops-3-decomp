@@ -22,7 +22,7 @@ jobs:
       - name: Fetch the reference exe
         if: steps.recon.outputs.any == '1'
         run: |
-          ref=$(python3 -c "import tomllib; print(next(b['id'] for b in tomllib.load(open('target.toml','rb')).get('build', []) if b.get('kind')=='reference' and 'map' in b))")
+          ref=$(python3 -c "import sys; sys.path.insert(0, 'tools'); import symbols; print(symbols.reference_build())")
           python3 tools/fetch_originals.py "$ref" .work/originals --only exe
           for b in $(python3 tools/model.py retail-ids 2>/dev/null); do python3 tools/fetch_originals.py "$b" .work/originals --only exe; done
       - name: Compile reconstruction
