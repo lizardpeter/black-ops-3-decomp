@@ -39,5 +39,6 @@ jobs:
         run: |
           python3 tools/status.py >/dev/null
           python3 tools/graph/sync.py >/dev/null
-          git diff --exit-code -- STATUS.md analysis/graph || {
-            echo "::error::STATUS.md or analysis/graph is stale: run tools/status.py and tools/graph/sync.py"; exit 1; }
+          if [ -f .work/originals/BlackOps3_MSStore.exe ]; then T7_ORIGINALS=.work/originals python3 tools/net/surface.py >/dev/null; fi
+          git diff --exit-code -- STATUS.md analysis/graph analysis/*/net || {
+            echo "::error::generated files are stale: run tools/status.py, tools/graph/sync.py and tools/net/surface.py"; exit 1; }

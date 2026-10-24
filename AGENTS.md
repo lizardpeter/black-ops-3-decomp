@@ -30,6 +30,7 @@ analysis/<build>/    GENERATED per build
   disasm/<group>.asm   disassembly, same grouping
   pdb/ map/            symbol tables from a reference build's PDB / linker MAP
   match/               reference -> target identifications with evidence and confidence
+  net/                 online surface: network imports, server strings, functions that reach them (tools/net)
   logs/                pipeline logs
 records/             AUTHORED small facts; the only input to the graph besides analysis/
   functions.tsv        status of each reconstructed function, per build
@@ -39,7 +40,7 @@ src/ include/        AUTHORED faithful reconstruction, mirroring the original so
 enhanced/            AUTHORED (once needed) overrides for the enhanced build, same layout as src/
 tests/differential/  differential tests (x64 Unicorn harness)
 docs/<topic>.md      method notes and per-build findings. Topic names, never dates.
-tools/               pipeline scripts (unpack/, ghidra/, pdb/, match/, graph/, recon/, prior/ for community names)
+tools/               pipeline scripts (unpack/, ghidra/, pdb/, match/, graph/, recon/, net/, prior/ for community names)
 ```
 
 Folder and file names describe *what*, never *when*. Dates belong in commit messages.

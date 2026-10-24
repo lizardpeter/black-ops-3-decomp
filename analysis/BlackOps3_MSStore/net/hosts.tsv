@@ -1,0 +1,46 @@
+va	string	functions
+142DD7300	https://dev.umbrella.demonware.net	14299E7E0,1429AD600
+142DD7328	https://cert.umbrella.demonware.net	14299E7E0,1429AD600
+142DD7350	https://prod.umbrella.demonware.net	14299E7E0,1429AD600
+142DD7AA8	https://%s:%d/auth/	1429A0500
+142DD8778	https://dev.uno.demonware.net/v1.0	1429A2F40
+142DD87A0	https://cert.uno.demonware.net/v1.0	1429A2F40
+142DD87C8	https://prod.uno.demonware.net/v1.0	1429A2F40
+142DDF448	no http:// token found in discovery response	1429C0870
+142DDF780	<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">  <s:Body>  <u:%s xmlns:u="urn:schemas-upnp-org:service:%s">  %s</u:%s>  </s:Body>  </s:Envelope>  	1429C2200
+142DE01A0	Description [URLBase tag] is improperly formatted. Missing http://	1429C2010
+142E6A228	https://sessiondirectory.xboxlive.com/connections/	
+142E6A2D8	wss://rta.xboxlive.com/connect	
+142E6A2F8	rta.xboxlive.com.V2	
+142EFEEF0	http://support.activision.com/articles/en_US/FAQ/Updating-the-Windows-Media-Feature-Pack-for-Call-of-Duty-Black-Ops-III	141364180
+142F0C2A0	stun.us.demonware.net	1414F7F00,1429BFD00
+142F0C2B8	stun.eu.demonware.net	1414F7F00,1429BFD00
+142F0C2D0	stun.au.demonware.net	1414F7F00,1429BFD00
+142F0C3A0	stun.jp.demonware.net	1414F7F00,1429BFD00
+142F0C580	lsg.2710.prod.demonware.net	140050D40
+142F0C5A0	lsg.2705.dev.demonware.net	140050D40
+142F0C5C0	auth3.prod.demonware.net	140050D70
+142F0C638	auth3.dev.demonware.net	140050D70
+142F0C650	ops3-pc-qbl.prod.demonware.net	140050DA0
+142F0C670	t7-pc-qbl.dev.demonware.net	140050DA0
+142F29900	http://support.activision.com/articles/en_US/FAQ/Updating-Video-Card-Drivers-on-a-PC	141DA8F50
+142F362C8	https://mtx.demonware.net	141ED6610
+142F36628	https://elite.callofduty.com/elitetv	141EDC660
+142F39850	https://uat.callofduty.com/cod/registrationComplete	141F02B00
+142F39890	https://uat.callofduty.com/cod/register?inGameUmbrellaId=%s&inGameUmbrellaToken=%s&platform=%s&title=ops3	141F02B00
+142F399C0	http://support.activision.com/BO3content	141F02B00
+142F399F0	http://support.activision.com/BO3editors	141F02B00
+142F39A20	http://support.activision.com/BO3LootRecovery	141F02B00
+142F39A50	http://support.activision.com/BO3boosting	141F02B00
+142F39A80	http://support.activision.com/BO3peripherals	141F02B00
+142F39AB0	http://support.activision.com/BO3offense	141F02B00
+142F39AE0	http://support.activision.com/BO3glitching	141F02B00
+142F39B10	https://profile.callofduty.com/cod/registrationComplete	141F02B00
+142F39B50	https://profile.callofduty.com/cod/register?inGameUmbrellaId=%s&inGameUmbrellaToken=%s&platform=%s&title=ops3	141F02B00
+142F39BC0	http://support.activision.com/BO3piracy	141F02B00
+142F39BE8	http://support.activision.com/BO3stats	141F02B00
+142F39C10	http://support.activision.com	141F02B00
+142F39C30	https://www.callofduty.com/blackops3/status	141F02B00
+142F69780	https://www.google.com	142360D50
+142F69798	http://www.google.com	142360D50
+142F71190	https://ssl.google-analytics.com/collect	1423B87C0,1423B9AB0

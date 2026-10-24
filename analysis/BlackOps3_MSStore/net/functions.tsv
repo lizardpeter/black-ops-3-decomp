@@ -1,0 +1,689 @@
+va	size	name	callers	sockets	http	voice	netinfo	host	dw_file	dw_class
+140050D40	33	FUN_140050d40	0					lsg.2705.dev.demonware.net,lsg.2710.prod.demonware.net		
+140050D70	33	FUN_140050d70	0					auth3.dev.demonware.net,auth3.prod.demonware.net		
+140050DA0	33	FUN_140050da0	0					ops3-pc-qbl.prod.demonware.net,t7-pc-qbl.dev.demonware.net		
+141364180	175	FUN_141364180	1					http://support.activision.com/articles/en_US/FAQ/Updating-the-Windows-Media-Feature-Pack-for-Call-of-Duty-Black-Ops-III		
+14149E620	175	FUN_14149e620	1	htons,inet_addr,sendto						
+14149E870	590	FUN_14149e870	1	WSAGetLastError,WSAStartup,ioctlsocket,recvfrom,socket						
+1414F7F00	1586	FUN_1414f7f00	3	setsockopt				stun.au.demonware.net,stun.eu.demonware.net,stun.jp.demonware.net,stun.us.demonware.net		
+1414F9E80	501	FUN_1414f9e80	1	ntohl						
+1414FA080	768	FUN_1414fa080	5	ntohl						
+1414FA380	501	FUN_1414fa380	4	htonl						
+1414FA820	478	FUN_1414fa820	3	htonl						
+1414FABA0	653	FUN_1414faba0	2	ntohl						
+141507FE0	156	FUN_141507fe0	2						bdLobby/bdLobbyCommon/bdBufferParams.inl	bdBufferParams
+1415081F0	1739	FUN_1415081f0	0						bdLobby/bdLobbyCommon/bdBufferParams.inl	bdBufferParams
+14151BAF0	416	FUN_14151baf0	1	htonl						
+141DA8F50	103	FUN_141da8f50	1					http://support.activision.com/articles/en_US/FAQ/Updating-Video-Card-Drivers-on-a-PC		
+141ED5630	229	FUN_141ed5630	1	WSAStartup						
+141ED6610	948	FUN_141ed6610	1					https://mtx.demonware.net		
+141EDC660	1328	FUN_141edc660	1					https://elite.callofduty.com/elitetv		
+141EE8070	1286	FUN_141ee8070	2			ChatManagerAddLocalUser,ChatManagerInitialize,GameChatFailFastWithInform				
+141EE8580	627	FUN_141ee8580	2			ChatManagerCleanup,GameChatFailFastWithInform				
+141EE8800	621	FUN_141ee8800	1			ChatManagerAddRemoteUser,GameChatFailFastWithInform				
+141EE8A70	937	FUN_141ee8a70	4			ChatManagerGetChatUsers,ChatManagerRemoveUser,ChatUserGetXboxUserId,GameChatFailFastWithInform				
+141EE8E20	952	FUN_141ee8e20	1			ChatManagerGetChatUsers,ChatUserGetIsLocal,ChatUserGetXboxUserId,GameChatFailFastWithInform				
+141EE9460	489	FUN_141ee9460	1			ChatManagerFinishProcessingStateChanges,ChatManagerStartProcessingStateChanges,GameChatFailFastWithInform				
+141EE98E0	1321	FUN_141ee98e0	1			ChatManagerFinishProcessingDataFrames,ChatManagerStartProcessingDataFrames,GameChatFailFastWithInform				
+141EE9E10	309	FUN_141ee9e10	0			ChatManagerProcessIncomingPacket,GameChatFailFastWithInform				
+141EE9F50	800	FUN_141ee9f50	1			ChatManagerGetChatUsers,ChatUserGetIsLocal,ChatUserSetAudioRenderVolume,GameChatFailFastWithInform				
+141EEA270	1025	FUN_141eea270	1			ChatManagerGetChatUsers,ChatUserGetEffectiveCommunicationRelationship,ChatUserGetIsLocal,ChatUserGetXboxUserId,GameChatFailFastWithInform				
+141F02B00	3288	FUN_141f02b00	1					http://support.activision.com,http://support.activision.com/BO3LootRecovery,http://support.activision.com/BO3boosting,http://support.activision.com/BO3content,http://support.activision.com/BO3editors,http://support.activision.com/BO3glitching,http://support.activision.com/BO3offense,http://support.activision.com/BO3peripherals,http://support.activision.com/BO3piracy,http://support.activision.com/BO3stats,https://profile.callofduty.com/cod/register?inGameUmbrellaId=%s&inGameUmbrellaToken=%s&platform=%s&title=ops3,https://profile.callofduty.com/cod/registrationComplete,https://uat.callofduty.com/cod/register?inGameUmbrellaId=%s&inGameUmbrellaToken=%s&platform=%s&title=ops3,https://uat.callofduty.com/cod/registrationComplete,https://www.callofduty.com/blackops3/status		
+141F219D0	175	FUN_141f219d0	6				WlanCloseHandle,WlanEnumInterfaces,WlanFreeMemory,WlanOpenHandle			
+141F97310	1765	FUN_141f97310	0	inet_addr						
+141FA6A20	715	FUN_141fa6a20	4				GetAdaptersInfo			
+141FF7610	1534	FUN_141ff7610	2			ChatManagerProcessIncomingPacket,GameChatFailFastWithInform				
+142007DA0	835	FUN_142007da0	1	gethostbyname,inet_addr,ntohl,ntohs						
+142241240	182	FUN_142241240	2	WSAStartup						
+1422414C0	374	FUN_1422414c0	1	gethostbyname,inet_addr,ntohl,ntohs						
+142360D50	100	FUN_142360d50	0					http://www.google.com,https://www.google.com		
+1423B5210	259	FUN_1423b5210	1	htonl						
+1423B5320	947	FUN_1423b5320	0	closesocket,connect,htonl,htons,inet_addr,recvfrom,select,sendto,socket						
+1423B87C0	982	FUN_1423b87c0	1		curl_easy_cleanup,curl_easy_getinfo,curl_easy_init,curl_easy_perform,curl_easy_setopt			https://ssl.google-analytics.com/collect		
+1423B9AB0	448	FUN_1423b9ab0	1		curl_global_init			https://ssl.google-analytics.com/collect		
+1423F2450	423	Sys_GetPacket	2	ntohl,ntohs,recvfrom						
+1423F2600	576	NET_SendPacket	15	htonl,htons,sendto						
+1423F2840	632	FUN_1423f2840	1	gethostbyname,gethostname						
+1423F2DA0	422	FUN_1423f2da0	1	closesocket						
+142975D00	115	FUN_142975d00	0						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142975D80	428	FUN_142975d80	0						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142975F50	150	FUN_142975f50	7						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+1429760A0	325	FUN_1429760a0	4						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+1429761F0	220	FUN_1429761f0	23						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+1429762D0	193	FUN_1429762d0	15						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+1429763A0	902	FUN_1429763a0	13						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142976730	191	FUN_142976730	2						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+1429767F0	189	FUN_1429767f0	1						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+1429768B0	187	FUN_1429768b0	8						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142976970	189	FUN_142976970	7						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142976A30	305	FUN_142976a30	43						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142976B70	187	FUN_142976b70	19						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142976C30	189	FUN_142976c30	9						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142976CF0	187	FUN_142976cf0	61						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142976DB0	189	FUN_142976db0	39						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142976EB0	192	FUN_142976eb0	19						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142976F80	289	FUN_142976f80	11						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+1429773B0	106	FUN_1429773b0	7						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142977420	106	FUN_142977420	1						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142977490	281	FUN_142977490	24						bdCore/bdContainers/bdByteBuffer.cpp	bdByteBuffer
+142979000	998	FUN_142979000	1						bdCore/bdContainers/bdKeyValueStream.cpp	bdKeyValueStream
+1429795F0	235	FUN_1429795f0	18						bdCore/bdContainers/bdKeyValueStream.cpp	bdKeyValueStream
+14297A670	98	FUN_14297a670	7						bdCore/bdUtilities/bdRandom.cpp	bdRandom
+14297A7C0	90	FUN_14297a7c0	1						bdCore/bdUtilities/bdRandom.cpp	bdRandom
+14297A820	826	FUN_14297a820	2						bdCore/bdUtilities/bdBase64.cpp	bdBase64
+14297ABA0	415	FUN_14297aba0	2						bdCore/bdUtilities/bdBase64.cpp	bdBase64
+14297AD80	165	FUN_14297ad80	1						bdCore/bdUtilities/bdBase64.cpp	
+14297B660	189	FUN_14297b660	0						bdCore/bdSocket/bdSocket.cpp	bdSocket
+14297B750	96	FUN_14297b750	1						bdCore/bdSocket/bdSocket.cpp	bdSocket
+14297C5F0	169	FUN_14297c5f0	1						bdCore/bdCore.cpp	bdCore
+14297CDE0	185	FUN_14297cde0	65						bdCore/bdUtilities/bdBytePacker.cpp	bdBytePacker
+14297CEA0	414	FUN_14297cea0	1						bdCore/bdUtilities/bdBytePacker.cpp	bdBytePacker
+14297D040	137	FUN_14297d040	70						bdCore/bdUtilities/bdBytePacker.cpp	bdBytePacker
+14297D0D0	312	FUN_14297d0d0	1						bdCore/bdUtilities/bdBytePacker.cpp	bdBytePacker
+14297D250	128	FUN_14297d250	3						bdCore/bdCrypto/bdHashTiger192.cpp	bdHashTiger192
+14297D340	278	FUN_14297d340	3						bdCore/bdCrypto/bdHashTiger192.cpp	bdHashTiger192
+14297D9D0	195	FUN_14297d9d0	4						bdCore/bdMemory/bdMallocMemory-std.cpp	bdMallocMemory
+14297DD70	187	FUN_14297dd70	6						bdHTTP/bdDownloadInterceptor.cpp	bdDownloadInterceptor
+14297DF50	201	FUN_14297df50	0						bdLobby/bdLobbyCommon/bdSerializable.cpp	bdSerializable
+14297E320	246	FUN_14297e320	4						bdLobby/bdStats/bdStatsInfo.cpp	bdStatsInfo
+14297E500	168	FUN_14297e500	3						bdLobby/bdStats/bdStatsInfo.cpp	bdStatsInfo
+14297E5F0	470	FUN_14297e5f0	2						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdStats/bdStats.cpp	bdStats,bdTaskParams
+14297E7D0	818	FUN_14297e7d0	1						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdStats/bdStats.cpp	bdStats,bdTaskParams
+14297EB10	491	FUN_14297eb10	1						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdStats/bdStats.cpp	bdStats,bdTaskParams
+14297ED00	493	FUN_14297ed00	3						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdStats/bdStats.cpp	bdStats,bdTaskParams
+14297EEF0	250	FUN_14297eef0	7						bdLobby/bdStats/bdStats.cpp	bdStats
+14297F200	556	FUN_14297f200	0						bdLobby/bdRemoteTaskManager/bdRemoteTask.cpp	bdRemoteTask
+14297F470	205	FUN_14297f470	0						bdLobby/bdRemoteTaskManager/bdRemoteTask.cpp	bdRemoteTask
+14297F560	358	FUN_14297f560	0						bdLobby/bdRemoteTaskManager/bdRemoteTask.cpp	bdRemoteTask
+14297F6D0	390	FUN_14297f6d0	1						bdLobby/bdRemoteTaskManager/bdRemoteTask.cpp	bdRemoteTask
+14297FA20	426	FUN_14297fa20	1						bdLobby/bdTitleUtilities/bdTitleUtilities.cpp	bdTitleUtilities
+14297FBD0	283	FUN_14297fbd0	1						bdLobby/bdTitleUtilities/bdTitleUtilities.cpp	bdTitleUtilities
+14297FCF0	615	FUN_14297fcf0	4						bdLobby/bdTitleUtilities/bdTitleUtilities.cpp	bdTitleUtilities
+14297FF60	407	FUN_14297ff60	1						bdLobby/bdTitleUtilities/bdTitleUtilities.cpp	bdTitleUtilities
+142980340	276	FUN_142980340	1						bdLobby/bdEventLog/bdEventLog.cpp	bdEventLog
+142980460	231	FUN_142980460	1						bdLobby/bdEventLog/bdEventLog.cpp	bdEventLog
+142980570	633	FUN_142980570	2						bdLobby/bdEventLog/bdEventLog.cpp,bdLobby/bdLobbyCommon/bdTaskParams.inl	bdEventLog,bdTaskParams
+142980B40	594	FUN_142980b40	1						bdLobby/bdKeyArchive/bdKeyArchive.cpp,bdLobby/bdLobbyCommon/bdTaskParams.inl	bdKeyArchive,bdTaskParams
+142980DA0	401	FUN_142980da0	1						bdLobby/bdKeyArchive/bdKeyArchive.cpp	bdKeyArchive
+142981390	220	FUN_142981390	1						bdLobby/bdReward/bdRewardEventJSON.cpp	bdRewardEventJSON
+142981500	584	FUN_142981500	1						bdLobby/bdMarketingComms/bdMarketingComms.cpp	bdMarketingComms
+142981750	697	FUN_142981750	1						bdLobby/bdLobbyCommon/bdBufferParams.inl,bdLobby/bdMarketingComms/bdMarketingComms.cpp	bdBufferParams,bdMarketingComms
+142981DD0	350	FUN_142981dd0	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+142981F30	396	FUN_142981f30	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+1429820C0	620	FUN_1429820c0	1						bdLobby/bdLobbyCommon/bdBufferParams.inl,bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdMarketplace/bdMarketplace.cpp	bdBufferParams,bdMarketplace,bdTaskParams
+142982380	1876	FUN_142982380	1						bdLobby/bdLobbyCommon/bdBufferParams.inl,bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdMarketplace/bdMarketplace.cpp	bdBufferParams,bdMarketplace,bdTaskParams
+142982BC0	524	FUN_142982bc0	1						bdLobby/bdLobbyCommon/bdBufferParams.inl,bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdMarketplace/bdMarketplace.cpp	bdBufferParams,bdMarketplace,bdTaskParams
+142982DD0	325	FUN_142982dd0	7						bdLobby/bdLobbyCommon/bdBufferParams.inl,bdLobby/bdMarketplace/bdMarketplace.cpp	bdBufferParams,bdMarketplace
+142982F20	523	FUN_142982f20	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+1429831C0	512	FUN_1429831c0	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+142983470	356	FUN_142983470	1						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdMatchMaking/bdMatchMaking.cpp	bdMatchMaking,bdTaskParams
+1429835E0	231	FUN_1429835e0	1						bdLobby/bdMatchMaking/bdMatchMaking.cpp	bdMatchMaking
+1429836D0	461	FUN_1429836d0	1						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdMatchMaking/bdMatchMaking.cpp	bdMatchMaking,bdTaskParams
+1429838A0	259	FUN_1429838a0	1						bdLobby/bdMatchMaking/bdMatchMaking.cpp	bdMatchMaking
+142983E10	348	FUN_142983e10	1						bdLobby/bdMatchMaking/bdMatchMakingInfo.cpp	bdMatchMakingInfo
+142983F70	356	FUN_142983f70	1						bdLobby/bdMatchMaking/bdMatchMakingInfo.cpp	bdMatchMakingInfo
+142984210	450	FUN_142984210	1						bdLobby/bdRelayService/bdRelayService.cpp	bdRelayService
+142984450	203	FUN_142984450	1						bdCore/bdContainers/bdHashMap.inl	
+142984520	203	FUN_142984520	1						bdCore/bdContainers/bdHashMap.inl	
+1429845F0	203	FUN_1429845f0	1						bdCore/bdContainers/bdHashMap.inl	
+1429846C0	203	FUN_1429846c0	1						bdCore/bdContainers/bdHashMap.inl	
+142984790	203	FUN_142984790	1						bdCore/bdContainers/bdHashMap.inl	
+142984860	203	FUN_142984860	1						bdCore/bdContainers/bdHashMap.inl	
+142984930	203	FUN_142984930	1						bdCore/bdContainers/bdHashMap.inl	
+142984A00	203	FUN_142984a00	1						bdCore/bdContainers/bdHashMap.inl	
+142984AD0	203	FUN_142984ad0	1						bdCore/bdContainers/bdHashMap.inl	
+142984BA0	203	FUN_142984ba0	1						bdCore/bdContainers/bdHashMap.inl	
+142986A20	620	FUN_142986a20	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142986CD0	172	FUN_142986cd0	2						bdLobby/bdLobbyService.cpp	bdLobbyService
+142986D80	174	FUN_142986d80	2						bdLobby/bdLobbyService.cpp	bdLobbyService
+142986E30	166	FUN_142986e30	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142986EE0	172	FUN_142986ee0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142986F90	172	FUN_142986f90	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142987040	381	FUN_142987040	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+1429871C0	166	FUN_1429871c0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+1429874F0	166	FUN_1429874f0	2						bdLobby/bdLobbyService.cpp	bdLobbyService
+1429875A0	624	FUN_1429875a0	2						bdLobby/bdLobbyService.cpp	bdLobbyService
+142987810	475	FUN_142987810	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+1429879F0	673	FUN_1429879f0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142987CA0	166	FUN_142987ca0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142987D50	174	FUN_142987d50	2						bdLobby/bdLobbyService.cpp	bdLobbyService
+142987E00	166	FUN_142987e00	4						bdLobby/bdLobbyService.cpp	bdLobbyService
+142987EB0	475	FUN_142987eb0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142988100	172	FUN_142988100	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+1429881B0	475	FUN_1429881b0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142988390	172	FUN_142988390	2						bdLobby/bdLobbyService.cpp	bdLobbyService
+142988450	166	FUN_142988450	5						bdLobby/bdLobbyService.cpp	bdLobbyService
+142988540	475	FUN_142988540	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142988720	172	FUN_142988720	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+1429887E0	475	FUN_1429887e0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+1429889C0	166	FUN_1429889c0	2						bdLobby/bdLobbyService.cpp	bdLobbyService
+142988B20	172	FUN_142988b20	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142988BD0	458	FUN_142988bd0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142988DA0	593	FUN_142988da0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142989000	492	FUN_142989000	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+1429893A0	725	FUN_1429893a0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142989680	586	FUN_142989680	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+1429898D0	569	FUN_1429898d0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142989B10	659	FUN_142989b10	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+142989DB0	659	FUN_142989db0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298A050	586	FUN_14298a050	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298A2A0	522	FUN_14298a2a0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298A4B0	535	FUN_14298a4b0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298A6D0	522	FUN_14298a6d0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298A8E0	681	FUN_14298a8e0	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298AB90	7671	FUN_14298ab90	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298CA80	838	FUN_14298ca80	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298CF70	394	FUN_14298cf70	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298D100	618	FUN_14298d100	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298D370	561	FUN_14298d370	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298D5B0	211	FUN_14298d5b0	0						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298D690	128	FUN_14298d690	0						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298D710	891	FUN_14298d710	1						bdLobby/bdLobbyService.cpp	bdLobbyService
+14298E690	419	FUN_14298e690	1						bdLobby/bdMessaging/bdMessaging.cpp	bdMessaging
+14298E840	505	FUN_14298e840	1						bdLobby/bdMessaging/bdMessaging.cpp	bdMessaging
+14298F100	405	FUN_14298f100	4						bdLobby/bdLobbyCommon/bdAuthCommon.cpp	bdAuthUtility
+14298F740	422	FUN_14298f740	3						bdLobby/bdRichPresence/bdRichPresenceService.cpp	bdRichPresenceService
+14298F8F0	380	FUN_14298f8f0	1						bdLobby/bdRichPresence/bdRichPresenceService.cpp	bdRichPresenceService
+14298FD70	367	FUN_14298fd70	1						bdLobby/bdPublisherVariables/bdPublisherVariables.cpp	bdPublisherVariables
+14298FEE0	382	FUN_14298fee0	1						bdLobby/bdPublisherVariables/bdPublisherVariables.cpp	bdPublisherVariables
+142990060	278	FUN_142990060	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+142990180	340	FUN_142990180	1						bdLobby/bdPublisherVariables/bdPublisherVariables.cpp	bdPublisherVariables
+1429904A0	200	FUN_1429904a0	0						bdLobby/bdMatchMaking/bdPerformanceValue.cpp	bdPerformanceValue
+1429907A0	714	FUN_1429907a0	2						bdLobby/bdContentStreaming/bdContentStreaming.cpp	bdContentStreaming
+142993FC0	1539	FUN_142993fc0	3						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+1429945F0	403	FUN_1429945f0	2						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+1429947B0	107	FUN_1429947b0	0						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+142994820	217	FUN_142994820	1						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+142994960	1799	FUN_142994960	1						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+142995070	2044	FUN_142995070	1						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+1429958F0	129	FUN_1429958f0	1						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+142995980	368	FUN_142995980	8						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+142995AF0	2648	FUN_142995af0	1						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+142996550	479	FUN_142996550	1						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+142996730	518	FUN_142996730	2						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+142996940	831	FUN_142996940	0						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+142996C80	1101	FUN_142996c80	2						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+1429970D0	649	FUN_1429970d0	1						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+142997360	269	FUN_142997360	5						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+142997470	354	FUN_142997470	4						bdLobby/bdContentStreaming/bdContentStreamingBase.cpp	bdContentStreamingBase
+142997730	376	FUN_142997730	1						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdStorage/bdStorage.cpp	bdStorage,bdTaskParams
+1429978B0	523	FUN_1429978b0	1						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdStorage/bdStorage.cpp	bdStorage,bdTaskParams
+142997AC0	358	FUN_142997ac0	2						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdStorage/bdStorage.cpp	bdStorage,bdTaskParams
+142997C30	528	FUN_142997c30	1						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdStorage/bdStorage.cpp	bdStorage,bdTaskParams
+142997E50	544	FUN_142997e50	1						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdStorage/bdStorage.cpp	bdStorage,bdTaskParams
+142998080	440	FUN_142998080	1						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdStorage/bdStorage.cpp	bdStorage,bdTaskParams
+142998240	627	FUN_142998240	1						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdStorage/bdStorage.cpp	bdStorage,bdTaskParams
+14299A770	463	FUN_14299a770	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299AD40	612	FUN_14299ad40	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299AFB0	431	FUN_14299afb0	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299B160	426	FUN_14299b160	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299B310	513	FUN_14299b310	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299B520	581	FUN_14299b520	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299B770	426	FUN_14299b770	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299B920	366	FUN_14299b920	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299BA90	592	FUN_14299ba90	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299BCF0	376	FUN_14299bcf0	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299BE70	347	FUN_14299be70	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299BFD0	429	FUN_14299bfd0	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299C7A0	459	FUN_14299c7a0	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299C970	422	FUN_14299c970	1						bdLobby/bdLobbyCommon/bdTaskParams.inl	bdTaskParams
+14299CE60	1108	FUN_14299ce60	1						bdLobby/bdLobbyCommon/bdTaskParams.inl,bdLobby/bdTeams/bdTeams.cpp	bdTaskParams,bdTeams
+14299DD60	1213	FUN_14299dd60	1						bdLobby/bdSingleIdentity/bdUmbrella.cpp	bdUmbrella
+14299E220	1177	FUN_14299e220	1						bdLobby/bdSingleIdentity/bdUmbrella.cpp	bdUmbrella
+14299E7E0	126	FUN_14299e7e0	0					https://cert.umbrella.demonware.net,https://dev.umbrella.demonware.net,https://prod.umbrella.demonware.net	bdLobby/bdSingleIdentity/bdUmbrella.cpp	bdUmbrella
+14299EB40	201	FUN_14299eb40	3						bdLobby/bdSingleIdentity/bdSingleIdentityBase.cpp	bdSingleIdentityBase
+14299ED80	471	FUN_14299ed80	3						bdLobby/bdSingleIdentity/bdSingleIdentityBase.cpp	bdSingleIdentityBase
+14299EF60	467	FUN_14299ef60	1						bdLobby/bdSingleIdentity/bdSingleIdentityBase.cpp	bdSingleIdentityBase
+14299F140	408	FUN_14299f140	1						bdLobby/bdSingleIdentity/bdSingleIdentityBase.cpp	bdSingleIdentityBase
+14299F2E0	303	FUN_14299f2e0	2						bdLobby/bdSingleIdentity/bdSingleIdentityBase.cpp	bdSingleIdentityBase
+14299F410	274	FUN_14299f410	9						bdLobby/bdSingleIdentity/bdSingleIdentityBase.cpp	bdSingleIdentityBase
+14299F9E0	370	FUN_14299f9e0	0						bdLobby/bdAuth.cpp	bdAuth
+14299FB60	1898	FUN_14299fb60	1						bdLobby/bdAuth.cpp	bdAuth
+1429A02D0	514	FUN_1429a02d0	1						bdLobby/bdAuth.cpp	bdAuth
+1429A0500	1530	FUN_1429a0500	1					https://%s:%d/auth/	bdLobby/bdAuth.cpp	bdAuth
+1429A0DB0	335	FUN_1429a0db0	3						bdLobby/bdLoginQueue.cpp	bdLoginQueue
+1429A0F00	567	FUN_1429a0f00	0						bdLobby/bdLoginQueue.cpp	bdLoginQueue
+1429A1140	104	FUN_1429a1140	0						bdLobby/bdLoginQueue.cpp	bdLoginQueue
+1429A1310	605	FUN_1429a1310	0						bdLobby/bdLoginQueue.cpp	bdLoginQueue
+1429A1570	512	FUN_1429a1570	0						bdLobby/bdLoginQueue.cpp	bdLoginQueue
+1429A1770	103	FUN_1429a1770	1						bdLobby/bdLoginQueue.cpp	bdLoginQueue
+1429A17E0	746	FUN_1429a17e0	3						bdLobby/bdLoginQueue.cpp	bdLoginQueue
+1429A1B60	319	FUN_1429a1b60	1						bdLobby/bdSingleIdentity/bdUnoSubscription.cpp	bdUnoSubscriptionsEnabled
+1429A20B0	1061	FUN_1429a20b0	1						bdLobby/bdSingleIdentity/bdUno.cpp	bdUno
+1429A24E0	1222	FUN_1429a24e0	1						bdLobby/bdSingleIdentity/bdUno.cpp	bdUno
+1429A2A40	1255	FUN_1429a2a40	1						bdLobby/bdSingleIdentity/bdUno.cpp	bdUno
+1429A2F40	126	FUN_1429a2f40	0					https://cert.uno.demonware.net/v1.0,https://dev.uno.demonware.net/v1.0,https://prod.uno.demonware.net/v1.0	bdLobby/bdSingleIdentity/bdUno.cpp	bdUno
+1429A2FF0	709	FUN_1429a2ff0	1						bdLobby/bdSingleIdentity/bdUno.cpp	bdUno
+1429A32D0	1391	FUN_1429a32d0	1						bdLobby/bdSingleIdentity/bdUno.cpp	bdUno
+1429A3840	215	FUN_1429a3840	2						bdLobby/bdSingleIdentity/bdUno.cpp	bdUno
+1429A39E0	208	FUN_1429a39e0	1						bdLobby/bdAuth/bdAuthXboxOne.cpp	bdAuthXboxOne
+1429A3B20	354	FUN_1429a3b20	0						bdLobby/bdAuth/bdAuthXboxOne.cpp	bdAuthXboxOne
+1429A3C90	107	FUN_1429a3c90	0						bdLobby/bdAuth/bdAuthXboxOne.cpp	bdAuthXboxOne
+1429A3D30	826	FUN_1429a3d30	0						bdLobby/bdAuth/bdAuthXboxOne.cpp	bdAuthXboxOne
+1429A4530	689	FUN_1429a4530	1						bdLobby/bdRemoteTaskManager/bdRemoteTaskManager.cpp	bdRemoteTaskManager
+1429A48D0	719	FUN_1429a48d0	1						bdLobby/bdRemoteTaskManager/bdRemoteTaskManager.cpp	bdRemoteTaskManager
+1429A4DC0	396	FUN_1429a4dc0	1						bdLobby/bdRemoteTaskManager/bdRemoteTaskManager.cpp	bdRemoteTaskManager
+1429A5830	569	FUN_1429a5830	1						bdLobby/bdLobbyCommon/bdBufferParams.inl,bdLobby/bdRemoteTaskManager/bdRemoteTaskManager.cpp	bdBufferParams,bdRemoteTaskManager
+1429A5FA0	120	FUN_1429a5fa0	3						bdLobby/bdLobbyCommon/bdEnvironmentString.cpp	bdEnvironmentString
+1429A6040	312	FUN_1429a6040	1						bdLobby/bdDML/bdDML.cpp,bdLobby/bdLobbyCommon/bdTaskParams.inl	bdDML,bdTaskParams
+1429A6550	254	FUN_1429a6550	0						bdLobby/bdVoteRank/bdRatingInfo.cpp	bdCategorizedRatingInfo
+1429A6800	424	FUN_1429a6800	1						bdLobby/bdVoteRank/bdVoteRank.cpp	bdVoteRank
+1429A6CA0	238	FUN_1429a6ca0	10						bdLobby/bdLobbyCommon/bdBufferParams.cpp	bdBufferParams
+1429A6D90	144	FUN_1429a6d90	2						bdLobby/bdLobbyCommon/bdBufferParams.cpp	bdBufferParams
+1429A6E20	185	FUN_1429a6e20	14						bdLobby/bdLobbyCommon/bdBufferParams.cpp	bdBufferParams
+1429A6EE0	356	FUN_1429a6ee0	20						bdLobby/bdLobbyCommon/bdBufferParams.cpp	bdBufferParams
+1429A7050	149	FUN_1429a7050	2						bdLobby/bdLobbyCommon/bdBufferParams.cpp	bdBufferParams
+1429A70F0	203	FUN_1429a70f0	2						bdLobby/bdLobbyCommon/bdBufferParams.cpp	bdBufferParams
+1429A71C0	338	FUN_1429a71c0	2						bdLobby/bdLobbyCommon/bdBufferParams.cpp	bdBufferParams
+1429A7450	77	FUN_1429a7450	0						bdLobby/bdMatchMaking/bdSessionParams.cpp	bdSessionParams
+1429A7840	164	FUN_1429a7840	1						bdLobby/bdProfiles/bdProfileInfo.cpp	bdProfileInfo
+1429A7B20	74	FUN_1429a7b20	1						bdLobby/bdAntiCheat/bdConsoleID.cpp	bdConsoleID
+1429A7BC0	482	FUN_1429a7bc0	1						bdLobby/bdAntiCheat/bdAntiCheat.cpp,bdLobby/bdLobbyCommon/bdTaskParams.inl	bdAntiCheat,bdTaskParams
+1429A7DB0	1060	FUN_1429a7db0	1						bdLobby/bdAntiCheat/bdAntiCheat.cpp,bdLobby/bdLobbyCommon/bdTaskParams.inl	bdAntiCheat,bdTaskParams
+1429A81E0	729	FUN_1429a81e0	1						bdLobby/bdAntiCheat/bdAntiCheat.cpp	bdAntiCheat
+1429AA420	207	FUN_1429aa420	0						bdLobby/bdTeams/bdTeamMemberWithPrivileges.cpp	bdTeamMemberWithPrivileges
+1429AA690	389	FUN_1429aa690	1						bdLobby/bdTeams/bdTeamInfo.cpp	bdTeamInfo
+1429AAF50	207	FUN_1429aaf50	0						bdLobby/bdTeams/bdTeamInfoWithAutoJoin.cpp	bdTeamInfoWithAutoJoin
+1429AC1C0	560	FUN_1429ac1c0	1						bdLobby/bdCounter/bdCounter.cpp,bdLobby/bdLobbyCommon/bdTaskParams.inl	bdCounter,bdTaskParams
+1429AC400	246	FUN_1429ac400	1						bdLobby/bdCounter/bdCounter.cpp	bdCounter
+1429AC7F0	451	FUN_1429ac7f0	1						bdLobby/bdGroup/bdGroup.cpp,bdLobby/bdLobbyCommon/bdTaskParams.inl	bdGroup,bdTaskParams
+1429AC9C0	329	FUN_1429ac9c0	1						bdLobby/bdGroup/bdGroup.cpp	bdGroup
+1429ACD20	426	FUN_1429acd20	2						bdLobby/bdProfiles/bdProfiles.cpp	bdProfiles
+1429ACED0	300	FUN_1429aced0	1						bdLobby/bdProfiles/bdProfiles.cpp	bdProfiles
+1429AD2A0	835	FUN_1429ad2a0	1						bdLobby/bdSingleIdentity/bdRegulationsService.cpp	bdRegulationsService
+1429AD600	126	FUN_1429ad600	0					https://cert.umbrella.demonware.net,https://dev.umbrella.demonware.net,https://prod.umbrella.demonware.net	bdLobby/bdSingleIdentity/bdRegulationsService.cpp	bdRegulationsService
+1429AD680	865	FUN_1429ad680	1						bdLobby/bdSingleIdentity/bdRegulationsService.cpp	bdRegulationsService
+1429AD9F0	1247	FUN_1429ad9f0	1						bdLobby/bdSingleIdentity/bdRegulationsService.cpp	bdRegulationsService
+1429ADF80	353	FUN_1429adf80	0						bdLobby/bdSingleIdentity/bdRegulationPreferences.cpp	bdRegulationPreference
+1429AE2A0	245	FUN_1429ae2a0	0						bdLobby/bdSingleIdentity/bdUmbrellaProviderAccount.cpp	bdUmbrellaProviderAccount
+1429AE4E0	646	FUN_1429ae4e0	0						bdLobby/bdSingleIdentity/bdUmbrellaUserAccount.cpp	bdUmbrellaUserAccount
+1429AE830	290	FUN_1429ae830	0						bdLobby/bdSingleIdentity/bdUmbrellaProviderToken.cpp	bdUmbrellaProviderToken
+1429AEC10	1737	FUN_1429aec10	0						bdLobby/bdSingleIdentity/bdUnoAccountInfo.cpp	bdUnoAccountInfo
+1429AF930	506	FUN_1429af930	0						bdLobby/bdSingleIdentity/bdUnoTermsOfService.cpp	bdUnoTermsOfService
+1429B02B0	501	FUN_1429b02b0	2						bdLobby/bdLSGServices/bdBandwidthTest.cpp	bdBandwidthTestClient
+1429B04E0	1076	FUN_1429b04e0	1						bdLobby/bdLSGServices/bdBandwidthTest.cpp	bdBandwidthTestClient
+1429B0920	297	FUN_1429b0920	1						bdLobby/bdLSGServices/bdBandwidthTest.cpp	bdBandwidthTestClient
+1429B0A50	1329	FUN_1429b0a50	1						bdLobby/bdLSGServices/bdBandwidthTest.cpp	bdBandwidthTestClient
+1429B0FA0	956	FUN_1429b0fa0	1						bdLobby/bdLSGServices/bdBandwidthTest.cpp	bdBandwidthTestClient
+1429B1360	988	FUN_1429b1360	1						bdLobby/bdLSGServices/bdBandwidthTest.cpp	bdBandwidthTestClient
+1429B1740	178	FUN_1429b1740	2						bdLobby/bdLSGServices/bdBandwidthTest.cpp	bdBandwidthTestClient
+1429B1800	703	FUN_1429b1800	1						bdLobby/bdLSGServices/bdBandwidthTest.cpp	bdBandwidthTestClient
+1429B1AC0	168	FUN_1429b1ac0	2						bdLobby/bdLSGServices/bdBandwidthTest.cpp	bdBandwidthTestClient
+1429B2060	429	FUN_1429b2060	1						bdLobby/bdDDL/bdDDL.cpp,bdLobby/bdLobbyCommon/bdTaskParams.inl	bdDDL,bdTaskParams
+1429B2FD0	452	FUN_1429b2fd0	1						bdLobby/bdLinkedAccounts/bdLinkedAccountsResult.cpp	
+1429B36D0	462	FUN_1429b36d0	84						bdLobby/bdLobbyCommon/bdTaskParams.cpp	bdTaskParams
+1429B39A0	195	FUN_1429b39a0	56						bdLobby/bdLobbyCommon/bdTaskParams.cpp	bdTaskParams
+1429B3A70	216	FUN_1429b3a70	32						bdLobby/bdLobbyCommon/bdTaskParams.cpp	bdTaskParams
+1429B3C80	167	FUN_1429b3c80	1						bdLobby/bdRemoteTaskManager/bdTaskByteBuffer.cpp	bdTaskByteBuffer
+1429B3D30	172	FUN_1429b3d30	0						bdLobby/bdRemoteTaskManager/bdTaskByteBuffer.cpp	bdTaskByteBuffer
+1429B3DE0	568	FUN_1429b3de0	0						bdLobby/bdRemoteTaskManager/bdTaskByteBuffer.cpp	bdTaskByteBuffer
+1429B4AC0	235	FUN_1429b4ac0	2						bdLobby/bdLobbyConnection.cpp	bdLobbyConnection
+1429B4F60	144	FUN_1429b4f60	1						bdLobby/bdLobbyConnection.cpp	bdLobbyConnection
+1429B4FF0	1722	FUN_1429b4ff0	1						bdLobby/bdLobbyConnection.cpp	bdLobbyConnection
+1429B56F0	1015	FUN_1429b56f0	1						bdLobby/bdLobbyConnection.cpp	bdLobbyConnection
+1429B5AF0	2506	FUN_1429b5af0	1						bdLobby/bdLobbyConnection.cpp	bdLobbyConnection
+1429B64C0	1214	FUN_1429b64c0	3						bdLobby/bdLobbyConnection.cpp	bdLobbyConnection
+1429B6BD0	1141	FUN_1429b6bd0	1						bdLobby/bdLobbyConnection.cpp	bdLobbyConnection
+1429B73E0	1183	FUN_1429b73e0	1						bdLobby/bdLobbyConnection.cpp	bdLobbyConnection
+1429B7D70	275	FUN_1429b7d70	1						bdLobby/bdMatchMaking/bdSessionInvite.cpp	bdSessionInvite
+1429B9690	391	FUN_1429b9690	0						bdLobby/bdPublisherVariables/bdPublisherVariablesInfo.cpp	bdPublisherVariablesInfo
+1429BA260	258	FUN_1429ba260	0						bdLobby/bdContentStreaming/bdLiveStreamingInterceptor.cpp	bdLiveStreamingInterceptor
+1429BA370	140	FUN_1429ba370	0						bdLobby/bdContentStreaming/bdLiveStreamingInterceptor.cpp	bdLiveStreamingInterceptor
+1429BA540	660	FUN_1429ba540	0						bdLobby/bdContentStreaming/bdCSHTTPWrapperImpl.cpp	bdCSHTTPWrapperImpl
+1429BA7E0	749	FUN_1429ba7e0	0						bdLobby/bdContentStreaming/bdCSHTTPWrapperImpl.cpp	bdCSHTTPWrapperImpl
+1429BAC50	505	FUN_1429bac50	0						bdLobby/bdContentStreaming/bdCSHTTPWrapperImpl.cpp	bdCSHTTPWrapperImpl
+1429BAE50	564	FUN_1429bae50	0						bdLobby/bdContentStreaming/bdCSHTTPWrapperImpl.cpp	bdCSHTTPWrapperImpl
+1429BB090	648	FUN_1429bb090	0						bdLobby/bdContentStreaming/bdCSHTTPWrapperImpl.cpp	bdCSHTTPWrapperImpl
+1429BB6C0	281	FUN_1429bb6c0	2						bdLobby/bdLobbyCommon/bdHTTPAuthCommon.cpp	bdAuthHTTPUtility
+1429BB7E0	205	FUN_1429bb7e0	1						bdLobby/bdLobbyCommon/bdHTTPAuthCommon.cpp	bdAuthHTTPUtility
+1429BBA70	192	FUN_1429bba70	0						bdLobby/bdAntiCheat/bdExtendedAuthInfo.cpp	bdExtendedAuthInfo
+1429BBB30	214	FUN_1429bbb30	1						bdLobby/bdAntiCheat/bdExtendedAuthInfo.cpp	bdExtendedAuthInfo
+1429BC390	540	FUN_1429bc390	1						bdLobby/bdLoginQueueTicket.cpp	bdLoginQueueTicket
+1429BC9F0	212	FUN_1429bc9f0	0						bdLobby/bdSingleIdentity/bdUmbrellaAccessInfo.cpp	bdUmbrellaAccessInfo
+1429BCB80	283	FUN_1429bcb80	0						bdLobby/bdSingleIdentity/bdUnoTokens.cpp	bdUnoTokens
+1429BDAA0	569	FUN_1429bdaa0	1						bdNet/bdNet.cpp	bdNetImpl
+1429BDDD0	5025	FUN_1429bddd0	3						bdNet/bdNet.cpp	bdNetImpl
+1429BF180	2016	FUN_1429bf180	2						bdNet/bdNet.cpp	bdNetImpl
+1429BF960	920	FUN_1429bf960	2						bdNet/bdNet.cpp	bdNetImpl
+1429BFD00	345	FUN_1429bfd00	2					stun.au.demonware.net,stun.eu.demonware.net,stun.jp.demonware.net,stun.us.demonware.net		
+1429BFE70	107	FUN_1429bfe70	1						bdNet/bdGetHostByName/bdGetHostByNameConfig.cpp	bdGetHostByNameConfig
+1429C0030	108	FUN_1429c0030	1						bdNet/bdGetHostByName/bdGetHostByName.cpp	bdGetHostByName
+1429C00A0	278	FUN_1429c00a0	2						bdNet/bdGetHostByName/bdGetHostByName.cpp	bdGetHostByName
+1429C01E0	301	FUN_1429c01e0	2						bdNet/bdGetHostByName/bdGetHostByName.cpp	bdGetHostByName
+1429C0310	409	FUN_1429c0310	2						bdNet/bdGetHostByName/bdGetHostByName.cpp	bdGetHostByName
+1429C04B0	146	FUN_1429c04b0	6						bdNet/bdGetHostByName/bdGetHostByName-win32.cpp	bdGetHostByName
+1429C0550	141	FUN_1429c0550	0						bdNet/bdGetHostByName/bdGetHostByName-win32.cpp	bdGetHostByName
+1429C0870	814	FUN_1429c0870	1					no http:// token found in discovery response	bdNet/bdUPnP/bdUPnP.cpp	bdUPnP
+1429C0BA0	553	FUN_1429c0ba0	1						bdNet/bdUPnP/bdUPnP.cpp	bdUPnP
+1429C0DF0	2021	FUN_1429c0df0	2						bdNet/bdUPnP/bdUPnP.cpp	bdUPnP
+1429C1790	517	FUN_1429c1790	1						bdNet/bdUPnP/bdUPnPConfig.cpp	bdUPnPConfig
+1429C1DC0	578	FUN_1429c1dc0	1						bdNet/bdUPnP/bdUPnPDevice.cpp	bdUPnPDevice
+1429C2010	495	FUN_1429c2010	1					Description [URLBase tag] is improperly formatted. Missing http://	bdNet/bdUPnP/bdUPnPDevice.cpp	bdUPnPDevice
+1429C2200	271	FUN_1429c2200	2					<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">  <s:Body>  <u:%s xmlns:u="urn:schemas-upnp-org:service:%s">  %s</u:%s>  </s:Body>  </s:Envelope>  		
+1429C2380	495	FUN_1429c2380	1						bdNet/bdUPnP/bdUPnPDevice.cpp	bdUPnPDevice
+1429C2570	611	FUN_1429c2570	1						bdNet/bdUPnP/bdUPnPDevice.cpp	bdUPnPDevice
+1429C27E0	704	FUN_1429c27e0	1						bdNet/bdUPnP/bdUPnPDevice.cpp	bdUPnPDevice
+1429C2AA0	2555	FUN_1429c2aa0	1						bdNet/bdUPnP/bdUPnPDevice.cpp	bdUPnPDevice
+1429C34E0	316	FUN_1429c34e0	1						bdNet/bdUPnP/bdUPnPDevice.cpp	bdUPnPDevice
+1429C3620	290	FUN_1429c3620	1						bdNet/bdUPnP/bdUPnPDevice.cpp	bdUPnPDevice
+1429C3750	312	FUN_1429c3750	1						bdNet/bdUPnP/bdUPnPDevice.cpp	bdUPnPDevice
+1429C3A20	858	FUN_1429c3a20	589						bdPlatform/bdPlatformLog/bdPlatformLog.cpp	
+1429C3E70	50	FUN_1429c3e70	2	inet_pton						
+1429C3ED0	47	FUN_1429c3ed0	3	inet_pton						
+1429C3F60	616	FUN_1429c3f60	2	WSAGetLastError,bind,htons					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
+1429C4290	59	FUN_1429c4290	3	closesocket						
+1429C4320	471	FUN_1429c4320	1	WSAGetLastError,WSASocketA,ioctlsocket,setsockopt,socket					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
+1429C4620	357	FUN_1429c4620	2	WSAGetLastError,freeaddrinfo,getaddrinfo					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
+1429C4790	620	FUN_1429c4790	1	WSAGetLastError,WSARecvFrom,ntohs					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
+1429C4AC0	734	FUN_1429c4ac0	1	WSAGetLastError,WSASendTo,htons,sendto					bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp	bdPlatformSocket
+1429C4FE0	211	FUN_1429c4fe0	1						bdPlatform/bdPlatformInfo/bdPlatformInfo-xboxone.cpp	bdPlatformInfo
+1429C6670	533	FUN_1429c6670	1						bdMessageRelay/bdMessageRelay.cpp	bdMessageRelayImpl
+1429C6890	872	FUN_1429c6890	1						bdMessageRelay/bdMessageRelay.cpp	bdMessageRelayImpl
+1429C7430	977	FUN_1429c7430	2						bdMessageRelay/bdMessageRelay.cpp	bdMessageRelayImpl
+1429C78A0	278	FUN_1429c78a0	1						bdMessageRelay/bdMessageRelay.cpp	bdMessageRelayImpl
+1429C7C10	430	FUN_1429c7c10	1						bdMessageRelay/bdMessageRelay.cpp	bdMessageRelayImpl
+1429C7F50	474	FUN_1429c7f50	1						bdMessageRelay/bdMessageRelay.cpp	bdMessageRelayImpl
+1429C8130	1790	FUN_1429c8130	1						bdMessageRelay/bdMessageRelay.cpp	bdMessageRelayImpl
+1429C8830	292	FUN_1429c8830	1						bdMessageRelay/bdMessageRelay.cpp	bdMessageRelayImpl
+1429C8BB0	495	FUN_1429c8bb0	1						bdMessageRelay/bdMessageRelay.cpp	bdMessageRelayImpl
+1429C9220	982	FUN_1429c9220	1						bdMessageRelay/bdMessageRelayHandles/bdMessageRelayPeerHandle.cpp	bdMessageRelayPeerHandle
+1429C9C90	569	FUN_1429c9c90	2						bdMessageRelay/bdRfcTurn/bdRfcTurnClient.cpp	bdRfcTurnClient
+1429CA070	890	FUN_1429ca070	1						bdMessageRelay/bdRfcTurn/bdRfcTurnClient.cpp	bdRfcTurnClient
+1429CA4F0	800	FUN_1429ca4f0	1						bdMessageRelay/bdRfcTurn/bdRfcTurnClient.cpp	bdRfcTurnClient
+1429CA810	660	FUN_1429ca810	1						bdMessageRelay/bdRfcTurn/bdRfcTurnClient.cpp	bdRfcTurnClient
+1429CAAB0	782	FUN_1429caab0	1						bdMessageRelay/bdRfcTurn/bdRfcTurnClient.cpp	bdRfcTurnClient
+1429CADC0	730	FUN_1429cadc0	1						bdMessageRelay/bdRfcTurn/bdRfcTurnClient.cpp	bdRfcTurnClient
+1429CB0A0	1126	FUN_1429cb0a0	1						bdMessageRelay/bdRfcTurn/bdRfcTurnClient.cpp	bdRfcTurnClient
+1429CB7F0	628	FUN_1429cb7f0	4						bdMessageRelay/bdRfcTurn/bdRfcTurnClient.cpp	bdRfcTurnClient
+1429CBA70	316	FUN_1429cba70	4						bdMessageRelay/bdRfcTurn/bdRfcTurnClient.cpp	bdRfcTurnClient
+1429CBBD0	240	FUN_1429cbbd0	1						bdMessageRelay/bdRfcTurn/bdRfcTurnClient.cpp	bdRfcTurnClient
+1429CC670	341	FUN_1429cc670	8						bdMessageRelay/bdTurnDTLS/bdTurnDTLSPacket/bdTurnDTLSHeader.cpp	bdTurnDTLSHeader
+1429CDB50	114	FUN_1429cdb50	1						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429CDBD0	114	FUN_1429cdbd0	1						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429CDD00	276	FUN_1429cdd00	3						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429CDE20	3316	FUN_1429cde20	1						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429CEB20	825	FUN_1429ceb20	1						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429CEE60	613	FUN_1429cee60	1						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429CF0D0	1483	FUN_1429cf0d0	1						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429CF6A0	1159	FUN_1429cf6a0	1						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429CFB40	289	FUN_1429cfb40	1						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429CFDA0	273	FUN_1429cfda0	1						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429CFEC0	895	FUN_1429cfec0	2						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429D0240	534	FUN_1429d0240	1						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429D0460	260	FUN_1429d0460	2						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429D0570	433	FUN_1429d0570	2						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429D0730	835	FUN_1429d0730	1						bdMessageRelay/bdTurnDTLS/bdTurnDTLSAssociation.cpp	bdTurnDTLSAssociation
+1429D0F70	933	FUN_1429d0f70	1						bdMessageRelay/bdMessageRelayPacketCrypto.cpp	bdMessageRelayPacketCrypto
+1429D1CD0	304	FUN_1429d1cd0	2						bdMessageRelay/bdMessageRelayUtils/bdDataWriter.cpp	bdDataWriter
+1429D3B80	1210	FUN_1429d3b80	1						bdMessageRelay/bdRfcTurn/bdRfcTurnMessage.cpp	bdRfcTurnMessage
+1429D4100	199	FUN_1429d4100	3						bdMessageRelay/bdRfcTurn/bdRfcAttributes.inl	bdRfcStunStringAttribute
+1429D4360	299	FUN_1429d4360	1						bdMessageRelay/bdRfcTurn/bdRfcTurnUDPSocket.cpp	bdRfcTurnUDPSocket
+1429D5140	246	FUN_1429d5140	4						bdMessageRelay/bdMessageRelayUtils/bdMessageRelayHmac.cpp	bdMessageRelayHmac
+1429D5540	965	FUN_1429d5540	2						bdMessageRelay/bdTurnDTLS/bdTurnDTLSPacket/bdTurnDTLSData.cpp	bdTurnDTLSData
+1429D59A0	1132	FUN_1429d59a0	2						bdMessageRelay/bdTurnDTLS/bdTurnDTLSPacket/bdTurnDTLSData.cpp	bdTurnDTLSData
+1429D6750	426	FUN_1429d6750	2						bdMessageRelay/bdRfcTurn/bdRfcAttributes.cpp	bdRfcStunAttributeMessageIntegrity
+1429D6940	485	FUN_1429d6940	1						bdMessageRelay/bdRfcTurn/bdRfcAttributes.cpp	bdRfcStunAttributeErrorCode
+1429D6E80	139	FUN_1429d6e80	1						bdMessageRelay/bdRfcTurn/bdRfcAttributes.cpp	bdRfcTurnAttributeRequestedTransport
+1429D7140	387	FUN_1429d7140	1						bdMessageRelay/bdRfcTurn/bdRfcAttributes.cpp	bdRfcStunAttributeMessageIntegrity
+1429D77E0	492	FUN_1429d77e0	1						bdMessageRelay/bdMessageRelayUtils/bdMessageRelayCrypto.cpp	bdHashSha1
+1429D79D0	303	FUN_1429d79d0	1						bdMessageRelay/bdMessageRelayUtils/bdMessageRelayCrypto.cpp	bdMessageRelayCrypto
+1429D7D40	185	FUN_1429d7d40	2						bdSocket/bdSecurityKeyMap.cpp	bdSecurityKeyMap
+1429D7E00	309	FUN_1429d7e00	2						bdSocket/bdSecurityKeyMap.cpp	bdSecurityKeyMap
+1429D8010	275	FUN_1429d8010	2						bdSocket/bdSecurityKeyMap.cpp	bdSecurityKeyMap
+1429D8320	295	FUN_1429d8320	1						bdSocket/bdSecurityKeyMap.cpp	bdSecurityKeyMap
+1429D8460	451	FUN_1429d8460	1						bdSocket/bdSecurityKeyMap.cpp	bdSecurityKeyMap
+1429D86A0	336	FUN_1429d86a0	2						bdSocket/bdAddressMap.cpp	bdAddressMap
+1429D8A70	592	FUN_1429d8a70	2						bdSocket/bdAddressMap.cpp	bdAddressMap
+1429D8E90	744	FUN_1429d8e90	3						bdSocket/bdAddressMap.cpp	bdAddressMap
+1429D9180	450	FUN_1429d9180	1						bdSocket/bdAddressMap.cpp	bdAddressMap
+1429D9390	286	FUN_1429d9390	1						bdSocket/bdSocketRouterConfig.cpp	bdSocketRouterConfig
+1429D9E20	1239	FUN_1429d9e20	0						bdSocket/bdSocketRouter.cpp	bdSocketRouter
+1429DA300	639	FUN_1429da300	0						bdSocket/bdSocketRouter.cpp	bdSocketRouter
+1429DA670	755	FUN_1429da670	0						bdSocket/bdSocketRouter.cpp	bdSocketRouter
+1429DA980	839	FUN_1429da980	0						bdSocket/bdSocketRouter.cpp	bdSocketRouter
+1429DACE0	1667	FUN_1429dace0	0						bdSocket/bdSocketRouter.cpp	bdSocketRouter
+1429DB370	1162	FUN_1429db370	0						bdSocket/bdSocketRouter.cpp	bdSocketRouter
+1429DB9F0	2407	FUN_1429db9f0	1						bdSocket/bdSocketRouter.cpp	bdSocketRouter
+1429DC370	1282	FUN_1429dc370	0						bdSocket/bdSocketRouter.cpp	bdSocketRouter
+1429DCCC0	486	FUN_1429dccc0	0						bdSocket/bdSocketRouter.cpp	bdSocketRouter
+1429DCEB0	768	FUN_1429dceb0	0						bdSocket/bdSocketRouter.cpp	bdSocketRouter
+1429DD210	243	FUN_1429dd210	1						bdSocket/bdSocketRouter.cpp	bdSocketRouter
+1429DD520	703	FUN_1429dd520	0						bdSocket/bdSocketRouter.cpp	bdSocketRouter
+1429DDB20	1835	FUN_1429ddb20	1						bdSocket/bdSocketRouter.cpp	bdSocketRouter
+1429DE3D0	203	FUN_1429de3d0	1						bdCore/bdContainers/bdHashMap.inl	
+1429DE4A0	203	FUN_1429de4a0	1						bdCore/bdContainers/bdHashMap.inl	
+1429DE570	203	FUN_1429de570	1						bdCore/bdContainers/bdHashMap.inl	
+1429DF190	488	FUN_1429df190	0						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429DF3C0	770	FUN_1429df3c0	2						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429DF6D0	1109	FUN_1429df6d0	1						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E00C0	675	FUN_1429e00c0	1						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E0370	529	FUN_1429e0370	1						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E0590	372	FUN_1429e0590	1						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E0710	171	FUN_1429e0710	2						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E07C0	195	FUN_1429e07c0	1						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E0890	154	FUN_1429e0890	2						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E0930	571	FUN_1429e0930	0						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E0B70	551	FUN_1429e0b70	0						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E0DA0	965	FUN_1429e0da0	1						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E11B0	986	FUN_1429e11b0	1						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E1590	1361	FUN_1429e1590	2						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E2170	587	FUN_1429e2170	1						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E25F0	520	FUN_1429e25f0	2						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E2800	650	FUN_1429e2800	1						bdSocket/bdQoS/bdQoSProbe.cpp	bdQoSProbe
+1429E3020	193	FUN_1429e3020	1						bdSocket/bdNAT/bdNATTypeDiscoveryConfig.cpp	bdNATTypeDiscoveryConfig
+1429E31C0	94	FUN_1429e31c0	1						bdSocket/bdNAT/bdNATTypeDiscoveryClient.cpp	bdNATTypeDiscoveryClient
+1429E3230	974	FUN_1429e3230	1						bdSocket/bdNAT/bdNATTypeDiscoveryClient.cpp	bdNATTypeDiscoveryClient
+1429E3600	427	FUN_1429e3600	1						bdSocket/bdNAT/bdNATTypeDiscoveryClient.cpp	bdNATTypeDiscoveryClient
+1429E37D0	325	FUN_1429e37d0	1						bdSocket/bdNAT/bdNATTypeDiscoveryClient.cpp	bdNATTypeDiscoveryClient
+1429E3920	689	FUN_1429e3920	1						bdSocket/bdNAT/bdNATTypeDiscoveryClient.cpp	bdNATTypeDiscoveryClient
+1429E3BE0	154	FUN_1429e3be0	3						bdSocket/bdNAT/bdNATTypeDiscoveryClient.cpp	bdNATTypeDiscoveryClient
+1429E3C80	93	FUN_1429e3c80	2						bdSocket/bdNAT/bdNATTypeDiscoveryClient.cpp	bdNATTypeDiscoveryClient
+1429E3CE0	96	FUN_1429e3ce0	2						bdSocket/bdNAT/bdNATTypeDiscoveryClient.cpp	bdNATTypeDiscoveryClient
+1429E3D40	271	FUN_1429e3d40	3						bdSocket/bdNAT/bdNATTypeDiscoveryClient.cpp	bdNATTypeDiscoveryClient
+1429E3E70	193	FUN_1429e3e70	1						bdSocket/bdNAT/bdIPDiscoveryConfig.cpp	bdIPDiscoveryConfig
+1429E4000	107	FUN_1429e4000	1						bdSocket/bdNAT/bdIPDiscoveryClient.cpp	bdIPDiscoveryClient
+1429E4080	382	FUN_1429e4080	1						bdSocket/bdNAT/bdIPDiscoveryClient.cpp	bdIPDiscoveryClient
+1429E4200	1064	FUN_1429e4200	1						bdSocket/bdNAT/bdIPDiscoveryClient.cpp	bdIPDiscoveryClient
+1429E4770	295	FUN_1429e4770	2						bdSocket/bdNAT/bdIPDiscoveryClient.cpp	bdIPDiscoveryClient
+1429E5760	558	FUN_1429e5760	2						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E59E0	285	FUN_1429e59e0	4						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E5B00	674	FUN_1429e5b00	1						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E5DB0	2931	FUN_1429e5db0	1						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E6930	975	FUN_1429e6930	1						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E6D00	785	FUN_1429e6d00	1						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E7020	688	FUN_1429e7020	1						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E72D0	814	FUN_1429e72d0	1						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E76B0	390	FUN_1429e76b0	1						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E7840	460	FUN_1429e7840	2						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E7A10	223	FUN_1429e7a10	1						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E7AF0	359	FUN_1429e7af0	2						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E7C60	592	FUN_1429e7c60	1						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E7EB0	461	FUN_1429e7eb0	0						bdSocket/bdDTLS/bdDTLSAssociation.cpp	bdDTLSAssociation
+1429E82B0	758	FUN_1429e82b0	2						bdSocket/bdNAT/bdNATTravClient.cpp	bdNATTravClient
+1429E8A60	492	FUN_1429e8a60	2						bdSocket/bdNAT/bdNATTravClient.cpp	bdNATTravClient
+1429E8CF0	1332	FUN_1429e8cf0	2						bdSocket/bdNAT/bdNATTravClient.cpp	bdNATTravClient
+1429E93A0	473	FUN_1429e93a0	1						bdSocket/bdNAT/bdNATTravClient.cpp	bdNATTravClient
+1429E9650	2287	FUN_1429e9650	1						bdSocket/bdNAT/bdNATTravClient.cpp	bdNATTravClient
+1429EA140	715	FUN_1429ea140	1						bdSocket/bdNAT/bdNATTravClient.cpp	bdNATTravClient
+1429EA410	1626	FUN_1429ea410	1						bdSocket/bdNAT/bdNATTravClient.cpp	bdNATTravClient
+1429EABF0	428	FUN_1429eabf0	2						bdSocket/bdNAT/bdNATTravClient.cpp	bdNATTravClient
+1429EADA0	1378	FUN_1429eada0	2						bdSocket/bdNAT/bdNATTravClient.cpp	bdNATTravClient
+1429EB310	856	FUN_1429eb310	1						bdSocket/bdNAT/bdNATTravClient.cpp	bdNATTravClient
+1429EB670	129	FUN_1429eb670	1						bdSocket/bdNAT/bdNATTravClient.cpp	bdNATTravClient
+1429EB790	463	FUN_1429eb790	1						bdSocket/bdPacketBuffer.cpp	bdPacketBuffer,bdPacketBufferInternal
+1429EBA00	446	FUN_1429eba00	1						bdSocket/bdPacketBuffer.cpp	bdPacketBufferInternal
+1429EBE50	633	FUN_1429ebe50	1						bdSocket/bdDTLS/bdPacket/bdDTLSCookieEcho.cpp	bdDTLSCookieEcho
+1429EC740	715	FUN_1429ec740	1						bdSocket/bdQoS/bdPacket/bdQoSReplyPacket.cpp	bdQoSReplyPacket
+1429ECCF0	280	FUN_1429eccf0	2						bdSocket/bdQoS/bdPacket/bdQoSReplyPacket.cpp	bdQoSReplyPacket
+1429EDD30	1187	FUN_1429edd30	1						bdSocket/bdDTLS/bdPacket/bdDTLSData.cpp	bdDTLSData
+1429EE270	1173	FUN_1429ee270	1						bdSocket/bdDTLS/bdPacket/bdDTLSData.cpp	bdDTLSData
+1429EEEE0	173	FUN_1429eeee0	4						bdJSON/bdJSONDeserializer.cpp	bdJSONDeserializer
+1429EEF90	252	FUN_1429eef90	4						bdJSON/bdJSONDeserializer.cpp	bdJSONDeserializer
+1429EF090	506	FUN_1429ef090	1						bdJSON/bdJSONDeserializer.cpp	bdJSONDeserializer
+1429EF290	538	FUN_1429ef290	1						bdJSON/bdJSONDeserializer.cpp	bdJSONDeserializer
+1429EF4B0	652	FUN_1429ef4b0	7						bdJSON/bdJSONDeserializer.cpp	bdJSONDeserializer
+1429EF740	170	FUN_1429ef740	4						bdJSON/bdJSONDeserializer.cpp	bdJSONDeserializer
+1429EF7F0	173	FUN_1429ef7f0	4						bdJSON/bdJSONDeserializer.cpp	bdJSONDeserializer
+1429EF8A0	341	FUN_1429ef8a0	12						bdJSON/bdJSONDeserializer.cpp	bdJSONDeserializer
+1429EFA00	396	FUN_1429efa00	2						bdJSON/bdJSONDeserializer.cpp	bdJSONDeserializer
+1429EFB90	398	FUN_1429efb90	8						bdJSON/bdJSONDeserializer.cpp	bdJSONDeserializer
+1429EFD90	557	FUN_1429efd90	5						bdJSON/bdJSONDeserializer.cpp	bdJSONDeserializer
+1429F05F0	94	FUN_1429f05f0	2						bdJSON/bdJSONValue.cpp	bdJSONValue
+1429F0650	94	FUN_1429f0650	7						bdJSON/bdJSONValue.cpp	bdJSONValue
+1429F06B0	97	FUN_1429f06b0	1						bdJSON/bdJSONValue.cpp	bdJSONValue
+1429F0720	132	FUN_1429f0720	1						bdJSON/bdJSONValue.cpp	bdJSONValue
+1429F07F0	450	FUN_1429f07f0	1						bdJSON/bdJSONValue.cpp	bdJSONValue
+1429F09C0	853	FUN_1429f09c0	1						bdJSON/bdJSONValue.cpp	bdJSONValue
+1429F1110	628	FUN_1429f1110	1						bdJSON/bdJSONObject.cpp	bdJSONObject
+1429F1640	119	FUN_1429f1640	7						bdJSON/bdJSONSerializer.cpp	bdJSONSerializer
+1429F16C0	100	FUN_1429f16c0	6						bdJSON/bdJSONSerializer.cpp	bdJSONSerializer
+1429F1780	355	FUN_1429f1780	4						bdJSON/bdJSONSerializer.cpp	bdJSONSerializer
+1429F18F0	279	FUN_1429f18f0	8						bdJSON/bdJSONSerializer.cpp	bdJSONSerializer
+1429F1AE0	162	FUN_1429f1ae0	10						bdJSON/bdJSONSerializer.cpp	bdJSONSerializer
+1429F2400	344	FUN_1429f2400	1						bdJSON/bdJSONUtility.cpp	bdJSONUtility
+1429F2560	320	FUN_1429f2560	1						bdJSON/bdJSONUtility.cpp	bdJSONUtility
+1429F2890	136	FUN_1429f2890	1						bdJSON/bdJSONUtility.cpp	bdJSONUtility
+1429F2BB0	631	FUN_1429f2bb0	1						bdJSON/bdJSONUtility.cpp	bdJSONUtility
+1429F31D0	666	FUN_1429f31d0	1						bdJSON/bdJSONArray.cpp	bdJSONArray
+142A433D0	39	FUN_142a433d0	1	closesocket						
+142A43400	62	FUN_142a43400	0	WSAGetLastError,recv						
+142A43450	62	FUN_142a43450	0	WSAGetLastError,send						
+142A434A0	526	FUN_142a434a0	0	WSAGetLastError,connect,freeaddrinfo,getaddrinfo,htons,inet_pton						
+142A436C0	103	FUN_142a436c0	0	select						
+142A43730	374	FUN_142a43730	0	bind,htons,listen						
+142A438F0	354	FUN_142a438f0	0	accept,ntohs,select						
+142A43B20	85	FUN_142a43b20	0	getsockname,ntohs						
+142A43B80	68	FUN_142a43b80	0	ioctlsocket						
+142A43BD0	295	FUN_142a43bd0	3	WSASocketW						
+142A43D00	136	FUN_142a43d00	1	WSAStartup						
+142A43DA0	50	FUN_142a43da0	2	gethostname						
+142CFF060	6	Ordinal_151	4	__WSAFDIsSet						
+142CFF066	6	inet_ntop	2	inet_ntop						
+142CFFB00	434	FUN_142cffb00	2						bdConnection/bdConnectionStore.cpp	bdConnectionStore
+142CFFCC0	2757	FUN_142cffcc0	1						bdConnection/bdConnectionStore.cpp	bdConnectionStore
+142D007A0	221	FUN_142d007a0	2						bdConnection/bdConnectionStore.cpp	
+142D00AA0	1401	FUN_142d00aa0	1						bdConnection/bdConnectionStore.cpp	bdConnectionStore
+142D010A0	688	FUN_142d010a0	2						bdConnection/bdConnectionStore.cpp	bdConnectionStore
+142D018C0	627	FUN_142d018c0	1						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D022E0	128	FUN_142d022e0	0						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D02500	1756	FUN_142d02500	0						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D02ED0	139	FUN_142d02ed0	1						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D02F80	1127	FUN_142d02f80	1						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D033F0	347	FUN_142d033f0	1						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D03550	487	FUN_142d03550	1						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D03740	659	FUN_142d03740	1						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D039E0	2128	FUN_142d039e0	1						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D043B0	751	FUN_142d043b0	0						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D046A0	305	FUN_142d046a0	1						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D047E0	583	FUN_142d047e0	2						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D04B60	365	FUN_142d04b60	2						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D04CD0	693	FUN_142d04cd0	1						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D04FB0	355	FUN_142d04fb0	2						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D05120	355	FUN_142d05120	2						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D05290	267	FUN_142d05290	1						bdConnection/bdUnicastConnection.cpp	bdUnicastConnection
+142D05CF0	1483	FUN_142d05cf0	1						bdConnection/bdPacket/bdPacket.cpp	bdPacket
+142D06400	736	FUN_142d06400	1						bdConnection/bdPacket/bdPacket.cpp	bdPacket
+142D07430	680	FUN_142d07430	2						bdConnection/bdPacket/bdDataChunk.cpp	bdDataChunk
+142D07CC0	472	FUN_142d07cc0	1						bdConnection/bdWindow/bdReliableSendWindow.cpp	bdReliableSendWindow
+142D07EA0	1689	FUN_142d07ea0	1						bdConnection/bdWindow/bdReliableSendWindow.cpp	bdReliableSendWindow
+142D08540	1478	FUN_142d08540	1						bdConnection/bdWindow/bdReliableSendWindow.cpp	bdReliableSendWindow
+142D08D20	516	FUN_142d08d20	1						bdConnection/bdWindow/bdReliableReceiveWindow.cpp	bdReliableReceiveWindow
+142D091E0	186	FUN_142d091e0	1						bdConnection/bdWindow/bdReliableReceiveWindow.cpp	bdReliableReceiveWindow
+142D092A0	550	FUN_142d092a0	1						bdConnection/bdWindow/bdReliableReceiveWindow.cpp	bdReliableReceiveWindow
+142D09F40	793	FUN_142d09f40	1						bdConnection/bdPacket/bdCookie.cpp	bdCookie
+142D0A5B0	457	FUN_142d0a5b0	0						bdConnection/bdPacket/bdCookieEchoChunk.cpp	bdCookieEchoChunk
+142D0B700	751	FUN_142d0b700	0						bdConnection/bdPacket/bdSAckChunk.cpp	bdSAckChunk
+142D0BE20	128	FUN_142d0be20	2						bdCore/bdCrypto/bdHashMD5.cpp	bdHashMD5
+142D0BF10	278	FUN_142d0bf10	1						bdCore/bdCrypto/bdHashMD5.cpp	bdHashMD5
+142D0C0C0	213	FUN_142d0c0c0	1						bdCore/bdCrypto/bdCryptoUtils.cpp	bdCryptoUtils
+142D0C550	263	FUN_142d0c550	35						bdCore/bdCrypto/bdCryptoUtils.cpp	
+142D0C670	371	FUN_142d0c670	1						bdCore/bdCrypto/bdRSAKey.cpp	bdRSAKey
+142D0C800	426	FUN_142d0c800	1						bdCore/bdCrypto/bdRSAKey.cpp	bdRSAKey
+142D0C9B0	630	FUN_142d0c9b0	1						bdCore/bdCrypto/bdRSAKey.cpp	bdRSAKey
+142D0CCA0	320	FUN_142d0cca0	1						bdCore/bdUtilities/bdBinASCII.cpp	bdBinASCII
+142D0D010	278	FUN_142d0d010	6						bdCore/bdCrypto/bdHMacSHA1.cpp	bdHMacSHA1
+142D0D290	478	FUN_142d0d290	1						bdCore/bdCrypto/bdHashSHA1.cpp	bdHashSHA1
+142D0D7B0	206	FUN_142d0d7b0	0						bdCore/bdCrypto/bdCypherAES.cpp	bdCypherAES
+142D0D8A0	95	FUN_142d0d8a0	9						bdCore/bdSocket/bdStreamSocket.cpp	bdStreamSocket
+142D0DCB0	328	FUN_142d0dcb0	11						bdCore/bdContainers/bdSequenceNumber.cpp	bdSequenceNumber
+142D0E230	267	FUN_142d0e230	2						bdCore/bdCrypto/bdECCKey.cpp	bdECCKey
+142D0E340	586	FUN_142d0e340	1						bdCore/bdCrypto/bdECCKey.cpp	bdECCKey
+142D0E5A0	733	FUN_142d0e5a0	1						bdCore/bdCrypto/bdECCKey.cpp	bdECCKey
+142D0E880	219	FUN_142d0e880	1						bdCore/bdCrypto/bdCryptoDynamic.cpp	bdCryptoDynamic
+142D0E960	214	FUN_142d0e960	4						bdCore/bdCrypto/bdCryptoDynamic.cpp	bdCryptoDynamic
+142D0EA40	204	FUN_142d0ea40	1						bdCore/bdCrypto/bdCryptoDynamic.cpp	bdCryptoDynamic
+142D0ED70	129	FUN_142d0ed70	1						bdCore/bdCrypto/bdCryptoDynamic.cpp	bdCryptoDynamic
+142D0EFD0	281	FUN_142d0efd0	1						bdCore/bdCrypto/bdHMacSHA256.cpp	bdHMacSHA256
+142D0F4B0	166	FUN_142d0f4b0	1						bdCore/bdCrypto/bdCypher3Des.cpp	bdCypher3Des
+142D0F670	483	FUN_142d0f670	1						bdCore/bdCrypto/bdHashSHA256.cpp	bdHashSHA256
+142D0FBE0	440	FUN_142d0fbe0	18						bdHTTP/bdHTTPRequest.cpp	bdHTTPRequest
+142D10050	448	FUN_142d10050	20						bdHTTP/bdHTTPRequest.cpp	bdHTTPRequest
+142D104D0	533	FUN_142d104d0	1						bdHTTP/bdHTTPRequest.inl	bdHTTPRequest
+142D10710	189	FUN_142d10710	1						bdHTTP/bdHTTPRequest.cpp	bdHTTPRequest
+142D10AE0	117	FUN_142d10ae0	1						bdHTTP/bdHTTPWorker.cpp	bdHTTPWorkerImpl
+142D10B60	70	FUN_142d10b60	2						bdHTTP/bdHTTPWorker.cpp	bdHTTPWorkerImpl
+142D10BB0	344	FUN_142d10bb0	1						bdHTTP/bdHTTPWorker.cpp	bdHTTPWorkerImpl
+142D10DD0	143	FUN_142d10dd0	1						bdHTTP/bdHTTPWorker.cpp	bdHTTPWorkerImpl
+142D10E60	286	FUN_142d10e60	1						bdHTTP/bdHTTPResponse/bdHTTPResponseWinHTTP.cpp	bdHTTPResponseWinHTTP
+142D10FC0	550	FUN_142d10fc0	1		WinHttpCloseHandle				bdHTTP/bdHTTPResponse/bdHTTPResponseWinHTTP.cpp	bdHTTPResponseWinHTTP
+142D11260	425	FUN_142d11260	0						bdHTTP/bdHTTPResponse/bdHTTPResponseWinHTTP.cpp	bdHTTPResponseWinHTTP
+142D11410	674	FUN_142d11410	0						bdHTTP/bdHTTPResponse/bdHTTPResponseWinHTTP.cpp	bdHTTPResponseWinHTTP
+142D11770	440	FUN_142d11770	8						bdHTTP/bdHTTPResponse/bdHTTPResponseWinHTTP.cpp	bdHTTPResponseWinHTTP
+142D11930	810	FUN_142d11930	0		WinHttpQueryHeaders				bdHTTP/bdHTTPResponse/bdHTTPResponseWinHTTP.cpp	bdHTTPResponseWinHTTP
+142D11C60	1364	FUN_142d11c60	1						bdHTTP/bdHTTPResponse/bdHTTPResponseWinHTTP.cpp	bdHTTPResponseWinHTTP
+142D12230	841	FUN_142d12230	3						bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D12770	1082	FUN_142d12770	1		WinHttpCloseHandle,WinHttpSetStatusCallback				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D12CF0	782	FUN_142d12cf0	1		WinHttpConnect,WinHttpCrackUrl				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D13000	91	FUN_142d13000	1						bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D13060	119	FUN_142d13060	0						bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D130E0	639	FUN_142d130e0	0						bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D13360	836	FUN_142d13360	1		WinHttpAddRequestHeaders,WinHttpCloseHandle,WinHttpOpenRequest,WinHttpSendRequest,WinHttpSetTimeouts				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D136B0	3471	FUN_142d136b0	0		WinHttpCloseHandle,WinHttpQueryDataAvailable,WinHttpQueryHeaders,WinHttpReadData,WinHttpReceiveResponse				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D14480	807	FUN_142d14480	2		WinHttpCloseHandle				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D14880	224	FUN_142d14880	0						bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D14BA0	694	FUN_142d14ba0	1		WinHttpCloseHandle,WinHttpOpen,WinHttpSetOption,WinHttpSetStatusCallback				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D151C0	2503	FUN_142d151c0	0						bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D15B90	494	FUN_142d15b90	1						bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D15D80	611	FUN_142d15d80	2		WinHttpWriteData				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D15FF0	157	FUN_142d15ff0	1						bdHTTP/bdHTTPThreadConfig.cpp	bdHTTPThreadConfig
+142D162A0	139	FUN_142d162a0	1						bdHTTP/bdUploadInterceptorWrapper.cpp	bdUploadInterceptorWrapper
+142D16330	1085	FUN_142d16330	0						bdHTTP/bdUploadInterceptorWrapper.cpp	bdUploadInterceptorWrapper
+142D16880	1047	FUN_142d16880	0						bdHTTP/bdUploadInterceptorWrapper.cpp	bdUploadInterceptorWrapper
+142D16EC0	127	FUN_142d16ec0	2	select						
+142D16F40	172	FUN_142d16f40	1	WSAGetLastError,closesocket					bdPlatform/bdPlatformSocket/bdPlatformStreamSocket-xboxone.cpp	bdPlatformStreamSocket
+142D17050	240	FUN_142d17050	1	WSAGetLastError,connect,htons						
+142D171E0	135	FUN_142d171e0	1	ioctlsocket,socket						
+142D172D0	198	FUN_142d172d0	1	WSAGetLastError,select						
+142D173A0	302	FUN_142d173a0	1	WSAGetLastError,select						
+142D17530	273	FUN_142d17530	1	WSAGetLastError,recv						
+142D176F0	305	FUN_142d176f0	1	WSAGetLastError,send						
+142D17A50	99	FUN_142d17a50	3						bdSocket/bdAddrHandleRefWrapper.cpp	bdAddrHandleRefWrapper
+142D749B0	210	FUN_142d749b0	0		curl_global_cleanup					
+142D74F20	328	FUN_142d74f20	1		curl_global_init					
+142D75F20	408	FUN_142d75f20	1		WinHttpCloseHandle					
+142D76300	429	FUN_142d76300	0		WinHttpCloseHandle					
+142D76DB0	1099	FUN_142d76db0	1		WinHttpOpen,WinHttpSetOption					
+142D77E30	710	FUN_142d77e30	1		WinHttpSetOption					
+142D78C70	42	FUN_142d78c70	5		curl_easy_cleanup,curl_slist_free_all					
+142D78CA0	309	FUN_142d78ca0	1		curl_slist_append					
+142D78DE0	267	FUN_142d78de0	1		curl_easy_getinfo,curl_easy_strerror					
+142D79020	3700	FUN_142d79020	1		curl_easy_cleanup,curl_easy_init,curl_easy_setopt,curl_slist_free_all					
+142D7A460	136	FUN_142d7a460	3		curl_multi_cleanup					
+142D7A4F0	144	FUN_142d7a4f0	3		curl_multi_cleanup					
+142D7A580	561	FUN_142d7a580	1		curl_multi_add_handle					
+142D7A8F0	372	FUN_142d7a8f0	3		curl_multi_remove_handle					
+142D7AA70	393	FUN_142d7aa70	1		curl_multi_init					
+142D7AC00	599	FUN_142d7ac00	1		curl_multi_info_read,curl_multi_perform,curl_multi_poll,curl_multi_remove_handle					
+142D7CBB0	502	FUN_142d7cbb0	1		WinHttpCloseHandle					
+142D7D300	2579	FUN_142d7d300	1		WinHttpAddRequestHeaders,WinHttpConnect,WinHttpOpenRequest,WinHttpSetOption,WinHttpSetTimeouts					
+142D7E1A0	664	FUN_142d7e1a0	2		WinHttpSendRequest,WinHttpSetStatusCallback					
+142D7E440	176	FUN_142d7e440	16		WinHttpCloseHandle					
+142D7E4F0	1462	FUN_142d7e4f0	1		WinHttpAddRequestHeaders,WinHttpSetOption					
+142D7F580	623	FUN_142d7f580	1		WinHttpWriteData					
+142D7FAD0	488	FUN_142d7fad0	1		WinHttpReadData					
+142D7FCC0	664	FUN_142d7fcc0	1		WinHttpQueryHeaders					
+142D7FF60	718	FUN_142d7ff60	1		WinHttpQueryOption,WinHttpSetOption					
+142D80230	676	FUN_142d80230	1		WinHttpCloseHandle,WinHttpSetOption					
+142D80570	2156	FUN_142d80570	0		WinHttpCloseHandle,WinHttpReceiveResponse					
+142D815C0	664	FUN_142d815c0	1		WinHttpQueryHeaders					
+142D81860	247	FUN_142d81860	2		WinHttpQueryDataAvailable					
