@@ -59,6 +59,9 @@ without giving up the bit-exact contract:
 - **Observed arguments** are read from registers for the first four and from the stack after that (spec letters
   past the fourth), so a call such as `bdLogMessage(type, channel, category, file, function, line, format, value)` is
   compared whole. An int passed in a stack slot leaves the slot's upper half undefined: observe it with `i`.
+- **Demonware log lines** are recorded whole by the `bdlog.py` fake (type, channel, category, file, function, line,
+  format, and each value the format prints, read as the format reads it), so a log line is compared exactly and a
+  vararg nothing prints is not.
 - **Imports by name.** A fake or an observation keyed `"dll!function"` (`"api-ms-win-crt-time-l1-1-0.dll!_time64"`)
   hooks that import's stub, which both copies reach through the exe's import table. A fake that writes memory for
   the program uses `harness.program_write`, so its writes into the original's globals are compared like the code's.

@@ -3,8 +3,7 @@
 Every Winsock call is answered by the model in winsock.py and logged with its arguments, so the original and the
 reconstruction must make the same calls (the sockaddr they build included) and react the same way to every result
 and WSAGetLastError code each function distinguishes. bdLogMessage is faked for both and observed with all its
-arguments (type, channel, category, file, function, line, format, the value logged: its low 32 bits, since an int vararg leaves the upper half of its stack slot
-undefined), so every log line is compared.
+arguments and what it prints (bdlog.py), so every log line is compared.
 The socket statistics are globals and are compared as writes.
 
 The inputs cover, per function: a closed handle (-1); AF_INET, AF_INET6 and other families; each error code the
@@ -16,6 +15,7 @@ Mutation check: see the commit adding this file.
 import random
 import struct
 
+import bdlog
 from winsock import Winsock
 
 LOG = "?bdLogMessage@@YAXW4bdLogMessageType@@QEBD111I1ZZ"
@@ -33,7 +33,7 @@ ERRORS = [6, 7, 10004, 10013, 10014, 10015, 10022, 10035, 10039, 10040, 10047, 1
 FAMILIES = [2, 23, 0, 1, 0x217, 0xFFFF]
 HANDLES = [-1, 0x1F0, 0, 0x7FFFFFFF, -2]
 
-COMMON = {"fakes": {LOG: lambda mu: None}, "observe": {LOG: "issssisi"}}
+COMMON = {"fakes": bdlog.FAKES}  # every log line recorded whole (bdlog.py)
 
 
 def sockaddr(r, family):

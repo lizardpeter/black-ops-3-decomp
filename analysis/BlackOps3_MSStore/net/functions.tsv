@@ -638,10 +638,10 @@ va	size	name	callers	sockets	http	voice	netinfo	host	dw_file	dw_class
 142D13060	119	FUN_142d13060	0						bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
 142D130E0	639	FUN_142d130e0	0						bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
 142D13360	836	FUN_142d13360	1		WinHttpAddRequestHeaders,WinHttpCloseHandle,WinHttpOpenRequest,WinHttpSendRequest,WinHttpSetTimeouts				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
-142D136B0	3471	FUN_142d136b0	0		WinHttpCloseHandle,WinHttpQueryDataAvailable,WinHttpQueryHeaders,WinHttpReadData,WinHttpReceiveResponse				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D136B0	3471	bdHTTPWorkerWinHTTPImpl::WinHttpStatusCallback	0		WinHttpCloseHandle,WinHttpQueryDataAvailable,WinHttpQueryHeaders,WinHttpReadData,WinHttpReceiveResponse				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
 142D14480	807	FUN_142d14480	2		WinHttpCloseHandle				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
 142D14880	224	FUN_142d14880	0						bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
-142D14BA0	694	FUN_142d14ba0	1		WinHttpCloseHandle,WinHttpOpen,WinHttpSetOption,WinHttpSetStatusCallback				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
+142D14BA0	694	bdHTTPWorkerWinHTTPImpl::initializeWinHTTP	1		WinHttpCloseHandle,WinHttpOpen,WinHttpSetOption,WinHttpSetStatusCallback				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
 142D151C0	2503	FUN_142d151c0	0						bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
 142D15B90	494	FUN_142d15b90	1						bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl
 142D15D80	611	FUN_142d15d80	2		WinHttpWriteData				bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	bdHTTPWorkerWinHTTPImpl

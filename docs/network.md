@@ -130,7 +130,12 @@ to talk to. Low priority, but the DLL ships only with the GDK, so the stubs also
    **UDP layer done:** the seven `bdPlatformSocket` methods are decompiled
    (`src/libs/DemonWareGDK/bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp`, all match) and overridden
    (P0004): no socket is created and no name is looked up. **TCP layer done:** the nine `bdPlatformStreamSocket`
-   methods (`.../bdPlatformStreamSocket-xboxone.cpp`, all match; P0005). Still to do: the HTTP (WinHTTP) leaves.
+   methods (`.../bdPlatformStreamSocket-xboxone.cpp`, all match; P0005). **HTTP done:** the worker's every
+   request needs the WinHTTP session `initializeWinHTTP` (142D14BA0) opens, and its thread takes no request until
+   that succeeds; it is decompiled (matches) and overridden to never open one (P0006), as if the network never came
+   up. The other WinHTTP leaves in the table are unreachable without that session. **All of Demonware's traffic is
+   cut in the enhanced build** (UDP, TCP, DNS, HTTPS); what Demonware's callers do when it never connects is the
+   next thing to check in an offline run.
    Decompile the faithful versions first (the socket wrappers are short), then the enhanced overrides return the
    network-down result. Startup must then take the "Demonware unavailable" path rather than wait for it; that is
    what `Live_BlockUntilSignedInToDemonware`, `LiveConnect_DisableDemonwareConnect` and `Live_IsDemonwareFetchingDone`

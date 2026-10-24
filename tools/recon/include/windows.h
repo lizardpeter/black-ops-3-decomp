@@ -1,4 +1,4 @@
-// The few Win32 declarations the reconstruction uses (user32).
+// The few Win32 declarations the reconstruction uses (user32, kernel32).
 //
 // Build environment, not game source. The original includes the Windows SDK; these are the same declarations,
 // trimmed. In the hybrid build each function resolves to the original's import address table entry.
@@ -13,6 +13,7 @@ extern "C" {
 #endif
 
 typedef int BOOL;
+typedef unsigned long DWORD;
 typedef unsigned int UINT;
 typedef long LONG;
 typedef unsigned long long WPARAM;
@@ -48,6 +49,7 @@ BOOL GetClientRect(HWND hWnd, RECT *lpRect);
 BOOL ScreenToClient(HWND hWnd, POINT *lpPoint);
 BOOL ClientToScreen(HWND hWnd, POINT *lpPoint);
 BOOL PostMessageA(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
+DWORD GetLastError(void);
 
 #ifdef __cplusplus
 }
