@@ -65,15 +65,25 @@ a future own main server would be pointed, instead of re-enabling any of the lea
 directly (they are reached through data). No `__FILE__` strings: identified by API use and address range only. Leaves: the XCurl wrappers 142D749B0 (global cleanup), 142D74F20 (global
 init), 142D78C70–142D7AC00 (easy/multi), and the WinHTTP wrappers 142D75F20–142D81860.
 
-### 3. Telemetry: Google Analytics
+### 3. Telemetry: the Store port's crash reporter
+
+One module at 1423B87C0–1423B9F70 (no `__FILE__` strings; named here by behaviour):
 
 | function | what |
 |---|---|
-| 1423B9AB0 | `curl_global_init`, sets up `https://ssl.google-analytics.com/collect` with tracking id `UA-69466650-2` |
-| 1423B87C0 | builds `?v=1&t=event&tid=…&cid=<random GUID>&ec=signature&ea=…&el=…` and sends it with `curl_easy_perform` |
+| 1423B9AB0 | init: `curl_global_init`, registers the dvars behind the reporter (Analytics URL `https://ssl.google-analytics.com/collect`, tracking id `UA-69466650-2`, a sample rate defaulting to 0.05, two enable flags) |
+| 1423B9C70 | builds the crash *signature*: MD5 of the return addresses from `RtlCaptureStackBackTrace`, as hex, into 149331788 |
+| 1423B9F70 | called by `Com_Error_` (142210B90): at most once per 600 s, makes the signature, copies the error text, and raises an exception |
+| 1423B9DE0 | the report (reached from the exception path through 1423F1F80): rate-limited, then 1423B87C0, then with probability = sample rate 1423B8BA0, and the log file the same way |
+| 1423B87C0 | **sends** the Analytics event `?v=1&t=event&tid=…&cid=<machine GUID>&ec=signature&ea=…&el=…` with `curl_easy_perform` |
+| 1423B8BA0 | writes `crash_reports/<time>.gltn` (signature, machine GUIDs, platform, build `CL(20660835) … BEYQBBUILD132`, build info, error text, timestamp, then the dump) and runs `system("start CrashUploader.exe …")`, a separate uploader |
 
-Reached from `Com_Error_` (142210B90) through 1423B9F70, and from 1423F1F80 through 1423B9DE0: **every engine
-error is reported to Google Analytics** by the Store port. Two leaves, both small. First to replace.
+Both 1423B87C0 and 1423B8BA0 identify the machine persistently: a random GUID stored in
+`HKLM\SOFTWARE\Activision\HardwareSurvey\Host` (created on first use), and 1423B8BA0 adds the Windows volume's
+object id (`DeviceIoControl` 0x900C0 on the Windows directory). So **every engine error is reported off the machine
+with a hardware identifier**, and crashes are uploaded by an external program the game launches. Replacing
+1423B87C0 and 1423B8BA0 (or 1423B9DE0 above them) cuts all of it; the faithful versions are self-contained apart from
+the registry, curl and file calls. First to replace (B0006).
 
 ### 4. Engine networking (peer-to-peer and listen server)
 
@@ -111,8 +121,8 @@ to talk to. Low priority, but the DLL ships only with the GDK, so the stubs also
 
 ## Order of work
 
-1. **Telemetry** (1423B87C0, 1423B9AB0, 142360D50): small, self-contained, and the only traffic that leaves
-   the machine on a crash.
+1. **Telemetry** (1423B9DE0, 1423B87C0, 1423B8BA0, then 142360D50): the crash reporter in section 3, the only
+   traffic that leaves the machine with no online play at all, and it carries a hardware identifier.
 2. **Demonware leaves** (the 25 functions in section 1): cuts lobby, auth, storage, NAT, UPnP and relays at once.
    Decompile the faithful versions first (the socket wrappers are short), then the enhanced overrides return the
    network-down result. Startup must then take the "Demonware unavailable" path rather than wait for it; that is
