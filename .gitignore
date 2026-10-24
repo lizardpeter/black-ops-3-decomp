@@ -9,6 +9,6 @@
 /.work/
 __pycache__/
 *.pyc
-
 # agent worktrees and local Claude state
 /.claude/
+# offline package build + local wine diagnostics (regenerated; originals never committed)
