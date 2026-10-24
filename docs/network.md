@@ -123,6 +123,9 @@ to talk to. Low priority, but the DLL ships only with the GDK, so the stubs also
 
 1. **Telemetry** (1423B9DE0, 1423B87C0, 1423B8BA0, then 142360D50): the crash reporter in section 3, the only
    traffic that leaves the machine with no online play at all, and it carries a hardware identifier.
+   **Done for the reporter:** 1423B9DE0 is its only entry and the only caller of both senders, so it was
+   decompiled (`src/win32/crash_report.cpp`, matches) and overridden to report nothing (P0003). The senders
+   themselves stay undecompiled until something else needs them. 142360D50 is still to do.
 2. **Demonware leaves** (the 25 functions in section 1): cuts lobby, auth, storage, NAT, UPnP and relays at once.
    Decompile the faithful versions first (the socket wrappers are short), then the enhanced overrides return the
    network-down result. Startup must then take the "Demonware unavailable" path rather than wait for it; that is

@@ -56,6 +56,9 @@ without giving up the bit-exact contract:
 - **Observed calls.** A case can list original functions whose calls are recorded with their arguments and
   compared. That covers callees whose effect is invisible in this build (`CL_ExecBinding` is empty in the
   server); a reconstructed callee is watched at both copies.
+- **Imports by name.** A fake or an observation keyed `"dll!function"` (`"api-ms-win-crt-time-l1-1-0.dll!_time64"`)
+  hooks that import's stub, which both copies reach through the exe's import table. A fake that writes memory for
+  the program uses `harness.program_write`, so its writes into the original's globals are compared like the code's.
 - **Fakes.** A case can replace an original function with Python for both runs (`Dvar_GetInt` for dvars that
   were never registered, `Com_ErrorEntering`), so the paths behind them are exercised.
 - **Addresses that differ by construction** are normalised before comparing: a pointer the reconstruction stores

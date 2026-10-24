@@ -238,9 +238,20 @@ class Writer:
         return self.alloc((s.encode("latin1") if isinstance(s, str) else s) + b"\0")  # one byte per char
 
 
+_MACHINES = {}
+
+
+def program_write(mu, va, data):
+    """For a fake standing in for a function: write `data` at `va` on the program's behalf, journaled like the
+    emulated code's own writes, so a write into the original's globals is compared and rolled back. (A plain
+    mu.mem_write is invisible to the comparison.)"""
+    _MACHINES[id(mu)]._emulated_write(va, data)
+
+
 class Machine:
     def __init__(self, *images: Image):
         self.mu = Uc(UC_ARCH_X86, UC_MODE_64)
+        _MACHINES[id(self.mu)] = self
         for img in images:
             self.mu.mem_map(img.base, img.size)
             self.mu.mem_write(img.base, img.data[:img.size])
@@ -345,6 +356,14 @@ class Machine:
         except UcError:
             return f"<unreadable {va:#x}>"
         return data.split(b"\0", 1)[0]
+
+    def import_stub(self, name):
+        """Entry address of the stub behind import `name` ("api-ms-win-crt-time-l1-1-0.dll!_time64", any case), or
+        None. Fakes and observations keyed by an import name hook here, so they see every caller: the original
+        calls the stub through its IAT slot, and the reconstruction through the same slot (hybrid link)."""
+        if not hasattr(self, "_stub_by_name"):
+            self._stub_by_name = {n.lower(): a - 2 for a, n in self._stub_names.items()}
+        return self._stub_by_name.get(name.lower())
 
     def on_import(self, name, fn):
         """fn(mu) runs when the original calls import `name` ("user32.dll!GetCursorPos"); it may set RAX and

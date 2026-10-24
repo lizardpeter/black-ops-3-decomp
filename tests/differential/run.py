@@ -151,11 +151,13 @@ def main():
                 # a faked function that is also reconstructed is reached at the reconstruction's own copy when the
                 # reconstruction calls it: fake both
                 wanted = {**case.get("fakes", {}), **(inp.get("fakes", {}) if isinstance(inp, dict) else {})}
-                fakes = {mapsyms[s]: fn for s, fn in wanted.items()}
+                # a name with "!" is an import ("dll!function"): hooked at its stub, reached by both copies
+                at = lambda s: m.import_stub(s) if "!" in s else mapsyms[s] if s in mapsyms else symbols.resolve(BUILD, s)[0]  # noqa: E731
+                fakes = {at(s): fn for s, fn in wanted.items()}
                 fakes.update({recon.exports[s]: fn for s, fn in wanted.items() if s in recon.exports})
                 # an observed function that is also reconstructed is reached at the reconstruction's own copy
                 # when the reconstruction calls it: watch both, and report either as the original address
-                observe = {mapsyms[s]: spec for s, spec in case.get("observe", {}).items()}
+                observe = {at(s): spec for s, spec in case.get("observe", {}).items()}
                 observe.update({recon.exports[s]: spec for s, spec in case.get("observe", {}).items()
                                 if s in recon.exports})
                 want = m.call(va, args, case["ret"], setup, fakes, observe)

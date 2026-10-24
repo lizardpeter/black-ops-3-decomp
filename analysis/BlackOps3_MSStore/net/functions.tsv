@@ -39,7 +39,7 @@ va	size	name	callers	sockets	http	voice	netinfo	host	dw_file	dw_class
 142360D50	100	FUN_142360d50	0					http://www.google.com,https://www.google.com		
 1423B5210	259	FUN_1423b5210	1	htonl						
 1423B5320	947	FUN_1423b5320	0	closesocket,connect,htonl,htons,inet_addr,recvfrom,select,sendto,socket						
-1423B87C0	982	FUN_1423b87c0	1		curl_easy_cleanup,curl_easy_getinfo,curl_easy_init,curl_easy_perform,curl_easy_setopt			https://ssl.google-analytics.com/collect		
+1423B87C0	982	sub_1423B87C0	1		curl_easy_cleanup,curl_easy_getinfo,curl_easy_init,curl_easy_perform,curl_easy_setopt			https://ssl.google-analytics.com/collect		
 1423B9AB0	448	FUN_1423b9ab0	1		curl_global_init			https://ssl.google-analytics.com/collect		
 1423F2450	423	Sys_GetPacket	2	ntohl,ntohs,recvfrom						
 1423F2600	576	NET_SendPacket	15	htonl,htons,sendto						

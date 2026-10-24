@@ -21,8 +21,9 @@ The repo produces two builds from one source tree (decomp-project skill, princip
 4. **Two build targets; CI builds and tests both.**
 5. **Changes go on verified faithful code** wherever possible. Patching unverified code makes it impossible to
    tell a fix from a decompilation error. Security-critical functions are therefore good early decomp targets.
-6. **Not yet created:** `enhanced/`, `records/patches.tsv` and the enhanced build target are added with the first
-   enhancement, not before.
+6. **The enhanced target** is `tools/build_recon.py --build <id> --enhanced` (build/<id>/enhanced/recon.dll), tested by
+   `tests/enhanced/run.py`; CI builds and tests it next to the faithful one. `enhanced/offline/` is separate: the
+   standalone offline DLL (tools/offline/build_dll.py, docs/native-launch.md).
 7. **One repo** unless licensing or contributors differ (e.g. importing GPL code from a community client, which
    the faithful repo should not take on). A separate enhanced repo would use this one as a submodule, never a
    copy, and needs the user's decision first.

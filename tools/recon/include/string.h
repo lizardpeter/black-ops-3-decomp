@@ -15,6 +15,9 @@ void *memcpy(void *dst, const void *src, size_t n);
 void *memset(void *dst, int value, size_t n);
 int memcmp(const void *a, const void *b, size_t n);
 size_t strlen(const char *s);
+char *strrchr(const char *s, int c);
+char *strncpy(char *dst, const char *src, size_t n);
+char *_strdup(const char *s);
 
 static inline char *t7_strcpy_intrinsic(char *dst, const char *src)
 {

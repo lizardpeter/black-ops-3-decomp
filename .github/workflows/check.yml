@@ -35,6 +35,11 @@ jobs:
         run: |
           T7_ORIGINALS=.work/originals python3 tests/differential/run.py --check-records
           for b in $(python3 tools/model.py retail-ids 2>/dev/null); do T7_ORIGINALS=.work/originals python3 tests/differential/run.py --build "$b" --check-records; done
+      - name: Enhanced build
+        if: steps.recon.outputs.any == '1'
+        run: |
+          for b in $(python3 tools/model.py retail-ids 2>/dev/null); do T7_ORIGINALS=.work/originals python3 tools/build_recon.py --build "$b" --enhanced; done
+          T7_ORIGINALS=.work/originals python3 tests/enhanced/run.py
       - name: Generated files are current
         run: |
           python3 tools/status.py >/dev/null

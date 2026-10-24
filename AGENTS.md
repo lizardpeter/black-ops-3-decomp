@@ -39,6 +39,7 @@ records/             AUTHORED small facts; the only input to the graph besides a
 src/ include/        AUTHORED faithful reconstruction, mirroring the original source tree
 enhanced/            AUTHORED (once needed) overrides for the enhanced build, same layout as src/
 tests/differential/  differential tests (x64 Unicorn harness)
+tests/enhanced/      tests of the enhanced build: what each enhanced/ change must do
 docs/<topic>.md      method notes and per-build findings. Topic names, never dates.
 tools/               pipeline scripts (unpack/, ghidra/, pdb/, match/, graph/, recon/, net/, prior/ for community names)
 ```
