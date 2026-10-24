@@ -44,6 +44,8 @@ class Env:
 
     def at(self, symbol):
         """Every address a hook on `symbol` needs: the enhanced DLL's copy, the original's, or an import stub."""
+        if isinstance(symbol, int):
+            return [symbol]
         if "!" in symbol:
             return [self.machine.import_stub(symbol)]
         return [va for va in (self.dll.exports.get(symbol), self.original(symbol)) if va]

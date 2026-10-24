@@ -126,7 +126,7 @@ to talk to. Low priority, but the DLL ships only with the GDK, so the stubs also
 
 | function | what | priority |
 |---|---|---|
-| 142A433D0–142A43DA0 | Havok `hkBsdSocket` (`System\Io\Platform\Bsd\hkBsdSocket.cpp`): connect, **listen/accept** ("Listening on host [ ] port"). The Havok Visual Debugger's server; reached only through its vtable (142DF6E50). Whether retail ever creates it is not yet known. | security check (B0004) |
+| 142A433D0–142A43DA0 | Havok `hkBsdSocket` (`System\Io\Platform\Bsd\hkBsdSocket.cpp`): connect, **listen/accept**. The Havok Visual Debugger's server: the Store build serves on **TCP 25001, every interface**, from the first level load with navigation volumes (141EBE450 → 141EBC350 → `hkVisualDebugger::serve` 142AE2740). docs/security.md B0004 | **done**: P0008 (serve opens nothing) |
 | 14149E620, 14149E870, 14149E6D0 | Development fastfile key server: UDP to `10.150.4.43` / `10.150.97.133` port 10019 (magic `0xDEADFAC4`), asking for a zone's 32-byte key when it is not in the built-in table (154AD2750, 384 entries). Called from fastfile loading (14149EAC0), only when 141FBC390 allows. Private addresses: cannot reach the internet. | low (B0005) |
 | 142360D50 | the `ui_browser_new` console command (registered at 141404170): with argument 1, 2 or 3 it opens `http://www.google.com` or `https://www.google.com` in the default browser through ShellExecuteA (1423BEB90). Only runs when typed; the game itself sends nothing | none |
 | 141ED5630 | WSAStartup; `fakeDWDisconnect` debug path | with Demonware |
@@ -157,8 +157,15 @@ to talk to. Low priority, but the DLL ships only with the GDK, so the stubs also
    what `Live_BlockUntilSignedInToDemonware`, `LiveConnect_DisableDemonwareConnect` and `Live_IsDemonwareFetchingDone`
    (records/names.tsv) decide, so they follow.
 3. **Xbox services HTTP client** (section 2): done, HTTP and WebSocket (P0007).
-4. **Havok VDB socket** (B0004): find whether the server is created; cut it either way.
+4. **Havok VDB socket** (B0004): done. Retail does create it (TCP 25001, every interface); P0008.
 5. **Engine networking** stays (section 4). **Voice** (section 5) only carries traffic to remote players.
 
 Each replacement is a faithful function in `src/` (verified by differential test like any other) plus its
 override in `enhanced/`, recorded in `records/patches.tsv`. None of this edits the exe.
+
+## A gap in the generated analysis
+
+Ghidra marks `142A28A80` (a Havok output stream destructor, which ends in a tail jump) as non-returning, so every
+function that destroys such a stream last (Havok's report sites, including `hkVisualDebugger::serve`) loses its epilogue
+in `analysis/`: `serve`'s timer end and return at 142AE2904 are not in the disassembly or the pseudocode. Fixing it
+belongs in `tools/ghidra/PrepAnalysis.java` (clear the flag before analysis) and a re-run of the pipeline.

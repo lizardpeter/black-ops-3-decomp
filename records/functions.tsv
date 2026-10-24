@@ -27,3 +27,4 @@ BlackOps3_MSStore	142D176F0	matches	src/libs/DemonWareGDK/bdPlatform/bdPlatformS
 BlackOps3_MSStore	142D14BA0	matches	src/libs/DemonWareGDK/bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	
 BlackOps3_MSStore	142D6DEB0	matches	src/_external/libHttpClient/Source/Global/NetworkState.cpp	
 BlackOps3_MSStore	142D6E3C0	matches	src/_external/libHttpClient/Source/Global/NetworkState.cpp	
+BlackOps3_MSStore	142AE2740	matches	src/_external/havok/Common/Visualize/hkVisualDebugger.cpp	

@@ -1,4 +1,5 @@
 {"path": "_external/gdk/xgameruntime.lib", "subsystem": "_external"}
+{"path": "_external/havok/Common/Visualize/hkVisualDebugger.cpp", "subsystem": "_external"}
 {"path": "_external/libHttpClient/Source/Global/NetworkState.cpp", "subsystem": "_external"}
 {"path": "libs/DemonWareGDK/bdCore/bdLogMessage.cpp", "subsystem": "libs"}
 {"path": "libs/DemonWareGDK/bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp", "subsystem": "libs"}
