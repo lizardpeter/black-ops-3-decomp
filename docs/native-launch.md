@@ -58,3 +58,31 @@ This is the current blocker. The relevant choice is recorded in the session, not
 
 Nothing here establishes ban immunity or online compatibility, and none is sought: the build is for offline
 preservation and for running this repo's reconstructed engine code in a process the user owns.
+
+## Run 3 — byte-identical exe + stub xgameruntime.dll (the chosen path)
+
+The exe is left **completely unmodified**; our behaviour goes in from outside it. The Store exe loads
+`xgameruntime.dll` from system32 with `LoadLibraryExA(..., LOAD_LIBRARY_SEARCH_SYSTEM32)` (14291FC80) and resolves
+five entries: `InitializeApiImpl`, `InitializeApiImplEx`, `UninitializeApiImpl`, `XErrorReport`, `QueryApiImpl`.
+`enhanced/offline/xgameruntime_stub.cpp` is a minimal stand-in: `InitializeApi*` report success, `QueryApiImpl`
+reports `E_NOTIMPL` and clears its out pointer, `XErrorReport` is swallowed. It fabricates no user, licence or
+online result; GDK features degrade rather than run.
+
+Result, with the **unmodified** `BlackOps3.exe` and this stub in the prefix's system32:
+
+- **Anti-tamper stays quiet: zero TLS-callback faults.** Keeping the exe byte-for-byte original passes the
+  self-integrity check, confirming the byte-identical approach.
+- **Past the GDK fatal gate.** No "XGameRuntime failed" dialog; the process stays up for the full run instead of
+  exiting at ~1.5 s.
+
+So the decision is settled: don't modify the exe. Get our code and the no-network behaviour in through replacement
+DLLs (the GDK stub, a proxy for `recon.dll`, socket stubs), not through `.text`/import patches.
+
+### Current stall
+
+Startup then reaches localization loading (`localization_*.txt` all open) and stalls there, black, before any
+`zone/*.ff` fastfile is opened — so it is a startup/GDK stall, not a missing map. The likely cause is
+`QueryApiImpl` returning `E_NOTIMPL`: the game waits on a GDK service (user, storage or presence) that never
+initialises. Next: give the stub enough of the GDK API dispatch for startup to proceed, then fastfile loading and
+the renderer (the latter needs the full game install, which is being uploaded). The `tools/offline/package.py`
+`.text`/import path is kept for reference but is not the route to a running build.
