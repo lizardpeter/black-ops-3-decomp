@@ -58,12 +58,23 @@ selector global from a dev and a prod name (through 1429A5EB0):
 The Umbrella (14299E7E0, 1429AD600) and UNO (1429A2F40) URLs are picked by environment in code. These are where
 a future own main server would be pointed, instead of re-enabling any of the leaves above.
 
-### 2. Xbox services HTTP client (probably libHttpClient)
+### 2. Xbox services HTTP client (libHttpClient)
 
 29 functions at 142D749B0–142D81860 using both WinHTTP and XCurl (`curl_multi_*`), near the Xbox Live URLs
 `sessiondirectory.xboxlive.com` and `wss://rta.xboxlive.com/connect` (real-time activity), which no code references
-directly (they are reached through data). No `__FILE__` strings: identified by API use and address range only. Leaves: the XCurl wrappers 142D749B0 (global cleanup), 142D74F20 (global
-init), 142D78C70–142D7AC00 (easy/multi), and the WinHTTP wrappers 142D75F20–142D81860.
+directly (they are reached through data). It is Microsoft's libHttpClient, linked with XAL (its own strings:
+`xbox::httpclient::NetworkState::HttpCallPerformAsync`, `CurlProvider::PerformAsync`, `HCWebSocketConnectAsync`, the
+`libHttpClient/1.0.0.0` user agent, a `...\External\xal\External\libHttpClient\Source\...` path). Leaves: the
+XCurl wrappers 142D749B0 (global cleanup), 142D74F20 (global init), 142D78C70–142D7AC00 (easy/multi), and the
+WinHTTP wrappers 142D75F20–142D81860 (the WebSocket provider).
+
+Every operation starts with `XAsyncBegin` (14291FD40, a GDK runtime thunk), so with the offline package's
+`xgameruntime` stub none can start at all, and the Xbox services API has no signed-in user to make requests for.
+In code: **HTTP is cut** at `NetworkState::HttpCallPerformAsync` (142D6DEB0, the single entry every request takes:
+decompiled, matches; P0007 refuses it with HRESULT_FROM_WIN32(ERROR_NETWORK_UNREACHABLE)). **The WebSocket is
+not cut in code yet:** its entry is `NetworkState::WebSocketConnectAsync` (142D6E3C0, called only by the public
+`HCWebSocketConnectAsync` 142D6B670), which moves two std::strings and a shared_ptr into its context; until it is
+reconstructed, the RTA WebSocket depends on the GDK stub.
 
 ### 3. Telemetry: the Store port's crash reporter
 
@@ -99,8 +110,13 @@ the registry, curl and file calls. First to replace (B0006).
 | 141F97310 | QoS configuration (`qosconfig4.csv`), inet_addr |
 
 This is game traffic between players, not to Activision's servers, but in retail it reaches other players only
-through Demonware matchmaking and relays. **Decision for the user:** keep the engine's UDP path (local and LAN
-play, and later the own server) and cut only the STUN/QoS probe, or cut it all for the first offline build.
+through Demonware matchmaking and relays. **Decided (the user): the engine's UDP path stays** in the enhanced build,
+for local and LAN play and later the user's own server; none of the functions above is overridden.
+
+The STUN/QoS probe (1414F7F00) is not engine traffic: it fills a Demonware `bdSocketRouterConfig` with the four STUN
+hosts and starts Demonware's socket router, whose socket comes from `bdSocket::create` (14297B660) and so from
+`bdPlatformSocket::create`. With P0004 that creation fails, the router does not start (the probe records state 0), and
+no STUN packet or lookup is sent. 141ED4750's direct `bdPlatformSocket::getHostByName` call is cut the same way.
 
 ### 5. Voice chat (GameChat2)
 
@@ -113,7 +129,7 @@ to talk to. Low priority, but the DLL ships only with the GDK, so the stubs also
 |---|---|---|
 | 142A433D0–142A43DA0 | Havok `hkBsdSocket` (`System\Io\Platform\Bsd\hkBsdSocket.cpp`): connect, **listen/accept** ("Listening on host [ ] port"). The Havok Visual Debugger's server; reached only through its vtable (142DF6E50). Whether retail ever creates it is not yet known. | security check (B0004) |
 | 14149E620, 14149E870, 14149E6D0 | Development fastfile key server: UDP to `10.150.4.43` / `10.150.97.133` port 10019 (magic `0xDEADFAC4`), asking for a zone's 32-byte key when it is not in the built-in table (154AD2750, 384 entries). Called from fastfile loading (14149EAC0), only when 141FBC390 allows. Private addresses: cannot reach the internet. | low (B0005) |
-| 142360D50 | connectivity check against `www.google.com` (reached through a function pointer at 141404170) | with telemetry |
+| 142360D50 | the `ui_browser_new` console command (registered at 141404170): with argument 1, 2 or 3 it opens `http://www.google.com` or `https://www.google.com` in the default browser through ShellExecuteA (1423BEB90). Only runs when typed; the game itself sends nothing | none |
 | 141ED5630 | WSAStartup; `fakeDWDisconnect` debug path | with Demonware |
 | 141F219D0, 141FA6A20 | wlanapi / GetAdaptersInfo: reads local adapter state, sends nothing | none |
 | 1423B5210, 1423B5320 | raw UDP/TCP helper; no code or data reference to 1423B5320 found | none (unreferenced) |
@@ -125,7 +141,8 @@ to talk to. Low priority, but the DLL ships only with the GDK, so the stubs also
    traffic that leaves the machine with no online play at all, and it carries a hardware identifier.
    **Done for the reporter:** 1423B9DE0 is its only entry and the only caller of both senders, so it was
    decompiled (`src/win32/crash_report.cpp`, matches) and overridden to report nothing (P0003). The senders
-   themselves stay undecompiled until something else needs them. 142360D50 is still to do.
+   themselves stay undecompiled until something else needs them. 142360D50 turned out to be a console command that
+   opens google.com in the browser when typed (section 6), not traffic.
 2. **Demonware leaves** (the 25 functions in section 1): cuts lobby, auth, storage, NAT, UPnP and relays at once.
    **UDP layer done:** the seven `bdPlatformSocket` methods are decompiled
    (`src/libs/DemonWareGDK/bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp`, all match) and overridden
@@ -140,10 +157,9 @@ to talk to. Low priority, but the DLL ships only with the GDK, so the stubs also
    network-down result. Startup must then take the "Demonware unavailable" path rather than wait for it; that is
    what `Live_BlockUntilSignedInToDemonware`, `LiveConnect_DisableDemonwareConnect` and `Live_IsDemonwareFetchingDone`
    (records/names.tsv) decide, so they follow.
-3. **Xbox services HTTP client** (section 2), unless the xgameruntime stub already keeps it idle; check in the
-   offline run which of its leaves are ever called.
+3. **Xbox services HTTP client** (section 2): HTTP done (P0007); the WebSocket entry (142D6E3C0) is still to do.
 4. **Havok VDB socket** (B0004): find whether the server is created; cut it either way.
-5. **Engine networking and voice**, after the user's decision in section 4.
+5. **Engine networking** stays (section 4). **Voice** (section 5) only carries traffic to remote players.
 
 Each replacement is a faithful function in `src/` (verified by differential test like any other) plus its
 override in `enhanced/`, recorded in `records/patches.tsv`. None of this edits the exe.

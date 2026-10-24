@@ -25,3 +25,4 @@ BlackOps3_MSStore	142D173A0	matches	src/libs/DemonWareGDK/bdPlatform/bdPlatformS
 BlackOps3_MSStore	142D17530	matches	src/libs/DemonWareGDK/bdPlatform/bdPlatformSocket/bdPlatformStreamSocket-xboxone.cpp	
 BlackOps3_MSStore	142D176F0	matches	src/libs/DemonWareGDK/bdPlatform/bdPlatformSocket/bdPlatformStreamSocket-xboxone.cpp	
 BlackOps3_MSStore	142D14BA0	matches	src/libs/DemonWareGDK/bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp	
+BlackOps3_MSStore	142D6DEB0	matches	src/_external/libHttpClient/Source/Global/NetworkState.cpp	
