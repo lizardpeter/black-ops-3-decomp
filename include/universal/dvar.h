@@ -25,6 +25,20 @@ const dvar_t *Dvar_RegisterVec3(unsigned int hash, const char *dvarName, float x
 const dvar_t *Dvar_RegisterEnum(unsigned int hash, const char *dvarName, const char **valueList, int defaultIndex,
                                 unsigned int flags, const char *description, bool sessionModeBased);
 
+unsigned int Dvar_GenerateHash(const char *name);
+
+void Dvar_Init();
+void Dvar_AddCommands();
+extern unsigned char byte_158835226;  // set to 1 first thing in Dvar_Init
+extern int dword_1599E7624;           // set to 0 first thing in Dvar_Init
+
+extern const dvar_t *r_cmdbuf_worker;
+extern const dvar_t *snd_losOcclusion;
+extern const dvar_t *cg_fov_default;             // the player's FOV: horizontal at 16:9, degrees (docs/fov.md)
+extern const dvar_t *cg_fov_default_thirdperson;
+extern const dvar_t *cg_chatHeight;
+extern const dvar_t *sv_cheats;
+
 bool Dvar_GetBool(const dvar_t *dvar);
 int Dvar_GetInt(const dvar_t *dvar);
 float Dvar_GetFloat(const dvar_t *dvar);
