@@ -70,22 +70,23 @@ passes the flags the swap chain was made with, because the fixed 2 would be refu
 chain. In the present, `r_vsync 0` outside exclusive fullscreen (`GetFullscreenState`) presents with
 `DXGI_PRESENT_ALLOW_TEARING`, so a borderless window runs uncapped or with VRR.
 
-**P0018: frame-latency wait** (enhanced/gfx_d3d/r_init.cpp; `IN_Frame` in enhanced/win32/win_input.cpp). After
+**P0018: frame-latency wait** (enhanced/gfx_d3d/r_init.cpp; the wait in `sub_1413ED0D0`, enhanced/client/cl_keys.cpp,
+since P0020). After
 creation, `IDXGISwapChain2::SetMaximumFrameLatency` gets the latency the original gives the device. That is
 `r_maxFrameLatency`, default 1, raised to the GPU count if lower. It is not set for 0, which keeps DXGI's default.
 The swap chain's waitable object is kept. The wait follows ghosts-decomp's scheme:
 
 - each successful present is counted;
-- `IN_Frame` first waits once for every present counted since its last wait, so the mouse is read and the usercmd
-  built only when the display has room for the frame;
+- the frame first waits once for every present counted since its last wait, so keys, the mouse and the usercmd are
+  taken only when the display has room for the frame;
 - the timeout is two refresh periods at `r_refreshRate`, clamped to 50 ms – 1 s; a timeout drains the pending
   signals on the next frame and starts counting again;
 - frames that were never presented are never waited for;
 - a replaced swap chain closes the old object.
 
-**Why `IN_Frame`.** It is the last thing before the mouse is sampled, and it runs exactly once per client frame on
-the main thread whether in game or in the menus. Waiting earlier (at the top of the frame) would also delay the
-server and script work. Waiting later would sample stale input.
+**Where.** First in `IN_Frame`, the last thing before the mouse is sampled. That left keys pressed during the wait
+for the next frame, since the frame's event loop runs before the draw that samples the mouse. P0020 moved the wait
+to `sub_1413ED0D0`, just before that event loop: docs/input.md, "Keys after the frame wait".
 
 **P0019: direct present** (enhanced/gfx_d3d/r_present.cpp, `R_PresentFlip`). With a flip-model swap chain, the
 thread that finished the frame calls `Present` itself, under the D3D context lock its callers hold. The sync

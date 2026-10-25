@@ -78,22 +78,36 @@ differential tests are `tests/differential/test_win_input.py`.
 
 These take effect once the reconstruction is hosted in the running game (docs/native-launch.md).
 
-## Late input (Ghosts P0009): not done yet
+## Keys after the frame wait (P0020)
 
-Ghosts hands keys and mouse buttons pressed during the frame wait to the same frame's usercmd. In BO3 the pieces are
-different, and doing it safely needs work that isn't done:
+Ghosts' P0009 hands keys and mouse buttons pressed during the frame wait to the same frame's usercmd by draining the
+event queue again after the wait, with a filter for which keys are safe mid-frame. BO3 doesn't need the filter: the
+wait can simply come before the event loop that already feeds the frame's commands.
 
-- **Where the frame waits.** Com_Frame is 1422174C0. It runs Com_EventLoop (142212190) early (1422175C8), the client
-  frame 141402E70 (which calls IN_Frame unless the command step already did, flag 149BB4724) at 142217CE3, Com_EventLoop
-  again at 142217CEF, and the command step 141403040 -> 1413BFDE0 (IN_Frame, then 1413BBF50: CL_GetMouseMovement and
-  the usercmd, 1413B9EE0) at 142217DD4. Its `Sleep` calls (142217613, 142217922, 142217972, 142217ECB) are the
-  candidates for the com_maxfps wait; which one, and where the main thread waits for the render thread, is not
-  established. The presentation work (flip model, frame-latency waitable) is about to move that wait, so the late
-  pump should be placed after it is settled.
-- **What to drain.** In BO3 the window procedure already runs on its own thread (and with P0014 without delay), so
-  "pumping messages again" means draining Sys_GetEvent's queue again just before the usercmd is built, with
-  Com_EventLoop's dispatch (CL key handling 1413EA6C0, char events 1413EFC50, console text 1413E6580).
-- **What is safe mid-frame.** As in Ghosts, only events whose handlers don't run console commands, cgame or LUI calls
-  that the rest of the frame doesn't expect (Escape, console, chat, the weapon/equipment/menu binds...). That needs
-  the key-binding table and the key catchers (client flags 1440E38F4: 1, 8, 0x10 and 0x20 are tested by
-  Com_EventLoop) decompiled and named.
+**The frame** (Com_Frame, 1422174C0):
+
+1. `Com_EventLoop` (142212190) at 1422175C8;
+2. the client frame 141402E70 at 142217CE3 (it calls `IN_Frame` only when the command path below didn't last frame:
+   flag 149BB4724);
+3. `sub_1413ED0D0` at 142217CE8 (writes changed key bindings);
+4. `Com_EventLoop` again at 142217CEF: key and button events (type 1) into `CL_KeyEvent` (1413EFC50), which runs the
+   bindings through `CL_ExecBinding` (1413C0020: kbutton down/up for held bindings; the table of binding names is at
+   142EC40F0) or puts "+cmd" strings into the command buffer; characters (type 2) by key catcher; console text (3);
+5. the command buffer per local client (142205310) and the command step 141403040 (commands built with
+   `1413BBF50` and sent);
+6. `SCR_UpdateScreen` (14148CF00): in game the cgame's draw calls 1413BFDE0, which sets 149BB4724, runs `IN_Frame`
+   (the mouse) and `1413BBF50`, so the command the frame is drawn from is built at draw time.
+
+Keys are therefore taken at step 4 and the mouse at step 6, with no wait between them in the original. The
+frame-latency wait (P0018) as first ported sat in `IN_Frame` (step 6): the mouse came right after it, keys pressed
+during it a frame later. **P0020 moves the wait to the start of `sub_1413ED0D0` (step 3)**, so keys and mouse are both
+taken after it, by the original's own code in its own order; nothing runs mid-frame that the original doesn't run
+there. The mouse is now read after steps 4-6's start instead of straight after the wait; that time (the event loop,
+the command buffer, building and sending the commands, the start of the draw) is not measured yet.
+
+The event queue (`Sys_QueEvent` 1423BF210 / `Sys_GetEvent` 1423BF460, 256 entries at 149331810) is filled by the
+window thread as messages arrive (P0014: without delay) under critical section 0x31; `Sys_QueEvent` increments the
+head before writing the entry, so the queue can only be read under that lock.
+
+Tests: tests/differential/test_cl_keys.py (`sub_1413ED0D0`), tests/enhanced/test_present.py (`test_frame_wait` on
+`sub_1413ED0D0`, `test_in_frame_is_the_original`).

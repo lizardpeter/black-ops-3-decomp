@@ -104,13 +104,10 @@ void IN_TakeRawMouse(int *dx, int *dy)
 	*dy = y > 0x7FFFFFFF ? 0x7FFFFFFF : y < -0x7FFFFFFF ? -0x7FFFFFFF : (int)y;
 }
 
-// P0018: IN_Frame waits for the display before the frame's mouse is read (B0032). It first waits on the flip-model
-// swap chain's frame-latency waitable object (enhanced/gfx_d3d/r_init.cpp), so the frame starts, and its mouse
-// movement is taken, once the display has room for it rather than as soon as the CPU can run ahead; the rest is the
-// original. docs/presentation.md.
+// IN_Frame is the original: the frame-latency wait (P0018) moved to sub_1413ED0D0 (enhanced/client/cl_keys.cpp), before
+// the frame's second event loop, so keys pressed during the wait reach this frame's commands like the mouse (P0020).
 void IN_Frame()
 {
-	R_WaitForFrameLatency();
 	if (T7ExeCall(Dvar_GetBool, ClickToContinue))
 		PostMessageA(win_hWnd, WM_LBUTTONDOWN, MK_LBUTTON, 0);
 	if (!s_mouseInitialized)

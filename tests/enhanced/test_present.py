@@ -16,9 +16,10 @@ What must hold:
   present when it succeeded and a waitable object exists; the errors and 3D Vision are the original's; without flip
   model the present is the original;
 - the resize passes the flags the swap chain was made with;
-- IN_Frame first waits once per counted present (two refresh periods' timeout, 50 ms to 1 s, alertable), takes every
-  pending signal after a timeout, waits for nothing once the swap chain changed (closing the object), then is the
-  original;
+- the frame-latency wait runs in sub_1413ED0D0, which Com_Frame calls between the client frame and its second event
+  loop (docs/input.md, "Keys after the frame wait"): it first waits once per counted present (two refresh periods'
+  timeout, 50 ms to 1 s, alertable), takes every pending signal after a timeout, waits for nothing once the swap chain
+  changed (closing the object), then is the original; IN_Frame is the original (it no longer waits);
 """
 import random
 import struct
@@ -26,6 +27,7 @@ import struct
 import test_r_present as pres
 import test_r_swapchain as sw
 import test_in_frame as win
+import test_cl_keys as keys
 import syms
 from com import ComModel
 from harness import _MACHINES, SCRATCH, TLS_BLOCK, program_write
@@ -352,12 +354,18 @@ def test_resize_flags(env):
         assert e[1] == o[1] and exe_writes(e[2]) == exe_writes(o[2])
 
 
-# ---- IN_Frame's wait -----------------------------------------------------------------------------------------
+# ---- the frame-latency wait ---------------------------------------------------------------------------------
+
+def test_in_frame_is_the_original(env):
+    for inp in win.frame_inputs()[:200]:
+        o, e = run_both(env, "?IN_Frame@@YAXXZ", [], "void", inp["setup"], inp["fakes"])
+        assert e[3] == o[3] and e[1] == o[1] and exe_writes(e[2]) == exe_writes(o[2])
+
 
 def test_frame_wait(env):
     r = random.Random(32)
     data = env.data
-    for inp in win.frame_inputs()[:200]:
+    for inp in keys.inputs():
         presented = r.randint(0, 6)
         waited = presented - r.choice([0, 1, 1, 2, 3])
         script = [r.choice([0, 0, 0, 0, 0x102, 0xC0]) for _ in range(12)]
@@ -393,7 +401,7 @@ def test_frame_wait(env):
                                          mu.reg_write(__import__("unicorn").x86_const.UC_X86_REG_XMM0,
                                                       struct.unpack("<I", struct.pack("<f", hz))[0]))[0],
         })
-        o, e = run_both(env, "?IN_Frame@@YAXXZ", [], "void", setup, fakes)
+        o, e = run_both(env, keys.SYM, [], "void", setup, fakes)
         n = len([x for x in e[3] if x[0] in ("Wait", "CloseHandle", "Dvar_GetFloat")])
         head, tail = e[3][:n], e[3][n:]
         assert tail == o[3], (tail, o[3])
@@ -433,3 +441,15 @@ def test_frame_wait(env):
         assert head == want, (head, want, hz)
         assert u32(e[2], data("s_waitedPresentCount"), waited & 0xFFFFFFFF) == presented
         assert (e[2].get(data("s_resyncFrameLatency"), bytes([resync])) == b"\x01") == timed_out
+
+
+def test_com_frame_order(env):
+    """The order P0020 relies on, read from Com_Frame's code: the client frame, sub_1413ED0D0 (the wait), the second
+    Com_EventLoop, the command step, then SCR_UpdateScreen (where in game the cgame's draw reads the mouse)."""
+    mu = env.machine.mu
+    def target(site):
+        code = bytes(mu.mem_read(site, 5))
+        assert code[0] == 0xE8, hex(site)
+        return site + 5 + struct.unpack("<i", code[1:])[0]
+    assert [target(s) for s in (0x142217CE3, 0x142217CE8, 0x142217CEF, 0x142217DD4, 0x142217DE5)] == \
+        [0x141402E70, 0x1413ED0D0, 0x142212190, 0x141403040, 0x14148CF00]
