@@ -101,6 +101,45 @@ def import_slots(build):
             for imp in d.imports if imp.name}
 
 
+def exe_return_gadget(build):
+    """(va, n) of the build's exe-return gadget (target.toml `exe_return`), checked against the exe: a call
+    instruction, then `add rsp, n; ret`. None without one (the thunks then jump straight to the original)."""
+    spec = symbols.build_spec(build)
+    if "exe_return" not in spec:
+        return None
+    import pefile
+    va = int(spec["exe_return"], 16)
+    path = Path(os.environ.get("T7_ORIGINALS", ROOT / ".work" / "originals")) / f"{build}.exe"
+    pe = pefile.PE(str(path), fast_load=True)
+    code = pe.get_data(va - 5 - pe.OPTIONAL_HEADER.ImageBase, 10)
+    if code[0] != 0xE8 or code[5:8] != b"\x48\x83\xc4" or code[9] != 0xC3:
+        sys.exit(f"{build}: exe_return {va:09X} is not `call; add rsp, n; ret`: {code.hex()}")
+    return va, code[8]
+
+
+def function_thunk(q, va, gadget, index):
+    """The hybrid link's call into an original function. With an exe-return gadget (docs/obfuscation.md): the call is
+    made with the gadget, inside the exe, as its return address, because the game's decoders hang when their caller
+    lies outside the exe. The thunk builds a frame of its own: [S] the gadget, the home space, copies of the caller's
+    stack arguments, and at S + 8 + n the address of a stub that drops the frame and returns to the real caller; the
+    gadget's `add rsp, n; ret` lands there. Registers are passed through untouched (R10 is scratch, as at any call);
+    at most (n - 0x20) / 8 stack arguments are copied."""
+    if not gadget:
+        return [f"\t.globl {q}", f"{q}:", "\tjmpq *0(%rip)", f"\t.quad {va:#x}"]
+    gva, n = gadget
+    frame = (n + 16 + 15) & ~15
+    slots = (n - 0x20) // 8
+    label = f"t7_exe_return_{index}"
+    lines = [f"\t.globl {q}", f"{q}:", f"\tsubq ${frame:#x}, %rsp"]
+    for i in range(slots):
+        lines += [f"\tmovq {frame + 0x28 + 8 * i:#x}(%rsp), %r10", f"\tmovq %r10, {0x28 + 8 * i:#x}(%rsp)"]
+    lines += [f"\tleaq {label}(%rip), %r10", f"\tmovq %r10, {8 + n:#x}(%rsp)",
+              f"\tmovabsq ${gva:#x}, %r10", "\tmovq %r10, (%rsp)",
+              f"\tmovabsq ${va:#x}, %r10", "\tjmpq *%r10",
+              f"{label}:", f"\taddq ${frame - n - 16:#x}, %rsp", "\tretq"]
+    return lines
+
+
 def main():
     build = sys.argv[sys.argv.index("--build") + 1] if "--build" in sys.argv else symbols.reference_build()
     reference = symbols.has_map(build)
@@ -214,6 +253,7 @@ def main():
     slots = import_slots(build)
     asm = ["\t.text"]
     hybrid = ["symbol\tkind\tva"]
+    gadget = exe_return_gadget(build)
     ref_build = symbols.reference_build()
     tls_lo, tls_hi = original_tls_section(build if reference else ref_build)
     ref_table = symbols.table(ref_build)
@@ -244,7 +284,7 @@ def main():
             hybrid.append(f"{u}\ttls\t{va:09X}")
             continue
         if is_func:
-            asm += [f"\t.globl {q}", f"{q}:", "\tjmpq *0(%rip)", f"\t.quad {va:#x}"]
+            asm += function_thunk(q, va, gadget, len(asm))
         else:
             asm += [f"\t.globl {q}", f"\t.set {q}, {va:#x}"]
         hybrid.append(f"{u}\t{'function' if is_func else 'data'}\t{va:09X}")

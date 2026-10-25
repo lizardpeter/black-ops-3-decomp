@@ -50,7 +50,8 @@ def same(a, b):
 
 def canonical_code(v, m, recon, recon_to_orig):
     """An address in the reconstruction's code as the original address it stands for: one of its functions ->
-    the original function, a hybrid-link thunk (`jmp [rip+0]; .quad target`) -> its target."""
+    the original function, a hybrid-link thunk -> its target: `jmp [rip+0]; .quad target`, or the exe-return thunk
+    (`sub rsp, frame; ...; movabs r10, target; jmp r10`, tools/build_recon.py function_thunk)."""
     if not recon.base <= v < recon.base + recon.size:
         return v
     if v in recon_to_orig:
@@ -58,6 +59,11 @@ def canonical_code(v, m, recon, recon_to_orig):
     code = bytes(m.mu.mem_read(v, 14))
     if code[:6] == b"\xff\x25\x00\x00\x00\x00":
         return struct.unpack("<Q", code[6:14])[0]
+    if code[:3] == b"\x48\x81\xec":
+        body = bytes(m.mu.mem_read(v, 0x140))
+        end = body.find(b"\x41\xff\xe2")  # jmp r10, right after movabs r10, target
+        if end >= 10 and body[end - 10:end - 8] == b"\x49\xba":
+            return struct.unpack("<Q", body[end - 8:end])[0]
     return v
 
 

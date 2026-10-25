@@ -38,6 +38,9 @@ pdb_path = 'd:\workspace\outrun\t7\game\pc\BlackOps3.pdb'
 pdb_guid = "BFD3A67B-5182-473D-B955-12F61FDB5F43"
 pdb_age = 5
 exe = { key = "bo3/DUMP/BlackOps3.exe", sha256 = "72c8a21763adbfac9e1b2bcd6f93b05ecf437610e16430d99a1680ea0f827c17" }
+# The hybrid link calls original functions with this exe address as their return address (`call ...; add rsp, 78h;
+# ret`): the game's pointer and dvar decoders hang when their caller is outside the exe (docs/obfuscation.md).
+exe_return = "14005D3F8"
 
 # Final Steam build (2023-02-25), as distributed in a torrent copy (R2 folder t7_tor_exe). Activision Authenticode
 # digest matches: an unmodified original. Arxan-protected: both .text sections are encrypted on disk (entropy 8.0).

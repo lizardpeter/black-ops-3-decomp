@@ -24,12 +24,17 @@ cgame's per-local-client globals, 0x342720 bytes each), stored by 1408D8D80 when
   some exe sites a few variants hang too. (An earlier note here, measured with the harness's single PEB variant, said
   calls from a DLL always decode the same; that was wrong.)
 
-**So reconstructed code running in recon.dll must not call these functions directly.** `T7ExeCall(fn, args...)`
-(tools/recon/include/t7_exe_call.h) calls an original function with an exe return address (a call site followed by
-`add rsp, 28h; ret`), and through it the getters and the decoders work in 16/16 variants. Moving every call from the
-DLL into the exe onto such a route (in the hybrid link's thunks rather than at each call) is the open design question
-before any reconstructed code is integrated into the running game; until then the differential tests fake the getters
-and run the decoders from the harness's return site.
+**So calls from recon.dll into the exe return through the exe.** Every hybrid-link thunk (tools/build_recon.py
+`function_thunk`) calls its original function with an exe address as the return address: a call site followed by
+`add rsp, 78h; ret` (target.toml `exe_return`, 14005D3F8, checked against the exe at build time). The thunk builds a
+frame of its own (the gadget address, home space, copies of up to 11 stack arguments, and the address of a stub that
+drops the frame and returns to the real caller), so arguments, return values and nonvolatile registers pass through
+unchanged. With it, `sub_1413ACDF0`'s decode copy and `CL_GetLocalClientGlobals` return in all 16 PEB variants (8 of
+16 hang with plain `jmp` thunks): tests/enhanced/test_exe_return.py. The exe is not CET-compatible (no extended
+DLL characteristics), so a return address the shadow stack didn't push is not a problem.
+
+A call through a function pointer that isn't a hybrid symbol (an address read from a table) bypasses the thunks;
+`T7ExeCall(fn, args...)` (tools/recon/include/t7_exe_call.h, up to five arguments) does the same for those.
 
 Reconstructed code calls an out-of-line decode copy instead of repeating the 16 state machines: the copies are the
 same algorithm, and the differential tests check that the reconstruction (copy) and the original (inline) decode the
