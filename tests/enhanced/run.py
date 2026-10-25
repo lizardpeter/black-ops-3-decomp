@@ -38,7 +38,7 @@ class Env:
         syms.BUILD = BUILD
 
     def data(self, name):
-        """A global or static of the enhanced DLL, by its plain name in the link map (ported from ghosts-decomp)."""
+        """A global or static of the enhanced DLL, by its plain name in the link map (build/.../enhanced/recon.map)."""
         if not hasattr(self, "_map"):
             out = ROOT / "build" if BUILD == symbols.reference_build() else ROOT / "build" / BUILD
             self._map = {}
@@ -63,11 +63,14 @@ class Env:
             return [self.machine.import_stub(symbol)]
         return [va for va in (self.dll.exports.get(symbol), self.original(symbol)) if va]
 
-    def call(self, symbol, args, ret="void", setup=None, fakes=None, observe=None):
+    def call(self, symbol, args, ret="void", setup=None, fakes=None, observe=None, ret_site=None, at=None,
+             original=False):
+        """original=True runs the original function even when the enhanced DLL defines one of that name."""
         hooks = {va: fn for s, fn in (fakes or {}).items() for va in self.at(s)}
         obs = {va: spec for s, spec in (observe or {}).items() for va in self.at(s)}
-        target = self.dll.exports.get(symbol) or self.original(symbol)
-        return self.machine.call(target, args, ret, setup, hooks, obs)
+        mid = {va: fn for s, fn in (at or {}).items() for va in self.at(s)}
+        target = self.original(symbol) if original else self.dll.exports.get(symbol) or self.original(symbol)
+        return self.machine.call(target, args, ret, setup, hooks, obs, ret_site, mid)
 
 
 def main():

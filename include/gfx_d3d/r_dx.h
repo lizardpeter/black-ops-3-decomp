@@ -8,6 +8,8 @@
 
 #include <winuser.h>
 
+#include "win32/win_input.h"  // win_hWnd, win_hRawInputWnd, sys_quitEvent
+
 extern void *dx_device;          // ID3D11Device
 extern void *dx_context;         // ID3D11DeviceContext (immediate)
 extern void *dx_swapChain;       // IDXGISwapChain, made by the window procedure (message 0x8042)
@@ -27,5 +29,3 @@ extern int dx_monitorHeight;
 extern bool dx_monitorSizeKnown;
 extern bool dx_needVideoChange;  // the next video check (141DAC790) applies the mode: set when fullscreen failed
 extern bool dx_needFullscreen;
-extern HWND g_hWnd;              // the game window, owned by the window thread (1423F49B0)
-extern HWND g_hWndInput;         // the raw input thread's message-only window (1423F4B70)

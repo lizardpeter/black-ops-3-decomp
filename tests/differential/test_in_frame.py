@@ -9,11 +9,10 @@ faked and recorded. The globals it writes (s_mouseActive, win_showCursor) are co
 Mutation check: see the commit adding this file.
 """
 import random
-import struct
 
 import syms
 from harness import _MACHINES, program_write
-from unicorn.x86_const import UC_X86_REG_R8, UC_X86_REG_R9, UC_X86_REG_RCX, UC_X86_REG_RDX, UC_X86_REG_RSP
+from unicorn.x86_const import UC_X86_REG_R8, UC_X86_REG_R9, UC_X86_REG_RCX, UC_X86_REG_RDX
 
 IN_FRAME = "?IN_Frame@@YAXXZ"
 HWND, OTHER = 0x0001_0042, 0x0002_0077
@@ -70,7 +69,7 @@ def frame_fakes(state):
         "USER32.dll!ShowCursor": show_cursor(state),
         "USER32.dll!GetForegroundWindow": foreground(state),
         "USER32.dll!PostMessageA": lambda mu: (record(mu, "PostMessageA", *regs(mu)), 1)[1],
-        "IN_MouseMove": lambda mu: record(mu, "IN_MouseMove"),
+        "?IN_MouseMove@@YAXXZ": lambda mu: record(mu, "IN_MouseMove"),
         "sub_1423BCD30": cursor_update(state),
     }
 
@@ -91,7 +90,7 @@ def frame_setup(state, initialized, app_active, mouse_active, show_cursor_flag):
             w.u64(syms.va(name), p)
         w.write(syms.va("s_mouseInitialized"), bytes([initialized]))
         w.write(syms.va("s_mouseActive"), bytes([mouse_active]))
-        w.u32(syms.va("g_appActive"), app_active)
+        w.u32(syms.va("win_appActive"), app_active)
         w.u32(syms.va("win_showCursor"), show_cursor_flag)
         w.u64(syms.va("win_hWnd"), HWND)
     return apply

@@ -25,6 +25,11 @@ Ported from black-ops-1-decomp's x86-32 harness. What changed for x64 (docs/veri
   registers of every call to the given addresses (to check what a function passes to a callee whose effect is
   invisible, such as an empty function in this build); `fakes` replaces an original function with Python
   (fn(mu) -> return value) for state the emulator lacks (dvars that were never registered, error state).
+- Return site: by default a call returns to SENTINEL, outside every image. The game's pointer-decoding blocks
+  (docs/fov.md, "Obfuscated pointers") look at their function's return address and can loop forever when it lies
+  outside the exe, so a test of such a function passes `ret_site`, an address in the exe just after a real call to
+  it: the call returns there and stops. `at` runs Python at an address without leaving the function (fn(mu), e.g. to
+  put a known pointer where a decoding block leaves its result).
 """
 import hashlib
 import math
@@ -259,6 +264,10 @@ class Machine:
         self.mu.mem_map(STACK, STACK_SIZE)
         self.mu.mem_map(HEAP, HEAP_SIZE)
         self.mu.mem_map(SENTINEL, 0x1000)
+        # The bytes before the return address look like `call rel32`, as at any real call site: the game's
+        # obfuscated pointer and dvar decoders inspect their caller's bytes and never finish when the call site
+        # doesn't look like a call (docs/obfuscation.md).
+        self.mu.mem_write(SENTINEL - 5, b"\xe8\x00\x00\x00\x00")
         self.mu.mem_map(TEB, 0x10000)
         self.mu.mem_write(TEB + 0x08, struct.pack("<Q", STACK + STACK_SIZE))  # NT_TIB.StackBase
         self.mu.mem_write(TEB + 0x10, struct.pack("<Q", STACK))               # NT_TIB.StackLimit
@@ -304,7 +313,7 @@ class Machine:
         self._setup_journal = {}
         self.mu.hook_add(UC_HOOK_MEM_WRITE, self._on_write)
         self.tsc = 0
-        self._hooked, self._fakes, self._observe, self.observed = set(), {}, {}, []
+        self._hooked, self._fakes, self._observe, self._at, self.observed = set(), {}, {}, {}, []
         self._rdtsc_cb = uccallback(self.mu, HOOK_INSN_CPUID_CFUNC)(self._on_rdtsc)
         for insn in (UC_X86_INS_RDTSC, UC_X86_INS_RDTSCP):
             self.mu._Uc__do_hook_add(UC_HOOK_INSN, self._rdtsc_cb, 1, 0, insn)
@@ -389,6 +398,9 @@ class Machine:
             self.mu.hook_add(UC_HOOK_CODE, self._on_hooked, begin=va, end=va)
 
     def _on_hooked(self, mu, address, size, user):
+        run = self._at.get(address)
+        if run:
+            run(mu)
         spec = self._observe.get(address)
         if spec is not None:
             # spec: one letter per argument: b = bool/char (low byte; the rest of the register is undefined),
@@ -419,7 +431,7 @@ class Machine:
             mu.reg_write(UC_X86_REG_RSP, rsp + 8)
             mu.reg_write(UC_X86_REG_RIP, ret)
 
-    def call(self, va, args, ret="int", setup=None, fakes=None, observe=None):
+    def call(self, va, args, ret="int", setup=None, fakes=None, observe=None, ret_site=None, at=None):
         """args: ints, floats ('f', x), doubles ('d', x), or bytes (passed by pointer, read back after).
         ret: int (32-bit), int64, char, short, float, double, void, or cstr (a returned char pointer, compared as
         the string it points to: a string literal lives at different addresses in the original and the
@@ -436,7 +448,8 @@ class Machine:
         self.imports_called = []
         self.tsc = 0x100000000
         self._fakes, self._observe, self.observed = dict(fakes or {}), dict(observe or {}), []
-        for a in list(self._fakes) + list(self._observe):
+        self._at = dict(at or {})
+        for a in list(self._fakes) + list(self._observe) + list(self._at):
             self._hook_at(a)
         if setup:
             setup(Writer(self))
@@ -460,7 +473,8 @@ class Machine:
         top = STACK + STACK_SIZE - 0x100
         sp = (top - (8 + 0x20 + 8 * nstack)) & ~0xF
         sp -= 8
-        mu.mem_write(sp, struct.pack("<Q", SENTINEL))
+        stop = ret_site or SENTINEL
+        mu.mem_write(sp, struct.pack("<Q", stop))
         for i, (_, v) in enumerate(slots[4:]):
             mu.mem_write(sp + 8 + 0x20 + 8 * i, struct.pack("<Q", v))
         for i, (isf, v) in enumerate(slots[:4]):
@@ -473,8 +487,9 @@ class Machine:
         mu.reg_write(UC_X86_REG_MXCSR, 0x1F80)  # all SSE exceptions masked, round to nearest
         self._journal = {}
         try:
-            mu.emu_start(va, SENTINEL, count=2_000_000)
-            fault = None
+            mu.emu_start(va, stop, count=2_000_000)
+            fault = None if mu.reg_read(UC_X86_REG_RIP) == stop else \
+                f"fault: did not return (2,000,000 instructions) at {mu.reg_read(UC_X86_REG_RIP):#x}"
         except UcError as e:
             fault = f"fault: {e} at {mu.reg_read(UC_X86_REG_RIP):#x}"
         # Net changes only (storing the value a byte already had is not a behavioural difference), reported as
@@ -491,7 +506,7 @@ class Machine:
             mu.mem_write(a, old)
         self._journal = {}
         self._setup_journal = {}
-        observed, self._fakes, self._observe = self.observed, {}, {}
+        observed, self._fakes, self._observe, self._at = self.observed, {}, {}, {}
         if fault:
             return fault, [], globals_written, observed
         rax = mu.reg_read(UC_X86_REG_RAX)

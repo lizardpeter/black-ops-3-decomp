@@ -48,7 +48,7 @@ void sub_141D46720()
 		const int pace = -2 - (int)(-1000.0f / Dvar_GetFloat(r_refreshRate));
 		Sleep(pace > 0 ? (DWORD)pace : 0);
 	}
-	const HRESULT hr = (HRESULT)SendMessageA(g_hWnd, 0x8043, (WPARAM)vsync, 0);
+	const HRESULT hr = (HRESULT)SendMessageA(win_hWnd, 0x8043, (WPARAM)vsync, 0);
 	if (hr < 0)
 	{
 		const char *reason;

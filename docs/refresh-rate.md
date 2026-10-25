@@ -59,6 +59,6 @@ refused detection): set it once in the menu, or with `r_refreshRate <rate>` in t
 ## Not done yet
 
 - **Follow the desktop.** A "0 = use the monitor's current or highest rate" setting would need the present path
-  first: on AMD with vsync on, 141D46720 sleeps `1000 / r_refreshRate - 2` ms before each present (B0015), which
-  would be undefined for 0.
-- The present-path pacer itself (B0015) and the comparator that never returns 0 (B0014).
+  first: on AMD with vsync on, during a loading screen, 141D46720 sleeps `1000 / r_refreshRate - 2` ms before each
+  present (B0015, docs/presentation.md), which would be undefined for 0; the enhanced flip-model path drops it (P0019).
+- The comparator that never returns 0 (B0014).

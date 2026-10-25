@@ -1,4 +1,4 @@
-// P0017: the flip-model present, made where the frame is finished (B0030, B0031, B0015).
+// P0019: the flip-model present, made where the frame is finished (B0031, B0015); P0017's tearing flag (B0030).
 //
 // Replaces src/gfx_d3d/r_present.cpp's sub_141D46720. With a flip-model swap chain (enhanced/gfx_d3d/r_init.cpp):
 // - the thread that finished the frame presents it itself, instead of sending message 0x8043 to the window thread and
@@ -10,10 +10,12 @@
 //   the renderer's state cache still believes they are;
 // - each successful present is counted for the frame-latency wait (P0018);
 // - the AMD loading-screen sleep (B0015) is dropped: the frame-latency wait paces the frames.
+// The tearing flag is P0017's (the swap chain's side is in enhanced/gfx_d3d/r_init.cpp).
 // Without flip model (a system that refused it) everything is the original. The SLI check, the error report and
 // 3D Vision are unchanged. docs/presentation.md.
 
 #include <dxgi.h>
+#include <t7_exe_call.h>
 #include <winuser.h>
 
 #include "gfx_d3d/com_call.h"
@@ -83,7 +85,7 @@ void sub_141D46720()
 		s_lastAfrIndex = afrIndex;
 		ScopedCriticalSection_Destruct(&lock);
 	}
-	const bool vsync = Dvar_GetBool(r_vsync);
+	const bool vsync = T7ExeCall(Dvar_GetBool, r_vsync);
 	HRESULT hr;
 	if (r_flipModel && dx_swapChain)
 	{
@@ -93,10 +95,10 @@ void sub_141D46720()
 	{
 		if (dx_remoteScreenUpdateNesting && vsync && dx_vendor == 2)
 		{
-			const int pace = -2 - (int)(-1000.0f / Dvar_GetFloat(r_refreshRate));
+			const int pace = -2 - (int)(-1000.0f / T7ExeCall(Dvar_GetFloat, r_refreshRate));
 			Sleep(pace > 0 ? (DWORD)pace : 0);
 		}
-		hr = (HRESULT)SendMessageA(g_hWnd, 0x8043, (WPARAM)vsync, 0);
+		hr = (HRESULT)SendMessageA(win_hWnd, 0x8043, (WPARAM)vsync, 0);
 	}
 	if (hr < 0)
 	{
@@ -130,7 +132,7 @@ void sub_141D46720()
 		{
 			dx_stereoActivated = stereoOn != 0;
 			if (dx_stereoActivated)
-				NvAPI_Stereo_SetConvergence(dx_stereoHandle, Dvar_GetFloat(r_convergence));
+				NvAPI_Stereo_SetConvergence(dx_stereoHandle, T7ExeCall(Dvar_GetFloat, r_convergence));
 			return;
 		}
 	}

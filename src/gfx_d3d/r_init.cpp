@@ -107,7 +107,7 @@ HRESULT sub_141DAB250(const GfxWindowParms *wndParms)
 		return hr;
 	DXGI_SWAP_CHAIN_DESC swapChainDesc;
 	sub_141DA7A00(&swapChainDesc, wndParms);
-	hr = (HRESULT)SendMessageA(g_hWnd, 0x8042, (WPARAM)factory, (LPARAM)&swapChainDesc);
+	hr = (HRESULT)SendMessageA(win_hWnd, 0x8042, (WPARAM)factory, (LPARAM)&swapChainDesc);
 	if (hr < 0)
 		return hr;
 	ComCall<HRESULT>(factory, FACTORY_MakeWindowAssociation, wndParms->hwnd,
@@ -179,7 +179,7 @@ haveMonitorSize:
 	rawMouse.usUsagePage = HID_USAGE_PAGE_GENERIC;
 	rawMouse.usUsage = HID_USAGE_GENERIC_MOUSE;
 	rawMouse.dwFlags = RIDEV_INPUTSINK;
-	rawMouse.hwndTarget = g_hWndInput;
+	rawMouse.hwndTarget = win_hRawInputWnd;
 	RegisterRawInputDevices(&rawMouse, 1, sizeof(rawMouse));
 	return hr;
 }
@@ -216,7 +216,7 @@ void sub_141DAD0C0()
 	                         wndParms.displayHeight != vidConfig_displayHeight;
 	DXGI_SWAP_CHAIN_DESC swapChainDesc;
 	sub_141DA7A00(&swapChainDesc, &wndParms);
-	sub_141DA7B50(&wndParms);
+	R_StoreWindowSettings(&wndParms);
 	MSG msg;
 	while (PeekMessageA(&msg, nullptr, 0, 0, PM_NOREMOVE))
 	{

@@ -78,7 +78,7 @@ def common_fakes(c):
         "Dvar_GetInt": lambda mu: (record(mu, "Dvar_GetInt", regs(mu)[0]), c["backbuffers"])[1],
         "sub_141DABB90": fill_parms(c),
         "sub_141DAB810": lambda mu: record(mu, "sub_141DAB810", bytes(mu.mem_read(regs(mu)[0], 0x30))),
-        "sub_141DA7B50": lambda mu: record(mu, "sub_141DA7B50", bytes(mu.mem_read(regs(mu)[0], 0x30))),
+        "R_StoreWindowSettings": lambda mu: record(mu, "R_StoreWindowSettings", bytes(mu.mem_read(regs(mu)[0], 0x30))),
     }
 
 
@@ -166,8 +166,8 @@ def create_setup(c, model_box):
         w.u64(syms.va("dx_device"), model.new(DEV))
         w.u64(syms.va("dx_context"), model.new(CTX))
         w.u64(syms.va("dx_swapChain"), model.new(SWC) if c["old_swapchain"] else 0)
-        w.u64(syms.va("g_hWnd"), HWND)
-        w.u64(syms.va("g_hWndInput"), 0x0003_0099)
+        w.u64(syms.va("win_hWnd"), HWND)
+        w.u64(syms.va("win_hRawInputWnd"), 0x0003_0099)
         w.u64(syms.va("r_backBufferCount"), BACKBUFFER_DVAR)
         w.u64(syms.va("r_fullscreen"), FULLSCREEN_DVAR)
         w.u32(syms.va("dx_monitorCount"), 1)

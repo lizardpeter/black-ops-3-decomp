@@ -112,7 +112,7 @@ def setup(c):
         w.write(syms.va("dx_afrIndexRepeated"), bytes([c["repeated"]]))
         w.u32(syms.va("dx_remoteScreenUpdateNesting"), c["nesting"])
         w.u32(syms.va("dx_vendor"), c["vendor"])
-        w.u64(syms.va("g_hWnd"), HWND)
+        w.u64(syms.va("win_hWnd"), HWND)
         w.u64(syms.va("dx_stereoHandle"), STEREO if c["stereo"] else 0)
         w.write(syms.va("dx_stereoActivated"), bytes([c["was_active"]]))
         w.write(TLS_BLOCK + 0x10, b"\x01")  # the thread's thread_locals are initialized

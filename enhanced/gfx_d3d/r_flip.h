@@ -1,6 +1,6 @@
 // enhanced/gfx_d3d/r_flip.h: the enhanced build's presentation state, shared by its overrides of the swap chain's
 // creation and resize (enhanced/gfx_d3d/r_init.cpp), the present (enhanced/gfx_d3d/r_present.cpp) and IN_Frame
-// (enhanced/win32/win_input.cpp). records/patches.tsv P0017, P0018; docs/presentation.md.
+// (enhanced/win32/win_input.cpp). records/patches.tsv P0017, P0018, P0019; docs/presentation.md.
 #pragma once
 
 #include <dxgi.h>

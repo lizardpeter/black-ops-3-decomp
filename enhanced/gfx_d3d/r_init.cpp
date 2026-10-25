@@ -15,6 +15,7 @@
 // The swap chain is still made on the window thread (message 0x8042), as in the original. docs/presentation.md.
 
 #include <dxgi.h>
+#include <t7_exe_call.h>
 #include <math.h>
 #include <string.h>
 #include <winuser.h>
@@ -80,7 +81,7 @@ HRESULT R_CreateSwapChain(void *factory, const DXGI_SWAP_CHAIN_DESC *originalDes
 	                  (tearing ? (unsigned int)DXGI_SWAP_CHAIN_FLAG_ALLOW_TEARING : 0u);
 	for (int attempt = 0; attempt < 2; attempt++)
 	{
-		const HRESULT hr = (HRESULT)SendMessageA(g_hWnd, 0x8042, (WPARAM)factory, (LPARAM)&flipDesc);
+		const HRESULT hr = (HRESULT)SendMessageA(win_hWnd, 0x8042, (WPARAM)factory, (LPARAM)&flipDesc);
 		if (hr >= 0)
 		{
 			r_flipModel = true;
@@ -93,7 +94,7 @@ HRESULT R_CreateSwapChain(void *factory, const DXGI_SWAP_CHAIN_DESC *originalDes
 	r_flipModel = false;
 	r_flipAllowTearing = false;
 	r_swapChainFlags = originalDesc->Flags;
-	return (HRESULT)SendMessageA(g_hWnd, 0x8042, (WPARAM)factory, (LPARAM)originalDesc);
+	return (HRESULT)SendMessageA(win_hWnd, 0x8042, (WPARAM)factory, (LPARAM)originalDesc);
 }
 
 // The new swap chain's waitable object. The previous one's handle is closed and the counts start again. Without one
@@ -115,7 +116,7 @@ void R_AcquireFrameLatencyWaitable()
 	if (ComCall<HRESULT>(dx_swapChain, UNK_QueryInterface, &IID_IDXGISwapChain2_Enhanced, &swapChain2) < 0 ||
 	    !swapChain2)
 		return;
-	int latency = Dvar_GetInt(r_maxFrameLatency);
+	int latency = T7ExeCall(Dvar_GetInt, r_maxFrameLatency);
 	if (latency)
 	{
 		if (dx_gpuCount > latency)
@@ -136,7 +137,7 @@ void R_CountPresent()
 // How long one wait may take before it counts as a missed signal: two refresh periods at r_refreshRate, 50 ms to 1 s
 static DWORD R_FrameLatencyTimeout()
 {
-	const float hz = Dvar_GetFloat(r_refreshRate);
+	const float hz = T7ExeCall(Dvar_GetFloat, r_refreshRate);
 	DWORD timeout = 50;
 	if (hz > 0.0f)
 	{
@@ -294,7 +295,7 @@ haveMonitorSize:
 	rawMouse.usUsagePage = HID_USAGE_PAGE_GENERIC;
 	rawMouse.usUsage = HID_USAGE_GENERIC_MOUSE;
 	rawMouse.dwFlags = RIDEV_INPUTSINK;
-	rawMouse.hwndTarget = g_hWndInput;
+	rawMouse.hwndTarget = win_hRawInputWnd;
 	RegisterRawInputDevices(&rawMouse, 1, sizeof(rawMouse));
 	return hr;
 }
@@ -326,7 +327,7 @@ void sub_141DAD0C0()
 	                         wndParms.displayHeight != vidConfig_displayHeight;
 	DXGI_SWAP_CHAIN_DESC swapChainDesc;
 	sub_141DA7A00(&swapChainDesc, &wndParms);
-	sub_141DA7B50(&wndParms);
+	R_StoreWindowSettings(&wndParms);
 	MSG msg;
 	while (PeekMessageA(&msg, nullptr, 0, 0, PM_NOREMOVE))
 	{
