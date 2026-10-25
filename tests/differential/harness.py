@@ -259,6 +259,10 @@ class Machine:
         self.mu.mem_map(STACK, STACK_SIZE)
         self.mu.mem_map(HEAP, HEAP_SIZE)
         self.mu.mem_map(SENTINEL, 0x1000)
+        # The bytes before the return address look like `call rel32`, as at any real call site: the game's
+        # obfuscated pointer and dvar decoders inspect their caller's bytes and never finish when the call site
+        # doesn't look like a call (docs/obfuscation.md).
+        self.mu.mem_write(SENTINEL - 5, b"\xe8\x00\x00\x00\x00")
         self.mu.mem_map(TEB, 0x10000)
         self.mu.mem_write(TEB + 0x08, struct.pack("<Q", STACK + STACK_SIZE))  # NT_TIB.StackBase
         self.mu.mem_write(TEB + 0x10, struct.pack("<Q", STACK))               # NT_TIB.StackLimit

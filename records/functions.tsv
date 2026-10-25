@@ -32,3 +32,6 @@ BlackOps3_MSStore	141D976E0	matches	src/gfx_d3d/r_dvars.cpp
 BlackOps3_MSStore	141DAA730	matches	src/gfx_d3d/r_init.cpp	
 BlackOps3_MSStore	141DA7A00	matches	src/gfx_d3d/r_init.cpp	
 BlackOps3_MSStore	1420E7490	matches	src/ui/lua_cod_luacalls.cpp	
+BlackOps3_MSStore	1413ACBD0	matches	src/client/cl_input.cpp	
+BlackOps3_MSStore	1413ACDF0	matches	src/client/cl_input.cpp	
+BlackOps3_MSStore	141405E50	matches	src/client/cl_input.cpp	
