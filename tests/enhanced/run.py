@@ -37,6 +37,19 @@ class Env:
         self.machine = Machine(Image(original_exe(BUILD)), self.dll)
         syms.BUILD = BUILD
 
+    def data(self, name):
+        """A global or static of the enhanced DLL, by its plain name in the link map (build/.../enhanced/recon.map)."""
+        if not hasattr(self, "_map"):
+            out = ROOT / "build" if BUILD == symbols.reference_build() else ROOT / "build" / BUILD
+            self._map = {}
+            for line in (out / "enhanced" / "recon.map").read_text().splitlines():
+                parts = line.split()
+                if len(parts) >= 4 and ":" in parts[0] and len(parts[2]) == 16:
+                    self._map.setdefault(parts[1], int(parts[2], 16))
+        if name in self._map:
+            return self._map[name]
+        return next(va for sym, va in self._map.items() if sym.startswith(f"?{name}@@"))
+
     def original(self, symbol):
         """An original function or global: by symbol, else by plain name (a build without decorated names)."""
         hit = symbols.resolve(BUILD, symbol)
