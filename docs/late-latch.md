@@ -27,7 +27,7 @@ All of this runs on the main thread up to the hand-off; the render thread does t
 4. **View parms.** `141DE3D00(refdef)` takes a 0x290-byte slot from the frontend data (`frontEndData` 1486C3A78,
    count at +0xF63A0) and fills it with `R_SetupViewParms` (141DE3510): origin +0x240 (w = 1), axis +0x250, view
    matrix +0x000 (from origin and axis, 1423899C0), projection +0x040 and a second projection +0x080 (same FOV,
-   reversed infinite depth; probably the viewmodel's), znear +0x274, tanHalfFov +0x280. `141DD52B0` then derives
+   reversed infinite depth; the render thread never reads it), znear +0x274, tanHalfFov +0x280. `141DD52B0` then derives
    view×proj +0x0C0, view×proj2 +0x100, inverse +0x140, an unjittered projection +0x180 with its products
    +0x1C0/+0x200 (the jitter is the subpixel offset for TAA and supersampling, 14A333F50/64/68). Finally
    `R_CellForPoint` (141D81B90) walks the BSP to the origin's cell (+0x288), which decides portal visibility.
@@ -60,9 +60,48 @@ and the main thread waits for N only when it is ready to hand over N+1. So the v
 render thread's own work, all before the GPU starts. At a CPU-bound 300–500 fps that is roughly one main-thread frame
 (2–3 ms) plus the render thread's time. A late latch would recover that time for the camera.
 
+## How the camera reaches the shaders
+
+All of this happens on the render thread, from the view parms at the start of each `viewInfo`:
+
+- **During play, scenes draw through `141D4E220`.** It is reached from `141D46D30` once `1486BEEA0` is 2, which
+  `141DAD840` sets when the renderer starts; 0 is only the state before that. `141D4E220` draws the scene's draw
+  lists (`viewInfo` +0x1428) itself and through job callbacks such as `141D4ACB0`. Every one of them takes the
+  `viewInfo` from the render thread.
+- **`R_Set3D` (141DF1B10)** copies the 0x290 bytes of view parms from the `viewInfo` the backend state points at
+  (state +0x22B0) into the state's own copy (state +0x1DF0). It sets the eye offset (state +0x22A0 and code constant
+  0xC3) and bumps the view, projection and view×projection versions (state +0x228A/C/E). Every draw path calls it
+  after storing the `viewInfo`: `141D50380`, `141DC80B0`, `141D66110`, `141D69720`, `141DEF950`, `141D45FA0` (the
+  draw-list jobs). `R_Set2D` (141DF1950) is the same for the 2D pass, with an orthographic projection.
+- **`R_GetCodeMatrix` (141DED4D0)** returns a code matrix to the shader-argument code (141DE8AF0). It derives the
+  matrix again only when its version is behind, through **`R_DeriveCodeMatrix` (141DED140)**:
+  - view: the copy's +0x000, made camera-relative with the eye offset;
+  - projection: +0x040;
+  - view×projection: +0x0C0, or view × projection in the backend's mode 2.
+  
+  The inverse and transposed forms come from those, in groups of four as in IW.
+- **Post-process filters** take what they need from the view parms on the render thread too: tanHalfFov, inverse
+  view and so on. They are set up by the functions in the table at 142ECB860 (0x50 bytes per entry: name, material,
+  init, setup), for example "tmode" (141D68730) and "hot zone" (141D68880).
+
+So **the camera matrices are not multiplied out on the main thread.** Rewriting the view parms at the start of a
+`viewInfo` on the render thread, before its scene is drawn, reaches every 3D shader through `R_Set3D` and the
+version counters. Nothing else needs patching for the camera itself. The second projection (+0x080/+0x100) is not
+read by any of this, so the viewmodel doesn't get its own matrix from here.
+
+What the main thread **does** derive from the view, and the latch has to handle:
+
+| Derived on the main thread | Where | What a latch does with it |
+| --- | --- | --- |
+| Culling frustum and its matrices | `141E069A0` (from `R_RenderScene`) into `viewInfo` +0x1440..+0x1664, from the cull view (the camera, or the locked view when the lock-view dvar 1486BF618 is on) | Cull with a wider FOV so a late turn finds nothing missing. The engine already takes the cull view apart from the render view. |
+| Motion-vector and TAA reprojection blocks | `141DDC6C0` (from 141DDDC20) writes two 0xF0-byte blocks at frontend +0xF9590/+0xF95A0 from the current and previous view parms; their pointers sit at `viewInfo` +0xB2718/+0xB2720 | Recompute on the render thread with the latched view, or the frame reprojects with the turn missing |
+| Previous view | `141DE3D80`, after `R_RenderScene`, copies the unlatched view to 148705570 + client × 0x290 | Store the latched view there, so the next frame's reprojection starts from what was shown |
+
 ## Where the latch goes
 
-**On the render thread, just before a scene is drawn** (the start of `141D46D30` / `141D50380` for that `viewInfo`):
+**On the render thread, before the main view's scene is drawn**: at the start of `141D470F0`, for the main view's
+`viewInfo`. The main view is the scene `R_RenderScene` made when called from `141DE3D80`, so its index can be
+recorded there.
 
 1. Take the raw-input counts not yet consumed (the 64-bit counters from P0013; read them, don't take them, so the next
    game frame still applies the movement, as Rust-test does).
@@ -71,23 +110,14 @@ render thread's own work, all before the GPU starts. At a CPU-bound 300–500 fp
 3. Rotate the view about its origin: recompute `viewInfo`'s view parms (the view matrix and everything
    `141DD52B0` derives from it) with the new axis. The origin stays put, so the BSP cell stays valid.
 
-Things to get right, each to be checked before any code:
+Besides the three main-thread items in the table above:
 
-- **Which constants come from the view parms on the render thread.** The 0x1960-byte input block is filled on the
-  main thread (141DDD1B0, 141DDDC20). If the camera matrices sit in that block already multiplied out, those have to
-  be patched as well (or instead). This is the next thing to map: the reads of `viewInfo` +0x000..+0x290 and of the
-  input block's matrices in the 141D4–141E0 render-thread code.
-- **The viewmodel.** The gun is placed from the old view. If it is drawn with the second view×proj (+0x100), keeping
-  +0x100 unrotated holds it fixed on screen while the world turns. If it is drawn with the world matrices, it would
-  lag the turn and has to be moved with the camera.
-- **Culling.** Surfaces were culled against the old frustum, so a late turn can show the edge of the screen missing
-  geometry. Options: cull with a slightly wider frustum (a small FOV margin in step 5) or cap the late turn. Rust-test
-  doesn't have BO3's portal culling, so this is new work.
-- **Reprojection.** The previous-view copy (step 5) is saved from the unlatched parms. It has to save the latched
-  ones, or TAA and motion blur see a false camera move. Because it is written on the main thread for the frame after,
-  the latched parms need handing back.
-- **Other views.** Scopes with picture-in-picture, extra cameras and splitscreen are separate scenes. Only the local
-  player's main view should be latched.
+- **The viewmodel (still open).** The gun is placed in the world from the unlatched view. If it is drawn with the
+  same view matrix as the world (nothing above gives it its own), a late turn moves it on screen by the turn: the gun
+  would trail the camera for a frame. The fix is to move the gun's models by the same rotation about the eye.
+  Finding where its placement reaches the draw lists is the next piece to map.
+- **Other views.** Scopes with picture-in-picture, extra cameras (`141DE4020`) and splitscreen are separate scenes.
+  Only the local player's main view is latched.
 - **Shadows and sun cascades** are fitted to the old view. A small turn doesn't matter, so they stay as they are.
 
 ## Later: Reflex and Vulkan

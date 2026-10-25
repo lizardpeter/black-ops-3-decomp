@@ -22,7 +22,7 @@
     },
     {
       "file": "t7/functions-BlackOps3_MSStore.jsonl",
-      "sha256": "930e767c0288f715a973941be77ef7fd08bbaee52032e054a1d3c53f31352069",
+      "sha256": "3069692c6075a96ca4206c0c984fdd8ba156efee342869e29ba753e63654a950",
       "rows": 42221,
       "cypher": "UNWIND {{ROWS}} AS r MATCH (b:Build {id:r.build}) MERGE (fn:Function {key:r.key}) SET fn.name = coalesce(fn.name, r.name), fn.symbol = r.symbol MERGE (fi:FunctionInstance {id:r.id}) SET fi.build=r.build, fi.va=r.va, fi.size=r.size, fi.status=r.status, fi.type=r.type, fi.src=r.src, fi.bytes_sha256=r.sha MERGE (fi)-[:INSTANCE_OF]->(fn) MERGE (fi)-[:IN_BUILD]->(b) WITH fn, r WHERE r.source <> '' MATCH (sf:SourceFile {path:r.source}) MERGE (fn)-[d:DEFINED_IN]->(sf) SET d.line=r.line"
     },
