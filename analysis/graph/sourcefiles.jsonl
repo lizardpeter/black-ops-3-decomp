@@ -8,3 +8,4 @@
 {"path": "libs/DemonWareGDK/bdPlatform/bdPlatformSocket/bdPlatformStreamSocket-xboxone.cpp", "subsystem": "libs"}
 {"path": "universal/dvar.cpp", "subsystem": "universal"}
 {"path": "universal/q_shared.cpp", "subsystem": "universal"}
+{"path": "win32/win_input.cpp", "subsystem": "win32"}

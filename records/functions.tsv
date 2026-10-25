@@ -38,3 +38,6 @@ BlackOps3_MSStore	141405E50	matches	src/client/cl_input.cpp
 BlackOps3_MSStore	1413AE730	matches	src/client/cl_input.cpp	
 BlackOps3_MSStore	1423ABE50	matches	src/universal/dvar.cpp	
 BlackOps3_MSStore	1405B6690	matches	src/cgame/cg_view.cpp	
+BlackOps3_MSStore	1423BD4C0	matches	src/win32/win_input.cpp	
+BlackOps3_MSStore	1423F4B70	matches	src/win32/win_input.cpp	
+BlackOps3_MSStore	1423F49B0	matches	src/win32/win_input.cpp	

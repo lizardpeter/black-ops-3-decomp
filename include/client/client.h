@@ -89,7 +89,7 @@ enum { KB_STRIDE = 0x498 };
 extern unsigned char kb_strafeActive[];  // kbutton_t active flags per local client (stride KB_STRIDE)
 extern unsigned char kb_mlookActive[];
 extern int cls_aimFrametime;             // 149BB4714
-extern int cl_demoPlaying;               // 1494B2DC8 == 2 while a demo/theater plays (lockForward is skipped)
+extern int unk_1494B2DC8;               // meaning unknown; CL_MouseMove skips its movement lock when it is 2
 extern int cl_localClientActive[];       // 148DEE268, stride 9 ints
 extern const dvar_t *aim_mouseDirection; // 14E418348: a vec2 dvar CL_MouseMove writes the mouse direction to
 
@@ -100,7 +100,7 @@ void AimAssist_UpdateMouseInput(const AimInput *input, AimOutput *output);
 void sub_140104EA0(unsigned long long direction, const AimInput *input, AimOutput *output);
 void Dvar_SetVec2(const dvar_t *dvar, float x, float y);
 const dvar_t *sub_142396BB0(const dvar_t *dvar, int sessionMode);
-extern unsigned int com_sessionModeBits;  // 158AE65C4; the low 4 bits, sign-extended, are the session mode
+extern unsigned int com_sessionModeState;  // 158AE65C4; the low 4 bits, sign-extended, are the session mode
 
 void CL_MouseMove(int localClientNum, usercmd_s *cmd);
 void CL_GetMouseMovement(int localClientNum, float *mx, float *my, bool consume);

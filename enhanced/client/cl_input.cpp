@@ -166,7 +166,7 @@ void CL_MouseMove(int localClientNum, usercmd_s *cmd)
 	if (!sub_142756F90(CG_GetPredictedPlayerState(localClientNum)))
 	{
 		bool lockMove = false;
-		if ((CL_FIELD(unsigned int, cl, 0xD0) & 0x200) && cl_demoPlaying != 2)
+		if ((CL_FIELD(unsigned int, cl, 0xD0) & 0x200) && unk_1494B2DC8 != 2)
 		{
 			lockMove = true;
 			CMD_FIELD(unsigned short, cmd, 0x38) = 0;
@@ -265,7 +265,7 @@ void CL_MouseMove(int localClientNum, usercmd_s *cmd)
 				const dvar_t *variant = direction;
 				if (*(const int *)((const char *)direction + 0x1C) == 0xF)
 				{
-					variant = sub_142396BB0(direction, (int)(com_sessionModeBits << 28) >> 28);
+					variant = sub_142396BB0(direction, (int)(com_sessionModeState << 28) >> 28);
 					direction = aim_mouseDirection;
 				}
 				baseX = *(const float *)((const char *)variant + 0x28);
