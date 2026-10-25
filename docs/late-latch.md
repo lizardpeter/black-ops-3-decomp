@@ -112,10 +112,25 @@ recorded there.
 
 Besides the three main-thread items in the table above:
 
-- **The viewmodel (still open).** The gun is placed in the world from the unlatched view. If it is drawn with the
-  same view matrix as the world (nothing above gives it its own), a late turn moves it on screen by the turn: the gun
-  would trail the camera for a frame. The fix is to move the gun's models by the same rotation about the eye.
-  Finding where its placement reaches the draw lists is the next piece to map.
+- **The viewmodel.** The gun is placed in the world on the main thread, from the unlatched view, so drawing it with
+  the latched view would make it trail the turn for a frame. But it is drawn separately, so it can simply keep the
+  unlatched view:
+  - **Placement.** `CG_AddViewWeapon` (14126DD20, called from `CG_DrawActiveFrame`) works out the gun's world
+    placement in `14126D750`. That uses the view-model axis and origin at cg +0x2E7514/+0x2E7538, the `cg_gun_x/y/z`
+    offsets and the FOV compensation from `cg_fov`. It then adds the gun through `14126B900` → `141269850` →
+    `R_AddDObjToScene` (141DE5460) with render flags 0x40000001, from `1412692B0`.
+  - **Sort key.** Bit 30 of those flags goes into each surface's sort key (`141D77770`). So the gun's surfaces land in
+    their own draw lists, **0 and 0x16**.
+  - **Drawing.** The render thread draws those lists in the draw-list job `141D4AB30`. Around them it switches the
+    backend to its view-model mode: +0x22B8 = 1 and the camera-relative mode +0x8100 = 1. That mode bumps the
+    projection versions and narrows the depth range to [0.984375, 1] (reversed Z). It switches back for every other
+    list.
+
+  So the latch keeps the unlatched view parms beside the latched ones. When `141D4AB30` enters lists 0/0x16, it puts
+  the unlatched ones in the state's copy (+0x1DF0) and bumps all three matrix versions; when it leaves, it puts the
+  latched ones back. The gun then lands exactly where the game put it, while the world turns. That lists 0 and 0x16
+  are only the view model rests on the flags and the depth range above. It gets checked in the game before the
+  latch is trusted.
 - **Other views.** Scopes with picture-in-picture, extra cameras (`141DE4020`) and splitscreen are separate scenes.
   Only the local player's main view is latched.
 - **Shadows and sun cascades** are fitted to the old view. A small turn doesn't matter, so they stay as they are.
