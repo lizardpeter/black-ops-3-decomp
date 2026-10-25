@@ -151,7 +151,8 @@ def test_mouse_move_accumulates_in_double(env):
                 w.write(faithful.syms.va("kb_strafeActive"), b"\0")
                 w.u32(faithful.syms.va("cls_frametime"), 4)
                 w.write(address + 8, struct.pack("<d", previous))            # [0][1]: local client 0's yaw
-                w.write(address + 32 + 4, struct.pack("<f", _f32(previous)))  # what was last written as float
+                written = env.data("s_viewAnglesWritten")                   # what was last written as float
+                w.write(written + 4, struct.pack("<f", _f32(previous)))
 
             fakes = dict(base["fakes"])
             fakes[faithful.SCALE] = faithful._floats_out(mx, 0.0)

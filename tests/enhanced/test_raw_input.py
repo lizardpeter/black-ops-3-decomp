@@ -131,7 +131,8 @@ def test_mouse_move_matches_original_in_front_and_drops_otherwise(env):
         hooks = {va: fn for s, fn in inp["fakes"].items() for va in env.at(s)}
         original = env.machine.call(env.original(MOVE), [], "void", capture, hooks)
         enhanced = env.call(MOVE, [], "void", capture, inp["fakes"])
-        counts = (syms.va("win_rawMouseDx"), syms.va("win_rawMouseDy"), env.data("s_rawDx"), env.data("s_rawDy"))
+        counts = (syms.va("win_rawMouseDx"), syms.va("win_rawMouseDy"), env.data("s_rawDx"), env.data("s_rawDy"),
+                  env.data("s_takenTotalX"), env.data("s_takenTotalY"))
         made_event = any(c[0] == "CL_MouseEvent" for c in original[3])
         if made_event and -0x80000000 in (state["dx"], state["dy"]):
             # the 64-bit counts are clamped to +-0x7FFFFFFF: -2^31 is handed on as -0x7FFFFFFF
@@ -144,9 +145,11 @@ def test_mouse_move_matches_original_in_front_and_drops_otherwise(env):
             # suspended or not in front: the original leaves the counts for later, the enhanced build drops them
             assert not any(c[0] == "CL_MouseEvent" for c in enhanced[3])
             assert without(enhanced[2], *counts) == without(original[2], *counts)
-        # the counts are always taken
+        # the counts are always taken, and added to the running totals the late latch reads (P0021)
         for n, k in (("s_rawDx", "dx"), ("s_rawDy", "dy")):
             assert (q(enhanced[2], env.data(n)) if env.data(n) in enhanced[2] else state[k]) == 0
+        for n, k in (("s_takenTotalX", "dx"), ("s_takenTotalY", "dy")):
+            assert (q(enhanced[2], env.data(n)) if env.data(n) in enhanced[2] else 0) == state[k]
 
 
 def thread_fakes_with_wait(base, wait_args, present=True, sleep_key="KERNEL32.dll!Sleep"):

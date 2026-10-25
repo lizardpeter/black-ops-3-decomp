@@ -20,7 +20,7 @@ from unicorn.x86_const import UC_X86_REG_R8, UC_X86_REG_RCX, UC_X86_REG_RDX
 SYM = "?sub_141D46D30@@YAXXZ"
 STRIDE = 0xD5F60
 FRONTEND_FIELDS = SCRATCH + 0x100        # where the frontend's +0xF6568.. lands
-REGION, REGION_SIZE = 0x10000000, 0x200000   # mapped by the first setup: two scenes' fields, 0xD5F60 apart
+REGION, REGION_SIZE = 0x38000000, 0x200000   # mapped by the first setup: two scenes' fields, 0xD5F60 apart
 SCENE_PREV = REGION + 0x1000
 SCENE_LAST = SCENE_PREV + STRIDE
 

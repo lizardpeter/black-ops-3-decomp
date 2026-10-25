@@ -1,7 +1,8 @@
 """P0009 and P0010: refresh rates above 240 Hz (docs/refresh-rate.md).
 
 P0009: the enhanced registration must register r_refreshRate with the domain [1, 1000] and default 60, and make every
-other registration exactly as the original does (same calls, same order, same arguments, same globals stored).
+other registration exactly as the original does (same calls, same order, same arguments, same globals stored); P0021
+adds r_lateLatch after them all.
 
 P0010: GetAvailableRefreshRates must list the rates of modes past the first 128 of a monitor's list, highest first,
 at most 128 of them; on every list of up to 128 modes, and on every faithful input whose answer lies in the first 128,
@@ -36,8 +37,14 @@ def test_refresh_rate_domain(env):
             if c[0] == "Dvar_RegisterFloat" and c[1] == R_REFRESH_RATE:
                 assert c[3:6] == [f32(60.0), f32(1.0), f32(240.0)], c
                 c[5] = f32(1000.0)
+        # P0021: r_lateLatch (new) is registered last, default on, and stored in the enhanced DLL's own global
+        want.append(["Dvar_RegisterBool", 0x4113CAB2, b"", 1, 0, b"", 0])
         assert [list(c) for c in enhanced[3]] == want
-        assert enhanced[2] == original[2]
+        late = env.data("r_lateLatch")
+        exe = {a: v for a, v in enhanced[2].items() if not late <= a < late + 8}
+        assert exe == original[2]
+        stored = struct.unpack("<Q", b"".join(enhanced[2][late + i] for i in range(8)))[0]
+        assert stored & ~0xFF_0000_0000 == 0x7F00_4113_CAB2, hex(stored)   # the fake's handle for it
 
 
 def modes(entries):
