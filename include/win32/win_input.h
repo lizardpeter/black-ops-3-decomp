@@ -3,6 +3,8 @@
 
 #include <windows.h>
 
+struct dvar_t;
+
 // Window globals (IW's g_wv, kept as separate symbols until the struct is laid out).
 extern HWND win_hWnd;            // the game window
 extern HWND win_hRawInputWnd;    // the raw input thread's message-only window
@@ -49,6 +51,16 @@ static inline int Sys_Milliseconds()
 	return (int)timeGetTime() - sys_timeBase;
 }
 
+// IN_Frame's state (names descriptive)
+extern bool s_mouseInitialized;  // IN_Frame does nothing until it is set
+extern bool s_mouseActive;       // the mouse is in use: in_mouse and the window was in front
+extern int win_appActive;        // the game is the active app
+extern const dvar_t *ClickToContinue;
+extern const dvar_t *dvar_64DA587E;
+extern const dvar_t *in_mouse;
+
+void IN_Frame();
+void sub_1423BCD30();
 void IN_RecenterMouse();
 void IN_MouseMove();
 void sub_1423F4B70(unsigned int threadContext);

@@ -6,6 +6,9 @@ struct dvar_t;
 extern const dvar_t *dvar_EBC13010;
 extern const dvar_t *r_backBufferCount;  // registered by 141D91120
 extern const dvar_t *r_cmdlistChain;
+extern const dvar_t *r_convergence;      // registered by 141D91120 (3D Vision)
+extern const dvar_t *r_fullscreen;       // registered by 141D91120: 0 windowed, 1 fullscreen, 2 borderless
+extern const dvar_t *r_maxFrameLatency;  // registered by 141D91120: frames DXGI may queue (0: DXGI's default)
 extern const dvar_t *r_currentMonitor;
 extern const dvar_t *r_debugDisableLocalProbes;
 extern const dvar_t *r_debugShowProbeBlends;
@@ -28,5 +31,6 @@ extern const dvar_t *r_skyTransition;
 extern const dvar_t *r_sortDrawSurfsBsp;
 extern const dvar_t *r_sortDrawSurfsStaticModel;
 extern const dvar_t *r_videoMemoryMultiplier;
+extern const dvar_t *r_vsync;            // registered by 141D91AF0: sync interval 1 when set
 
 void sub_141D976E0();

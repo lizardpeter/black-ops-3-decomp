@@ -139,6 +139,48 @@ void IN_MouseMove()
 	}
 }
 
+// 1423BDB70  win32/win_input.cpp
+// Called by the client once a frame to read the mouse: in game right before the usercmd is made (1413BFDE0, which
+// then flags it so 141402E70 skips it), otherwise from 141402E70. While the game is the active app it takes the mouse
+// (IN_MouseMove); the mouse counts as in use while in_mouse is set and the game window was in front when it started.
+// When the app isn't active it gives the cursor back to Windows instead.
+void IN_Frame()
+{
+	if (Dvar_GetBool(ClickToContinue))
+		PostMessageA(win_hWnd, WM_LBUTTONDOWN, MK_LBUTTON, 0);
+	if (!s_mouseInitialized)
+		return;
+	if (!win_appActive)
+	{
+		if (Dvar_GetBool(dvar_64DA587E))
+			sub_1423BCD30();
+		if (!s_mouseInitialized || !s_mouseActive)
+			return;
+		s_mouseActive = false;
+		win_showCursor = 1;
+		for (int count = ShowCursor(1); count;)
+			count = ShowCursor((unsigned int)count >> 31);
+		return;
+	}
+	if (Dvar_GetBool(in_mouse))
+	{
+		if (!s_mouseActive)
+		{
+			const HWND foreground = GetForegroundWindow();
+			s_mouseActive = true;
+			if (foreground != win_hWnd)
+				s_mouseActive = false;
+		}
+	}
+	else
+	{
+		s_mouseActive = false;
+	}
+	IN_MouseMove();
+	if (GetForegroundWindow() == win_hWnd)
+		sub_1423BCD30();
+}
+
 // 1423F4B70  win32/win_input.cpp
 // The raw input thread (Sys_CreateThread index 0x16). It creates the message-only window the mouse is registered
 // to, then polls: every report waiting in the queue is read with GetRawInputBuffer and its movement added to the

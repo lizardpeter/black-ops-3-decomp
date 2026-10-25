@@ -39,6 +39,15 @@ extern const dvar_t *cg_fov_default_thirdperson;
 extern const dvar_t *cg_chatHeight;
 extern const dvar_t *sv_cheats;
 
+// Who set a value (Dvar_SetVariant's last argument)
+enum DvarSetSource
+{
+	DVAR_SOURCE_INTERNAL = 0,
+	DVAR_SOURCE_EXTERNAL = 1,
+};
+
+void Dvar_SetInt(const dvar_t *dvar, int value, DvarSetSource source);
+
 bool Dvar_GetBool(const dvar_t *dvar);
 int Dvar_GetInt(const dvar_t *dvar);
 float Dvar_GetFloat(const dvar_t *dvar);

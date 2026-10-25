@@ -16,10 +16,13 @@
 // thread starts. Without it each thread polls as the original does.
 
 #include <windows.h>
+#include <t7_exe_call.h>
 
 #include "universal/dvar.h"
 #include "gfx_d3d/r_dvars.h"
 #include "win32/win_input.h"
+
+#include "../gfx_d3d/r_flip.h"
 
 extern const dvar_t *r_fullscreen;
 
@@ -99,6 +102,48 @@ void IN_TakeRawMouse(int *dx, int *dy)
 	long long y = __atomic_exchange_n(&s_rawDy, 0, __ATOMIC_RELAXED);
 	*dx = x > 0x7FFFFFFF ? 0x7FFFFFFF : x < -0x7FFFFFFF ? -0x7FFFFFFF : (int)x;
 	*dy = y > 0x7FFFFFFF ? 0x7FFFFFFF : y < -0x7FFFFFFF ? -0x7FFFFFFF : (int)y;
+}
+
+// P0018: IN_Frame waits for the display before the frame's mouse is read (B0032). It first waits on the flip-model
+// swap chain's frame-latency waitable object (enhanced/gfx_d3d/r_init.cpp), so the frame starts, and its mouse
+// movement is taken, once the display has room for it rather than as soon as the CPU can run ahead; the rest is the
+// original. docs/presentation.md.
+void IN_Frame()
+{
+	R_WaitForFrameLatency();
+	if (T7ExeCall(Dvar_GetBool, ClickToContinue))
+		PostMessageA(win_hWnd, WM_LBUTTONDOWN, MK_LBUTTON, 0);
+	if (!s_mouseInitialized)
+		return;
+	if (!win_appActive)
+	{
+		if (T7ExeCall(Dvar_GetBool, dvar_64DA587E))
+			sub_1423BCD30();
+		if (!s_mouseInitialized || !s_mouseActive)
+			return;
+		s_mouseActive = false;
+		win_showCursor = 1;
+		for (int count = ShowCursor(1); count;)
+			count = ShowCursor((unsigned int)count >> 31);
+		return;
+	}
+	if (T7ExeCall(Dvar_GetBool, in_mouse))
+	{
+		if (!s_mouseActive)
+		{
+			const HWND foreground = GetForegroundWindow();
+			s_mouseActive = true;
+			if (foreground != win_hWnd)
+				s_mouseActive = false;
+		}
+	}
+	else
+	{
+		s_mouseActive = false;
+	}
+	IN_MouseMove();
+	if (GetForegroundWindow() == win_hWnd)
+		sub_1423BCD30();
 }
 
 void sub_1423F4B70(unsigned int threadContext)
