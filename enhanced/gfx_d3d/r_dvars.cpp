@@ -1,4 +1,4 @@
-// P0009: r_refreshRate accepts up to 1000 Hz (B0012).
+// P0009: r_refreshRate accepts up to 1000 Hz (B0012). P0021: registers r_lateLatch (docs/late-latch.md).
 //
 // The original registers r_refreshRate with the domain [1, 240]. Dvar_SetVariant rejects anything outside a dvar's
 // domain and keeps the old value, so on a monitor faster than 240 Hz: the first-run hardware detection (141DA9620)
@@ -10,6 +10,7 @@
 
 #include "universal/dvar.h"
 #include "gfx_d3d/r_dvars.h"
+#include "r_late_latch.h"
 
 #define T7_SOURCE "gfx_d3d/r_dvars.cpp"
 #include <t7_static.h>
@@ -85,4 +86,6 @@ void sub_141D976E0()
 	Dvar_RegisterFloat(0xA0669E75, "", -1.0f, -2.0f, 2000.0f, 0x100, "", false);  // r_shader_constant_set_debug_range
 	r_shader_constant_set_enable = Dvar_RegisterBool(0xA591BC4F, "", true, 0x100, "", false);
 	r_fog_disable = Dvar_RegisterBool(0xC690B1E9, "", false, 0x100, "", false);
+	// P0021: the late latch, on unless turned off (r_lateLatch 0); a new dvar, after all of the original's
+	r_lateLatch = Dvar_RegisterBool(0x4113CAB2, "", true, 0x0, "", false);
 }

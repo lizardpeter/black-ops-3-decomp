@@ -5,9 +5,9 @@ an enhanced late latch would go. Rust-test does this (`src/native_windows_input.
 render thread records the camera, it rereads the raw-input totals and turns the camera by the movement that arrived
 after the game frame read the mouse. Gameplay still takes that movement on its next frame.
 
-This is a map, not a change: nothing here is implemented yet. Addresses are the Store build's; the names are the IW
-names for functions of the same shape. They go into `records/names.tsv` at confidence 0.5–0.6, and the rest are
-`sub_`.
+The enhanced build does it too: P0021, described under "The latch" below. It has run in the emulator only, not yet
+in the game. Addresses are the Store build's; the names are the IW names for functions of the same shape. They are in
+`records/names.tsv` at confidence 0.5–0.6, and the rest are `sub_`.
 
 ## The path
 
@@ -77,7 +77,8 @@ All of this happens on the render thread, from the view parms at the start of ea
   matrix again only when its version is behind, through **`R_DeriveCodeMatrix` (141DED140)**:
   - view: the copy's +0x000, made camera-relative with the eye offset;
   - projection: +0x040;
-  - view×projection: +0x0C0, or view × projection in the backend's mode 2.
+  - view×projection: +0x0C0 moved by the eye offset; view × projection when +0x22B8 is 0x40000000; the view without
+    its translation × projection in camera-relative mode 1.
   
   The inverse and transposed forms come from those, in groups of four as in IW.
 - **Post-process filters** take what they need from the view parms on the render thread too: tanHalfFov, inverse
@@ -97,43 +98,69 @@ What the main thread **does** derive from the view, and the latch has to handle:
 | Motion-vector and TAA reprojection blocks | `141DDC6C0` (from 141DDDC20) writes two 0xF0-byte blocks at frontend +0xF9590/+0xF95A0 from the current and previous view parms; their pointers sit at `viewInfo` +0xB2718/+0xB2720 | Recompute on the render thread with the latched view, or the frame reprojects with the turn missing |
 | Previous view | `141DE3D80`, after `R_RenderScene`, copies the unlatched view to 148705570 + client × 0x290 | Store the latched view there, so the next frame's reprojection starts from what was shown |
 
-## Where the latch goes
+## The latch (P0021)
 
-**On the render thread, before the main view's scene is drawn**: at the start of `141D470F0`, for the main view's
-`viewInfo`. The main view is the scene `R_RenderScene` made when called from `141DE3D80`, so its index can be
-recorded there.
+`enhanced/gfx_d3d/r_late_latch.cpp` holds it; the overrides it hooks into are listed in `records/patches.tsv` P0021.
+The faithful versions of the hooked functions are in `src/` with differential tests: `CL_RenderScene`
+(src/client/cl_cgame.cpp), `141D46D30` (src/gfx_d3d/rb_backend.cpp), and `R_GetCodeMatrix`/`R_DeriveCodeMatrix`
+(src/gfx_d3d/r_state.cpp, bit-exact).
 
-1. Take the raw-input counts not yet consumed (the 64-bit counters from P0013; read them, don't take them, so the next
-   game frame still applies the movement, as Rust-test does).
-2. Turn them into a yaw and pitch change with the scale `CL_MouseMove` used last frame (sensitivity, m_yaw/m_pitch,
-   ADS and FOV scale; stored by the enhanced `CL_MouseMove`). Clamp pitch the way the game does.
-3. Rotate the view about its origin: recompute `viewInfo`'s view parms (the view matrix and everything
-   `141DD52B0` derives from it) with the new axis. The origin stays put, so the BSP cell stays valid.
+**Main thread, in `CL_RenderScene`** (just before and after the main view's `R_RenderScene`), per frontend buffer:
 
-Besides the three main-thread items in the table above:
+- It decides whether the view follows the mouse:
+  - `CL_MouseMove` notes each frame whether a count turned the view by the plain scale: mouse look on, no strafe, no
+    turn cap (cl +0xB7D0/+0xB7D4, or the limited mode).
+  - The view's yaw and pitch must have turned with the client's angles (cl +0xB8C8/+0xB8CC) the last time those
+    moved. That rules out killcams, vehicles and scripted cameras.
+  - There must be one local client and `r_lateLatch` (new, default 1) must be on.
+- If so, it notes:
+  - the mouse counts the frame took (running totals kept by the raw input thread, `IN_RawMouseTotals`);
+  - the degrees per count (`m_yaw`/`m_pitch` × sensitivity × 0.0066/0.022; yaw negated, since the view turns left
+    for positive yaw);
+  - the refdef fields the reprojection reads (+0x24, +0x38, +0x74, +0x1A681C);
+  - the previous view this frame's reprojection uses (148705570 + client × 0x290, copied before `R_RenderScene`
+    replaces it).
+- It hands `R_RenderScene` a **cull view widened by a margin** at every edge: 1 degree plus 1.5 × the last latch's
+  turn, at most 8. A late turn up to the margin then finds nothing culled at the screen's edges.
+- After `R_RenderScene`, it notes the `viewInfo` of the scene that was made: the index read from 14A333F74
+  beforehand, if frontend +0xF6568 and +0xF656C agree.
 
-- **The viewmodel.** The gun is placed in the world on the main thread, from the unlatched view, so drawing it with
-  the latched view would make it trail the turn for a frame. But it is drawn separately, so it can simply keep the
-  unlatched view:
-  - **Placement.** `CG_AddViewWeapon` (14126DD20, called from `CG_DrawActiveFrame`) works out the gun's world
-    placement in `14126D750`. That uses the view-model axis and origin at cg +0x2E7514/+0x2E7538, the `cg_gun_x/y/z`
-    offsets and the FOV compensation from `cg_fov`. It then adds the gun through `14126B900` → `141269850` →
-    `R_AddDObjToScene` (141DE5460) with render flags 0x40000001, from `1412692B0`.
-  - **Sort key.** Bit 30 of those flags goes into each surface's sort key (`141D77770`). So the gun's surfaces land in
-    their own draw lists, **0 and 0x16**.
-  - **Drawing.** The render thread draws those lists in the draw-list job `141D4AB30`. Around them it switches the
-    backend to its view-model mode: +0x22B8 = 1 and the camera-relative mode +0x8100 = 1. That mode bumps the
-    projection versions and narrows the depth range to [0.984375, 1] (reversed Z). It switches back for every other
-    list.
+**Render thread, at the start of `141D46D30`** (before any scene is drawn):
 
-  So the latch keeps the unlatched view parms beside the latched ones. When `141D4AB30` enters lists 0/0x16, it puts
-  the unlatched ones in the state's copy (+0x1DF0) and bumps all three matrix versions; when it leaves, it puts the
-  latched ones back. The gun then lands exactly where the game put it, while the world turns. That lists 0 and 0x16
-  are only the view model rests on the flags and the depth range above. It gets checked in the game before the
-  latch is trusted.
-- **Other views.** Scopes with picture-in-picture, extra cameras (`141DE4020`) and splitscreen are separate scenes.
-  Only the local player's main view is latched.
-- **Shadows and sun cascades** are fitted to the old view. A small turn doesn't matter, so they stay as they are.
+1. The turn is (counts read now − counts the frame took) × degrees per count, at most the margin each way. The counts
+   stay with the game, as in Rust-test: the next frame takes them as usual.
+2. The view's axis is turned by that much: yaw about the world's up, pitch about its own right, roll kept, pitch
+   stopped at 85 degrees.
+3. Its view parms are made again: `MatrixForViewer` and every product, exactly as `R_SetupViewParms` would make
+   them from that axis (the test checks this byte for byte). They are copied to the view's slot too.
+4. The reprojection blocks are made again by the game's own `141DDC6C0`, from the turned view and the noted previous
+   view. In AA modes 4 and 5 that function jitters by the parity of the frame the main thread is filling, which is
+   now the next one. The frame's own jitter is put back: a column shift of half a pixel each way.
+5. The previous view the next frame starts from is replaced by the turned one, unless the main thread has already
+   moved past this frame.
+
+**The gun.** It is placed in the world on the main thread, from the view before the turn, so drawing it with the
+turned view would make it trail the turn for a frame. But it is drawn apart from the world:
+- **Placement.** `CG_AddViewWeapon` (14126DD20) places it in `14126D750` from the view-model axis and origin (cg
+  +0x2E7514/+0x2E7538), `cg_gun_x/y/z` and the FOV compensation from `cg_fov`. It is added through `14126B900` →
+  `141269850` → `R_AddDObjToScene` (141DE5460) with render flags 0x40000001.
+- **Sort key.** Bit 30 of those flags goes into its surfaces' sort key (`141D77770`).
+- **Drawing.** Every pass that draws the gun's lists switches the backend into view-model mode (+0x22B8 = 1) around
+  them. It does that in `141D4AB30` for list 0, with the depth range [0.984375, 1] (reversed Z), and through
+  `141DF18A0` and its siblings in the other passes. The switch bumps the projection and view×projection versions.
+
+So the enhanced `R_DeriveCodeMatrix` derives from the view as the frame made it while a latched `viewInfo` is drawn
+in view-model mode. The view matrix's version isn't bumped by the switch, so the enhanced `R_GetCodeMatrix` flips its
+top bit while in that mode, and the view is made again on the way in and on the way out. The gun lands exactly where
+the game put it. That view-model mode means only the gun rests on the flags and the depth range; it is the first
+thing to check in the game.
+
+**Not handled:**
+- Scopes with picture-in-picture, extra cameras (`141DE4020`) and split screen are separate scenes and keep their
+  views.
+- Shadows and sun cascades stay fitted to the view before the turn; a turn within the margin doesn't change them
+  visibly.
+- The wider cull view may cost a little more drawing. Any LOD that reads its field of view sees the wider one.
 
 ## Later: Reflex and Vulkan
 
@@ -144,7 +171,7 @@ NvAPI's `NvAPI_D3D_SetSleepMode`, `NvAPI_D3D_Sleep` and `NvAPI_D3D_SetLatencyMar
 | --- | --- |
 | `Sleep` | Where the frame-latency wait is now (P0020, before the second event loop) |
 | `SIMULATION_START` | Start of `Com_Frame` |
-| `INPUT_SAMPLE` | `IN_Frame` from 1413BFDE0 (and the latch, once it exists) |
+| `INPUT_SAMPLE` | `IN_Frame` from 1413BFDE0, and the latch at the start of 141D46D30 |
 | `RENDERSUBMIT_START` / `_END` | Around 141D470F0 |
 | `PRESENT_START` / `_END` | Around the `Present` in 141D46720 |
 

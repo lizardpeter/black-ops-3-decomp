@@ -46,3 +46,7 @@ BlackOps3_MSStore	141DAB250	matches	src/gfx_d3d/r_init.cpp
 BlackOps3_MSStore	141DAD0C0	matches	src/gfx_d3d/r_init.cpp	
 BlackOps3_MSStore	1423BDB70	matches	src/win32/win_input.cpp	
 BlackOps3_MSStore	1413ED0D0	matches	src/client/cl_keys.cpp	
+BlackOps3_MSStore	141DED140	matches	src/gfx_d3d/r_state.cpp	
+BlackOps3_MSStore	141DED4D0	matches	src/gfx_d3d/r_state.cpp	
+BlackOps3_MSStore	141D46D30	matches	src/gfx_d3d/rb_backend.cpp	
+BlackOps3_MSStore	1413C9540	matches	src/client/cl_cgame.cpp	

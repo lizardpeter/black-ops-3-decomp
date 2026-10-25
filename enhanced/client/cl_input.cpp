@@ -1,5 +1,6 @@
 // P0011: mouse aim in MW2019 units, the same at any field of view (B0016-B0019). P0012: CL_MouseMove turns the
-// view in double precision (B0050).
+// view in double precision (B0050). P0021: CL_MouseMove notes whether the mouse turns the view freely, for the late
+// latch (docs/late-latch.md).
 //
 // One device count turns the view by m_mouseSensitivity * 0.0066 degrees horizontally, MW2019's sensitivity unit,
 // in hip fire and aiming down sights alike, at any FOV and any speed. The original's scale (src/client/cl_input.cpp)
@@ -144,12 +145,33 @@ double *CL_EnhancedViewAngles()
 	return &s_viewAngles[0][0];
 }
 
+// P0021: set by CL_MouseMove for the late latch: whether this frame's mouse turned the view's yaw / pitch by the plain
+// scale (sub_1413ACDF0's) times m_yaw / m_pitch, with nothing (strafe, a turn cap, mouse look off) in between.
+static bool s_latchYaw[2];
+static bool s_latchPitch[2];
+
+// P0021: the degrees one device count turns the view this frame (yaw as the view turns: positive to the left),
+// or false when the mouse doesn't turn it freely.
+bool CL_LateLatchTurn(int localClientNum, float *yawPerCount, float *pitchPerCount)
+{
+	bool yaw = s_latchYaw[localClientNum & 1];
+	bool pitch = s_latchPitch[localClientNum & 1];
+	if (!yaw && !pitch)
+		return false;
+	float scale = Dvar_GetFloat(m_mouseSensitivity) * (MW2019_DEGREES_PER_COUNT / M_YAW_DEFAULT);
+	*yawPerCount = yaw ? -(Dvar_GetFloat(m_yaw) * scale) : 0.0f;
+	*pitchPerCount = pitch ? Dvar_GetFloat(m_pitch) * scale : 0.0f;
+	return true;
+}
+
 // 1413AE730 CL_MouseMove, with the view angles turned in double precision (P0012): the same movement split over
 // more frames ends at the same angle, and a far-turned yaw keeps its resolution. Otherwise the original: yaw by m_yaw, pitch by m_pitch (or forward/back with m_forward when mouse look is
 // off), strafe with m_side while +strafe is held, each turn capped by the cgame's speed limits for this frame; the
 // clamped mouse amounts go into the command (+0x3B pitch, +0x3C yaw), then aim assist corrects the view.
 void CL_MouseMove(int localClientNum, usercmd_s *cmd)
 {
+	s_latchYaw[localClientNum & 1] = false;
+	s_latchPitch[localClientNum & 1] = false;
 	char *cl = CL_GetLocalClientGlobals(localClientNum);
 	if (!cls_frametime)
 		return;
@@ -170,6 +192,15 @@ void CL_MouseMove(int localClientNum, usercmd_s *cmd)
 		{
 			lockMove = true;
 			CMD_FIELD(unsigned short, cmd, 0x38) = 0;
+		}
+		{
+			// P0021: whether a count turns the view by the plain scale this frame (no strafe, no turn cap)
+			bool limited = CL_FIELD(int, cl, 0xB8) == 1 && !(CL_FIELD(unsigned char, cl, 0x790) & 1);
+			long long kb = (long long)localClientNum * KB_STRIDE;
+			bool strafe = kb_strafeActive[kb] != 0;
+			s_latchYaw[localClientNum & 1] = !strafe && !limited && !(CL_FIELD(float, cl, 0xB7D4) > 0.0f);
+			s_latchPitch[localClientNum & 1] = !strafe && !limited && !(CL_FIELD(float, cl, 0xB7D0) > 0.0f)
+			                                   && (kb_mlookActive[kb] || Dvar_GetBool(cl_freelook));
 		}
 		if (mx != 0.0f || my != 0.0f)
 		{

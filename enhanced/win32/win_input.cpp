@@ -73,6 +73,12 @@ static MsgWaitForMultipleObjectsEx_t IN_FindMsgWait()
 // Movement in device counts since IN_MouseMove last took it, counted by the raw input thread.
 static long long s_rawDx;
 static long long s_rawDy;
+// Running totals (never reset): every count the raw input thread counted, and every count IN_MouseMove took. The
+// late latch (P0021) turns the frame's camera by what was counted after the frame's own take (docs/late-latch.md).
+static long long s_readTotalX;
+static long long s_readTotalY;
+static long long s_takenTotalX;
+static long long s_takenTotalY;
 
 // Every report waiting for the raw input window: relative movement is counted while the game is in front.
 void IN_ReadRawInput()
@@ -89,6 +95,8 @@ void IN_ReadRawInput()
 			{
 				__atomic_fetch_add(&s_rawDx, (long long)raw->data.mouse.lLastX, __ATOMIC_RELAXED);
 				__atomic_fetch_add(&s_rawDy, (long long)raw->data.mouse.lLastY, __ATOMIC_RELAXED);
+				__atomic_fetch_add(&s_readTotalX, (long long)raw->data.mouse.lLastX, __ATOMIC_RELEASE);
+				__atomic_fetch_add(&s_readTotalY, (long long)raw->data.mouse.lLastY, __ATOMIC_RELEASE);
 			}
 			raw = (RAWINPUT *)(((unsigned long long)raw + raw->header.dwSize + 7) & ~7ull);
 		}
@@ -100,8 +108,21 @@ void IN_TakeRawMouse(int *dx, int *dy)
 {
 	long long x = __atomic_exchange_n(&s_rawDx, 0, __ATOMIC_RELAXED);
 	long long y = __atomic_exchange_n(&s_rawDy, 0, __ATOMIC_RELAXED);
+	__atomic_fetch_add(&s_takenTotalX, x, __ATOMIC_RELEASE);
+	__atomic_fetch_add(&s_takenTotalY, y, __ATOMIC_RELEASE);
 	*dx = x > 0x7FFFFFFF ? 0x7FFFFFFF : x < -0x7FFFFFFF ? -0x7FFFFFFF : (int)x;
 	*dy = y > 0x7FFFFFFF ? 0x7FFFFFFF : y < -0x7FFFFFFF ? -0x7FFFFFFF : (int)y;
+}
+
+// P0021: the running totals for the late latch. The taken totals are the main thread's own (IN_MouseMove), so it
+// reads them without a race; the read totals are the raw input thread's, read here by the render thread. A count
+// is added to the read total after the pending count, so read - taken never runs ahead of what a take would get.
+void IN_RawMouseTotals(long long *readX, long long *readY, long long *takenX, long long *takenY)
+{
+	*readX = __atomic_load_n(&s_readTotalX, __ATOMIC_ACQUIRE);
+	*readY = __atomic_load_n(&s_readTotalY, __ATOMIC_ACQUIRE);
+	*takenX = __atomic_load_n(&s_takenTotalX, __ATOMIC_ACQUIRE);
+	*takenY = __atomic_load_n(&s_takenTotalY, __ATOMIC_ACQUIRE);
 }
 
 // IN_Frame is the original: the frame-latency wait (P0018) moved to sub_1413ED0D0 (enhanced/client/cl_keys.cpp), before
