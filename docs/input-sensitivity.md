@@ -42,10 +42,17 @@ Converting an old setting: old `m_mouseSensitivity` s at `cg_fov` f (hip fire) t
 count, k from step 3 (k(65) = 1); the same feel in MW2019 units is s × k(f) × 0.022 / 0.0066 = **3.33 × s × k(f)**
 (default 2 at `cg_fov` 65 → 6.67).
 
-Tests: tests/differential/test_cl_input.py (the three faithful functions), tests/enhanced/test_sensitivity.py.
+Tests: tests/differential/test_cl_input.py (the four faithful functions), tests/enhanced/test_sensitivity.py.
+
+## Double-precision view angles (P0012)
+
+`CL_MouseMove` (1413AE730, decompiled) adds each frame's turn to the float view angles, which are never wrapped there,
+so a turn is rounded to the float grid of the current angle (B0050): at 36000 degrees of accumulated yaw the grid is
+0.004 degrees, close to one MW2019 count at sensitivity 1. The enhanced `CL_MouseMove` keeps pitch and yaw as doubles
+per local client (re-read from the floats whenever something else changed them: spawning, the cgame's limits, aim
+assist) and computes the turn and the speed caps in double, rounding to float once when it stores the angle. As in
+Ghosts' P0002, the same movement split over more frames ends at the same angle.
 
 ## Not done yet
 
-- **Double-precision view angles.** Ghosts' P0002 keeps the angles in double precision across frames. Here
-  `CL_MouseMove` still adds in single precision; that needs `CL_MouseMove` decompiled.
 - The location-selection cursor (1413B3110) also reads `m_mouseSensitivity`, so its speed changes with the new units.

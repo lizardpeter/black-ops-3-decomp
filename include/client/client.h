@@ -49,6 +49,60 @@ enum { CG_SIZE = 0x342720 };
 const playerState_s *CG_GetPredictedPlayerState(int localClientNum);
 float sub_1427D0FC0(unsigned long long weapon);  // the weapon's ADS sensitivity multiplier (attachments override)
 
+// Aim assist's input and output for one command (layout from CL_MouseMove's use; Ghosts' AimInput/AimOutput have the
+// same roles). Padding is left as the original leaves it: unwritten.
+struct AimInput
+{
+	float deltaTime;        // cls_frametime in seconds
+	float deltaTimeScaled;  // 149BB4714 (ms) in seconds
+	float pitch;
+	float pitchAxis;        // mouse Y in the mouse-direction path
+	float pitchMax;
+	float yaw;
+	float yawAxis;          // mouse X in the mouse-direction path
+	float yawMax;
+	float forwardAxis;
+	float rightAxis;
+	unsigned short mouseInput;  // always 1 here
+	unsigned short pad2A;
+	unsigned int buttons[3];
+	int localClientNum;
+	unsigned int pad3C;
+	const playerState_s *ps;
+	float adsFraction;
+	unsigned short ps99C;
+	unsigned short ps994;
+};
+static_assert(sizeof(AimInput) == 0x50, "AimInput");
+
+struct AimOutput
+{
+	float pitch;
+	float yaw;
+	unsigned short ps99C;
+	unsigned short ps994;
+};
+
+struct usercmd_s;
+struct kbutton_t;
+enum { KB_STRIDE = 0x498 };
+extern unsigned char kb_strafeActive[];  // kbutton_t active flags per local client (stride KB_STRIDE)
+extern unsigned char kb_mlookActive[];
+extern int cls_aimFrametime;             // 149BB4714
+extern int cl_demoPlaying;               // 1494B2DC8 == 2 while a demo/theater plays (lockForward is skipped)
+extern int cl_localClientActive[];       // 148DEE268, stride 9 ints
+extern const dvar_t *aim_mouseDirection; // 14E418348: a vec2 dvar CL_MouseMove writes the mouse direction to
+
+char *CL_GetLocalClientGlobals(int localClientNum);
+bool sub_142756F90(const playerState_s *ps);
+bool sub_1408A5010(int localClientNum);
+void AimAssist_UpdateMouseInput(const AimInput *input, AimOutput *output);
+void sub_140104EA0(unsigned long long direction, const AimInput *input, AimOutput *output);
+void Dvar_SetVec2(const dvar_t *dvar, float x, float y);
+const dvar_t *sub_142396BB0(const dvar_t *dvar, int sessionMode);
+extern unsigned int com_sessionModeBits;  // 158AE65C4; the low 4 bits, sign-extended, are the session mode
+
+void CL_MouseMove(int localClientNum, usercmd_s *cmd);
 void CL_GetMouseMovement(int localClientNum, float *mx, float *my, bool consume);
 void sub_1413ACDF0(int localClientNum, float *mx, float *my);
 void sub_141405E50();
