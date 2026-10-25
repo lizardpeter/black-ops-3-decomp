@@ -27,7 +27,7 @@ All of this runs on the main thread up to the hand-off; the render thread does t
 4. **View parms.** `141DE3D00(refdef)` takes a 0x290-byte slot from the frontend data (`frontEndData` 1486C3A78,
    count at +0xF63A0) and fills it with `R_SetupViewParms` (141DE3510): origin +0x240 (w = 1), axis +0x250, view
    matrix +0x000 (from origin and axis, 1423899C0), projection +0x040 and a second projection +0x080 (same FOV,
-   reversed infinite depth; the render thread never reads it), znear +0x274, tanHalfFov +0x280. `141DD52B0` then derives
+   reversed infinite depth; no reader found on the render thread), znear +0x274, tanHalfFov +0x280. `141DD52B0` then derives
    view×proj +0x0C0, view×proj2 +0x100, inverse +0x140, an unjittered projection +0x180 with its products
    +0x1C0/+0x200 (the jitter is the subpixel offset for TAA and supersampling, 14A333F50/64/68). Finally
    `R_CellForPoint` (141D81B90) walks the BSP to the origin's cell (+0x288), which decides portal visibility.
@@ -86,8 +86,8 @@ All of this happens on the render thread, from the view parms at the start of ea
 
 So **the camera matrices are not multiplied out on the main thread.** Rewriting the view parms at the start of a
 `viewInfo` on the render thread, before its scene is drawn, reaches every 3D shader through `R_Set3D` and the
-version counters. Nothing else needs patching for the camera itself. The second projection (+0x080/+0x100) is not
-read by any of this, so the viewmodel doesn't get its own matrix from here.
+version counters. Nothing else needs patching for the camera itself. No reader of the second projection (+0x080/+0x100) turned up
+in any of this, so the viewmodel doesn't get its own matrix from here.
 
 What the main thread **does** derive from the view, and the latch has to handle:
 
