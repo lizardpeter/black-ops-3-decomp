@@ -33,3 +33,47 @@ extern DXGI_MODE_DESC *dx_modes[DX_MAX_MONITORS];
 
 int sub_141DAA730(const void *a, const void *b);
 void sub_141DA7A00(DXGI_SWAP_CHAIN_DESC *desc, const GfxWindowParms *wndParms);
+
+// The interface ids the swap chain's creation asks for (the original's own copies)
+extern const GUID IID_IDXGIDevice1;
+extern const GUID IID_IDXGIAdapter1;
+extern const GUID IID_IDXGIFactory1;
+
+typedef struct D3D11_BUFFER_DESC
+{
+	UINT ByteWidth;
+	UINT Usage;
+	UINT BindFlags;
+	UINT CPUAccessFlags;
+	UINT MiscFlags;
+	UINT StructureByteStride;
+} D3D11_BUFFER_DESC;
+#define D3D11_USAGE_DYNAMIC 2
+#define D3D11_BIND_CONSTANT_BUFFER 4
+#define D3D11_CPU_ACCESS_WRITE 0x10000
+
+// The current video mode (set by 141DCDA90 when the render targets are made)
+extern int vidConfig_sceneWidth;
+extern int vidConfig_sceneHeight;
+extern int vidConfig_displayWidth;
+extern int vidConfig_displayHeight;
+
+extern HWND dx_windowHwnd;  // the game window, copied from g_hWnd by 141DAB970 once it is shown
+extern void (*dx_videoChangeCallback)(bool sizeChanged);
+extern void *gfx_renderTargetState;  // 0x6E views of 0xAE0 bytes; +0x20E8 the frame's first view
+extern void *sys_quitEvent;          // set when a message pump sees WM_QUIT
+
+HRESULT sub_141DAB250(const GfxWindowParms *wndParms);
+void sub_141DAD0C0();
+void sub_141DAC020();
+void sub_141DABB90(GfxWindowParms *wndParms);
+void sub_141DAB810(const GfxWindowParms *wndParms);
+void sub_141DAC3E0();
+void sub_141DAB1C0(void *context);
+void sub_141DA7B50(const GfxWindowParms *wndParms);
+void sub_141DD3730(void *view, int unbind);
+void sub_141DD2C80(void *view, unsigned int slot);
+void sub_141DCA670();
+void sub_141DCDA90(int sceneWidth, int sceneHeight, int displayWidth, int displayHeight, bool unknown, bool unknown2);
+void sub_141DB5010();
+void sub_141DEBFA0();

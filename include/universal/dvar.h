@@ -25,6 +25,15 @@ const dvar_t *Dvar_RegisterVec3(unsigned int hash, const char *dvarName, float x
 const dvar_t *Dvar_RegisterEnum(unsigned int hash, const char *dvarName, const char **valueList, int defaultIndex,
                                 unsigned int flags, const char *description, bool sessionModeBased);
 
+// Who set a value (Dvar_SetVariant's last argument)
+enum DvarSetSource
+{
+	DVAR_SOURCE_INTERNAL = 0,
+	DVAR_SOURCE_EXTERNAL = 1,
+};
+
+void Dvar_SetInt(const dvar_t *dvar, int value, DvarSetSource source);
+
 bool Dvar_GetBool(const dvar_t *dvar);
 int Dvar_GetInt(const dvar_t *dvar);
 float Dvar_GetFloat(const dvar_t *dvar);
