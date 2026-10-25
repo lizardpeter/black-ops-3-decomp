@@ -161,10 +161,15 @@ def main():
                 observe = {at(s): spec for s, spec in case.get("observe", {}).items()}
                 observe.update({recon.exports[s]: spec for s, spec in case.get("observe", {}).items()
                                 if not isinstance(s, int) and s in recon.exports})
-                want = m.call(va, args, case["ret"], setup, fakes, observe)
+                # a return site in the exe and mid-function hooks (harness.Machine.call), for functions whose
+                # pointer-decoding blocks look at their caller
+                site = case.get("ret_site")
+                hooks = {at(s): fn for s, fn in {**case.get("at", {}),
+                                                **(inp.get("at", {}) if isinstance(inp, dict) else {})}.items()}
+                want = m.call(va, args, case["ret"], setup, fakes, observe, site, hooks)
                 if isinstance(want[0], str) and want[0].startswith("fault"):
                     continue  # the original itself crashes on this input: not a usable case
-                got = m.call(target, args, case["ret"], setup, fakes, observe)
+                got = m.call(target, args, case["ret"], setup, fakes, observe, site, hooks)
                 got = (*got[:3], [tuple(canonical_code(x, m, recon, recon_to_orig) if isinstance(x, int) else x
                                         for x in c) for c in got[3]])
                 used += 1

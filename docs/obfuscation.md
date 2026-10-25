@@ -17,12 +17,19 @@ cgame's per-local-client globals, 0x342720 bytes each), stored by 1408D8D80 when
 - **Key.** The result depends only on the encrypted value and the PEB address bits: the encoder (1408D8D80) uses
   the same key, so a process decodes what it stored.
 - **Caller checks.** Each decoder and encoder starts its state machine differently depending on its return address:
-  below the exe image, above 0x160000000, and whether the bytes before it look like a `call` (no `0xFF`/`0xE8` where a
-  breakpoint or a hook would be). For a real call site (`call rel32` or `call [rip+x]`, from the exe or from a DLL above
-  or below it) every start converges on the same result. When the bytes before the return address are not a call (a
-  jump into the code, a return address forged by a hook), the encoder and decoders never finish. So reconstructed code
-  in a DLL can call the exe's decoders; only a caller that isn't a real call instruction hangs. (Measured in the
-  emulator: tests/differential/obfuscation.py and test_cl_input.py.)
+  below the exe image, above 0x160000000, and whether the bytes before it look like a call (no `0xFF`/`0xE8` where a
+  breakpoint or a hook would be). From the exe's own call sites every start reaches the end state. From outside the
+  exe it depends on the PEB variant: measured over all 16, the standalone decoder 141406ED0 called from the recon.dll
+  range (0x18...) hangs in 9 of them, and `Dvar_GetBool`, `Dvar_GetFloat` and `Dvar_GetInt` hang in every one; from
+  some exe sites a few variants hang too. (An earlier note here, measured with the harness's single PEB variant, said
+  calls from a DLL always decode the same; that was wrong.)
+
+**So reconstructed code running in recon.dll must not call these functions directly.** `T7ExeCall(fn, args...)`
+(tools/recon/include/t7_exe_call.h) calls an original function with an exe return address (a call site followed by
+`add rsp, 28h; ret`), and through it the getters and the decoders work in 16/16 variants. Moving every call from the
+DLL into the exe onto such a route (in the hybrid link's thunks rather than at each call) is the open design question
+before any reconstructed code is integrated into the running game; until then the differential tests fake the getters
+and run the decoders from the harness's return site.
 
 Reconstructed code calls an out-of-line decode copy instead of repeating the 16 state machines: the copies are the
 same algorithm, and the differential tests check that the reconstruction (copy) and the original (inline) decode the

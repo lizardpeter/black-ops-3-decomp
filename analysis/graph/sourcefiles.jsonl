@@ -6,4 +6,5 @@
 {"path": "libs/DemonWareGDK/bdHTTP/bdHTTPWorker/bdHTTPWorkerWinHTTP.cpp", "subsystem": "libs"}
 {"path": "libs/DemonWareGDK/bdPlatform/bdPlatformSocket/bdPlatformSocket-xboxone.cpp", "subsystem": "libs"}
 {"path": "libs/DemonWareGDK/bdPlatform/bdPlatformSocket/bdPlatformStreamSocket-xboxone.cpp", "subsystem": "libs"}
+{"path": "universal/dvar.cpp", "subsystem": "universal"}
 {"path": "universal/q_shared.cpp", "subsystem": "universal"}

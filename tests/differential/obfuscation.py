@@ -2,7 +2,7 @@
 
 The cg array pointer (cg_arrayEncoded, 149B25A20) is stored encrypted with a PEB-keyed transform and decoded inline
 wherever it is used. A test that needs a cgame sets the pointer to the encryption of a buffer it controls; the
-encryption is the game's own: 1408D8D80, which allocates the array and encrypts it, is run up to its store with its
+encryption is the game's own: CG_AllocateClientMemory (1408D8D80), which allocates the array and encrypts it, is run up to its store with its
 allocation returning the chosen address. The key comes from the PEB, so results hold for the harness's PEB only.
 """
 import struct
