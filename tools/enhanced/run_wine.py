@@ -36,11 +36,13 @@ from verify import audit
 from build import sha256
 
 
-def run(package, game, prefix, out, seconds, name, wine, trace_files=False, local_feature_interface=False):
+def run(package, game, prefix, out, seconds, name, wine, trace_files=False, local_feature_interface=False, shot_every=0):
     if platform.system() != "Linux":
         raise RuntimeError("This GDK shim is for a private Wine prefix only, never native Windows")
     if not 10 <= seconds <= 180:
         raise ValueError("Observation duration must be 10..180 seconds")
+    if shot_every not in (0, 10, 15, 30):
+        raise ValueError("Screenshot cadence must be 0, 10, 15 or 30 seconds")
     package = Path(package).resolve(strict=True)
     game = Path(game).resolve(strict=True)
     prefix = Path(prefix).absolute()
@@ -82,7 +84,7 @@ def run(package, game, prefix, out, seconds, name, wine, trace_files=False, loca
             "--prefix", str(prefix),
             "--output", str(out),
             "--seconds", str(seconds),
-            "--shot-every", "0",
+            "--shot-every", str(shot_every),
             "--dlloverrides", "mscoree,mshtml=;xgameruntime=n;xcurl=n;winhttp=n;gamechat2=n;libscepad=n",
             "--",
             "+direct_player", profile["id"], profile["name"],
@@ -121,9 +123,10 @@ def main():
     parser.add_argument("--wine")
     parser.add_argument("--trace-files", action="store_true", help="Record Wine file operations; raw log contains paths")
     parser.add_argument("--local-feature-interface", action="store_true", help="Experimental GDK feature availability COM; all feature checks return false")
+    parser.add_argument("--shot-every", type=int, default=0, choices=(0, 10, 15, 30), help="Optional private screenshot capture; no images uploaded automatically")
     args = parser.parse_args()
     run(args.package, args.game, args.prefix, args.out, args.seconds, args.player_name, args.wine,
-        args.trace_files, args.local_feature_interface)
+        args.trace_files, args.local_feature_interface, args.shot_every)
 
 
 if __name__ == "__main__":
