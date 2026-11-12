@@ -24,3 +24,7 @@ extern "C" int T7DirectParse(const char *text, T7DirectAddress *address, int all
 extern "C" int T7DirectSend(int length, const void *data, const T7DirectAddress *to);
 extern "C" int T7DirectReceive(T7DirectAddress *from, T7DirectMessage *message);
 extern "C" int T7DirectSameAddress(const T7DirectAddress *a, const T7DirectAddress *b, int comparePort);
+
+// Shared network key: 16 uniformly random bytes encoded in 32 hexadecimal characters.
+// Invalid input closes the current socket and clears any previous key.
+extern "C" int T7DirectSetKey(const char *hex);
