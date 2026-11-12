@@ -13,6 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCES = ("enhanced/offline/xgameruntime_stub.cpp",
+           "enhanced/offline/gdk_feature.cpp",
            "enhanced/direct/profile.cpp", "enhanced/direct/startup.cpp",
            "enhanced/direct/transport.cpp")
 
@@ -49,7 +50,7 @@ def build(out):
                     "    AcquireSRWLockExclusive\n    ReleaseSRWLockExclusive\n" +
                     "    GetModuleFileNameW\n    GetModuleHandleW\n" +
                     "    LoadLibraryW\n    GetProcAddress\n" +
-                    "    GetLastError\n    FreeLibrary\n")
+                    "    GetLastError\n    GetEnvironmentVariableA\n    FreeLibrary\n")
     lib = out / "kernel32.lib"
     run("llvm-lib", "/machine:x64", f"/def:{defs}", f"/out:{lib}")
     winsock = out / "ws2_32.def"
