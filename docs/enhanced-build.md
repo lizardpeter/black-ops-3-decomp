@@ -15,7 +15,7 @@ distributed.
 |---|---|---|
 | Pinned original \`BlackOps3.exe\` | Yes, byte-identical | Yes, when run under Wine |
 | GDK shim \`wine-system32/xgameruntime.dll\` | Yes | Yes, **only** when installed into a private Wine prefix |
-| Local profile and authenticated v2 UDP | Compiled into the GDK shim | Code loaded; engine does not yet call local transport |
+| Local profile and authenticated v3 UDP | Compiled into the GDK shim | Code loaded; engine does not yet call local transport |
 | App-local XCurl and WinHTTP failure providers | Yes | Subject to actual game DLL resolution; requires native log verification |
 | \`recon.dll\` faithful+enhanced reconstruction | Yes | **Not automatically loaded or hooked** into engine callsites |
 | Differential/enhanced tests and source symbol provenance | Tested in CI; source records bundled | Not proof of gameplay |
