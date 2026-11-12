@@ -138,3 +138,27 @@ a server datagram (or vice versa). Keyed v2 is rejected outright; v1 remains
 loopback-only and no-key. Tests verify reflection, tampering, replay, and
 downgrade refusal. This is not a per-session handshake or a claim that native
 Store lobby parsers have been hardened.
+
+## B0001: bounded string concatenation in reconstructed enhanced code (P0024)
+
+The original Store utility at 1423B4B30 scans the entire destination without
+checking the caller-provided capacity, then subtracts the (possibly larger)
+length from `size_t destsize`. An unterminated or overlong destination can
+therefore turn a short copy into an out-of-bounds write. The enhanced
+`I_strcat` override in `enhanced/universal/q_shared.cpp` now scans only
+within the declared capacity, restores a terminator at its last byte when
+necessary, and limits any append to the remaining space. The original
+`src/universal/q_shared.cpp` remains faithful.
+
+`tests/security/strcat_bounds.py` compiles the actual enhanced replacement
+with ASan/UBSan and checks 22,750 capacity/source-length permutations, plus
+null and zero-capacity cases, including guard bytes around the destination.
+It runs in CI without requiring copyrighted game assets.
+
+**Integration boundary:** This protects calls made through the rebuilt
+enhanced DLL. The canonical BO3 package deliberately includes a
+byte-identical Store executable and has no verified detour from the native
+`I_strcat` at 1423B4B30 to the enhanced override. Thus native Store
+callsites remain vulnerable if their inputs can trigger B0001; no RCE
+mitigation claim follows from P0024 alone. Complete a matched Store-native
+redirect and hostile-input integration tests before marking it native-fixed.
