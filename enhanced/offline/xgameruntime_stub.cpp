@@ -4,27 +4,23 @@
 // The first invocation also *attempts* to load the canonical package's app-local
 // recon.dll and call a harmless source-linked probe. Neither loading nor observing
 // GDK dispatches proves a menu, map or game-network engine hook.
+#include "gdk_feature.h"
 #define T7_EXPORT extern "C" __declspec(dllexport)
 using HRESULT = long;
 using U64 = unsigned long long;
-struct T7Guid
-{
-    unsigned int a;
-    unsigned short b, c;
-    unsigned char d[8];
-};
-static_assert(sizeof(T7Guid) == 16, "Win64 GUID layout");
 extern "C" __declspec(dllimport) void OutputDebugStringA(const char *);
 extern "C" __declspec(dllimport) unsigned int GetModuleFileNameW(void *, wchar_t *, unsigned int);
 extern "C" __declspec(dllimport) void *GetModuleHandleW(const wchar_t *);
 extern "C" __declspec(dllimport) void *LoadLibraryW(const wchar_t *);
 extern "C" __declspec(dllimport) void *GetProcAddress(void *, const char *);
 extern "C" __declspec(dllimport) unsigned int GetLastError();
+extern "C" __declspec(dllimport) unsigned int GetEnvironmentVariableA(const char *, char *, unsigned int);
 extern "C" __declspec(dllimport) int FreeLibrary(void *);
 extern "C" int T7DirectLoadStartupProfile();
 static volatile unsigned int querySequence;
 static volatile unsigned int errorSequence;
 static volatile unsigned int initialized;
+static bool localFeatureEnabled;
 static void *reconstruction;
 using Observer = void (*)(U64, unsigned int);
 static Observer observeDispatch;
@@ -143,6 +139,11 @@ static void PrepareLocal()
     if (__sync_lock_test_and_set(&initialized, 1U)) return;
     const int ready = T7DirectLoadStartupProfile();
     OutputDebugStringA(ready ? "T7GDK:LOCAL_PROFILE_PREPARED" : "T7GDK:LOCAL_PROFILE_UNSET");
+    char featureFlag[2] = {};
+    localFeatureEnabled = GetEnvironmentVariableA("T7_ENHANCED_LOCAL_FEATURE", featureFlag, 2) == 1 &&
+                          featureFlag[0] == '1';
+    if (localFeatureEnabled)
+        OutputDebugStringA("T7GDK:LOCAL_FEATURE_INTERFACE_ENABLED");
     TryLoadEnhancedRecon();
     OutputDebugStringA("T7GDK:INIT_OK_NO_VENDOR");
 }
@@ -169,6 +170,17 @@ T7_EXPORT HRESULT QueryApiImpl(const T7Guid *classId, const T7Guid *interfaceId,
         // A loaded DLL or resolved export alone is not enough.
         if (observedCount && observedCount() == 1U)
             OutputDebugStringA("T7GDK:RECON_CALLBACK_EXECUTED");
+    }
+    // Optional, strictly local COM feature query. All features are reported
+    // unavailable. Never provide Xbox users, licensing, or vendor objects.
+    if (localFeatureEnabled && IsOriginalGuid(classId) && IsOriginalGuid(interfaceId))
+    {
+        const int result = T7OfflineFeatureQuery(classId, interfaceId, out);
+        if (!result)
+        {
+            OutputDebugStringA("T7GDK:LOCAL_FEATURE_INTERFACE_GRANTED");
+            return 0;
+        }
     }
     return static_cast<HRESULT>(0x80070032U); // documented HRESULT_FROM_WIN32(ERROR_NOT_SUPPORTED)
 }
