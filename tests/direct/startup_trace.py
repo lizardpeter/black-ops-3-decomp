@@ -16,7 +16,7 @@ raw += "T7GDK:LOCAL_PROFILE_PREPARED\n" + ("T7GDK:QUERY_API=ABCDEF1234567890\n" 
 report = reduce_log(raw)
 assert report["gdk_initialized_without_vendor"] and report["local_profile_prepared"]
 assert report["logged_gdk_queries"] == 101
-assert len(report["query_arguments_first_64"]) == 64
+assert len(report["legacy_pointer_arguments_first_64"]) == 64
 assert not report["menu_render_verified"]
 traced = ("T7GDK:RECON_PROBE_OK\\nT7GDK:RECON_CALLBACK_EXECUTED\\n"
           "T7GDK:QUERY_API=0000000000000015\\n"
@@ -24,7 +24,14 @@ traced = ("T7GDK:RECON_PROBE_OK\\nT7GDK:RECON_CALLBACK_EXECUTED\\n"
           "trace:CreateFileW Z:\\\\Games\\\\BO3\\\\zone\\\\ui_mp.ff\\n"
           "trace:CreateFileW /private/BO3/zone/core_common.ff\\n"
           "trace:CreateFileW /private/BO3/localization_en.txt\\n")
+traced += ("T7GDK:QUERY_CLASS_GUID=073B7DCB-1FCF-4030-94BE-E3C9EB623428\\n"
+           "T7GDK:QUERY_INTERFACE_GUID=073b7dcb-1fcf-4030-94be-e3c9eb623428\\n"
+           "T7GDK:QUERY_CLASS_GUID=01acd177-91f9-4763-a38e-ccbb55ce32e0\\n")
 triage = reduce_log(traced)
+assert triage["class_guids_first_64"][0] == "073b7dcb-1fcf-4030-94be-e3c9eb623428"
+assert triage["runtime_class_names_first_64"] == ["XThreading", "XUser"]
+assert triage["last_requested_runtime_class"] == "XUser"
+assert triage["interface_guids_first_64"] == ["073b7dcb-1fcf-4030-94be-e3c9eb623428"]
 assert triage["recon_probe_observed"]
 assert triage["recon_callback_execution_observed"]
 assert triage["query_caller_rvas_first_64"] == ["00920000"]
