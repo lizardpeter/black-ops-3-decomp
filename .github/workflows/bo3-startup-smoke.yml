@@ -1,6 +1,6 @@
 # Evidence-gathering only. The downloaded EXE is pinned by target.toml and
 # never packaged into workflow artifacts. The job does NOT claim a menu launch.
-# Run original BO3 menu FastFiles from authenticated R2 inventory in the same enhanced path.
+# Compare local XPackage COM against genuine BO3 startup assets in the single enhanced path.
 name: BO3 enhanced GDK startup probe
 on:
   workflow_dispatch:
@@ -40,9 +40,9 @@ jobs:
       - name: Install offline native toolchain and Wine
         run: |
           sudo apt-get update -qq
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq wine64 xvfb libseccomp2 clang llvm lld g++
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq wine64 xvfb libseccomp2 clang llvm lld g++ imagemagick
           python3 -m venv .work/venv
-          .work/venv/bin/pip install --quiet pefile
+          .work/venv/bin/pip install --quiet pefile pillow
           echo "$PWD/.work/venv/bin" >> "$GITHUB_PATH"
       - name: Retrieve exact pinned original Store EXE, no asset redistribution
         run: python3 tools/fetch_originals.py BlackOps3_MSStore .work/originals --only exe
@@ -68,6 +68,7 @@ jobs:
           python3 -c 'import json; p=json.load(open(".work/enhanced-package/manifest.json")); print("PINNED_PE_IMAGE_LAYOUT="+json.dumps(p["image_layout"], sort_keys=True))'
           python3 tests/direct/engine_bridge.py
           python3 tests/direct/gdk_feature.py
+          python3 tests/direct/gdk_package.py
       - name: Fetch authentic pinned FastFile startup subset from owner's R2
         timeout-minutes: 18
         run: |
@@ -93,20 +94,30 @@ jobs:
         run: |
           python3 tools/enhanced/run_wine.py --package .work/enhanced-package \
             --game .work/originals --prefix "$RUNNER_TEMP/t7-private-prefix" \
-            --out "$RUNNER_TEMP/t7-run-baseline" --seconds 45 --trace-files
-      - name: Probe the same package with local feature COM enabled
+            --out "$RUNNER_TEMP/t7-run-baseline" --seconds 45 --trace-files --shot-every 15
+      - name: Probe the same package with offline-only XPackage COM
         continue-on-error: true
         run: |
           python3 tools/enhanced/run_wine.py --package .work/enhanced-package \
             --game .work/originals --prefix "$RUNNER_TEMP/t7-private-prefix" \
-            --out "$RUNNER_TEMP/t7-run-feature" --seconds 45 --trace-files --local-feature-interface
+            --out "$RUNNER_TEMP/t7-run-package" --seconds 45 --trace-files --shot-every 15 --local-package-interface
       - name: Compare observed startup evidence only
         if: always()
         run: |
           python3 tools/enhanced/compare_startup.py \
             "$RUNNER_TEMP/t7-run-baseline/startup.json" \
-            "$RUNNER_TEMP/t7-run-feature/startup.json" \
+            "$RUNNER_TEMP/t7-run-package/startup.json" \
+            --probe-label local_package_probe \
             --out "$RUNNER_TEMP/t7-startup-comparison.json"
+      - name: Summarize screenshots privately without uploading captured images
+        if: always()
+        run: |
+          for mode in baseline package; do
+            if [ -d "$RUNNER_TEMP/t7-run-$mode" ]; then
+              python3 tools/enhanced/frame_stats.py --run-dir "$RUNNER_TEMP/t7-run-$mode" \
+                --out "$RUNNER_TEMP/t7-run-$mode/frame_stats.json"
+            fi
+          done
       - name: Require real BO3 enhanced recon probe and GDK callback evidence
         if: always()
         run: |
@@ -120,7 +131,7 @@ jobs:
           report = json.loads(comparison.read_text())
           if not report.get("both_traces_present"):
               raise SystemExit("FAIL: one or both real Wine startup traces missing")
-          for mode in ("baseline", "local_feature_probe"):
+          for mode in ("baseline", "local_package_probe"):
               entry = report[mode]
               if not entry.get("recon_probe_observed"):
                   raise SystemExit("FAIL: BO3 did not execute source-built recon probe in " + mode)
@@ -138,9 +149,11 @@ jobs:
             ${{ runner.temp }}/t7-run-baseline/startup.json
             ${{ runner.temp }}/t7-run-baseline/asset_preflight.json
             ${{ runner.temp }}/t7-run-baseline/result.json
-            ${{ runner.temp }}/t7-run-feature/startup.json
-            ${{ runner.temp }}/t7-run-feature/asset_preflight.json
-            ${{ runner.temp }}/t7-run-feature/result.json
+            ${{ runner.temp }}/t7-run-baseline/frame_stats.json
+            ${{ runner.temp }}/t7-run-package/startup.json
+            ${{ runner.temp }}/t7-run-package/asset_preflight.json
+            ${{ runner.temp }}/t7-run-package/result.json
+            ${{ runner.temp }}/t7-run-package/frame_stats.json
             ${{ runner.temp }}/t7-startup-comparison.json
           if-no-files-found: warn
           retention-days: 7
