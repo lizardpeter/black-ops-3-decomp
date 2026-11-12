@@ -36,7 +36,25 @@ def build(out):
     for cmd in commands:
         p = subprocess.run(cmd, capture_output=True, text=True)
         if p.returncode: raise RuntimeError(f"{cmd}\n{p.stdout}{p.stderr}")
-    print(f"Built offline XCurl and WinHTTP shims in {out}; native game not tested")
+    # The original Store EXE statically imports 16 GameChat2 functions. Its
+    # native GDK library is absent in a minimal offline Wine diagnostic.
+    # Build a fail-closed, *loader only* replacement with no voice/account/
+    # networking provider. This shares the single canonical enhanced package.
+    chatobj, chatdll = out / "gamechat2.obj", out / "gamechat2.dll"
+    chatcmds = [
+        ["clang++", "--target=x86_64-pc-windows-msvc", "-std=c++17", "-O2",
+         "-fno-exceptions", "-fno-rtti", "-ffreestanding", "-fno-builtin",
+         "-fno-stack-protector", "-mno-stack-arg-probe", "-Wall", "-Werror",
+         "-c", str(ROOT / "enhanced/offline/gamechat2_stub.cpp"),
+         "-o", str(chatobj)],
+        ["lld-link", "/dll", "/entry:_DllMainCRTStartup", "/nodefaultlib",
+         "/subsystem:windows", f"/out:{chatdll}", str(chatobj)]
+    ]
+    for cmd in chatcmds:
+        p = subprocess.run(cmd, capture_output=True, text=True)
+        if p.returncode:
+            raise RuntimeError(f"{cmd}\\n{p.stdout}{p.stderr}")
+    print(f"Built offline XCurl, WinHTTP and GameChat2 shims in {out}; native game not tested")
     return dll
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
