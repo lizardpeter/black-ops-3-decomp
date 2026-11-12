@@ -22,7 +22,7 @@ from winhttp_stub import audit as audit_winhttp
 COMPONENT_ONLY = {"wine-system32/xgameruntime.dll", "xcurl.dll", "winhttp.dll"}
 FULL = COMPONENT_ONLY | {"BlackOps3.exe", "recon.dll"}
 UNVERIFIED = (
-    "game_engine_hooks_installed", "native_windows_startup",
+    "game_engine_hooks_installed", "in_process_recon_bridge_observed", "native_windows_startup",
     "rendered_menu", "fastfiles_loaded", "offline_match_started",
     "direct_multiplayer_join", "whole_process_network_isolation",
 )
@@ -53,6 +53,8 @@ def audit(directory):
         raise ValueError("Incomplete/unknown enhanced package components")
     if any(manifest.get("verified", {}).get(k) is not False for k in UNVERIFIED):
         raise ValueError("Package falsely claims unverified runtime integration")
+    if manifest.get("compiled_features", {}).get("recon_gdk_bridge_compiled") != (set(entries) == FULL):
+        raise ValueError("Manifest claims a recon bridge without the full enhanced DLL")
     if manifest.get("compiled_features", {}).get("enhanced_reconstruction_compiled") != (set(entries) == FULL):
         raise ValueError("Enhanced reconstruction manifest disagrees with DLL inventory")
     features = manifest.get("compiled_features", {})
