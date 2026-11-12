@@ -28,6 +28,9 @@ with tempfile.TemporaryDirectory() as tmp:
     assert result["both_traces_present"]
     assert result["baseline"]["recon_probe_observed"]
     assert result["local_feature_probe"]["recon_callback_execution_observed"]
+    package_result = compare(base, updated, "local_package_probe")
+    assert package_result["local_package_probe"]["recon_callback_execution_observed"]
+    assert "local_feature_probe" not in package_result
     assert not result["menu_fix_confirmed"]
     assert not result["local_feature_probe"]["fastfile_open_verified"]
     assert result["local_feature_probe"]["fastfile_names_mentioned_not_open_proof"] == ["ui_mp.ff"]
