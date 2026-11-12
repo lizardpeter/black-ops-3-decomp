@@ -298,7 +298,14 @@ def main():
     (BUILD / "hybrid.tsv").write_text("\n".join(hybrid) + "\n")
 
     dll = BUILD / "recon.dll"
-    run("lld-link", "/dll", "/noentry", "/nodefaultlib", "/base:0x180000000", "/fixed", f"/out:{dll}",
+    # The retail Store EXE reserves an unusually large virtual .data segment.
+    # Its mapped image includes 0x180000000, the original reconstruction's
+    # fixed base. A DLL loaded *inside BO3* must use a non-overlapping preferred
+    # base and remain relocatable in case Windows reserves that address too.
+    # Keep the faithful differential DLL's layout unchanged.
+    image_link = ("/base:0x400000000", "/dynamicbase") if enhanced else (
+        "/base:0x180000000", "/fixed")
+    run("lld-link", "/dll", "/noentry", "/nodefaultlib", *image_link, f"/out:{dll}",
         *[f"/export:{e}" for e in exports],  # x64: no leading underscore on C names
         *(["/force:multiple", f"/map:{BUILD / 'recon.map'}"] if enhanced else []),
         *objs, *env_objs, BUILD / "hybrid.obj", quiet_duplicates=enhanced)
