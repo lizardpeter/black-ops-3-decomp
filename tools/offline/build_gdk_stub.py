@@ -14,6 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 SOURCES = ("enhanced/offline/xgameruntime_stub.cpp",
            "enhanced/offline/gdk_feature.cpp",
+           "enhanced/offline/gdk_package.cpp",
            "enhanced/direct/profile.cpp", "enhanced/direct/startup.cpp",
            "enhanced/direct/transport.cpp")
 
