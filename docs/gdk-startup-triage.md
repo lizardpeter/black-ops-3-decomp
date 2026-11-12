@@ -100,3 +100,25 @@ paths: keep it private.
 
 There has been no new native game-startup execution in this development
 session; component tests and code commits are not a menu pass.
+
+## Confirmed pre-GDK Wine loader failure in minimal EXE-only diagnostic
+
+The 2026-11-12 pinned Store EXE Wine probe, [CI run 43314796699](https://github.com/lizardpeter/black-ops-3-decomp/actions/runs/43314796699),
+exited with code 53 before any GDK or recon.dll markers. The new Wine
+`+module` diagnostics reported missing `gamechat2.dll` and
+`libScePad.dll`. This **precedes** the previously observed full-install
+localization stall, so that older stall is not yet resolved.
+
+The single canonical enhanced package now includes an app-local,
+**fail-closed GameChat2 import shim** exporting the 16 names BO3 statically
+imports. This shim has no Xbox user, XUID, HTTP or network dependencies;
+it cannot provide actual voice-chat functionality. It is only an import
+loader boundary. Its generic Win64 signatures are not yet fully validated
+against every GameChat2 API prototype; game-side calls still require runtime
+investigation before this can be considered complete compatibility.
+
+The workflow now inventories exact `libScePad.dll` import names or
+ordinals from the pinned executable. No controller stub should be claimed
+complete until its export and ABI requirements are established.
+The minimal CI game directory also has **no `zone/*.ff` assets**,
+so even a successful GDK probe cannot demonstrate a rendered menu.
