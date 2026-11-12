@@ -15,8 +15,8 @@ CALLER = re.compile(r"T7GDK:QUERY_CALLER_RVA=([0-9A-Fa-f]{8})(?![0-9A-Fa-f])")
 ERROR = re.compile(r"T7GDK:RECON_LOAD_ERROR=([0-9A-Fa-f]{8})(?![0-9A-Fa-f])")
 # Path mentions are *not* proof of successful file open. Strip directories so
 # the derived report never contains game/user directory names.
-FASTFILE = re.compile(r"(?i)(?:zone[\\\\/])([a-z0-9_+.-]{1,96}\\.ff)\\b")
-LOCALIZATION = re.compile(r"(?i)\\b(localization_[a-z0-9_+.-]{1,80}\\.txt)\\b")
+FASTFILE = re.compile(r"(?i)(?:zone[\\/])([a-z0-9_+.-]{1,96}\.ff)\b")
+LOCALIZATION = re.compile(r"(?i)\b(localization_[a-z0-9_+.-]{1,80}\.txt)\b")
 MARKERS = (
     "T7GDK:INIT_OK_NO_VENDOR",
     "T7GDK:LOCAL_PROFILE_PREPARED",
