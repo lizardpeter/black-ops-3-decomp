@@ -125,11 +125,11 @@ def main():
         assert not client.SelectPeer(b'192.0.2.44:27016')
         assert client.WireVersion()==1
         client.Close()
-        # Authenticated v2: strictly formatted packets with key and replay window.
+        # Authenticated v3: strictly formatted packets with key and replay window.
         key=b'000102030405060708090a0b0c0d0e0f'
         assert not client.SetKey(b'invalid') and client.WireVersion()==1
         assert client.SetKey(key) and server.SetKey(key)
-        assert client.WireVersion()==server.WireVersion()==2
+        assert client.WireVersion()==server.WireVersion()==3
         assert client.Open(b'127.0.0.1:0',0) and server.Open(b'127.0.0.1:0',1)
         assert client.SelectPeer(f'127.0.0.1:{server.Port()}'.encode())
         assert client.Peer(C.byref(address))
@@ -146,8 +146,16 @@ def main():
             assert client.Peer(C.byref(address))
             assert client.Send(len(payload),payload,C.byref(address))
             wire,_=other.recvfrom(1400)
-            assert wire[:6]==b'T7DP'+bytes((2,0))
+            assert wire[:6]==b'T7DP'+bytes((3,0))
             assert len(wire)==8+8+len(payload)+8
+            # A captured client->server packet is never a valid server->client
+            # packet, even when sent from the currently selected endpoint.
+            other.sendto(wire, ('127.0.0.1', client.Port()))
+            assert not receive(client)[0], "authenticated reflection accepted"
+            # The old keyed v2 format must not be silently accepted by v3.
+            old=bytearray(wire);old[4]=2
+            other.sendto(old, ('127.0.0.1', server.Port()))
+            assert not receive(server)[0], "keyed v2 downgrade accepted"
             destination=('127.0.0.1',server.Port())
             other.sendto(wire,destination)
             assert receive(server)[:2]==(1,payload)
