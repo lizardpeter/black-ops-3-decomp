@@ -46,6 +46,8 @@ jobs:
         run: python3 tests/direct/run.py
       - name: Offline network and loader security regression
         run: python3 tests/security/offline_boundary.py
+      - name: Bounded string security sanitizer corpus
+        run: python3 tests/security/strcat_bounds.py
       - name: Canonical enhanced runtime components
         run: |
           python3 tools/enhanced/build.py --components-only --out /tmp/t7-enhanced-components
