@@ -32,7 +32,7 @@ from build import sha256
 from stage_wine import validate_prefix
 
 
-def run(package, game, prefix, out, seconds, name, wine):
+def run(package, game, prefix, out, seconds, name, wine, trace_files=False):
     if platform.system() != "Linux":
         raise RuntimeError("This GDK shim is for a private Wine prefix only, never native Windows")
     if not 10 <= seconds <= 180:
@@ -76,11 +76,14 @@ def run(package, game, prefix, out, seconds, name, wine):
             "--output", str(out),
             "--seconds", str(seconds),
             "--shot-every", "0",
+            "--dlloverrides", "mscoree,mshtml=;xgameruntime=n;xcurl=n;winhttp=n",
             "--",
             "+direct_player", profile["id"], profile["name"],
         ]
         if wine:
             command[2:2] = ["--wine", wine]
+        if trace_files:
+            command[2:2] = ["--trace-files"]
         completed = subprocess.run(command, cwd=ROOT, check=False)
         if completed.returncode:
             raise RuntimeError(f"Isolated Wine smoke harness failed: exit {completed.returncode}")
@@ -101,8 +104,9 @@ def main():
     parser.add_argument("--seconds", type=int, default=90)
     parser.add_argument("--player-name", default=None)
     parser.add_argument("--wine")
+    parser.add_argument("--trace-files", action="store_true", help="Record Wine file operations; raw log contains paths")
     args = parser.parse_args()
-    run(args.package, args.game, args.prefix, args.out, args.seconds, args.player_name, args.wine)
+    run(args.package, args.game, args.prefix, args.out, args.seconds, args.player_name, args.wine, args.trace_files)
 
 
 if __name__ == "__main__":
