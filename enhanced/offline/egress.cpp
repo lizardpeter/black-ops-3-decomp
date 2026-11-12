@@ -48,6 +48,11 @@ T7_EXPORT int T7DenyCurlMulti() { Denied(); return 4; } // CURLM_INTERNAL_ERROR
 T7_EXPORT const char *T7OfflineErrorText() { return "Network disabled by offline build"; }
 T7_EXPORT unsigned long long T7DenySocket() { WSASetLastError(10013); return ~0ULL; } // WSAEACCES, INVALID_SOCKET/-1
 T7_EXPORT void *T7DenyDns() { WSASetLastError(10013); return nullptr; }
+T7_EXPORT int T7DenyNameInfo()
+{
+    WSASetLastError(10013);
+    return 10013; // EAI-style failure, never a successful name resolution
+}
 T7_EXPORT int T7DenyAddrInfo(const char *, const char *, const void *, void **result)
 {
     if (result) *result = nullptr;
@@ -91,7 +96,10 @@ T7_EXPORT void *T7OfflineGetProcAddress(void *module, const char *name)
     wchar_t path[512];
     const unsigned int count = GetModuleFileNameW(module, path, 512);
     if (!count || count >= 512 || Blocked(path) ||
-        ((unsigned long long)name > 0xFFFF && (Same(name, "RoGetActivationFactory") || Same(name, "RoActivateInstance"))))
+        ((unsigned long long)name > 0xFFFF &&
+         (Same(name, "RoGetActivationFactory") || Same(name, "RoActivateInstance") ||
+          Same(name, "LdrLoadDll") || Same(name, "LdrGetProcedureAddress") ||
+          Same(name, "LoadPackagedLibrary"))))
     {
         Denied();
         return nullptr;
