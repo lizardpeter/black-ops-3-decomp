@@ -55,6 +55,10 @@ def audit(directory):
         raise ValueError("Package falsely claims unverified runtime integration")
     if manifest.get("compiled_features", {}).get("enhanced_reconstruction_compiled") != (set(entries) == FULL):
         raise ValueError("Enhanced reconstruction manifest disagrees with DLL inventory")
+    features = manifest.get("compiled_features", {})
+    if (features.get("authenticated_v3_directional_and_replay_defense") is not True or
+            "authenticated_v2_and_replay_defense" in features):
+        raise ValueError("Canonical enhanced package must declare the reviewed directional wire v3")
     observed = set()
     for item in directory.rglob("*"):
         if item.is_symlink():
