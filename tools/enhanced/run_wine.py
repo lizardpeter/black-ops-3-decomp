@@ -27,11 +27,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools" / "offline"))
 
+# Import the real offline staging library before the package verifier appends
+# portable test paths containing a different stage_wine.py module.
+from stage_wine import validate_prefix
 from profile import load_or_create
 from asset_preflight import inspect as inspect_assets
 from verify import audit
 from build import sha256
-from stage_wine import validate_prefix
 
 
 def run(package, game, prefix, out, seconds, name, wine, trace_files=False, local_feature_interface=False):
