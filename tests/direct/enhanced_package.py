@@ -14,6 +14,10 @@ sys.path.insert(0, str(ROOT / "tools/enhanced"))
 
 from build import components_manifest, package, pinned_exe_hash, image_ranges_overlap
 from profile import load_or_create, valid_name, validate_profile
+# Importing the real Wine launcher must never resolve the same-named
+# tests/direct/stage_wine.py instead of tools/offline/stage_wine.py.
+from run_wine import run as enhanced_wine_run
+assert callable(enhanced_wine_run)
 
 
 def main():
