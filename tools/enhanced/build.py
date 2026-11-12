@@ -57,6 +57,38 @@ def validate_original(path):
     return path
 
 
+def image_ranges_overlap(base_a, size_a, base_b, size_b):
+    """Check Win64 mapped image intervals, not file sizes or RVA overlaps."""
+    for name, value in (("base_a", base_a), ("base_b", base_b),
+                        ("size_a", size_a), ("size_b", size_b)):
+        if not isinstance(value, int) or value < 0:
+            raise ValueError(f"Invalid PE image interval {name}")
+    if not size_a or not size_b or base_a + size_a > (1 << 64) or base_b + size_b > (1 << 64):
+        raise ValueError("Invalid PE image size or overflow")
+    return base_a < base_b + size_b and base_b < base_a + size_a
+
+
+def validate_image_layout(original, reconstruction):
+    """Prevent the original 0x180000000 fixed-base collision in the Store EXE."""
+    import pefile
+    exe = pefile.PE(str(original), fast_load=True)
+    dll = pefile.PE(str(reconstruction), fast_load=True)
+    a, b = exe.OPTIONAL_HEADER, dll.OPTIONAL_HEADER
+    if image_ranges_overlap(a.ImageBase, a.SizeOfImage, b.ImageBase, b.SizeOfImage):
+        raise ValueError("Enhanced reconstruction preferred base overlaps the huge Store EXE image")
+    if not (b.DllCharacteristics & 0x40):
+        raise ValueError("Enhanced reconstruction must allow ASLR (IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE)")
+    if dll.FILE_HEADER.Characteristics & 0x0001:
+        raise ValueError("Enhanced reconstruction is fixed / RELOCS_STRIPPED")
+    return {
+        "original_image_base": f"0x{a.ImageBase:X}",
+        "original_image_size": f"0x{a.SizeOfImage:X}",
+        "recon_preferred_base": f"0x{b.ImageBase:X}",
+        "recon_image_size": f"0x{b.SizeOfImage:X}",
+        "recon_dynamicbase": True,
+    }
+
+
 def verify_reconstruction(path):
     import pefile
     if not path.is_file():
@@ -65,6 +97,10 @@ def verify_reconstruction(path):
     if pe.FILE_HEADER.Machine != 0x8664 or not (pe.FILE_HEADER.Characteristics & 0x2000):
         raise ValueError("Enhanced reconstruction must be an x64 PE DLL")
     pe.parse_data_directories(directories=[pefile.DIRECTORY_ENTRY["IMAGE_DIRECTORY_ENTRY_EXPORT"]])
+    if not (pe.OPTIONAL_HEADER.DllCharacteristics & 0x40):
+        raise ValueError("Enhanced reconstruction must be ASLR-relocatable")
+    if pe.FILE_HEADER.Characteristics & 0x0001:
+        raise ValueError("Enhanced reconstruction cannot have stripped relocations")
     if not getattr(pe, "DIRECTORY_ENTRY_EXPORT", None):
         raise ValueError("Enhanced reconstruction has no exported functions")
     exports = {e.name.decode("ascii") for e in pe.DIRECTORY_ENTRY_EXPORT.symbols if e.name}
@@ -173,6 +209,7 @@ def package(output, original=None, reconstruction=None, components_only=False):
             raise ValueError("Full enhanced package requires --original AND --recon")
         validate_original(Path(original))
         verify_reconstruction(Path(reconstruction))
+        layout = validate_image_layout(Path(original), Path(reconstruction))
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = Path(tempfile.mkdtemp(prefix=".t7-enhanced-", dir=output.parent))
     try:
@@ -217,6 +254,8 @@ def package(output, original=None, reconstruction=None, components_only=False):
         shutil.rmtree(temporary / "_gdk")
         shutil.rmtree(temporary / "_xcurl")
         manifest = components_manifest(recorded, full=not components_only)
+        if not components_only:
+            manifest["image_layout"] = layout
         manifest["metadata"] = recorded_metadata
         manifest["reconstruction_metrics"] = metrics
         (temporary / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
