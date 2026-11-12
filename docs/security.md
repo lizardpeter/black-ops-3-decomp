@@ -162,3 +162,20 @@ byte-identical Store executable and has no verified detour from the native
 callsites remain vulnerable if their inputs can trigger B0001; no RCE
 mitigation claim follows from P0024 alone. Complete a matched Store-native
 redirect and hostile-input integration tests before marking it native-fixed.
+
+## B0002: bounded wildcard comparisons (P0026)
+
+The faithful Store `I_stricmpwild` at 1423B4960 recursively retries each
+`*` from every remaining text position, allowing pathological wildcard
+patterns to consume exponential CPU time and stack. The reconstructed
+enhanced override replaces this with an iterative matcher. Inputs are limited
+to 4095 bytes and each match to 262144 iterations; exhausting a limit returns
+non-match. It also refuses null inputs and never lets `?` consume past the
+terminator. It preserves normal wildcard match/nonmatch outcomes, not the
+original's signed ordering of nonmatches.
+
+The same sanitizer CI corpus used for B0001 runs 6000 independent oracle
+comparisons and a pathological repeated-star example. As for P0024, the
+canonical native Store executable is unmodified and **does not dispatch its
+existing calls to the enhanced DLL's override**; this is not yet a native
+security patch or a claim of T7 Patch parity.
