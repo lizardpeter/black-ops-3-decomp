@@ -51,7 +51,7 @@ Folder and file names describe *what*, never *when*. Dates belong in commit mess
 `src/` is the **faithful** decomp: original behaviour, bugs included, verified function by function. The
 **enhanced** build is the faithful code plus overrides from `enhanced/` (security, bugfix, modernize, feature),
 each recorded in `records/patches.tsv`; both are created with the first enhancement. Never fix a bug in `src/`.
-See docs/variants.md.
+See docs/variants.md. The only enhanced package/launcher path is documented in docs/enhanced-build.md; avoid creating parallel enhanced executable variants, and never claim that a packaged DLL is an installed game hook.
 
 **Everything worth fixing goes in `records/bugs.tsv`**, the enhanced build's fix queue: not only outright bugs,
 but anything in the original that should be fixed or improved. Columns: id (`B` + 4 digits), build, va, function,

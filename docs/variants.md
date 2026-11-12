@@ -7,7 +7,7 @@ The repo produces two builds from one source tree (decomp-project skill, princip
 | Purpose | the decomp: reproduces the original exactly, bugs included; the ground truth | the faithful code plus deliberate, documented changes: security fixes, bug fixes, modernization, features |
 | Source | `src/`, `include/` | `src/` + `enhanced/` (same layout as `src/`) |
 | Tests | strict: `matches` means identical behaviour to the original binary | each change's intended effect, and identical to faithful everywhere else |
-| Online use | not safe: it keeps the original's known vulnerabilities (docs/security.md) | intended |
+| Online use | **not safe**: retains original vulnerabilities | **not cleared for public online play** until native integration and network/RCE audits pass |
 
 ## Rules
 
@@ -38,3 +38,7 @@ docs/security.md). That list is the work queue for `bugfix` and `security` chang
 ## Planned enhancements
 
 docs/roadmap.md, once there are any.
+
+## Running-state gates
+
+`tools/enhanced/verify.py` confirms package completeness, source-derived patch provenance and the unmodified original EXE. It deliberately records that the native Windows game, menus, maps, direct multiplayer integration and process-wide network isolation are **unverified**. No source file, test or generated manifest may silently promote those states without native evidence.
