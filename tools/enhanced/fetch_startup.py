@@ -54,8 +54,11 @@ def load_manifest(path):
         etag = r["etag"].lower()
         if not ETAG.fullmatch(etag) or local in seen:
             raise ValueError("Duplicate or invalid object ETag: " + key)
+        digest = r["sha256"].lower()
+        if not re.fullmatch(r"[0-9a-f]{64}", digest):
+            raise ValueError("Missing SHA-256 pinned asset hash: " + key)
         seen.add(local)
-        result.append((key, local, size, etag))
+        result.append((key, local, size, etag, digest))
     return result
 
 
@@ -88,11 +91,11 @@ def checksums(file):
 
 
 def transfer(item, output, source):
-    key, local, size, etag = item
+    key, local, size, etag, pinned_sha256 = item
     target = safe_target(output, local)
     if target.exists():
         observed, md5, sha = checksums(target)
-        if observed != size or ("-" not in etag and md5 != etag):
+        if observed != size or sha != pinned_sha256 or ("-" not in etag and md5 != etag):
             raise ValueError("Existing original asset does not match pinned size/MD5: " + local)
         return local, size, sha, "reused"
 
@@ -117,6 +120,8 @@ def transfer(item, output, source):
             raise ValueError("Downloaded asset size differs from pinned inventory: " + local)
         if "-" not in etag and md5.hexdigest() != etag:
             raise ValueError("Downloaded asset MD5 differs from pinned object: " + local)
+        if sha.hexdigest() != pinned_sha256:
+            raise ValueError("Downloaded original SHA-256 differs from verified R2 inventory: " + local)
         if target.exists() or target.is_symlink():
             raise FileExistsError("Asset appeared during fetch: " + local)
         os.replace(temp, target)
