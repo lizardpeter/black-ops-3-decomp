@@ -17,6 +17,7 @@ Example:
 """
 import argparse
 import os
+import json
 import platform
 import shutil
 import subprocess
@@ -27,6 +28,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools" / "offline"))
 
 from profile import load_or_create
+from asset_preflight import inspect as inspect_assets
 from verify import audit
 from build import sha256
 from stage_wine import validate_prefix
@@ -43,6 +45,9 @@ def run(package, game, prefix, out, seconds, name, wine, trace_files=False, loca
     out = Path(out).absolute()
     if not game.is_dir():
         raise ValueError("The original game asset directory is missing")
+    assets = inspect_assets(game)
+    if not assets["fastfiles_present"]:
+        print("ASSET PREFLIGHT: zone FastFiles missing/unverified; menus cannot be validated using this directory.")
     if out.exists() or out.is_symlink():
         raise FileExistsError("Diagnostic output must be a new directory")
     manifest = audit(package)
@@ -91,6 +96,8 @@ def run(package, game, prefix, out, seconds, name, wine, trace_files=False, loca
         if local_feature_interface:
             environment["T7_ENHANCED_LOCAL_FEATURE"] = "1"
         completed = subprocess.run(command, cwd=ROOT, check=False, env=environment)
+        if out.is_dir():
+            (out / "asset_preflight.json").write_text(json.dumps(assets, indent=2) + "\n")
         if completed.returncode:
             raise RuntimeError(f"Isolated Wine smoke harness failed: exit {completed.returncode}")
         print("Diagnostic complete. Inspect local result.json and startup.json; game startup is not verified.")
