@@ -13,6 +13,11 @@ extern "C" int T7DirectPlayerConfigure(const char *hexId, const char *name)
     idText[0] = 0;
     playerName[0] = 0;
     if (!hexId || !name) return 0;
+    // Check the terminator before reading all 16 digits. A short C string
+    // can otherwise be read past its allocation by a fixed-width scanner.
+    for (unsigned int i = 0; i < 16; ++i)
+        if (!hexId[i]) return 0;
+    if (hexId[16] != 0) return 0;
     unsigned long long value = 0;
     for (unsigned int i = 0; i < 16; ++i)
     {
