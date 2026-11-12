@@ -83,7 +83,7 @@ def run(package, game, prefix, out, seconds, name, wine, trace_files=False, loca
             "--output", str(out),
             "--seconds", str(seconds),
             "--shot-every", "0",
-            "--dlloverrides", "mscoree,mshtml=;xgameruntime=n;xcurl=n;winhttp=n;gamechat2=n",
+            "--dlloverrides", "mscoree,mshtml=;xgameruntime=n;xcurl=n;winhttp=n;gamechat2=n;libscepad=n",
             "--",
             "+direct_player", profile["id"], profile["name"],
         ]
