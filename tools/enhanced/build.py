@@ -139,7 +139,7 @@ def components_manifest(artifacts, *, full):
             "offline_winhttp_failure_boundary": True,
             "local_player_identity": True,
             "direct_udp_transport": True,
-            "authenticated_v2_and_replay_defense": True,
+            "authenticated_v3_directional_and_replay_defense": True,
             "enhanced_reconstruction_compiled": full,
             "gdk_can_attempt_recon_load": True,
             "recon_gdk_bridge_compiled": full,
