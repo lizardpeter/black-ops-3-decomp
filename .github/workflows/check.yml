@@ -40,17 +40,17 @@ jobs:
         run: |
           for b in $(python3 tools/model.py retail-ids 2>/dev/null); do T7_ORIGINALS=.work/originals python3 tools/build_recon.py --build "$b" --enhanced; done
           T7_ORIGINALS=.work/originals python3 tests/enhanced/run.py
+          python3 tools/enhanced/build.py --original .work/originals/BlackOps3_MSStore.exe --recon build/BlackOps3_MSStore/enhanced/recon.dll --out build/BlackOps3_MSStore/enhanced-package
+          python3 tools/enhanced/verify.py build/BlackOps3_MSStore/enhanced-package
       - name: Portable local identity and direct UDP tests
         run: python3 tests/direct/run.py
       - name: Offline network and loader security regression
         run: python3 tests/security/offline_boundary.py
-      - name: Build and audit isolated GDK stub
+      - name: Canonical enhanced runtime components
         run: |
-          python3 tools/offline/build_gdk_stub.py --out /tmp/t7-gdk-stub
-          python3 tests/direct/gdk_stub.py --dll /tmp/t7-gdk-stub/xgameruntime.dll
+          python3 tools/enhanced/build.py --components-only --out /tmp/t7-enhanced-components
+          python3 tools/enhanced/verify.py /tmp/t7-enhanced-components
           python3 tools/offline/build_dll.py --out /tmp/t7-offline-recon
-          python3 tools/offline/build_vendor_stubs.py --out /tmp/t7-offline-shims
-          python3 tests/direct/vendor_stubs.py --dll /tmp/t7-offline-shims/xcurl.dll
       - name: Generated files are current
         run: |
           python3 tools/status.py >/dev/null
