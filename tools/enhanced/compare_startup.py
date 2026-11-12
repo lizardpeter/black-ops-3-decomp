@@ -12,8 +12,14 @@ def load(path):
     if not Path(path).is_file():
         return {"status": "missing", "source": str(Path(path).name)}
     value = json.loads(Path(path).read_text())
+    assets_path = Path(path).parent / "asset_preflight.json"
+    assets = json.loads(assets_path.read_text()) if assets_path.is_file() else {}
+    asset_status = str(assets.get("status", "not-reported"))
     return {
         "status": "observed",
+        "asset_preflight_status": asset_status,
+        "zone_fastfile_count": int(assets.get("fastfile_count", 0)),
+        "menu_assets_present_not_loaded": bool(assets.get("fastfiles_present", False)),
         "gdk_initialized_without_vendor": bool(value.get("gdk_initialized_without_vendor")),
         "recon_probe_observed": bool(value.get("recon_probe_observed")),
         "recon_callback_execution_observed": bool(value.get("recon_callback_execution_observed")),
@@ -35,7 +41,7 @@ def compare(baseline_path, feature_path):
         "both_traces_present": baseline["status"] == feature["status"] == "observed",
         "menu_fix_confirmed": False,
         "native_windows_gameplay_verified": False,
-        "interpretation": "Runtime GDK/factory observations only; a missing result, DLL probe or FastFile path is not a menu pass.",
+        "interpretation": "Runtime GDK/factory observations and disk-only asset inventory; no missing result, probe or FastFile path is a menu pass.",
     }
 
 def main():
