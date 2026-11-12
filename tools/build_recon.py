@@ -56,6 +56,11 @@ def out_dir(build: str) -> Path:
     return ROOT / "build" if build == symbols.reference_build() else ROOT / "build" / build
 
 
+def recon_output_dir(build: str, enhanced: bool = False) -> Path:
+    """Canonical enhanced output always includes build ID; faithful remains as before."""
+    return ROOT / "build" / build / "enhanced" if enhanced else out_dir(build)
+
+
 def run(*cmd, quiet_duplicates=False):
     if not quiet_duplicates:
         subprocess.run([str(c) for c in cmd], check=True)
@@ -147,7 +152,7 @@ def main():
     # Enhanced artifacts always use a build-id-qualified directory, even when
     # this retail build happens to be the reference build. The canonical
     # packager and CI consume build/<build-id>/enhanced/recon.dll.
-    BUILD = ROOT / "build" / build / "enhanced" if enhanced else out_dir(build)
+    BUILD = recon_output_dir(build, enhanced)
     BUILD.mkdir(parents=True, exist_ok=True)
     objs, sources = [], []
     for src in sorted((ROOT / "src").rglob("*.cpp")):
