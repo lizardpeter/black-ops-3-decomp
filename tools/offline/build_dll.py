@@ -42,6 +42,10 @@ def main():
     (out / "obj").mkdir(parents=True, exist_ok=True)
     objs = []
     for src in sorted((ROOT / "enhanced" / "offline").glob("*.cpp")):
+        # xgameruntime_stub.cpp has a separate DLL entry and links the direct
+        # local-profile bootstrap; it must not be included in recon.dll.
+        if src.name == "xgameruntime_stub.cpp":
+            continue
         obj = out / "obj" / (src.stem + ".obj")
         run("clang++", "-std=c++17", f"-I{ROOT / 'enhanced' / 'include'}", *CFLAGS, "-c", src, "-o", obj)
         objs.append(obj)

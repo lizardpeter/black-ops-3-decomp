@@ -46,6 +46,7 @@ jobs:
         run: |
           python3 tools/offline/build_gdk_stub.py --out /tmp/t7-gdk-stub
           python3 tests/direct/gdk_stub.py --dll /tmp/t7-gdk-stub/xgameruntime.dll
+          python3 tools/offline/build_dll.py --out /tmp/t7-offline-recon
       - name: Generated files are current
         run: |
           python3 tools/status.py >/dev/null

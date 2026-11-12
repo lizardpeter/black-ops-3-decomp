@@ -17,7 +17,8 @@ and the enhanced build must not forge Xbox users, licensing, entitlements, or ve
   name from a single `+direct_player <16hex> "<name>"` argument. This is independent, not an XUID or XUser.
 - `enhanced/direct/transport.cpp` is an isolated IPv4 UDP implementation with numeric endpoints, bounded
   payloads, framing, checksums, explicit peer selection, and no DNS or vendor infrastructure.
-  **It has NOT yet been wired into BO3's engine packet send/receive and session admission.**
+  **It has NOT yet been wired into BO3's engine packet send/receive and session admission. The Win32 transport initializes Winsock once per process (rather
+than leaking per-session WSAStartup references).**
 - The linked `--enhanced` reconstruction and the isolated GDK stub remain **two development artifacts**.
   BO3 does not yet have Ghosts' canonical packaged running-enhanced client or local-match support.
 

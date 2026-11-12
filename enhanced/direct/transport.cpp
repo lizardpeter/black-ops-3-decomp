@@ -5,7 +5,6 @@
 #define IW6_PRIVATE_WINSOCK
 #include <winsock2.h>
 extern "C" __declspec(dllimport) int getsockname(SOCKET, sockaddr *, int *);
-extern "C" __declspec(dllimport) int WSACleanup();
 extern "C" __declspec(dllimport) void AcquireSRWLockExclusive(void *);
 extern "C" __declspec(dllimport) void ReleaseSRWLockExclusive(void *);
 #else
@@ -28,6 +27,11 @@ constexpr int MaxWire = HeaderSize + MaxPayload + 2;
 constexpr unsigned int MaxPeers = 64;
 SOCKET udp = INVALID_SOCKET;
 bool initialized;
+#ifdef _WIN32
+// Initialize Winsock once per process. The OS releases its process-level reference
+// on exit; repeating WSAStartup per session would leak its reference count.
+bool winsockStarted;
+#endif
 bool hosting;
 unsigned short boundPort;
 T7DirectAddress selected;
@@ -79,9 +83,6 @@ void Close()
 {
     if (udp != INVALID_SOCKET) closesocket(udp);
     udp = INVALID_SOCKET;
-#ifdef _WIN32
-    if (initialized) WSACleanup();
-#endif
     initialized = false;
     hosting = false;
     boundPort = 0;
@@ -140,8 +141,12 @@ extern "C" int T7DirectOpen(const char *bindEndpoint, int server)
     T7DirectAddress address;
     if (!T7DirectParse(bindEndpoint, &address, 1)) return 0;
 #ifdef _WIN32
-    WSADATA data;
-    if (WSAStartup(0x202, &data)) return 0;
+    if (!winsockStarted)
+    {
+        WSADATA data;
+        if (WSAStartup(0x202, &data)) return 0;
+        winsockStarted = true;
+    }
 #endif
     initialized = true;
     udp = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
