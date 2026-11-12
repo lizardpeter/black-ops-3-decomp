@@ -10,17 +10,16 @@ and the enhanced build must not forge Xbox users, licensing, entitlements, or ve
   Startup stalled before opening `zone/*.ff`; no menu, game load, or multiplayer join has been verified.
 - The old patched-PE `tools/offline/package.py` experiment fails in a TLS anti-tamper callback; it is not
   the selected launch route and **must not** be reported as a working package.
-- `enhanced/offline/xgameruntime_stub.cpp` now traces at most 64 GDK API identifiers to the debugger, never
+- `enhanced/offline/xgameruntime_stub.cpp` now traces at most 128 GDK query arguments and candidate caller RVAs to the debugger, never
   player names/tokens and never the IID data; it reports unavailable APIs with `E_NOTIMPL`, clearing the output
-  pointer. The replacement imports only `GetCommandLineA` and `OutputDebugStringA` from `kernel32`.
+  pointer. The replacement imports reviewed Kernel32 loader/diagnostic functions and Winsock (for explicitly started private UDP); no GDK initialization socket is intentionally opened.
 - `enhanced/direct/profile.cpp` and `startup.cpp` validate a local, user-generated 64-bit identity and
   name from a single `+direct_player <16hex> "<name>"` argument. This is independent, not an XUID or XUser.
 - `enhanced/direct/transport.cpp` is an isolated IPv4 UDP implementation with numeric endpoints, bounded
   payloads, framing, checksums, explicit peer selection, and no DNS or vendor infrastructure.
   **It has NOT yet been wired into BO3's engine packet send/receive and session admission. The Win32 transport initializes Winsock once per process (rather
 than leaking per-session WSAStartup references).**
-- The linked `--enhanced` reconstruction and the isolated GDK stub remain **two development artifacts**.
-  BO3 does not yet have Ghosts' canonical packaged running-enhanced client or local-match support.
+- The canonical enhanced package now bundles the verified original EXE, reconstructed enhanced DLL, offline GDK, XCurl and WinHTTP components plus source provenance. The GDK shim attempts an in-process source-linked reconstruction probe; full game-engine hooks and local matches remain unverified.
 
 ## Build and check, without game assets
 
@@ -39,8 +38,7 @@ packets without connecting to the internet.
 1. Trace which GDK `QueryApiImpl` calls precede the first FastFile open; re-run the existing
    `tools/offline/wine_run.py` under its AF_UNIX-only seccomp sandbox with the newly built stub. Evidence must
    come from an actual run; these source changes do not show the startup stall is solved.
-2. Identify a safe engine-hosting integration for the enhanced reconstruction **without** editing the guarded
-   Store PE. The existing standalone stub does not load `recon.dll` or replace the game call sites.
+2. The GDK shim now attempts to load the packaged `recon.dll` and run a small source-linked GDK observation callback without changing the guarded Store PE. This is a first in-process enhanced boundary, **not** the game's packet, rendering, menu or frame-function integration.
 3. Map BO3's actual multiplayer address/message layouts and exact entrypoints, then bridge the local UDP
    transport and identity into BO3's command/session flow. Do not borrow Ghosts' absolute addresses or netadr
    layout guesses. Keep original direct game UDP isolated from third-party services.
@@ -82,8 +80,7 @@ directory**, and installs the stub GDK DLL in that prefix's `system32`.
 The prefix must contain a real Wine registry and cannot contain symlinked
 Windows directories. An existing different GDK DLL is never overwritten.
 
-This is **not** a Windows-native enhanced BO3 client and does not load the
-reconstructed `recon.dll` into the game. It makes the prior GDK initialization
+This older diagnostic is **not** the canonical enhanced launcher; use `tools/enhanced/run_wine.py` and the package for the source-linked reconstruction experiment. The legacy staging tool makes the prior GDK initialization
 experiment repeatable without editing PE `.text` or modifying an installed
 Windows runtime. Run `tools/offline/wine_run.py` with the staged EXE and the
 real game's asset folder, then inspect `startup.json` and `wine.log`.
@@ -113,3 +110,15 @@ its import/export structure is checked during packaging. The remaining
 Microsoft GDK, GameChat2, native broker and inline service paths have not all
 been eliminated. In particular, this is not a claim of process-wide egress
 isolation, and the engine must be observed to confirm which DLLs it loads.
+
+## Current GDK-to-reconstruction observations
+
+The `xgameruntime.dll` shim now attempts to load the package's app-local
+`recon.dll` and verify its source-linked probe. Its read-only GDK dispatch
+observer forwards bounded arguments and original-image caller RVAs into
+enhanced source. `tools/offline/startup_trace.py` distinguishes a loaded
+reconstruction, an executed callback, and a load failure, without
+misrepresenting any of those as original engine network/menu hooks.
+The separate `tools/enhanced/verify.py` also audits the symbol/hybrid/patch
+tables and exact package SHA-256 values. These remain startup investigation
+tools, not native gameplay evidence.
