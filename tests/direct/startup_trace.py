@@ -53,4 +53,12 @@ assert loader["wine_error_categories_first_24"]["module:import_dll"] == 1
 assert loader["wine_loader_status_codes"] == ["c0000135"]
 assert "Private" not in str(loader) and "Users" not in str(loader)
 
+# Genuine Wine module-load signals, not unloaded/mentioned file names, decide
+# whether a forbidden vendor module was actually mapped into the process.
+provider = reduce_log('trace:loaddll:build_module Loaded L"Z:\\\\Game\\\\PartyXboxLive.dll" (native)\\n')[
+    "pre_gdk_loader_diagnostics"]["vendor_online_modules_loaded_observed"]
+assert provider == ["partyxboxlive.dll"], provider
+absent = reduce_log('err:module:import_dll Library L"PartyXboxLive.dll" not found\\n')[
+    "pre_gdk_loader_diagnostics"]["vendor_online_modules_loaded_observed"]
+assert absent == [], absent
 print("PASS: GDK startup observations, bounded reporting, no gameplay false positives, ID redaction")
