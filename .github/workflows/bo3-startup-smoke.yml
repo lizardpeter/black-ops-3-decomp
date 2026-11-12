@@ -46,6 +46,18 @@ jobs:
           echo "$PWD/.work/venv/bin" >> "$GITHUB_PATH"
       - name: Retrieve exact pinned original Store EXE, no asset redistribution
         run: python3 tools/fetch_originals.py BlackOps3_MSStore .work/originals --only exe
+      - name: Inventory exact pinned non-Wine controller library imports
+        run: |
+          python3 - <<'PY'
+          import pefile
+          exe = pefile.PE(".work/originals/BlackOps3_MSStore.exe", fast_load=True)
+          exe.parse_data_directories(directories=[pefile.DIRECTORY_ENTRY["IMAGE_DIRECTORY_ENTRY_IMPORT"]])
+          for entry in getattr(exe, "DIRECTORY_ENTRY_IMPORT", []):
+              dll = entry.dll.decode("ascii", errors="replace").lower()
+              if dll in ("libscepad.dll", "gamechat2.dll"):
+                  imports = [imp.name.decode("ascii", errors="replace") if imp.name else f"ordinal:{imp.ordinal}" for imp in entry.imports]
+                  print("PINNED_IMPORTS", dll, len(imports), " ".join(imports))
+          PY
       - name: Build source-linked enhanced reconstruction and canonical package
         env:
           T7_ORIGINALS: .work/originals
