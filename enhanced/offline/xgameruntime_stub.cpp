@@ -106,8 +106,11 @@ static bool MainImageRange(const void *address, U64 bytes)
     if (region.allocationBase != mainImage || region.state != 0x1000)
         return false; // MEM_COMMIT in the original EXE allocation
     const unsigned protect = region.protect;
-    if ((protect & 0x100) || (protect & 0xFF) == 1)
-        return false; // PAGE_GUARD / PAGE_NOACCESS
+    const unsigned access = protect & 0xFF;
+    if (protect & 0x100) return false; // PAGE_GUARD
+    if (access != 0x02 && access != 0x04 && access != 0x08 &&
+        access != 0x20 && access != 0x40 && access != 0x80)
+        return false; // never dereference NOACCESS or EXECUTE-only memory
     const U64 start = (U64)region.baseAddress, target = (U64)address;
     if (target < start || target - start > region.regionSize)
         return false;
