@@ -115,6 +115,7 @@ def main():
     ap.add_argument("--wine", default="/usr/lib/wine/wine64")
     ap.add_argument("--seconds", type=int, default=120)
     ap.add_argument("--shot-every", type=int, default=10)
+    ap.add_argument("--trace-files", action="store_true", help="Wine +file diagnostic; raw log contains local paths")
     ap.add_argument("--display", default=":99")
     ap.add_argument("--debug", default="+timestamp,+pid,+loaddll,+seh,+debugstr")
     ap.add_argument("--dlloverrides", default="mscoree,mshtml=;xgameruntime=n")
@@ -131,6 +132,8 @@ def main():
     kind, build, digest = identify(exe)
     a.output.mkdir(parents=True, exist_ok=False)
     env = {k: v for k, v in os.environ.items() if "proxy" not in k.lower()}  # no proxy handed to Wine
+    if a.trace_files and "+file" not in a.debug:
+        a.debug += ",+file"
     env.update(WINEPREFIX=str(a.prefix.resolve()), WINEARCH="win64", DISPLAY=a.display,
                WINEDEBUG=a.debug, WINEDLLOVERRIDES=a.dlloverrides)
     args = a.arguments[1:] if a.arguments[:1] == ["--"] else a.arguments
