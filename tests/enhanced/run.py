@@ -32,7 +32,7 @@ BUILD = "BlackOps3_MSStore"
 
 class Env:
     def __init__(self):
-        out = ROOT / "build" if BUILD == symbols.reference_build() else ROOT / "build" / BUILD
+        out = ROOT / "build" / BUILD
         self.dll = Image(out / "enhanced" / "recon.dll")
         self.machine = Machine(Image(original_exe(BUILD)), self.dll)
         syms.BUILD = BUILD
@@ -40,7 +40,7 @@ class Env:
     def data(self, name):
         """A global or static of the enhanced DLL, by its plain name in the link map (build/.../enhanced/recon.map)."""
         if not hasattr(self, "_map"):
-            out = ROOT / "build" if BUILD == symbols.reference_build() else ROOT / "build" / BUILD
+            out = ROOT / "build" / BUILD
             self._map = {}
             for line in (out / "enhanced" / "recon.map").read_text().splitlines():
                 parts = line.split()
