@@ -1,6 +1,6 @@
 # Evidence-gathering only. The downloaded EXE is pinned by target.toml and
 # never packaged into workflow artifacts. The job does NOT claim a menu launch.
-# Workflow runs against the canonical build-id-qualified enhanced recon output.
+# Probe canonical recon and freestanding GDK replacement after the observed CRT-link failure.
 name: BO3 enhanced GDK startup probe
 on:
   workflow_dispatch:
