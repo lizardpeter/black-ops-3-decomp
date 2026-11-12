@@ -63,7 +63,9 @@ def main():
         assert m["original_executable_modified"] is False
         assert m["legacy_patched_pe_used"] is False
         assert m["compiled_features"]["enhanced_reconstruction_compiled"] == full
-        assert all(value is False for value in m["verified"].values())
+        assert m["verified"]["component_export_and_import_audits"] is True
+        assert all(value is False for key, value in m["verified"].items()
+                   if key != "component_export_and_import_audits")
     print("PASS: stable private local identity, injection rejection, atomic persistence, single-package contract")
 
 
