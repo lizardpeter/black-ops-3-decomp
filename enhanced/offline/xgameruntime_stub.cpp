@@ -35,6 +35,7 @@ extern "C" int T7DirectLoadStartupProfile();
 extern "C" int T7OfflinePackageQuery(const T7Guid *, const T7Guid *, void **);
 static volatile unsigned int querySequence;
 static volatile unsigned int errorSequence;
+static volatile unsigned int packageDiagnosticCount;
 static volatile unsigned int initialized;
 static bool localFeatureEnabled;
 static bool localPackageEnabled;
@@ -218,6 +219,21 @@ T7_EXPORT HRESULT QueryApiImpl(const T7Guid *classId, const T7Guid *interfaceId,
     // The ABI and deeper original game caller are not yet verified.
     const unsigned int rva = ReturnRva(__builtin_return_address(0));
     EmitQuery(classId, interfaceId, rva);
+    // Some retail GDK call paths can query interfaces before or concurrently
+    // with InitializeApiImpl. Read the optional diagnostic flag at the query
+    // boundary too; do not let startup ordering silently disable an A/B test.
+    if (!initialized && __sync_fetch_and_add(&packageDiagnosticCount, 1U) < 8)
+        OutputDebugStringA("T7GDK:QUERY_BEFORE_INITIALIZE");
+    if (!localPackageEnabled)
+    {
+        char localPackageFlag[2] = {};
+        if (GetEnvironmentVariableA("T7_ENHANCED_LOCAL_PACKAGE", localPackageFlag, 2) == 1 &&
+            localPackageFlag[0] == '1')
+        {
+            localPackageEnabled = true;
+            OutputDebugStringA("T7GDK:PACKAGE_OPT_IN_READ_FROM_QUERY");
+        }
+    }
     const U64 classFingerprint = GuidIdentity(classId);
     if (observeDispatch)
     {
@@ -240,13 +256,26 @@ T7_EXPORT HRESULT QueryApiImpl(const T7Guid *classId, const T7Guid *interfaceId,
     }
     // The same enhanced DLL can optionally supply only local package locale
     // and unpackaged status; entitlement/install/mount methods remain blocked.
-    if (localPackageEnabled && IsOriginalGuid(classId) && IsOriginalGuid(interfaceId))
+    if (localPackageEnabled)
     {
-        const int result = T7OfflinePackageQuery(classId, interfaceId, out);
-        if (!result)
+        const bool validClass = IsOriginalGuid(classId);
+        const bool validIid = IsOriginalGuid(interfaceId);
+        if (!validClass || !validIid)
+            OutputDebugStringA("T7GDK:PACKAGE_GUID_NOT_READABLE");
+        else
         {
-            OutputDebugStringA("T7GDK:LOCAL_PACKAGE_INTERFACE_GRANTED");
-            return 0;
+            const int result = T7OfflinePackageQuery(classId, interfaceId, out);
+            if (__sync_fetch_and_add(&packageDiagnosticCount, 1U) < 24)
+            {
+                char line[] = "T7GDK:PACKAGE_QUERY_RETURN=00000000";
+                Hex((unsigned int)result, line + sizeof("T7GDK:PACKAGE_QUERY_RETURN=") - 1, 8);
+                OutputDebugStringA(line);
+            }
+            if (!result)
+            {
+                OutputDebugStringA("T7GDK:LOCAL_PACKAGE_INTERFACE_GRANTED");
+                return 0;
+            }
         }
     }
     return static_cast<HRESULT>(0x80070032U); // documented HRESULT_FROM_WIN32(ERROR_NOT_SUPPORTED)
