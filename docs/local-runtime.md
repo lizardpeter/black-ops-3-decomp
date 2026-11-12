@@ -122,3 +122,12 @@ misrepresenting any of those as original engine network/menu hooks.
 The separate `tools/enhanced/verify.py` also audits the symbol/hybrid/patch
 tables and exact package SHA-256 values. These remain startup investigation
 tools, not native gameplay evidence.
+
+
+## GUID-correct GDK startup triage
+
+See [GDK startup triage](gdk-startup-triage.md). The factory arguments are COM
+GUID pointers, not numeric API IDs. The single canonical enhanced Wine launcher
+supports an opt-in `--local-feature-interface` for a documented, offline-safe
+feature availability interface, and `--trace-files` to compare pre-menu
+FastFile path mentions. Neither option proves a menu has loaded.
