@@ -15,7 +15,7 @@ COMPONENTS ONLY (CI; no original game files):
 
 GDK imports xgameruntime.dll from Windows system32. The bundled copy is
 ONLY for a private Wine prefix's system32: NEVER install in native Windows.
-The enhanced reconstruction DLL is packaged but not yet called by game code.
+The GDK shim now attempts a narrow in-process recon probe and GDK callback;\nits success and gameplay integration require actual runtime evidence.
 This distinction is mandatory and encoded in manifest.json.
 """
 import argparse
@@ -67,6 +67,12 @@ def verify_reconstruction(path):
     pe.parse_data_directories(directories=[pefile.DIRECTORY_ENTRY["IMAGE_DIRECTORY_ENTRY_EXPORT"]])
     if not getattr(pe, "DIRECTORY_ENTRY_EXPORT", None):
         raise ValueError("Enhanced reconstruction has no exported functions")
+    exports = {e.name.decode("ascii") for e in pe.DIRECTORY_ENTRY_EXPORT.symbols if e.name}
+    required = {"T7EnhancedReconProbe", "T7EnhancedObserveGdkDispatch",
+                "T7EnhancedObservedGdkCalls"}
+    if not required <= exports:
+        raise ValueError("Enhanced reconstruction is missing GDK bridge exports: " +
+                         repr(sorted(required - exports)))
     return path
 
 
@@ -135,10 +141,13 @@ def components_manifest(artifacts, *, full):
             "direct_udp_transport": True,
             "authenticated_v2_and_replay_defense": True,
             "enhanced_reconstruction_compiled": full,
+            "gdk_can_attempt_recon_load": True,
+            "recon_gdk_bridge_compiled": full,
         },
         "verified": {
             "component_export_and_import_audits": True,
             "game_engine_hooks_installed": False,
+            "in_process_recon_bridge_observed": False,
             "native_windows_startup": False,
             "rendered_menu": False,
             "fastfiles_loaded": False,
@@ -147,7 +156,7 @@ def components_manifest(artifacts, *, full):
             "whole_process_network_isolation": False,
         },
         "warning": "GDK shim is only for a private Wine prefix, never native Windows system32. "
-                   "Enhanced reconstruction is included but its engine callsites are not hooked.",
+                   "The GDK shim can load recon.dll and call its observer; native success, menu and engine hooks are unverified.",
     }
 
 
