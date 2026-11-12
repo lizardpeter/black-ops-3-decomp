@@ -167,6 +167,24 @@ extern "C" int T7DirectOpen(const char *bindEndpoint, int server)
     Close();
     T7DirectAddress address;
     if (!T7DirectParse(bindEndpoint, &address, 1)) return 0;
+    // No-key v1 is loopback-only. Binding INADDR_ANY would still expose a
+    // socket on every network interface despite dropping remote payloads.
+    // Preserve the familiar wildcard syntax for local development, but
+    // actually bind 127.0.0.1. Other non-loopback bind addresses fail closed.
+    if (!authenticated)
+    {
+        const bool wildcard = !(address.ip[0] | address.ip[1] |
+                                address.ip[2] | address.ip[3]);
+        if (wildcard)
+        {
+            address.ip[0] = 127; address.ip[1] = 0;
+            address.ip[2] = 0; address.ip[3] = 1;
+        }
+        else if (address.ip[0] != 127)
+        {
+            return 0;
+        }
+    }
 #ifdef _WIN32
     if (!winsockStarted)
     {
