@@ -55,16 +55,28 @@ def adapter(dll, name, ordinal=None):
             return "T7DenyCurlMulti"
         return "T7DenyNull"
     if dll == "ws2_32.dll":
-        if name in {"socket", "WSASocketA", "WSASocketW", "connect", "send", "sendto", "WSASendTo", "accept"}:
+        # Fail closed across both inbound and outbound socket entry points.
+        # The offline package is intentionally network-free, including LAN.
+        # Preserve WSAStartup, WSAGetLastError and closesocket for ordinary
+        # initialization, error reporting and cleanup.
+        if name in {
+            "socket", "WSASocketA", "WSASocketW", "connect", "WSAConnect",
+            "send", "sendto", "WSASend", "WSASendTo",
+            "recv", "recvfrom", "WSARecv", "WSARecvFrom",
+            "accept", "WSAAccept", "bind", "listen", "select", "WSAPoll",
+            "ioctlsocket", "WSAIoctl", "shutdown", "setsockopt",
+        }:
             return "T7DenySocket"
-        if name == "gethostbyname":
+        if name in {"gethostbyname", "gethostbyaddr"}:
             return "T7DenyDns"
         if name == "getaddrinfo":
             return "T7DenyAddrInfo"
+        if name == "getnameinfo":
+            return "T7DenyNameInfo"
     if dll == "kernel32.dll":
         if name in {"LoadLibraryA", "LoadLibraryW", "LoadLibraryExA", "LoadLibraryExW", "GetProcAddress"}:
             return "T7Offline" + name
-        if name in {"CreateProcessA", "CreateProcessW"}:
+        if name in {"CreateProcessA", "CreateProcessW", "LoadPackagedLibrary"}:
             return "T7DenyNull"
     if dll == "ole32.dll" and name == "CoCreateInstance":
         return "T7DenyCom"
