@@ -25,6 +25,9 @@ def load(path):
         "recon_callback_execution_observed": bool(value.get("recon_callback_execution_observed")),
         "local_feature_interface_enabled": bool(value.get("local_feature_interface_enabled")),
         "local_feature_interface_granted": bool(value.get("local_feature_interface_granted")),
+        "local_package_interface_enabled": bool(value.get("local_package_interface_enabled")),
+        "local_package_interface_granted": bool(value.get("local_package_interface_granted")),
+        "package_methods_first_32": value.get("package_methods_first_64", [])[:32],
         "logged_gdk_queries": int(value.get("logged_gdk_queries", 0)),
         "last_requested_runtime_class": value.get("last_requested_runtime_class"),
         "first_16_runtime_classes": value.get("runtime_class_names_first_64", [])[:16],
@@ -33,11 +36,13 @@ def load(path):
         "menu_render_verified": False,
     }
 
-def compare(baseline_path, feature_path):
+def compare(baseline_path, feature_path, probe_label="local_feature_probe"):
+    if probe_label not in ("local_feature_probe", "local_package_probe"):
+        raise ValueError("Unknown GDK A/B startup probe type")
     baseline, feature = load(baseline_path), load(feature_path)
     return {
         "baseline": baseline,
-        "local_feature_probe": feature,
+        probe_label: feature,
         "both_traces_present": baseline["status"] == feature["status"] == "observed",
         "menu_fix_confirmed": False,
         "native_windows_gameplay_verified": False,
@@ -49,8 +54,9 @@ def main():
     ap.add_argument("baseline", type=Path)
     ap.add_argument("feature", type=Path)
     ap.add_argument("--out", type=Path)
+    ap.add_argument("--probe-label", choices=("local_feature_probe", "local_package_probe"), default="local_feature_probe")
     args = ap.parse_args()
-    report = compare(args.baseline, args.feature)
+    report = compare(args.baseline, args.feature, args.probe_label)
     content = json.dumps(report, indent=2) + "\n"
     if args.out:
         args.out.write_text(content)
