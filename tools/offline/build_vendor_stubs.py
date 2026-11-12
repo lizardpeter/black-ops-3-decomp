@@ -54,7 +54,21 @@ def build(out):
         p = subprocess.run(cmd, capture_output=True, text=True)
         if p.returncode:
             raise RuntimeError(f"{cmd}\\n{p.stdout}{p.stderr}")
-    print(f"Built offline XCurl, WinHTTP and GameChat2 shims in {out}; native game not tested")
+    # Exactly seven pinned ScePad exports; no pad devices or Sony services.
+    padobj, paddll = out / "libscepad.obj", out / "libScePad.dll"
+    padcmds = [
+        ["clang++", "--target=x86_64-pc-windows-msvc", "-std=c++17", "-O2",
+         "-fno-exceptions", "-fno-rtti", "-ffreestanding", "-fno-builtin",
+         "-fno-stack-protector", "-mno-stack-arg-probe", "-Wall", "-Werror",
+         "-c", str(ROOT / "enhanced/offline/libscepad_stub.cpp"), "-o", str(padobj)],
+        ["lld-link", "/dll", "/entry:_DllMainCRTStartup", "/nodefaultlib",
+         "/subsystem:windows", f"/out:{paddll}", str(padobj)]
+    ]
+    for cmd in padcmds:
+        p = subprocess.run(cmd, capture_output=True, text=True)
+        if p.returncode:
+            raise RuntimeError(f"{cmd}\\n{p.stdout}{p.stderr}")
+    print(f"Built offline XCurl, WinHTTP, GameChat2 and libScePad shims in {out}; native game not tested")
     return dll
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
