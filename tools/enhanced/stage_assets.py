@@ -25,7 +25,7 @@ def stage(game, package, manifest=DEFAULT_MANIFEST):
         raise ValueError("Refuse symlinked runtime/game root")
     rows = load_manifest(manifest)
     count = 0
-    for key, local, expected, etag in rows:
+    for key, local, expected, etag, pinned_sha256 in rows:
         src = game / local
         dst = package / local
         if src.is_symlink() or not src.is_file():
@@ -33,7 +33,7 @@ def stage(game, package, manifest=DEFAULT_MANIFEST):
         if any(p.is_symlink() for p in dst.parents):
             raise ValueError("Refusing symlinked enhanced asset folder")
         before, md5, sha = checksums(src)
-        if before != expected or ("-" not in etag and md5 != etag):
+        if before != expected or sha != pinned_sha256 or ("-" not in etag and md5 != etag):
             raise ValueError(f"Wrong original R2 startup asset contents: {local}")
         dst.parent.mkdir(parents=True, exist_ok=True)
         if dst.exists() or dst.is_symlink():
