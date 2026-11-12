@@ -40,6 +40,8 @@ jobs:
         run: |
           for b in $(python3 tools/model.py retail-ids 2>/dev/null); do T7_ORIGINALS=.work/originals python3 tools/build_recon.py --build "$b" --enhanced; done
           T7_ORIGINALS=.work/originals python3 tests/enhanced/run.py
+      - name: Portable local identity and direct UDP tests
+        run: python3 tests/direct/run.py
       - name: Generated files are current
         run: |
           python3 tools/status.py >/dev/null
