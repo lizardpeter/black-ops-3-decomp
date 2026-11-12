@@ -25,6 +25,7 @@ sys.path.insert(0, str(HERE.parent / "differential"))  # test modules reuse the 
 
 from harness import ROOT, Image, Machine, original_exe  # noqa: E402
 import symbols  # noqa: E402
+from build_recon import recon_output_dir  # noqa: E402
 import syms  # noqa: E402
 
 BUILD = "BlackOps3_MSStore"
@@ -32,7 +33,7 @@ BUILD = "BlackOps3_MSStore"
 
 class Env:
     def __init__(self):
-        out = ROOT / "build" / BUILD
+        out = recon_output_dir(BUILD, enhanced=True).parent
         self.dll = Image(out / "enhanced" / "recon.dll")
         self.machine = Machine(Image(original_exe(BUILD)), self.dll)
         syms.BUILD = BUILD
@@ -40,7 +41,7 @@ class Env:
     def data(self, name):
         """A global or static of the enhanced DLL, by its plain name in the link map (build/.../enhanced/recon.map)."""
         if not hasattr(self, "_map"):
-            out = ROOT / "build" / BUILD
+            out = recon_output_dir(BUILD, enhanced=True).parent
             self._map = {}
             for line in (out / "enhanced" / "recon.map").read_text().splitlines():
                 parts = line.split()
