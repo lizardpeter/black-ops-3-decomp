@@ -69,3 +69,54 @@ bounded, fail-closed `enhanced/` replacements. Add negative corpus tests
 for out-of-range counts, truncated nested arrays, oversized strings and
 untrusted remote command-buffer message types. Finish native process ingress
 and egress verification separately from static tests.
+
+## Community T7 protection inventory (reviewed 2026-11-12)
+
+Sources: [T7Patch](https://github.com/shiversoftdev/t7patch),
+[Scroptss T7Patch-src](https://github.com/Scroptss/T7Patch-src) (the
+September 2026 compatibility fork), and
+[BO3Enhanced security.cpp](https://github.com/shiversoftdev/BO3Enhanced/blob/master/security.cpp).
+These projects target **different executable revisions and transport paths**.
+Steam offsets and Steam P2P message layouts MUST NOT be copied into the
+Microsoft Store build without independent matching. Their patches are
+evidence of bug classes, not proof that a Store-build function is vulnerable.
+This is a defensive audit ledger; no exploit payloads belong in this repo.
+
+| Area | Publicly documented mitigation | Store enhanced status | Acceptance gate |
+|---|---|---|---|
+| Incoming Steam P2P instant messages | Reject unsafe join and remote command-buffer message types (101, 102, 109) before dispatch; control info requests | **Not mapped**: Store uses its own game/SDK transports, not Steam's vtable | Find Store-equivalent ingress, prove per-type parser boundary and fail-closed tests |
+| Lobby messages and relay | Verify message type, source, lengths, nesting, and sender/session membership; T7Patch includes CL_HandleRelayPacket crash report | **Not mapped** | Reconstruct and fuzz Store lobby/relay parser with malformed and truncated messages |
+| Peer admission | T7Patch optional network password and friends-only restrictions | **Not implemented for live Store engine UDP** | Adopt a cryptographic session MAC + replay protection; do not mistake checksum-XOR for authentication |
+| Unsolicited OOB commands | Restrict info, join, chat and command-buffer-like messages by source/state; never accept arbitrary remote command text | **Not mapped** | Authenticated source, strict message allow-list, safe command tests |
+| Identity and name spoofing | Check claimed XUID against actual admitted sender; bounded names | **Not mapped** | Verify per-session binding and bounded string handling |
+| Lobby packet parsing | Field count/string/array/size/offset checks against declared message capacity | **Not mapped** | Negative/malformed/oversize corpus plus sanitizers |
+| Loading scripts and mods | Restrict native DLL loading and unsafe script APIs for untrusted content | **Partially bounded by the isolated offline package**, not a complete VM sandbox | Verify Lua/HKS loader paths, signed content policy and hostile-script tests |
+| Background debugger server | Never expose Havok Visual Debugger TCP listener | **Fixed in reconstructed enhanced function P0008** | Existing enhanced tests verify serve() does not listen |
+| Demonware and Xbox egress | Disable unintended socket/DNS/HTTP/telemetry endpoints | **Reconstructed enhanced boundaries P0003–P0008; separate offline package redirects original IAT** | Existing offline tests and package manifest audits |
+| Engine UDP ingress | Receive/parsing of local/peer game packets | **Still original and not secured by the above Demonware guards** | Establish an integrated pre-parser ingress gate before any live networking |
+
+### Security release policy
+
+- The **faithful** build remains an analysis artifact, never a safe multiplayer client.
+- The **enhanced reconstruction DLL** and the **network-disabled offline package**
+  are distinct: compiling an override does **not** redirect the retail EXE to it.
+  The offline package denies network traffic, including LAN; this is strong
+  containment but cannot be treated as an implemented multiplayer security patch.
+- **Do not call the enhanced BO3 build safe for untrusted live multiplayer** until
+  a specific Store-build inbound entrypoint is mapped, integrated into the native
+  package, and tested with the full hostile-input corpus. The first priority is
+  source-bound connection admission, then bounded lobby/relay parsing.
+- Reuse the **design intent**, not the GPL project's code or offsets, unless the
+  licensing and target-binary implications are explicitly reviewed.
+- A 16-bit password-dependent checksum (as used in some community patch paths)
+  is not a substitute for message authentication. Do not port it as an
+  authenticated peer protocol.
+
+### Sources and limitations
+
+T7Patch's own README reports that it addresses RCE vulnerabilities and warns that
+unpatched multiplayer remains dangerous. BO3Enhanced's README states that
+some remote crashes remain even where easy RCEs are mitigated. Individual
+underlying bugs are not all assigned public CVEs, and not all implementation
+details can be transferred between Steam and Store binaries. A version-specific
+patch without a verified Store ingress integration is **planned**, not fixed.
