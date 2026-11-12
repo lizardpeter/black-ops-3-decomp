@@ -19,6 +19,8 @@ GDK_CLASSES = {
     "01acd177-91f9-4763-a38e-ccbb55ce32e0": "XUser",
     "f4faf4d4-2d04-4fce-b3e0-474a713a3e84": "XPersistentLocalStorage",
     "973a344e-24bf-4d0f-8457-56c534892b29": "XGame",
+    "704c3f58-e629-4cc2-b197-30511b996fe2": "XGameSave",
+    "0651aae2-4012-4077-bf84-8b9097090e2c": "XGameInvite",
     "0dd112ac-7c24-448c-b92b-3960fb5bd30c": "XStore",
     "af406016-e850-4aa8-a88d-2f3dcb9dac7e": "XPackage",
     "37e56907-2f10-41e8-b72f-36edb185331a": "XNetworking",
