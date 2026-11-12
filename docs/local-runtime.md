@@ -72,3 +72,18 @@ binary, without importing any vendor, Winsock or HTTP libraries. Build it with
 not fabricated HTTP or identity results. This applies only if staged in an isolated
 runtime where the EXE actually loads it. It does not address direct WinHTTP calls,
 inlined Demonware code, or native Windows GDK startup.
+
+## One reproducible Wine diagnostic stage
+
+For a **private initialized Wine prefix only**, `tools/offline/stage_wine.py`
+verifies the exact original Store EXE hash, audits both replacement DLLs, stages
+an unmodified EXE with an app-local no-network XCurl DLL in a **new output
+directory**, and installs the stub GDK DLL in that prefix's `system32`.
+The prefix must contain a real Wine registry and cannot contain symlinked
+Windows directories. An existing different GDK DLL is never overwritten.
+
+This is **not** a Windows-native enhanced BO3 client and does not load the
+reconstructed `recon.dll` into the game. It makes the prior GDK initialization
+experiment repeatable without editing PE `.text` or modifying an installed
+Windows runtime. Run `tools/offline/wine_run.py` with the staged EXE and the
+real game's asset folder, then inspect `startup.json` and `wine.log`.
