@@ -17,8 +17,9 @@ sys.path.insert(0, str(ROOT / "tests" / "direct"))
 from build import sha256, pinned_exe_hash, verify_reconstruction
 from gdk_stub import audit as audit_gdk
 from vendor_stubs import audit as audit_xcurl
+from winhttp_stub import audit as audit_winhttp
 
-COMPONENT_ONLY = {"wine-system32/xgameruntime.dll", "xcurl.dll"}
+COMPONENT_ONLY = {"wine-system32/xgameruntime.dll", "xcurl.dll", "winhttp.dll"}
 FULL = COMPONENT_ONLY | {"BlackOps3.exe", "recon.dll"}
 UNVERIFIED = (
     "game_engine_hooks_installed", "native_windows_startup",
@@ -63,6 +64,7 @@ def audit(directory):
             raise ValueError(f"Modified component {name}")
     audit_gdk(directory / "wine-system32/xgameruntime.dll")
     audit_xcurl(directory / "xcurl.dll")
+    audit_winhttp(directory / "winhttp.dll")
     if set(entries) == FULL:
         if sha256(directory / "BlackOps3.exe") != pinned_exe_hash():
             raise ValueError("BO3 original EXE hash mismatch")

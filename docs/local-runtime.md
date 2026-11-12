@@ -102,3 +102,14 @@ operations.
 separate `T7EnhancedEngineIntegrated()` returns **0** until the original T7
 packet send/receive, admission and menu hooks are integrated and verified.
 A loaded DLL is not a playable game or whole-process vendor isolation.
+
+## Fail-closed WinHTTP alongside XCurl
+
+The canonical enhanced package includes an app-local `winhttp.dll` shim
+covering all 16 WinHTTP imports inventoried from the pinned Store build.
+It rejects sessions and requests with explicit errors and clears the documented
+out-length/byte-count parameters. The shim is **not installed system-wide**;
+its import/export structure is checked during packaging. The remaining
+Microsoft GDK, GameChat2, native broker and inline service paths have not all
+been eliminated. In particular, this is not a claim of process-wide egress
+isolation, and the engine must be observed to confirm which DLLs it loads.

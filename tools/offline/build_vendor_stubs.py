@@ -17,7 +17,26 @@ def build(out):
     ]:
         p = subprocess.run(cmd, capture_output=True, text=True)
         if p.returncode: raise RuntimeError(f"{cmd}\n{p.stdout}{p.stderr}")
-    print(f"Built {dll} ({dll.stat().st_size} bytes); native game not tested")
+    # WinHTTP is a separate Windows system provider; offline imports are
+    # redirected only when the isolated game actually loads this app-local DLL.
+    src = ROOT / "enhanced/offline/winhttp_stub.cpp"
+    obj, winhttp = out / "winhttp.obj", out / "winhttp.dll"
+    libdef = out / "kernel32.def"
+    libdef.write_text("LIBRARY kernel32.dll\nEXPORTS\n    SetLastError\n")
+    lib = out / "kernel32.lib"
+    commands = [
+        ["clang++", "--target=x86_64-pc-windows-msvc", "-std=c++17", "-O2",
+         "-fno-exceptions", "-fno-rtti", "-ffreestanding", "-fno-builtin",
+         "-fno-stack-protector", "-mno-stack-arg-probe", "-Wall", "-Werror",
+         "-c", str(src), "-o", str(obj)],
+        ["llvm-lib", "/machine:x64", f"/def:{libdef}", f"/out:{lib}"],
+        ["lld-link", "/dll", "/entry:_DllMainCRTStartup", "/nodefaultlib",
+         "/subsystem:windows", f"/out:{winhttp}", str(obj), str(lib)],
+    ]
+    for cmd in commands:
+        p = subprocess.run(cmd, capture_output=True, text=True)
+        if p.returncode: raise RuntimeError(f"{cmd}\n{p.stdout}{p.stderr}")
+    print(f"Built offline XCurl and WinHTTP shims in {out}; native game not tested")
     return dll
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

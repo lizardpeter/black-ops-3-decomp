@@ -82,10 +82,13 @@ def build_components(work):
     sys.path.insert(0, str(ROOT / "tests" / "direct"))
     from gdk_stub import audit as audit_gdk
     from vendor_stubs import audit as audit_xcurl
+    from winhttp_stub import audit as audit_winhttp
     gdk, xcurl = gdk_out / "xgameruntime.dll", vendor_out / "xcurl.dll"
     audit_gdk(gdk)
     audit_xcurl(xcurl)
-    return gdk, xcurl
+    winhttp = vendor_out / "winhttp.dll"
+    audit_winhttp(winhttp)
+    return gdk, xcurl, winhttp
 
 
 def components_manifest(artifacts, *, full):
@@ -102,6 +105,7 @@ def components_manifest(artifacts, *, full):
         "compiled_features": {
             "offline_gdk_compatibility": True,
             "offline_xcurl_failure_boundary": True,
+            "offline_winhttp_failure_boundary": True,
             "local_player_identity": True,
             "direct_udp_transport": True,
             "authenticated_v2_and_replay_defense": True,
@@ -137,10 +141,11 @@ def package(output, original=None, reconstruction=None, components_only=False):
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = Path(tempfile.mkdtemp(prefix=".t7-enhanced-", dir=output.parent))
     try:
-        gdk, xcurl = build_components(temporary)
+        gdk, xcurl, winhttp = build_components(temporary)
         binaries = {
             "wine-system32/xgameruntime.dll": gdk,
             "xcurl.dll": xcurl,
+            "winhttp.dll": winhttp,
         }
         if not components_only:
             binaries.update({
