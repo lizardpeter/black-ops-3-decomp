@@ -52,6 +52,7 @@ jobs:
           python3 tools/build_recon.py --build BlackOps3_MSStore --enhanced
           python3 tools/enhanced/build.py --original .work/originals/BlackOps3_MSStore.exe --recon build/BlackOps3_MSStore/enhanced/recon.dll --out .work/enhanced-package
           python3 tools/enhanced/verify.py .work/enhanced-package
+          python3 -c 'import json; p=json.load(open(".work/enhanced-package/manifest.json")); print("PINNED_PE_IMAGE_LAYOUT="+json.dumps(p["image_layout"], sort_keys=True))'
           python3 tests/direct/engine_bridge.py
           python3 tests/direct/gdk_feature.py
       - name: Initialize disposable Wine prefix on a private display
