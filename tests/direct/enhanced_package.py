@@ -18,6 +18,9 @@ from profile import load_or_create, valid_name, validate_profile
 # tests/direct/stage_wine.py instead of tools/offline/stage_wine.py.
 from run_wine import run as enhanced_wine_run
 assert callable(enhanced_wine_run)
+import stage_wine as actual_stage_module
+assert Path(actual_stage_module.__file__).resolve() == ROOT/"tools/offline/stage_wine.py", (
+    "Production Wine staging module shadowed by test script")
 
 
 def main():
