@@ -194,3 +194,20 @@ portable transport regression sends valid local-only v1 traffic to both
 the original Store executable's other networking entrypoints are not yet
 routed through it. It must not be presented as protection against the
 unmapped native T7 lobby and instant-message RCE vulnerabilities.
+
+## P0028: preserve authenticated peer replay state on re-selection
+
+`T7DirectSelectPeer` used to reset `clientReplay` unconditionally after
+every successful peer choice. This permitted a captured, valid v3 datagram
+to pass replay admission twice if the user selected the same endpoint
+between deliveries. The enhanced custom transport now retains a separate
+replay-associated endpoint so repeat selections and invalid-then-repeat
+selections do not clear its replay bitmap. Selecting a genuinely different
+endpoint resets the window.
+
+`tests/direct/reselect_replay.py` constructs and signs actual directional
+v3 packets and sends them over local UDP to check positive delivery,
+duplicate rejection and peer selection transitions. The test runs in the
+portable direct suite. It does **not** establish native T7 engine
+packet-hook coverage, or defend key reuse across socket close/reopen;
+a per-session handshake is still required.
