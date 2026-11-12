@@ -42,6 +42,8 @@ jobs:
           T7_ORIGINALS=.work/originals python3 tests/enhanced/run.py
       - name: Portable local identity and direct UDP tests
         run: python3 tests/direct/run.py
+      - name: Offline network and loader security regression
+        run: python3 tests/security/offline_boundary.py
       - name: Build and audit isolated GDK stub
         run: |
           python3 tools/offline/build_gdk_stub.py --out /tmp/t7-gdk-stub
