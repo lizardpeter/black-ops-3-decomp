@@ -11,7 +11,7 @@ def audit(path):
     exports = {s.name.decode() for s in pe.DIRECTORY_ENTRY_EXPORT.symbols if s.name}
     required = {"InitializeApiImpl", "InitializeApiImplEx", "UninitializeApiImpl",
                 "XErrorReport", "QueryApiImpl", "T7EnhancedCapabilities",
-                "T7EnhancedEngineIntegrated", "T7DirectPlayerConfigure",
+                "T7EnhancedEngineIntegrated", "T7EnhancedReconLoaded", "T7DirectPlayerConfigure",
                 "T7DirectPlayerId", "T7DirectPlayerIdText", "T7DirectPlayerName",
                 "T7DirectLoadStartupProfile", "T7DirectWireVersion", "T7DirectSetKey",
                 "T7DirectOpen", "T7DirectClose", "T7DirectSelectPeer",
@@ -22,7 +22,9 @@ def audit(path):
                 for d in getattr(pe, "DIRECTORY_ENTRY_IMPORT", [])}
     assert set(imported) == {"kernel32.dll", "ws2_32.dll"}, imported
     assert imported["kernel32.dll"] == {"GetCommandLineA", "OutputDebugStringA",
-        "AcquireSRWLockExclusive", "ReleaseSRWLockExclusive"}, imported
+        "AcquireSRWLockExclusive", "ReleaseSRWLockExclusive",
+        "GetModuleFileNameW", "GetModuleHandleW", "LoadLibraryW",
+        "GetProcAddress", "GetLastError", "FreeLibrary"}, imported
     assert imported["ws2_32.dll"] == {"WSAStartup", "socket", "closesocket",
         "ioctlsocket", "bind", "getsockname", "sendto", "recvfrom"}, imported
     print("PASS: GDK shim includes custom local identity/UDP with no vendor or HTTP imports")

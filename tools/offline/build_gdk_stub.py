@@ -27,6 +27,7 @@ def build(out):
     # Stable enhanced-local ABI. BO3's original packet entrypoints are not hooked.
     local_api = (
         "T7EnhancedCapabilities", "T7EnhancedEngineIntegrated",
+        "T7EnhancedReconLoaded",
         "T7DirectPlayerConfigure", "T7DirectPlayerId",
         "T7DirectPlayerIdText", "T7DirectPlayerName",
         "T7DirectLoadStartupProfile", "T7DirectWireVersion", "T7DirectSetKey",
@@ -43,9 +44,12 @@ def build(out):
             "-c", ROOT / src, "-o", obj)
         objects.append(obj)
     defs = out / "kernel32.def"
-    defs.write_text("LIBRARY kernel32.dll\nEXPORTS\n" +
-                    "    GetCommandLineA\n    OutputDebugStringA\n" +
-                    "    AcquireSRWLockExclusive\n    ReleaseSRWLockExclusive\n")
+    defs.write_text("LIBRARY kernel32.dll\\nEXPORTS\\n" +
+                    "    GetCommandLineA\\n    OutputDebugStringA\\n" +
+                    "    AcquireSRWLockExclusive\\n    ReleaseSRWLockExclusive\\n" +
+                    "    GetModuleFileNameW\\n    GetModuleHandleW\\n" +
+                    "    LoadLibraryW\\n    GetProcAddress\\n" +
+                    "    GetLastError\\n    FreeLibrary\\n")
     lib = out / "kernel32.lib"
     run("llvm-lib", "/machine:x64", f"/def:{defs}", f"/out:{lib}")
     winsock = out / "ws2_32.def"
