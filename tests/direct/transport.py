@@ -27,6 +27,7 @@ def load(path):
     lib=C.CDLL(str(path))
     for name,args,ret in [
         ('Open',[C.c_char_p,C.c_int],C.c_int),('Close',[],None),
+        ('SetKey',[C.c_char_p],C.c_int),('WireVersion',[],C.c_int),
         ('SelectPeer',[C.c_char_p],C.c_int),('Peer',[C.POINTER(Address)],C.c_int),
         ('Port',[],C.c_ushort),('Parse',[C.c_char_p,C.POINTER(Address),C.c_int],C.c_int),
         ('Send',[C.c_int,C.c_void_p,C.POINTER(Address)],C.c_int),
@@ -118,6 +119,47 @@ def main():
         assert not client.Send(0,None,C.byref(address))
         assert not receive(client)[0]
         assert server.Open(b'0.0.0.0:0',1) # Explicit wildcard bind; never a remote peer.
+        server.Close()
+        # No-key legacy datagrams are restricted to loopback.
+        assert client.Open(b'127.0.0.1:0',0)
+        assert not client.SelectPeer(b'192.0.2.44:27016')
+        assert client.WireVersion()==1
+        client.Close()
+        # Authenticated v2: strictly formatted packets with key and replay window.
+        key=b'000102030405060708090a0b0c0d0e0f'
+        assert not client.SetKey(b'invalid') and client.WireVersion()==1
+        assert client.SetKey(key) and server.SetKey(key)
+        assert client.WireVersion()==server.WireVersion()==2
+        assert client.Open(b'127.0.0.1:0',0) and server.Open(b'127.0.0.1:0',1)
+        assert client.SelectPeer(f'127.0.0.1:{server.Port()}'.encode())
+        assert client.Peer(C.byref(address))
+        payload=b'authenticated T7 direct packet'
+        assert client.Send(len(payload),payload,C.byref(address))
+        result,data,source,_=receive(server)
+        assert result and data==payload
+        assert server.Send(len(payload),payload,C.byref(source))
+        assert receive(client)[:2]==(1,payload)
+        with socket.socket(socket.AF_INET,socket.SOCK_DGRAM) as other:
+            other.bind(('127.0.0.1',0))
+            other.settimeout(1)
+            assert client.SelectPeer(f'127.0.0.1:{other.getsockname()[1]}'.encode())
+            assert client.Peer(C.byref(address))
+            assert client.Send(len(payload),payload,C.byref(address))
+            wire,_=other.recvfrom(1400)
+            assert wire[:6]==b'T7DP'+bytes((2,0))
+            assert len(wire)==8+8+len(payload)+8
+            destination=('127.0.0.1',server.Port())
+            other.sendto(wire,destination)
+            assert receive(server)[:2]==(1,payload)
+            other.sendto(wire,destination)
+            assert not receive(server)[0]
+            corrupted=bytearray(wire);corrupted[16]^=1
+            other.sendto(corrupted,destination)
+            assert not receive(server)[0]
+            other.sendto(packet(b'legacy'),destination)
+            assert not receive(server)[0]
+        assert not client.SetKey(b'wrong')
+        assert client.WireVersion()==1 and not client.Peer(C.byref(address))
         server.Close()
     print('PASS: real UDP client/server round trip, framing, peer restrictions, malformed packets, bounds and shutdown')
 
