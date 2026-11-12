@@ -21,6 +21,8 @@ static volatile unsigned int initialized;
 static void *reconstruction;
 using Observer = void (*)(U64, unsigned int);
 static Observer observeDispatch;
+using CountObserver = unsigned int (*)();
+static CountObserver observedCount;
 
 extern "C" int __stdcall _DllMainCRTStartup(void *, unsigned int, void *) { return 1; }
 
@@ -57,7 +59,8 @@ static void TryLoadEnhancedRecon()
     using Probe = unsigned int (*)();
     auto probe = (Probe)GetProcAddress(module, "T7EnhancedReconProbe");
     auto observer = (Observer)GetProcAddress(module, "T7EnhancedObserveGdkDispatch");
-    if (!probe || !observer || probe() != 0x54374531U)
+    auto count = (CountObserver)GetProcAddress(module, "T7EnhancedObservedGdkCalls");
+    if (!probe || !observer || !count || probe() != 0x54374531U)
     {
         OutputDebugStringA("T7GDK:RECON_INVALID_PROBE");
         FreeLibrary(module);
@@ -65,6 +68,7 @@ static void TryLoadEnhancedRecon()
     }
     reconstruction = module;
     observeDispatch = observer;
+    observedCount = count;
     OutputDebugStringA("T7GDK:RECON_PROBE_OK");
     OutputDebugStringA("T7GDK:RECON_IN_PROCESS");
 }
@@ -112,7 +116,14 @@ T7_EXPORT HRESULT QueryApiImpl(U64 api, U64, void **out)
     // The ABI and deeper original game caller are not yet verified.
     const unsigned int rva = ReturnRva(__builtin_return_address(0));
     EmitQuery(api, rva);
-    if (observeDispatch) observeDispatch(api, rva);
+    if (observeDispatch)
+    {
+        observeDispatch(api, rva);
+        // One-time evidence that code in *recon.dll* actually executed.
+        // A loaded DLL or resolved export alone is not enough.
+        if (observedCount && observedCount() == 1U)
+            OutputDebugStringA("T7GDK:RECON_CALLBACK_EXECUTED");
+    }
     return static_cast<HRESULT>(0x80004001U); // E_NOTIMPL, fail closed
 }
 T7_EXPORT unsigned int T7EnhancedCapabilities() { return 7U; }
