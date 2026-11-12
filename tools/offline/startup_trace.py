@@ -34,8 +34,8 @@ LOCALIZATION = re.compile(r"(?i)\b(localization_[a-z0-9_+.-]{1,80}\.txt)\b")
 # Diagnose failures *before* GDK initialization without exposing absolute
 # Wine/user paths. Only known error categories and DLL basenames are retained.
 WINE_ERROR = re.compile(r"(?i)err:([a-z0-9_-]{1,32}):([a-z0-9_-]{1,64})")
-WINE_DLL = re.compile(r"(?i)\\b(?:library|module)\\s+(?:L\\\")?([^\\s\\\"()]{1,240}\\.dll)")
-WIN_STATUS = re.compile(r"(?i)\\b(?:c0000135|c000007b|c0000005|c0000142|0x8007007e)\\b")
+WINE_DLL = re.compile(r'(?i)\b(?:library|module)\s+(?:L")?([^\s"()]{1,240}\.dll)')
+WIN_STATUS = re.compile(r"(?i)\b(?:c0000135|c000007b|c0000005|c0000142|0x8007007e)\b")
 
 def wine_loader_diagnostics(log):
     categories = {}
@@ -47,8 +47,8 @@ def wine_loader_diagnostics(log):
             categories[key] = categories.get(key, 0) + 1
         if "not found" in line.lower() or "failed to load" in line.lower():
             for raw in WINE_DLL.findall(line):
-                name = raw.replace("\\\\", "/").rsplit("/", 1)[-1].lower()
-                if re.fullmatch(r"[a-z0-9_.+-]{1,96}\\.dll", name) and name not in missing:
+                name = raw.replace("\\", "/").rsplit("/", 1)[-1].lower()
+                if re.fullmatch(r"[a-z0-9_.+-]{1,96}\.dll", name) and name not in missing:
                     missing.append(name)
     status = list(dict.fromkeys(x.lower() for x in WIN_STATUS.findall(log)))[:12]
     return {
