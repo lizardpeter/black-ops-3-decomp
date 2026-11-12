@@ -142,6 +142,7 @@ def components_manifest(artifacts, *, full):
             "authenticated_v3_directional_and_replay_defense": True,
             "enhanced_reconstruction_compiled": full,
             "gdk_can_attempt_recon_load": True,
+            "offline_local_feature_com_available": True,
             "recon_gdk_bridge_compiled": full,
         },
         "verified": {
@@ -156,7 +157,7 @@ def components_manifest(artifacts, *, full):
             "whole_process_network_isolation": False,
         },
         "warning": "GDK shim is only for a private Wine prefix, never native Windows system32. "
-                   "The GDK shim can load recon.dll and call its observer; native success, menu and engine hooks are unverified.",
+                   "The shim can call recon.dll through the GDK factory; COM feature availability is opt-in and always false. Actual menu, engine hook and network isolation results remain unverified.",
     }
 
 
