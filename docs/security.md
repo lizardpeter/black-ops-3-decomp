@@ -120,3 +120,13 @@ some remote crashes remain even where easy RCEs are mitigated. Individual
 underlying bugs are not all assigned public CVEs, and not all implementation
 details can be transferred between Steam and Store binaries. A version-specific
 patch without a verified Store ingress integration is **planned**, not fixed.
+
+## T7 Patch parity audit
+
+The Steam BO3 T7 Patch protection classes are inventoried in
+[docs/t7-security-audit.md](t7-security-audit.md). The Store enhanced build
+**does not currently implement or verify these remote-packet RCE protections**.
+P0008 (Havok Visual Debugger) and existing network-provider/telemetry isolation
+are real, separate enhanced protections; neither establishes safe multiplayer
+parsing. Do not expose the game to untrusted peers until Store-native dispatch,
+negative tests and a packaged runtime gate have been verified.
