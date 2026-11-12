@@ -12,7 +12,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools" / "enhanced"))
-sys.path.insert(0, str(ROOT / "tests" / "direct"))
+# Avoid shadowing production stage_wine with the same-named test module.
+sys.path.append(str(ROOT / "tests" / "direct"))
 
 from build import sha256, pinned_exe_hash, verify_reconstruction, reconstruction_metrics, validate_image_layout
 from gdk_stub import audit as audit_gdk
