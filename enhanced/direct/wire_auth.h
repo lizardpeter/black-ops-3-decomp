@@ -32,6 +32,20 @@ inline U64 Mac(const unsigned char key[16], const unsigned char *data, unsigned 
     for (int i = 0; i < 4; ++i) Round(a, b, c, d);
     return a ^ b ^ c ^ d;
 }
+// Keyed wire v3 binds the tag to sender direction (client or server).
+// Without this domain separation a client packet could be reflected back
+// as if it came from the server, even without disclosure of the key.
+// The transport bounds input to 8-byte header + 8-byte sequence + 1262 data.
+constexpr unsigned MaxSignedContent = 8 + 8 + 1262;
+inline U64 MacDirectional(const unsigned char key[16], const unsigned char *data,
+                          unsigned length, unsigned char senderRole) {
+    if (!data || length > MaxSignedContent ||
+        (senderRole != 'C' && senderRole != 'S')) return 0;
+    unsigned char signedBytes[MaxSignedContent + 1];
+    for (unsigned i = 0; i < length; ++i) signedBytes[i] = data[i];
+    signedBytes[length] = senderRole;
+    return Mac(key, signedBytes, length + 1);
+}
 inline bool EqualTag(U64 tag, const unsigned char *bytes) {
     unsigned char difference = 0;
     for (unsigned i = 0; i < 8; ++i)
