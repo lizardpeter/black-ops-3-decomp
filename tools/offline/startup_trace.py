@@ -11,6 +11,20 @@ import re
 from pathlib import Path
 
 QUERY = re.compile(r"T7GDK:QUERY_API=([0-9A-Fa-f]{16})(?![0-9A-Fa-f])")
+CLASS_GUID = re.compile(r"T7GDK:QUERY_CLASS_GUID=([0-9a-fA-F-]{36})(?![0-9A-Fa-f-])")
+INTERFACE_GUID = re.compile(r"T7GDK:QUERY_INTERFACE_GUID=([0-9a-fA-F-]{36})(?![0-9A-Fa-f-])")
+# Public GDK COM class identifiers, not user/account identities.
+GDK_CLASSES = {
+    "073b7dcb-1fcf-4030-94be-e3c9eb623428": "XThreading",
+    "01acd177-91f9-4763-a38e-ccbb55ce32e0": "XUser",
+    "f4faf4d4-2d04-4fce-b3e0-474a713a3e84": "XPersistentLocalStorage",
+    "973a344e-24bf-4d0f-8457-56c534892b29": "XGame",
+    "0dd112ac-7c24-448c-b92b-3960fb5bd30c": "XStore",
+    "af406016-e850-4aa8-a88d-2f3dcb9dac7e": "XPackage",
+    "37e56907-2f10-41e8-b72f-36edb185331a": "XNetworking",
+    "dfcd4649-4ff8-4043-ba07-35d607df98b0": "XGameUI",
+    "e349bd1a-fc20-4e40-b99c-4178cc6b409f": "XSystem",
+}
 CALLER = re.compile(r"T7GDK:QUERY_CALLER_RVA=([0-9A-Fa-f]{8})(?![0-9A-Fa-f])")
 ERROR = re.compile(r"T7GDK:RECON_LOAD_ERROR=([0-9A-Fa-f]{8})(?![0-9A-Fa-f])")
 # Path mentions are *not* proof of successful file open. Strip directories so
@@ -38,6 +52,8 @@ def reduce_log(text):
     # service IDs until that ABI is demonstrated.
     observations = {marker: marker in text for marker in MARKERS}
     api = QUERY.findall(text)
+    classes = [x.lower() for x in CLASS_GUID.findall(text)]
+    interfaces = [x.lower() for x in INTERFACE_GUID.findall(text)]
     callers = CALLER.findall(text)
     failure = ERROR.findall(text)
     ff = list(dict.fromkeys(name.lower() for name in FASTFILE.findall(text)))[:64]
@@ -51,12 +67,17 @@ def reduce_log(text):
         "recon_callback_execution_observed": observations["T7GDK:RECON_CALLBACK_EXECUTED"],
         "recon_load_failure_observed": observations["T7GDK:RECON_LOAD_FAILED"],
         "recon_load_error_codes_first_8": failure[:8],
-        "logged_gdk_queries": len(api),
+        "logged_gdk_queries": max(len(api), len(classes) +
+                                  text.count("T7GDK:QUERY_CLASS_GUID_UNAVAILABLE")),
+        "class_guids_first_64": classes[:64],
+        "interface_guids_first_64": interfaces[:64],
+        "runtime_class_names_first_64": [GDK_CLASSES.get(guid, "unknown") for guid in classes[:64]],
+        "last_requested_runtime_class": GDK_CLASSES.get(classes[-1], "unknown") if classes else None,
         "logged_gdk_caller_rvas": len(callers),
         "query_caller_rvas_first_64": callers[:64],
         "fastfile_path_mentions_not_open_proof": ff,
         "localization_path_mentions_not_open_proof": localization,
-        "query_arguments_first_64": api[:64],
+        "legacy_pointer_arguments_first_64": api[:64],
         "observed_markers": [x for x in MARKERS if observations[x]],
         "fastfile_open_verified": False,
         "menu_render_verified": False,
