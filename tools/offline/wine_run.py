@@ -168,8 +168,8 @@ def main():
     # The log may be truncated on abrupt termination; never infer missing milestones.
     trace = reduce_log((a.output / "wine.log").read_text(errors="replace"))
     report["startup"] = trace
-    (a.output / "startup.json").write_text(json.dumps(trace, indent=2) + "\\n")
-    (a.output / "result.json").write_text(json.dumps(report, indent=2) + "\\n")
+    (a.output / "startup.json").write_text(json.dumps(trace, indent=2) + "\n")
+    (a.output / "result.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report))
 
 
