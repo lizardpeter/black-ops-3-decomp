@@ -52,8 +52,10 @@ def stage(original, gdk, xcurl, prefix, output):
     pin = next(b["exe"]["sha256"] for b in cfg["build"] if b["id"] == "BlackOps3_MSStore")
     if digest(original) != pin:
         raise ValueError("original exe is not the pinned BO3 Store build")
-    from tests.direct.gdk_stub import audit as audit_gdk
-    from tests.direct.vendor_stubs import audit as audit_xcurl
+    import sys
+    sys.path.insert(0, str(ROOT / "tests/direct"))
+    from gdk_stub import audit as audit_gdk
+    from vendor_stubs import audit as audit_xcurl
     audit_gdk(gdk)
     audit_xcurl(xcurl)
     if output.exists() or output.is_symlink():
@@ -63,6 +65,7 @@ def stage(original, gdk, xcurl, prefix, output):
     if installed.exists() and digest(installed) != digest(gdk):
         raise FileExistsError("different xgameruntime.dll already exists in this Wine prefix")
     output.mkdir(parents=True)
+    installed_by_stage = False
     try:
         game = output / "BlackOps3.exe"
         local_xcurl = output / "xcurl.dll"
@@ -70,6 +73,7 @@ def stage(original, gdk, xcurl, prefix, output):
         shutil.copyfile(xcurl, local_xcurl)
         if not installed.exists():
             shutil.copyfile(gdk, installed)
+            installed_by_stage = True
         assert digest(game) == pin and digest(installed) == digest(gdk)
         manifest = {
             "format": 1, "mode": "isolated-wine-diagnostic",
@@ -87,6 +91,8 @@ def stage(original, gdk, xcurl, prefix, output):
         return manifest
     except BaseException:
         shutil.rmtree(output)
+        if installed_by_stage and installed.exists() and digest(installed) == digest(gdk):
+            installed.unlink()
         raise
 
 def main():
