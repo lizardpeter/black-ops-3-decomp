@@ -37,9 +37,11 @@ static void Hex(unsigned long long value, char *out, unsigned count)
 }
 static void EmitLoadFailure(const char *reason)
 {
+    // Capture the loader error *before* debugger output can overwrite it.
+    const unsigned int error = GetLastError();
     OutputDebugStringA(reason);
     char detail[] = "T7GDK:RECON_LOAD_ERROR=00000000";
-    Hex(GetLastError(), detail + 23, 8);
+    Hex(error, detail + 23, 8);
     OutputDebugStringA(detail);
 }
 static void TryLoadEnhancedRecon()
