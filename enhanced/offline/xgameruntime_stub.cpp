@@ -13,6 +13,21 @@ extern "C" __declspec(dllimport) unsigned int GetModuleFileNameW(void *, wchar_t
 extern "C" __declspec(dllimport) void *GetModuleHandleW(const wchar_t *);
 extern "C" __declspec(dllimport) void *LoadLibraryW(const wchar_t *);
 extern "C" __declspec(dllimport) void *GetProcAddress(void *, const char *);
+struct T7MemoryRegion
+{
+    void *baseAddress;
+    void *allocationBase;
+    unsigned int allocationProtect;
+    unsigned short partitionId;
+    unsigned short alignment;
+    U64 regionSize;
+    unsigned int state;
+    unsigned int protect;
+    unsigned int type;
+    unsigned int padding;
+};
+static_assert(sizeof(T7MemoryRegion) == 48, "Win64 MEMORY_BASIC_INFORMATION layout");
+extern "C" __declspec(dllimport) U64 VirtualQuery(const void *, T7MemoryRegion *, U64);
 extern "C" __declspec(dllimport) unsigned int GetLastError();
 extern "C" __declspec(dllimport) unsigned int GetEnvironmentVariableA(const char *, char *, unsigned int);
 extern "C" __declspec(dllimport) int FreeLibrary(void *);
@@ -77,22 +92,40 @@ static void TryLoadEnhancedRecon()
     OutputDebugStringA("T7GDK:RECON_PROBE_OK");
     OutputDebugStringA("T7GDK:RECON_IN_PROCESS");
 }
+static bool MainImageRange(const void *address, U64 bytes)
+{
+    // An untrusted/invalid address must never crash the tracer. The old
+    // 0x1A53F000 fixed bound assumed every page in the Store EXE's enormous
+    // virtual .data range was committed and readable. That is not true.
+    if (!address || !bytes) return false;
+    const void *mainImage = GetModuleHandleW(nullptr);
+    if (!mainImage) return false;
+    T7MemoryRegion region = {};
+    if (VirtualQuery(address, &region, sizeof(region)) != sizeof(region))
+        return false;
+    if (region.allocationBase != mainImage || region.state != 0x1000)
+        return false; // MEM_COMMIT in the original EXE allocation
+    const unsigned protect = region.protect;
+    if ((protect & 0x100) || (protect & 0xFF) == 1)
+        return false; // PAGE_GUARD / PAGE_NOACCESS
+    const U64 start = (U64)region.baseAddress, target = (U64)address;
+    if (target < start || target - start > region.regionSize)
+        return false;
+    return bytes <= region.regionSize - (target - start);
+}
 static unsigned int ReturnRva(void *returnAddress)
 {
-    void *base = GetModuleHandleW(nullptr);
-    const unsigned long long address = (unsigned long long)returnAddress;
-    const unsigned long long start = (unsigned long long)base;
-    // Only emit an RVA from the pinned original image. Never log raw pointers.
-    return base && address >= start && address - start < 0x1A53F000ULL ?
-        (unsigned int)(address - start) : 0xFFFFFFFFU;
+    if (!MainImageRange(returnAddress, 1))
+        return 0xFFFFFFFFU;
+    const U64 start = (U64)GetModuleHandleW(nullptr);
+    const U64 offset = (U64)returnAddress - start;
+    return offset <= 0xFFFFFFFEULL ? (unsigned int)offset : 0xFFFFFFFFU;
 }
 static bool IsOriginalGuid(const T7Guid *value)
 {
-    // Only dereference immutable GUID constants in our pinned game image.
-    // Unknown pointers must not be read or emitted as API identifiers.
-    const U64 base = (U64)GetModuleHandleW(nullptr);
-    const U64 address = (U64)value;
-    return base && address >= base && address - base <= 0x1A53F000ULL - sizeof(T7Guid);
+    // Log GUID contents only from committed pages of the pinned EXE, never
+    // dereference an arbitrary pointer or print a process address.
+    return MainImageRange(value, sizeof(T7Guid));
 }
 static void FormatGuid(const T7Guid *guid, char *chars)
 {
