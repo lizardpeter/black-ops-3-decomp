@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools" / "enhanced"))
 sys.path.insert(0, str(ROOT / "tests" / "direct"))
 
-from build import sha256, pinned_exe_hash, verify_reconstruction, reconstruction_metrics
+from build import sha256, pinned_exe_hash, verify_reconstruction, reconstruction_metrics, validate_image_layout
 from gdk_stub import audit as audit_gdk
 from vendor_stubs import audit as audit_xcurl
 from winhttp_stub import audit as audit_winhttp
@@ -103,6 +103,11 @@ def audit(directory):
         if sha256(directory / "BlackOps3.exe") != pinned_exe_hash():
             raise ValueError("BO3 original EXE hash mismatch")
         verify_reconstruction(directory / "recon.dll")
+        observed_layout = validate_image_layout(directory / "BlackOps3.exe", directory / "recon.dll")
+        if manifest.get("image_layout") != observed_layout:
+            raise ValueError("Enhanced loader image layout disagrees with signed package inventory")
+    elif "image_layout" in manifest:
+        raise ValueError("Components-only cannot claim an original/recon image layout")
     print("PASS: one canonical BO3 enhanced inventory; hashes/exports verified, original unmodified")
     print("NOT VERIFIED: BO3 engine hooks, playable startup, game sessions or process-wide isolation")
     return manifest
