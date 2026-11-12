@@ -144,7 +144,10 @@ def main():
     build = sys.argv[sys.argv.index("--build") + 1] if "--build" in sys.argv else symbols.reference_build()
     reference = symbols.has_map(build)
     enhanced = "--enhanced" in sys.argv
-    BUILD = out_dir(build) / "enhanced" if enhanced else out_dir(build)
+    # Enhanced artifacts always use a build-id-qualified directory, even when
+    # this retail build happens to be the reference build. The canonical
+    # packager and CI consume build/<build-id>/enhanced/recon.dll.
+    BUILD = ROOT / "build" / build / "enhanced" if enhanced else out_dir(build)
     BUILD.mkdir(parents=True, exist_ok=True)
     objs, sources = [], []
     for src in sorted((ROOT / "src").rglob("*.cpp")):
