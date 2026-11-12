@@ -11,7 +11,7 @@
 using U64 = unsigned long long;
 #define T7_EXPORT extern "C" __declspec(dllexport)
 static constexpr U64 Unsupported = 0xFFFFFFFF80004001ULL; // E_NOTIMPL sign-extended
-T7_EXPORT int __stdcall _DllMainCRTStartup(void *, unsigned int, void *) { return 1; }
+extern "C" int __stdcall _DllMainCRTStartup(void *, unsigned int, void *) { return 1; }
 #define CHAT_FAIL(name) T7_EXPORT U64 name(...) { return Unsupported; }
 #define CHAT_ZERO(name) T7_EXPORT U64 name(...) { return 0; }
 
