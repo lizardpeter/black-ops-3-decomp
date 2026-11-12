@@ -1,6 +1,6 @@
 # Evidence-gathering only. The downloaded EXE is pinned by target.toml and
 # never packaged into workflow artifacts. The job does NOT claim a menu launch.
-# Probe canonical recon and freestanding GDK replacement after the observed CRT-link failure.
+# Diagnose the observed pre-GDK exit code 53 with path-redacted Wine loader traces.
 name: BO3 enhanced GDK startup probe
 on:
   workflow_dispatch:
