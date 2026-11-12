@@ -24,7 +24,7 @@ def audit(path):
     assert imported["kernel32.dll"] == {"GetCommandLineA", "OutputDebugStringA",
         "AcquireSRWLockExclusive", "ReleaseSRWLockExclusive",
         "GetModuleFileNameW", "GetModuleHandleW", "LoadLibraryW",
-        "GetProcAddress", "GetLastError", "GetEnvironmentVariableA", "FreeLibrary"}, imported
+        "GetProcAddress", "GetLastError", "GetEnvironmentVariableA", "VirtualQuery", "FreeLibrary"}, imported
     assert imported["ws2_32.dll"] == {"WSAStartup", "socket", "closesocket",
         "ioctlsocket", "bind", "getsockname", "sendto", "recvfrom"}, imported
     print("PASS: GDK shim includes custom local identity/UDP with no vendor or HTTP imports")
