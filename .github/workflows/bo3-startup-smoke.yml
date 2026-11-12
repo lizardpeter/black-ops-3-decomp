@@ -1,6 +1,6 @@
 # Evidence-gathering only. The downloaded EXE is pinned by target.toml and
 # never packaged into workflow artifacts. The job does NOT claim a menu launch.
-# Diagnose the observed pre-GDK exit code 53 with path-redacted Wine loader traces.
+# Test both confirmed missing import DLLs: GameChat2 and libScePad are now fail-closed enhanced components.
 name: BO3 enhanced GDK startup probe
 on:
   workflow_dispatch:
