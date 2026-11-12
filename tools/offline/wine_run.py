@@ -31,6 +31,8 @@ import time
 import tomllib
 from pathlib import Path
 
+from startup_trace import reduce_log, redact_args
+
 ROOT = Path(__file__).resolve().parents[2]
 
 
@@ -114,8 +116,8 @@ def main():
     ap.add_argument("--seconds", type=int, default=120)
     ap.add_argument("--shot-every", type=int, default=10)
     ap.add_argument("--display", default=":99")
-    ap.add_argument("--debug", default="+timestamp,+pid,+loaddll,+seh")
-    ap.add_argument("--dlloverrides", default="mscoree,mshtml=")
+    ap.add_argument("--debug", default="+timestamp,+pid,+loaddll,+seh,+debugstr")
+    ap.add_argument("--dlloverrides", default="mscoree,mshtml=;xgameruntime=n")
     ap.add_argument("arguments", nargs=argparse.REMAINDER)
     a = ap.parse_args()
     if a.self_test:
@@ -160,10 +162,14 @@ def main():
                        env=env, stdout=out, stderr=err, timeout=20, preexec_fn=deny_ip_sockets)
     report = {"exe": exe.name, "kind": kind, "build": build, "exe_sha256": digest, "exit_code": code,
               "timed_out": timed_out, "elapsed_seconds": round(time.monotonic() - start, 1),
-              "arguments": args, "screenshots": shots,
+              "arguments": redact_args(args), "screenshots": shots,
               "socket_policy": "AF_UNIX only; IPv4/IPv6/netlink sockets and io_uring_setup refused",
               "renderer": "Wine on a virtual X display with a software GPU (Mesa llvmpipe/lavapipe)"}
-    (a.output / "result.json").write_text(json.dumps(report, indent=2) + "\n")
+    # The log may be truncated on abrupt termination; never infer missing milestones.
+    trace = reduce_log((a.output / "wine.log").read_text(errors="replace"))
+    report["startup"] = trace
+    (a.output / "startup.json").write_text(json.dumps(trace, indent=2) + "\\n")
+    (a.output / "result.json").write_text(json.dumps(report, indent=2) + "\\n")
     print(json.dumps(report))
 
 

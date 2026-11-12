@@ -48,3 +48,18 @@ packets without connecting to the internet.
    and controlled logs. Only then claim menu success, map load, or successful local join.
 
 The independent profile is intentionally self-asserted. It cannot be used as proof of online authentication.
+
+## Capturing bounded Wine startup evidence
+
+The existing `tools/offline/wine_run.py` now includes `+debugstr` by default and prefers the
+prefix-local `xgameruntime` shim. A run produces both the raw `wine.log` and a derived
+`startup.json`. Only observed GDK markers appear in the derived trace; it never treats
+initialization as proof of FastFile or menu progress. Stable custom player IDs and names are
+redacted from `result.json` command arguments; review the **raw** Wine log before sharing.
+
+```sh
+python3 tools/offline/startup_trace.py --log path/to/wine.log
+```
+
+The reduction code is independently tested using synthetic log lines. Those tests do **not**
+constitute a Wine run or native Windows test.
