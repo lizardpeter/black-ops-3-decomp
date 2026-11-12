@@ -47,6 +47,8 @@ jobs:
           python3 tools/offline/build_gdk_stub.py --out /tmp/t7-gdk-stub
           python3 tests/direct/gdk_stub.py --dll /tmp/t7-gdk-stub/xgameruntime.dll
           python3 tools/offline/build_dll.py --out /tmp/t7-offline-recon
+          python3 tools/offline/build_vendor_stubs.py --out /tmp/t7-offline-shims
+          python3 tests/direct/vendor_stubs.py --dll /tmp/t7-offline-shims/xcurl.dll
       - name: Generated files are current
         run: |
           python3 tools/status.py >/dev/null

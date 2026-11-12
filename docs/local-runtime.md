@@ -63,3 +63,12 @@ python3 tools/offline/startup_trace.py --log path/to/wine.log
 
 The reduction code is independently tested using synthetic log lines. Those tests do **not**
 constitute a Wine run or native Windows test.
+
+## Standalone XCurl boundary
+
+A no-network `xcurl.dll` shim now exports the 17 names imported by the pinned Store
+binary, without importing any vendor, Winsock or HTTP libraries. Build it with
+`tools/offline/build_vendor_stubs.py`; CI audits the exports. It returns errors,
+not fabricated HTTP or identity results. This applies only if staged in an isolated
+runtime where the EXE actually loads it. It does not address direct WinHTTP calls,
+inlined Demonware code, or native Windows GDK startup.
