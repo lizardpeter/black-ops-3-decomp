@@ -91,7 +91,7 @@ real game's asset folder, then inspect `startup.json` and `wine.log`.
 ## Unified in-process enhanced-local component
 
 The offline GDK replacement now compiles **the local profile, direct UDP,
-keyed v2 authentication and replay-window implementation** from
+keyed v3 directional authentication and replay-window implementation** from
 `enhanced/direct/` into the DLL that the Store executable loads during GDK
 initialization in a private Wine prefix. This avoids relying on an omitted
 sidecar to make the enhanced local APIs available. GDK startup itself never
