@@ -44,4 +44,13 @@ assert failure["recon_load_failure_observed"] and failure["recon_load_error_code
 assert redact_args(["+direct_player", "ABCDEF1234567890", "Secret Name",
                     "+connect", "127.0.0.1:27016"]) == [
                         "+direct_player", "<local-id>", "<local-name>", "+connect", "127.0.0.1:27016"]
+# Pre-GDK loader errors are reduced to categories and safe DLL basenames.
+synthetic_loader = (r'0148:err:module:import_dll Library L"Z:\Users\Private\GameChat2.dll" (which is needed by L"Z:\Private\BlackOps3.exe") not found' + "\n"
+                    + "0148:err:module:LdrInitializeThunk Importing dlls for L\"BlackOps3.exe\" failed, status c0000135\n")
+loader = reduce_log(synthetic_loader)["pre_gdk_loader_diagnostics"]
+assert loader["missing_dependency_dll_basename_candidates"] == ["gamechat2.dll"]
+assert loader["wine_error_categories_first_24"]["module:import_dll"] == 1
+assert loader["wine_loader_status_codes"] == ["c0000135"]
+assert "Private" not in str(loader) and "Users" not in str(loader)
+
 print("PASS: GDK startup observations, bounded reporting, no gameplay false positives, ID redaction")
