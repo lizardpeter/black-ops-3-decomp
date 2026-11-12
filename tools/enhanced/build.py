@@ -151,6 +151,7 @@ def build_components(work):
     from vendor_stubs import audit as audit_xcurl
     from winhttp_stub import audit as audit_winhttp
     from gamechat_stub import audit as audit_gamechat
+    from scepad_stub import audit as audit_pad
     gdk, xcurl = gdk_out / "xgameruntime.dll", vendor_out / "xcurl.dll"
     audit_gdk(gdk)
     audit_xcurl(xcurl)
@@ -158,7 +159,9 @@ def build_components(work):
     audit_winhttp(winhttp)
     gamechat = vendor_out / "gamechat2.dll"
     audit_gamechat(gamechat)
-    return gdk, xcurl, winhttp, gamechat
+    pad = vendor_out / "libScePad.dll"
+    audit_pad(pad)
+    return gdk, xcurl, winhttp, gamechat, pad
 
 
 def components_manifest(artifacts, *, full):
@@ -177,6 +180,7 @@ def components_manifest(artifacts, *, full):
             "offline_xcurl_failure_boundary": True,
             "offline_winhttp_failure_boundary": True,
             "offline_gamechat2_loader_boundary": True,
+            "offline_no_device_scepad_loader_boundary": True,
             "local_player_identity": True,
             "direct_udp_transport": True,
             "authenticated_v3_directional_and_replay_defense": True,
@@ -217,12 +221,13 @@ def package(output, original=None, reconstruction=None, components_only=False):
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = Path(tempfile.mkdtemp(prefix=".t7-enhanced-", dir=output.parent))
     try:
-        gdk, xcurl, winhttp, gamechat = build_components(temporary)
+        gdk, xcurl, winhttp, gamechat, pad = build_components(temporary)
         binaries = {
             "wine-system32/xgameruntime.dll": gdk,
             "xcurl.dll": xcurl,
             "winhttp.dll": winhttp,
             "gamechat2.dll": gamechat,
+            "libScePad.dll": pad,
         }
         if not components_only:
             binaries.update({
