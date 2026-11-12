@@ -87,6 +87,28 @@ jobs:
             "$RUNNER_TEMP/t7-run-baseline/startup.json" \
             "$RUNNER_TEMP/t7-run-feature/startup.json" \
             --out "$RUNNER_TEMP/t7-startup-comparison.json"
+      - name: Require real BO3 enhanced recon probe and GDK callback evidence
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          comparison = Path(os.environ["RUNNER_TEMP"]) / "t7-startup-comparison.json"
+          if not comparison.is_file():
+              raise SystemExit("FAIL: no startup comparison produced")
+          report = json.loads(comparison.read_text())
+          if not report.get("both_traces_present"):
+              raise SystemExit("FAIL: one or both real Wine startup traces missing")
+          for mode in ("baseline", "local_feature_probe"):
+              entry = report[mode]
+              if not entry.get("recon_probe_observed"):
+                  raise SystemExit("FAIL: BO3 did not execute source-built recon probe in " + mode)
+              if not entry.get("recon_callback_execution_observed"):
+                  raise SystemExit("FAIL: BO3 GDK dispatch did not enter recon callback in " + mode)
+          print("PASS: both observed Wine runs entered source-linked enhanced recon")
+          print("NOTE: menus, FastFile opens and game engine hooks remain unverified")
+          PY
       - name: Upload privacy-reduced result summaries (never executable or raw Wine log)
         if: always()
         uses: actions/upload-artifact@v4
