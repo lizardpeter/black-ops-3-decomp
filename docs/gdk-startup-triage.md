@@ -122,3 +122,42 @@ ordinals from the pinned executable. No controller stub should be claimed
 complete until its export and ABI requirements are established.
 The minimal CI game directory also has **no `zone/*.ff` assets**,
 so even a successful GDK probe cannot demonstrate a rendered menu.
+
+## Verified in-process recon and real asset diagnosis (November 12, 2026)
+
+- [CI run 43316373639](https://github.com/lizardpeter/black-ops-3-decomp/actions/runs/43316373639)
+  **passed** the actual Wine in-process enhanced reconstruction probe and GDK
+  callback for *both* startup modes. The exe stayed alive for 45 seconds each.
+  The 16 GameChat2 and 7 ScePad imports were supplied by no-network/no-device
+  shims; neither missing module was reported.
+- The connected owner's R2 bucket contains 34 applicable core, frontend, UI
+  and English-language original startup files (736,627,660 bytes total). The
+  repo inventories their exact keys, sizes and ETags in
+  `records/bo3-startup-r2.tsv`. No game data is committed or uploaded as an
+  artifact. The 15.5 GB `zone/base.xpak` is intentionally not part of this
+  narrow boot subset.
+- [CI run 43317410372](https://github.com/lizardpeter/black-ops-3-decomp/actions/runs/43317410372)
+  downloaded and staged all 34 **real** files from R2; the enhanced package
+  and source-linked recon passed the same runtime test. Nevertheless, both
+  45-second observations were still before any `zone/*.ff` file-open
+  mention. **Menus are not verified**, and more asset copying alone does not
+  establish the source of the pre-FastFile stall.
+- The baseline queried GDK `XThreading`, `XPackage`, `XGame`, `XUser`,
+  `XGameSave`, `XSystem`, and `XGameInvite`. Returning unsupported for all
+  of these may block a necessary local startup facility; that is a hypothesis,
+  not a verified causal explanation.
+
+### Local-only XPackage experiment
+
+The pinned Store EXE requests `IXPackageImpl3`. The **same** canonical GDK
+replacement now has an optional `--local-package-interface` flag that
+supplies a 41-slot `IUnknown/IXPackageImpl3` vtable. It returns
+`IsPackagedProcess=false`, exposes English `en-US` (the installed startup
+subset), and declines Xbox package identifiers, Store licensing, mount,
+installation, and download methods. Unsupported calls emit bounded slot IDs
+as `T7GDK:PACKAGE_METHOD_SLOT=NN` so we can identify the next exact ABI need.
+
+Run with `tools/enhanced/run_wine.py --local-package-interface` against the
+same original game directory and private Wine prefix for an A/B comparison.
+This is still experimental and not enabled in the default enhanced launch.
+It is not an identity or entitlement emulator.
