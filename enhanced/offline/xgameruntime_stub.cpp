@@ -42,6 +42,17 @@ static Observer observeDispatch;
 using CountObserver = unsigned int (*)();
 static CountObserver observedCount;
 
+// Freestanding compiler aggregate initialization may lower to memset even
+// with -fno-builtin. Supply it locally instead of linking an external CRT;
+// volatile stores prevent the optimizer from recreating a recursive call.
+extern "C" void *memset(void *destination, int value, U64 bytes)
+{
+    volatile unsigned char *out = (volatile unsigned char *)destination;
+    for (U64 i = 0; i < bytes; ++i)
+        out[i] = (unsigned char)value;
+    return destination;
+}
+
 extern "C" int __stdcall _DllMainCRTStartup(void *, unsigned int, void *) { return 1; }
 
 static void Hex(unsigned long long value, char *out, unsigned count)
