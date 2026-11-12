@@ -150,12 +150,15 @@ def build_components(work):
     from gdk_stub import audit as audit_gdk
     from vendor_stubs import audit as audit_xcurl
     from winhttp_stub import audit as audit_winhttp
+    from gamechat_stub import audit as audit_gamechat
     gdk, xcurl = gdk_out / "xgameruntime.dll", vendor_out / "xcurl.dll"
     audit_gdk(gdk)
     audit_xcurl(xcurl)
     winhttp = vendor_out / "winhttp.dll"
     audit_winhttp(winhttp)
-    return gdk, xcurl, winhttp
+    gamechat = vendor_out / "gamechat2.dll"
+    audit_gamechat(gamechat)
+    return gdk, xcurl, winhttp, gamechat
 
 
 def components_manifest(artifacts, *, full):
@@ -173,6 +176,7 @@ def components_manifest(artifacts, *, full):
             "offline_gdk_compatibility": True,
             "offline_xcurl_failure_boundary": True,
             "offline_winhttp_failure_boundary": True,
+            "offline_gamechat2_loader_boundary": True,
             "local_player_identity": True,
             "direct_udp_transport": True,
             "authenticated_v3_directional_and_replay_defense": True,
@@ -213,11 +217,12 @@ def package(output, original=None, reconstruction=None, components_only=False):
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = Path(tempfile.mkdtemp(prefix=".t7-enhanced-", dir=output.parent))
     try:
-        gdk, xcurl, winhttp = build_components(temporary)
+        gdk, xcurl, winhttp, gamechat = build_components(temporary)
         binaries = {
             "wine-system32/xgameruntime.dll": gdk,
             "xcurl.dll": xcurl,
             "winhttp.dll": winhttp,
+            "gamechat2.dll": gamechat,
         }
         if not components_only:
             binaries.update({
