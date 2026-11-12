@@ -50,7 +50,7 @@ def build(out):
                     "    AcquireSRWLockExclusive\n    ReleaseSRWLockExclusive\n" +
                     "    GetModuleFileNameW\n    GetModuleHandleW\n" +
                     "    LoadLibraryW\n    GetProcAddress\n" +
-                    "    GetLastError\n    GetEnvironmentVariableA\n    FreeLibrary\n")
+                    "    GetLastError\n    GetEnvironmentVariableA\n    VirtualQuery\n    FreeLibrary\n")
     lib = out / "kernel32.lib"
     run("llvm-lib", "/machine:x64", f"/def:{defs}", f"/out:{lib}")
     winsock = out / "ws2_32.def"
