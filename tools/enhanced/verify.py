@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools" / "enhanced"))
 sys.path.insert(0, str(ROOT / "tests" / "direct"))
 
-from build import sha256, pinned_exe_hash, verify_reconstruction
+from build import sha256, pinned_exe_hash, verify_reconstruction, reconstruction_metrics
 from gdk_stub import audit as audit_gdk
 from vendor_stubs import audit as audit_xcurl
 from winhttp_stub import audit as audit_winhttp
@@ -26,6 +26,13 @@ UNVERIFIED = (
     "rendered_menu", "fastfiles_loaded", "offline_match_started",
     "direct_multiplayer_join", "whole_process_network_isolation",
 )
+
+
+def reconstruction_metrics_from_metadata(directory):
+    # build.reconstruction_metrics expects the two adjacent source tables.
+    # Bundle metadata in its own subdirectory and pass a harmless DLL path
+    # anchored there; only its parent is used for the source-table audit.
+    return reconstruction_metrics(directory / "metadata/recon.dll")
 
 
 def audit(directory):
@@ -65,6 +72,27 @@ def audit(directory):
     audit_gdk(directory / "wine-system32/xgameruntime.dll")
     audit_xcurl(directory / "xcurl.dll")
     audit_winhttp(directory / "winhttp.dll")
+    metadata = manifest.get("metadata")
+    if not isinstance(metadata, dict):
+        raise ValueError("Missing reconstruction provenance inventory")
+    if set(entries) == FULL:
+        required = {"metadata/recon.symbols.tsv", "metadata/hybrid.tsv", "metadata/patches.tsv"}
+        if set(metadata) != required:
+            raise ValueError("Missing or untracked enhanced reconstruction provenance")
+        for name, props in metadata.items():
+            path = directory / name
+            if not path.is_file() or path.is_symlink():
+                raise ValueError(f"Missing reconstruction record {name}")
+            if path.stat().st_size != props["bytes"] or sha256(path) != props["sha256"]:
+                raise ValueError(f"Reconstruction record changed: {name}")
+        # Compare the packaged source table to the manifest's exact counts,
+        # rather than accepting a relabeled faithful-only DLL as enhanced.
+        reconstructed = reconstruction_metrics_from_metadata(directory)
+        if manifest.get("reconstruction_metrics") != reconstructed:
+            raise ValueError("Reconstruction metrics do not match bundled source records")
+    else:
+        if metadata or manifest.get("reconstruction_metrics") is not None:
+            raise ValueError("Components-only package must not claim reconstruction evidence")
     if set(entries) == FULL:
         if sha256(directory / "BlackOps3.exe") != pinned_exe_hash():
             raise ValueError("BO3 original EXE hash mismatch")

@@ -19,6 +19,7 @@ The enhanced reconstruction DLL is packaged but not yet called by game code.
 This distinction is mandatory and encoded in manifest.json.
 """
 import argparse
+import csv
 import hashlib
 import json
 import os
@@ -68,6 +69,30 @@ def verify_reconstruction(path):
         raise ValueError("Enhanced reconstruction has no exported functions")
     return path
 
+
+def reconstruction_metrics(recon):
+    """Source-derived evidence, not in-game integration or whole-game coverage."""
+    symbol_file = recon.parent / "recon.symbols.tsv"
+    hybrid_file = recon.parent / "hybrid.tsv"
+    if not symbol_file.is_file() or not hybrid_file.is_file():
+        raise ValueError("Enhanced reconstruction must include its generated symbols and hybrid tables")
+    with symbol_file.open(newline="") as stream:
+        rows = list(csv.DictReader(stream, delimiter="\t"))
+    with hybrid_file.open(newline="") as stream:
+        hybrid = list(csv.DictReader(stream, delimiter="\t"))
+    if not rows or not hybrid:
+        raise ValueError("Reconstruction tables cannot be empty")
+    features = sum(1 for row in rows if row["source"].replace("\\", "/").startswith("enhanced/"))
+    if not features:
+        raise ValueError("This DLL has no reported enhanced functions")
+    return {
+        "reconstructed_exports_in_table": len(rows),
+        "enhanced_exports_in_table": features,
+        "hybrid_symbols_in_table": len(hybrid),
+        "unresolved_hybrid_symbols": sum(1 for row in hybrid
+                                          if row["kind"].startswith("unresolved")),
+        "engine_hooks_verified": False,
+    }
 
 def build_components(work):
     # The component builders consume the *same* enhanced/direct source tree
@@ -153,6 +178,7 @@ def package(output, original=None, reconstruction=None, components_only=False):
                 "recon.dll": Path(reconstruction),
             })
         recorded = {}
+        recorded_metadata = {}
         for name, source in sorted(binaries.items()):
             target = temporary / name
             target.parent.mkdir(parents=True, exist_ok=True)
@@ -162,11 +188,27 @@ def package(output, original=None, reconstruction=None, components_only=False):
             recorded[name] = {SHA_NAME: sha256(target), "bytes": target.stat().st_size}
         if not components_only and recorded["BlackOps3.exe"][SHA_NAME] != pinned_exe_hash():
             raise ValueError("Original executable changed while staging")
+        metrics = None
+        if not components_only:
+            metrics = reconstruction_metrics(Path(reconstruction))
+            metadata_paths = {
+                "metadata/recon.symbols.tsv": Path(reconstruction).parent / "recon.symbols.tsv",
+                "metadata/hybrid.tsv": Path(reconstruction).parent / "hybrid.tsv",
+                "metadata/patches.tsv": ROOT / "records/patches.tsv",
+            }
+            for name, source in sorted(metadata_paths.items()):
+                target = temporary / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(source, target)
+                recorded_metadata[name] = {SHA_NAME: sha256(target),
+                                           "bytes": target.stat().st_size}
         # Remove intermediate build objects so the distributable has one
         # clearly inventoried set of runtime binaries.
         shutil.rmtree(temporary / "_gdk")
         shutil.rmtree(temporary / "_xcurl")
         manifest = components_manifest(recorded, full=not components_only)
+        manifest["metadata"] = recorded_metadata
+        manifest["reconstruction_metrics"] = metrics
         (temporary / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
         os.rename(temporary, output)
         print(f"BO3 canonical enhanced {'components' if components_only else 'package'}: {output}")
