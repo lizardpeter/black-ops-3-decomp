@@ -23,14 +23,15 @@ CHAT_FAIL(ChatManagerRemoveUser)
 CHAT_FAIL(ChatManagerProcessIncomingPacket)
 CHAT_FAIL(ChatUserSetAudioRenderVolume)
 
-// No manager exists. All getters, process/frame operations and shutdown
-// return zero / null; nothing stores an account ID or touches a microphone.
+// No manager exists. Processing and collection routines must fail rather than
+// falsely claim success while leaving output buffers untouched. Only genuine
+// scalar queries and shutdown use false/zero/no-op.
 CHAT_ZERO(ChatManagerCleanup)
-CHAT_ZERO(ChatManagerFinishProcessingDataFrames)
-CHAT_ZERO(ChatManagerFinishProcessingStateChanges)
-CHAT_ZERO(ChatManagerGetChatUsers)
-CHAT_ZERO(ChatManagerStartProcessingDataFrames)
-CHAT_ZERO(ChatManagerStartProcessingStateChanges)
+CHAT_FAIL(ChatManagerFinishProcessingDataFrames)
+CHAT_FAIL(ChatManagerFinishProcessingStateChanges)
+CHAT_FAIL(ChatManagerGetChatUsers)
+CHAT_FAIL(ChatManagerStartProcessingDataFrames)
+CHAT_FAIL(ChatManagerStartProcessingStateChanges)
 CHAT_ZERO(ChatUserGetEffectiveCommunicationRelationship)
 CHAT_ZERO(ChatUserGetIsLocal)
 CHAT_ZERO(ChatUserGetXboxUserId)
