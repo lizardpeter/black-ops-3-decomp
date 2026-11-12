@@ -36,8 +36,8 @@ Steam function addresses are not interchangeable with Store addresses.
 | Join-party count overflow | `MSG_JoinParty_Package_Inspect` checks for more than 18 members and inconsistent list length | **Unresolved.** Reconstruct the Store lobby decoder, reject invalid counts *before* allocation or copying. |
 | Lobby-state and heartbeat list overflow | `MSG_LobbyState_Package_Inspect` validates client lists (18 bound); `MSG_HostHeartbeat_Inspect` validates nominee list length (18 bound) | **Unresolved** until equivalent Store message entrypoints are found and wired. |
 | Malformed lobby info responses | `MSG_InfoResponseSafe` bounds nested lobby arrays and fields | **Unresolved**, require bounded parsing of all nested data. |
-| Unauthorized invites, info probes and remote command-buffer traffic | T7 Patch exposes friends-only, network-password, and packet-type guards | **Partial.** Experimental BO3 direct UDP is localhost-only without a key, and now supports independently authenticated v2 framing. Original game's peer message handlers are **not** verified safe. |
-| Malicious network packets on custom UDP | T7 Patch restricts hostile P2P traffic | **New enhanced direct module protection:** `enhanced/direct/transport.cpp` limits payloads to 1262 bytes and 64 datagrams per polling pass; requires magic/version/exact length, selected-peer checks, and per-peer 64-sequence replay windows for 128-bit shared-key SipHash v2. No key = loopback-only v1. Tested in `tests/direct/transport.py`. |
+| Unauthorized invites, info probes and remote command-buffer traffic | T7 Patch exposes friends-only, network-password, and packet-type guards | **Partial.** Experimental BO3 direct UDP is localhost-only without a key, and now supports independently authenticated v3 framing. Original game's peer message handlers are **not** verified safe. |
+| Malicious network packets on custom UDP | T7 Patch restricts hostile P2P traffic | **New enhanced direct module protection:** `enhanced/direct/transport.cpp` limits payloads to 1262 bytes and 64 datagrams per polling pass; requires magic/version/exact length, selected-peer checks, and per-peer 64-sequence replay windows for 128-bit shared-key SipHash v3 with role-separated tags. No key = loopback-only v1. Tested in `tests/direct/transport.py`. |
 | Unnecessary external listeners | Store retail Havok VDB listens on TCP 25001 | **Fixed in enhanced P0008:** `hkVisualDebugger::serve` opens no socket. |
 | Vendor network and crash-report egress | Demonware, Xbox HTTP/WebSocket, analytics and uploaders | **Already partly guarded:** P0001/P0003–P0007. Additional offline import mapping now blocks `recv`, `recvfrom`, `WSARecv*`, socket binding, accepting, listening, polling, and related operations; guards reverse DNS and indirect OS loader names. Regression: `tests/security/offline_boundary.py`. |
 
@@ -51,7 +51,7 @@ Steam function addresses are not interchangeable with Store addresses.
    diagnostic configuration, not proof that every enhanced native game path is
    completely isolated. `--enhanced` source reconstruction and the standalone
    offline DLL currently have different integration/packaging paths.
-4. Shared-key v2 authentication is **not encryption**, individual peer
+4. Shared-key v3 authentication is **not encryption**, individual peer
    authentication, a fresh session handshake, or remote-content validation;
    all keyholders can impersonate one another. Replay state is per socket
    lifetime. Key exposure via process command lines should be avoided.
@@ -130,3 +130,11 @@ P0008 (Havok Visual Debugger) and existing network-provider/telemetry isolation
 are real, separate enhanced protections; neither establishes safe multiplayer
 parsing. Do not expose the game to untrusted peers until Store-native dispatch,
 negative tests and a packaged runtime gate have been verified.
+
+
+**2026-11-12 direct-wire hardening:** v3 authenticates the sender role in
+addition to packet bytes, so a captured client datagram cannot be replayed as
+a server datagram (or vice versa). Keyed v2 is rejected outright; v1 remains
+loopback-only and no-key. Tests verify reflection, tampering, replay, and
+downgrade refusal. This is not a per-session handshake or a claim that native
+Store lobby parsers have been hardened.
