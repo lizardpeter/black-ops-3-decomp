@@ -1,6 +1,6 @@
 # Evidence-gathering only. The downloaded EXE is pinned by target.toml and
 # never packaged into workflow artifacts. The job does NOT claim a menu launch.
-# Compare local XPackage COM against genuine BO3 startup assets in the single enhanced path.
+# Rerun corrected XPackage COM test against verified real BO3 R2 startup assets.
 name: BO3 enhanced GDK startup probe
 on:
   workflow_dispatch:
