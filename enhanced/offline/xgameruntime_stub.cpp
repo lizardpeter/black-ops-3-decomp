@@ -95,7 +95,7 @@ static void TryLoadEnhancedRecon()
 static bool MainImageRange(const void *address, U64 bytes)
 {
     // An untrusted/invalid address must never crash the tracer. The old
-    // 0x1A53F000 fixed bound assumed every page in the Store EXE's enormous
+    // 0x1A53F000 fixed bound assumed every page in the Store EXE's large
     // virtual .data range was committed and readable. That is not true.
     if (!address || !bytes) return false;
     const void *mainImage = GetModuleHandleW(nullptr);

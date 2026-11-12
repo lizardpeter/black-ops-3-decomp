@@ -18,9 +18,11 @@ from profile import load_or_create, valid_name, validate_profile
 
 def main():
     assert len(pinned_exe_hash()) == 64
-    # The original Store EXE reserves a large virtual .data, despite its 55MiB file size.
-    assert image_ranges_overlap(0x140000000, 0x180000000, 0x180000000, 0x400000)
-    assert not image_ranges_overlap(0x140000000, 0x180000000, 0x400000000, 0x400000)
+    # Synthetic PE intervals only: the *actual* Store EXE interval is read from
+    # its PE headers during packaging. Its .data virtual size is ~371 MiB.
+    assert image_ranges_overlap(0x140000000, 0x1C000000, 0x150000000, 0x400000)
+    assert not image_ranges_overlap(0x140000000, 0x1C000000, 0x180000000, 0x400000)
+    assert not image_ranges_overlap(0x140000000, 0x1C000000, 0x400000000, 0x400000)
     assert not image_ranges_overlap(0x1000, 0x2000, 0x3000, 0x200)
     for values in ((-1, 1, 2, 3), (0, 0, 1, 2), ((1 << 64)-2, 4, 8, 10)):
         try: image_ranges_overlap(*values)

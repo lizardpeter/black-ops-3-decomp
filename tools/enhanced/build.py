@@ -69,13 +69,13 @@ def image_ranges_overlap(base_a, size_a, base_b, size_b):
 
 
 def validate_image_layout(original, reconstruction):
-    """Prevent the original 0x180000000 fixed-base collision in the Store EXE."""
+    """Reject actual EXE/DLL preferred-image overlaps, without guessing ranges."""
     import pefile
     exe = pefile.PE(str(original), fast_load=True)
     dll = pefile.PE(str(reconstruction), fast_load=True)
     a, b = exe.OPTIONAL_HEADER, dll.OPTIONAL_HEADER
     if image_ranges_overlap(a.ImageBase, a.SizeOfImage, b.ImageBase, b.SizeOfImage):
-        raise ValueError("Enhanced reconstruction preferred base overlaps the huge Store EXE image")
+        raise ValueError("Enhanced reconstruction preferred base overlaps the actual Store EXE mapped image")
     if not (b.DllCharacteristics & 0x40):
         raise ValueError("Enhanced reconstruction must allow ASLR (IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE)")
     if dll.FILE_HEADER.Characteristics & 0x0001:

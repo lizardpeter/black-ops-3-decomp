@@ -306,10 +306,10 @@ def main():
     (BUILD / "hybrid.tsv").write_text("\n".join(hybrid) + "\n")
 
     dll = BUILD / "recon.dll"
-    # The retail Store EXE reserves an unusually large virtual .data segment.
-    # Its mapped image includes 0x180000000, the original reconstruction's
-    # fixed base. A DLL loaded *inside BO3* must use a non-overlapping preferred
-    # base and remain relocatable in case Windows reserves that address too.
+    # A DLL loaded *inside* the Store EXE must not assume its preferred image
+    # base is free. Use a relocatable enhanced image, and independently verify
+    # actual PE interval overlap in tools/enhanced/build.py. No specific
+    # collision is assumed without comparing the original PE headers.
     # Keep the faithful differential DLL's layout unchanged.
     image_link = ("/base:0x400000000", "/dynamicbase") if enhanced else (
         "/base:0x180000000", "/fixed")
