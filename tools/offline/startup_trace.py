@@ -31,6 +31,33 @@ ERROR = re.compile(r"T7GDK:RECON_LOAD_ERROR=([0-9A-Fa-f]{8})(?![0-9A-Fa-f])")
 # the derived report never contains game/user directory names.
 FASTFILE = re.compile(r"(?i)(?:zone[\\/])([a-z0-9_+.-]{1,96}\.ff)\b")
 LOCALIZATION = re.compile(r"(?i)\b(localization_[a-z0-9_+.-]{1,80}\.txt)\b")
+# Diagnose failures *before* GDK initialization without exposing absolute
+# Wine/user paths. Only known error categories and DLL basenames are retained.
+WINE_ERROR = re.compile(r"(?i)err:([a-z0-9_-]{1,32}):([a-z0-9_-]{1,64})")
+WINE_DLL = re.compile(r"(?i)\\b(?:library|module)\\s+(?:L\\\")?([^\\s\\\"()]{1,240}\\.dll)")
+WIN_STATUS = re.compile(r"(?i)\\b(?:c0000135|c000007b|c0000005|c0000142|0x8007007e)\\b")
+
+def wine_loader_diagnostics(log):
+    categories = {}
+    missing = []
+    for line in log.splitlines():
+        match = WINE_ERROR.search(line)
+        if match:
+            key = f"{match.group(1).lower()}:{match.group(2).lower()}"
+            categories[key] = categories.get(key, 0) + 1
+        if "not found" in line.lower() or "failed to load" in line.lower():
+            for raw in WINE_DLL.findall(line):
+                name = raw.replace("\\\\", "/").rsplit("/", 1)[-1].lower()
+                if re.fullmatch(r"[a-z0-9_.+-]{1,96}\\.dll", name) and name not in missing:
+                    missing.append(name)
+    status = list(dict.fromkeys(x.lower() for x in WIN_STATUS.findall(log)))[:12]
+    return {
+        "wine_error_categories_first_24": dict(list(categories.items())[:24]),
+        "missing_dependency_dll_basename_candidates": missing[:24],
+        "wine_loader_status_codes": status,
+        "note": "Wine loader errors are diagnostic clues, not verified absent files or gameplay outcomes."
+    }
+
 MARKERS = (
     "T7GDK:INIT_OK_NO_VENDOR",
     "T7GDK:LOCAL_PROFILE_PREPARED",
@@ -61,7 +88,8 @@ def reduce_log(text):
     ff = list(dict.fromkeys(name.lower() for name in FASTFILE.findall(text)))[:64]
     localization = list(dict.fromkeys(name.lower() for name in LOCALIZATION.findall(text)))[:64]
     return {
-        "source": "Wine OutputDebugStringA, when +debugstr is enabled",
+        "source": "Wine OutputDebugStringA and error channels, when enabled",
+        "pre_gdk_loader_diagnostics": wine_loader_diagnostics(text),
         "gdk_initialized_without_vendor": observations["T7GDK:INIT_OK_NO_VENDOR"],
         "local_profile_prepared": observations["T7GDK:LOCAL_PROFILE_PREPARED"],
         "local_profile_unset": observations["T7GDK:LOCAL_PROFILE_UNSET"],
