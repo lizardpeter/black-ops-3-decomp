@@ -7,6 +7,13 @@
 #define T7_EXPORT extern "C" __declspec(dllexport)
 using HRESULT = long;
 using U64 = unsigned long long;
+struct T7Guid
+{
+    unsigned int a;
+    unsigned short b, c;
+    unsigned char d[8];
+};
+static_assert(sizeof(T7Guid) == 16, "Win64 GUID layout");
 extern "C" __declspec(dllimport) void OutputDebugStringA(const char *);
 extern "C" __declspec(dllimport) unsigned int GetModuleFileNameW(void *, wchar_t *, unsigned int);
 extern "C" __declspec(dllimport) void *GetModuleHandleW(const wchar_t *);
@@ -81,15 +88,53 @@ static unsigned int ReturnRva(void *returnAddress)
     return base && address >= start && address - start < 0x1A53F000ULL ?
         (unsigned int)(address - start) : 0xFFFFFFFFU;
 }
-static void EmitQuery(U64 api, unsigned int rva)
+static bool IsOriginalGuid(const T7Guid *value)
+{
+    // Only dereference immutable GUID constants in our pinned game image.
+    // Unknown pointers must not be read or emitted as API identifiers.
+    const U64 base = (U64)GetModuleHandleW(nullptr);
+    const U64 address = (U64)value;
+    return base && address >= base && address - base <= 0x1A53F000ULL - sizeof(T7Guid);
+}
+static void FormatGuid(const T7Guid *guid, char *chars)
+{
+    Hex(guid->a, chars, 8);
+    Hex(guid->b, chars + 9, 4);
+    Hex(guid->c, chars + 14, 4);
+    Hex(((unsigned int)guid->d[0] << 8) | guid->d[1], chars + 19, 4);
+    for (unsigned i = 2; i < 8; ++i)
+        Hex(guid->d[i], chars + 24 + (i - 2) * 2, 2);
+}
+static U64 GuidIdentity(const T7Guid *guid)
+{
+    if (!IsOriginalGuid(guid)) return 0;
+    // Stable diagnostic fingerprint of all 16 class-ID bytes, not a raw pointer.
+    U64 value = 0xcbf29ce484222325ULL;
+    const unsigned char *bytes = (const unsigned char *)guid;
+    for (unsigned i = 0; i < 16; ++i)
+        value = (value ^ bytes[i]) * 0x100000001b3ULL;
+    return value;
+}
+static void EmitQuery(const T7Guid *classId, const T7Guid *iid, unsigned int rva)
 {
     const unsigned int count = __sync_fetch_and_add(&querySequence, 1U);
     if (count >= 128) return;
-    char id[] = "T7GDK:QUERY_API=0000000000000000";
-    Hex(api, id + 16, 16);
-    OutputDebugStringA(id);
+    if (IsOriginalGuid(classId))
+    {
+        char className[] = "T7GDK:QUERY_CLASS_GUID=00000000-0000-0000-0000-000000000000";
+        FormatGuid(classId, className + sizeof("T7GDK:QUERY_CLASS_GUID=") - 1);
+        OutputDebugStringA(className);
+    }
+    else OutputDebugStringA("T7GDK:QUERY_CLASS_GUID_UNAVAILABLE");
+    if (IsOriginalGuid(iid))
+    {
+        char interfaceName[] = "T7GDK:QUERY_INTERFACE_GUID=00000000-0000-0000-0000-000000000000";
+        FormatGuid(iid, interfaceName + sizeof("T7GDK:QUERY_INTERFACE_GUID=") - 1);
+        OutputDebugStringA(interfaceName);
+    }
+    else OutputDebugStringA("T7GDK:QUERY_INTERFACE_GUID_UNAVAILABLE");
     char caller[] = "T7GDK:QUERY_CALLER_RVA=00000000";
-    Hex(rva, caller + 23, 8);
+    Hex(rva, caller + sizeof("T7GDK:QUERY_CALLER_RVA=") - 1, 8);
     OutputDebugStringA(caller);
 }
 static void PrepareLocal()
@@ -109,22 +154,23 @@ T7_EXPORT void XErrorReport(unsigned int, const char *)
     if (__sync_fetch_and_add(&errorSequence, 1U) < 8)
         OutputDebugStringA("T7GDK:ERROR_REPORT_IGNORED");
 }
-T7_EXPORT HRESULT QueryApiImpl(U64 api, U64, void **out)
+T7_EXPORT HRESULT QueryApiImpl(const T7Guid *classId, const T7Guid *interfaceId, void **out)
 {
     if (out) *out = nullptr;
     // This return address identifies the original GDK dispatch wrapper.
     // The ABI and deeper original game caller are not yet verified.
     const unsigned int rva = ReturnRva(__builtin_return_address(0));
-    EmitQuery(api, rva);
+    EmitQuery(classId, interfaceId, rva);
+    const U64 classFingerprint = GuidIdentity(classId);
     if (observeDispatch)
     {
-        observeDispatch(api, rva);
+        observeDispatch(classFingerprint, rva);
         // One-time evidence that code in *recon.dll* actually executed.
         // A loaded DLL or resolved export alone is not enough.
         if (observedCount && observedCount() == 1U)
             OutputDebugStringA("T7GDK:RECON_CALLBACK_EXECUTED");
     }
-    return static_cast<HRESULT>(0x80004001U); // E_NOTIMPL, fail closed
+    return static_cast<HRESULT>(0x80070032U); // documented HRESULT_FROM_WIN32(ERROR_NOT_SUPPORTED)
 }
 T7_EXPORT unsigned int T7EnhancedCapabilities() { return 7U; }
 T7_EXPORT int T7EnhancedEngineIntegrated() { return 0; } // no game packet/menu hook
