@@ -1,6 +1,7 @@
 // T7 local transport, adapted from the audited Ghosts direct transport.
 // Isolated wire protocol for local development; no engine hooks yet. No DNS or vendor service calls.
 #include "transport.h"
+#include "wire_auth.h"
 #ifdef _WIN32
 #define IW6_PRIVATE_WINSOCK
 #include <winsock2.h>
@@ -23,7 +24,7 @@ namespace
 {
 constexpr int MaxPayload = 1262;
 constexpr int HeaderSize = 8;
-constexpr int MaxWire = HeaderSize + MaxPayload + 2;
+constexpr int MaxWire = HeaderSize + 8 + MaxPayload + 8; // keyed v2 nonce + tag
 constexpr unsigned int MaxPeers = 64;
 SOCKET udp = INVALID_SOCKET;
 bool initialized;
@@ -37,6 +38,11 @@ unsigned short boundPort;
 T7DirectAddress selected;
 T7DirectAddress peers[MaxPeers];
 unsigned int peerCount;
+unsigned char wireKey[16];
+bool authenticated;
+unsigned long long outboundSequence;
+T7WireAuth::ReplayWindow clientReplay = {};
+T7WireAuth::ReplayWindow peerReplay[MaxPeers] = {};
 #ifdef _WIN32
 unsigned long long lockStorage;
 struct Lock
@@ -88,10 +94,15 @@ void Close()
     boundPort = 0;
     selected = {};
     peerCount = 0;
+    outboundSequence = 0;
+    clientReplay = {};
+    for (unsigned int i = 0; i < MaxPeers; ++i) peerReplay[i] = {};
 }
 bool Permitted(const T7DirectAddress &a)
 {
     if (!Unicast(a.ip) || a.type != T7_ADDR_IP || !a.port) return false;
+    // Unkeyed UDP checksums are not authentication: v1 is loopback-only.
+    if (!authenticated && a.ip[0] != 127) return false;
     if (!hosting) return Same(selected, a, true);
     // A listener may reply only to peers from which a checksum-valid packet arrived.
     for (unsigned int i = 0; i < peerCount; ++i) if (Same(peers[i], a, true)) return true;
@@ -99,7 +110,23 @@ bool Permitted(const T7DirectAddress &a)
 }
 }
 
-extern "C" int T7DirectWireVersion() { return 1; }
+extern "C" int T7DirectWireVersion() { Lock guard; return authenticated ? 2 : 1; }
+
+// Explicit, nonzero 128-bit key encoded as 32 hexadecimal characters.
+// Rekeying closes the prior socket, clears admission and invalidates replays.
+extern "C" int T7DirectSetKey(const char *hex)
+{
+    unsigned char candidate[16] = {};
+    const bool valid = T7WireAuth::ParseHexKey(hex, candidate);
+    Lock guard;
+    Close();
+    authenticated = false;
+    for (unsigned i = 0; i < 16; ++i) wireKey[i] = 0;
+    if (!valid) return 0;
+    for (unsigned i = 0; i < 16; ++i) wireKey[i] = candidate[i];
+    authenticated = true;
+    return 1;
+}
 
 extern "C" int T7DirectParse(const char *text, T7DirectAddress *address, int allowZeroPort)
 {
@@ -177,7 +204,9 @@ extern "C" int T7DirectSelectPeer(const char *endpoint)
     const bool valid = T7DirectParse(endpoint, &address, 0) != 0;
     Lock guard;
     selected = {}; // Failed selection revokes the old destination.
-    if (!valid || udp == INVALID_SOCKET || hosting) return 0;
+    if (!valid || udp == INVALID_SOCKET || hosting ||
+        (!authenticated && address.ip[0] != 127)) return 0;
+    clientReplay = {};
     selected = address;
     return 1;
 }
@@ -197,17 +226,38 @@ extern "C" int T7DirectSend(int length, const void *data, const T7DirectAddress 
     if (!to || length < 0 || length > MaxPayload || (length && !data)) return 0;
     Lock guard;
     if (udp == INVALID_SOCKET || !Permitted(*to)) return 0;
-    unsigned char packet[MaxWire];
+    unsigned char packet[MaxWire] = {};
     packet[0] = 'T'; packet[1] = '7'; packet[2] = 'D'; packet[3] = 'P';
-    packet[4] = 1; packet[5] = 0; // version and reserved flags
+    packet[4] = authenticated ? 2 : 1; packet[5] = 0;
     packet[6] = (unsigned char)(length >> 8); packet[7] = (unsigned char)length;
-    for (int i = 0; i < length; ++i) packet[HeaderSize + i] = ((const unsigned char *)data)[i];
-    const unsigned short checksum = Checksum(packet + HeaderSize, length);
-    packet[HeaderSize + length] = (unsigned char)(checksum >> 8);
-    packet[HeaderSize + length + 1] = (unsigned char)checksum;
+    int offset = HeaderSize, wireLength;
+    if (authenticated)
+    {
+        if (outboundSequence == ~0ULL) return 0;
+        const unsigned long long sequence = ++outboundSequence;
+        for (int i = 0; i < 8; ++i)
+            packet[offset + i] = (unsigned char)(sequence >> (56 - 8 * i));
+        offset += 8;
+    }
+    for (int i = 0; i < length; ++i)
+        packet[offset + i] = ((const unsigned char *)data)[i];
+    if (authenticated)
+    {
+        const unsigned long long mac = T7WireAuth::Mac(wireKey, packet, offset + length);
+        for (int i = 0; i < 8; ++i)
+            packet[offset + length + i] = (unsigned char)(mac >> (56 - 8 * i));
+        wireLength = offset + length + 8;
+    }
+    else
+    {
+        const unsigned short checksum = Checksum(packet + offset, length);
+        packet[offset + length] = (unsigned char)(checksum >> 8);
+        packet[offset + length + 1] = (unsigned char)checksum;
+        wireLength = offset + length + 2;
+    }
     sockaddr_in destination = Sockaddr(*to);
-    return sendto(udp, (const char *)packet, HeaderSize + length + 2, 0,
-                  (const sockaddr *)&destination, sizeof(destination)) == HeaderSize + length + 2;
+    return sendto(udp, (const char *)packet, wireLength, 0,
+                  (const sockaddr *)&destination, sizeof(destination)) == wireLength;
 }
 extern "C" int T7DirectReceive(T7DirectAddress *from, T7DirectMessage *message)
 {
@@ -216,7 +266,8 @@ extern "C" int T7DirectReceive(T7DirectAddress *from, T7DirectMessage *message)
     if (!message->data || message->capacity < 1) return 0;
     Lock guard;
     if (udp == INVALID_SOCKET) return 0;
-    // Bounded drain: malformed traffic cannot keep one game frame spinning forever.
+    // Bounded packet admission: never pass an unauthenticated or oversized
+    // input to original T7 parsers. Drain at most 64 UDP datagrams per frame.
     for (int count = 0; count < 64; ++count)
     {
         unsigned char packet[MaxWire + 1];
@@ -229,31 +280,60 @@ extern "C" int T7DirectReceive(T7DirectAddress *from, T7DirectMessage *message)
         const int received = (int)recvfrom(udp, (char *)packet, sizeof(packet), 0,
                                           (sockaddr *)&source, &size);
         if (received == SOCKET_ERROR) return 0;
-        if (size != sizeof(source) || source.sin_family != AF_INET || received < HeaderSize + 2 || received > MaxWire) continue;
+        if (size != sizeof(source) || source.sin_family != AF_INET ||
+            received < HeaderSize + 2 || received > MaxWire) continue;
         if (packet[0] != 'T' || packet[1] != '7' || packet[2] != 'D' || packet[3] != 'P' ||
-            packet[4] != 1 || packet[5] != 0) continue;
-        const int length = received - HeaderSize - 2;
-        if (length != ((packet[6] << 8) | packet[7]) || length > message->capacity ||
-            Checksum(packet + HeaderSize, length) != ((packet[HeaderSize + length] << 8) | packet[HeaderSize + length + 1])) continue;
+            packet[4] != (authenticated ? 2 : 1) || packet[5] != 0) continue;
+        const int length = (packet[6] << 8) | packet[7];
+        if (length > MaxPayload || length > message->capacity) continue;
+        unsigned long long sequence = 0;
+        int payloadOffset = HeaderSize;
+        if (authenticated)
+        {
+            payloadOffset += 8;
+            if (received != payloadOffset + length + 8) continue;
+            for (int i = 0; i < 8; ++i)
+                sequence = (sequence << 8) | packet[HeaderSize + i];
+            if (!sequence ||
+                !T7WireAuth::EqualTag(
+                    T7WireAuth::Mac(wireKey, packet, payloadOffset + length),
+                    packet + payloadOffset + length)) continue;
+        }
+        else
+        {
+            if (received != payloadOffset + length + 2 ||
+                Checksum(packet + payloadOffset, length) !=
+                ((packet[payloadOffset + length] << 8) | packet[payloadOffset + length + 1]))
+                continue;
+        }
         T7DirectAddress address = {};
         address.type = T7_ADDR_IP;
         address.port = source.sin_port;
         address.addrHandleIndex = 0xFFFFFFFF;
-        for (int i = 0; i < 4; ++i) address.ip[i] = ((const unsigned char *)&source.sin_addr)[i];
-        if (!Unicast(address.ip) || !address.port) continue;
+        for (int i = 0; i < 4; ++i)
+            address.ip[i] = ((const unsigned char *)&source.sin_addr)[i];
+        if (!Unicast(address.ip) || !address.port ||
+            (!authenticated && address.ip[0] != 127)) continue;
         if (hosting)
         {
             unsigned int index = 0;
-            for (; index < peerCount; ++index) if (Same(peers[index], address, true)) break;
-            if (index == peerCount)
-            {
-                if (peerCount == MaxPeers) continue;
-                peers[peerCount++] = address;
-            }
+            for (; index < peerCount; ++index)
+                if (Same(peers[index], address, true)) break;
+            if (index == peerCount && peerCount == MaxPeers) continue;
+            T7WireAuth::ReplayWindow window = index == peerCount ?
+                T7WireAuth::ReplayWindow{} : peerReplay[index];
+            if (authenticated && !T7WireAuth::Accept(window, sequence)) continue;
+            if (index == peerCount) peers[peerCount++] = address;
+            if (authenticated) peerReplay[index] = window;
         }
-        else if (!Same(address, selected, true)) continue;
+        else
+        {
+            if (!Same(address, selected, true)) continue;
+            if (authenticated && !T7WireAuth::Accept(clientReplay, sequence)) continue;
+        }
         *from = address;
-        for (int i = 0; i < length; ++i) message->data[i] = packet[HeaderSize + i];
+        for (int i = 0; i < length; ++i)
+            message->data[i] = packet[payloadOffset + i];
         message->size = length;
         return 1;
     }
