@@ -23,7 +23,7 @@ def main():
         environment.setdefault("ASAN_OPTIONS", "detect_leaks=0:halt_on_error=1")
         environment.setdefault("UBSAN_OPTIONS", "halt_on_error=1")
         subprocess.run([str(binary)], check=True, env=environment)
-    print("PASS: enhanced I_strcat safely handles 22,750 capacity/source/guard cases")
+    print("PASS: enhanced I_strcat 22,750 guard cases; wildcard 6,000 oracle fuzz cases and DoS input under ASan/UBSan")
 
 
 if __name__ == "__main__":
