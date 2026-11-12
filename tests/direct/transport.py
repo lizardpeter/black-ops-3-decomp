@@ -42,7 +42,7 @@ def receive(lib):
     msg=Message(data=C.addressof(memory),capacity=1300,size=99)
     source=Address()
     result=lib.Receive(C.byref(source),C.byref(msg))
-    return result,bytes(memory)[:msg.cursize],source,msg
+    return result,bytes(memory)[:msg.size],source,msg
 
 def main():
     with tempfile.TemporaryDirectory() as temp:
