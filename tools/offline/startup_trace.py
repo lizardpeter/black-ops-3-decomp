@@ -27,6 +27,9 @@ GDK_CLASSES = {
     "dfcd4649-4ff8-4043-ba07-35d607df98b0": "XGameUI",
     "e349bd1a-fc20-4e40-b99c-4178cc6b409f": "XSystem",
 }
+PACKAGE_METHOD = re.compile(r"T7GDK:PACKAGE_METHOD_SLOT=([0-9]{2})(?![0-9])")
+PACKAGE_METHODS = {"03": "GetCurrentProcessPackageIdentifier",
+                   "04": "IsPackagedProcess", "11": "GetUserLocale"}
 CALLER = re.compile(r"T7GDK:QUERY_CALLER_RVA=([0-9A-Fa-f]{8})(?![0-9A-Fa-f])")
 ERROR = re.compile(r"T7GDK:RECON_LOAD_ERROR=([0-9A-Fa-f]{8})(?![0-9A-Fa-f])")
 # Path mentions are *not* proof of successful file open. Strip directories so
@@ -86,6 +89,8 @@ MARKERS = (
     "T7GDK:RECON_INVALID_EXE_DIRECTORY",
     "T7GDK:LOCAL_FEATURE_INTERFACE_ENABLED",
     "T7GDK:LOCAL_FEATURE_INTERFACE_GRANTED",
+    "T7GDK:LOCAL_PACKAGE_INTERFACE_ENABLED",
+    "T7GDK:LOCAL_PACKAGE_INTERFACE_GRANTED",
 )
 
 def reduce_log(text):
@@ -94,6 +99,7 @@ def reduce_log(text):
     # service IDs until that ABI is demonstrated.
     observations = {marker: marker in text for marker in MARKERS}
     api = QUERY.findall(text)
+    methods = PACKAGE_METHOD.findall(text)
     classes = [x.lower() for x in CLASS_GUID.findall(text)]
     interfaces = [x.lower() for x in INTERFACE_GUID.findall(text)]
     callers = CALLER.findall(text)
@@ -109,6 +115,10 @@ def reduce_log(text):
         "recon_probe_observed": observations["T7GDK:RECON_PROBE_OK"],
         "local_feature_interface_enabled": observations["T7GDK:LOCAL_FEATURE_INTERFACE_ENABLED"],
         "local_feature_interface_granted": observations["T7GDK:LOCAL_FEATURE_INTERFACE_GRANTED"],
+        "local_package_interface_enabled": observations["T7GDK:LOCAL_PACKAGE_INTERFACE_ENABLED"],
+        "local_package_interface_granted": observations["T7GDK:LOCAL_PACKAGE_INTERFACE_GRANTED"],
+        "package_method_slots_first_64": methods[:64],
+        "package_methods_first_64": [PACKAGE_METHODS.get(i, "unsupported-slot-"+i) for i in methods[:64]],
         "recon_callback_execution_observed": observations["T7GDK:RECON_CALLBACK_EXECUTED"],
         "recon_load_failure_observed": observations["T7GDK:RECON_LOAD_FAILED"],
         "recon_load_error_codes_first_8": failure[:8],
