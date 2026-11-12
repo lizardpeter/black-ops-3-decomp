@@ -44,6 +44,8 @@ MARKERS = (
     "T7GDK:RECON_LOAD_FAILED",
     "T7GDK:RECON_INVALID_PROBE",
     "T7GDK:RECON_INVALID_EXE_DIRECTORY",
+    "T7GDK:LOCAL_FEATURE_INTERFACE_ENABLED",
+    "T7GDK:LOCAL_FEATURE_INTERFACE_GRANTED",
 )
 
 def reduce_log(text):
@@ -64,6 +66,8 @@ def reduce_log(text):
         "local_profile_prepared": observations["T7GDK:LOCAL_PROFILE_PREPARED"],
         "local_profile_unset": observations["T7GDK:LOCAL_PROFILE_UNSET"],
         "recon_probe_observed": observations["T7GDK:RECON_PROBE_OK"],
+        "local_feature_interface_enabled": observations["T7GDK:LOCAL_FEATURE_INTERFACE_ENABLED"],
+        "local_feature_interface_granted": observations["T7GDK:LOCAL_FEATURE_INTERFACE_GRANTED"],
         "recon_callback_execution_observed": observations["T7GDK:RECON_CALLBACK_EXECUTED"],
         "recon_load_failure_observed": observations["T7GDK:RECON_LOAD_FAILED"],
         "recon_load_error_codes_first_8": failure[:8],
