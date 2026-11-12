@@ -35,6 +35,10 @@ FASTFILE = re.compile(r"(?i)(?:zone[\\/])([a-z0-9_+.-]{1,96}\.ff)\b")
 LOCALIZATION = re.compile(r"(?i)\b(localization_[a-z0-9_+.-]{1,80}\.txt)\b")
 # Diagnose failures *before* GDK initialization without exposing absolute
 # Wine/user paths. Only known error categories and DLL basenames are retained.
+# Observe module loader activity without retaining a local path. Merely
+# mentioning a DLL in an error is not evidence it loaded.
+VENDOR_MODULES = {"partyxboxlive.dll", "playfabmultiplayergdk.dll", "xboxliveapi.dll"}
+DLL_BASENAME = re.compile(r'(?i)([a-z0-9_.+-]{1,96}\\.dll)')
 WINE_ERROR = re.compile(r"(?i)err:([a-z0-9_-]{1,32}):([a-z0-9_-]{1,64})")
 WINE_DLL = re.compile(r'(?i)\b(?:library|module)\s+(?:L")?([^\s"()]{1,240}\.dll)')
 WIN_STATUS = re.compile(r"(?i)\b(?:c0000135|c000007b|c0000005|c0000142|0x8007007e)\b")
@@ -42,7 +46,13 @@ WIN_STATUS = re.compile(r"(?i)\b(?:c0000135|c000007b|c0000005|c0000142|0x8007007
 def wine_loader_diagnostics(log):
     categories = {}
     missing = []
+    vendor_modules = []
     for line in log.splitlines():
+        if "loaddll" in line.lower() and "loaded" in line.lower():
+            loaded = [x.lower() for x in DLL_BASENAME.findall(line)]
+            for name in loaded:
+                if name in VENDOR_MODULES and name not in vendor_modules:
+                    vendor_modules.append(name)
         match = WINE_ERROR.search(line)
         if match:
             key = f"{match.group(1).lower()}:{match.group(2).lower()}"
@@ -57,6 +67,7 @@ def wine_loader_diagnostics(log):
         "wine_error_categories_first_24": dict(list(categories.items())[:24]),
         "missing_dependency_dll_basename_candidates": missing[:24],
         "wine_loader_status_codes": status,
+        "vendor_online_modules_loaded_observed": vendor_modules,
         "note": "Wine loader errors are diagnostic clues, not verified absent files or gameplay outcomes."
     }
 
