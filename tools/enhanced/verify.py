@@ -19,8 +19,9 @@ from build import sha256, pinned_exe_hash, verify_reconstruction, reconstruction
 from gdk_stub import audit as audit_gdk
 from vendor_stubs import audit as audit_xcurl
 from winhttp_stub import audit as audit_winhttp
+from gamechat_stub import audit as audit_gamechat
 
-COMPONENT_ONLY = {"wine-system32/xgameruntime.dll", "xcurl.dll", "winhttp.dll"}
+COMPONENT_ONLY = {"wine-system32/xgameruntime.dll", "xcurl.dll", "winhttp.dll", "gamechat2.dll"}
 FULL = COMPONENT_ONLY | {"BlackOps3.exe", "recon.dll"}
 UNVERIFIED = (
     "game_engine_hooks_installed", "in_process_recon_bridge_observed", "native_windows_startup",
@@ -59,6 +60,8 @@ def audit(directory):
     if manifest.get("compiled_features", {}).get("enhanced_reconstruction_compiled") != (set(entries) == FULL):
         raise ValueError("Enhanced reconstruction manifest disagrees with DLL inventory")
     features = manifest.get("compiled_features", {})
+    if features.get("offline_gamechat2_loader_boundary") is not True:
+        raise ValueError("Canonical enhanced package must include fail-closed GameChat2 loader boundary")
     if (features.get("authenticated_v3_directional_and_replay_defense") is not True or
             "authenticated_v2_and_replay_defense" in features):
         raise ValueError("Canonical enhanced package must declare the reviewed directional wire v3")
@@ -79,6 +82,7 @@ def audit(directory):
     audit_gdk(directory / "wine-system32/xgameruntime.dll")
     audit_xcurl(directory / "xcurl.dll")
     audit_winhttp(directory / "winhttp.dll")
+    audit_gamechat(directory / "gamechat2.dll")
     metadata = manifest.get("metadata")
     if not isinstance(metadata, dict):
         raise ValueError("Missing reconstruction provenance inventory")
