@@ -36,7 +36,7 @@ from verify import audit
 from build import sha256
 
 
-def run(package, game, prefix, out, seconds, name, wine, trace_files=False, local_feature_interface=False, shot_every=0):
+def run(package, game, prefix, out, seconds, name, wine, trace_files=False, local_feature_interface=False, shot_every=0, local_package_interface=False):
     if platform.system() != "Linux":
         raise RuntimeError("This GDK shim is for a private Wine prefix only, never native Windows")
     if not 10 <= seconds <= 180:
@@ -97,8 +97,11 @@ def run(package, game, prefix, out, seconds, name, wine, trace_files=False, loca
         # The opt-in enables only the local COM feature-availability interface,
         # never Xbox account or licensing behavior.
         environment.pop("T7_ENHANCED_LOCAL_FEATURE", None)
+        environment.pop("T7_ENHANCED_LOCAL_PACKAGE", None)
         if local_feature_interface:
             environment["T7_ENHANCED_LOCAL_FEATURE"] = "1"
+        if local_package_interface:
+            environment["T7_ENHANCED_LOCAL_PACKAGE"] = "1"
         completed = subprocess.run(command, cwd=ROOT, check=False, env=environment)
         if out.is_dir():
             (out / "asset_preflight.json").write_text(json.dumps(assets, indent=2) + "\n")
@@ -124,9 +127,10 @@ def main():
     parser.add_argument("--trace-files", action="store_true", help="Record Wine file operations; raw log contains paths")
     parser.add_argument("--local-feature-interface", action="store_true", help="Experimental GDK feature availability COM; all feature checks return false")
     parser.add_argument("--shot-every", type=int, default=0, choices=(0, 10, 15, 30), help="Optional private screenshot capture; no images uploaded automatically")
+    parser.add_argument("--local-package-interface", action="store_true", help="Experimental local package COM: no Xbox entitlement, language en-US")
     args = parser.parse_args()
     run(args.package, args.game, args.prefix, args.out, args.seconds, args.player_name, args.wine,
-        args.trace_files, args.local_feature_interface, args.shot_every)
+        args.trace_files, args.local_feature_interface, args.shot_every, args.local_package_interface)
 
 
 if __name__ == "__main__":
