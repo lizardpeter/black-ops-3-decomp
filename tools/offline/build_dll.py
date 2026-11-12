@@ -44,7 +44,7 @@ def main():
     for src in sorted((ROOT / "enhanced" / "offline").glob("*.cpp")):
         # xgameruntime_stub.cpp has a separate DLL entry and links the direct
         # local-profile bootstrap; it must not be included in recon.dll.
-        if src.name in ("xgameruntime_stub.cpp", "xcurl_stub.cpp", "winhttp_stub.cpp", "gamechat2_stub.cpp"):
+        if src.name in ("xgameruntime_stub.cpp", "xcurl_stub.cpp", "winhttp_stub.cpp", "gamechat2_stub.cpp", "libscepad_stub.cpp"):
             continue
         obj = out / "obj" / (src.stem + ".obj")
         run("clang++", "-std=c++17", f"-I{ROOT / 'enhanced' / 'include'}", *CFLAGS, "-c", src, "-o", obj)
