@@ -87,8 +87,10 @@ jobs:
           name: t7-enhanced-startup-diagnostics
           path: |
             ${{ runner.temp }}/t7-run-baseline/startup.json
+            ${{ runner.temp }}/t7-run-baseline/asset_preflight.json
             ${{ runner.temp }}/t7-run-baseline/result.json
             ${{ runner.temp }}/t7-run-feature/startup.json
+            ${{ runner.temp }}/t7-run-feature/asset_preflight.json
             ${{ runner.temp }}/t7-run-feature/result.json
             ${{ runner.temp }}/t7-startup-comparison.json
           if-no-files-found: warn
