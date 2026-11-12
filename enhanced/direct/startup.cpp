@@ -46,6 +46,8 @@ bool Same(const char *a, const char *b)
 
 extern "C" int T7DirectLoadStartupProfile()
 {
+    // A malformed subsequent invocation must never retain an earlier local ID.
+    T7DirectPlayerConfigure(nullptr, nullptr);
     const char *command = GetCommandLineA();
     if (!command) return 0;
     const char *end = command;
