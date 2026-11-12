@@ -68,10 +68,10 @@ static void TryLoadEnhancedRecon()
     OutputDebugStringA("T7GDK:RECON_PROBE_OK");
     OutputDebugStringA("T7GDK:RECON_IN_PROCESS");
 }
-static unsigned int ReturnRva()
+static unsigned int ReturnRva(void *returnAddress)
 {
     void *base = GetModuleHandleW(nullptr);
-    const unsigned long long address = (unsigned long long)__builtin_return_address(0);
+    const unsigned long long address = (unsigned long long)returnAddress;
     const unsigned long long start = (unsigned long long)base;
     // Only emit an RVA from the pinned original image. Never log raw pointers.
     return base && address >= start && address - start < 0x1A53F000ULL ?
@@ -110,7 +110,7 @@ T7_EXPORT HRESULT QueryApiImpl(U64 api, U64, void **out)
     if (out) *out = nullptr;
     // This return address identifies the original GDK dispatch wrapper.
     // The ABI and deeper original game caller are not yet verified.
-    const unsigned int rva = ReturnRva();
+    const unsigned int rva = ReturnRva(__builtin_return_address(0));
     EmitQuery(api, rva);
     if (observeDispatch) observeDispatch(api, rva);
     return static_cast<HRESULT>(0x80004001U); // E_NOTIMPL, fail closed
