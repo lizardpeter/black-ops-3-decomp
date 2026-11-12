@@ -132,7 +132,7 @@ so even a successful GDK probe cannot demonstrate a rendered menu.
   shims; neither missing module was reported.
 - The connected owner's R2 bucket contains 34 applicable core, frontend, UI
   and English-language original startup files (736,627,660 bytes total). The
-  repo inventories their exact keys, sizes and ETags in
+  repo inventories their exact keys, sizes, ETags and SHA-256 in
   `records/bo3-startup-r2.tsv`. No game data is committed or uploaded as an
   artifact. The 15.5 GB `zone/base.xpak` is intentionally not part of this
   narrow boot subset.
