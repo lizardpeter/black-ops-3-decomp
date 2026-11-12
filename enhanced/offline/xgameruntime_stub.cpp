@@ -32,10 +32,12 @@ extern "C" __declspec(dllimport) unsigned int GetLastError();
 extern "C" __declspec(dllimport) unsigned int GetEnvironmentVariableA(const char *, char *, unsigned int);
 extern "C" __declspec(dllimport) int FreeLibrary(void *);
 extern "C" int T7DirectLoadStartupProfile();
+extern "C" int T7OfflinePackageQuery(const T7Guid *, const T7Guid *, void **);
 static volatile unsigned int querySequence;
 static volatile unsigned int errorSequence;
 static volatile unsigned int initialized;
 static bool localFeatureEnabled;
+static bool localPackageEnabled;
 static void *reconstruction;
 using Observer = void (*)(U64, unsigned int);
 static Observer observeDispatch;
@@ -193,6 +195,11 @@ static void PrepareLocal()
                           featureFlag[0] == '1';
     if (localFeatureEnabled)
         OutputDebugStringA("T7GDK:LOCAL_FEATURE_INTERFACE_ENABLED");
+    char packageFlag[2] = {};
+    localPackageEnabled = GetEnvironmentVariableA("T7_ENHANCED_LOCAL_PACKAGE", packageFlag, 2) == 1 &&
+                          packageFlag[0] == '1';
+    if (localPackageEnabled)
+        OutputDebugStringA("T7GDK:LOCAL_PACKAGE_INTERFACE_ENABLED");
     TryLoadEnhancedRecon();
     OutputDebugStringA("T7GDK:INIT_OK_NO_VENDOR");
 }
@@ -228,6 +235,17 @@ T7_EXPORT HRESULT QueryApiImpl(const T7Guid *classId, const T7Guid *interfaceId,
         if (!result)
         {
             OutputDebugStringA("T7GDK:LOCAL_FEATURE_INTERFACE_GRANTED");
+            return 0;
+        }
+    }
+    // The same enhanced DLL can optionally supply only local package locale
+    // and unpackaged status; entitlement/install/mount methods remain blocked.
+    if (localPackageEnabled && IsOriginalGuid(classId) && IsOriginalGuid(interfaceId))
+    {
+        const int result = T7OfflinePackageQuery(classId, interfaceId, out);
+        if (!result)
+        {
+            OutputDebugStringA("T7GDK:LOCAL_PACKAGE_INTERFACE_GRANTED");
             return 0;
         }
     }
