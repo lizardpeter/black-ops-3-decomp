@@ -35,7 +35,7 @@ def main():
         assert locale(handle.value,len(text),text)==0 and text.value==b"en-US"
         short=C.create_string_buffer(2)
         assert locale(handle.value,len(short),short)!=0
-        assert short.raw==b"\\x00\\x00"
+        assert short.raw==b"\x00\x00"
         blocked=C.CFUNCTYPE(C.c_int32,C.c_void_p)(table[3])
         assert blocked(handle.value)<0
         last=C.CFUNCTYPE(C.c_int32,C.c_void_p)(table[40])
