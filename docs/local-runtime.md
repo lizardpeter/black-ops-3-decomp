@@ -87,3 +87,18 @@ reconstructed `recon.dll` into the game. It makes the prior GDK initialization
 experiment repeatable without editing PE `.text` or modifying an installed
 Windows runtime. Run `tools/offline/wine_run.py` with the staged EXE and the
 real game's asset folder, then inspect `startup.json` and `wine.log`.
+
+## Unified in-process enhanced-local component
+
+The offline GDK replacement now compiles **the local profile, direct UDP,
+keyed v2 authentication and replay-window implementation** from
+`enhanced/direct/` into the DLL that the Store executable loads during GDK
+initialization in a private Wine prefix. This avoids relying on an omitted
+sidecar to make the enhanced local APIs available. GDK startup itself never
+opens a network socket. Winsock is imported solely for explicit local UDP
+operations.
+
+`T7EnhancedCapabilities()` reports compiled local primitives; the deliberately
+separate `T7EnhancedEngineIntegrated()` returns **0** until the original T7
+packet send/receive, admission and menu hooks are integrated and verified.
+A loaded DLL is not a playable game or whole-process vendor isolation.

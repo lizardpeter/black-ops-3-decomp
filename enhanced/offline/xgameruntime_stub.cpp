@@ -47,3 +47,9 @@ T7_EXPORT HRESULT QueryApiImpl(U64 api, U64, void **out)
     EmitQuery(api);
     return static_cast<HRESULT>(0x80004001U); // E_NOTIMPL; never claim authenticated GDK state
 }
+
+// Enhanced-local component manifest, not an Xbox/GDK API.
+// Compiled: local identity, bounded UDP, authenticated v2 and replay defense.
+// BO3 engine callsites are not yet connected.
+T7_EXPORT unsigned int T7EnhancedCapabilities() { return 7U; }
+T7_EXPORT int T7EnhancedEngineIntegrated() { return 0; }
