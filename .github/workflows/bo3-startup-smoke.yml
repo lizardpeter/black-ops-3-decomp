@@ -1,0 +1,78 @@
+# Evidence-gathering only. The downloaded EXE is pinned by target.toml and
+# never packaged into workflow artifacts. The job does NOT claim a menu launch.
+name: BO3 enhanced GDK startup probe
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/bo3-startup-smoke.yml
+jobs:
+  wine-gdk-startup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install offline native toolchain and Wine
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq wine64 xvfb libseccomp2 clang llvm lld g++
+          python3 -m venv .work/venv
+          .work/venv/bin/pip install --quiet pefile
+          echo "$PWD/.work/venv/bin" >> "$GITHUB_PATH"
+      - name: Retrieve exact pinned original Store EXE, no asset redistribution
+        run: python3 tools/fetch_originals.py BlackOps3_MSStore .work/originals --only exe
+      - name: Build source-linked enhanced reconstruction and canonical package
+        env:
+          T7_ORIGINALS: .work/originals
+        run: |
+          python3 tools/build_recon.py --build BlackOps3_MSStore --enhanced
+          python3 tools/enhanced/build.py --original .work/originals/BlackOps3_MSStore.exe --recon build/BlackOps3_MSStore/enhanced/recon.dll --out .work/enhanced-package
+          python3 tools/enhanced/verify.py .work/enhanced-package
+          python3 tests/direct/engine_bridge.py
+          python3 tests/direct/gdk_feature.py
+      - name: Initialize disposable Wine prefix on a private display
+        env:
+          WINEARCH: win64
+          WINEDLLOVERRIDES: "mscoree,mshtml="
+          WINEDEBUG: "-all"
+          DISPLAY: ":99"
+        run: |
+          Xvfb :99 -screen 0 1280x800x24 -nolisten tcp > /tmp/t7-xvfb.log 2>&1 &
+          echo $! > /tmp/t7-xvfb.pid
+          export WINEPREFIX="$RUNNER_TEMP/t7-private-prefix"
+          timeout 120s wineboot -i
+          test -d "$WINEPREFIX/drive_c/windows/system32"
+      - name: Probe unchanged BO3 EXE with enhanced GDK shim (baseline)
+        continue-on-error: true
+        run: |
+          python3 tools/enhanced/run_wine.py --package .work/enhanced-package \
+            --game .work/originals --prefix "$RUNNER_TEMP/t7-private-prefix" \
+            --out "$RUNNER_TEMP/t7-run-baseline" --seconds 45 --trace-files
+      - name: Probe the same package with local feature COM enabled
+        continue-on-error: true
+        run: |
+          python3 tools/enhanced/run_wine.py --package .work/enhanced-package \
+            --game .work/originals --prefix "$RUNNER_TEMP/t7-private-prefix" \
+            --out "$RUNNER_TEMP/t7-run-feature" --seconds 45 --trace-files --local-feature-interface
+      - name: Compare observed startup evidence only
+        if: always()
+        run: |
+          python3 tools/enhanced/compare_startup.py \
+            "$RUNNER_TEMP/t7-run-baseline/startup.json" \
+            "$RUNNER_TEMP/t7-run-feature/startup.json" \
+            --out "$RUNNER_TEMP/t7-startup-comparison.json"
+      - name: Upload privacy-reduced result summaries (never executable or raw Wine log)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: t7-enhanced-startup-diagnostics
+          path: |
+            ${{ runner.temp }}/t7-run-baseline/startup.json
+            ${{ runner.temp }}/t7-run-baseline/result.json
+            ${{ runner.temp }}/t7-run-feature/startup.json
+            ${{ runner.temp }}/t7-run-feature/result.json
+            ${{ runner.temp }}/t7-startup-comparison.json
+          if-no-files-found: warn
+          retention-days: 7
