@@ -22,7 +22,7 @@ with tempfile.TemporaryDirectory() as root:
     bad=Path(root)/"bad.tsv"
     for name in ("bo3/DUMP/zone/../../malicious.ff", "bo3/DUMP/zone/base.xpak",
                  "wrong/place.ff"):
-        bad.write_text("key\tbytes\tetag\n"+name+"\t4\t"+"0"*32+"\n")
+        bad.write_text("key\tbytes\tetag\tsha256\n"+name+"\t4\t"+"0"*32+"\t"+"0"*64+"\n")
         try: load_manifest(bad)
         except ValueError: pass
         else: raise AssertionError("Unsafe/out-of-scope R2 startup key accepted: "+name)
