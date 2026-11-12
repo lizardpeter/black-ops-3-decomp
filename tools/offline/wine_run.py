@@ -117,7 +117,7 @@ def main():
     ap.add_argument("--shot-every", type=int, default=10)
     ap.add_argument("--trace-files", action="store_true", help="Wine +file diagnostic; raw log contains local paths")
     ap.add_argument("--display", default=":99")
-    ap.add_argument("--debug", default="+timestamp,+pid,+loaddll,+seh,+debugstr")
+    ap.add_argument("--debug", default="+timestamp,+pid,+loaddll,+module,+seh,+debugstr")
     ap.add_argument("--dlloverrides", default="mscoree,mshtml=;xgameruntime=n")
     ap.add_argument("arguments", nargs=argparse.REMAINDER)
     a = ap.parse_args()
