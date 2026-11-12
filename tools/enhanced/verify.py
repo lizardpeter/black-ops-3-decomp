@@ -20,8 +20,9 @@ from gdk_stub import audit as audit_gdk
 from vendor_stubs import audit as audit_xcurl
 from winhttp_stub import audit as audit_winhttp
 from gamechat_stub import audit as audit_gamechat
+from scepad_stub import audit as audit_pad
 
-COMPONENT_ONLY = {"wine-system32/xgameruntime.dll", "xcurl.dll", "winhttp.dll", "gamechat2.dll"}
+COMPONENT_ONLY = {"wine-system32/xgameruntime.dll", "xcurl.dll", "winhttp.dll", "gamechat2.dll", "libScePad.dll"}
 FULL = COMPONENT_ONLY | {"BlackOps3.exe", "recon.dll"}
 UNVERIFIED = (
     "game_engine_hooks_installed", "in_process_recon_bridge_observed", "native_windows_startup",
@@ -60,6 +61,8 @@ def audit(directory):
     if manifest.get("compiled_features", {}).get("enhanced_reconstruction_compiled") != (set(entries) == FULL):
         raise ValueError("Enhanced reconstruction manifest disagrees with DLL inventory")
     features = manifest.get("compiled_features", {})
+    if features.get("offline_no_device_scepad_loader_boundary") is not True:
+        raise ValueError("Enhanced package missing no-device ScePad loader boundary")
     if features.get("offline_gamechat2_loader_boundary") is not True:
         raise ValueError("Canonical enhanced package must include fail-closed GameChat2 loader boundary")
     if (features.get("authenticated_v3_directional_and_replay_defense") is not True or
@@ -83,6 +86,7 @@ def audit(directory):
     audit_xcurl(directory / "xcurl.dll")
     audit_winhttp(directory / "winhttp.dll")
     audit_gamechat(directory / "gamechat2.dll")
+    audit_pad(directory / "libScePad.dll")
     metadata = manifest.get("metadata")
     if not isinstance(metadata, dict):
         raise ValueError("Missing reconstruction provenance inventory")
