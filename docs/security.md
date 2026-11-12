@@ -179,3 +179,18 @@ comparisons and a pathological repeated-star example. As for P0024, the
 canonical native Store executable is unmodified and **does not dispatch its
 existing calls to the enhanced DLL's override**; this is not yet a native
 security patch or a claim of T7 Patch parity.
+
+## P0027: no-key socket binds constrained to localhost
+
+The experimental direct UDP module previously dropped non-loopback datagrams
+in its receive parser but could still bind `INADDR_ANY` without a network
+key. P0027 constrains the actual socket: `0.0.0.0` silently binds
+`127.0.0.1` for unkeyed v1, and explicit non-loopback bind addresses
+fail closed. Only authenticated-key v3 may bind a public interface. The
+portable transport regression sends valid local-only v1 traffic to both
+`127.0.0.1` and `127.0.0.2` and ensures only the first is delivered.
+
+**Scope:** this is protection for the enhanced local GDK/direct transport;
+the original Store executable's other networking entrypoints are not yet
+routed through it. It must not be presented as protection against the
+unmapped native T7 lobby and instant-message RCE vulnerabilities.
