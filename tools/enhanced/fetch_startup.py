@@ -2,10 +2,10 @@
 """Stage genuine BO3 startup assets from the owner's R2 public read-only origin.
 
 Never synthesize a FastFile or bundle game data in GitHub artifacts. The
-checked-in TSV pins source keys, sizes, and R2 object ETags discovered from
+checked-in TSV pins source keys, sizes, ETags and verified SHA-256 discovered from
 the owner's connected R2 bucket. Singlepart ETags are checked as MD5; multipart
-ETags are checked against the HTTPS response when available, with a fresh SHA256
-reported for every downloaded object. No file is overwritten on mismatch.
+ETags are checked against the HTTPS response when available; *every*
+object also has a pinned SHA-256 verified before staging. No file is overwritten on mismatch.
 
     python3 tools/enhanced/fetch_startup.py --out .work/originals
     python3 tools/enhanced/fetch_startup.py --dry-run
