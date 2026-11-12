@@ -7,6 +7,11 @@ on:
   push:
     paths:
       - .github/workflows/bo3-startup-smoke.yml
+# Avoid running obsolete probes against earlier enhanced builds as main changes.
+concurrency:
+  group: t7-canonical-enhanced-gdk-startup
+  cancel-in-progress: true
+
 jobs:
   wine-gdk-startup:
     runs-on: ubuntu-24.04
