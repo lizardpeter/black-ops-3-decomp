@@ -34,6 +34,7 @@ jobs:
             /tests/
             /records/
             /analysis/*/match/
+            /analysis/*/net/
             /analysis/*/map/
             /analysis/*/pdb/
       - name: Install offline native toolchain and Wine
