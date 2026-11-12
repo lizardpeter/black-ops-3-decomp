@@ -24,7 +24,7 @@ namespace
 {
 constexpr int MaxPayload = 1262;
 constexpr int HeaderSize = 8;
-constexpr int MaxWire = HeaderSize + 8 + MaxPayload + 8; // keyed v2 nonce + tag
+constexpr int MaxWire = HeaderSize + 8 + MaxPayload + 8; // keyed v3 nonce + directional tag
 constexpr unsigned int MaxPeers = 64;
 SOCKET udp = INVALID_SOCKET;
 bool initialized;
@@ -110,7 +110,7 @@ bool Permitted(const T7DirectAddress &a)
 }
 }
 
-extern "C" int T7DirectWireVersion() { Lock guard; return authenticated ? 2 : 1; }
+extern "C" int T7DirectWireVersion() { Lock guard; return authenticated ? 3 : 1; }
 
 // Explicit, nonzero 128-bit key encoded as 32 hexadecimal characters.
 // Rekeying closes the prior socket, clears admission and invalidates replays.
@@ -228,7 +228,7 @@ extern "C" int T7DirectSend(int length, const void *data, const T7DirectAddress 
     if (udp == INVALID_SOCKET || !Permitted(*to)) return 0;
     unsigned char packet[MaxWire] = {};
     packet[0] = 'T'; packet[1] = '7'; packet[2] = 'D'; packet[3] = 'P';
-    packet[4] = authenticated ? 2 : 1; packet[5] = 0;
+    packet[4] = authenticated ? 3 : 1; packet[5] = 0;
     packet[6] = (unsigned char)(length >> 8); packet[7] = (unsigned char)length;
     int offset = HeaderSize, wireLength;
     if (authenticated)
@@ -243,7 +243,7 @@ extern "C" int T7DirectSend(int length, const void *data, const T7DirectAddress 
         packet[offset + i] = ((const unsigned char *)data)[i];
     if (authenticated)
     {
-        const unsigned long long mac = T7WireAuth::Mac(wireKey, packet, offset + length);
+        const unsigned long long mac = T7WireAuth::MacDirectional(wireKey, packet, offset + length, hosting ? 'S' : 'C');
         for (int i = 0; i < 8; ++i)
             packet[offset + length + i] = (unsigned char)(mac >> (56 - 8 * i));
         wireLength = offset + length + 8;
@@ -283,7 +283,7 @@ extern "C" int T7DirectReceive(T7DirectAddress *from, T7DirectMessage *message)
         if (size != sizeof(source) || source.sin_family != AF_INET ||
             received < HeaderSize + 2 || received > MaxWire) continue;
         if (packet[0] != 'T' || packet[1] != '7' || packet[2] != 'D' || packet[3] != 'P' ||
-            packet[4] != (authenticated ? 2 : 1) || packet[5] != 0) continue;
+            packet[4] != (authenticated ? 3 : 1) || packet[5] != 0) continue;
         const int length = (packet[6] << 8) | packet[7];
         if (length > MaxPayload || length > message->capacity) continue;
         unsigned long long sequence = 0;
@@ -296,7 +296,7 @@ extern "C" int T7DirectReceive(T7DirectAddress *from, T7DirectMessage *message)
                 sequence = (sequence << 8) | packet[HeaderSize + i];
             if (!sequence ||
                 !T7WireAuth::EqualTag(
-                    T7WireAuth::Mac(wireKey, packet, payloadOffset + length),
+                    T7WireAuth::MacDirectional(wireKey, packet, payloadOffset + length, hosting ? 'C' : 'S'),
                     packet + payloadOffset + length)) continue;
         }
         else
