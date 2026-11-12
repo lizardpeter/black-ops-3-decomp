@@ -1,6 +1,6 @@
 # Evidence-gathering only. The downloaded EXE is pinned by target.toml and
 # never packaged into workflow artifacts. The job does NOT claim a menu launch.
-# Test both confirmed missing import DLLs: GameChat2 and libScePad are now fail-closed enhanced components.
+# Run original BO3 menu FastFiles from authenticated R2 inventory in the same enhanced path.
 name: BO3 enhanced GDK startup probe
 on:
   workflow_dispatch:
@@ -15,7 +15,7 @@ concurrency:
 jobs:
   wine-gdk-startup:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 45
     permissions:
       contents: read
     steps:
@@ -68,6 +68,14 @@ jobs:
           python3 -c 'import json; p=json.load(open(".work/enhanced-package/manifest.json")); print("PINNED_PE_IMAGE_LAYOUT="+json.dumps(p["image_layout"], sort_keys=True))'
           python3 tests/direct/engine_bridge.py
           python3 tests/direct/gdk_feature.py
+      - name: Fetch authentic pinned FastFile startup subset from owner's R2
+        timeout-minutes: 18
+        run: |
+          python3 tools/enhanced/fetch_startup.py --dry-run
+          python3 tools/enhanced/fetch_startup.py --out .work/originals --threads 4
+      - name: Stage original FastFiles beside the enhanced EXE without altering binaries
+        run: |
+          python3 tools/enhanced/stage_assets.py --game .work/originals --package .work/enhanced-package
       - name: Initialize disposable Wine prefix on a private display
         env:
           WINEARCH: win64
