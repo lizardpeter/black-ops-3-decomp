@@ -41,7 +41,7 @@ LOCALIZATION = re.compile(r"(?i)\b(localization_[a-z0-9_+.-]{1,80}\.txt)\b")
 # Observe module loader activity without retaining a local path. Merely
 # mentioning a DLL in an error is not evidence it loaded.
 VENDOR_MODULES = {"partyxboxlive.dll", "playfabmultiplayergdk.dll", "xboxliveapi.dll"}
-DLL_BASENAME = re.compile(r'(?i)([a-z0-9_.+-]{1,96}\\.dll)')
+DLL_BASENAME = re.compile(r'(?i)([a-z0-9_.+-]{1,96}\.dll)')
 WINE_ERROR = re.compile(r"(?i)err:([a-z0-9_-]{1,32}):([a-z0-9_-]{1,64})")
 WINE_DLL = re.compile(r'(?i)\b(?:library|module)\s+(?:L")?([^\s"()]{1,240}\.dll)')
 WIN_STATUS = re.compile(r"(?i)\b(?:c0000135|c000007b|c0000005|c0000142|0x8007007e)\b")
