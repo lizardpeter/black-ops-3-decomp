@@ -271,7 +271,12 @@ def parse_lines(text, va_of):
     out, src = {}, ""
     pending = None
     for line in text.splitlines():
-        m = re.match(r"^([a-zA-Z]:\\.*) \(MD5:", line)
+        # every module starts afresh: a module whose file header goes unread must not inherit the previous file
+        if re.match(r"\s*Mod \d{4} \|", line):
+            src, pending = "", None
+            continue
+        # file headers carry a checksum kind, or none (third-party objects: "(no checksum)")
+        m = re.match(r"^(\S.*) \((?:(?:MD5|SHA1|SHA256|SHA_256): [0-9A-Fa-f]+|no checksum)\)$", line)
         if m:
             src = m.group(1)
             continue
