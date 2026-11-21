@@ -7,10 +7,11 @@
 
 #ifdef _WIN32
 extern "C" __declspec(dllimport) char *GetCommandLineA();
+extern "C" __declspec(dllimport) void OutputDebugStringA(const char *);
 #else
 extern "C" char *GetCommandLineA();
+extern "C" void OutputDebugStringA(const char *);
 #endif
-extern "C" __declspec(dllimport) void OutputDebugStringA(const char *);
 extern "C" void T7DirectStartupMilestone(const char *s) { OutputDebugStringA(s); }
 
 namespace
