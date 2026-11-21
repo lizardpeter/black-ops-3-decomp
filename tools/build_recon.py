@@ -13,9 +13,12 @@
 - Every defined function is exported under its decorated name, so tests find it by the ORIGINAL
   decorated name from the MAP: a wrong prototype simply isn't found.
 - Hybrid link: any symbol the reconstruction uses but does not define yet is resolved to the original
-  binary's address from the MAP (and original statics, declared with T7_STATIC, from the PDB). Functions become a `jmp [rip+0]; .quad <va>` thunk into the original code,
-  data becomes an absolute symbol at the original address. So a function can be reconstructed and tested
-  before anything it calls is. build/hybrid.tsv lists every such dependency.
+  binary's address from the MAP (and original statics, declared with T7_STATIC, from the PDB). So a function can
+  be reconstructed and tested before anything it calls is. build/hybrid.tsv lists every such dependency.
+  Every such address lives in one slot table in the DLL, rebased at load by the DLL's entry point to wherever the
+  exe actually is (the Store exe is ASLR-enabled): functions become a thunk that jumps through their slot, and the
+  units' references to exe data (compiled with -mcmodel=large) are rewritten into loads from the data's slot.
+  No code may hold an exe address directly; the link checks that. See docs/hybrid-link.md.
 - Thread-local variables (`__declspec(thread)`, e.g. dvar_modifiedFlags) are reached through `_tls_index` and an
   offset into the TLS block, not an address. The original's `_tls_index` is linked like any data; each original
   TLS variable is placed in the DLL's own .tls section at the same offset it has in the original's, so the
@@ -34,6 +37,7 @@ compiler: no thread-safe statics or TLS guards, which VS2012 didn't have and the
 """
 import csv
 import os
+import re
 import subprocess
 import tomllib
 import sys
@@ -47,7 +51,14 @@ TRIPLE = "--target=x86_64-pc-windows-msvc"
 CFLAGS = [TRIPLE, "-fms-compatibility-version=17.00", "-O0", "-ffp-contract=off", "-fno-exceptions",
           "-fms-extensions", "-fno-stack-protector", "-ffreestanding", "-fno-builtin", "-Wall", "-Werror",
           "-Wno-unused-function", "-Wno-unused-variable", f"-I{ROOT / 'include'}",
-          f"-isystem{ROOT / 'tools' / 'recon' / 'include'}"]
+          f"-isystem{ROOT / 'tools' / 'recon' / 'include'}",
+          # Every global is reached as `movabsq $sym, %reg`: the one form exe_relative_asm rewrites into a load from
+          # the DLL's own slot table, which reaches the exe wherever either image is loaded (docs/hybrid-link.md).
+          "-mcmodel=large",
+          # Under the large model a switch's jump table holds 64-bit `case - table` differences across sections,
+          # which COFF can only store as 32 bits: a negative one comes back 4 GB off. Compare chains instead
+          # (same behaviour); compile_unit rejects any table that slips through.
+          "-fno-jump-tables"]
 csv.field_size_limit(1 << 30)
 
 
@@ -78,6 +89,90 @@ def run(*cmd, quiet_duplicates=False):
 def nm(obj, *flags):
     out = subprocess.run(["llvm-nm", *flags, str(obj)], check=True, capture_output=True, text=True).stdout
     return [line.split() for line in out.splitlines() if line.strip()]
+
+
+def compile_unit(src, obj):
+    """src -> obj through assembly: obj.s is kept, since exe_relative_asm may rewrite it and reassemble."""
+    asm = obj.with_suffix(".s")
+    run("clang++", "-std=c++17", *CFLAGS, "-S", src, "-o", asm)
+    for line in asm.read_text().splitlines():
+        if re.match(r"\s*\.(?:quad|long)\s+[.\w$@?\"]+\s*-\s*[.\w$@?\"]+\s*$", line):
+            sys.exit(f"{asm}: a label-difference table ({line.strip()}): truncated to 32 bits across COFF sections")
+    run("clang", TRIPLE, "-c", asm, "-o", obj)
+
+
+SLOT_PREFIX = "t7x@"  # the slot holding the exe address of a symbol the reconstruction reads or writes as data
+_TOKEN = re.compile(r'"([^"]+)"|([A-Za-z_.?$@][\w.?$@]*)')
+_MOVABS = re.compile(r'^(\s*)movabsq\s+\$("[^"]+"|[A-Za-z_.?$@][\w.?$@]*)([+-](?:0x[0-9a-fA-F]+|\d+))?\s*,\s*(%r\w+)\s*(#.*)?$')
+
+
+def exe_relative_asm(asm_path, exe_data):
+    """Rewrite one unit's references to exe data into loads from the DLL's slot table. With -mcmodel=large clang
+    reaches every global as `movabsq $sym[+off], %reg`; for a symbol of the exe that becomes
+    `movq "t7x@sym"(%rip), %reg` (and `leaq off(%reg), %reg`, which leaves the flags alone). The slot is inside the
+    DLL, so in reach wherever it is loaded, and it holds the exe's address, rebased at load (t7_hybrid_entry).
+    Any other reference to an exe symbol stops the build: it would bake in an address that is wrong as soon as
+    either image moves. Returns the number of references rewritten."""
+    out, n = [], 0
+    for line in asm_path.read_text().splitlines():
+        names = {a or b for a, b in _TOKEN.findall(line.split("#", 1)[0])} & exe_data
+        if not names:
+            out.append(line)
+            continue
+        if line.strip().startswith(".addrsig_sym"):
+            continue  # an address-significance hint for a symbol that no longer exists
+        m = _MOVABS.match(line)
+        if not m or m.group(2).strip('"') not in exe_data:
+            sys.exit(f"{asm_path}: unsupported reference to exe data {sorted(names)}: {line.strip()}")
+        indent, sym, off, reg = m.group(1), m.group(2).strip('"'), m.group(3), m.group(4)
+        out.append(f'{indent}movq\t"{SLOT_PREFIX}{sym}"(%rip), {reg}')
+        if off:
+            out.append(f"{indent}leaq\t{int(off, 0)}({reg}), {reg}")
+        n += 1
+    asm_path.write_text("\n".join(out) + "\n")
+    return n
+
+
+def exe_preferred_base(build):
+    """(ImageBase, SizeOfImage) from the build's exe header: what the slot table's addresses assume."""
+    import pefile
+    path = Path(os.environ.get("T7_ORIGINALS", ROOT / ".work" / "originals")) / f"{build}.exe"
+    if not path.exists():
+        sys.exit(f"{path}: the hybrid link needs the original exe (tools/fetch_originals.py {build} --only exe)")
+    o = pefile.PE(str(path), fast_load=True).OPTIONAL_HEADER
+    return o.ImageBase, o.SizeOfImage
+
+
+def hybrid_entry(exe_base):
+    """The DLL's entry point. On DLL_PROCESS_ATTACH it reads the exe's actual base from the PEB and adds the
+    difference from its preferred base to every slot between t7_exe_slots_start and t7_exe_slots_end (exe data,
+    original functions, the exe-return gadget, import table slots). Trap slots lie after the end and stay 0.
+    Returns TRUE; does nothing on any other reason, or when the exe is at its preferred base."""
+    return ["\t.text", "\t.globl t7_hybrid_entry", "t7_hybrid_entry:",
+            "\tcmpl $1, %edx", "\tjne 2f",
+            "\tmovq %gs:0x60, %rax", "\tmovq 0x10(%rax), %rax",
+            f"\tmovabsq ${exe_base:#x}, %rcx", "\tsubq %rcx, %rax", "\tje 2f",
+            "\tleaq t7_exe_slots_start(%rip), %rcx", "\tleaq t7_exe_slots_end(%rip), %rdx",
+            "1:", "\tcmpq %rdx, %rcx", "\tjae 2f", "\taddq %rax, (%rcx)", "\taddq $8, %rcx", "\tjmp 1b",
+            "2:", "\tmovl $1, %eax", "\tretq"]
+
+
+def check_no_exe_addresses(dll, exe_base, exe_size):
+    """The linked DLL's code must hold no address inside the exe's image, as an immediate or as a RIP-relative
+    target: those are the references that break when either image is loaded somewhere else. Only the slot table
+    (data) holds exe addresses, and t7_hybrid_entry rebases it."""
+    out = subprocess.run(["llvm-objdump", "-d", "--no-show-raw-insn", "--section=.text", str(dll)],
+                         check=True, capture_output=True, text=True).stdout
+    bad = []
+    for line in out.splitlines():
+        if ":" not in line or not line.startswith(" "):
+            continue
+        for h in re.findall(r"0x([0-9a-fA-F]+)", line.split(":", 1)[1]):
+            if exe_base <= int(h, 16) < exe_base + exe_size:
+                bad.append(line.strip())
+                break
+    if bad:
+        sys.exit(f"{dll}: code refers to the exe's image directly ({len(bad)}):\n  " + "\n  ".join(bad[:20]))
 
 
 def original_tls_section(build):
@@ -122,16 +217,16 @@ def exe_return_gadget(build):
     return va, code[8]
 
 
-def function_thunk(q, va, gadget, index):
-    """The hybrid link's call into an original function. With an exe-return gadget (docs/obfuscation.md): the call is
-    made with the gadget, inside the exe, as its return address, because the game's decoders hang when their caller
-    lies outside the exe. The thunk builds a frame of its own: [S] the gadget, the home space, copies of the caller's
-    stack arguments, and at S + 8 + n the address of a stub that drops the frame and returns to the real caller; the
+def function_thunk(q, slot, gadget_slot, index, n=0):
+    """The hybrid link's call into an original function, whose address is in `slot` (the slot table: rebased at
+    load). With an exe-return gadget (docs/obfuscation.md; its address in `gadget_slot`): the call is made with the
+    gadget, inside the exe, as its return address, because the game's decoders hang when their caller lies outside
+    the exe. The thunk builds a frame of its own: [S] the gadget, the home space, copies of the caller's stack
+    arguments, and at S + 8 + n the address of a stub that drops the frame and returns to the real caller; the
     gadget's `add rsp, n; ret` lands there. Registers are passed through untouched (R10 is scratch, as at any call);
     at most (n - 0x20) / 8 stack arguments are copied."""
-    if not gadget:
-        return [f"\t.globl {q}", f"{q}:", "\tjmpq *0(%rip)", f"\t.quad {va:#x}"]
-    gva, n = gadget
+    if not gadget_slot:
+        return [f"\t.globl {q}", f"{q}:", f"\tjmpq *{slot}(%rip)"]
     frame = (n + 16 + 15) & ~15
     slots = (n - 0x20) // 8
     label = f"t7_exe_return_{index}"
@@ -139,8 +234,8 @@ def function_thunk(q, va, gadget, index):
     for i in range(slots):
         lines += [f"\tmovq {frame + 0x28 + 8 * i:#x}(%rsp), %r10", f"\tmovq %r10, {0x28 + 8 * i:#x}(%rsp)"]
     lines += [f"\tleaq {label}(%rip), %r10", f"\tmovq %r10, {8 + n:#x}(%rsp)",
-              f"\tmovabsq ${gva:#x}, %r10", "\tmovq %r10, (%rsp)",
-              f"\tmovabsq ${va:#x}, %r10", "\tjmpq *%r10",
+              f"\tmovq {gadget_slot}(%rip), %r10", "\tmovq %r10, (%rsp)",
+              f"\tmovq {slot}(%rip), %r10", "\tjmpq *%r10",
               f"{label}:", f"\taddq ${frame - n - 16:#x}, %rsp", "\tretq"]
     return lines
 
@@ -159,7 +254,7 @@ def main():
         rel = src.relative_to(ROOT / "src")
         obj = BUILD / "obj" / rel.with_suffix(".obj")
         obj.parent.mkdir(parents=True, exist_ok=True)
-        run("clang++", "-std=c++17", *CFLAGS, "-c", src, "-o", obj)
+        compile_unit(src, obj)
         objs.append(obj)
         sources.append(obj)
     if not objs:
@@ -173,7 +268,7 @@ def main():
                 continue  # the standalone offline DLL, built by tools/offline/build_dll.py
             obj = BUILD / "obj" / "enhanced" / rel.with_suffix(".obj")
             obj.parent.mkdir(parents=True, exist_ok=True)
-            run("clang++", "-std=c++17", *CFLAGS, "-c", src, "-o", obj)
+            compile_unit(src, obj)
             enhanced_objs.append(obj)
             enhanced_defs |= {p[2] for p in nm(obj, "--defined-only", "--extern-only") if len(p) == 3 and p[1] in ("T", "t")}
         objs = enhanced_objs + objs  # first definition wins: enhanced/ replaces src/
@@ -262,6 +357,16 @@ def main():
     asm = ["\t.text"]
     hybrid = ["symbol\tkind\tva"]
     gadget = exe_return_gadget(build)
+    # Every exe address the DLL uses lives in one table of slots, rebased at load by t7_hybrid_entry; code reaches
+    # a slot RIP-relatively (it is inside the DLL). exe_slots: (label, va); exe_data: symbols the units read or write
+    # as data, rewritten by exe_relative_asm; traps: data slots holding 0, outside the rebased range.
+    exe_slots, exe_data, traps = [], set(), []
+
+    def slot(va, label=None):
+        label = label or f"t7_exe_slot_{len(exe_slots)}"
+        exe_slots.append((label, va))
+        return label
+    gadget_slot = slot(gadget[0], "t7_exe_return_gadget") if gadget else None
     ref_build = symbols.reference_build()
     tls_lo, tls_hi = original_tls_section(build if reference else ref_build)
     ref_table = symbols.table(ref_build)
@@ -274,13 +379,14 @@ def main():
             orig.pop(u, None)
         if u not in orig and u not in statics:
             if u in slots:
-                asm += [f"\t.globl {q}", f"{q}:", f"\tmovabsq ${slots[u]:#x}, %rax", "\tjmpq *(%rax)"]
+                asm += [f"\t.globl {q}", f"{q}:", f"\tmovq {slot(slots[u])}(%rip), %rax", "\tjmpq *(%rax)"]
                 hybrid.append(f"{u}\timport\t{slots[u]:09X}")
             elif u in ref_table and tls_lo <= ref_table[u][0] < tls_hi:
                 tls.append((ref_table[u][0] - tls_lo, q))  # keeps the link valid; not this build's offset
                 hybrid.append(f"{u}\tunresolved-tls\t")
             elif u in ref_table and ref_table[u][1] == "data" or u.startswith("t7s@"):
-                asm += [f"\t.globl {q}", f"\t.set {q}, 0"]
+                exe_data.add(u)
+                traps.append(f'"{SLOT_PREFIX}{u}"')
                 hybrid.append(f"{u}\tunresolved-data\t")
             else:
                 asm += [f"\t.globl {q}", f"{q}:", "\tud2"]
@@ -292,38 +398,56 @@ def main():
             hybrid.append(f"{u}\ttls\t{va:09X}")
             continue
         if is_func:
-            asm += function_thunk(q, va, gadget, len(asm))
+            asm += function_thunk(q, slot(va), gadget_slot, len(asm), gadget[1] if gadget else 0)
         else:
-            asm += [f"\t.globl {q}", f"\t.set {q}, {va:#x}"]
+            exe_data.add(u)
+            slot(va, f'"{SLOT_PREFIX}{u}"')
         hybrid.append(f"{u}\t{'function' if is_func else 'data'}\t{va:09X}")
     if tls:
         asm += ['\t.section .tls$, "dw"', "hybrid_tls_start:"]
         for off, q in sorted(tls):
             asm += [f"\t.skip {off} - (. - hybrid_tls_start)", f"\t.globl {q}", f"{q}:"]
         asm += [f"\t.skip {tls_hi - tls_lo} - (. - hybrid_tls_start)"]
+    exe_base, exe_size = exe_preferred_base(build)
+    asm += hybrid_entry(exe_base)
+    asm += ["\t.data", "\t.p2align 3", "\t.globl t7_exe_slots_start", "t7_exe_slots_start:"]
+    for label, va in exe_slots:
+        asm += [f"\t.globl {label}", f"{label}:", f"\t.quad {va:#x}"]
+    asm += ["\t.globl t7_exe_slots_end", "t7_exe_slots_end:"]
+    for label in traps:
+        asm += [f"\t.globl {label}", f"{label}:", "\t.quad 0"]
     (BUILD / "hybrid.s").write_text("\n".join(asm) + "\n")
+    # the units' references to exe data become loads from their slots (the symbols themselves are never defined,
+    # so anything left over fails the link instead of reaching a stale address)
+    rewritten = 0
+    for obj in objs:
+        n = exe_relative_asm(obj.with_suffix(".s"), exe_data)
+        if n:
+            run("clang", TRIPLE, "-c", obj.with_suffix(".s"), "-o", obj)
+            rewritten += n
     run("clang", TRIPLE, "-c", BUILD / "hybrid.s", "-o", BUILD / "hybrid.obj")
     (BUILD / "hybrid.tsv").write_text("\n".join(hybrid) + "\n")
 
     dll = BUILD / "recon.dll"
-    # A DLL loaded *inside* the Store EXE must not assume its preferred image
-    # base is free. Use a relocatable enhanced image, and independently verify
-    # actual PE interval overlap in tools/enhanced/build.py. No specific
-    # collision is assumed without comparing the original PE headers.
-    # Keep the faithful differential DLL's layout unchanged.
+    # A DLL loaded *inside* the Store EXE must not assume its preferred image base is free: the enhanced image is
+    # relocatable (tools/enhanced/build.py checks real PE interval overlap). That is sound only because no code
+    # reaches the exe directly: the slot table and t7_hybrid_entry (docs/hybrid-link.md). The faithful
+    # differential DLL keeps its fixed layout.
     image_link = ("/base:0x400000000", "/dynamicbase") if enhanced else (
         "/base:0x180000000", "/fixed")
-    run("lld-link", "/dll", "/noentry", "/nodefaultlib", *image_link, f"/out:{dll}",
+    run("lld-link", "/dll", "/entry:t7_hybrid_entry", "/nodefaultlib", *image_link, f"/out:{dll}",
         *[f"/export:{e}" for e in exports],  # x64: no leading underscore on C names
         *(["/force:multiple", f"/map:{BUILD / 'recon.map'}"] if enhanced else []),
         *objs, *env_objs, BUILD / "hybrid.obj", quiet_duplicates=enhanced)
+    check_no_exe_addresses(dll, exe_base, exe_size)
     (BUILD / "recon.symbols.tsv").write_text("symbol\tsource\tva\n" + "\n".join(rows) + "\n")
     unresolved = sum(1 for h in hybrid if "\tunresolved" in h)
     if unresolved and reference:
         print(f"note: {unresolved} symbol(s) not in {build} (trap; build/hybrid.tsv):",
               ", ".join(h.split("\t")[0] for h in hybrid if "\tunresolved" in h))
     print(f"{dll}: {len(exports)} functions from {len(sources)} files; "
-          f"{len(undefined) - unresolved} symbols resolved to {build}" +
+          f"{len(undefined) - unresolved} symbols resolved to {build}, {rewritten} data references through "
+          f"{len(exe_slots)} rebased slots" +
           (f", {unresolved} not identified there yet (trap)" if unresolved else ""))
 
 

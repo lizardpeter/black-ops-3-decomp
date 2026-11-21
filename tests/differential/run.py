@@ -50,20 +50,21 @@ def same(a, b):
 
 def canonical_code(v, m, recon, recon_to_orig):
     """An address in the reconstruction's code as the original address it stands for: one of its functions ->
-    the original function, a hybrid-link thunk -> its target: `jmp [rip+0]; .quad target`, or the exe-return thunk
-    (`sub rsp, frame; ...; movabs r10, target; jmp r10`, tools/build_recon.py function_thunk)."""
+    the original function, a hybrid-link thunk -> its target, read from the slot it jumps through (the slot table is
+    rebased at load, so this is the target wherever the exe is): `jmp [rip+slot]`, or the exe-return thunk
+    (`sub rsp, frame; ...; mov r10, [rip+slot]; jmp r10`, tools/build_recon.py function_thunk)."""
     if not recon.base <= v < recon.base + recon.size:
         return v
     if v in recon_to_orig:
         return recon_to_orig[v]
-    code = bytes(m.mu.mem_read(v, 14))
-    if code[:6] == b"\xff\x25\x00\x00\x00\x00":
-        return struct.unpack("<Q", code[6:14])[0]
+    code = bytes(m.mu.mem_read(v, 6))
+    if code[:2] == b"\xff\x25":
+        return struct.unpack("<Q", bytes(m.mu.mem_read(v + 6 + struct.unpack("<i", code[2:6])[0], 8)))[0]
     if code[:3] == b"\x48\x81\xec":
         body = bytes(m.mu.mem_read(v, 0x140))
-        end = body.find(b"\x41\xff\xe2")  # jmp r10, right after movabs r10, target
-        if end >= 10 and body[end - 10:end - 8] == b"\x49\xba":
-            return struct.unpack("<Q", body[end - 8:end])[0]
+        end = body.find(b"\x41\xff\xe2")  # jmp r10, right after mov r10, [rip+slot]
+        if end >= 7 and body[end - 7:end - 4] == b"\x4c\x8b\x15":
+            return struct.unpack("<Q", bytes(m.mu.mem_read(v + end + struct.unpack("<i", body[end - 4:end])[0], 8)))[0]
     return v
 
 

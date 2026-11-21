@@ -263,7 +263,9 @@ int bdPlatformSocket::sendTo(const int handle, const bdSockAddr addr, const unsi
 		int sent = sendto(handle, (const char *)data, length, 0, (sockaddr *)&to, sizeof(to));
 		if (sent >= 0)
 		{
-			m_totalBytesSent += (long long)(sent + 28);
+			// The original adds in 32 bits, then sign-extends (1429C4C87: `lea eax, [rdi+1Ch]; movsxd rcx, eax`):
+			// past INT_MAX the sum wraps negative. Written as an unsigned add so the wrap is defined behaviour here too.
+			m_totalBytesSent += (long long)(int)((unsigned int)sent + 28u);
 			m_totalPacketsSent++;
 			return sent;
 		}
